@@ -42,7 +42,4 @@ public class TemplateVO {
     private String p_adult;
     private String p_child;
     private String p_baby;
-
-
-
 }
