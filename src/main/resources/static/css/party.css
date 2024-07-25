@@ -1,0 +1,22 @@
+div {
+    background-color: #FFF5F4;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+.yr_btn_wrapper{
+    display: flex;
+    flex-direction: row;
+}
+#btn_heart{
+    padding: 20px;
+    border-radius: 50%;
+    width: 50px;
+}
+#btn_star{
+    padding: 20px;
+    border-radius: 50%;
+    width: 50px;
+}
