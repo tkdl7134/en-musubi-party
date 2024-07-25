@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="resources/css/grouplist.css">
-    <script src="resources/js/grouplist.js"></script>
+    <link rel="stylesheet" href="/resources/css/grouplist.css">
+    <script src="/resources/js/grouplist.js"></script>
 </head>
 <body>
 <h1> - group list -</h1>
