@@ -1,0 +1,45 @@
+div{
+    width: 100vw;
+
+}
+
+
+.jh_navigation {
+    width: 100vw;
+    height: 56px;
+    background-color: #FFD1D0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+}
+
+.jh_title {
+
+    height: 75px;
+    background-color: #FFFBF7;
+    margin-top: 3rem;
+
+
+}
+
+.jh_titleName {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+.jh_pageNavigation {
+
+    display: flex;
+    margin-top: 3rem;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.jh_pageNavigationA {
+    text-decoration: none;
+
+
+}

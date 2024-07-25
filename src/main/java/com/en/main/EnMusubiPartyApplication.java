@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Spring08Application {
+public class EnMusubiPartyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Spring08Application.class, args);
+        SpringApplication.run(EnMusubiPartyApplication.class, args);
     }
 
 }
