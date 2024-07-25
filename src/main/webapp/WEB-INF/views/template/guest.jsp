@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="resources/css/guest.css">
-    <script src="resources/js/guest.js"></script>
+    <link rel="stylesheet" href="/resources/css/guest.css">
+    <script src="/resources/js/guest.js"></script>
 </head>
 <body>
 <h1> - guest -</h1>
