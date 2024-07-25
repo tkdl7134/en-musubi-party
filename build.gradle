@@ -35,7 +35,7 @@ dependencies {
     runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     // oracle cloud 전용
-    implementation 'com.oracle.database.security:oraclepki:21.5.0.0'
+   implementation 'com.oracle.database.security:oraclepki:21.5.0.0'
     implementation 'com.oracle.database.security:osdt_cert:21.5.0.0'
     implementation 'com.oracle.database.security:osdt_core:21.5.0.0'
     // jsp 구동하기 위함. & jstl
