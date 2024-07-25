@@ -15,7 +15,9 @@ create table member(
     m_zipcode varchar2(10 char) not null,
     m_img varchar2(20 char) not null
 );
+
 select * from member;
+
 insert into member values ('test3', '1111', '山本', '光', 'ヤマモト', 'ヒカリ', 'yamamoto', 'hikari', '2000-01-01', '女', 'yamamoto@enparty.com', '000-0000-0000', '東京', '1234567', 'profile.jpg' )
 
 create table template(
@@ -29,4 +31,5 @@ create table template(
 create sequence template_seq;
 
 select * from template;
+
 insert into template values (template_seq.nextval, 'test3', 'preview.jpg', 'example.jpg', 'template.jpg')
