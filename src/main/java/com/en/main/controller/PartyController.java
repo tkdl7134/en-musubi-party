@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PartyController {
 
     @GetMapping("/party")
-    public String partyHome() {
-        return "party";
+    public String partyType() {
+        return "/party/party_apply";
+    }
+
+    @GetMapping("/party/done")
+    public String partyTypeDone() {
+        return "/party/party_apply_done";
     }
 
 }
