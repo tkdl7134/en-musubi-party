@@ -53,11 +53,11 @@ div{
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
-    width: 50vw;
+    width: 40vw;
     align-content: center;
 }
 .jh_pageNavigationB{
-    width: 50vw;
+    width: 40vw;
     text-align: center;
     font-size: 18px;
 
@@ -84,4 +84,12 @@ text-align: center;
     margin-top: 5rem;
     text-align: center;
     font-size: 16px;
+}
+.jh_week_data_message{
+    text-align: center;
+
+}
+.jh_week_data{
+    margin-top: 5rem;
+
 }

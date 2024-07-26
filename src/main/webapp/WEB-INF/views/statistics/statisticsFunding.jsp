@@ -10,6 +10,28 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const ctx = document.getElementById('myChart').getContext('2d');
+        const config = document.getElementById('week-data-chart').getContext('2d');
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = ('0' + (today.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1
+        const day = ('0' + today.getDate()).slice(-2);
+        console.log(day);
+        const formattedDate = year + '-' + month + '-' + day; // YYYY-MM-DD 형식
+        const dates = [];
+
+        for (let i = 0; i < 7; i++) {
+            const date = new Date(today);
+            date.setDate(today.getDate() - i);
+            dates.push(formatDate(date));
+        }
+
+        function formatDate(date) {
+            const year = date.getFullYear();
+            const month = ('0' + (date.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1
+            const day = ('0' + date.getDate()).slice(-2);
+            return month + '-' + day;
+        }
+
 
         new Chart(ctx, {
             type: 'pie',
@@ -23,6 +45,48 @@
                 }]
             }
         });
+
+        const labels = dates;
+        console.log(labels)
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'My First Dataset',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+            }]
+        };
+      new Chart(  config,  {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        });
+
+
     });
 </script>
 <head>
@@ -107,11 +171,15 @@
         <div class="jh_message">大切な因縁から繋がった心の証</div>
         <div class="jh_funding_message">ファンディングの現状</div>
         <div class="jh_wishlist_message">ウィッシュリストの情報</div>
-        <div>
+        <div style="display: flex; justify-content: center">
             <canvas style="width: 100vw; " id="myChart"></canvas>
         </div>
-
-
+    <div class="jh_week_data">
+        <div class="jh_week_data_message">一週間集まった想い</div>
+        <div style="display: flex; justify-content: center;">
+            <canvas id="week-data-chart"></canvas>
+        </div>
+    </div>
     </div>
 </div>
 
