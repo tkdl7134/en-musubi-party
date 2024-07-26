@@ -1,0 +1,54 @@
+* {
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+body {
+    background-color: #fff5f4;
+    margin: 0;
+}
+.yr_party-type-done-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+}
+.yr_title {
+    font-size: 5rem;
+    font-weight: 600;
+    padding: 50px 40px 40px 50px;
+    height: 10rem;
+}
+.yr_party-red-loof img {
+    width: 58rem;
+}
+.yr_party-type-done-content {
+    font-size: 6rem;
+    height: 40rem;
+    text-align: center;
+    align-content: center;
+    color: #DD2025;
+}
+.yr_btn_info {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#btn_party-info {
+    width: 45rem;
+    height: 20rem;
+    font-size: 3.5rem;
+    font-weight: 200;
+    border-radius: 10%;
+    border-style: none;
+    background-color: #ffffff9b;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+#btn_party-info:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background-color: #fff;
+}
