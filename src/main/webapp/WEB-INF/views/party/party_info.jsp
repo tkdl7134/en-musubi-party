@@ -35,7 +35,7 @@
             </div>
             <div class="yr_graph_label_wrap">
                 <span class="yr_graph_label">男性</span>
-                <span class="yr_graph_label">女性</span>
+                <span class="yr_graph_label">女性111</span>
             </div>
         </div>
     </div>
