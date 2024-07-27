@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     font-family: "Noto Serif JP", serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -6,7 +8,7 @@
 }
 body {
     background-color: #fff5f4;
-    margin: 0;
+
 }
 .yr_party-container {
     display: flex;

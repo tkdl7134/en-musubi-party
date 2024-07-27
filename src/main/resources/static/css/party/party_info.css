@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+html,
+body {
+    height: 100%;
+    background-color: #fff5f4;
+}
+
+.yr_party-info-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+.yr_title {
+    font-size: 5rem;
+    font-weight: 600;
+    padding: 1rem;
+    height: 10rem;
+}
+.yr_party-red-loof img {
+    width: 58rem;
+    margin-bottom: 0.5rem;
+}
+
+#yr_go_to_chat {
+    width: 50rem;
+    height: 15rem;
+    font-size: 3.2rem;
+    border-radius: 2rem;
+    border-style: none;
+    background-color: #ffff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+#yr_go_to_chat:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background-color: #fff;
+}
+
+#yr_go_to_chat img {
+    width: 10rem;
+    margin-right: 5rem;
+}
+#yr_go_to_chat span {
+    font-weight: 400;
+}
+.yr_ratio {
+    margin-top: 1.5rem;
+    text-align: center;
+    width: 48rem;
+    height: 30rem;
+    font-size: 2.5rem;
+    border-radius: 2rem;
+    background-color: #ffff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 1rem;
+}
+.yr_ratio span {
+    font-weight: 300;
+}
+
+.yr_graph_wrap {
+    position: relative;
+    width: 30rem;
+    height: 20rem;
+    margin: 1rem auto 1rem;
+    border-bottom: 1px solid #ccc;
+}
+.yr_graph_wrap .yr_graph {
+    height: 20rem;
+    font-size: 0.5rem;
+}
+.yr_graph_wrap .yr_graph div {
+    position: absolute;
+    bottom: 0;
+    width: 6.5rem;
+}
+.yr_graph_wrap .yr_graph #yr_graph_bar1 {
+    left: 7rem;
+    background: #76ceff;
+}
+.yr_graph_wrap .yr_graph #yr_graph_bar2 {
+    left: 18.5rem;
+    background: #ff99d6;
+}
+.man {
+    height: 300px;
+    animation: man 2s;
+}
+.woman {
+    height: 150px;
+    animation: woman 2s;
+}
+
+@keyframes man {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 300px;
+    }
+}
+@keyframes woman {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 150px;
+    }
+}
+.yr_graph_label_wrap {
+    font-size: 1.5rem;
+    width: 23rem;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 4.5rem;
+}
+
+.yr_apply_cancel {
+    margin: 3rem;
+    width: 23rem;
+    height: 7rem;
+    font-size: 2rem;
+    color: #dd2025;
+    border-radius: 2rem;
+    border-style: none;
+    background-color: #ffdbdb9f;
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.yr_apply_cancel:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background-color: #ffdbdb;
+}
+.yr_graph_donut {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    margin: 20px auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
