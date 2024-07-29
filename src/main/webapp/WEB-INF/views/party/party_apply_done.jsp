@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="resources/css/party/party_apply_done.css" />
+    <link rel="stylesheet" href="/resources/css/party/party_apply_done.css" />
     <script src="resources/js/party/party.js"></script>
 </head>
 <body>
