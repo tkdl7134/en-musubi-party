@@ -1,5 +1,6 @@
 
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
     <div class="yr_title">縁パーティー</div>
     <div class="yr_party-red-loof"><img src="footer.png" alt="" /></div>
     <div class="yr_go_to_chat_wrap">
-        <button id="yr_go_to_chat">
+        <button id="yr_go_to_chat" onclick="location.href='party/chat'">
             <img src="glass-shoes.png" alt="" />
             <span>
             縁パーティー<br />
@@ -30,8 +31,8 @@
         <span>男女の比率</span>
         <div class="yr_graph_wrap">
             <div class="yr_graph">
-                <div id="yr_graph_bar1" class="yr_graph_bar man"></div>
-                <div id="yr_graph_bar2" class="yr_graph_bar woman"></div>
+                <div id="yr_graph_bar1" class="yr_graph_bar man" style="height: ${maleCount * 10}px"></div>
+                <div id="yr_graph_bar2" class="yr_graph_bar woman" style="height: ${femaleCount * 10}px"></div>
             </div>
             <div class="yr_graph_label_wrap">
                 <span class="yr_graph_label">男性</span>
@@ -46,6 +47,8 @@
         </div>
     </div>
     <button class="yr_apply_cancel">参加 キャンセル</button>
+    ${partyMembers}
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/resources/js/party/party_info.js"></script>
