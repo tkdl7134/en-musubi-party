@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class TemplateVO {
-    private int m_id;
+    private String m_id;
     private int e_no;
     private int t_pk;
 
@@ -37,9 +37,10 @@ public class TemplateVO {
     private String g_allergy_or;
     private String g_message;
     private String g_relation;
+
     private String allergy;
 
-    private String p_adult;
-    private String p_child;
-    private String p_baby;
+    private int p_adult;
+    private int p_child;
+    private int p_baby;
 }
