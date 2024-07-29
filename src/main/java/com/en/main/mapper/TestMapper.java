@@ -1,6 +1,6 @@
 package com.en.main.mapper;
 
-import com.en.main.dto.TestVO;
+import com.en.main.mapper.dto.TestVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
