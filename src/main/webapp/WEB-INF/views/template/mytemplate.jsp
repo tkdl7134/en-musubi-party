@@ -23,10 +23,13 @@
             <div class="hw_card">
                 <div class="hw_content">
                     <div class="hw_mytemplate-img"><img src="${template.img1}" alt=""></div>
+                    <a>img1</a>
                     <div class="hw_mytemplate-img"><img src="${template.img2}" alt=""></div>
+                    <a>img2</a>
                     <div class="hw_mytemplate-img"><img src="${template.img3}" alt=""></div>
+                    <a>img3</a>
                 </div>
-                <div class="hw_mytemplate-button">
+                <div class="hw_mytemplate-button-container">
                     <div class="hw_button" onclick="">
                         <button><img src="/resources/ImgFolder/graph.png" alt="">テンプレート</button>
                     </div>
