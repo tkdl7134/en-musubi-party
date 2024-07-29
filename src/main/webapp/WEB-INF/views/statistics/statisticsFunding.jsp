@@ -94,8 +94,8 @@
     <title>Title</title>
     <style>
         body {
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             margin: 0;
             background-color: #FFFBF7;
             font-family: "Noto Serif JP", serif;
@@ -153,7 +153,7 @@
         </div>
         <div class="jh_title" style="  ">
             <div class="jh_titleName" style="  ">通計ページ</div>
-            <div><img style="width: 100vw; margin-top: 2rem" src="/resources/img/footer.png" alt=""></div>
+            <div><img style="width: 100%; margin-top: 2rem" src="/resources/img/footer.png" alt=""></div>
         </div>
         <div class="jh_pageNavigation" style="">
             <div class="jh_pageNavigationA">
@@ -171,15 +171,21 @@
         <div class="jh_message">大切な因縁から繋がった心の証</div>
         <div class="jh_funding_message">ファンディングの現状</div>
         <div class="jh_wishlist_message">ウィッシュリストの情報</div>
-        <div style="display: flex; justify-content: center">
-            <canvas style="width: 100vw; " id="myChart"></canvas>
+        <div style="display: flex;height: 45rem; justify-content: center">
+            <canvas style="width: 90%; height: 90% " id="myChart"></canvas>
         </div>
-    <div class="jh_week_data">
+    <div style="margin-top: 5rem;" class="jh_week_data">
         <div class="jh_week_data_message">一週間集まった想い</div>
         <div style="display: flex; justify-content: center;">
-            <canvas id="week-data-chart"></canvas>
+            <canvas style="width: 100%; height: 100%" id="week-data-chart"></canvas>
         </div>
     </div>
+        <select>
+            <option></option>
+
+        </select>
+
+
     </div>
 </div>
 
