@@ -11,6 +11,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         const ctx = document.getElementById('myChart').getContext('2d');
         const config = document.getElementById('week-data-chart').getContext('2d');
+        const config2 = document.getElementById('jh_product_chart').getContext('2d');
         const today = new Date();
         const year = today.getFullYear();
         const month = ('0' + (today.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1
@@ -19,7 +20,7 @@
         const formattedDate = year + '-' + month + '-' + day; // YYYY-MM-DD 형식
         const dates = [];
 
-        for (let i = 0; i < 7; i++) {
+        for (let i = 6; i > -1; i--) {
             const date = new Date(today);
             date.setDate(today.getDate() - i);
             dates.push(formatDate(date));
@@ -51,8 +52,8 @@
         const data = {
             labels: labels,
             datasets: [{
-                label: 'My First Dataset',
-                data: [65, 59, 80, 81, 56, 55, 40],
+                label: '頂いた想い',
+                data: [65000, 59000, 80000, 81000, 56000, 55000, 40000],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 159, 64, 0.2)',
@@ -74,7 +75,7 @@
                 borderWidth: 1
             }]
         };
-      new Chart(  config,  {
+        new Chart(config, {
             type: 'bar',
             data: data,
             options: {
@@ -85,6 +86,32 @@
                 }
             },
         });
+
+
+
+        const data2 = {
+            labels: [
+                'Red',
+                ''
+            ],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [300, 150],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 255, 255)'
+                ],
+                hoverOffset: 4
+            }]
+        };
+        new Chart (config2 ,{
+            type: 'doughnut',
+            data: data2,
+        });
+
+
+
+
 
 
     });
@@ -157,34 +184,61 @@
         </div>
         <div class="jh_pageNavigation" style="">
             <div class="jh_pageNavigationA">
-            <div  class="jh_pageNavigationB" style="color: red">ファンディング</div>
-            <div class="jh_pageNavigationB" style="color: red">の現状</div>
+                <div class="jh_pageNavigationB" style="color: red">ファンディング</div>
+                <div class="jh_pageNavigationB" style="color: red">の現状</div>
             </div>
             <div class="jh_pageNavigationA" onclick="goToSendPage()">
-            <div class="jh_pageNavigationB" >ご祝儀</div>
-            <div class="jh_pageNavigationB" >の現状</div>
+                <div class="jh_pageNavigationB">ご祝儀</div>
+                <div class="jh_pageNavigationB">の現状</div>
             </div>
         </div>
         <div id="jh_top_button"><img onclick="goToTop()" style="width: 10vh; height: 10vh; position: fixed;
     right: 1rem; z-index: 100;
     bottom: 1rem;" src="/resources/img/top_button.png" alt=""></div>
         <div class="jh_message">大切な因縁から繋がった心の証</div>
-        <div class="jh_funding_message">ファンディングの現状</div>
+        <div style="display: flex;
+    justify-content: center;"><img style="width: 90%" src="/resources/img/lineShort.png" alt=""></div>
+        <div class="jh_funding_message">✿ファンディングの現状✿</div>
         <div class="jh_wishlist_message">ウィッシュリストの情報</div>
-        <div style="display: flex;height: 45rem; justify-content: center">
+        <div style="display: flex; justify-content: center">
             <canvas style="width: 90%; height: 90% " id="myChart"></canvas>
         </div>
-    <div style="margin-top: 5rem;" class="jh_week_data">
-        <div class="jh_week_data_message">一週間集まった想い</div>
-        <div style="display: flex; justify-content: center;">
-            <canvas style="width: 100%; height: 100%" id="week-data-chart"></canvas>
+        <div style="margin-top: 5rem;" class="jh_week_data">
+            <div class="jh_week_data_message">一週間集まった想い</div>
+            <div style="display: flex; justify-content: center;">
+                <canvas style="" id="week-data-chart"></canvas>
+            </div>
         </div>
-    </div>
-        <select>
-            <option></option>
 
-        </select>
+        <div class="jh_product_detail_container">
+        <div style="margin-top: 3rem;" class="jh_product_label">
+       <label>
+            <select style="width: 20%; padding: 4%;
+    transform: translateX(16rem); text-align: center;">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+                <option>D</option>
 
+            </select>
+        </label>
+   </div>
+           <div class="jh_product_image"><img style="margin-top : 1rem;width: 100%" src="/resources/img/ソファー.png" alt=""></div>
+        <div  class="jh_product_chart">
+        <canvas id="jh_product_chart"></canvas>
+        </div>
+
+            
+        </div>
+
+<div style="display: flex;flex-direction: column;justify-content: center; height: 10rem; border :1px solid black ; border-radius: 20px ; background-color: pink" class="jh_other_infos">
+    <div>그외의 정보</div>
+    <div>펀딩참여자 수 : @@명</div>
+    <div>펀딩 최고 금액 : @@엔</div>
+    <div>펀딩 최고 날짜 : @@월 @@일</div>
+    <div>가장 인기 있는 위시리스트 : ㅁ</div>
+
+</div>
 
     </div>
 </div>
