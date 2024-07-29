@@ -51,8 +51,9 @@ create table template(
     t_template varchar2(200 char) not null
 );
 create sequence template_seq;
-select * from template;
-insert into template values (template_seq.nextval, 'test3', 'preview.jpg', 'example.jpg', 'template.jpg');
+select * from template order by t_pk;
+insert into template values (template_seq.nextval, 'test10', 'product-t10.png', 'example.jpg', 'template.jpg');
+update template set t_preview = 'product-t1.png' where t_pk = 1;
 
 -- 템플릿에 넣는 결혼정보
 create table wedding_info(
