@@ -10,18 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet"/>
+    <%--  슬라이더 및 개별 js / css  --%>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="/resources/css/product/swiper-slide-center.css" />
     <link rel="stylesheet" href="/resources/css/product/product.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/resources/js/product/swiper-slide-center.js"></script>
 </head>
 <body>
+<div class="je_menu-bar">
+    <div id="je_logo"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+</div>
 <div id="je_product-container">
-    <div class="je_menu-bar">
-        <div id="je_logo"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
-    </div>
     <div class="je_page-title">
         <div class="je_page-title-txt">テンプレート一覧</div>
         <div class="je_page-title-line">
