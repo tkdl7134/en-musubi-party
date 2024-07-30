@@ -41,3 +41,6 @@ src/main/resources/static/img/
 ### application.properties ###
 src/main/resources/application.properties/
 .idea/dataSources.xml
+
+.metadata
+.idea
