@@ -11,15 +11,9 @@ public class HomeController {
 
 
     @GetMapping("/")
-    public String home(Model model) {
-<<<<<<< HEAD
-
+    public String home() {
         return "home";
-=======
-        return "index";
->>>>>>> 21733f60d80029aed62b27448d2c71ba775a8354
     }
-
 
 
 
