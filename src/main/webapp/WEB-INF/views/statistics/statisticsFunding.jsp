@@ -95,11 +95,11 @@
 
         const data2 = {
             labels: [
-                'Red',
-                ''
+                'ウィッシュリスト',
+                '到達まで'
             ],
             datasets: [{
-                label: 'My First Dataset',
+                label: '頂いた想い',
                 data: [300, 150],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
@@ -235,18 +235,35 @@
             
         </div>
 
-<div style="display: flex;flex-direction: column;justify-content: center; height: 10rem; border :1px solid black ; border-radius: 20px ; background-color: pink" class="jh_other_infos">
-    <div class="jh_funding_detail">그외의 정보</div>
-    <div class="jh_funding_detail">펀딩참여자 수 : @@명</div>
-    <div class="jh_funding_detail">펀딩 최고 금액 : @@엔</div>
-    <div class="jh_funding_detail">펀딩 최고 날짜 : @@월 @@일</div>
-    <div class="jh_funding_detail">가장 인기 있는 위시리스트 : ㅁ</div>
+<div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink" class="jh_other_infos">
+    <div style="margin-top: 2vh;" class="jh_funding_detail">特別な想い出</div>
+    <div style="margin-top: 5vh;" class="jh_funding_detail">繋がれた因縁 : @@名</div>
+    <div class="jh_funding_detail">一番数多くの因縁が訪れた日 : @@월 @@일</div>
+    <div class="jh_funding_detail">集まった想い :　@@円 </div>
+    <div class="jh_funding_detail">私に一番渡したいプレゼント : ㅁ</div>
 
 </div>
+
+        <div style="background-color: #FFDBDB; margin-top: 5vh; " class="jh_allList_container">
+            <div>
+                <div style="display: flex; justify-content: flex-end;">
+                 <div class="jh_arrange_button">   <button class="jh_arrange_button_button" type="submit">名前順</button></div>
+                    <div class="jh_arrange_button">  <button class="jh_arrange_button_button"  type="submit">金額順</button></div>
+                    <div class="jh_arrange_button">   <button class="jh_arrange_button_button"  type="submit">日付順</button></div>
+                </div>
+            </div>
+    <div style="display: flex;background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
+        <div class="jh_detail_head">恩人</div>
+        <div class="jh_detail_head">金額</div>
+        <div class="jh_detail_head">日付</div>
+    </div>
+
+
+
 
     </div>
 </div>
-
+</div>
 
 </body>
 </html>
