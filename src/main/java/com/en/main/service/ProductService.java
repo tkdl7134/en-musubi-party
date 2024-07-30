@@ -18,4 +18,9 @@ public class ProductService implements ProductMapper {
         return productMapper.getAllTemplates();
     }
 
+    @Override
+    public TemplateProductVO getTemplateByPk(int t_pk) {
+        return productMapper.getTemplateByPk(t_pk);
+    }
+
 }

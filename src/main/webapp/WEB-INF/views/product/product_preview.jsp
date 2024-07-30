@@ -45,14 +45,14 @@
                         </div>
                     </div>
                     <div class="je_example_img">
-                        <img src="/resources/img/example.png" alt="" />
+                        <img src="/resources/img/${oneTemplate.t_example}" alt="" />
                     </div>
                 </div>
             </div>
             <div
                     class="je_example-closeUp-button"
                     data-target="#layer"
-                    data-example="./img/example.png"
+                    data-example="/resources/img/${oneTemplate.t_example}"
                     type="button"
             >
                 <img src="/resources/img/zoom-icon.png" alt="" />
@@ -75,7 +75,7 @@
                     <!-- db에 저장되어있는 template-img READ -->
                     <img src="" alt="" />
                     <div class="je_btn-r">
-                        <a href="#" class="je_btn-layerClose">close</a>
+                        <a href="#" class="je_btn-layerClose">閉じる</a>
                     </div>
                 </div>
             </div>

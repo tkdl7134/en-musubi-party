@@ -2,11 +2,9 @@ package com.en.main.dto;
 
 import lombok.Data;
 
-<<<<<<< HEAD
+
 import java.util.Date;
 
-=======
->>>>>>> 21733f60d80029aed62b27448d2c71ba775a8354
 @Data
 public class PartyVO {
     int e_no;
