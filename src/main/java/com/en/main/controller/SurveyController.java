@@ -14,8 +14,8 @@ public class SurveyController {
     @Autowired
     private SurveyService surveyService;
 
-    @
-    private String insertSurvey(GuestVO guestVO);
+//    @
+//    private String insertSurvey(GuestVO guestVO);
 
 
 }
