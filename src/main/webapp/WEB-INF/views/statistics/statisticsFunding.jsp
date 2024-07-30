@@ -236,11 +236,11 @@
         </div>
 
 <div style="display: flex;flex-direction: column;justify-content: center; height: 10rem; border :1px solid black ; border-radius: 20px ; background-color: pink" class="jh_other_infos">
-    <div>그외의 정보</div>
-    <div>펀딩참여자 수 : @@명</div>
-    <div>펀딩 최고 금액 : @@엔</div>
-    <div>펀딩 최고 날짜 : @@월 @@일</div>
-    <div>가장 인기 있는 위시리스트 : ㅁ</div>
+    <div class="jh_funding_detail">그외의 정보</div>
+    <div class="jh_funding_detail">펀딩참여자 수 : @@명</div>
+    <div class="jh_funding_detail">펀딩 최고 금액 : @@엔</div>
+    <div class="jh_funding_detail">펀딩 최고 날짜 : @@월 @@일</div>
+    <div class="jh_funding_detail">가장 인기 있는 위시리스트 : ㅁ</div>
 
 </div>
 
