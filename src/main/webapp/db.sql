@@ -173,6 +173,8 @@ create table event_comment(
     c_date date not null,
     c_type varchar2(10 char) not null,
 
+insert into template values (template_seq.nextval, 'test3', 'preview.jpg', 'example.jpg', 'template.jpg')
+
     foreign key(e_no) references event(e_no)
 );
 select * from event_comment;
