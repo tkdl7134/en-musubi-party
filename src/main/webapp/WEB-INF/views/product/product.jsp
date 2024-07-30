@@ -35,7 +35,7 @@
                 <ul class="swiper-wrapper slide_list">
                     <c:forEach var="t" items="${templates}">
                         <li class="swiper-slide">
-                            <div class="je_template-box">
+                            <div class="je_template-box" onclick="location.href='/product/${t.t_pk}'">
                                 <div class="je_template-preview">
                                     <img src="/resources/img/${t.t_preview}" alt="" />
                                 </div>

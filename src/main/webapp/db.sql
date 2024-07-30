@@ -53,7 +53,7 @@ create table template(
 create sequence template_seq;
 select * from template order by t_pk;
 insert into template values (template_seq.nextval, 'test10', 'product-t10.png', 'example.jpg', 'template.jpg');
-update template set t_preview = 'product-t1.png' where t_pk = 1;
+update template set t_example = 'product-t3.png' where t_pk = 3;
 
 -- 템플릿에 넣는 결혼정보
 create table wedding_info(
