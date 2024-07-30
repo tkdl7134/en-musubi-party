@@ -1,12 +1,7 @@
-package com.en.main.mapper.dto;
+package com.en.main.dto;
 
 import lombok.Data;
 
-<<<<<<< HEAD
-@Data
-public class PartyVO {
-
-=======
 import java.util.Date;
 
 @Data
@@ -18,5 +13,4 @@ public class PartyVO {
     String m_gender;
     String m_phone;
     String m_birth;
->>>>>>> fc7866376d0792dba6eea23d204e1ace71108220
 }

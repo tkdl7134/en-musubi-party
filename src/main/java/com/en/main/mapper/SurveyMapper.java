@@ -1,12 +1,8 @@
 package com.en.main.mapper;
 
-import com.en.main.mapper.dto.GuestVO;
-import com.en.main.mapper.dto.TestVO;
+import com.en.main.dto.GuestVO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
 
 @Mapper
 public interface SurveyMapper {

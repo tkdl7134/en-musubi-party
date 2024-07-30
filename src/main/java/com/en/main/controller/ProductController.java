@@ -21,5 +21,9 @@ public class ProductController {
         return "product/product";
     }
 
-    @GetMapping("")
+    @GetMapping("/{t_pk}")
+    public String preview(Model model) {
+
+        return "product/product-preview";
+    }
 }

@@ -1,6 +1,6 @@
 package com.en.main.service;
 
-import com.en.main.mapper.dto.TestVO;
+import com.en.main.dto.TestVO;
 import com.en.main.mapper.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
