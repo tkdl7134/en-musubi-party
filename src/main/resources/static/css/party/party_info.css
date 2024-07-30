@@ -96,29 +96,29 @@ body {
     left: 18.5rem;
     background: #ff99d6;
 }
-.man {
-    height: 300px;
-    animation: man 2s;
-}
-.woman {
-    height: 150px;
-    animation: woman 2s;
-}
+/*.man {*/
+
+/*    animation: man 2s forwards;*/
+/*}*/
+/*.woman {*/
+
+/*    animation: woman 2s forwards;*/
+/*}*/
 
 @keyframes man {
     from {
-        height: 0px;
+        height: 0%;
     }
     to {
-        height: 300px;
+        height: 100%;
     }
 }
 @keyframes woman {
     from {
-        height: 0px;
+        height: 0%;
     }
     to {
-        height: 150px;
+        height: 100%;
     }
 }
 .yr_graph_label_wrap {

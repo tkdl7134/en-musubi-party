@@ -44,10 +44,15 @@ public class PartyController {
         List<PartyVO> partyMembers = partyService.getPartyMembers();
         long maleCount = partyMembers.stream().filter(member -> "男".equals(member.getM_gender())).count();
         long femaleCount = partyMembers.stream().filter(member -> "女".equals(member.getM_gender())).count();
+        long totalCount = maleCount + femaleCount;
+
+        double malePercentage = totalCount == 0 ? 0 : ((double) maleCount / totalCount) * 100;
+        double femalePercentage = totalCount == 0 ? 0 : ((double) femaleCount / totalCount) * 100;
+
 
         model.addAttribute("partyMembers", partyMembers);
-        model.addAttribute("maleCount", maleCount);
-        model.addAttribute("femaleCount", femaleCount);
+        model.addAttribute("malePercentage", malePercentage);
+        model.addAttribute("femalePercentage", femalePercentage);
 
         return "/party/party_info";
     }

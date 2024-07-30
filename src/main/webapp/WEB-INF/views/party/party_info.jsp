@@ -31,8 +31,8 @@
         <span>男女の比率</span>
         <div class="yr_graph_wrap">
             <div class="yr_graph">
-                <div id="yr_graph_bar1" class="yr_graph_bar man" style="height: ${maleCount * 10}px"></div>
-                <div id="yr_graph_bar2" class="yr_graph_bar woman" style="height: ${femaleCount * 10}px"></div>
+                <div id="yr_graph_bar1" class="yr_graph_bar man" style="height: ${malePercentage}%;"></div>
+                <div id="yr_graph_bar2" class="yr_graph_bar woman" style="height: ${femalePercentage}%;"></div>
             </div>
             <div class="yr_graph_label_wrap">
                 <span class="yr_graph_label">男性</span>
