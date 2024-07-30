@@ -8,6 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface SurveyMapper {
 
     @Insert("insert into guest values (product2_test_seq.nextval, #{p_name}, #{p_price})")
-    void insertProduct(GuestVO guestVO);
+    void insertSurvey(GuestVO guestVO);
 
 }
