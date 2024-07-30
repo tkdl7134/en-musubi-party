@@ -31,7 +31,7 @@
                 愛の縁を <br />
                 探したい
             </p>
-            <button id="btn_heart" onclick="location.href='party/done'"><img src="icon-heart.png" alt="" /></button>
+            <button id="btn_heart" onclick="location.href='party/apply-done'"><img src="icon-heart.png" alt="" /></button>
         </div>
 
         <div class="yr_btn_right">
@@ -39,7 +39,7 @@
                 パーティーだけ<br />
                 参加したい
             </p>
-            <button id="btn_star" onclick="location.href='party/done'"><img src="star.png" alt="" /></button>
+            <button id="btn_star" onclick="location.href='party/apply-done'"><img src="star.png" alt="" /></button>
         </div>
     </div>
 </div>
