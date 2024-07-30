@@ -5,42 +5,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/resources/css/template/mytemplate.css">
-    <script src="/resources/js/template/mytemplate.js"></script>
+    <link rel="stylesheet" href="/resources/css/mytemplate.css">
+    <script src="/resources/js/mytemplate.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <header class="hw_header">
-    <a class="hw_logo" href=""><img src="/resources/img/logo.png" alt=""></a>
+    <a class="hw_logo" href=""></a>
     <div class="hw_maker">縁結び</div>
     <a class="hw_mypage" href=""></a>
 </header>
 <div class="hw_title"> - テンプレート管理 -</div>
-<div><img src="/resources/img/title.png" alt=""></div>
+<div><img src="" alt=""></div>
 <form>
     <div class="hw_container">
 <%--        <c:forEach var="template" items="${templates}">--%>
             <div class="hw_card">
                 <div class="hw_content">
-<%--                    <div class="hw_mytemplate-img"><img src="${template.img1}" alt=""></div>--%>
-                    <div><img src="/resources/img/template1.jpg" alt=""></div>
-<%--                    <div class="hw_mytemplate-img"><img src="${template.img2}" alt=""></div>--%>
-                    <div><img src="/resources/img/template2.jpg" alt=""></div>
-<%--                    <div class="hw_mytemplate-img"><img src="${template.img3}" alt=""></div>--%>
-                    <div><img src="/resources/img/template3.jpg" alt=""></div>
+                    <div class="hw_mytemplate-img"><img src="${template.img1}" alt=""></div>
+                    <a>img1</a>
+                    <div class="hw_mytemplate-img"><img src="${template.img2}" alt=""></div>
+                    <a>img2</a>
+                    <div class="hw_mytemplate-img"><img src="${template.img3}" alt=""></div>
+                    <a>img3</a>
                 </div>
                 <div class="hw_mytemplate-button-container">
                     <div class="hw_button" onclick="">
-                        <button><img src="/resources/img/free-icon-reunion.png" alt="">テンプレート</button>
+                        <button><img src="/resources/ImgFolder/graph.png" alt="">テンプレート</button>
                     </div>
                     <div class="hw_button" onclick="">
-                        <button><img src="/resources/img/free-icon-checklist.png" alt="">アンケート</button>
+                        <button><a href="${template.link}"></a>アンケート</button>
                     </div>
                     <div class="hw_button" onclick="">
-                        <button><img src="/resources/img/free-icon-line-chart.png" alt="">通計</button>
+                        <button><img src="" alt="">通計</button>
                     </div>
                     <div class="hw_button" onclick="">
-                        <button><img src="/resources/img/free-icon-line.png" alt="">line</button>
+                        <button><img src="" alt="">line</button>
                     </div>
                 </div>
             </div>
