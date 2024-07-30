@@ -7,16 +7,89 @@
     font-style: normal;
 }
 
-.tk-division-line {
+.tk_division-line {
     border-top: 1px solid #444444;
     margin: 2rem 0rem;
-    width: 15rem;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
 
-header {
+body {
+    background-color: #fffbf7;
+}
+
+/* 메뉴 - 헤더 */
+
+.tk_menu-bar {
+    width: 100%;
+    height: 3rem;
+    background-color: #ffd1d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tk_logo {
+    width: 2rem;
+}
+
+#tk_logo img {
+    width: 100%;
+}
+
+#tk_survey-container {
+    width: 100%;
+}
+
+.tk_survey-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+    font-size: 3rem;
+}
+
+#tk_survey-title-line > img {
+    width: 30rem;
+}
+
+.tk_survey-body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.tk_survey-container {
+    width: 100%;
+}
+
+.tk_iphone-container {
+    position: relative;
+}
+
+.tk_iphone-box {
+    /* background-color: yellow; */
+    width: 19rem;
+
+    position: relative;
+    img {
+        width: 100%;
+    }
+}
+
+.tk_survey-container {
+    position: absolute;
+    width: 95%;
+    height: 83%;
+    top: 3rem;
+    left: 7%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+.tk_survey-container::-webkit-scrollbar {
+    display: none;
 }
