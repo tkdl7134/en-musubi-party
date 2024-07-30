@@ -1,22 +1,15 @@
 package com.en.main.service;
 
-import com.en.main.mapper.TestMapper;
-import com.en.main.mapper.dto.GuestVO;
-import com.en.main.mapper.dto.TestVO;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.en.main.mapper.SurveyMapper;
+import com.en.main.dto.GuestVO;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class SurveyService {
 
-    @Autowired
     private SurveyMapper surveyMapper;
 
-    @Override
-    public void insertSurvey(GuestVO guestVO) {
-        surveyMapper.insertService(serviceVO);
+    public void addGuest(GuestVO guestVO) {
+        surveyMapper.insertSurvey(guestVO);
     }
-
 }

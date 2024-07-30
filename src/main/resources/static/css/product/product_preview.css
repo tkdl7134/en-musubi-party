@@ -1,0 +1,357 @@
+/* 기본세팅 */
+
+/* <uniquifier>: Use a unique and descriptive class name */
+/* <weight>: Use a value from 200 to 900 */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: #fffbf7;
+}
+
+/* 메뉴 - 헤더 */
+.je_menu-bar {
+    width: 100%;
+    height: 3rem;
+    background-color: #ffd1d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#je_logo {
+    width: 2rem;
+}
+#je_logo img {
+    width: 100%;
+}
+
+#je_product-preview-container {
+    width: 100vw;
+}
+/* 타이틀 */
+.je_page-title {
+    /* background-color: aquamarine; */
+    margin-top: 2rem;
+}
+
+.je_page-title-txt,
+.je_page-title-line {
+    display: flex;
+    justify-content: center;
+}
+
+.je_page-title-txt {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.je_page-title-line > img {
+    width: 10rem;
+}
+
+/* 내용 */
+.je_page-content {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.je_preview-container {
+    width: 100%;
+}
+.je_preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.je_preview-phone {
+    /* background-color: yellow; */
+    width: 19rem;
+
+    position: relative;
+    img {
+        width: 100%;
+    }
+}
+
+/* 스크롤 유도 */
+#je_overlay {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    z-index: 10;
+    height: 95%;
+    width: 90%;
+    border-radius: 5%;
+    transition: opacity 0.7s;
+}
+
+#je_overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.je_overlay-txt {
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 10rem;
+}
+
+.scroll-downs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    width: 34px;
+    height: 55px;
+}
+.mousey {
+    width: 3px;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
+}
+.scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fff;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+    animation-iteration-count: infinite;
+}
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}
+
+/* 프리뷰 이미지 */
+.je_example_img {
+    position: absolute;
+    width: 95%;
+    height: 83%;
+    top: 3rem;
+    left: 7%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    img {
+        width: 90%;
+    }
+}
+.je_example_img::-webkit-scrollbar {
+    display: none;
+}
+
+.je_example-closeUp-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+    img {
+        width: 1.5rem;
+    }
+    span {
+        font-size: 16px;
+        font-weight: 600;
+        color: #474747;
+    }
+}
+
+.je_product-make-button {
+    margin-top: 2rem;
+    background-color: #ffd1d0;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20pt;
+    font-weight: 900;
+    color: #474747;
+}
+
+/* 팝업 */
+.je_pop-layer .je_pop-container {
+    padding: 20px 25px;
+    z-index: 300;
+    height: 40rem;
+    overflow: auto;
+    z-index: 300;
+}
+
+.je_pop-layer p.ctxt {
+    color: #666;
+    line-height: 25px;
+    z-index: 300;
+}
+
+.je_pop-layer .je_btn-r {
+    width: 100%;
+    margin: 0.6rem 0 1.2rem;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+    z-index: 300;
+}
+
+.je_pop-layer {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30rem;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #c82626;
+    z-index: 300;
+}
+
+.je_dim-layer {
+    display: none;
+    position: fixed;
+    /* _position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+}
+
+.je_dim-layer .je_dimBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.je_dim-layer .je_pop-layer {
+    display: block;
+}
+
+.je_btn-r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.je_btn-layerClose {
+    display: inline-block;
+    width: 3rem;
+    height: 2rem;
+    padding: 0.4rem 0.8rem 0;
+    border: 0.1rem solid #c82626;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 5px #c82626;
+    background-color: #c82626;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.je_btn-layerClose:hover {
+    border: 1px solid #c82626;
+    background-color: #fff;
+    color: #c82626;
+    transition: 0.5s;
+}
+a.je_btn-layerClose:not(hover) {
+    transition: 0.5s;
+}
+
+.je_pop-image {
+    /* 템플릿샘플 길이만큼 변경 */
+    height: 125rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.je_pop-image > img {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .je_page-content {
+        margin-top: 1rem;
+    }
+
+    .je_preview-phone {
+        width: 13rem;
+    }
+
+    .je_example_img {
+        top: 2rem;
+    }
+
+    .je_example-closeUp-button {
+        margin-top: 0.5rem;
+        img {
+            width: 1rem;
+        }
+        span {
+            font-size: 12px;
+            font-weight: 600;
+            color: #474747;
+        }
+    }
+
+    .je_product-make-button {
+        margin-top: 1rem;
+        height: 3rem;
+        font-size: 16pt;
+    }
+
+    /* 스크롤 유도 */
+    .je_overlay-txt {
+        font-size: 10px;
+        margin-top: 9rem;
+    }
+
+    /* 팝업 */
+    .je_pop-layer {
+        width: 100vw;
+    }
+
+    .je_pop-image {
+        margin-top: 0rem;
+    }
+}
