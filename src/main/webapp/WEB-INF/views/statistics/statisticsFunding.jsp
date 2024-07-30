@@ -44,6 +44,10 @@
                     backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
                     hoverOffset: 4
                 }]
+            },options: {
+
+                responsive: false
+
             }
         });
 
@@ -201,7 +205,7 @@
         <div class="jh_funding_message">✿ファンディングの現状✿</div>
         <div class="jh_wishlist_message">ウィッシュリストの情報</div>
         <div style="display: flex; justify-content: center">
-            <canvas style="width: 90%; height: 90% " id="myChart"></canvas>
+            <canvas style="width: 100vw ; height: 50vh; " id="myChart"></canvas>
         </div>
         <div style="margin-top: 5rem;" class="jh_week_data">
             <div class="jh_week_data_message">一週間集まった想い</div>
@@ -214,7 +218,7 @@
         <div style="margin-top: 3rem;" class="jh_product_label">
        <label>
             <select style="width: 20%; padding: 4%;
-    transform: translateX(16rem); text-align: center;">
+    transform: translateX(73vw); text-align: center;">
                 <option>A</option>
                 <option>B</option>
                 <option>C</option>
