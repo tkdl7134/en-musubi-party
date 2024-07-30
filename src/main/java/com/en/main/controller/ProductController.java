@@ -20,4 +20,6 @@ public class ProductController {
         model.addAttribute("templates", productService.getAllTemplates());
         return "product/product";
     }
+
+    @GetMapping("")
 }
