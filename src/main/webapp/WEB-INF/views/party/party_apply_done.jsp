@@ -19,7 +19,7 @@
     <div class="yr_party-red-loof"><img src="footer.png" alt="" /></div>
     <div class="yr_party-type-done-content">参加完了</div>
     <div class="yr_btn_info">
-        <button id="btn_party-info">
+        <button id="btn_party-info"  onclick="location.href='party/info'">
             参加内訳 <br />
             よく見る
         </button>
