@@ -10,13 +10,5 @@ import java.util.List;
 
 @Service
 public class SurveyService {
-
-    @Autowired
-    private SurveyMapper surveyMapper;
-
-    @Override
-    public void insertSurvey(GuestVO guestVO) {
-        surveyMapper.insertService(serviceVO);
-    }
-
+    
 }
