@@ -11,8 +11,7 @@
     cursor: pointer;
 }
 
-.cb1::before, .cb1::after,
-.cb2::before, .cb2::after {
+.cb1::before, .cb1::after{
     position: absolute;
     height: 0;
     width: 4px;
