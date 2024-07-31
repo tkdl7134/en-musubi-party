@@ -137,7 +137,7 @@ select {
 
 /*설문조사 주소 input / button 꾸미기*/
 .tk_survey-postcode {
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 0.5rem;
 }
 
@@ -160,6 +160,7 @@ select {
     cursor: pointer;
 }
 
+/*상세주소 input 꾸미기*/
 .tk_survey-address {
     display: flex;
     flex-direction: column;
@@ -167,13 +168,14 @@ select {
 }
 
 .tk_survey-address input {
-    width: calc(90% - 10px);
+    width: calc(95% - 10px);
     padding: 0.6rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
+/*이메일 input 꾸미기*/
 .tk_survey-email input {
     width: calc(85% - 8px);
     padding: 0.6rem;
@@ -182,6 +184,7 @@ select {
     box-sizing: border-box;
 }
 
+/*폰번호 input 꾸미기*/
 .tk_survey-phone input{
     width: calc(85% - 8px);
     padding: 0.6rem;

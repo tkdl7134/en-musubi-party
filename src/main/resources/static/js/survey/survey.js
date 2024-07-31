@@ -16,3 +16,31 @@ document.addEventListener('DOMContentLoaded', function (){
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const maleGenderCheckbox = document.getElementById('maleGender');
+    const femaleGenderCheckbox = document.getElementById('femaleGender');
+    const othersGenderCheckbox = document.getElementById('othersGender');
+
+    maleGenderCheckbox.addEventListener('change', function () {
+        if (this.checked){
+            femaleGenderCheckbox.checked = false;
+            othersGenderCheckbox.checked = false;
+        }
+    });
+
+    femaleGenderCheckbox.addEventListener('change', function (){
+       if (this.checked){
+           maleGenderCheckbox.checked = false;
+           othersGenderCheckbox.checked = false;
+       }
+    });
+
+    othersGenderCheckbox.addEventListener('change', function (){
+        if (this.checked){
+            maleGenderCheckbox.checked = false;
+            femaleGenderCheckbox.checked = false;
+        }
+    })
+
+});

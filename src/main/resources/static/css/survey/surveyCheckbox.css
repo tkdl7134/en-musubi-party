@@ -1,9 +1,24 @@
+.tk_survey-guestType div, .tk_survey-gender div {
+    display: flex;
+    align-items: center;
+}
+.tk_survey-guestType label {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.tk_survey-gender label {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
 .cb1 {
-    height: 20px;
-    width: 20px;
+    height: 1.5rem;
+    width: 1.5rem;
     background-color: transparent;
-    border: 2px solid #000;
-    border-radius: 5px;
+    border: 1px solid black;
+    border-radius: 100%;
     box-sizing: border-box;
     position: relative;
     display: inline-block;
@@ -11,7 +26,7 @@
     cursor: pointer;
 }
 
-.cb1::before, .cb1::after{
+.cb1::before, .cb1::after {
     position: absolute;
     height: 0;
     width: 4px;
@@ -21,149 +36,42 @@
     transform-origin: left top;
     border-radius: 5px;
     content: ' ';
-    transition: opacity ease 0.5;
+    transition: opacity ease 0.5s;
 }
-.cb1::before, .cb2::after{
-    background-color: #CD0000;
-}
-.cb1::before, .cb2::before {
+
+.cb1::before {
     top: 14.4px;
     left: 8.2px;
-    box-shadow: 0 0 0 1px transparent;
     transform: rotate(-135deg);
 }
-.cb1::after, .cb2::after{
+
+.cb1::after {
     top: 7.4px;
     left: 1px;
     transform: rotate(-45deg);
 }
-input[id="familyCheckbox"]:checked + .cb1 {
-    border-color: #ed0606;
-}
-
-input[id="familyCheckbox"]:checked + .cb1::after{
-    height: 10px;
-    animation: bottomcheck 0.2s ease 0s forwards;
-}
-
-input[id="familyCheckbox"]:checked + .cb1::before{
-    height: 24px;
-    animation: topcheck 0.4s ease 0s forwards;
-}
-
-input[id="friendCheckbox"]:checked + .cb1 {
-    border-color: #ed0606;
-}
-
-input[id="friendCheckbox"]:checked + .cb1::after{
-    height: 10px;
-    animation: bottomcheck 0.2s ease 0s forwards;
-}
-
-input[id="friendCheckbox"]:checked + .cb1::before{
-    height: 24px;
-    animation: topcheck 0.4s ease 0s forwards;
-}
-
-input[id="colleaguesCheckbox"]:checked + .cb1 {
-    border-color: #ed0606;
-}
-
-input[id="colleaguesCheckbox"]:checked + .cb1::after{
-    height: 10px;
-    animation: bottomcheck 0.2s ease 0s forwards;
-}
-
-input[id="colleaguesCheckbox"]:checked + .cb1::before{
-    height: 24px;
-    animation: topcheck 0.4s ease 0s forwards;
-}
-
-input[id="othersCheckbox"]:checked + .cb1 {
-    border-color: #ed0606;
-}
-
-input[id="othersCheckbox"]:checked + .cb1::after{
-    height: 10px;
-    animation: bottomcheck 0.2s ease 0s forwards;
-}
-
-input[id="othersCheckbox"]:checked + .cb1::before{
-    height: 24px;
-    animation: topcheck 0.4s ease 0s forwards;
-}
-
-.relationship-container label {
-    margin-right: 1rem;
-}
-
-input[id="groomCheckbox"]:checked + .cb1 {
-    border-color: #ed0606;
-}
-
-input[id="groomCheckbox"]:checked + .cb1::after{
-    height: 10px;
-    animation: bottomcheck 0.2s ease 0s forwards;
-}
-
-input[id="groomCheckbox"]:checked + .cb1::before{
-    height: 24px;
-    animation: topcheck 0.4s ease 0s forwards;
-}
-
-input[id="brideCheckbox"]:checked + .cb1 {
-    border-color: #ed0606;
-}
-
-input[id="brideCheckbox"]:checked + .cb1::after{
-    height: 10px;
-    animation: bottomcheck 0.2s ease 0s forwards;
-}
-
-input[id="brideCheckbox"]:checked + .cb1::before{
-    height: 24px;
-    animation: topcheck 0.4s ease 0s forwards;
-}
-
-input[id="allergyCheckbox"]:checked + .cb2 {
-    border-color: #ed0606;
-}
-
-input[id="allergyCheckbox"]:checked + .cb2::after{
-    height: 10px;
-    animation: bottomcheck 0.2s ease 0s forwards;
-}
-
-input[id="allergyCheckbox"]:checked + .cb2::before{
-    height: 24px;
-    animation: topcheck 0.4s ease 0s forwards;
-}
-
-input[id="allergyCheckbox2"]:checked + .cb2 {
-    border-color: #ed0606;
-}
-
-input[id="allergyCheckbox2"]:checked + .cb2::after{
-    height: 10px;
-    animation: bottomcheck 0.2s ease 0s forwards;
-}
-
-input[id="allergyCheckbox2"]:checked + .cb2::before{
-    height: 24px;
-    animation: topcheck 0.4s ease 0s forwards;
-}
 
 input[type="checkbox"] {
-    display: none; /* 모든 체크박스 input 요소 숨기기 */
+    display: none;
 }
 
-.couple-container label {
-    margin-right: 1rem;
+input[type="checkbox"]:checked + .cb1 {
+    border: 2px solid #ff69b4; /* 찐한 핑크색 테두리 */
+    animation: shake 0.5s;
 }
 
-.allergy-question label {
-    margin-right: 1rem;
-    margin-left: 5rem;
+input[type="checkbox"]:checked + .cb1 {
+    border-color: #ed0606;
+}
+
+input[type="checkbox"]:checked + .cb1::after {
+    height: 10px;
+    animation: bottomcheck 0.2s ease 0s forwards;
+}
+
+input[type="checkbox"]:checked + .cb1::before {
+    height: 24px;
+    animation: topcheck 0.4s ease 0s forwards;
 }
 
 
@@ -175,6 +83,7 @@ input[type="checkbox"] {
         height: 10px;
     }
 }
+
 @keyframes topcheck {
     0% {
         height: 0;

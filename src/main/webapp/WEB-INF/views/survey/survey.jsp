@@ -6,7 +6,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/product/product_preview.css"/>
     <link rel="stylesheet" href="/resources/css/survey/survey.css">
-    <link rel="stylesheet" href="/resources/css/survey/surveyCheckbox.js">
+    <link rel="stylesheet" href="/resources/css/survey/surveyCheckbox.css">
     <script src="/resources/js/survey/survey.js"></script>
 </head>
 <body>
@@ -38,9 +38,11 @@
                                                 <div class="tk_survey-titleName">ゲスト様</div>
                                                 <div>
                                                     <input type="checkbox" id="groomGuest" name="g_guest_type" value="Groom">
-                                                    <label>新郎ゲスト</label>
+                                                    <label class="cb1" for="groomGuest"></label>
+                                                    <label for="groomGuest">新郎ゲスト</label>
                                                     <input type="checkbox" id="brideGuest" name="g_guest_type" value="Bride">
-                                                    <label>新婦ゲスト</label>
+                                                    <label class="cb1" for="brideGuest"></label>
+                                                    <label for="brideGuest">新婦ゲスト</label>
                                                 </div>
                                             </div>
                                             <div class="tk_division-line"></div>
@@ -86,12 +88,17 @@
                                             <div class="tk_division-line"></div>
                                             <div class="tk_survey-gender">
                                                 <div class="tk_survey-titleName">性別</div>
-                                                <input type="checkbox" name="g_guest_type" value="male">
-                                                <label>男性</label>
-                                                <input type="checkbox" name="g_guest_type" value="female">
-                                                <label>女性</label>
-                                                <input type="checkbox" name="g_guest_type" value="othersGender">
-                                                <label>その他</label>
+                                                <div>
+                                                <input type="checkbox" id="maleGender" name="m_gender" value="Male">
+                                                <label class="cb1" for="maleGender"></label>
+                                                <label for="maleGender">男性</label>
+                                                <input type="checkbox" id="femaleGender" name="m_gender" value="Female">
+                                                <label class="cb1" for="femaleGender"></label>
+                                                <label for="femaleGender">女性</label>
+                                                <input type="checkbox" id="othersGender" name="m_gender" value="Others">
+                                                <label class="cb1" for="othersGender"></label>
+                                                <label for="othersGender">その他</label>
+                                                </div>
                                             </div>
                                             <div class="tk_division-line"></div>
                                             <div class="tk_address">
@@ -119,6 +126,7 @@
                                                     <input type="text"/>
                                                 </div>
                                             </div>
+                                            <div class="tk_division-line"></div>
                                         </form>
                                     </div>
                                 </div>
