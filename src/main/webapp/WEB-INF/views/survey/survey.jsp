@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/resources/css/product/product_preview.css"/>
     <link rel="stylesheet" href="/resources/css/survey/survey.css">
     <link rel="stylesheet" href="/resources/css/survey/surveyCheckbox.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="/resources/js/survey/survey.js"></script>
 </head>
 <body>
@@ -103,9 +104,9 @@
                                             <div class="tk_division-line"></div>
                                             <div class="tk_address">
                                                 <div class="tk_survey-titleName">住所</div>
-                                                <div class="tk_survey-postcode"> 郵便番号 ：
-                                                    <input type="text" name="a_postcode"/>
-                                                    <button class="search-post-btn">検索</button>
+                                                <div class="tk_survey-postcode"> 郵便番号
+                                                    <input class="search-postcode" type="text" name="a_postcode"/>
+                                                    <button type="button" class="search-post-btn">検索</button>
                                                 </div>
                                                 <div class="tk_survey-address">
                                                 <input type="text" name="a_address"/>
@@ -127,6 +128,7 @@
                                                 </div>
                                             </div>
                                             <div class="tk_division-line"></div>
+                                            <button type="submit">Submit</button>
                                         </form>
                                     </div>
                                 </div>

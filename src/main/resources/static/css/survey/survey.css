@@ -142,7 +142,7 @@ select {
 }
 
 .tk_survey-postcode input {
-    width: calc(45% - 10px); /* 두 개의 input 간에 공간을 맞추기 위해 계산 */
+    width: calc(50% - 10px); /* 두 개의 input 간에 공간을 맞추기 위해 계산 */
     padding: 0.6rem;
     border: 1px solid #ccc;
     border-radius: 4px;
