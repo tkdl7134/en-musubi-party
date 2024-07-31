@@ -18,8 +18,4 @@ public class TemplateController {
         return "template/mytemplate";
     }
 
-    @GetMapping("/guest")
-    public String guest() {
-        return "template/guest";
-    }
 }
