@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/template/grouplist.css">
-    <script src="/resources/js/template/grouplist.js"></script>
+<%--    <script src="/resources/js/template/grouplist.js"></script>--%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>

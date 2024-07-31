@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    document.querySelector('.hw_container').addEventListener('wheel', handleScroll);
+    const container = document.querySelector('.hw_container');
+    container.addEventListener('wheel', handleScroll);
 
     // 버튼 클릭 이벤트
     const buttons = document.querySelectorAll('.hw_button button');
@@ -52,4 +53,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 300){
+            $('.btn_gotop').show();
+        } else{
+            $('.btn_gotop').hide();
+        }
+    });
+    $('.btn_gotop').click(function(){
+        $('html, body').animate({scrollTop:0},400);
+        return false;
+    });
 });
