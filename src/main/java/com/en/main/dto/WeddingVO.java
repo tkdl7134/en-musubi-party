@@ -3,8 +3,8 @@ package com.en.main.dto;
 import lombok.Data;
 
 @Data
-public class TemplateVO {
-    private String m_id;
+public class WeddingVO {
+
     private int e_no;
     private int t_pk;
 
@@ -31,16 +31,4 @@ public class TemplateVO {
     private String w_img2;
     private String w_img3;
     private String w_img_share;
-
-    private String g_attend;
-    private String g_guest_type;
-    private String g_allergy_or;
-    private String g_message;
-    private String g_relation;
-
-    private String allergy;
-
-    private int p_adult;
-    private int p_child;
-    private int p_baby;
 }
