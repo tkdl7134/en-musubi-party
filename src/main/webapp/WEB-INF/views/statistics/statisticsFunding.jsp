@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
-<html lang="en">
+<html style="zoom : 100% !important;" lang="en">
 <link rel="stylesheet" href="/resources/css/statistics/statistics.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
