@@ -9,7 +9,7 @@
     <script src="/resources/js/template/mytemplate.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body id="pageTop">
+<body>
 <form>
     <header class="hw_header">
         <a class="hw_logo" href=""><img src="/resources/img/logo.png" alt=""></a>
@@ -19,11 +19,6 @@
     <div class="hw_container">
         <div class="hw_title"> - テンプレート管理 -</div>
         <div class="hw_titleline"><img src="/resources/img/title.png" alt=""></div>
-
-        <a href="#" class="btn_gotop">
-  <span class="glyphicon glyphicon-chevron-up">
-  </span>
-        </a>
 
         <div class="hw_card">
             <div class="hw_content">

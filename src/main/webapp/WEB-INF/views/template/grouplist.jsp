@@ -6,40 +6,69 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/template/grouplist.css">
-<%--    <script src="/resources/js/template/grouplist.js"></script>--%>
+    <script src="/resources/js/template/grouplist.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<header class="hw_header">
-    <a class="hw_logo" href=""></a>
-    <div class="hw_maker">縁結び</div>
-    <a class="hw_mypage" href=""></a>
-</header>
-<div class="hw_title"> - テンプレート管理 -</div>
-<div><img src="" alt=""></div>
 <form>
+    <header class="hw_header">
+        <a class="hw_logo" href=""><img src="/resources/img/logo.png" alt=""></a>
+        <div class="hw_maker">縁結び</div>
+        <a class="hw_mypage" href=""></a>
+    </header>
     <div class="hw_container">
-        <c:forEach var="template" items="${templates}">
-            <div class="hw_card">
-                <div class="hw_content">
-                    <div class="hw_mytemplate-img"><img src="${template.img1}" alt=""></div>
-                    <a>img1</a>
-                    <div class="hw_mytemplate-img"><img src="${template.img2}" alt=""></div>
-                    <a>img2</a>
-                    <div class="hw_mytemplate-img"><img src="${template.img3}" alt=""></div>
-                    <a>img3</a>
+        <div class="hw_title"> - 会リスト -</div>
+        <div class="hw_titleline"><img src="/resources/img/title.png" alt=""></div>
+
+        <div class="hw_card">
+
+            <div class="hw_content">
+                <div><img src="/resources/img/template1.jpg" alt=""></div>
+                <div><img src="/resources/img/template2.jpg" alt=""></div>
+                <div><img src="/resources/img/template3.jpg" alt=""></div>
+            </div>
+            <div class="hw_mytemplate-list-container">
+                <div>
+                    날짜 : 2024.09.13
                 </div>
-                <div class="hw_mytemplate-button-container">
-                    <div class="hw_weddingInfo">
-                        <div><span>${template.w_fam_jp_groom},${template.w_name_jp_groom}</span></div>
-                        <div><span>${template.w_fam_jp_bride},${template.w_name_jp_bride}</span></div>
-                        <div><span>${template.w_fam_jp_bride},${template.w_name_jp_bride}</span></div>
-                        <div><span>${template.w_date},${template.w_wedding_time}</span></div>
-                        <div><span>${template.w_wedding_address},${template.w_wedding_building}</span></div>
-                    </div>
+                <div>
+                    주최자 : 철수 ♡ 유리
+                </div>
+                <div>
+                    시간 : 오전 11시 30분
+                </div>
+                <div>
+                    장소 : 결혼식장
                 </div>
             </div>
-        </c:forEach>
+
+        </div>
+
+        <div class="hw_card">
+
+            <div class="hw_content">
+                <div><img src="/resources/img/template1.jpg" alt=""></div>
+                <div><img src="/resources/img/template2.jpg" alt=""></div>
+                <div><img src="/resources/img/template3.jpg" alt=""></div>
+            </div>
+            <div class="hw_mytemplate-list-container">
+                <div>
+                    날짜 : 2024.09.13
+                </div>
+                <div>
+                    주최자 : 철수 ♡ 유리
+                </div>
+                <div>
+                    시간 : 오전 11시 30분
+                </div>
+                <div>
+                    장소 : 결혼식장
+                </div>
+            </div>
+ㄴ
+        </div>
+
+    </div>
     </div>
 </form>
 </body>

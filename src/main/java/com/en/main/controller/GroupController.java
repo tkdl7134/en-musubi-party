@@ -8,18 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/mypage")
 @Controller
-public class TemplateController {
+public class GroupController {
 
     @Autowired
     private TemplateService templateService;
 
-    @GetMapping("/mytemplate")
-    public String mytemplate() {
-        return "template/mytemplate";
-    }
-
-    @GetMapping("/guest")
-    public String guest() {
-        return "template/guest";
+    @GetMapping("/grouplist")
+    public String grouplist() {
+        return "template/grouplist";
     }
 }
