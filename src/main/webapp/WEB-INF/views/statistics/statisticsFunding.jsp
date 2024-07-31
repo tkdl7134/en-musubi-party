@@ -19,12 +19,23 @@
         console.log(day);
         const formattedDate = year + '-' + month + '-' + day; // YYYY-MM-DD 형식
         const dates = [];
+    const eno = 1; /*여기 나중에 바뀌어야함, session이던 뭐던가로 eno 가져오기*/
 
         for (let i = 6; i > -1; i--) {
             const date = new Date(today);
             date.setDate(today.getDate() - i);
             dates.push(formatDate(date));
         }
+
+        function getWishlistData() {
+            location.href = '/statistics/getWishlistData'
+
+        }
+
+
+
+
+
 
         function formatDate(date) {
             const year = date.getFullYear();
@@ -113,6 +124,8 @@
             data: data2,
         });
 
+    
+        
 
 
 
