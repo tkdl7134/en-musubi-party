@@ -8,6 +8,6 @@ public class WishlistVO {
     private int e_no;
     private String wl_product;
     private int wl_price;
-    
+
 
 }

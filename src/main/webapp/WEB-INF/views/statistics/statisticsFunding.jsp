@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
@@ -19,7 +20,25 @@
         console.log(day);
         const formattedDate = year + '-' + month + '-' + day; // YYYY-MM-DD 형식
         const dates = [];
-    const eno = 1; /*여기 나중에 바뀌어야함, session이던 뭐던가로 eno 가져오기*/
+
+    const eno = 5; /*여기 나중에 바뀌어야함, session이던 뭐던가로 eno 가져오기*/
+    let array = []
+  let wishlists = document.querySelectorAll('option.jh_wishlists');
+ wishlists.forEach(function (wishlist) {
+  array.push(wishlist.innerText);
+ })
+   console.log(array);
+    let array2 = []
+  let pricelists = document.querySelectorAll('.jh_wishlist_price').values();
+ pricelists.forEach(function (wishlist) {
+  array2.push(wishlist.value);
+ })
+   console.log(array2);
+
+
+
+
+
 
         for (let i = 6; i > -1; i--) {
             const date = new Date(today);
@@ -27,10 +46,7 @@
             dates.push(formatDate(date));
         }
 
-        function getWishlistData() {
-            location.href = '/statistics/getWishlistData'
 
-        }
 
 
 
@@ -48,11 +64,11 @@
         new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['WishlistA', 'WishlistB', 'WishlistC'],
+                labels: array,
                 datasets: [{
                     label: '繋がった想い',
-                    data: [300, 50, 100],
-                    backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+                    data: array2,
+                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255, 165, 0)', 'rgb(255, 255, 0)' , 'rgb(0, 255, 0)' , 'rgb(0, 0, 255)' , 'rgb(75, 0, 130)' , 'rgb(238, 130, 238)' ],
                     hoverOffset: 4
                 }]
             },options: {
@@ -217,6 +233,15 @@
     justify-content: center;"><img style="width: 90%" src="/resources/img/lineShort.png" alt=""></div>
         <div class="jh_funding_message">✿ファンディングの現状✿</div>
         <div class="jh_wishlist_message">ウィッシュリストの情報</div>
+
+        <div>
+            <c:forEach items="${wishlists}" var="w">
+                <input class="jh_wishlist_price" type="hidden" value="${w.wl_price}">
+            </c:forEach>
+
+        </div>
+
+
         <div style="display: flex; justify-content: center">
             <canvas style="width: 100vw ; height: 50vh; " id="myChart"></canvas>
         </div>
@@ -230,12 +255,12 @@
         <div class="jh_product_detail_container">
         <div style="margin-top: 3rem;" class="jh_product_label">
        <label>
-            <select style="width: 20%; padding: 4%;
-    transform: translateX(73vw); text-align: center;">
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-                <option>D</option>
+           <select style="width: 33%; padding: 5% ;
+    transform: translateX(60vw); text-align: center;">
+               <c:forEach items="${wishlists}" var="w">
+               <option class="jh_wishlists">${w.wl_product}</option>
+
+            </c:forEach>
 
             </select>
         </label>
