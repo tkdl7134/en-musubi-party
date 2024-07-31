@@ -21,13 +21,16 @@ public class StatisticsController {
         int eno = 5;
        model.addAttribute("wishlists" ,  statisticsFundingService.getWishlistData(eno));
         System.out.println(statisticsFundingService.getWishlistData(eno));
+        model.addAttribute("dates" , statisticsFundingService.getDate(eno));
+        System.out.println(statisticsFundingService.getDate(eno));
+
+
 
         return "statistics/statisticsFunding";
     }
 
     @GetMapping("/send")
     public String goStatisticsSendPage(){
-
 
         return "statistics/statisticsSend";
     }

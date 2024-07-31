@@ -1,5 +1,6 @@
 package com.en.main.service;
 
+import com.en.main.dto.PayVo;
 import com.en.main.dto.WishlistVO;
 import com.en.main.mapper.StatisticsFundingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,10 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
        return statisticsFundingMapper.getWishlistData(eno);
 
 
+    }
+
+    @Override
+    public List<PayVo> getDate(int eno) {
+        return statisticsFundingMapper.getDate(eno);
     }
 }

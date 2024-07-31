@@ -34,6 +34,12 @@
   array2.push(wishlist.value);
  })
    console.log(array2);
+ let array3 = []
+  let daylists = document.querySelectorAll('.jh_pay_date').values();
+ daylists.forEach(function (wishlist) {
+  array3.push(wishlist.value);
+ })
+   console.log(array3);
 
 
 
@@ -84,7 +90,7 @@
             labels: labels,
             datasets: [{
                 label: '頂いた想い',
-                data: [65000, 59000, 80000, 81000, 56000, 55000, 40000],
+                data: array3,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 159, 64, 0.2)',
@@ -237,6 +243,9 @@
         <div>
             <c:forEach items="${wishlists}" var="w">
                 <input class="jh_wishlist_price" type="hidden" value="${w.wl_price}">
+            </c:forEach>
+            <c:forEach items="${dates}" var="d">
+                <input class="jh_pay_date" type="hidden" value="${d.total_price}">
             </c:forEach>
 
         </div>
