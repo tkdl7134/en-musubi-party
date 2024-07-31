@@ -11,6 +11,6 @@ import org.apache.ibatis.annotations.Select;
 public interface LoginMapper {
     // ユーザー認証のためのクエリ
     // 코드 간결 및 쉬운 유지보수를 위해 '@Select' 어노테이션 사용. 해당 어노테이션 사용하면 mapper.xml 파일 만들 필요 없음.
-    @Select("select * from member m_id = #{m_id} and m_pw = #{m_pw}")
+    @Select("select * from member where m_id = #{m_id} and m_pw = #{m_pw}")
     MemberVO getLoginInfo(@Param("m_id") String m_id, @Param("m_pw") String m_pw);
 }

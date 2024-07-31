@@ -3,7 +3,6 @@ package com.en.main.dto;
 import lombok.Data;
 
 
-
 import java.util.Date;
 
 @Data
@@ -15,5 +14,4 @@ public class PartyVO {
     String m_gender;
     String m_phone;
     String m_birth;
-
 }
