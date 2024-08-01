@@ -51,13 +51,21 @@ $(function (){
 // 주소 api 가져오는 Ajax
 const japanAddressApi = () => {
     let searchValue;
-    $(".search-postcode").on("input", () => {
-        searchValue = $(".search-postcode").val();
-        console.log(searchValue);
+    const searchPostcodeInput = $(".search-postcode");
+    const addressInput = $("input[name='a_address']");
+    const otherAddressInput = $("input[name='other-address']");
+
+    searchPostcodeInput.on("input", () => {
+        searchValue = searchPostcodeInput.val();
+        // 우편번호가 지워질 때 주소 필드로 지움
+        if (searchValue === "") {
+            addressInput.val("");
+            otherAddressInput.val("");
+        }
     });
 
-    $(".search-post-btn").on("click", () => {
-        console.log('clicked -- ')
+    $(".search-post-btn").on("click", (event) => {
+        event.preventDefault();
         $.get(`https://api.zipaddress.net/?zipcode=${searchValue}`)
             .done((response) => {
             console.log(response);
@@ -75,5 +83,75 @@ const japanAddressApi = () => {
 };
 japanAddressApi();
 
+});
+
+// 알러지 체크박스 띄울 시 input창 띄우기
+$(function () {
+
+$(document).ready(function (){
+    $('#allergyHave').change(function (){
+        if (this.checked){
+            $('#allergyDetailContainer').html(
+                '<input type="text" id="allergyDetail" name="allergy" ' +
+                'placeholder="アレルギー詳細を入力してください" >');
+
+            // 인풋 필드 클릭 시 모달을 띄우는 이벤트 핸들러 추가
+            $('#allergyDetail').click(function () {
+                console.log("확인")
+                loadModal();
+            });
+
+        } else {
+            $('#allergyDetailContainer').html('');
+        }
+    });
+});
 
 });
+
+    function loadModal() {
+        // AJAX를 사용하여 모달 내용을 동적으로 로드
+        $.ajax({
+          url: '/allergySelect',
+            success: function (data) {
+              $("#allergyModalContainer").html(data);
+                $("#allergyModal").css('display', 'flex');
+
+              // 이벤트 핸들러를 다시 바인딩
+                $('#addAllergies').click(function (){
+                    addAllergies();
+                });
+
+                $('#closeModal').click(function (){
+                    closeModal();
+                });
+
+                $('.close').click(function (){
+                    closeModal();
+                });
+            }
+        })
+    }
+
+    function closeModal() {
+        $('#allergyModal').css('display','none');
+    }
+
+    function addAllergies () {
+        const selectedAllergies  = [];
+        $('.allergyOption:checked').each(function (){
+            selectedAllergies.push($(this).val());
+        });
+
+        const otherAllergy = $('#otherAllergy').val();
+        if (otherAllergy){
+            selectedAllergies.push(otherAllergy);
+        }
+
+        const parentInput = $('#allergyDetail');
+        if (parentInput) {
+            parentInput.val(selectedAllergies.join(','));
+        }
+
+        closeModal()
+    }

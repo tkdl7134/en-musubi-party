@@ -90,15 +90,15 @@
                                             <div class="tk_survey-gender">
                                                 <div class="tk_survey-titleName">性別</div>
                                                 <div>
-                                                <input type="checkbox" id="maleGender" name="m_gender" value="Male">
-                                                <label class="cb1" for="maleGender"></label>
-                                                <label for="maleGender">男性</label>
-                                                <input type="checkbox" id="femaleGender" name="m_gender" value="Female">
-                                                <label class="cb1" for="femaleGender"></label>
-                                                <label for="femaleGender">女性</label>
-                                                <input type="checkbox" id="othersGender" name="m_gender" value="Others">
-                                                <label class="cb1" for="othersGender"></label>
-                                                <label for="othersGender">その他</label>
+                                                    <input type="checkbox" id="maleGender" name="m_gender" value="Male">
+                                                    <label class="cb1" for="maleGender"></label>
+                                                    <label for="maleGender">男性</label>
+                                                    <input type="checkbox" id="femaleGender" name="m_gender" value="Female">
+                                                    <label class="cb1" for="femaleGender"></label>
+                                                    <label for="femaleGender">女性</label>
+                                                    <input type="checkbox" id="othersGender" name="m_gender" value="Others">
+                                                    <label class="cb1" for="othersGender"></label>
+                                                    <label for="othersGender">その他</label>
                                                 </div>
                                             </div>
                                             <div class="tk_division-line"></div>
@@ -128,8 +128,23 @@
                                                 </div>
                                             </div>
                                             <div class="tk_division-line"></div>
+                                            <div class="tk_survey-allergy">
+                                                <div class="tk_survey-titleName">アレルギー</div>
+                                                <div class="tk_survey-allergy-checkbox">
+                                                    <input type="checkbox" id="allergyHave" name="allergy_or" value="Yes">
+                                                    <label class="cb2" for="allergyHave"></label>
+                                                    <span>アレルギー情報を入力する</span>
+                                                </div>
+                                                <div class="tk_survey-allergy-detail" id="allergyDetailContainer">
+                                                    <!-- 텍스트 입력 필드는 체크박스 체크했을 경우에만 나오도록 설정 -->
+                                                </div>
+                                            </div>
+                                            <div class="tk_division-line"></div>
                                             <button type="submit">Submit</button>
                                         </form>
+
+                                        <!-- 모달 컨테이너 -->
+
                                     </div>
                                 </div>
                             </div>
@@ -137,13 +152,8 @@
                 </div>
             </div>
         </div>
+        <div id="allergyModalContainer"></div>
     </div>
 </div>
-<hr>
-<hr>
-<hr>
-test
-
-
 </body>
 </html>

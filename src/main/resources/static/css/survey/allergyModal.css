@@ -1,0 +1,54 @@
+.modal {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+header {
+margin: 2rem 0 2rem 0;
+}
+
+.tk_allergy-title > div {
+    margin: 0.5rem 0 0.5rem 0.3rem;
+    display: flex;
+}
+
+.tk_allergy-type {
+    display: flex;
+    margin: 1.5rem 0 0.5rem 0.5rem;
+}
+
+.tk_allergy-contents{
+    display: flex;
+    margin: 1rem 0 0.5rem 0.5rem;
+}
+
+.tk_allergy-contents label {
+ border: 2px solid burlywood;
+    margin-right: 0.5rem;
+}
+
+.tk_allergy-mains{
+    display: inline;
+    overflow: scroll;
+}
+
+.tk_allergy-type {
+
+}
+
+.modal_body{
+    position:absolute;
+    top:50%;
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(255,255,255);
+    border-radius:10px;
+    box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);
+    transform: translate(7%, -50%);
+}
