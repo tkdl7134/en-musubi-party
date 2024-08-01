@@ -30,7 +30,20 @@ public interface StatisticsFundingMapper {
     List<PayVo> getDate(int eno);
 
 
-
+    @Select("SELECT\n" +
+            "    w.wl_price AS p_price,\n" +
+            "    SUM(p.p_price) AS total_p_price\n" +
+            "FROM\n" +
+            "    wishlist w\n" +
+            "        JOIN\n" +
+            "    pay p ON w.wl_no = p.wl_no\n" +
+            "WHERE\n" +
+            "    p.p_type = 'fund'\n" +
+            "  AND p.e_no = 5\n" +
+            "  AND w.wl_no = 5\n" +
+            "GROUP BY\n" +
+            "    w.wl_price  ")
+            List<PayVo> getPrices();
 
 
 

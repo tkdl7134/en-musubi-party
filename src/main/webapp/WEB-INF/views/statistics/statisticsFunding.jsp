@@ -264,10 +264,10 @@
         <div class="jh_product_detail_container">
         <div style="margin-top: 3rem;" class="jh_product_label">
        <label>
-           <select style="width: 33%; padding: 5% ;
+           <select id="jh_select_tag" onchange=""  style="width: 33%; padding: 5% ;
     transform: translateX(60vw); text-align: center;">
                <c:forEach items="${wishlists}" var="w">
-               <option class="jh_wishlists">${w.wl_product}</option>
+               <option value="${w.wl_product}" class="jh_wishlists">${w.wl_product}</option>
 
             </c:forEach>
 

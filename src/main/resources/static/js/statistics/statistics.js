@@ -16,3 +16,12 @@ function goToSendPage() {
 
 
 }
+
+document.getElementById("jh_select_tag").onchange = function (){
+
+    fetch('/statistics/getProductPrice').then(response => response.json())
+        .then(data=>{
+            console.log(data);
+        })
+
+}

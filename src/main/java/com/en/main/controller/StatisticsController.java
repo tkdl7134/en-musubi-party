@@ -1,5 +1,6 @@
 package com.en.main.controller;
 
+import com.en.main.dto.PayVo;
 import com.en.main.dto.WishlistVO;
 import com.en.main.service.StatisticsFundingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,11 @@ public class StatisticsController {
         return "statistics/statisticsSend";
     }
 
+    @GetMapping("/getProductPrice")
+    public @ResponseBody List<PayVo, WishlistVO> getProductPrice(){
 
+        return statisticsFundingService.
+    }
 
 
 
