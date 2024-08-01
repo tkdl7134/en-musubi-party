@@ -9,24 +9,24 @@
 }
 
 header {
-    margin: 2rem 0 2rem 0;
-    font-size: 1.5rem;
+    margin: 1rem 0 1rem 0;
+    font-size: 2rem;
     color: salmon;
 }
 
 .tk_division-line-modal {
-    border-top: 3px solid salmon;
+    border-top: 5px solid salmon;
     width: 100%;
 }
 
 .tk_allergy-title > div:nth-child(1) {
-    margin: 0.5rem 0 0.5rem 1rem;
+    margin: 1.5rem 0 0.5rem 1rem;
     display: flex;
     font-size: 1.2rem;
     border-style: solid;
     border-width: 0 0 0 5px;
-    border-left-color: #ff7e81;
-    color: salmon;
+    border-left-color: orangered;
+    color: orangered;
     padding-left: 0.5rem;
 }
 
@@ -45,7 +45,7 @@ header {
 /*첫번째 고기 육은 간격을 짧게 */
 .tk_allergy-type-first {
     display: flex;
-    margin: 0.5rem 0 0.5rem 0.5rem;
+    margin: 2rem 0 0.5rem 0.5rem;
 }
 
 .tk_allergy-contents {
@@ -85,11 +85,7 @@ header {
     overflow: auto;
 }
 
-.cb3:hover {
-    background-color: #eeeeee; /* 마우스를 올렸을 때 테두리 색을 회색으로 변경 */
-}
-
-.cb3 input[type="checkbox"]:checked + .cb3 {
+label.cb3:has(input[type="checkbox"]:checked) {
     background-color: salmon;
     color: white;
     animation: pulse 0.7s ease;
@@ -105,6 +101,19 @@ header {
     100% {
         transform: scale(1);
     }
+}
+
+.cb3 {
+    padding: 0.4rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    overflow: auto;
+}
+
+.cb3:hover {
+    background-color: #eeeeee;
 }
 
 .tk_allergy-mains {
@@ -142,18 +151,18 @@ header {
 }
 
 .allergy-tag {
-    background-color: burlywood;
-    border-radius: 20%;
-    color: black;
-    margin-right: 0.5rem;
+    background-color: salmon;
+    border-radius: 10%;
+    color: white;
+    margin-right: 0.2rem;
     padding: 5px;
 }
 
 .allergy-del {
-    background-color: grey;
-    border-radius: 100%;
-    color: black;
-    padding: 5px;
+    background-color: #c82626;
+    border-radius: 1rem;
+    color: white;
+    padding: 2px;
 }
 
 .tk_insert-others {
