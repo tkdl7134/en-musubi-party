@@ -22,13 +22,25 @@ public class LoginController {
 
     @PostMapping("/login")
     public String login(MemberVO memberVO, Model model) {
-        MemberVO authenticatedMember = loginService.login(memberVO);
-        if (authenticatedMember != null) {
-            return "redirect:/HomeController";
-        } else {
-            model.addAttribute("error", "Invalid credentials");
-            return "login/login";
+        // 입력 필드 검증 → 비어 있을 경우를 위한 각각의 오류 메시지 설정
+        if (memberVO.getM_id().isEmpty()) {
+            model.addAttribute("errorID", "IDを入力してください");
         }
+        if (memberVO.getM_pw().isEmpty()) {
+            model.addAttribute("errorPW", "パスワードを入力してください");
+        }
+
+        // ID & PW 모두 입력된 경우에만 로그인 시도
+        if (!memberVO.getM_id().isEmpty() && !memberVO.getM_pw().isEmpty()) {
+            MemberVO authenticatedMember = loginService.login(memberVO);
+            if (authenticatedMember != null) {
+                return "redirect:/";
+            } else {
+                model.addAttribute("error", "IDまたはパスワードが正しくありません");
+            }
+        }
+
+        return "login/login";
     }
 
 }
