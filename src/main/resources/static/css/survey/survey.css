@@ -9,8 +9,8 @@
 
 .tk_division-line {
     border-top: 1px solid #444444;
-    margin: 2rem 0rem;
-    width: 30rem;
+    margin: 2rem 0 2rem 1rem;
+    width: 13rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,22 +44,17 @@ body {
 }
 
 .tk_survey-title {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    font-size: 3rem;
+    font-size: 1rem;
 }
 
-#tk_survey-title-line > img {
-    width: 30rem;
-}
-
-.tk_survey-body{
-    display: grid;
-    justify-content: center;
-    align-items: center;
+#tk_survey-line > img {
+    width: 15rem;
 }
 
 .tk_survey-container {
@@ -67,12 +62,15 @@ body {
 }
 
 .tk_iphone-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
-.tk_iphone-box {
+.tk_iphone {
     /* background-color: yellow; */
-    width: 19rem;
+    width: 20rem;
 
     position: relative;
     img {
@@ -82,14 +80,115 @@ body {
 
 .tk_survey-container {
     position: absolute;
-    width: 95%;
-    height: 83%;
+    width: 90%;
+    height: 84%;
     top: 3rem;
-    left: 7%;
+    left: 5%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
 }
 .tk_survey-container::-webkit-scrollbar {
     display: none;
+}
+
+/*form 태그쓸때 여백생기는 부분 없애기|작성자 현쓰애미*/
+form {
+    display : inline;
+    margin: 0;
+    padding: 0;
+}
+
+.survey-form {
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*설문조사 각 input 이름*/
+.tk_survey-titleName {
+    font-size: 12px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/*설문조사 모든 select 태그 꾸미기*/
+select {
+    width: 10rem; /* 너비를 300px로 설정 */
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* 기본 화살표 제거 */
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE2IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuMzMzNTcgMEgxNC42NjZMMTAgNkwxLjMzMzU3IDBaIiBmaWxsPSIjNjY2Ii8+PC9zdmc+') no-repeat right 10px center;
+    background-color: white;
+    cursor: pointer;
+}
+
+/*설문조사 이름 input 꾸미기*/
+.tk_justName input, .tk_kataName input, .tk_romeName input  {
+    width: calc(45% - 10px); /* 두 개의 input 간에 공간을 맞추기 위해 계산 */
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* padding과 border를 width에 포함시킴 */
+}
+
+/*설문조사 주소 input / button 꾸미기*/
+.tk_survey-postcode {
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
+.tk_survey-postcode input {
+    width: calc(50% - 10px); /* 두 개의 input 간에 공간을 맞추기 위해 계산 */
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.tk_survey-postcode button {
+    width: 18%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 4px;
+    background: gray;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/*상세주소 input 꾸미기*/
+.tk_survey-address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tk_survey-address input {
+    width: calc(95% - 10px);
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*이메일 input 꾸미기*/
+.tk_survey-email input {
+    width: calc(85% - 8px);
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*폰번호 input 꾸미기*/
+.tk_survey-phone input{
+    width: calc(85% - 8px);
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
