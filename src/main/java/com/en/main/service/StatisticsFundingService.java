@@ -25,4 +25,11 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     public List<PayVo> getDate(int eno) {
         return statisticsFundingMapper.getDate(eno);
     }
+
+    @Override
+    public int getPrices(PayVo payVo, int no) {
+        return statisticsFundingMapper.getPrices(payVo,no);
+    }
+
+
 }

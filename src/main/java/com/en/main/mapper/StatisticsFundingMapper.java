@@ -31,7 +31,6 @@ public interface StatisticsFundingMapper {
 
 
     @Select("SELECT\n" +
-            "    w.wl_price AS p_price,\n" +
             "    SUM(p.p_price) AS total_p_price\n" +
             "FROM\n" +
             "    wishlist w\n" +
@@ -40,10 +39,10 @@ public interface StatisticsFundingMapper {
             "WHERE\n" +
             "    p.p_type = 'fund'\n" +
             "  AND p.e_no = 5\n" +
-            "  AND w.wl_no = 5\n" +
+            "  AND w.wl_no = #{no}\n" +
             "GROUP BY\n" +
-            "    w.wl_price  ")
-            List<PayVo> getPrices();
+            "    w.wl_price ")
+            int getPrices(PayVo payVo ,int no);
 
 
 
