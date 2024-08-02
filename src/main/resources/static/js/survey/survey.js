@@ -89,7 +89,7 @@ $(function () {
         if (this.checked) {
             $("#allergyDetailContainer").html(
                 '<input type="text" id="allergyDetail" name="allergy" ' +
-                'placeholder="アレルギー詳細を入力してください" >'
+                'placeholder="アレルギー詳細を入力してください " autocomplete="off" >'
             );
 
             // 인풋 필드 클릭 시 모달을 띄우는 이벤트 핸들러 추가
@@ -105,17 +105,22 @@ $(function () {
 
 function loadModal() {
     $("#allergyModal").css("display", "flex");
+
     // 이벤트 핸들러를 다시 바인딩
-    $("#addAllergies").click(function () {
+    $("#addAllergies").off("click").click(function () {
         addAllergies();
     });
 
-    $("#closeModal").click(function () {
+    $("#closeModal").off("click").click(function () {
         closeModal();
+        // input 요소 초기화
+        document.getElementById('otherAllergy').value = '';
     });
 
-    $(".close").click(function () {
+    $("#modalCloseButton").off("click").click(function () {
         closeModal();
+        // input 요소 초기화
+        document.getElementById('otherAllergy').value = '';
     });
 }
 
@@ -144,16 +149,61 @@ function addAllergies() {
 
 function etcAllergy() {
     $("#etc-btn").click(() => {
-        const val = $("#otherAllergy").val();
+        const val = $("#otherAllergy").val().trim();
+
+        // 빈 내용일 경우 추가하지 않음
+        if (val === "") {
+            return
+        }
+
+        // 중복 알레르기 태그 방지
+        let duplicate = false;
+        $("#etc-allergy .allergy-tag").each(function () {
+            if ($(this).text() === val) {
+                duplicate = true;
+                return false;
+            }
+        });
+
+        if (duplicate) {
+            alert("すでに追加されたアレルギーです");
+            return;
+        }
+
         let wrap = $("<span class='allergy-wrap'></span>");
         let add = $("<span class='allergy-tag'></span>").text(val);
         let del = $("<span class='allergy-del'>x</span>");
         $(wrap).append(add);
         $(wrap).append(del);
         $("#etc-allergy").append(wrap);
+        // 기타 알레르기 input창 입력 후 이전 입력된 내용 초기화
+        document.getElementById('otherAllergy').value = '';
     });
 
     $(document).on("click", ".allergy-wrap", (e) => {
         $(e.target).closest(".allergy-wrap").remove();
     });
+
+    $("addAllergies").click(() => {
+        const selectedAllergies = [];
+
+        // 선택된 체크박스 값을 수집
+        $(".allergyOption:checked").each(function () {
+            selectedAllergies.push($(this).val());
+        })
+
+        // 기타 알레르기 항목 수집
+        $("#etc-allergy span").each(function () {
+            console.log("#etc-allergy span");
+            selectedAllergies.push($(this).text());
+        });
+
+        // 수집된 알레르기 항목을 #allergyDetail 입력 필드에 입력
+        $("allergyDetail").val(selectedAllergies.join(", "));
+
+        // 모달을 닫음
+        closeModal();
+    })
 }
+
+

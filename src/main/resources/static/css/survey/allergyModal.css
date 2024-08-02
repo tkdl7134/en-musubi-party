@@ -152,7 +152,7 @@ label.cb3:has(input[type="checkbox"]:checked) {
 
 .allergy-tag {
     background-color: salmon;
-    border-radius: 10%;
+    border-radius: 5px;
     color: white;
     margin-right: 0.2rem;
     padding: 5px;
@@ -160,7 +160,7 @@ label.cb3:has(input[type="checkbox"]:checked) {
 
 .allergy-del {
     background-color: #c82626;
-    border-radius: 1rem;
+    border-radius: 5px;
     color: white;
     padding: 2px;
 }
@@ -219,4 +219,23 @@ label.cb3:has(input[type="checkbox"]:checked) {
     border: transparent;
     padding: 1rem;
     border-radius: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 3.5rem; /* 모달 바깥쪽에 위치시키기 위해 조정 */
+    right: 2rem; /* 모달 바깥쪽에 위치시키기 위해 조정 */
+    background-color: white;
+    border: transparent;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    color: black; /* 버튼 색상 */
+    z-index: 1; /* 버튼이 모달 위에 위치하도록 */
+    padding: 0 0.2rem 0 0.2rem;
+    text-align: center;
+}
+
+.modal-close:hover {
+    color: red;
 }

@@ -201,6 +201,7 @@
 <!-- modal -->
 
 <div id="allergyModal" class="modal">
+    <button class="modal-close" id="modalCloseButton">&times;</button>
     <div class="modal_body">
         <header>
             <div>アレルギー情報設定</div>
@@ -215,15 +216,15 @@
                 <div class="tk_allergy-type-first">肉</div>
                 <div class="tk_allergy-contents">
                     <label class="cb3">
-                        <input type="checkbox" class="allergyOption" value="Cow" />
+                        <input type="checkbox" class="allergyOption" value="牛肉" />
                         <span class="cb3-label">牛肉</span>
                     </label>
                     <label class="cb3">
-                        <input type="checkbox" class="allergyOption" value="Pig" />
+                        <input type="checkbox" class="allergyOption" value="豚肉" />
                         <span class="cb3-label">豚肉</span>
                     </label>
                     <label class="cb3">
-                        <input type="checkbox" class="allergyOption" value="Chicken" />
+                        <input type="checkbox" class="allergyOption" value="鶏肉" />
                         <span class="cb3-label">鶏肉</span>
                     </label>
                 </div>
@@ -233,33 +234,33 @@
                 <div class="tk_allergy-type">乳製品</div>
                 <div class="tk_allergy-contents">
                     <label class="cb3">
-                        <input type="checkbox" class="allergyOption" value="Egg" />卵
+                        <input type="checkbox" class="allergyOption" value="卵" />卵
                     </label>
                     <label class="cb3">
-                        <input type="checkbox" class="allergyOption" value="Milk" />乳
+                        <input type="checkbox" class="allergyOption" value="乳" />乳
                     </label>
                 </div>
             </div>
             <div class="tk_allergy-type">穀物</div>
             <div class="tk_allergy-contents">
                 <label class="cb3">
-                    <input type="checkbox" class="allergyOption" value="Cow" />小麦
+                    <input type="checkbox" class="allergyOption" value="小麦" />小麦
                 </label>
                 <label class="cb3">
-                    <input type="checkbox" class="allergyOption" value="Pig" />そば
+                    <input type="checkbox" class="allergyOption" value="そば" />そば
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="大豆"
                     />大豆
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="落花生(ピーナッツ)"
                     />落花生(ピーナッツ)
                 </label>
             </div>
@@ -268,78 +269,78 @@
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="カシューナッツ"
                     />カシューナッツ
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="くるみ"
                     />くるみ
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="ごま"
                     />ごま
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="アーモンド"
                     />アーモンド
                 </label>
             </div>
             <div class="tk_allergy-type">果物</div>
             <div class="tk_allergy-contents">
                 <label class="cb3">
-                    <input type="checkbox" class="allergyOption" value="Cow" />桃
+                    <input type="checkbox" class="allergyOption" value="桃" />桃
                 </label>
                 <label class="cb3">
-                    <input type="checkbox" class="allergyOption" value="Pig" />バナナ
+                    <input type="checkbox" class="allergyOption" value="バナナ" />バナナ
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="オレンジ"
                     />オレンジ
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="キウイフルーツ"
                     />キウイフルーツ
                 </label>
             </div>
             <div class="tk_allergy-type">魚介類</div>
             <div class="tk_allergy-contents">
                 <label class="cb3">
-                    <input type="checkbox" class="allergyOption" value="Cow" />えび
+                    <input type="checkbox" class="allergyOption" value="えび" />えび
                 </label>
                 <label class="cb3">
-                    <input type="checkbox" class="allergyOption" value="Pig" />かに
+                    <input type="checkbox" class="allergyOption" value="かに" />かに
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="あわび"
                     />あわび
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="いか"
                     />いか
                 </label>
                 <label class="cb3">
-                    <input type="checkbox" class="allergyOption" value="Chicken" />鮭
+                    <input type="checkbox" class="allergyOption" value="鮭" />鮭
                 </label>
                 <label class="cb3">
                     <input
@@ -355,21 +356,21 @@
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Cow"
+                            value="まつたけ"
                     />まつたけ
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Pig"
+                            value="やまいも"
                     />やまいも
                 </label>
                 <label class="cb3">
                     <input
                             type="checkbox"
                             class="allergyOption"
-                            value="Chicken"
+                            value="ゼラチン"
                     />ゼラチン
                 </label>
             </div>
@@ -384,6 +385,7 @@
                             type="text"
                             id="otherAllergy"
                             placeholder="その他のアレルギー入力"
+                            autocomplete="off"
                     />
                     <button id="etc-btn">追加</button>
                 </div>
