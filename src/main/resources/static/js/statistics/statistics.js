@@ -17,13 +17,16 @@ function goToSendPage() {
 
 }
 
-const price = document.getElementById('jh_price_test').value;
 document.getElementById("jh_select_tag").onchange = function () {
+    const price = document.getElementById('jh_price_test').value;
     let priceData = document.getElementById('jh_price_input');
-
+const selectEL = document.getElementById('jh_select_tag')
+    const selectOption = selectEL.options[selectEL.selectedIndex];
+const optionVal = selectOption.value;
+    console.log(optionVal);
     console.log(price);
 
-    fetch('/statistics/getProductPrice/' + price).then(response => response.json())
+    fetch('/statistics/getProductPrice/' + optionVal).then(response => response.json())
         .then(data => {
             console.log(data);
 
@@ -34,8 +37,8 @@ document.getElementById("jh_select_tag").onchange = function () {
 
 
 
-            let PaidPriceData = document.getElementById('jh_price_input').value;
-            let WishlistPrice = document.getElementById('jh_price_test').getAttribute('name');
+            let PaidPriceData =data;
+            let WishlistPrice =selectOption.getAttribute('name');
             const data2 = {
                 labels: [
                     'ウィッシュリスト',
@@ -51,17 +54,16 @@ document.getElementById("jh_select_tag").onchange = function () {
                     hoverOffset: 4
                 }]
             };
-
+        chart = Chart.getChart("jh_product_chart");
             if (chart){
-                alert(11);
                 chart.destroy();
+                alert(optionVal);
 
             }
-      chart =      new Chart(config2, {
+      chart =   new Chart(config2, {
                 type: 'doughnut',
                 data: data2,
             });
-
         })
 
 }
