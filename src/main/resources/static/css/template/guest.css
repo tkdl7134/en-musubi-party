@@ -7,10 +7,10 @@
     font-style: normal;
 }
 
-html, body {
-    height: 100%;
-    overflow-y: auto; /* 스크롤을 가능하게 수정 */
-}
+/*html, body {*/
+/*    height: 100%;*/
+/*    overflow-y: auto; !* 스크롤을 가능하게 수정 *!*/
+/*}*/
 
 .hw_header {
     position: fixed;
@@ -25,11 +25,6 @@ html, body {
     z-index: 1000;
 }
 
-.hw_logo img {
-    width: 1rem;
-    height: 1rem;
-}
-
 .hw_maker {
     background-color: #FFD1D0;
 }
@@ -42,272 +37,31 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-
-.hw_content, .hw_mytemplate-list-container {
-    width: 70%;
-    height: 95%;
-    justify-content: center;
-    align-items: center;
 }
 
 
 
-
-.hw_container {
-    border-radius: 1rem;
-    max-width: 90%;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-    padding: 0 1rem;
+.hw_logo img {
+    width: 1rem;
+    height: 1rem;
 }
 
-.hw_invitation_main {
-    margin-top: 15rem;
-}
-
-
-.hw_header_title {
-    display: contents;
-    padding: 3rem;
-    margin-top: 10rem;
-}
-
-
-.hw_pagetitle {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 60px;
-}
-
-.hw_menu {
-    z-index: 4;
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    top: 3rem;
-    right: 5rem;
-}
-
-.hw_menu img {
+.hw_content img {
     width: 100%;
-    height: 100%;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.hw_card {
-    text-align: center;
-    margin: 1.25rem 0;
-    padding: 1.25rem;
-    border-radius: 1rem;
-    width: 100%;
-}
-
-.hw_card img {
-    max-width: 100%;
     height: auto;
-    border-radius: 5%;
 }
 
-.hw_card_message {
-    margin: 1.25rem 0;
-}
-
-.hw_content,
-.hw_content_detail,
-.hw_content_absent {
-    border: 0.0625rem solid #ff7e81;
-    border-radius: 1.875rem;
-
-    padding: 1rem;
-    margin-bottom: 1.25rem;
-    background-color: #ffdede;
-}
-
-.hw_content_detail {
-    background-color: #ffefee;
-}
-
-.hw_tab_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.65rem;
-    width: 100%;
-}
-
-.hw_tab_title {
-    font-size: 1.875rem;
-    margin: 0;
-}
-
-.tab_bnt {
-    display: flex;
+ul.list {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
-    gap: 0.625rem;
-    padding-right: 1rem;
-
 }
 
-.hw_tab__item {
-    padding: 0.625rem 1.25rem;
-    cursor: pointer;
-    background-color: #ffefef;
-    border: 0.1875rem solid #c82626;
-    text-align: center;
-    margin-left: -0.0625rem;
-    border-radius: 0.9375rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-    color: black;
-    transition: background-color 0.3s, color 0.3s;
+.active {
+    background-color: aqua;
 }
-
-.hw_tab__item:first-child {
-    margin-left: 0;
-}
-
-.hw_tab__item a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.hw_tab__item.active,
-.hw_tab__item:hover {
-    background-color: #ff3b3f;
-    color: white;
-    border: 0.1875rem solid #c82626;
-}
-
-.hw_tab_content-wrapper {
-    padding: 0.625rem;
-    width: 100%;
-    overflow: hidden;
-}
-
-.hw_tab_content {
+.hw_tab-button-content {
     display: none;
 }
-
-.hw_tab_content.active {
+.show {
     display: block;
 }
-
-.styled-table-wrapper {
-    height: 18.5rem;
-    overflow-y: scroll;
-    scrollbar-width: none;
-}
-
-.styled-table-wrapper::-webkit-scrollbar {
-    display: none;
-}
-
-.hw_invitation_title {
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    border: 0.0625rem solid #ddd;
-    border-radius: 0.9375rem;
-    padding: 0.75rem 0.9375rem;
-    margin-bottom: 0.625rem;
-}
-
-.hw_invitation_title {
-    font-weight: bold;
-}
-
-.hw_invitation_content {
-    display: flex;
-    /* 플렉스 박스로 설정 */
-    justify-content: space-between;
-    /* 공간을 균등하게 분배 */
-    align-items: center;
-    /* 수직 가운데 정렬 */
-    background-color: #fff;
-    /* 배경색 */
-    border: 0.0625rem solid #ddd;
-    /* 테두리 */
-    border-radius: 0.9375rem;
-    /* 테두리 둥글기 */
-    padding: 0.2rem 0.5rem;
-    /* 패딩 조정 */
-    margin-bottom: 0.625rem;
-    /* 하단 여백 */
-}
-
-
-.hw_invitation_small {
-    flex: 1.5;
-    /* 기존 스타일 */
-    text-align: center;
-    /* 기존 스타일 */
-    padding: 0 0.5rem;
-    /* 추가: 내부 여백 추가 */
-    border-right: 0.1rem solid black;
-}
-
-.hw_invitation_middie {
-    flex: 3.5;
-    /* 기존 스타일 */
-    text-align: center;
-    /* 기존 스타일 */
-    padding: 0 0.5rem;
-    /* 추가: 내부 여백 추가 */
-}
-
-.hw_invitation_big {
-    flex: 3.5;
-    /* 기존 스타일 */
-    text-align: center;
-    /* 기존 스타일 */
-    padding: 0 0.5rem;
-    /* 추가: 내부 여백 추가 */
-    border-left: 0.1rem solid black;
-}
-
-
-
-.hw_more_button {
-    background: none;
-    color: white;
-    text-shadow: 0.0625rem 0.0625rem 0.125rem black;
-    font-size: 1.3rem;
-    cursor: pointer;
-    border: none;
-    padding: 1rem;
-    outline: none;
-    padding-right: 1rem;
-}
-
-
-
-.hw-f-block {
-    display: block;
-}
-
-.hw-f-none {
-    display: none;
-}
-
-.hw_bottom {
-    padding: 5rem;
-
-}
-
-
-
 
