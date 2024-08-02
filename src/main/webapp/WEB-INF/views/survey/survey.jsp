@@ -1,12 +1,14 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
-<html lang="en">
+<html style="zoom : 100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/product/product_preview.css"/>
     <link rel="stylesheet" href="/resources/css/survey/survey.css">
-    <script src="/resources/js/survey.js"></script>
+    <link rel="stylesheet" href="/resources/css/survey/surveyCheckbox.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="/resources/js/survey/survey.js"></script>
 </head>
 <body>
 <div class="tk_menu-bar">
@@ -16,20 +18,14 @@
 </div>
 
 <div id="je_product-preview-container">
-    <div class="je_page-title">
-        <div class="je_page-title-txt"></div>
-        <div class="je_page-title-line">
-            <img src="/resources/img/pagプレビューe-title-line.png" alt=""/>
-        </div>
-    </div>
     <div class="je_page-content">
         <div class="je_preview-container">
-            <div class="je_preview">
-                <div class="je_preview-phone">
+            <div class="tk_iphone-container">
+                <div class="tk_iphone">
                     <img src="/resources/img/iphone-box.png" alt=""/>
                         <div class="tk_survey-container">
                             <div class="tk_page-content">
-                                <div class="tk_iphone-container">
+                                <div class="tk_form-container">
                                     <div class="tk_survey-title">
                                         <div>ゲスト様入力項目</div>
                                         <div>までご返信お願いします</div>
@@ -37,25 +33,24 @@
                                             <img src="/resources/img/head.png">
                                         </div>
                                     </div>
-                                    <div class="survey-form" style="    display: flex;
-    justify-content: center;">
+                                    <div class="survey-form">
                                         <form action="createSurvey" method="post">
                                             <div class="tk_survey-guestType">
-                                                <div>ゲスト様</div>
+                                                <div class="tk_survey-titleName">ゲスト様</div>
                                                 <div>
-                                                    <input type="checkbox" name="g_guest_type">
-                                                    <label>新郎ゲスト</label>
-                                                    <label>新婦ゲスト</label>
+                                                    <input type="checkbox" id="groomGuest" name="g_guest_type" value="Groom">
+                                                    <label class="cb1" for="groomGuest"></label>
+                                                    <label for="groomGuest">新郎ゲスト</label>
+                                                    <input type="checkbox" id="brideGuest" name="g_guest_type" value="Bride">
+                                                    <label class="cb1" for="brideGuest"></label>
+                                                    <label for="brideGuest">新婦ゲスト</label>
                                                 </div>
                                             </div>
-                                            <div class="tk_survey-body">
-                                            </div>
-
                                             <div class="tk_division-line"></div>
                                             <div class="tk_survey-relationship">
-                                                <div>ご関係</div>
+                                                <div class="tk_survey-titleName">ご関係</div>
                                                 <div>
-                                                    <select name="">
+                                                    <select name="g_relation">
                                                         <option value="family">家族</option>
                                                         <option value="friend">親友</option>
                                                         <option value="Colleagues">職場同僚</option>
@@ -65,9 +60,9 @@
                                             </div>
                                             <div class="tk_division-line"></div>
                                             <div class="tk_survey-relationship-detail">
-                                                <div>間柄</div>
+                                                <div class="tk_survey-titleName">間柄</div>
                                                 <div>
-                                                    <select name="">
+                                                    <select name="relationship">
                                                         <option value="family">家族</option>
                                                         <option value="friend">親友</option>
                                                     </select>
@@ -75,61 +70,73 @@
                                             </div>
                                             <div class="tk_division-line"></div>
                                             <div class="tk_justName">
-                                                <div>お名前</div>
+                                                <div class="tk_survey-titleName">お名前</div>
                                                 <input type="text" name="m_name_first">
                                                 <input type="text" name="m_name_second">
                                             </div>
                                             <div class="tk_division-line"></div>
                                             <div class="tk_kataName">
-                                                <div>カタカナ</div>
+                                                <div class="tk_survey-titleName">カタカナ</div>
                                                 <input type="text" name="m_name_kana_first">
                                                 <input type="text" name="m_name_kana_second">
                                             </div>
                                             <div class="tk_division-line"></div>
-                                            <div>ローマ字</div>
-                                            <div>
+                                            <div class="tk_romeName">
+                                            <div class="tk_survey-titleName">ローマ字</div>
                                                 <input type="text" name="m_name_rome_first">
                                                 <input type="text" name="m_name_rome_second">
                                             </div>
                                             <div class="tk_division-line"></div>
                                             <div class="tk_survey-gender">
-                                                <div>性別</div>
-                                                <input type="checkbox" name="g_guest_type">
-                                                <label>男性</label>
-                                                <label>女性</label>
-                                                <label>その他</label>
+                                                <div class="tk_survey-titleName">性別</div>
+                                                <div>
+                                                <input type="checkbox" id="maleGender" name="m_gender" value="Male">
+                                                <label class="cb1" for="maleGender"></label>
+                                                <label for="maleGender">男性</label>
+                                                <input type="checkbox" id="femaleGender" name="m_gender" value="Female">
+                                                <label class="cb1" for="femaleGender"></label>
+                                                <label for="femaleGender">女性</label>
+                                                <input type="checkbox" id="othersGender" name="m_gender" value="Others">
+                                                <label class="cb1" for="othersGender"></label>
+                                                <label for="othersGender">その他</label>
+                                                </div>
                                             </div>
                                             <div class="tk_division-line"></div>
-                                            <div>
-                                                <input type="text"/>
-                                                <button class="search-post-btn">検索</button>
-                                                <input type="text"/>
-                                                <input type="text"/>
+                                            <div class="tk_address">
+                                                <div class="tk_survey-titleName">住所</div>
+                                                <div class="tk_survey-postcode"> 郵便番号
+                                                    <input class="search-postcode" type="text" name="a_postcode"/>
+                                                    <button type="button" class="search-post-btn">検索</button>
+                                                </div>
+                                                <div class="tk_survey-address">
+                                                <input type="text" name="a_address"/>
+                                                <input type="text" name="other-address"/>
+                                                </div>
                                             </div>
                                             <div class="tk_division-line"></div>
                                             <div class="tk_survey-email">
-                                                <div>メールアドレス</div>
+                                                <div class="tk_survey-titleName">メールアドレス</div>
                                                 <div>
                                                     <input type="text"/>
                                                 </div>
                                             </div>
                                             <div class="tk_division-line"></div>
                                             <div class="tk_survey-phone">
-                                                <div>電話番号</div>
+                                                <div class="tk_survey-titleName">電話番号</div>
                                                 <div>
                                                     <input type="text"/>
                                                 </div>
                                             </div>
+                                            <div class="tk_division-line"></div>
+                                            <button type="submit">Submit</button>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                 </div>
             </div>
         </div>
-        <div class="je_product-make-button">制作</div>
     </div>
 </div>
 <hr>

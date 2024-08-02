@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    document.querySelector('.hw_container').addEventListener('wheel', handleScroll);
+    const container = document.querySelector('.hw_container');
+    container.addEventListener('wheel', handleScroll);
 
     // 버튼 클릭 이벤트
     const buttons = document.querySelectorAll('.hw_button button');
@@ -51,5 +52,4 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log('알 수 없는 버튼 클릭');
         }
     }
-
 });
