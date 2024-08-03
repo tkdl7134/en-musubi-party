@@ -106,11 +106,6 @@ $(function () {
 function loadModal() {
     $("#allergyModal").css("display", "flex");
 
-    // 이벤트 핸들러를 다시 바인딩
-    $("#addAllergies").off("click").click(function () {
-        addAllergies();
-    });
-
     $("#closeModal").off("click").click(function () {
         closeModal();
         // input 요소 초기화
@@ -171,7 +166,7 @@ function etcAllergy() {
         }
 
         let wrap = $("<span class='allergy-wrap'></span>");
-        let add = $("<span class='allergy-tag'></span>").text(val);
+        let add = $("<span class='allergy-tag' data-val='"+val+"'></span>").text(val);
         let del = $("<span class='allergy-del'>x</span>");
         $(wrap).append(add);
         $(wrap).append(del);
@@ -184,26 +179,162 @@ function etcAllergy() {
         $(e.target).closest(".allergy-wrap").remove();
     });
 
-    $("addAllergies").click(() => {
+    $("#addAllergies").click(() => {
         const selectedAllergies = [];
-
         // 선택된 체크박스 값을 수집
         $(".allergyOption:checked").each(function () {
             selectedAllergies.push($(this).val());
         })
-
         // 기타 알레르기 항목 수집
-        $("#etc-allergy span").each(function () {
-            console.log("#etc-allergy span");
-            selectedAllergies.push($(this).text());
+        $(".allergy-tag").each(function () {
+            console.log(this.dataset.val);
+            selectedAllergies.push(this.dataset.val);
         });
 
         // 수집된 알레르기 항목을 #allergyDetail 입력 필드에 입력
-        $("allergyDetail").val(selectedAllergies.join(", "));
+        $("#allergyDetail").val(selectedAllergies.join(", "));
 
         // 모달을 닫음
         closeModal();
     })
+
+    $("#reset").click(()=>{
+        $('.allergyOption').each(function (){
+            $(this).prop('checked',false);
+        });
+        $('.allergy-wrap').remove();
+    });
 }
+
+$(document).ready(function (){
+    let partyCount = 0;
+
+    $("#addPartyMember").change(function () {
+        if (this.checked) {
+            addPartyMemberDiv();
+            $("#addPartyButton").show();
+        }else {
+            $("#partyContainer").empty();
+            $("#addPartyButton").hide();
+            partyCount = 0;
+        }
+    });
+
+    $("addPartyButton").click(function (){
+        addPartyMemberDiv();
+    });
+
+    function addPartyMemberDiv() {
+        partyCount++;
+        const partyDiv = $(
+            '<div class= "party-member" id="party-member-${partyCount}">' +
+            '  <div class="tk_justName">' +
+            '       <div class="tk_survey-titleName">お名前</div>' +
+            '           <input type="text" name="m_name_first" />' +
+            '           <input type="text" name="m_name_second}" />' +
+            '  </div>' +
+            '  <div class="tk_kataName">' +
+            '       <div class="tk_survey-titleName">カタカナ</div>' +
+            '           <input type="text" name="m_name_kana_first" />' +
+            '           <input type="text" name="m_name_kana_second" />' +
+            '   </div>' +
+            '   <div class="tk_romeName">' +
+            '       <div class="tk_survey-titleName">ローマ字</div>' +
+            '           <input type="text" name="m_name_rome_first" /> ' +
+            '           <input type="text" name="m_name_rome_second" />' +
+            '   </div> ' +
+            '   <div class="tk_survey-accompany">' +
+            '       <div class="tk_survey-titleName">お連れ様について</div>' +
+            '       <div>' +
+            '           <input' +
+            '               type="checkbox" id="adultAccompany" name="p_accompany_type" value="ご成年"/>' +
+            '           <label class="cb1" for="adultAccompany"></label>' +
+            '           <label for="adultAccompany_${partyCount}">ご成年</label>' +
+            '           <input' +
+            '               type="checkbox" id="childAccompany" name="p_accompany_type" value="お子様"/>' +
+            '           <label class="cb1" for="childAccompany"></label>' +
+            '           <label for="femaleGender_${partyCount}">お子様</label>' +
+            '           <input' +
+            '               type="checkbox" id="babyAccompany" name="p_accompany_type" value="幼子"/>' +
+            '           <label class="cb1" for="babyAccompany"></label>' +
+            '           <label for="babyAccompany_${partyCount}">幼子</label>' +
+            '       </div>' +
+            '   </div>' +
+            '   <div class="tk_survey-gender-accompany">' +
+            '       <div class="tk_survey-titleName">性別</div>' +
+            '       <div>' +
+            '           <input' +
+            '               type="checkbox" id="maleGender-accompany}" name="m_gender" value="男性"/>' +
+            '           <label class="cb1" for="maleGender-accompany}"></label>' +
+            '           <label for="maleGender-accompany_${partyCount}">男性</label>' +
+            '           <input' +
+            '               type="checkbox" id="femaleGender-accompany}" name="m_gender" value="女性"/>' +
+            '           <label class="cb1" for="femaleGender-accompany}"></label>' +
+            '           <label for="femaleGender-accompany">女性</label>' +
+            '           <input' +
+            '               type="checkbox" id="othersGender-accompany" name="m_gender" value="その他"/>' +
+            '           <label class="cb1" for="othersGender-accompany"></label>' +
+            '           <label for="othersGender-accompany">その他</label>' +
+            '      </div>' +
+            '   </div> ' +
+            '   <div class="tk_allergy">\n' +
+            '       <div class="tk_survey-titleName">アレルギー</div>\n' +
+            '       <div class="tk_survey-allergy-checkbox">\n' +
+            '           <input type="checkbox" id="allergyHave" class="allergyHave" name="allergy_or" value="Yes"/>' +
+            '           <label class="cb2" for="allergyHave"></label>\n' +
+            '           <span>アレルギー情報を入力する</span>' +
+            '       </div>' +
+            '       <div class="tk_survey-allergy-detail" id="allergyDetailContainer" >' +
+            (partyCount > 1 ? '<button class="remove-party-member" data-id="' + partyCount + '">削除する</button>' : '') +
+            '</div>'
+        );
+        $("#partyContainer").append(partyDiv)
+    }
+
+    $(document).on("click", ".remove-party-member", function () {
+        const id = $(this).data("id");
+        $('party-member-${id}').remove();
+    })
+
+    $(document).on("change", ".allergyHave", function() {
+        const id = $(this).data("id");
+        if (this.checked) {
+            $(`#allergyDetailContainer_${id}`).html(
+                `<input type="text" id="allergyDetail_${id}" name="allergy_${id}" placeholder="アレルギー詳細を入力してください " autocomplete="off" />`
+            );
+
+            // 알레르기 input 필드 클릭 시 모달을 띄우는 이벤트 핸들러 추가
+            $(`#allergyDetail_${id}`).click(function () {
+                console.log("확인", id);
+                loadModal(id);
+            });
+        } else {
+            $(`#allergyDetailContainer_${id}`).html("");
+        }
+    });
+
+})
+
+$(function () {
+
+    const openImgModalButton = document.getElementById("defaultImgButton");
+    const closeImgModalButton = document.getElementById("closeImgModalButton");
+    const defaultImgModal = document.getElementById("defaultImgModal");
+    const confirmImgButton = document.getElementById("confirmImgButton");
+
+    openImgModalButton.addEventListener("click", () => {
+        defaultImgModal.showModal();
+    });
+
+    closeImgModalButton.addEventListener("click", () => {
+        defaultImgModal.close();
+    });
+
+    confirmImgButton.addEventListener("click", () => {
+        alert("Confirmed!");
+        defaultImgModal.close();
+    });
+})
+
 
 

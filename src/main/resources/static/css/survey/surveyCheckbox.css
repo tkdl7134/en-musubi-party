@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
 }
+
 .tk_survey-guestType label {
     margin-right: 10px;
     cursor: pointer;
@@ -34,9 +35,9 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + .cb1 {
-    border-width: 6px; /* 테두리 두께를 두껍게 설정 */
-    border-color: #ed0606; /* 찐한 핑크색 테두리 */
-    animation: pulse 0.5s ease; /* 펄스 애니메이션 추가 */
+    border-width: 6px;
+    border-color: #ed0606;
+    animation: pulse 0.5s ease;
 }
 
 @keyframes pulse {
@@ -54,6 +55,10 @@ input[type="checkbox"]:checked + .cb1 {
 
 /*알레르기 및 동반자 checkbox 꾸미기*/
 .tk_survey-allergy-checkbox label {
+    margin-right: 10px;
+}
+
+.tk_survey-party-checkbox label {
     margin-right: 10px;
 }
 

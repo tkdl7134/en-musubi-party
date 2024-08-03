@@ -47,7 +47,7 @@
                                                         type="checkbox"
                                                         id="groomGuest"
                                                         name="g_guest_type"
-                                                        value="Groom"
+                                                        value="新郎ゲスト"
                                                 />
                                                 <label class="cb1" for="groomGuest"></label>
                                                 <label for="groomGuest">新郎ゲスト</label>
@@ -55,7 +55,7 @@
                                                         type="checkbox"
                                                         id="brideGuest"
                                                         name="g_guest_type"
-                                                        value="Bride"
+                                                        value="新婦ゲスト"
                                                 />
                                                 <label class="cb1" for="brideGuest"></label>
                                                 <label for="brideGuest">新婦ゲスト</label>
@@ -66,10 +66,10 @@
                                             <div class="tk_survey-titleName">ご関係</div>
                                             <div>
                                                 <select name="g_relation">
-                                                    <option value="family">家族</option>
-                                                    <option value="friend">親友</option>
-                                                    <option value="Colleagues">職場同僚</option>
-                                                    <option value="Others">その他</option>
+                                                    <option value="家族">家族</option>
+                                                    <option value="親友">親友</option>
+                                                    <option value="職場同僚">職場同僚</option>
+                                                    <option value="その他">その他</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -109,7 +109,7 @@
                                                         type="checkbox"
                                                         id="maleGender"
                                                         name="m_gender"
-                                                        value="Male"
+                                                        value="男性"
                                                 />
                                                 <label class="cb1" for="maleGender"></label>
                                                 <label for="maleGender">男性</label>
@@ -117,7 +117,7 @@
                                                         type="checkbox"
                                                         id="femaleGender"
                                                         name="m_gender"
-                                                        value="Female"
+                                                        value="女性"
                                                 />
                                                 <label class="cb1" for="femaleGender"></label>
                                                 <label for="femaleGender">女性</label>
@@ -125,7 +125,7 @@
                                                         type="checkbox"
                                                         id="othersGender"
                                                         name="m_gender"
-                                                        value="Others"
+                                                        value="その他"
                                                 />
                                                 <label class="cb1" for="othersGender"></label>
                                                 <label for="othersGender">その他</label>
@@ -185,6 +185,34 @@
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
+                                        <div class="tk_survey-party">
+                                            <div class="tk_survey-titleName">お連れ様</div>
+                                            <div class="tk_survey-party-checkbox">
+                                                <input type="checkbox" id="addPartyMember" />
+                                                <label class="cb2" for="addPartyMember"></label>
+                                                <span>お連れ様を追加する</span>
+                                            </div>
+                                            <div id="partyContainer"></div>
+                                            <button id="addPartyButton" style="display: none;">追加する</button>
+                                        </div>
+
+                                        <div class="tk_survey-message">
+                                            <div class="tk_survey-messageImg">
+                                                <div class="tk_messageImg">
+                                                </div>
+                                                <div>
+                                                    <button id="defaultImgButton" type="button">イメージ選択</button>
+                                                </div>
+                                                <div>
+                                                    <button id="ImgUploadButton" type="button">写真アップロード</button>
+                                                </div>
+                                            </div>
+                                            <div class="tk_survey-messageText">
+                                                <textarea></textarea>
+                                            </div>
+                                        </div>
+
+
                                         <button type="submit">Submit</button>
                                     </form>
                                 </div>
@@ -389,6 +417,9 @@
                     />
                     <button id="etc-btn">追加</button>
                 </div>
+                <div class="tk_modal-reset-button">
+                    <button class="tk_modal-button3" id="reset">RESET</button>
+                </div>
             </div>
             <div class="tk_allergy-search-btn">
                 <button class="tk_modal-button" id="addAllergies">追加する</button>
@@ -398,5 +429,29 @@
         </div>
     </div>
 </div>
+
+
+<%--디폴트 이미지업로드 모달--%>
+<dialog id="defaultImgModal">
+    <div>画像一覧</div>
+    <div>サンプル画像</div>
+    <ul class="sample-imgList">
+        <li class="sample-imgList-item">
+            <img src="" alt="">
+        </li>
+        <li class="sample-imgList-item">
+            <img src="" alt="">
+        </li>
+        <li class="sample-imgList-item">
+            <img src="" alt="">
+        </li>
+        <li class="sample-imgList-item">
+            <img src="" alt="">
+        </li>
+    </ul>
+    <div></div>
+    <button id="confirmImgButton">Confirm</button>
+</dialog>
+
 </body>
 </html>
