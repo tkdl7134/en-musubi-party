@@ -220,6 +220,7 @@ select {
 }
 
 .tk_survey-message {
+    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -229,6 +230,7 @@ select {
 }
 
 .tk_survey-messageImg {
+    position: relative;
     width: 100%;
     height: 65%;
     background-color: grey;
@@ -236,6 +238,16 @@ select {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+}
+
+.tk_imgButton-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
@@ -258,7 +270,8 @@ select {
 
 dialog {
     top: 50%;
-    left: 3.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 25rem;
     border: none;
     border-radius: 5px;
@@ -278,11 +291,30 @@ dialog::backdrop {
 
 .sample-imgList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 0.1rem;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    gap: 0.3rem;
     padding: 0.1rem;
+    list-style:none;
 }
 
 .sample-imgList-item {
     border: 5px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.sample-imgList-item:hover {
+    border: 5px solid coral;
+}
+
+.sample-imgList-item:active {
+    border: 5px solid coral;
+}
+
+.sample-imgList-item img{
+    width: 7rem;
+    height: 10rem;
+}
+
+

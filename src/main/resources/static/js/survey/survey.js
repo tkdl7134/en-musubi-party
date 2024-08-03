@@ -334,7 +334,23 @@ $(function () {
         alert("Confirmed!");
         defaultImgModal.close();
     });
-})
+
+    document.querySelectorAll('.sample-imgList-item').forEach(item => {
+        item.addEventListener('click', () => {
+            document.querySelectorAll('.sample-imgList-item').forEach(i => i.style.border = '5px solid transparent');
+            item.style.border = '5px solid coral';
+            selectedImgSrc = item.querySelector('img').src;
+        });
+    });
+
+    confirmImgButton.addEventListener("click", () => {
+        if (selectedImgSrc) {
+            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 7rem; height: 10rem;">`;
+            alert("Confirmed!");
+            defaultImgModal.close();
+        }
+    });
+});
 
 
 

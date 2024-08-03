@@ -199,12 +199,16 @@
                                         <div class="tk_survey-message">
                                             <div class="tk_survey-messageImg">
                                                 <div class="tk_messageImg">
+
                                                 </div>
-                                                <div>
-                                                    <button id="defaultImgButton" type="button">イメージ選択</button>
-                                                </div>
-                                                <div>
-                                                    <button id="ImgUploadButton" type="button">写真アップロード</button>
+
+                                                <div class="tk_imgButton-container">
+                                                    <div>
+                                                        <button id="defaultImgButton" type="button">イメージ選択</button>
+                                                    </div>
+                                                    <div>
+                                                        <button id="ImgUploadButton" type="button">写真アップロード</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="tk_survey-messageText">
@@ -430,26 +434,29 @@
     </div>
 </div>
 
-
 <%--디폴트 이미지업로드 모달--%>
 <dialog id="defaultImgModal">
+    <button class="close-button" id="closeImgModalButton">&times;</button>
     <div>画像一覧</div>
     <div>サンプル画像</div>
     <ul class="sample-imgList">
         <li class="sample-imgList-item">
-            <img src="" alt="">
+            <img src="/resources/img/celebratePic1.png" alt="">
         </li>
         <li class="sample-imgList-item">
-            <img src="" alt="">
+            <img src="/resources/img/celebratePic2.png" alt="">
         </li>
         <li class="sample-imgList-item">
-            <img src="" alt="">
+            <img src="/resources/img/celebratePic3.png" alt="">
         </li>
         <li class="sample-imgList-item">
-            <img src="" alt="">
+            <img src="/resources/img/celebratePic4.png" alt="">
+        </li>
+        <li class="sample-imgList-item">
+            <img src="/resources/img/celebratePic5.png" alt="">
         </li>
     </ul>
-    <div></div>
+    <div>ご希望のイメージを選んでお二人をお祝いします！</div>
     <button id="confirmImgButton">Confirm</button>
 </dialog>
 

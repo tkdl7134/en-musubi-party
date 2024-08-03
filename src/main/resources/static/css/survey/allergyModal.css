@@ -256,5 +256,6 @@ label.cb3:has(input[type="checkbox"]:checked) {
 }
 
 .modal-close:hover {
+    transition: 0.5s ease-out;
     color: red;
 }
