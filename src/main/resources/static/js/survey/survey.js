@@ -321,6 +321,8 @@ $(function () {
     const closeImgModalButton = document.getElementById("closeImgModalButton");
     const defaultImgModal = document.getElementById("defaultImgModal");
     const confirmImgButton = document.getElementById("confirmImgButton");
+    const imgDeleteButton = document.getElementById("ImgDeleteButton");
+    let selectedImgSrc = '';
 
     openImgModalButton.addEventListener("click", () => {
         defaultImgModal.showModal();
@@ -331,7 +333,6 @@ $(function () {
     });
 
     confirmImgButton.addEventListener("click", () => {
-        alert("Confirmed!");
         defaultImgModal.close();
     });
 
@@ -345,10 +346,14 @@ $(function () {
 
     confirmImgButton.addEventListener("click", () => {
         if (selectedImgSrc) {
-            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 7rem; height: 10rem;">`;
-            alert("Confirmed!");
+            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">`;
+            alert("アップロード完了!");
             defaultImgModal.close();
         }
+    });
+
+    imgDeleteButton.addEventListener("click",() => {
+        document.querySelector('.tk_messageImg').innerHTML='';
     });
 });
 

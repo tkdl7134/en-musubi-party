@@ -10,7 +10,7 @@
 
 header {
     margin: 1rem 0 1rem 0;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: salmon;
 }
 
@@ -20,7 +20,7 @@ header {
 }
 
 .tk_allergy-title > div:nth-child(1) {
-    margin: 1.5rem 0 0.5rem 1rem;
+    margin: 1.5rem 0 0rem 0.2rem;
     display: flex;
     font-size: 1.2rem;
     border-style: solid;
@@ -31,7 +31,7 @@ header {
 }
 
 .tk_allergy-title > div:nth-child(2) {
-    margin: 0.5rem 0 0.5rem 1rem;
+    margin: 0rem 0 0.5rem 1rem;
     display: flex;
     font-size: 0.8rem;
     color: salmon;
@@ -39,7 +39,7 @@ header {
 
 .tk_allergy-type {
     display: flex;
-    margin: 2rem 0 0.5rem 0.5rem;
+    margin: 1.5rem 0 0.5rem 0.5rem;
 }
 
 /*첫번째 고기 육은 간격을 짧게 */
@@ -123,7 +123,7 @@ label.cb3:has(input[type="checkbox"]:checked) {
     scrollbar-width: thin;
     border-style: solid;
     border-width: 0 0 0 3px;
-    border-left-color: salmon;
+    border-left-color: transparent;
 }
 
 /*모달 내용물 관한 위치 및 꾸미기*/
@@ -200,24 +200,28 @@ label.cb3:has(input[type="checkbox"]:checked) {
 }
 
 .tk_allergy-search-btn {
-    margin: 2rem;
+    margin: 1.5rem;
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .tk_modal-button {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     background-color: salmon;
     color: white;
     border: transparent;
-    padding: 1rem;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
     border-radius: 20px;
 }
 
 .tk_modal-button2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     background-color: lightpink;
     color: white;
     border: transparent;
-    padding: 1rem;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
     border-radius: 20px;
 }
 
@@ -229,7 +233,7 @@ label.cb3:has(input[type="checkbox"]:checked) {
 
 .tk_modal-button3 {
     margin: 0.2rem 0.5rem 0 0;
-    font-size: 1rem;
+    font-size: 0.7rem;
     border: transparent;
     cursor: pointer;
     /*transition: all 0.8s ease;*/
@@ -237,21 +241,24 @@ label.cb3:has(input[type="checkbox"]:checked) {
 }
 
 .tk_modal-button3:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
     transform: scale(1.05);
 }
 
 .modal-close {
     position: absolute;
-    top: 3.5rem; /* 모달 바깥쪽에 위치시키기 위해 조정 */
-    right: 2rem; /* 모달 바깥쪽에 위치시키기 위해 조정 */
+    top: 4rem;
+    right: 1.5rem;
     background-color: white;
     border: transparent;
     border-radius: 5px;
-    font-size: 24px;
-    cursor: pointer;
-    color: black; /* 버튼 색상 */
-    z-index: 1; /* 버튼이 모달 위에 위치하도록 */
-    padding: 0 0.2rem 0 0.2rem;
+    font-size: 1.5rem;
+    color: black;
+    z-index: 1;
+    padding: 0.1rem 0.2rem 0 0.2rem;
     text-align: center;
 }
 

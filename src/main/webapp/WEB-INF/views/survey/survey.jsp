@@ -209,6 +209,9 @@
                                                     <div>
                                                         <button id="ImgUploadButton" type="button">写真アップロード</button>
                                                     </div>
+                                                    <div>
+                                                        <button id="ImgDeleteButton" type="button">写真削除</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="tk_survey-messageText">
@@ -242,7 +245,7 @@
         <div class="tk_allergy-mains">
             <div class="tk_allergy-title">
                 <div>アレルギー情報の選択</div>
-                <div>該当するアレルギーを選択してvsください</div>
+                <div>該当するアレルギーを選択してください</div>
             </div>
             <div class="tk_allergy-meat">
                 <div class="tk_allergy-type-first">肉</div>
@@ -437,8 +440,8 @@
 <%--디폴트 이미지업로드 모달--%>
 <dialog id="defaultImgModal">
     <button class="close-button" id="closeImgModalButton">&times;</button>
-    <div>画像一覧</div>
-    <div>サンプル画像</div>
+    <div class="ImgModalTitle">画像一覧</div>
+    <div class="ImgModalList">サンプル画像</div>
     <ul class="sample-imgList">
         <li class="sample-imgList-item">
             <img src="/resources/img/celebratePic1.png" alt="">
@@ -456,8 +459,10 @@
             <img src="/resources/img/celebratePic5.png" alt="">
         </li>
     </ul>
-    <div>ご希望のイメージを選んでお二人をお祝いします！</div>
-    <button id="confirmImgButton">Confirm</button>
+    <div class="ImgModalCelebrate">ご希望のイメージを選んでお二人をお祝いします！</div>
+    <div class="confirmImgButton-container">
+        <button id="confirmImgButton">選択</button>
+    </div>
 </dialog>
 
 </body>

@@ -232,7 +232,7 @@ select {
 .tk_survey-messageImg {
     position: relative;
     width: 100%;
-    height: 65%;
+    height: 70%;
     background-color: grey;
     display: flex;
     flex-direction: column;
@@ -254,36 +254,49 @@ select {
 .tk_survey-messageImg button {
     border-radius: 5px;
     padding: 0.2rem 1.2rem 0.2rem 1.2rem;
+    width: 10rem;
 }
 
 .tk_survey-messageText {
     width: 100%;
-    height: 35%;
+    height: 30%;
     background-color: white;
+}
+
+.tk_messageImg {
+    width: 100%;
+    height: 100%;
 }
 
 .tk_survey-messageText textarea {
     width: 100%;
     height: 100%;
-    border: transparent;
+    border-top: transparent;
+    border-right: solid 1px slategrey;
+    border-bottom: solid 1px slategrey;
+    border-left: solid 1px slategrey;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    resize: none;
 }
 
 dialog {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 35rem;
     width: 25rem;
     border: none;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 0.2rem;
+    padding: 0.5rem;
 }
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.5);
 }
 .close-button {
     float: right;
-    font-size: 20px;
+    font-size: 0.9rem;
     border: none;
     background: none;
     cursor: pointer;
@@ -317,4 +330,48 @@ dialog::backdrop {
     height: 10rem;
 }
 
+.ImgModalTitle{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+    font-size: 0.8rem;
+    color: black;
+}
 
+.ImgModalList {
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    margin: 1rem 0 0.2rem 0.5rem;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    border-left: 3px solid red;
+}
+
+.ImgModalCelebrate {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem 0 2rem 0;
+    padding: 0.2rem 0.2rem 0.2rem .2rem;
+    background-color: #ffd1d0;
+    border-radius: 2px;
+    width: 80%;
+    color: indianred;
+}
+
+.confirmImgButton-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#confirmImgButton {
+    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+    border-radius: 15px;
+    background-color: lightcoral;
+    color: white;
+    border: transparent;
+}
