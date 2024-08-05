@@ -9,12 +9,16 @@ body {
     background-color: #FFF5F4;
     display: flex;
     justify-content: center;
+    /*align-items: center;*/
 }
 
 .login-container {
-    width: 100%;
-    margin-top: 100px;
     padding: 30px;
+    /*background-color: #ffffff;*/
+    /*border-radius: 10px;*/
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    width: 100%;
+    /*max-width: 400px;*/
 }
 
 .login-container p {
@@ -34,6 +38,7 @@ body {
     left: 5px;
     color: #aaa;
     font-size: 10px;
+    /*background-color: #FFF5F4;*/
     padding: 0 5px;
     pointer-events: none;
 }
@@ -54,62 +59,6 @@ body {
     font-size: 14px;
 }
 
-.clear-button,
-.password-toggle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #aaa;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-.clear-button {
-    width: 18px;
-    height: 17px;
-    right: 10px;
-    font-size: 15px;
-    /*line-height: 18px;*/
-    padding-top: 1px;
-}
-
-.password-toggle {
-    right: 40px;
-    font-size: 16px;
-}
-
-.form-group input:focus + .password-toggle,
-.form-group input:focus + .clear-button,
-.form-group input:not(:placeholder-shown) + .password-toggle,
-.form-group input:not(:placeholder-shown) + .clear-button {
-    opacity: 1;
-    visibility: visible;
-}
-
-.form-group input:focus ~ .password-toggle,
-.form-group input:focus ~ .clear-button,
-.form-group input:not(:placeholder-shown) ~ .password-toggle,
-.form-group input:not(:placeholder-shown) ~ .clear-button {
-    opacity: 1;
-    visibility: visible;
-}
-
-.clear-button:hover,
-.password-toggle:hover {
-    background-color: #666666;
-}
-
-.error {
-    color: #EC0000;
-    font-size: 12px !important;
-    margin-top: 5px;
-}
-
 .login-btn {
     width: 100%;
     height: 48px;
@@ -124,6 +73,12 @@ body {
 
 .login-btn:hover {
     background-color: #F8C8C9;
+}
+
+.error {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
 }
 
 .login-options {
@@ -151,3 +106,4 @@ body {
     height: 40px;
     margin: 0 10px;
 }
+
