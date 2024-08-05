@@ -208,6 +208,7 @@
                                                     </div>
                                                     <div>
                                                         <button id="ImgUploadButton" type="button">写真アップロード</button>
+                                                        <input type="file" id="imgInput" style="display: none;" accept="image/*">
                                                     </div>
                                                     <div>
                                                         <button id="ImgDeleteButton" type="button">写真削除</button>
@@ -218,7 +219,8 @@
                                                 <textarea></textarea>
                                             </div>
                                         </div>
-
+                                        <div class="tk_division-line"></div>
+                                        <div></div>
 
                                         <button type="submit">Submit</button>
                                     </form>
