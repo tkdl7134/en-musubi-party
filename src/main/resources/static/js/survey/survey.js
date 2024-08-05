@@ -373,3 +373,13 @@ $(function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const options = document.querySelectorAll('.survey-selection-option');
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            document.getElementById('g_attend_wedding').value = option.getAttribute('data-value');
+            options.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+        });
+    });
+});

@@ -380,14 +380,26 @@ dialog::backdrop {
     border: transparent;
 }
 
+.tk_survey-entry-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
 .tk_survey-entryTitle {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
-.tk_survey-entryTitle
+.tk_survey-entryTitle > div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+}
 
 .tk_survey-entry-selection {
     display: flex;
@@ -398,4 +410,8 @@ dialog::backdrop {
 
 .tk_survey-line2 {
     width: 14rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
+
