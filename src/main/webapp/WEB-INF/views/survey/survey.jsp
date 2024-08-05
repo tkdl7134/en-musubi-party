@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="survey-form">
-                                    <form action="createSurvey" method="post" enctype="multipart/form-data">
+                                    <form action="/survey/create" method="post" enctype="multipart/form-data">
                                         <div class="tk_survey-guestType">
                                             <div class="tk_survey-titleName">ゲスト様</div>
                                             <div>
@@ -219,8 +219,20 @@
                                                 <textarea></textarea>
                                             </div>
                                         </div>
-                                        <div class="tk_division-line"></div>
-                                        <div></div>
+                                  R      <div class="tk_division-line"></div>
+                                        <div class="tk_survey-entry-container">
+                                            <div class="tk_survey-entryTitle">
+                                                <div>挙式・披露宴</div>
+                                                <div class="tk_survey-line2">
+                                                    <img src="/resources/img/head.png" />
+                                                </div>
+                                            </div>
+                                            <div class="tk_survey-entry-selection">
+                                                <div>ご出席</div>
+                                                <div>ご出席</div>
+                                                <div>保留</div>
+                                            </div>
+                                        </div>
 
                                         <button type="submit">Submit</button>
                                     </form>

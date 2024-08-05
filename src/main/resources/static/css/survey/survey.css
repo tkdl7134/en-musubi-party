@@ -57,6 +57,10 @@ body {
     width: 17rem;
 }
 
+.tk_survey-line > img {
+    width: 17rem;
+}
+
 .tk_survey-container {
     width: 100%;
 }
@@ -374,4 +378,24 @@ dialog::backdrop {
     background-color: lightcoral;
     color: white;
     border: transparent;
+}
+
+.tk_survey-entryTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.tk_survey-entryTitle
+
+.tk_survey-entry-selection {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+}
+
+.tk_survey-line2 {
+    width: 14rem;
 }

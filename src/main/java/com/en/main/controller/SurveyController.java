@@ -1,5 +1,6 @@
 package com.en.main.controller;
 import com.en.main.dto.GuestVO;
+import com.en.main.dto.MessageVO;
 import com.en.main.service.SurveyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,8 +24,8 @@ public class SurveyController {
     }
 
     @PostMapping("/create")
-    public String addGuest(GuestVO guestVO, @RequestParam("me_img") MultipartFile file, RedirectAttributes redirectAttributes){
-      surveyService.addGuest(guestVO, file);
+    public String addGuest(MessageVO messageVO, GuestVO guestVO, @RequestParam("me_img") MultipartFile file, RedirectAttributes redirectAttributes){
+      surveyService.addGuest(messageVO, guestVO, file);
       return "redirect:/survey";
     }
 
