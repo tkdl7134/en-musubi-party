@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="survey-form">
-                                    <form action="createSurvey" method="post">
+                                    <form action="createSurvey" method="post" enctype="multipart/form-data">
                                         <div class="tk_survey-guestType">
                                             <div class="tk_survey-titleName">ゲスト様</div>
                                             <div>
@@ -198,7 +198,7 @@
 
                                         <div class="tk_survey-message">
                                             <div class="tk_survey-messageImg">
-                                                <div class="tk_messageImg">
+                                                <div class="tk_messageImg" id="messageImg">
 
                                                 </div>
 
@@ -208,7 +208,7 @@
                                                     </div>
                                                     <div>
                                                         <button id="ImgUploadButton" type="button">写真アップロード</button>
-                                                        <input type="file" id="imgInput" style="display: none;" accept="image/*">
+                                                        <input type="file" name="me_img" id="imgInput" style="display: none;" accept="image/*">
                                                     </div>
                                                     <div>
                                                         <button id="ImgDeleteButton" type="button">写真削除</button>

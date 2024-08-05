@@ -352,10 +352,27 @@ $(function () {
         }
     });
 
-    imgDeleteButton.addEventListener("click",() => {
-        document.querySelector('.tk_messageImg').innerHTML='';
+    document.getElementById('ImgUploadButton').addEventListener('click', function () {
+        document.getElementById('imgInput').click();
+    });
+
+    document.getElementById('ImgInput').addEventListener('change',function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">`;
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    document.getElementById('ImgDeleteButton').addEventListener('click', function () {
+        document.getElementById('messageImg').innerHTML='';
+        document.getElementById('imgInput').value = '';
     });
 });
+
 
 
 
