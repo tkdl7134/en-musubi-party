@@ -173,6 +173,8 @@
                                                         id="allergyHave"
                                                         name="allergy_or"
                                                         value="Yes"
+                                                        class="allergyHave"
+                                                        data-conid="allergyDetailContainer"
                                                 />
                                                 <label class="cb2" for="allergyHave"></label>
                                                 <span>アレルギー情報を入力する</span>
@@ -227,10 +229,19 @@
                                                     <img src="/resources/img/head.png" />
                                                 </div>
                                             </div>
-                                            <div class="tk_survey-entry-selection">
-                                                <div class="survey-selection-option" data-value="ご出席">ご出席</div>
-                                                <div class="survey-selection-option" data-value="ご欠席">ご欠席</div>
-                                                <div class="survey-selection-option" data-value="保留">保留</div>
+                                            <div class="survey-selection" id="wedding-selection">
+                                                <div class="survey-selection-option" data-value="ご出席">
+                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご出席">
+                                                    ご出席
+                                                </div>
+                                                <div class="survey-selection-option" data-value="ご欠席">
+                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご欠席">
+                                                    ご欠席
+                                                </div>
+                                                <div class="survey-selection-option" data-value="保留">
+                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="保留">
+                                                    保留
+                                                </div>
                                             </div>
                                         </div>
                                         <input type="hidden" name="g_attend_wedding" id="g_attend_wedding">
@@ -242,11 +253,21 @@
                                                     <img src="/resources/img/head.png" />
                                                 </div>
                                             </div>
-                                            <div class="tk_survey-entry-selection">
-                                                <div>ご出席</div>
-                                                <div>ご欠席</div>
-                                                <div>保留</div>
+                                            <div class="survey-selection" id="afterparty-selection">
+                                                <div class="survey-selection-option" data-value="ご出席">
+                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご出席">
+                                                    ご出席
+                                                </div>
+                                                <div class="survey-selection-option" data-value="ご欠席">
+                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご欠席">
+                                                    ご欠席
+                                                </div>
+                                                <div class="survey-selection-option" data-value="保留">
+                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="保留">
+                                                    保留
+                                                </div>
                                             </div>
+                                            <input type="hidden" name="g_attend_afterparty" id="g_attend_afterparty">
                                         </div>
                                         <button type="submit">Submit</button>
                                     </form>
