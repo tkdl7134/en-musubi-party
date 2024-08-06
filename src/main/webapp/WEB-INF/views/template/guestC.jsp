@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/resources/css/template/guest.css">
+    <link rel="stylesheet" href="/resources/css/template/guestC.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/resources/js/template/guest.js"></script>
 </head>
@@ -17,7 +17,6 @@
         <div class="hw_maker">縁結び</div>
         <a class="hw_mypage" href=""><img src="/resources/img/icon-user.png" alt=""></a>
     </header>
-
     <div class="hw_container">
 
         <div class="hw_title"> - アンケート管理 -</div>
@@ -26,9 +25,9 @@
         <!-- 드롭다운 메뉴 -->
         <div class="dropdown">
             <select id="dropdown-select" class="dropbtn">
-                <option value="" disabled selected>참가자</option>
+                <option value="" disabled selected>결석자</option>
+                <option value="/mypage/guest">참가자</option>
                 <option value="/mypage/guestB">세부사항</option>
-                <option value="/mypage/guestC">결석자</option>
             </select>
         </div>
 
@@ -50,30 +49,6 @@
                 </div>
             </div>
             <div class="hw_tab-button-content show">
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
                 <div class="hw_tab-content">
                     <span>이름 : 김철수2</span>
                     <span>유형 : 신부</span>

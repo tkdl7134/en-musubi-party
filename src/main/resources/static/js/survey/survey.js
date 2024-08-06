@@ -352,27 +352,34 @@ $(function () {
         }
     });
 
-    document.getElementById('ImgUploadButton').addEventListener('click', function () {
-        document.getElementById('imgInput').click();
-    });
+        document.getElementById('ImgUploadButton').addEventListener('click', function () {
+            document.getElementById('imgInput').click();
+    })
 
-    document.getElementById('ImgInput').addEventListener('change',function (event) {
+    document.getElementById('imgInput').addEventListener('change',function (event) {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                document.getElementById('messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">`;
+                document.getElementById('messageImg').innerHTML = `<img src="${e.target.result}" alt="Uploaded Image" style="width: 100%; height: 100%;">`;
             }
             reader.readAsDataURL(file);
         }
     });
 
-    document.getElementById('ImgDeleteButton').addEventListener('click', function () {
-        document.getElementById('messageImg').innerHTML='';
-        document.getElementById('imgInput').value = '';
+        imgDeleteButton.addEventListener("click", () => {
+            document.querySelector('.tk_messageImg').innerHTML = '';
+            document.getElementById('imgInput').value = ''; // 파일 입력 필드 초기화
     });
 });
 
-
-
-
+document.addEventListener('DOMContentLoaded', () => {
+    const options = document.querySelectorAll('.survey-selection-option');
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            document.getElementById('g_attend_wedding').value = option.getAttribute('data-value');
+            options.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+        });
+    });
+});

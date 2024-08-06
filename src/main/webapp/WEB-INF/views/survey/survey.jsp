@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="survey-form">
-                                    <form action="createSurvey" method="post" enctype="multipart/form-data">
+                                    <form action="/survey/create" method="post" enctype="multipart/form-data">
                                         <div class="tk_survey-guestType">
                                             <div class="tk_survey-titleName">ゲスト様</div>
                                             <div>
@@ -220,8 +220,34 @@
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
-                                        <div></div>
-
+                                        <div class="tk_survey-entry-container">
+                                            <div class="tk_survey-entryTitle">
+                                                <div>挙式・披露宴</div>
+                                                <div class="tk_survey-line2">
+                                                    <img src="/resources/img/head.png" />
+                                                </div>
+                                            </div>
+                                            <div class="tk_survey-entry-selection">
+                                                <div class="survey-selection-option" data-value="ご出席">ご出席</div>
+                                                <div class="survey-selection-option" data-value="ご欠席">ご欠席</div>
+                                                <div class="survey-selection-option" data-value="保留">保留</div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="g_attend_wedding" id="g_attend_wedding">
+                                        <div class="tk_division-line"></div>
+                                        <div class="tk_survey-entry-container">
+                                            <div class="tk_survey-entryTitle">
+                                                <div>アフターパーティー</div>
+                                                <div class="tk_survey-line2">
+                                                    <img src="/resources/img/head.png" />
+                                                </div>
+                                            </div>
+                                            <div class="tk_survey-entry-selection">
+                                                <div>ご出席</div>
+                                                <div>ご欠席</div>
+                                                <div>保留</div>
+                                            </div>
+                                        </div>
                                         <button type="submit">Submit</button>
                                     </form>
                                 </div>

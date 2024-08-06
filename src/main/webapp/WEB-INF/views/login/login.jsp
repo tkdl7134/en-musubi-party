@@ -37,14 +37,12 @@
         <button type="submit" class="login-btn">ログイン</button>
     </form>
 
-<%--    <hr>--%>
-<%--    <div class="login-options">--%>
-<%--        <a href="#">회원가입</a>--%>
-<%--        <a href="#">비밀번호 찾기</a>--%>
-<%--        <a href="#">기업회원 로그인</a>--%>
-<%--    </div>--%>
+    <div class="login-options">
+        <a href="/member/findID">ID検索</a>
+        <a href="/member/findPW">パスワード検索</a>
+        <a href="/register/register">会員登録</a>
+    </div>
 
-<%--    <hr>--%>
 <%--    <div class="social-login">--%>
 <%--        <img src="" alt="Kakao">--%>
 <%--        <img src="" alt="Line">--%>
