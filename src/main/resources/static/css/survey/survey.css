@@ -57,6 +57,10 @@ body {
     width: 17rem;
 }
 
+.tk_survey-line > img {
+    width: 17rem;
+}
+
 .tk_survey-container {
     width: 100%;
 }
@@ -375,3 +379,39 @@ dialog::backdrop {
     color: white;
     border: transparent;
 }
+
+.tk_survey-entry-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.tk_survey-entryTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tk_survey-entryTitle > div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.tk_survey-entry-selection {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+}
+
+.tk_survey-line2 {
+    width: 14rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
