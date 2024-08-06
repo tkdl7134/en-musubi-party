@@ -78,7 +78,28 @@ public class StatisticsController {
 
     }
 
+    @GetMapping("/reorderByProduct/{no}")
+    public @ResponseBody List<JhFundSqlVo> reorderByProduct(@PathVariable int no , Model model){
+        System.out.println(no);
+        model.addAttribute("listupDatas" , statisticsFundingService.getListupInfos(no));
 
+        return statisticsFundingService.getListupInfos(no);
+    }
+
+@GetMapping("/reorderByMoney/{no}")
+public @ResponseBody List<JhFundSqlVo> reorderByMoney(@PathVariable int no , Model model){
+    System.out.println(no);
+    model.addAttribute("listupDatas" , statisticsFundingService.reorderListByMoney(no));
+
+    return statisticsFundingService.reorderListByMoney(no);
+}
+@GetMapping("/reorderByDate/{no}")
+public @ResponseBody List<JhFundSqlVo> reorderByDate(@PathVariable int no , Model model){
+    System.out.println(no);
+    model.addAttribute("listupDatas" , statisticsFundingService.reorderListByDate(no));
+
+    return statisticsFundingService.reorderListByDate(no);
+}
 
 
 
