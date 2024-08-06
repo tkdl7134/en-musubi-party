@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // 카드 플립 기능
-    document.querySelectorAll('.hw_card').forEach(function(hw_card) {
-        hw_card.addEventListener('click', function(event) {
+    document.querySelectorAll('.hw_card').forEach(function (hw_card) {
+        hw_card.addEventListener('click', function (event) {
             let elem = event.currentTarget;
             elem.classList.toggle('flipped');
         });
@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const delta = event.deltaY;
         const container = document.querySelector('.hw_container');
         const cards = document.querySelectorAll('.hw_card');
-        let currentIndex = Array.from(cards).findIndex(card => card.getBoundingClientRect().top === 0);
+        let currentIndex = Array.from(cards).findIndex(card => Math.abs(card.getBoundingClientRect().top) < 5); // 근접한 값을 사용
 
         if (delta > 0 && currentIndex < cards.length - 1) {
-            cards[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+            cards[currentIndex + 1].scrollIntoView({behavior: 'smooth'});
         } else if (delta < 0 && currentIndex > 0) {
-            cards[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+            cards[currentIndex - 1].scrollIntoView({behavior: 'smooth'});
         }
     };
 
