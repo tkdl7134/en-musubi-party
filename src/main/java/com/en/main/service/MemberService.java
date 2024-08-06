@@ -27,7 +27,7 @@ public class MemberService {
         System.out.println("m_id: " + m_id);
         System.out.println("m_email: " + m_email);
 
-        MemberVO member = memberMapper.findIDByEmail(m_id, m_email);
+        MemberVO member = memberMapper.findPWByEmail(m_id, m_email);
 
         System.out.println("Retrieved Member: " + member);
 
