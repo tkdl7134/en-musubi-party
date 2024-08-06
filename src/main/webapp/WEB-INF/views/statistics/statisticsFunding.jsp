@@ -15,7 +15,17 @@
     function reorderByProduct (no) {
 
 
-        fetch('/statistics/reorderByProduct/' + no)
+        let productEl = document.getElementById("jh_button_product");
+        let moneyEl = document.getElementById("jh_button_money");
+        let dateEl = document.getElementById("jh_button_date");
+        moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
+        dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+        // fetch 요청 URL 결정
+        let fetchUrl = productEl.innerText.includes("↓")
+            ? '/statistics/reorderByProduct/' + no
+            : '/statistics/reorderByProductDesc/' + no;
+
+        fetch(fetchUrl)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -51,23 +61,40 @@
 
                     testEl.appendChild(div);
                 });
+
+                // jh_button_money 버튼의 텍스트에 화살표 토글
+                if (productEl.innerText.includes("↓")) {
+                    productEl.innerText = productEl.innerText.replace("↓", "↑");
+                } else if (productEl.innerText.includes("↑")) {
+                    productEl.innerText = productEl.innerText.replace("↑", "↓");
+                    fetchUrl = '/statistics/reorderByMoney/' + no;
+                } else {
+                    productEl.innerText += "↓";
+                    fetchUrl = '/statistics/reorderByMoneyDesc/' + no;
+                }
+
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
-
 
 
 
     }
 
     function reorderByMoney(no) {
+        let moneyEl = document.getElementById("jh_button_money");
+        let productEl = document.getElementById("jh_button_product");
+        let dateEl = document.getElementById("jh_button_date");
+        productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
+        dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
 
-        let moneyEl = document.getElementById("jh_button_money")
-        let moneyText = moneyEl.innerText;
-        moneyText = moneyText + "↓";
+        // fetch 요청 URL 결정
+        let fetchUrl = moneyEl.innerText.includes("↓")
+            ? '/statistics/reorderByMoney/' + no
+            : '/statistics/reorderByMoneyDesc/' + no;
 
-        fetch('/statistics/reorderByMoney/' + no)
+        fetch(fetchUrl)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -103,13 +130,36 @@
 
                     testEl.appendChild(div);
                 });
+
+                // jh_button_money 버튼의 텍스트에 화살표 토글
+                if (moneyEl.innerText.includes("↓")) {
+                    moneyEl.innerText = moneyEl.innerText.replace("↓", "↑");
+                } else if (moneyEl.innerText.includes("↑")) {
+                    moneyEl.innerText = moneyEl.innerText.replace("↑", "↓");
+                    fetchUrl = '/statistics/reorderByMoney/' + no;
+                } else {
+                    moneyEl.innerText += "↓";
+                    fetchUrl = '/statistics/reorderByMoneyDesc/' + no;
+                }
+
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     }
+
     function reorderByDate(no) {
-        fetch('/statistics/reorderByDate/' + no)
+        let dateEl = document.getElementById("jh_button_date");
+        let productEl = document.getElementById("jh_button_product");
+        let moneyEl = document.getElementById("jh_button_money");
+        productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
+        moneyEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+        // fetch 요청 URL 결정
+        let fetchUrl = dateEl.innerText.includes("↓")
+            ? '/statistics/reorderByDate/' + no
+            : '/statistics/reorderByDateDesc/' + no;
+
+        fetch(fetchUrl)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
@@ -145,10 +195,23 @@
 
                     testEl.appendChild(div);
                 });
+
+                // jh_button_money 버튼의 텍스트에 화살표 토글
+                if (dateEl.innerText.includes("↓")) {
+                    dateEl.innerText = date.innerText.replace("↓", "↑");
+                } else if (moneyEl.innerText.includes("↑")) {
+                    dateEl.innerText = dateEl.innerText.replace("↑", "↓");
+                    fetchUrl = '/statistics/reorderByMoney/' + no;
+                } else {
+                    dateEl.innerText += "↓";
+                    fetchUrl = '/statistics/reorderByMoneyDesc/' + no;
+                }
+
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
+
     }
     document.addEventListener('DOMContentLoaded', function () {
         const ctx = document.getElementById('myChart').getContext('2d');
