@@ -10,11 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
     <!-- CSS -->
+    <link rel="stylesheet" href="/resources/css/product/product_make.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css" />
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"/>
-    <link rel="stylesheet" href="/resources/css/product/product_make.css" />
     <link rel="stylesheet" href="/resources/css/product/picker.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"/>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" ></script>
@@ -269,7 +269,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">招待文句</div>
                             <div class="je_title-line">
-                                <img src="../img/input-box-content-line.png" alt="" />
+                                <img src="resources/img/input-box-content-line.png" alt="" />
                             </div>
                         </div>
                         <div id="je_invitation-button" class="je_content-recommendation">
@@ -283,7 +283,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">仕上げの文句</div>
                             <div class="je_title-line">
-                                <img src="../img/input-box-content-line.png" alt="" />
+                                <img src="resources/img/input-box-content-line.png" alt="" />
                             </div>
                         </div>
                         <div id="je_closing-button" class="je_content-recommendation">
@@ -320,7 +320,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">代表写真</div>
                             <div class="je_title-line">
-                                <img src="../img/input-box-content-line.png" alt="" />
+                                <img src="resources/img/input-box-content-line.png" alt="" />
                             </div>
                         </div>
                         <div class="je_content-photo">
@@ -374,7 +374,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">共有写真</div>
                             <div class="je_title-line">
-                                <img src="../img/input-box-content-line.png" alt="" />
+                                <img src="resources/img/input-box-content-line.png" alt="" />
                             </div>
                         </div>
                         <div class="je_content-photos">
@@ -400,8 +400,8 @@
             </div>
         </div>
         <div class="je_slider-buttons">
-            <button id="je_prev-button">前へ</button>
-            <button id="je_next-button">次へ</button>
+            <button id="je_prev-button" type="button">前へ</button>
+            <button id="je_next-button" type="button">次へ</button>
             <button id="je_submit-button">作成完了</button>
         </div>
     </div>
@@ -431,7 +431,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM seasonsIM">
@@ -444,7 +444,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn" >選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM seasonsIM">
@@ -457,7 +457,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM seasonsIM">
@@ -470,7 +470,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <!-- 정중한 -->
@@ -485,7 +485,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM politeIM">
@@ -499,7 +499,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM politeIM">
@@ -514,7 +514,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM politeIM">
@@ -528,7 +528,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <!-- ユーモラスな -->
@@ -543,7 +543,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM humorIM">
@@ -557,7 +557,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM humorIM">
@@ -571,7 +571,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM humorIM">
@@ -585,7 +585,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_invitation-sendBtn">選択</button>
+                            <div class="je_invitation-sendBtn">選択</div>
                         </div>
                     </div>
                 </div>
@@ -618,7 +618,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM seasonsCM">
@@ -632,7 +632,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM seasonsCM">
@@ -646,7 +646,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM seasonsCM">
@@ -660,7 +660,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <!-- 정중한 -->
@@ -677,7 +677,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM politeCM">
@@ -693,7 +693,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM politeCM">
@@ -708,7 +708,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM politeCM">
@@ -723,7 +723,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <!-- ユーモラスな -->
@@ -739,7 +739,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM humorCM">
@@ -753,7 +753,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM humorCM">
@@ -768,7 +768,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM humorCM">
@@ -783,7 +783,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <button class="je_closing-sendBtn">選択</button>
+                            <div class="je_closing-sendBtn">選択</div>
                         </div>
                     </div>
                 </div>

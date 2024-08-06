@@ -377,6 +377,7 @@ input:-ms-input-placeholder {
 }
 .je_message-txt {
     padding-left: 1rem;
+    padding-right: 0.5rem;
     font-size: 14px;
 }
 
@@ -384,15 +385,17 @@ input:-ms-input-placeholder {
     display: flex;
     justify-content: center;
     padding-top: 1rem;
-    button {
-        border: none;
-        border-radius: 0.5rem;
-        background-color: #ff7e81;
-        width: 5rem;
-        padding: 0.3rem 0;
-        color: #ffffff;
-        font-weight: 600;
-    }
+}
+.je_invitation-sendBtn,
+.je_closing-sendBtn{
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ff7e81;
+    width: 5rem;
+    padding: 0.3rem 0;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
 }
 
 /* category class */

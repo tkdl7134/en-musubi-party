@@ -28,4 +28,10 @@ public class ProductController {
         model.addAttribute("oneTemplate", productService.getTemplateByPk(t_pk));
         return "product/product_preview";
     }
+
+    @GetMapping("/make/{t_pk}")
+    public String productMake(Model model) {
+        return "product/product_make";
+    }
+
 }
