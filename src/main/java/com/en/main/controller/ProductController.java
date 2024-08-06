@@ -29,7 +29,7 @@ public class ProductController {
         return "product/product_preview";
     }
 
-    @GetMapping("/make/{t_pk}")
+    @GetMapping("/make")
     public String productMake(Model model) {
         return "product/product_make";
     }

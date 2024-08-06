@@ -151,14 +151,14 @@
                                     <div class="je_input-box" style="margin-top: 1rem">
                                         <div class="je_input-box-title">郵便番号</div>
                                         <div class="je_address-input">
-                                            <input type="text" id="postal-code" class="p-postal-code"
+                                            <input type="text" class="p-postal-code"
                                                     size="8" maxlength="8" placeholder="数字で入力してください。" />
                                         </div>
                                     </div>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">住所</div>
                                         <div class="je_address-input">
-                                            <input type="text" id="address" class="p-region p-locality p-street-address p-extended-address"
+                                            <input type="text" class="p-region p-locality p-street-address p-extended-address"
                                                     size="50" style="height: 4rem" />
                                         </div>
                                     </div>
@@ -215,14 +215,14 @@
                                     <div class="je_input-box" style="margin-top: 1rem">
                                         <div class="je_input-box-title">郵便番号</div>
                                         <div class="je_address-input">
-                                            <input type="text" id="postal-code" class="p-postal-code"
+                                            <input type="text" class="p-postal-code"
                                                     size="8" maxlength="8" placeholder="数字で入力してください。" />
                                         </div>
                                     </div>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">住所</div>
                                         <div class="je_address-input">
-                                            <input type="text" id="address" class="p-region p-locality p-street-address p-extended-address"
+                                            <input type="text" class="p-region p-locality p-street-address p-extended-address"
                                                     size="50" style="height: 4rem" />
                                         </div>
                                     </div>
