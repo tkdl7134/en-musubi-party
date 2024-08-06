@@ -23,18 +23,28 @@ public class MemberService {
         return memberMapper.findID(m_fam_eng, m_email);
     }
 
+//    public boolean sendResetPWLink(String m_id, String m_email) {
+//        System.out.println("m_id: " + m_id);
+//        System.out.println("m_email: " + m_email);
+//
+//        MemberVO member = memberMapper.findPWByEmail(m_id, m_email);
+//
+//        System.out.println("Retrieved Member: " + member);
+//
+//        if (member != null) {
+//            String token = tokenService.createToken(m_id);
+//            String resetLink = domain + "/resetPw?token=" + token;
+//            mailService.sendMail(m_email, "비밀번호 재설정", "다음 링크를 클릭하여 비밀번호를 재설정하세요: " + resetLink);
+//            return true;
+//        }
+//        return false;
+//    }
+
     public boolean sendResetPWLink(String m_id, String m_email) {
-        System.out.println("m_id: " + m_id);
-        System.out.println("m_email: " + m_email);
-
         MemberVO member = memberMapper.findPWByEmail(m_id, m_email);
-
-        System.out.println("Retrieved Member: " + member);
-
         if (member != null) {
             String token = tokenService.createToken(m_id);
-            String resetLink = domain + "/resetPw?token=" + token;
-            mailService.sendMail(m_email, "비밀번호 재설정", "다음 링크를 클릭하여 비밀번호를 재설정하세요: " + resetLink);
+            mailService.sendResetPWMail(m_email, token);
             return true;
         }
         return false;
@@ -55,4 +65,7 @@ public class MemberService {
         return false;
     }
 
+//    public void updatePW(String m_id, String newPW) {
+//        memberMapper.updatePW(m_id, newPW);
+//    }
 }

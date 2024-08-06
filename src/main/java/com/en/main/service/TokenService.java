@@ -21,6 +21,10 @@ public class TokenService {
         return tokenStore.get(token);
     }
 
+    public String validateResetPWToken(String token) {
+        return validateToken(token);
+    }
+
     public void deleteToken(String token) {
         tokenStore.remove(token);
     }
