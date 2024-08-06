@@ -30,10 +30,4 @@ $(document).ready(function () {
             $("#more").text("더보기"); // 숨겨지면 버튼 텍스트를 "더보기"로 변경
         }
     });
-    $('#dropdown-select').change(function () {
-        var selectedPage = $(this).val();
-        if (selectedPage) {
-            window.location.href = selectedPage; // 선택된 값으로 페이지 이동
-        }
-    });
 });
