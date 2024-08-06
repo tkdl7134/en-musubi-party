@@ -10,7 +10,7 @@ public interface MemberMapper {
     MemberVO findID(@Param("m_fam_eng") String m_fam_eng, @Param("m_email") String m_email);
 
     @Select("SELECT * FROM member WHERE m_id = #{m_id} AND m_email = #{m_email}")
-    MemberVO findIDByEmail(@Param("m_id") String m_id, @Param("m_email") String m_email);
+    MemberVO findPWByEmail(@Param("m_id") String m_id, @Param("m_email") String m_email);
 
     @Insert("INSERT INTO reset_pw_token (m_id, token) VALUES (#{m_id}, #{token})")
     void saveResetPWToken(@Param("m_id") String m_id, @Param("token") String token);
