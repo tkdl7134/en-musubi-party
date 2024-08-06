@@ -2,6 +2,7 @@ package com.en.main.controller;
 
 import com.en.main.dto.MemberVO;
 import com.en.main.service.LoginService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +22,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(MemberVO memberVO, Model model) {
+    public String login(MemberVO memberVO, Model model, HttpSession session) {
         // 입력 필드 검증 → 비어 있을 경우를 위한 각각의 오류 메시지 설정
         if (memberVO.getM_id().isEmpty()) {
             model.addAttribute("errorID", "IDを入力してください");
@@ -34,6 +35,7 @@ public class LoginController {
         if (!memberVO.getM_id().isEmpty() && !memberVO.getM_pw().isEmpty()) {
             MemberVO authenticatedMember = loginService.login(memberVO);
             if (authenticatedMember != null) {
+                session.setAttribute("authenticatedMember", authenticatedMember);
                 return "redirect:/";
             } else {
                 model.addAttribute("error", "IDまたはパスワードが正しくありません");

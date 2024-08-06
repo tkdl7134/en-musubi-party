@@ -16,8 +16,12 @@ create table member(
     m_zipcode varchar2(10 char) not null,
     m_img varchar2(20 char) not null
 );
-select * from member order by m_id;
 insert into member values ('test3', '1111', '佐藤', '由紀', 'サト', 'ユキ', 'sato', 'yuki', '1993-09-12', '女', 'sato@enparty.com', '000-0000-0000', '東京都渋谷区神宮前1-1-1明治神宮', '150-0001', 'profile.jpg' );
+insert into member values ('test9', '1111', '金', '宥', 'キム', 'ユウ', 'kimu', 'yuu', '1997-03-31', '女', 'yujeongstellakim＠gmail.com', '000-0000-0000', '東京都渋谷区神宮前1-1-1明治神宮', '150-0001', 'profile.jpg' );
+delete from member where m_id = 'test';
+select * from member order by m_id;
+
+SELECT m_id FROM member WHERE m_fam_eng = 'kimu' AND m_email = 'yujeongstellakim＠gmail.com';
 
 
 -- 주소
