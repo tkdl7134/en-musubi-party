@@ -34,7 +34,7 @@
     </div>
 </div>
 <!-- content -->
-<form>
+<form action="" method="post" enctype="multipart/form-data">
     <div id="je_product-make-container">
         <div class="je_page-title">
             <div class="je_page-title-txt">制作</div>
@@ -73,13 +73,13 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">漢字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="姓" /><input type="text" placeholder="名"/>
+                                    <input type="text" placeholder="姓" name="w_fam_jp_groom"/><input type="text" placeholder="名" name="w_name_jp_groom"/>
                                 </div>
                             </div>
                             <div class="je_input-box">
                                 <div class="je_input-box-title">ローマ字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="Last Name" /><input type="text" placeholder="First Name" />
+                                    <input type="text" placeholder="Last Name" name="w_fam_eng_groom"/><input type="text" placeholder="First Name" name="w_name_eng_groom" />
                                 </div>
                             </div>
                         </div>
@@ -95,13 +95,13 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">漢字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="姓" /><input type="text" placeholder="名" />
+                                    <input type="text" placeholder="姓" name="w_fam_jp_bride" /><input type="text" placeholder="名" name="w_name_jp_bride" />
                                 </div>
                             </div>
                             <div class="je_input-box">
                                 <div class="je_input-box-title">ローマ字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="Last Name" /><input type="text" placeholder="First Name" />
+                                    <input type="text" placeholder="Last Name" name="w_fam_eng_bride"/><input type="text" placeholder="First Name" name="w_name_eng_bride" />
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,8 @@
                         <div class="je_content-title2">式の日程</div>
                         <div class="je_content-calendar">
                             <input id="specialDate" type="text" inputmode="none"
-                                    placeholder="日付を選んでください" autocomplete="off" readonly />
+                                    placeholder="日付を選んでください" autocomplete="off" readonly
+                                    name="w_date"/>
                         </div>
                     </div>
                     <div class="je_box-content">
@@ -126,25 +127,18 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">時間</div>
                                 <div class="je_time-input">
-                                    <input name="marriageTime" id="timepickerM" class="timepicker"
+                                    <input name="w_wedding_time" id="timepickerM" class="timepicker"
                                             type="text" placeholder="時間選択" readonly />
                                 </div>
                             </div>
                             <div class="je_input-box">
                                 <div class="je_input-box-title">集合</div>
                                 <div class="je_time-input">
-                                    <input name="marriageTime_a" id="timepickerMa" class="timepicker"
-                                            type="text" placeholder="時間選択" readonly />
+                                    <input name="w_wedding_assemble" id="timepickerMa" class="timepicker"
+                                            type="text" placeholder="時間選択" readonly/>
                                 </div>
                             </div>
-                            <div
-                                    style="
-                        border: 0.5px solid red;
-                        margin-top: 1rem;
-                        margin-bottom: 0.5rem;
-                      "
-                            ></div>
-                            <div></div>
+                            <div class="je_boundary" ></div>
                             <div class="h-adr">
                       <span class="p-country-name" style="display: none" >Japan</span >
                                 <div>
@@ -152,26 +146,27 @@
                                         <div class="je_input-box-title">郵便番号</div>
                                         <div class="je_address-input">
                                             <input type="text" class="p-postal-code"
-                                                    size="8" maxlength="8" placeholder="数字で入力してください。" />
+                                                    size="8" maxlength="8" placeholder="数字で入力してください。"
+                                                    name="w_wedding_postcode"/>
                                         </div>
                                     </div>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">住所</div>
                                         <div class="je_address-input">
-                                            <input type="text" class="p-region p-locality p-street-address p-extended-address"
-                                                    size="50" style="height: 4rem" />
+                                              <textarea  class="p-region p-locality p-street-address p-extended-address"
+                                                        name="w_wedding_address"></textarea>
                                         </div>
                                     </div>
-                                    <div class="je_input-box">
-                                        <div class="je_input-box-title">番地</div>
-                                        <div class="je_address-input">
-                                            <div><input type="text" id="je_address-number1" /></div>
-                                        </div>
-                                    </div>
+<%--                                    <div class="je_input-box">--%>
+<%--                                        <div class="je_input-box-title">番地</div>--%>
+<%--                                        <div class="je_address-input">--%>
+<%--                                            <div><input type="text" id="je_address-number1" /></div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">建物名</div>
                                         <div class="je_address-input">
-                                            <div><input type="text" id="je_building-name1" /></div>
+                                            <div><input type="text" class="je_building-name" name="w_wedding_building"/></div>
                                         </div>
                                     </div>
                                 </div>
@@ -189,25 +184,18 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">時間</div>
                                 <div class="je_time-input">
-                                    <input name="receptionTime" id="timepicker-r" class="timepicker"
+                                    <input name="w_reception_time" id="timepicker-r" class="timepicker"
                                             type="text" placeholder="時間選択" autocomplete="off" readonly />
                                 </div>
                             </div>
                             <div class="je_input-box">
                                 <div class="je_input-box-title">集合</div>
                                 <div class="je_time-input">
-                                    <input name="receptionTime_a" id="timepicker-ra" class="timepicker"
+                                    <input name="w_reception_assemble" id="timepicker-ra" class="timepicker"
                                             type="text" placeholder="時間選択" autocomplete="off" readonly />
                                 </div>
                             </div>
-                            <div
-                                    style="
-                        border: 0.5px solid red;
-                        margin-top: 1rem;
-                        margin-bottom: 0.5rem;
-                        border-style: dotted;
-                      "
-                            ></div>
+                            <div class="je_boundary"></div>
                             <div></div>
                             <div class="h-adr">
                       <span class="p-country-name" style="display: none" >Japan</span >
@@ -216,26 +204,28 @@
                                         <div class="je_input-box-title">郵便番号</div>
                                         <div class="je_address-input">
                                             <input type="text" class="p-postal-code"
-                                                    size="8" maxlength="8" placeholder="数字で入力してください。" />
+                                                    size="8" maxlength="8" placeholder="数字で入力してください。"
+                                                    name="w_reception_postcode"/>
                                         </div>
                                     </div>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">住所</div>
                                         <div class="je_address-input">
-                                            <input type="text" class="p-region p-locality p-street-address p-extended-address"
-                                                    size="50" style="height: 4rem" />
+                                            <textarea  class="p-region p-locality p-street-address p-extended-address"
+                                                        name="w_reception_address"></textarea>
                                         </div>
                                     </div>
-                                    <div class="je_input-box">
-                                        <div class="je_input-box-title">番地</div>
-                                        <div class="je_address-input">
-                                            <div><input type="text" id="je_address-number2" /></div>
-                                        </div>
-                                    </div>
+<%--                                    <div class="je_input-box">--%>
+<%--                                        <div class="je_input-box-title">番地</div>--%>
+<%--                                        <div class="je_address-input">--%>
+<%--                                            <div><input type="text" id="je_address-number2" /></div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">建物名</div>
                                         <div class="je_address-input">
-                                            <div><input type="text" id="je_building-name2" /></div>
+                                            <div><input type="text" class="je_building-name"
+                                                        name="w_reception_building"/></div>
                                         </div>
                                     </div>
                                 </div>
@@ -276,7 +266,7 @@
                             招待文句 SAMPLE
                         </div>
                         <div class="je_content-message">
-                            <textarea name="" id="je_invitation-textarea"></textarea>
+                            <textarea name="w_message_invite" id="je_invitation-textarea"></textarea>
                         </div>
                     </div>
                     <div class="je_box-content">
@@ -290,7 +280,7 @@
                             仕上げの文句 SAMPLE
                         </div>
                         <div class="je_content-message">
-                            <textarea name="" id="je_closing-textarea"></textarea>
+                            <textarea name="w_message_bye" id="je_closing-textarea"></textarea>
                         </div>
                     </div>
                 </div>
@@ -327,7 +317,7 @@
                             <div id="je_photobox1" class="je_photobox">
                                 <input
                                         type="file"
-                                        name="photo1"
+                                        name="w_img1"
                                         id="je_photoInput1"
                                         onchange="readURL(this);"
                                         oninput="return photoType1()"
@@ -338,7 +328,7 @@
                             <div id="je_photobox2" class="je_photobox">
                                 <input
                                         type="file"
-                                        name="photo2"
+                                        name="w_img2"
                                         id="je_photoInput2"
                                         onchange="readURL(this);"
                                         oninput="return photoType2()"
@@ -349,7 +339,7 @@
                             <div id="je_photobox3" class="je_photobox">
                                 <input
                                         type="file"
-                                        name="photo3"
+                                        name="w_img3"
                                         id="je_photoInput3"
                                         onchange="readURL(this);"
                                         oninput="return photoType3()"
@@ -357,17 +347,17 @@
                                 <div id="je_photoOut3"></div>
                                 <span>写真３</span>
                             </div>
-                            <div id="je_photobox4" class="je_photobox">
-                                <input
-                                        type="file"
-                                        name="photo4"
-                                        id="je_photoInput4"
-                                        onchange="readURL(this);"
-                                        oninput="return photoType4()"
-                                />
-                                <div id="je_photoOut4"></div>
-                                <span>写真4</span>
-                            </div>
+<%--                            <div id="je_photobox4" class="je_photobox">--%>
+<%--                                <input--%>
+<%--                                        type="file"--%>
+<%--                                        name="photo4"--%>
+<%--                                        id="je_photoInput4"--%>
+<%--                                        onchange="readURL(this);"--%>
+<%--                                        oninput="return photoType4()"--%>
+<%--                                />--%>
+<%--                                <div id="je_photoOut4"></div>--%>
+<%--                                <span>写真4</span>--%>
+<%--                            </div>--%>
                         </div>
                     </div>
                     <div class="je_box-content">
@@ -385,6 +375,7 @@
                                 </div>
                             </label>
                             <input
+                                    name="w_img_share"
                                     id="je_photo-input"
                                     type="file"
                                     onchange="addFile(this);"
@@ -405,7 +396,7 @@
             <button id="je_submit-button">作成完了</button>
         </div>
     </div>
-
+</form>
     <!-- invitation message - 추천 -->
     <div id="je_invitation-modal" class="je_modal">
         <div class="modal-content">
@@ -431,7 +422,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM seasonsIM">
@@ -444,7 +435,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn" >選択</div>
+                            <button class="je_invitation-sendBtn" >選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM seasonsIM">
@@ -457,7 +448,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM seasonsIM">
@@ -470,7 +461,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <!-- 정중한 -->
@@ -485,7 +476,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM politeIM">
@@ -499,7 +490,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM politeIM">
@@ -514,7 +505,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM politeIM">
@@ -528,7 +519,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <!-- ユーモラスな -->
@@ -543,7 +534,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM humorIM">
@@ -557,7 +548,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM humorIM">
@@ -571,7 +562,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box invitationM humorIM">
@@ -585,7 +576,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_invitation-sendBtn">選択</div>
+                            <button class="je_invitation-sendBtn">選択</button>
                         </div>
                     </div>
                 </div>
@@ -618,7 +609,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM seasonsCM">
@@ -632,7 +623,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM seasonsCM">
@@ -646,7 +637,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM seasonsCM">
@@ -660,7 +651,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <!-- 정중한 -->
@@ -677,7 +668,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM politeCM">
@@ -693,7 +684,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM politeCM">
@@ -708,7 +699,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM politeCM">
@@ -723,7 +714,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <!-- ユーモラスな -->
@@ -739,7 +730,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM humorCM">
@@ -753,7 +744,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM humorCM">
@@ -768,7 +759,7 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                     <div class="je_theme-message-box closingM humorCM">
@@ -783,13 +774,13 @@
                             </div>
                         </div>
                         <div class="je_theme-message-button">
-                            <div class="je_closing-sendBtn">選択</div>
+                            <button class="je_closing-sendBtn">選択</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</form>
+
 </body>
 </html>
