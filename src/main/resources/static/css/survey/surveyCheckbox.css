@@ -1,7 +1,9 @@
+
 .tk_survey-guestType div, .tk_survey-gender div {
     display: flex;
     align-items: center;
 }
+
 .tk_survey-guestType label {
     margin-right: 10px;
     cursor: pointer;
@@ -12,7 +14,6 @@
     cursor: pointer;
 }
 
-
 .cb1 {
     height: 1.5rem;
     width: 1.5rem;
@@ -22,15 +23,65 @@
     box-sizing: border-box;
     position: relative;
     display: inline-block;
-    transition: border-color ease 0.2s;
-    cursor: pointer;
+    transition: border 0.2s ease;
 }
 
-.cb1::before, .cb1::after {
+.cb1:hover {
+    background-color: #cecece; /* 마우스를 올렸을 때 테두리 색을 회색으로 변경 */
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .cb1 {
+    border-width: 6px;
+    border-color: #ed0606;
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/*알레르기 및 동반자 checkbox 꾸미기*/
+.tk_survey-allergy-checkbox label {
+    margin-right: 10px;
+}
+
+.tk_survey-party-checkbox label {
+    margin-right: 10px;
+}
+
+.cb2 {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 20%;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    border: 3px solid #ed0606;
+    overflow: hidden;
+}
+
+.cb2:hover {
+    background-color: #cecece; /* 마우스를 올렸을 때 테두리 색을 회색으로 변경 */
+}
+
+.cb2::before, .cb2::after {
     position: absolute;
     height: 0;
     width: 4px;
-    background-color: #ed0606;
+    background-color: white;
     box-sizing: border-box;
     display: inline-block;
     transform-origin: left top;
@@ -39,15 +90,15 @@
     transition: opacity ease 0.5s;
 }
 
-.cb1::before {
-    top: 14.4px;
-    left: 8.2px;
+.cb2::before {
+    top: 14px;
+    left: 8.5px;
     transform: rotate(-135deg);
 }
 
-.cb1::after {
-    top: 7.4px;
-    left: 1px;
+.cb2::after {
+    top: 1px;
+    left: -7px;
     transform: rotate(-45deg);
 }
 
@@ -55,32 +106,27 @@ input[type="checkbox"] {
     display: none;
 }
 
-input[type="checkbox"]:checked + .cb1 {
-    border: 2px solid #ff69b4; /* 찐한 핑크색 테두리 */
-    animation: shake 0.5s;
+input[type="checkbox"]:checked + .cb2 {
+    border: 3px solid #ed0606;
+    background-color: #ed0606;
 }
 
-input[type="checkbox"]:checked + .cb1 {
-    border-color: #ed0606;
-}
-
-input[type="checkbox"]:checked + .cb1::after {
-    height: 10px;
+input[type="checkbox"]:checked + .cb2::after {
+    height: 25px;
     animation: bottomcheck 0.2s ease 0s forwards;
 }
 
-input[type="checkbox"]:checked + .cb1::before {
-    height: 24px;
-    animation: topcheck 0.4s ease 0s forwards;
+input[type="checkbox"]:checked + .cb2::before {
+    height: 30px; /* 첫 번째 내려가는 짝대기의 길이를 35px로 설정 */
+    animation: topcheck 0.5s ease 0s forwards;
 }
-
 
 @keyframes bottomcheck {
     0% {
         height: 0;
     }
     100% {
-        height: 10px;
+        height: 20px;
     }
 }
 
@@ -92,6 +138,6 @@ input[type="checkbox"]:checked + .cb1::before {
         height: 0;
     }
     100% {
-        height: 24px;
+        height: 30px;
     }
 }

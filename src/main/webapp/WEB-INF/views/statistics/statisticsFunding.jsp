@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
@@ -20,6 +22,14 @@
         console.log(day);
         const formattedDate = year + '-' + month + '-' + day; // YYYY-MM-DD 형식
         const dates = [];
+        let PaidPriceData = document.getElementById('jh_price_input').value;
+        let WishlistPrice = document.getElementById('jh_price_test').getAttribute('name');
+        console.log(PaidPriceData)
+        console.log(WishlistPrice)
+
+
+
+
 
     const eno = 5; /*여기 나중에 바뀌어야함, session이던 뭐던가로 eno 가져오기*/
     let array = []
@@ -133,7 +143,7 @@
             ],
             datasets: [{
                 label: '頂いた想い',
-                data: [300, 150],
+                data: [PaidPriceData, WishlistPrice - PaidPriceData],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(255, 255, 255)'
@@ -264,15 +274,15 @@
         <div class="jh_product_detail_container">
         <div style="margin-top: 3rem;" class="jh_product_label">
        <label>
-           <select style="width: 33%; padding: 5% ;
+           <select id="jh_select_tag" onchange=""  style="width: 33%; padding: 5% ;
     transform: translateX(60vw); text-align: center;">
                <c:forEach items="${wishlists}" var="w">
-               <option class="jh_wishlists">${w.wl_product}</option>
-
+               <option id="jh_price_test" name="${w.wl_price}" value="${w.wl_no}" class="jh_wishlists">${w.wl_product}</option>
             </c:forEach>
 
             </select>
         </label>
+            <input id="jh_price_input" type="hidden" value="${payPrice}">
    </div>
            <div class="jh_product_image"><img style="margin-top : 1rem;width: 100%" src="/resources/img/ソファー.png" alt=""></div>
         <div  class="jh_product_chart">
@@ -284,26 +294,39 @@
 
 <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink" class="jh_other_infos">
     <div style="margin-top: 2vh;" class="jh_funding_detail">特別な想い出</div>
-    <div style="margin-top: 5vh;" class="jh_funding_detail">繋がれた因縁 : @@名</div>
-    <div class="jh_funding_detail">一番数多くの因縁が訪れた日 : @@월 @@일</div>
-    <div class="jh_funding_detail">集まった想い :　@@円 </div>
-    <div class="jh_funding_detail">私に一番渡したいプレゼント : ㅁ</div>
+    <div style="margin-top: 5vh;" class="jh_funding_detail">繋がれた因縁 : ${NumberOfPeople}名</div>
+    <div class="jh_funding_detail">一番数多くの因縁が訪れた日 : ${PopularDate}</div>
+    <div class="jh_funding_detail">集まった想い :　${highestPrice}円 </div>
+    <div class="jh_funding_detail">私に一番渡したいプレゼント : ${PopularWishlist}</div>
 
 </div>
 
         <div style="background-color: #FFDBDB; margin-top: 5vh; " class="jh_allList_container">
             <div>
                 <div style="display: flex; justify-content: flex-end;">
-                 <div class="jh_arrange_button">   <button class="jh_arrange_button_button" type="submit">名前順</button></div>
+                 <div class="jh_arrange_button">   <button class="jh_arrange_button_button" type="submit">物品順</button></div>
                     <div class="jh_arrange_button">  <button class="jh_arrange_button_button"  type="submit">金額順</button></div>
                     <div class="jh_arrange_button">   <button class="jh_arrange_button_button"  type="submit">日付順</button></div>
                 </div>
             </div>
-    <div style="display: flex;background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
+    <div style="    width: 97%;
+    margin-left: 1.5%; display: flex;background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
         <div class="jh_detail_head">恩人</div>
         <div class="jh_detail_head">金額</div>
+        <div class="jh_detail_head">リスト</div>
         <div class="jh_detail_head">日付</div>
     </div>
+
+    <c:forEach items="${listupDatas}" var="l">
+        <div style="    width: 97%;
+    margin-left: 1.5%; display: flex;background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
+       <div style="text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
+        <div style="text-align: center">${l.p_price}</div>
+        <div style="text-align: center">${l.wl_product}</div>
+        <div style="text-align: center"><fmt:formatDate value="${l.p_date}" pattern="yyyy-MM-dd"></fmt:formatDate> </div>
+    </div>
+    </c:forEach>
+
 
 
 
