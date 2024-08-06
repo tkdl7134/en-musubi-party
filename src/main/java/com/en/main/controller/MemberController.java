@@ -65,7 +65,13 @@ public class MemberController {
     }
 
     @PostMapping("/member/resetPW")
-    public String resetPW(@RequestParam("token") String token, @RequestParam("newPW") String newPW, Model model) {
+    public String resetPW(@RequestParam("token") String token, @RequestParam("newPW") String newPW, @RequestParam("confirmPW") String confirmPW, Model model) {
+        if (!newPW.equals(confirmPW)) {
+            model.addAttribute("error", "새 비밀번호가 일치하지 않습니다.");
+            model.addAttribute("token", token);
+            return "member/resetPW"; // 비밀번호 재설정 페이지로 돌아가기
+        }
+
         boolean result = memberService.resetPW(token, newPW);
         if (result) {
             model.addAttribute("message", "비밀번호가 성공적으로 재설정되었습니다.");
