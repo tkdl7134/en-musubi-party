@@ -18,8 +18,8 @@
         let productEl = document.getElementById("jh_button_product");
         let moneyEl = document.getElementById("jh_button_money");
         let dateEl = document.getElementById("jh_button_date");
-        moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
-        dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+
+
         // fetch 요청 URL 결정
         let fetchUrl = productEl.innerText.includes("↓")
             ? '/statistics/reorderByProduct/' + no
@@ -61,7 +61,14 @@
 
                     testEl.appendChild(div);
                 });
-
+                moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
+                dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+                dateEl.style.backgroundColor = 'white';
+                dateEl.style.color = 'black';
+                productEl.style.backgroundColor = 'red';
+                productEl.style.color = 'white';
+                moneyEl.style.backgroundColor = 'white';
+                moneyEl.style.color = 'black';
                 // jh_button_money 버튼의 텍스트에 화살표 토글
                 if (productEl.innerText.includes("↓")) {
                     productEl.innerText = productEl.innerText.replace("↓", "↑");
@@ -86,8 +93,9 @@
         let moneyEl = document.getElementById("jh_button_money");
         let productEl = document.getElementById("jh_button_product");
         let dateEl = document.getElementById("jh_button_date");
-        productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
-        dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+
+
+
 
         // fetch 요청 URL 결정
         let fetchUrl = moneyEl.innerText.includes("↓")
@@ -130,7 +138,14 @@
 
                     testEl.appendChild(div);
                 });
-
+                productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
+                dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+                dateEl.style.backgroundColor = 'white';
+                dateEl.style.color = 'black';
+                productEl.style.backgroundColor = 'white';
+                productEl.style.color = 'black';
+                moneyEl.style.backgroundColor = 'red';
+                moneyEl.style.color = 'white';
                 // jh_button_money 버튼의 텍스트에 화살표 토글
                 if (moneyEl.innerText.includes("↓")) {
                     moneyEl.innerText = moneyEl.innerText.replace("↓", "↑");
@@ -152,8 +167,10 @@
         let dateEl = document.getElementById("jh_button_date");
         let productEl = document.getElementById("jh_button_product");
         let moneyEl = document.getElementById("jh_button_money");
-        productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
-        moneyEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+
+
+
+
         // fetch 요청 URL 결정
         let fetchUrl = dateEl.innerText.includes("↓")
             ? '/statistics/reorderByDate/' + no
@@ -195,11 +212,20 @@
 
                     testEl.appendChild(div);
                 });
+                productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
+                moneyEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
 
+                dateEl.style.backgroundColor = 'red';
+                dateEl.style.color = 'white';
+                productEl.style.backgroundColor = 'white';
+                productEl.style.color = 'black';
+                moneyEl.style.backgroundColor = 'white';
+                moneyEl.style.color = 'black';
                 // jh_button_money 버튼의 텍스트에 화살표 토글
                 if (dateEl.innerText.includes("↓")) {
-                    dateEl.innerText = date.innerText.replace("↓", "↑");
-                } else if (moneyEl.innerText.includes("↑")) {
+                    dateEl.innerText = dateEl.innerText.replace("↓", "↑");
+
+                } else if (dateEl.innerText.includes("↑")) {
                     dateEl.innerText = dateEl.innerText.replace("↑", "↓");
                     fetchUrl = '/statistics/reorderByMoney/' + no;
                 } else {

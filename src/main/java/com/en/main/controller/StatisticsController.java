@@ -24,7 +24,7 @@ public class StatisticsController {
    private StatisticsFundingService statisticsFundingService;
 
     @GetMapping("/funding")
-    public String goStatisticsFundingPage(Model model , PayVo payVo , JhFundSqlVo jhFundSqlVo){
+    public String goStatisticsFundingPage(Model model , PayVo payVo , JhFundSqlVo jhFundSqlVo ){
         int eno = 5;
        model.addAttribute("wishlists" ,  statisticsFundingService.getWishlistData(eno));
         System.out.println(statisticsFundingService.getWishlistData(eno));
