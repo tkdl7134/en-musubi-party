@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="survey-form">
-                                    <form action="/survey/create" method="post" enctype="multipart/form-data">
+                                    <form action="survey/create" method="post" enctype="multipart/form-data">
                                         <div class="tk_survey-guestType">
                                             <div class="tk_survey-titleName">ゲスト様</div>
                                             <div>
@@ -65,7 +65,7 @@
                                         <div class="tk_survey-relationship">
                                             <div class="tk_survey-titleName">ご関係</div>
                                             <div>
-                                                <select name="g_relation">
+                                                <select name="g_relation_detail">
                                                     <option value="家族">家族</option>
                                                     <option value="親友">親友</option>
                                                     <option value="職場同僚">職場同僚</option>
@@ -86,20 +86,20 @@
                                         <div class="tk_division-line"></div>
                                         <div class="tk_justName">
                                             <div class="tk_survey-titleName">お名前</div>
-                                            <input type="text" name="m_name_first" />
-                                            <input type="text" name="m_name_second" />
+                                            <input type="text" name="m_fam_kanji" />
+                                            <input type="text" name="m_name_kanji" />
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_kataName">
                                             <div class="tk_survey-titleName">カタカナ</div>
-                                            <input type="text" name="m_name_kana_first" />
-                                            <input type="text" name="m_name_kana_second" />
+                                            <input type="text" name="m_fam_kana" />
+                                            <input type="text" name="m_name_kana" />
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_romeName">
                                             <div class="tk_survey-titleName">ローマ字</div>
-                                            <input type="text" name="m_name_rome_first" />
-                                            <input type="text" name="m_name_rome_second" />
+                                            <input type="text" name="m_fam_eng" />
+                                            <input type="text" name="m_name_eng" />
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-gender">
@@ -139,29 +139,29 @@
                                                 <input
                                                         class="search-postcode"
                                                         type="text"
-                                                        name="a_postcode"
+                                                        name="m_zipcode"
                                                 />
                                                 <button type="button" class="search-post-btn">
                                                     検索
                                                 </button>
                                             </div>
                                             <div class="tk_survey-address">
-                                                <input type="text" name="a_address" />
-                                                <input type="text" name="other-address" />
+                                                <input type="text" name="m_address" />
+                                                <input type="text" name="m_other_address" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-email">
                                             <div class="tk_survey-titleName">メールアドレス</div>
                                             <div>
-                                                <input type="text" />
+                                                <input type="text" name="m_email" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-phone">
                                             <div class="tk_survey-titleName">電話番号</div>
                                             <div>
-                                                <input type="text" />
+                                                <input type="text" name="m_phone" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
@@ -171,7 +171,7 @@
                                                 <input
                                                         type="checkbox"
                                                         id="allergyHave"
-                                                        name="allergy_or"
+                                                        name="g_allergy_or"
                                                         value="Yes"
                                                         class="allergyHave"
                                                         data-conid="allergyDetailContainer"
@@ -190,12 +190,12 @@
                                         <div class="tk_survey-party">
                                             <div class="tk_survey-titleName">お連れ様</div>
                                             <div class="tk_survey-party-checkbox">
-                                                <input type="checkbox" id="addPartyMember" />
+                                                <input type="checkbox" id="addPartyMember" name="" />
                                                 <label class="cb2" for="addPartyMember"></label>
                                                 <span>お連れ様を追加する</span>
                                             </div>
                                             <div id="partyContainer"></div>
-                                            <button id="addPartyButton" style="display: none;">追加する</button>
+                                            <button type="button" id="addPartyButton" style="display: none;">追加する</button>
                                         </div>
 
                                         <div class="tk_survey-message">
@@ -210,7 +210,7 @@
                                                     </div>
                                                     <div>
                                                         <button id="ImgUploadButton" type="button">写真アップロード</button>
-                                                        <input type="file" name="me_img" id="imgInput" style="display: none;" accept="image/*">
+                                                        <input type="file" name="me_img2" id="imgInput" style="display: none;" accept="image/*">
                                                     </div>
                                                     <div>
                                                         <button id="ImgDeleteButton" type="button">写真削除</button>
@@ -269,7 +269,17 @@
                                             </div>
                                             <input type="hidden" name="g_attend_afterparty" id="g_attend_afterparty">
                                         </div>
-                                        <button type="submit">Submit</button>
+
+                                        <div class="tk_division-line"></div>
+
+                                        <div class="survey-last-submit-container">
+                                            <div>
+                                                <button class="survey-submit-button" type="submit">送信</button>
+                                            </div>
+                                            <div class="survey-last-img">
+                                                <img src="/resources/img/enmusubi-logo.png" alt="" >
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

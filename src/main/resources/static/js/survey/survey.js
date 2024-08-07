@@ -297,34 +297,34 @@ $(document).ready(function () {
                    <div class="tk_survey-titleName">お連れ様について</div>
                    <div>
                        <input
-                           type="checkbox" id="adultAccompany" name="p_accompany_type" value="ご成年"/>
-                       <label class="cb1" for="adultAccompany"></label>
-                       <label for="adultAccompany_${partyCount}">ご成年</label>
+                           type="checkbox" id="adultAccompany${partyCount}" name="p_accompany_type" value="ご成年"/>
+                       <label class="cb1" for="adultAccompany${partyCount}"></label>
+                       <label for="adultAccompany${partyCount}">ご成年</label>
                        <input
-                           type="checkbox" id="childAccompany" name="p_accompany_type" value="お子様"/>
-                       <label class="cb1" for="childAccompany"></label>
-                       <label for="femaleGender_${partyCount}">お子様</label>
+                           type="checkbox" id="childAccompany${partyCount}" name="p_accompany_type" value="お子様"/>
+                       <label class="cb1" for="childAccompany${partyCount}"></label>
+                       <label for="femaleGender${partyCount}">お子様</label>
                        <input
-                           type="checkbox" id="babyAccompany" name="p_accompany_type" value="幼子"/>
-                       <label class="cb1" for="babyAccompany"></label>
-                       <label for="babyAccompany_${partyCount}">幼子</label>
+                           type="checkbox" id="babyAccompany${partyCount}" name="p_accompany_type" value="幼子"/>
+                       <label class="cb1" for="babyAccompany${partyCount}"></label>
+                       <label for="babyAccompany${partyCount}">幼子</label>
                    </div>
                </div>
                <div class="tk_survey-gender-accompany">
                    <div class="tk_survey-titleName">性別</div>
                    <div>
                        <input
-                           type="checkbox" id="maleGender-accompany}" name="m_gender" value="男性"/>
-                       <label class="cb1" for="maleGender-accompany}"></label>
-                       <label for="maleGender-accompany_${partyCount}">男性</label>
+                           type="checkbox" id="maleGender-accompany${partyCount}" name="m_gender" value="男性"/>
+                       <label class="cb1" for="maleGender-accompany${partyCount}"></label>
+                       <label for="maleGender-accompany${partyCount}">男性</label>
                        <input
-                           type="checkbox" id="femaleGender-accompany}" name="m_gender" value="女性"/>
-                       <label class="cb1" for="femaleGender-accompany}"></label>
-                       <label for="femaleGender-accompany">女性</label>
+                           type="checkbox" id="femaleGender-accompany${partyCount}" name="m_gender" value="女性"/>
+                       <label class="cb1" for="femaleGender-accompany${partyCount}"></label>
+                       <label for="femaleGender-accompany${partyCount}">女性</label>
                        <input
-                           type="checkbox" id="othersGender-accompany" name="m_gender" value="その他"/>
-                       <label class="cb1" for="othersGender-accompany"></label>
-                       <label for="othersGender-accompany">その他</label>
+                           type="checkbox" id="othersGender-accompany${partyCount}" name="m_gender" value="その他"/>
+                       <label class="cb1" for="othersGender-accompany${partyCount}"></label>
+                       <label for="othersGender-accompany${partyCount}">その他</label>
                   </div>
                </div>
                <div class="tk_allergy">
@@ -335,9 +335,9 @@ $(document).ready(function () {
                        <span>アレルギー情報を入力する</span>
                    </div>
                    <div class="tk_survey-allergy-detail"  id="allergyDetailContainer${partyCount}" >`;
-        partyDiv += partyCount > 1 ? '<button class="remove-party-member" data-id="' + partyCount + '">削除する</button>' : '';
         partyDiv += "</div>";
-        $("#partyContainer").append(partyDiv)
+        partyDiv += partyCount > 1 ? '<button class="remove-party-member" data-id="' + partyCount + '">削除する</button>' : '';
+        $("#partyContainer").append(partyDiv);
     }
 
     $(document).on("click", ".remove-party-member", function () {
