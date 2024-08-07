@@ -59,5 +59,31 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
         return statisticsFundingMapper.getListupInfos(no);
     }
 
+    @Override
+    public List<JhFundSqlVo> getListupInfosDesc(int no) {
+        return statisticsFundingMapper.getListupInfosDesc(no);
+    }
+
+    @Override
+    public List<JhFundSqlVo> reorderListByMoney(int no) {
+
+        return statisticsFundingMapper.reorderListByMoney(no);
+    }
+
+    @Override
+    public List<JhFundSqlVo> reorderListByMoneyDesc(int no) {
+        return statisticsFundingMapper.reorderListByMoneyDesc(no);
+    }
+
+    @Override
+    public List<JhFundSqlVo> reorderListByDate(int no) {
+        return statisticsFundingMapper.reorderListByDate(no);
+    }
+
+    @Override
+    public List<JhFundSqlVo> reorderListByDateDesc(int no) {
+        return statisticsFundingMapper.reorderListByDateDesc(no);
+    }
+
 
 }
