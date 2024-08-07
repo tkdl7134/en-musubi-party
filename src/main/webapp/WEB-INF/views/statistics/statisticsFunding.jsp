@@ -11,6 +11,208 @@
 <script src="/resources/js/statistics/statistics.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+
+    function reorderByProduct (no) {
+
+
+        let productEl = document.getElementById("jh_button_product");
+        let moneyEl = document.getElementById("jh_button_money");
+        let dateEl = document.getElementById("jh_button_date");
+        moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
+        dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+        // fetch 요청 URL 결정
+        let fetchUrl = productEl.innerText.includes("↓")
+            ? '/statistics/reorderByProduct/' + no
+            : '/statistics/reorderByProductDesc/' + no;
+
+        fetch(fetchUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let testEl = document.getElementById("jh_foreach_test");
+
+                // 요소의 내용을 제거합니다.
+                testEl.innerHTML = '';
+
+                // 데이터를 반복하여 HTML 요소를 생성합니다.
+                data.forEach(l => {
+                    let div = document.createElement('div');
+                    div.style.cssText = 'width: 97%; margin-left: 1.5%; display: flex; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+
+                    let kanjiDiv = document.createElement('div');
+                    kanjiDiv.style.textAlign = 'center';
+                    kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
+                    div.appendChild(kanjiDiv);
+
+                    let priceDiv = document.createElement('div');
+                    priceDiv.style.textAlign = 'center';
+                    priceDiv.textContent = l.p_price;
+                    div.appendChild(priceDiv);
+
+                    let productDiv = document.createElement('div');
+                    productDiv.style.textAlign = 'center';
+                    productDiv.textContent = l.wl_product;
+                    div.appendChild(productDiv);
+
+                    let dateDiv = document.createElement('div');
+                    dateDiv.style.textAlign = 'center';
+                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    div.appendChild(dateDiv);
+
+                    testEl.appendChild(div);
+                });
+
+                // jh_button_money 버튼의 텍스트에 화살표 토글
+                if (productEl.innerText.includes("↓")) {
+                    productEl.innerText = productEl.innerText.replace("↓", "↑");
+                } else if (productEl.innerText.includes("↑")) {
+                    productEl.innerText = productEl.innerText.replace("↑", "↓");
+                    fetchUrl = '/statistics/reorderByMoney/' + no;
+                } else {
+                    productEl.innerText += "↓";
+                    fetchUrl = '/statistics/reorderByMoneyDesc/' + no;
+                }
+
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+
+
+    }
+
+    function reorderByMoney(no) {
+        let moneyEl = document.getElementById("jh_button_money");
+        let productEl = document.getElementById("jh_button_product");
+        let dateEl = document.getElementById("jh_button_date");
+        productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
+        dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+
+        // fetch 요청 URL 결정
+        let fetchUrl = moneyEl.innerText.includes("↓")
+            ? '/statistics/reorderByMoney/' + no
+            : '/statistics/reorderByMoneyDesc/' + no;
+
+        fetch(fetchUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let testEl = document.getElementById("jh_foreach_test");
+
+                // 요소의 내용을 제거합니다.
+                testEl.innerHTML = '';
+
+                // 데이터를 반복하여 HTML 요소를 생성합니다.
+                data.forEach(l => {
+                    let div = document.createElement('div');
+                    div.style.cssText = 'width: 97%; margin-left: 1.5%; display: flex; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+
+                    let kanjiDiv = document.createElement('div');
+                    kanjiDiv.style.textAlign = 'center';
+                    kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
+                    div.appendChild(kanjiDiv);
+
+                    let priceDiv = document.createElement('div');
+                    priceDiv.style.textAlign = 'center';
+                    priceDiv.textContent = l.p_price;
+                    div.appendChild(priceDiv);
+
+                    let productDiv = document.createElement('div');
+                    productDiv.style.textAlign = 'center';
+                    productDiv.textContent = l.wl_product;
+                    div.appendChild(productDiv);
+
+                    let dateDiv = document.createElement('div');
+                    dateDiv.style.textAlign = 'center';
+                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    div.appendChild(dateDiv);
+
+                    testEl.appendChild(div);
+                });
+
+                // jh_button_money 버튼의 텍스트에 화살표 토글
+                if (moneyEl.innerText.includes("↓")) {
+                    moneyEl.innerText = moneyEl.innerText.replace("↓", "↑");
+                } else if (moneyEl.innerText.includes("↑")) {
+                    moneyEl.innerText = moneyEl.innerText.replace("↑", "↓");
+                    fetchUrl = '/statistics/reorderByMoney/' + no;
+                } else {
+                    moneyEl.innerText += "↓";
+                    fetchUrl = '/statistics/reorderByMoneyDesc/' + no;
+                }
+
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    function reorderByDate(no) {
+        let dateEl = document.getElementById("jh_button_date");
+        let productEl = document.getElementById("jh_button_product");
+        let moneyEl = document.getElementById("jh_button_money");
+        productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
+        moneyEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+        // fetch 요청 URL 결정
+        let fetchUrl = dateEl.innerText.includes("↓")
+            ? '/statistics/reorderByDate/' + no
+            : '/statistics/reorderByDateDesc/' + no;
+
+        fetch(fetchUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let testEl = document.getElementById("jh_foreach_test");
+
+                // 요소의 내용을 제거합니다.
+                testEl.innerHTML = '';
+
+                // 데이터를 반복하여 HTML 요소를 생성합니다.
+                data.forEach(l => {
+                    let div = document.createElement('div');
+                    div.style.cssText = 'width: 97%; margin-left: 1.5%; display: flex; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+
+                    let kanjiDiv = document.createElement('div');
+                    kanjiDiv.style.textAlign = 'center';
+                    kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
+                    div.appendChild(kanjiDiv);
+
+                    let priceDiv = document.createElement('div');
+                    priceDiv.style.textAlign = 'center';
+                    priceDiv.textContent = l.p_price;
+                    div.appendChild(priceDiv);
+
+                    let productDiv = document.createElement('div');
+                    productDiv.style.textAlign = 'center';
+                    productDiv.textContent = l.wl_product;
+                    div.appendChild(productDiv);
+
+                    let dateDiv = document.createElement('div');
+                    dateDiv.style.textAlign = 'center';
+                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    div.appendChild(dateDiv);
+
+                    testEl.appendChild(div);
+                });
+
+                // jh_button_money 버튼의 텍스트에 화살표 토글
+                if (dateEl.innerText.includes("↓")) {
+                    dateEl.innerText = date.innerText.replace("↓", "↑");
+                } else if (moneyEl.innerText.includes("↑")) {
+                    dateEl.innerText = dateEl.innerText.replace("↑", "↓");
+                    fetchUrl = '/statistics/reorderByMoney/' + no;
+                } else {
+                    dateEl.innerText += "↓";
+                    fetchUrl = '/statistics/reorderByMoneyDesc/' + no;
+                }
+
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+    }
     document.addEventListener('DOMContentLoaded', function () {
         const ctx = document.getElementById('myChart').getContext('2d');
         const config = document.getElementById('week-data-chart').getContext('2d');
@@ -156,8 +358,8 @@
             data: data2,
         });
 
-    
-        
+
+
 
 
 
@@ -289,7 +491,7 @@
         <canvas id="jh_product_chart"></canvas>
         </div>
 
-            
+
         </div>
 
 <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink" class="jh_other_infos">
@@ -304,9 +506,9 @@
         <div style="background-color: #FFDBDB; margin-top: 5vh; " class="jh_allList_container">
             <div>
                 <div style="display: flex; justify-content: flex-end;">
-                 <div class="jh_arrange_button">   <button class="jh_arrange_button_button" type="submit">物品順</button></div>
-                    <div class="jh_arrange_button">  <button class="jh_arrange_button_button"  type="submit">金額順</button></div>
-                    <div class="jh_arrange_button">   <button class="jh_arrange_button_button"  type="submit">日付順</button></div>
+                 <div class="jh_arrange_button">   <button onclick="reorderByProduct(5)" class="jh_arrange_button_button" id="jh_button_product" type="submit">物品順</button></div>
+                    <div class="jh_arrange_button">  <button onclick="reorderByMoney(5)" class="jh_arrange_button_button" id="jh_button_money"  type="submit">金額順</button></div>
+                    <div class="jh_arrange_button">   <button onclick="reorderByDate(5)" class="jh_arrange_button_button" id="jh_button_date" type="submit">日付順</button></div>
                 </div>
             </div>
     <div style="    width: 97%;
@@ -316,7 +518,7 @@
         <div class="jh_detail_head">リスト</div>
         <div class="jh_detail_head">日付</div>
     </div>
-
+    <div id="jh_foreach_test">
     <c:forEach items="${listupDatas}" var="l">
         <div style="    width: 97%;
     margin-left: 1.5%; display: flex;background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
@@ -326,7 +528,7 @@
         <div style="text-align: center"><fmt:formatDate value="${l.p_date}" pattern="yyyy-MM-dd"></fmt:formatDate> </div>
     </div>
     </c:forEach>
-
+    </div>
 
 
 
