@@ -213,7 +213,7 @@
                     testEl.appendChild(div);
                 });
                 productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
-                moneyEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+                moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
 
                 dateEl.style.backgroundColor = 'red';
                 dateEl.style.color = 'white';
