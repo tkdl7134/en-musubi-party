@@ -46,7 +46,7 @@
             <canvas id="ageDonutChart"></canvas>
         </div>
     </div>
-    <button class="yr_apply_cancel">参加 キャンセル</button>
+<%--    <button class="yr_apply_cancel">参加 キャンセル</button>--%>
     ${partyMembers}
 
 </div>
