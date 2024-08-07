@@ -278,6 +278,7 @@ $(document).ready(function () {
         partyCount++;
         let partyDiv =
             `<div class= "party-member" id="party-member-${partyCount}">
+              <input type="hidden" name="companions[${partyCount}].p_accompany_num" value="${partyCount}" />
               <div class="tk_justName">
                    <div class="tk_survey-titleName">お名前</div>
                        <input type="text" name="m_name_first" />

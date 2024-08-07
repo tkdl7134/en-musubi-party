@@ -209,11 +209,11 @@
                                                         <button id="defaultImgButton" type="button">イメージ選択</button>
                                                     </div>
                                                     <div>
-                                                        <button id="ImgUploadButton" type="button">写真アップロード</button>
+                                                        <button id="imgUploadButton" type="button">写真アップロード</button>
                                                         <input type="file" name="me_img2" id="imgInput" style="display: none;" accept="image/*">
                                                     </div>
                                                     <div>
-                                                        <button id="ImgDeleteButton" type="button">写真削除</button>
+                                                        <button id="imgDeleteButton" type="button">写真削除</button>
                                                     </div>
                                                 </div>
                                             </div>
