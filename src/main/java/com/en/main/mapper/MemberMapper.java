@@ -18,6 +18,6 @@ public interface MemberMapper {
     @Select("SELECT m_id FROM reset_pw_token WHERE token = #{token}")
     String findIDByToken(@Param("token") String token);
 
-    @Update("UPDATE member SET m_pw = #{newPassword} WHERE m_id = #{m_id}")
-    void updatePW(@Param("m_id") String m_id, @Param("newPassword") String newPW);
+    @Update("UPDATE member SET m_pw = #{newPW} WHERE m_id = #{m_id}")
+    void updatePW(@Param("m_id") String m_id, @Param("newPW") String newPW);
 }
