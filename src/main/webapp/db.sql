@@ -72,13 +72,13 @@ create table wedding_info(
     w_fam_eng_bride varchar2(50 char) not null,
     w_name_eng_bride varchar2(50 char) not null,
     w_date date not null,
-    w_wedding_time date not null,
-    w_wedding_assemble date not null,
+    w_wedding_time timestamp not null,
+    w_wedding_assemble timestamp not null,
     w_wedding_postcode varchar2(10 char) not null,
     w_wedding_address varchar2(200 char) not null,
     w_wedding_building varchar2(50 char) not null,
-    w_reception_time date not null,
-    w_reception_assemble date not null,
+    w_reception_time timestamp not null,
+    w_reception_assemble timestamp not null,
     w_reception_postcode varchar2(10 char) not null,
     w_reception_address varchar2(200 char) not null,
     w_reception_building varchar2(50 char) not null,
@@ -92,7 +92,8 @@ create table wedding_info(
     foreign key(e_no) references event(e_no),
     foreign key (t_pk) references template(t_pk)
 );
-select * from WEDDING_iNFO;
+select * from WEDDING_INFO;
+drop table wedding_info;
 
 
 -- 위시리스트
