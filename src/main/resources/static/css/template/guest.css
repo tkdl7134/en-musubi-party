@@ -53,6 +53,7 @@ ul.list {
     display: flex;
     list-style: none;
     justify-content: space-around;
+    gap: 1.3rem;
 }
 
 .hw_tab-button {

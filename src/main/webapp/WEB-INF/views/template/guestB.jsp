@@ -42,10 +42,15 @@
 
             <div class="hw_tab-button-content">
                 <div class="hw_tab-content">
-                    <span>이름 : 김영수</span>
-                    <span>동반인수 : 어른 1 어린이 1 유아 1</span>
-                    <span>알레르기 : 꽃알러지</span>
-                    <span>요청내용 : 꽃시러</span>
+                <div>
+                        <span>이름 : 김영수</span>
+                        <span>동반인수 : 어른 1 어린이 1 유아 1</span>
+                        <span>알레르기 : 꽃알러지</span>
+                        <span>요청내용 : 꽃시러</span>
+                </div>
+                    <div>
+                        <span>이름 : 김영수</span>
+                    </div>
                 </div>
             </div>
             <div class="hw_tab-button-content show">
