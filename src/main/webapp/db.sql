@@ -1,4 +1,10 @@
--- 멤버
+There was an unexpected error (type=Internal Server Error, status=500).
+Property [date] not found on type [com.en.main.dto.WeddingVO]
+jakarta.el.PropertyNotFoundException: Property [date] not found on type [com.en.main.dto.WeddingVO]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at org.apache.jasper.el.JasperELResolver.getValue(JasperELResolver.java:130)-- 멤버
 create table member(
     m_id varchar2(50 char) primary key,
     m_pw varchar2(50 char) not null,
@@ -71,15 +77,17 @@ create table wedding_info(
     w_name_jp_bride varchar2(10 char) not null,
     w_fam_eng_bride varchar2(50 char) not null,
     w_name_eng_bride varchar2(50 char) not null,
-    w_date date not null,
-    w_wedding_time date not null,
-    w_wedding_assemble date not null,
-    w_wedding_building varchar2(50 char) not null,
+    w_date varchar2(10 char) not null,
+    w_wedding_time varchar2(10 char) not null,
+    w_wedding_assemble varchar2(10 char) not null,
+    w_wedding_postcode varchar2(10 char) not null,
     w_wedding_address varchar2(200 char) not null,
-    w_reception_time date not null,
-    w_reception_assemble date not null,
-    w_reception_building varchar2(50 char) not null,
+    w_wedding_building varchar2(50 char) not null,
+    w_reception_time varchar2(10 char) not null,
+    w_reception_assemble varchar2(10 char) not null,
+    w_reception_postcode varchar2(10 char) not null,
     w_reception_address varchar2(200 char) not null,
+    w_reception_building varchar2(50 char) not null,
     w_message_invite varchar2(500 char) not null,
     w_message_bye varchar2(500 char) not null,
     w_img1 varchar2 (50 char) not null,
@@ -91,6 +99,7 @@ create table wedding_info(
     foreign key (t_pk) references template(t_pk)
 );
 select * from WEDDING_iNFO;
+drop table wedding_info;
 
 -- 위시리스트
 create table wishlist(

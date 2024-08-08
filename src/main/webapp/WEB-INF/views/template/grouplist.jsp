@@ -23,29 +23,37 @@
         <div class="hw_card">
 
             <div class="hw_content">
+                <c:forEach items="${weddingList}" var="w">
                 <div><img src="/resources/img/template1.jpg" alt=""></div>
                 <div><img src="/resources/img/template2.jpg" alt=""></div>
                 <div><img src="/resources/img/template3.jpg" alt=""></div>
+                </c:forEach>
             </div>
             <div class="hw_mytemplate-list-container">
+                <c:forEach items="${weddingList}" var="w">
                 <div>
                     날짜 : 2024.09.13
+                    날짜 : ${w.date}
                 </div>
                 <div>
                     주최자 : 철수 ♡ 유리
+                    주최자 : ${w.w_fam_jp_groom},${w.w_name_jp_groom} ♡ ${w.w_fam_jp_bride},${w.w_name_jp_bride}
                 </div>
                 <div>
                     시간 : 오전 11시 30분
+                    시간 : ${w.w_wedding_time}
                 </div>
                 <div>
                     장소 : 결혼식장
+                    주소 : ${w.w_wedding_address}
+                    건물명 :${w.w_wedding_building}
                 </div>
+                </c:forEach>
             </div>
 
         </div>
 
         <div class="hw_card">
-
             <div class="hw_content">
                 <div><img src="/resources/img/template1.jpg" alt=""></div>
                 <div><img src="/resources/img/template2.jpg" alt=""></div>
