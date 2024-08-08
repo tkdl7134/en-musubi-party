@@ -18,8 +18,11 @@ public interface ProductMapper {
     TemplateProductVO getTemplateByPk(int t_pk);
 
 //    @Insert("insert into event values (event_seq.nextval, '#{m_id}', ''")
-    @Insert("insert into event values (event_seq.nextval,'test3', 'https://www.amazon.co.jp/'")
+    @Insert("insert into event values (event_seq.nextval, 'test3', 'https://www.amazon.co.jp/')")
     void createEvent();
+
+    @Select("select event_seq.currval from dual")
+    int getCurrentEventNo();
 
     @Insert("insert into wedding_info values (event_seq.currval, #{t_pk}," +
             "#{w_fam_jp_groom}, #{ w_name_jp_groom}, #{w_fam_eng_groom}, #{w_name_eng_groom}," +
@@ -28,6 +31,6 @@ public interface ProductMapper {
             "#{w_reception_time}, #{w_reception_assemble}, #{w_reception_postcode}, #{w_reception_address}, #{w_reception_building}, " +
             "#{w_message_invite}, #{w_message_bye}," +
             "#{w_img1}, #{w_img2}, #{w_img3}, #{w_img_share} )")
-    void insertWeddingInfo(WeddingVO weddingVO, int t_pk);
+    void insertWeddingInfo(WeddingVO weddingVO);
 
 }
