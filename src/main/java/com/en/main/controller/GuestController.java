@@ -17,12 +17,4 @@ public class GuestController {
     public String guest() {
         return "template/guest";
     }
-    @GetMapping("/guestB")
-    public String guestB() {
-        return "template/guestB";
-    }
-    @GetMapping("/guestC")
-    public String guestC() {
-        return "template/guestC";
-    }
 }

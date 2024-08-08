@@ -1,39 +1,23 @@
-$(document).ready(function () {
-    // 현재 페이지 URL에 따라 select 필드에서 선택된 옵션 설정
-    var currentPage = window.location.pathname.split("/").pop();
-    $('#dropdown-select option[value="' + currentPage + '"]').prop('selected', true);
-
-    // 선택한 옵션에 따라 페이지 이동
-    $('#dropdown-select').change(function () {
-        var selectedPage = $(this).val();
-        if (selectedPage) {
-            window.location.href = selectedPage; // 선택된 값으로 페이지 이동
-        }
-    });
-
-    // 탭 버튼 클릭 시 처리
-    $('.hw_tab-button').each(function (index) {
-        $(this).on('click', function () {
+$(document).ready(function(){
+    for(let i = 0; i < $('.hw_tab-button').length; i++){
+        $('.hw_tab-button').eq(i).on('click',function(){
             $('.hw_tab-button').removeClass('active');
-            $(this).addClass('active');
+            $('.hw_tab-button').eq(i).addClass('active');
             $('.hw_tab-button-content').removeClass('show');
-            $('.hw_tab-button-content').eq(index).addClass('show');
+            $('.hw_tab-button-content').eq(i).addClass('show');
+        });
+    }
+    $(function(){
+        $(".hw_detail-guest").slice(0, 0).show(); // 초기갯수
+        $("#more").click(function(e){ // 클릭시 more
+            e.preventDefault();
+            $(".hw_detail-guest:hidden").slice(0, 1).show(); // 클릭시 more 갯수 지저정
+            if($(".hw_detail-guest:hidden").length == 0){ // 컨텐츠 남아있는지 확인
+                alert("게시물의 끝입니다."); // 컨텐츠 없을시 alert 창 띄우기
+            }
         });
     });
 
-    // "더보기" 버튼 클릭 시 처리
-    $("#more").click(function () {
-        $(".hw_detail-guest").toggle(); // 모든 숨겨진 콘텐츠를 토글
-        if ($(".hw_detail-guest:visible").length > 0) {
-            $("#more").text("접기"); // 표시되면 버튼 텍스트를 "접기"로 변경
-        } else {
-            $("#more").text("더보기"); // 숨겨지면 버튼 텍스트를 "더보기"로 변경
-        }
-    });
-    $('#dropdown-select').change(function () {
-        var selectedPage = $(this).val();
-        if (selectedPage) {
-            window.location.href = selectedPage; // 선택된 값으로 페이지 이동
-        }
-    });
+
+
 });
