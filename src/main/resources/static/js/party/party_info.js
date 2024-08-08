@@ -16,7 +16,7 @@ const ageDonutChart = new Chart(ctx, {
                 data: [18, 18, 18, 18, 18, 20],
                 backgroundColor: [
                     "#ef696e",
-                    "#ff8b92 ",
+                    "#ff8b92",
                     "#ff5a5f",
                     "#ffc0c3",
                     "#f56c7a",

@@ -78,7 +78,49 @@ public class StatisticsController {
 
     }
 
+    @GetMapping("/reorderByProduct/{no}")
+    public @ResponseBody List<JhFundSqlVo> reorderByProduct(@PathVariable int no , Model model){
+        System.out.println(no);
+        model.addAttribute("listupDatas" , statisticsFundingService.getListupInfos(no));
 
+        return statisticsFundingService.getListupInfos(no);
+    }
+    @GetMapping("/reorderByProductDesc/{no}")
+    public @ResponseBody List<JhFundSqlVo> reorderByProductDesc(@PathVariable int no , Model model){
+        System.out.println(no);
+        model.addAttribute("listupDatas" , statisticsFundingService.getListupInfosDesc(no));
+
+        return statisticsFundingService.getListupInfosDesc(no);
+    }
+
+@GetMapping("/reorderByMoney/{no}")
+public @ResponseBody List<JhFundSqlVo> reorderByMoney(@PathVariable int no , Model model){
+    System.out.println(no);
+    model.addAttribute("listupDatas" , statisticsFundingService.reorderListByMoney(no));
+
+    return statisticsFundingService.reorderListByMoney(no);
+}
+@GetMapping("/reorderByMoneyDesc/{no}")
+public @ResponseBody List<JhFundSqlVo> reorderByMoneyDesc(@PathVariable int no , Model model){
+    System.out.println(no);
+    model.addAttribute("listupDatas" , statisticsFundingService.reorderListByMoneyDesc(no));
+
+    return statisticsFundingService.reorderListByMoneyDesc(no);
+}
+@GetMapping("/reorderByDate/{no}")
+public @ResponseBody List<JhFundSqlVo> reorderByDate(@PathVariable int no , Model model){
+    System.out.println(no);
+    model.addAttribute("listupDatas" , statisticsFundingService.reorderListByDate(no));
+
+    return statisticsFundingService.reorderListByDate(no);
+}
+@GetMapping("/reorderByDateDesc/{no}")
+public @ResponseBody List<JhFundSqlVo> reorderByDateDesc(@PathVariable int no , Model model){
+    System.out.println(no);
+    model.addAttribute("listupDatas" , statisticsFundingService.reorderListByDateDesc(no));
+
+    return statisticsFundingService.reorderListByDateDesc(no);
+}
 
 
 

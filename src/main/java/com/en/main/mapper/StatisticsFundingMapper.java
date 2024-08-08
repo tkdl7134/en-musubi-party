@@ -80,6 +80,30 @@ public interface StatisticsFundingMapper {
             "\t\t\t\t\tFROM pay\n" +
             "\t\t\t\t\tINNER JOIN member ON pay.m_id = member.m_id join wishlist on pay.WL_NO = wishlist.WL_NO where pay.e_no=#{no} and p_type='fund' order by WL_PRODUCT desc")
    List<JhFundSqlVo> getListupInfos(int no);
+    @Select("SELECT pay.p_price, pay.p_date, member.M_FAM_KANJI, member.M_NAME_KANJI, wishlist.wl_product\n" +
+            "\t\t\t\t\tFROM pay\n" +
+            "\t\t\t\t\tINNER JOIN member ON pay.m_id = member.m_id join wishlist on pay.WL_NO = wishlist.WL_NO where pay.e_no=#{no} and p_type='fund' order by WL_PRODUCT ")
+   List<JhFundSqlVo> getListupInfosDesc(int no);
+
+
+
+    @Select("SELECT pay.p_price, pay.p_date, member.M_FAM_KANJI, member.M_NAME_KANJI, wishlist.wl_product\n" +
+            "\t\t\t\t\tFROM pay\n" +
+            "\t\t\t\t\tINNER JOIN member ON pay.m_id = member.m_id join wishlist on pay.WL_NO = wishlist.WL_NO where pay.e_no=#{no} and p_type='fund' order by p_price desc")
+    List<JhFundSqlVo> reorderListByMoney(int no);
+    @Select("SELECT pay.p_price, pay.p_date, member.M_FAM_KANJI, member.M_NAME_KANJI, wishlist.wl_product\n" +
+            "\t\t\t\t\tFROM pay\n" +
+            "\t\t\t\t\tINNER JOIN member ON pay.m_id = member.m_id join wishlist on pay.WL_NO = wishlist.WL_NO where pay.e_no=#{no} and p_type='fund' order by p_price ")
+    List<JhFundSqlVo> reorderListByMoneyDesc(int no);
+    @Select("SELECT pay.p_price, pay.p_date, member.M_FAM_KANJI, member.M_NAME_KANJI, wishlist.wl_product\n" +
+            "\t\t\t\t\tFROM pay\n" +
+            "\t\t\t\t\tINNER JOIN member ON pay.m_id = member.m_id join wishlist on pay.WL_NO = wishlist.WL_NO where pay.e_no=#{no} and p_type='fund' order by p_date desc")
+    List<JhFundSqlVo> reorderListByDate(int no);
+    @Select("SELECT pay.p_price, pay.p_date, member.M_FAM_KANJI, member.M_NAME_KANJI, wishlist.wl_product\n" +
+            "\t\t\t\t\tFROM pay\n" +
+            "\t\t\t\t\tINNER JOIN member ON pay.m_id = member.m_id join wishlist on pay.WL_NO = wishlist.WL_NO where pay.e_no=#{no} and p_type='fund' order by p_date")
+    List<JhFundSqlVo> reorderListByDateDesc(int no);
+
 
 
 }
