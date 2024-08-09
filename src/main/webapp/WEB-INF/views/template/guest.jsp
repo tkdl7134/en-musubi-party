@@ -44,7 +44,7 @@
             <div class="hw_tab-button-content">
                 <div class="hw_tab-content">
 
-                    <span>이름 : 김철수1</span>
+                    <span>이름 : ${guest.}김철수1</span>
                     <span>유형 : 신부</span>
                     <span>번호 : 010-1234-1234</span>
                     <span>이메일 : aaaa@gmail.com</span>

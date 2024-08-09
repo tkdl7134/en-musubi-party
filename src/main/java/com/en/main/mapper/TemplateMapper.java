@@ -17,29 +17,14 @@ public interface TemplateMapper {
             "WHERE e.e_no = 5")
     List<WeddingVO> getWedding();
 
-    @Select("SELECT " +
-            "    g.m_id AS member_id,  " +
-            "    e.e_no AS event_no,   " +
-            "    p.p_accompany_num AS accompany_num, " +
-            "    g.g_attend_wedding, " +
-            "    g.g_attend_afterParty, " +
-            "    g.g_guest_type, " +
-            "    g.g_allergy_or," +
-            "    g.g_relation, " +
-            "    g.g_relation_detail," +
-            "    a.allergy " +
-            "FROM " +
-            "    guest g " +
-            "JOIN " +
-            "    member m ON g.m_id = m.m_id " +
-            "JOIN " +
-            "    event e ON g.e_no = e.e_no " +
-            "JOIN " +
-            "    party p ON p.p_accompany_num = g.p_accompany_num " +
-            "LEFT JOIN " +
-            "    allergy a ON g.m_id = a.m_id " +
-            "WHERE " +
-            "    e.e_no = 5;")
+    @Select("SELECT g.e_no, g.m_id, " +
+            "g.g_attend_wedding, g.g_attend_afterParty, g.g_guest_type, g.g_allergy_or, g.g_relation, g.g_relation_detail, " +
+            "a.allergy as allergy, " +
+            "p.p_accompany_num, p.p_accompany_type, p.p_fam_kangi, p.p_name_kangi, p.p_fam_kana, p.p_name_kana, " +
+            "p.p_fam_eng, p.p_name_eng, p.p_gender, p.p_allergy_or, p.p_relation " +
+            "FROM guest g " +
+            "JOIN party p ON g.e_no = p.e_no AND g.m_id = p.m_id " +
+            "LEFT JOIN allergy a ON g.m_id = a.m_id " +
+            "WHERE g.e_no = 5")
     List<GuestVO> getGuest();
-
 }
