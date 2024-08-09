@@ -85,5 +85,25 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
         return statisticsFundingMapper.reorderListByDateDesc(no);
     }
 
+    @Override
+    public int getNumberOfPeopleByWishlistNo(int Wlno, int eno) {
+        return statisticsFundingMapper.getNumberOfPeopleByWishlistNo(Wlno , eno);
+    }
+
+    @Override
+    public int getHighestPriceByWishlistNo(int Wlno, int eno) {
+        return statisticsFundingMapper.getHighestPriceByWishlistNo(Wlno , eno);
+    }
+
+    @Override
+    public String getPopulatedDateByWishlistNo(int Wlno, int eno) {
+        return statisticsFundingMapper.getPopulatedDateByWishlistNo(Wlno , eno);
+    }
+
+    @Override
+    public String getPopularWishlistByWishlistNo(int Wlno, int eno) {
+        return statisticsFundingMapper.getPopularWishlistByWishlistNo(Wlno, eno);
+    }
+
 
 }
