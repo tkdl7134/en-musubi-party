@@ -25,9 +25,9 @@
         <!-- 드롭다운 메뉴 -->
         <div class="dropdown">
             <select id="dropdown-select" class="dropbtn">
-                <option value="" disabled selected>결석자</option>
-                <option value="/mypage/guest">참가자</option>
-                <option value="/mypage/guestB">세부사항</option>
+                <option value="" disabled selected>欠席者</option>
+                <option value="/mypage/guest">参加者</option>
+                <option value="/mypage/guestB">参加者情報</option>
             </select>
         </div>
 
@@ -35,9 +35,9 @@
         <!-- 탭 콘텐츠 -->
         <div class="hw_content">
             <ul class="hw_list">
-                <li class="hw_tab-button">전체</li>
-                <li class="hw_tab-button active">신랑</li>
-                <li class="hw_tab-button">신부</li>
+                <li class="hw_tab-button">全体</li>
+                <li class="hw_tab-button active">新郎</li>
+                <li class="hw_tab-button">新婦</li>
             </ul>
 
             <div class="hw_tab-button-content">

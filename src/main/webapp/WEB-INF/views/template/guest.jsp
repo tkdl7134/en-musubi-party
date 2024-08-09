@@ -26,9 +26,9 @@
         <!-- 드롭다운 메뉴 -->
         <div class="dropdown">
             <select id="dropdown-select" class="dropbtn">
-                <option value="" disabled selected>참가자</option>
-                <option value="/mypage/guestB">세부사항</option>
-                <option value="/mypage/guestC">결석자</option>
+                <option value="" disabled selected>参加者</option>
+                <option value="/mypage/guestB">参加者情報</option>
+                <option value="/mypage/guestC">欠席者</option>
             </select>
         </div>
 
@@ -36,15 +36,15 @@
         <!-- 탭 콘텐츠 -->
         <div class="hw_content">
             <ul class="hw_list">
-                <li class="hw_tab-button">전체</li>
-                <li class="hw_tab-button active">신랑</li>
-                <li class="hw_tab-button">신부</li>
+                <li class="hw_tab-button">全体</li>
+                <li class="hw_tab-button active">新郎</li>
+                <li class="hw_tab-button">新婦</li>
             </ul>
 
             <div class="hw_tab-button-content">
                 <div class="hw_tab-content">
 
-                    <span>이름 : ${guest.}김철수1</span>
+                    <span>이름 : 김철수1</span>
                     <span>유형 : 신부</span>
                     <span>번호 : 010-1234-1234</span>
                     <span>이메일 : aaaa@gmail.com</span>
