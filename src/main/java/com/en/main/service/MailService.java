@@ -12,6 +12,7 @@ public class MailService {
     @Autowired
     private JavaMailSender mailSender;
 
+
     @Value("${app.domain}")
     private String domain;
 
