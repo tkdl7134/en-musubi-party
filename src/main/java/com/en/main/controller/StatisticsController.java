@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/statistics")
@@ -154,7 +155,13 @@ public @ResponseBody List<JhFundSqlVo> reorderByDateDesc(@PathVariable int no , 
 
     return statisticsFundingService.reorderListByDateDesc(no);
 }
+@GetMapping("/getNewProductDetails/{no}")
+    public @ResponseBody List getNewProductDetails (@PathVariable int no){
+    ArrayList productDataLists = new ArrayList() ;
 
+    return productDataLists;
+
+}
 
 
 }

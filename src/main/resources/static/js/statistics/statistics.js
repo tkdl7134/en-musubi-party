@@ -108,8 +108,17 @@ selectOptions.forEach(option => {
 
             });
 
+        let Wlno = this.value;
+        console.log(Wlno)
+        fetch('/statistics/getNewProductDetails/' + Wlno)
+            .then(response => response.json())
+            .then(
+                data => {
+                console.log(data);
 
 
+                }
+            );
 
 
 
