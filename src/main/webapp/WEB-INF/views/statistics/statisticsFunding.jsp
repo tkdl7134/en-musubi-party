@@ -43,27 +43,39 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 97%; margin-left: 1.5%; display: flex; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+
+                    // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
+                    let firstRowDiv = document.createElement('div');
+                    firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let kanjiDiv = document.createElement('div');
-                    kanjiDiv.style.textAlign = 'center';
+                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
                     kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
-                    div.appendChild(kanjiDiv);
+                    firstRowDiv.appendChild(kanjiDiv);
 
                     let priceDiv = document.createElement('div');
-                    priceDiv.style.textAlign = 'center';
-                    priceDiv.textContent = l.p_price;
-                    div.appendChild(priceDiv);
+                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.textContent = l.p_price + '円';
+                    firstRowDiv.appendChild(priceDiv);
+
+                    div.appendChild(firstRowDiv);
+
+                    // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
+                    let secondRowDiv = document.createElement('div');
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
 
                     let productDiv = document.createElement('div');
-                    productDiv.style.textAlign = 'center';
+                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
                     productDiv.textContent = l.wl_product;
-                    div.appendChild(productDiv);
+                    secondRowDiv.appendChild(productDiv);
 
                     let dateDiv = document.createElement('div');
-                    dateDiv.style.textAlign = 'center';
+                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
                     dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
-                    div.appendChild(dateDiv);
+                    secondRowDiv.appendChild(dateDiv);
+
+                    div.appendChild(secondRowDiv);
 
                     testEl.appendChild(div);
                 });
@@ -117,27 +129,39 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 97%; margin-left: 1.5%; display: flex; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+
+                    // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
+                    let firstRowDiv = document.createElement('div');
+                    firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let kanjiDiv = document.createElement('div');
-                    kanjiDiv.style.textAlign = 'center';
+                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
                     kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
-                    div.appendChild(kanjiDiv);
+                    firstRowDiv.appendChild(kanjiDiv);
 
                     let priceDiv = document.createElement('div');
-                    priceDiv.style.textAlign = 'center';
-                    priceDiv.textContent = l.p_price;
-                    div.appendChild(priceDiv);
+                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.textContent = l.p_price + '円';
+                    firstRowDiv.appendChild(priceDiv);
+
+                    div.appendChild(firstRowDiv);
+
+                    // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
+                    let secondRowDiv = document.createElement('div');
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
 
                     let productDiv = document.createElement('div');
-                    productDiv.style.textAlign = 'center';
+                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
                     productDiv.textContent = l.wl_product;
-                    div.appendChild(productDiv);
+                    secondRowDiv.appendChild(productDiv);
 
                     let dateDiv = document.createElement('div');
-                    dateDiv.style.textAlign = 'center';
+                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
                     dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
-                    div.appendChild(dateDiv);
+                    secondRowDiv.appendChild(dateDiv);
+
+                    div.appendChild(secondRowDiv);
 
                     testEl.appendChild(div);
                 });
@@ -189,27 +213,39 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 97%; margin-left: 1.5%; display: flex; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+
+                    // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
+                    let firstRowDiv = document.createElement('div');
+                    firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let kanjiDiv = document.createElement('div');
-                    kanjiDiv.style.textAlign = 'center';
+                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
                     kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
-                    div.appendChild(kanjiDiv);
+                    firstRowDiv.appendChild(kanjiDiv);
 
                     let priceDiv = document.createElement('div');
-                    priceDiv.style.textAlign = 'center';
-                    priceDiv.textContent = l.p_price;
-                    div.appendChild(priceDiv);
+                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.textContent = l.p_price + '円';
+                    firstRowDiv.appendChild(priceDiv);
+
+                    div.appendChild(firstRowDiv);
+
+                    // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
+                    let secondRowDiv = document.createElement('div');
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
 
                     let productDiv = document.createElement('div');
-                    productDiv.style.textAlign = 'center';
+                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
                     productDiv.textContent = l.wl_product;
-                    div.appendChild(productDiv);
+                    secondRowDiv.appendChild(productDiv);
 
                     let dateDiv = document.createElement('div');
-                    dateDiv.style.textAlign = 'center';
+                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
                     dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
-                    div.appendChild(dateDiv);
+                    secondRowDiv.appendChild(dateDiv);
+
+                    div.appendChild(secondRowDiv);
 
                     testEl.appendChild(div);
                 });
@@ -268,17 +304,20 @@
         const formattedDate = year + '-' + month + '-' + day; // YYYY-MM-DD 형식
         const dates = [];
         let PaidPriceData = document.getElementById('jh_price_input').value;
-        let WishlistPrice = document.getElementById('jh_price_test').getAttribute('name');
+        let firstWishlistButton = document.querySelector('.jh_wishlists');
+        let WishlistPrice = firstWishlistButton.getAttribute('name');
+        let wishlists = document.querySelectorAll('.jh_wishlists');
+
         console.log(PaidPriceData)
         console.log(WishlistPrice);
 
 
         const eno = 5; /*여기 나중에 바뀌어야함, session이던 뭐던가로 eno 가져오기*/
         let array = []
-        let wishlists = document.querySelectorAll('option.jh_wishlists');
+
         wishlists.forEach(function (wishlist) {
             array.push(wishlist.innerText);
-        })
+        });
         console.log(array);
         let array2 = []
         let pricelists = document.querySelectorAll('.jh_wishlist_price').values();
@@ -500,14 +539,14 @@
                 <div style="display: flex; justify-content: center">
                     <canvas style="width: 100vw ; height: 50vh; " id="myChart"></canvas>
                 </div>
-                <div style="margin-top: 5rem;" class="jh_week_data">
+                <div style="margin-top: 5rem; border: 1px solid black; border-radius: 30px" class="jh_week_data">
                     <div class="jh_week_data_message">一週間集まった想い</div>
                     <div style="display: flex; justify-content: center;">
                         <canvas style="" id="week-data-chart"></canvas>
                     </div>
-                    <div><button style="margin-left: 27%" class="jh_next_btn">다아아음</button></div>
 
                 </div>
+                <div style="text-align: center"><button style="margin-top : 10%; " class="jh_next_btn">다아아음</button></div>
 
 
             </div>
@@ -544,7 +583,7 @@
                         <div class="jh_detail_head">恩人</div>
                         <div class="jh_detail_head">金額</div>
                     </div>
-                        <div style="display: flex; justify-content: space-around;">
+                        <div style="display: flex; justify-content: space-around;     margin-top: 2.5rem;">
                         <div class="jh_detail_head">リスト</div>
                         <div class="jh_detail_head">日付</div>
                         </div>
@@ -556,12 +595,12 @@
                                <div style="display: flex; justify-content: space-around;">
 
 
-                                <div style="text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
-                                <div style="text-align: center">${l.p_price}円</div>
+                                <div style="  font-size: 24px;text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
+                                <div style="  font-size: 24px;text-align: center">${l.p_price}円</div>
                                </div>
-                                <div style="display: flex; justify-content: space-around;">
-                                <div style="text-align: center">${l.wl_product}</div>
-                                <div style="text-align: center"><fmt:formatDate value="${l.p_date}" pattern="yyyy-MM-dd"></fmt:formatDate></div>
+                                <div style="display: flex; justify-content: space-around;margin-top: 2.5rem">
+                                <div style="  font-size: 24px;text-align: center">${l.wl_product}</div>
+                                <div style="  font-size: 24px;text-align: center"><fmt:formatDate value="${l.p_date}" pattern="yyyy-MM-dd"></fmt:formatDate></div>
                                 </div>
 
 
@@ -580,7 +619,28 @@
                 </div>
                 <div><img src="/resources/img/333.png" alt=""></div>
                 <div class="jh_product_detail_container">
-                    <div style="margin-top: 3rem;" class="jh_product_label">
+
+                    <button id="jh_select_tag" style="width: 33%; padding: 5%; transform: translateX(60vw); text-align: center;">Select Product</button>
+
+                    <!-- 모달 구조 -->
+                    <div id="jh_modal" class="jh_modal" style="display: none;">
+                        <div class="jh_modal_content" style="padding: 20px; text-align: center;">
+                            <span id="jh_close_btn" class="jh_closeBtn" style="float: right; cursor: pointer;">&times;</span>
+                            <h2>Select a Product</h2>
+                            <ul id="jh_wishlist_items" style="list-style-type: none; padding: 0;">
+                                <c:forEach items="${wishlists}" var="w">
+                                    <li style="margin: 10px 0;">
+                                        <button class="jh_wishlists" name="${w.wl_price}" value="${w.wl_no}" data-value="${w.wl_no}" data-price="${w.wl_price}">${w.wl_product}</button>
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 기존 숨겨진 인풋 -->
+                    <input id="jh_price_input" type="hidden" value="${payPrice}">
+
+                 <%--   <div style="margin-top: 3rem;" class="jh_product_label">
                         <label>
                             <select id="jh_select_tag" onchange="" style="width: 33%; padding: 5% ;
     transform: translateX(60vw); text-align: center;">
@@ -592,7 +652,7 @@
                             </select>
                         </label>
                         <input id="jh_price_input" type="hidden" value="${payPrice}">
-                    </div>
+                    </div>--%>
                     <div class="jh_product_image"><img style="margin-top : 1rem;width: 100%"
                                                        src="/resources/img/ソファー.png" alt=""></div>
                     <div class="jh_product_chart">
