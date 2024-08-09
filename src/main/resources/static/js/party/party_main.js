@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const typeGroup = document.querySelector(".yr_type_group");
     const typeMention = document.querySelector(".yr_type_mention");
     const typeGroupSelect = document.querySelector(".yr_type_group_select");
+    let ep_selectedType = [];
 
     const choiceContent = document.querySelector(".yr_choice");
     const choiceItems = document.querySelectorAll(".yr_list_choice");
@@ -99,50 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 랜덤버튼 눌렀을때 애니메이션 효과
-    randomButton.addEventListener("click", function () {
-        randomButton.style.display = "none";
-        randomLoading.style.display = "block";
-
-        setTimeout(() => {
-            randomLoading.style.display = "none";
-            randomGroup.style.display = "block";
-        }, 1500);
-    });
-
-    // type 토글시 색변경
-    typeItems.forEach((item) => {
-        item.addEventListener("click", () => {
-            item.classList.toggle("selected");
-        });
-    });
-
-    // type 제출 누르면 그룹 결과 화면으로 가기
-    typeButton.addEventListener("click", function () {
-        typeGroup.style.display = "none";
-        typeButton.style.display = "none";
-        typeMention.style.display = "none";
-
-        typeGroupSelect.style.display = "block";
-        setTimeout(() => {
-            typeGroupSelect.style.opacity = "1";
-        }, 20);
-    });
-
-    // choice 하면 안쪽에 그림자
-    choiceItems.forEach((item) => {
-        item.addEventListener("click", () => {
-            if (item.classList.contains("selected")) {
-                item.classList.remove("selected");
-                choiceCount--;
-            } else {
-                if (choiceCount < 3) {
-                    item.classList.add("selected");
-                    choiceCount++;
-                }
-            }
-        });
-    });
 
     // 다른 화면 눌렀을 때 초기화
     function resetAllLists() {
@@ -162,28 +119,123 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     document.addEventListener("click", resetAllLists);
 
+
+
+    // 랜덤버튼 눌렀을때 애니메이션 효과
+    randomButton.addEventListener("click", function () {
+        randomButton.style.display = "none";
+        randomLoading.style.display = "block";
+
+        setTimeout(() => {
+            randomLoading.style.display = "none";
+            randomGroup.style.display = "block";
+        }, 1500);
+    });
+
+
+    // ------------------------------------------------------------------------------type
+    // type 토글시 색변경
+    typeItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            item.classList.toggle("selected");
+        });
+    });
+
+    // type 제출 누르면 그룹 결과 화면으로 가기
+    typeButton.addEventListener("click", function () {
+        typeGroup.style.display = "none";
+        typeButton.style.display = "none";
+        typeMention.style.display = "none";
+
+        typeGroupSelect.style.display = "block";
+        setTimeout(() => {
+            typeGroupSelect.style.opacity = "1";
+        }, 20);
+
+        // type select 하고 나서 비동기로 넘겨서 update 하기
+        const jsonObj = {};
+
+        document.querySelectorAll('.yr_type_item.selected').forEach(item => {
+            ep_selectedType.push(item.value.trim());
+        });
+        console.log(ep_selectedType);
+        jsonObj.ep_selectedType = JSON.stringify(ep_selectedType);
+        console.log(jsonObj);
+
+        if (ep_selectedType.length > 0) {
+            fetch('/party/main', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonObj)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+                } else {
+            console.error('No types selected');
+
+        }
+    });
+
+
+
+    // ------------------------------------------------------------------------------choice
+    // choice 하면 안쪽에 그림자
+    choiceItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            if (item.classList.contains("selected")) {
+                item.classList.remove("selected");
+                choiceCount--;
+            } else {
+                if (choiceCount < 3) {
+                    item.classList.add("selected");
+                    choiceCount++;
+                }
+            }
+        });
+    });
+
     document
         .getElementById("yr_choice_button")
         .addEventListener("click", function () {
+            const jsonObj2 = {};
             if (choiceCount > 0) {
-                document.querySelector(".yr_party_wrapper").classList.add("hidden");
-                const selectedContainer = document.querySelector(
-                    ".yr_selected_choices"
-                );
-                selectedContainer.innerHTML = "";
-                choiceItems.forEach((item) => {
-                    if (item.classList.contains("selected")) {
-                        const clone = item.cloneNode(true);
-                        clone.classList.remove("selected");
-                        selectedContainer.appendChild(clone);
-                    }
-                });
-                selectedContainer.classList.add("visible");
+                //document.querySelector(".yr_party_wrapper").classList.add("hidden");
+
+               const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value);
+                console.log(finalChoice);
+                jsonObj2.ep_finalChoice = JSON.stringify(finalChoice);
+                console.log(jsonObj2);
+
+                fetch('/party/main', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonObj2)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
             } else {
-                alert("1名以上を選んでください。");
+                console.error('No types selected');
+                alert("選んでください。");
             }
+
         });
 
+
+    // ------------------------------------------------------------------------------random group logic
     // 참가자 명단
     const participants = [
         "河・ユリ",
@@ -192,6 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "イ·テゴン",
         "ジョン・ジェフン",
         "ナム・ヒョンウ",
+
     ];
 
     function shuffle(array) {
@@ -233,14 +286,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // 그룹을 화면에 표시
-    const randomGroupElement = document.querySelector(".yr_random_group p");
+    // const randomGroupElement = document.querySelector(".yr_random_group p");
     let groupText = "";
 
     participantToGroupMap.forEach((group, participant) => {
-        groupText += `<p>${participant} is in group ${group}</p>`;
+        groupText += `${participant} is in ${group}  group   `;
     });
-
-    randomGroupElement.innerHTML = groupText;
+    // randomGroupElement.innerHTML = groupText;
+        console.log(groupText)
 
     // 랜덤 버튼 클릭 시 그룹명을 띄우는 기능
     document
@@ -249,7 +302,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const randomIndex = Math.floor(Math.random() * groups.length);
             document.querySelector(".yr_random_group p").textContent =
                 groupNames[randomIndex];
-
-            document.querySelector(".yr_random_group p").textContent = groupName;
         });
 });
+
+
+

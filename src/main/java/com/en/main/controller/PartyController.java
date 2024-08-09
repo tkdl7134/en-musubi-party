@@ -5,8 +5,7 @@ import com.en.main.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -23,7 +22,7 @@ public class PartyController {
     @Autowired
     private PartyService partyService;
 
-    @GetMapping("")
+    @GetMapping("/apply")
     public String partyApply() {
         return "/party/party_apply";
     }
@@ -56,5 +55,25 @@ public class PartyController {
 
         return "/party/party_info";
     }
+
+    @GetMapping("/main")
+    public String partyMain() {
+        return "/party/party_main";
+    }
+
+    @ResponseBody
+    @PostMapping("/main")
+    public int partySelectedType(@RequestBody PartyVO partyVO) {
+        System.out.println(partyVO);
+        return partyService.updateSelectedType(partyVO);
+    }
+
+    @ResponseBody
+    @PutMapping("/main")
+    public int partyFinalChoice(@RequestBody PartyVO partyVO) {
+        System.out.println(partyVO);
+        return partyService.updateFinalChoice(partyVO);
+    }
+
 }
 
