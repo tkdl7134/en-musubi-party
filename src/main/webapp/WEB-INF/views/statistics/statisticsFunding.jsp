@@ -243,12 +243,17 @@
 
     $(document).ready(function () {
         $('.slick').slick({
-            dots: true,
+            dots: false,
             infinite: false,
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            adaptiveHeight: true
+            adaptiveHeight: true,
+
+            prevArrow : $(".jh_prev_btn"),
+            nextArrow : $(".jh_next_btn"),
+
+
         });
 
 
@@ -284,10 +289,10 @@
         let array3 = []
         let daylists = document.querySelectorAll('.jh_pay_date').values();
         daylists.forEach(function (wishlist) {
-            array3.push(wishlist.value);
+            array3.push(wishlist.value/10000);
         })
         console.log(array3);
-        const arrayWithYen = array3.map(value => value + ' 円');
+
 
         for (let i = 6; i > -1; i--) {
             const date = new Date(today);
@@ -456,20 +461,9 @@
         <p>This is a layout for tablet screens.</p>
     </div>
     <div id="jh_top" class="mobile">
-        <div class="jh_navigation" style="">
-            <div>縁結び</div>
-            <div><img src="" alt="aa">1111</div>
-
-
-        </div>
+       
         <div class="slick">
             <div class="jh_slider">
-
-
-                <div class="jh_title" style="  ">
-                    <div class="jh_titleName" style="  ">通計ページ</div>
-                    <div><img style="width: 100%; margin-top: 2rem" src="/resources/img/footer.png" alt=""></div>
-                </div>
                 <div class="jh_pageNavigation" style="">
                     <div class="jh_pageNavigationA">
                         <div class="jh_pageNavigationB" style="color: red">ファンディング</div>
@@ -480,9 +474,12 @@
                         <div class="jh_pageNavigationB">の現状</div>
                     </div>
                 </div>
-                <div id="jh_top_button"><img onclick="goToTop()" style="width: 10vh; height: 10vh; position: fixed;
-    right: 1rem; z-index: 100;
-    bottom: 1rem;" src="/resources/img/top_button.png" alt=""></div>
+                <div class="jh_title" style="  ">
+                    <div class="jh_titleName" style="  ">通計ページ</div>
+                </div>
+                <div><img src="/resources/img/111.png" alt=""></div>
+
+
                 <div class="jh_message">大切な因縁から繋がった心の証</div>
                 <div style="display: flex;
     justify-content: center;"><img style="width: 90%" src="/resources/img/lineShort.png" alt=""></div>
@@ -508,11 +505,80 @@
                     <div style="display: flex; justify-content: center;">
                         <canvas style="" id="week-data-chart"></canvas>
                     </div>
+                    <div><button style="margin-left: 27%" class="jh_next_btn">다아아음</button></div>
+
                 </div>
+
+
             </div>
 
-            <div class="jh_slider">
 
+            <div class="jh_slider">
+                <div class="jh_title" style="  ">
+                    <div class="jh_titleName" style="  ">通計ページ</div>
+                </div>
+                <div><img src="/resources/img/222.png" alt=""></div>
+                <div style="background-color: #FFDBDB; margin-top: 5vh; " class="jh_allList_container">
+                    <div>
+                        <div style="display: flex; justify-content: flex-end;">
+                            <div class="jh_arrange_button">
+                                <button onclick="reorderByProduct(5)" class="jh_arrange_button_button"
+                                        id="jh_button_product" type="submit">物品順
+                                </button>
+                            </div>
+                            <div class="jh_arrange_button">
+                                <button onclick="reorderByMoney(5)" class="jh_arrange_button_button"
+                                        id="jh_button_money" type="submit">金額順
+                                </button>
+                            </div>
+                            <div class="jh_arrange_button">
+                                <button onclick="reorderByDate(5)" class="jh_arrange_button_button" id="jh_button_date"
+                                        type="submit">日付順
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="    width: 97%;
+    margin-left: 1.5%; background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
+                    <div style="display: flex; justify-content: space-around;">
+                        <div class="jh_detail_head">恩人</div>
+                        <div class="jh_detail_head">金額</div>
+                    </div>
+                        <div style="display: flex; justify-content: space-around;">
+                        <div class="jh_detail_head">リスト</div>
+                        <div class="jh_detail_head">日付</div>
+                        </div>
+                    </div>
+                    <div id="jh_foreach_test">
+                        <c:forEach items="${listupDatas}" var="l">
+                            <div style="    width: 97%;
+    margin-left: 1.5%; background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
+                               <div style="display: flex; justify-content: space-around;">
+
+
+                                <div style="text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
+                                <div style="text-align: center">${l.p_price}円</div>
+                               </div>
+                                <div style="display: flex; justify-content: space-around;">
+                                <div style="text-align: center">${l.wl_product}</div>
+                                <div style="text-align: center"><fmt:formatDate value="${l.p_date}" pattern="yyyy-MM-dd"></fmt:formatDate></div>
+                                </div>
+
+
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+               <div style="display: flex; justify-content: space-around">
+                <div style="text-align: center"><button class="jh_prev_btn">저어어언</button></div>
+                <div style="text-align: center"><button class="jh_next_btn">다아아음</button></div>
+               </div>
+            </div>
+            <div class="jh_slider">
+                <div class="jh_title" style="  ">
+                    <div class="jh_titleName" style="  ">通計ページ</div>
+                </div>
+                <div><img src="/resources/img/333.png" alt=""></div>
                 <div class="jh_product_detail_container">
                     <div style="margin-top: 3rem;" class="jh_product_label">
                         <label>
@@ -545,50 +611,8 @@
                     <div class="jh_funding_detail">私に一番渡したいプレゼント : ${PopularWishlist}</div>
 
                 </div>
-            </div>
-            <div class="jh_slider">
 
-
-                <div style="background-color: #FFDBDB; margin-top: 5vh; " class="jh_allList_container">
-                    <div>
-                        <div style="display: flex; justify-content: flex-end;">
-                            <div class="jh_arrange_button">
-                                <button onclick="reorderByProduct(5)" class="jh_arrange_button_button"
-                                        id="jh_button_product" type="submit">物品順
-                                </button>
-                            </div>
-                            <div class="jh_arrange_button">
-                                <button onclick="reorderByMoney(5)" class="jh_arrange_button_button"
-                                        id="jh_button_money" type="submit">金額順
-                                </button>
-                            </div>
-                            <div class="jh_arrange_button">
-                                <button onclick="reorderByDate(5)" class="jh_arrange_button_button" id="jh_button_date"
-                                        type="submit">日付順
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="    width: 97%;
-    margin-left: 1.5%; display: flex;background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
-                        <div class="jh_detail_head">恩人</div>
-                        <div class="jh_detail_head">金額</div>
-                        <div class="jh_detail_head">リスト</div>
-                        <div class="jh_detail_head">日付</div>
-                    </div>
-                    <div id="jh_foreach_test">
-                        <c:forEach items="${listupDatas}" var="l">
-                            <div style="    width: 97%;
-    margin-left: 1.5%; display: flex;background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
-                                <div style="text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
-                                <div style="text-align: center">${l.p_price}</div>
-                                <div style="text-align: center">${l.wl_product}</div>
-                                <div style="text-align: center"><fmt:formatDate value="${l.p_date}"
-                                                                                pattern="yyyy-MM-dd"></fmt:formatDate></div>
-                            </div>
-                        </c:forEach>
-                    </div>
-                </div>
+                <div><button  style="margin-left: 27%" class="jh_prev_btn">저어어언</button></div>
 
 
             </div>
