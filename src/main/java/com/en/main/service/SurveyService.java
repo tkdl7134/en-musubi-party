@@ -1,5 +1,6 @@
 package com.en.main.service;
 
+import com.en.main.dto.MemberVO;
 import com.en.main.dto.MessageVO;
 import com.en.main.mapper.FileMapper;
 import com.en.main.mapper.SurveyMapper;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.UUID;
 
 @Service
@@ -46,5 +46,10 @@ public class SurveyService {
         }
     }
 
+    public MemberVO getMember( String m_id) {
+
+
+       return surveyMapper.selectMemberInfo(m_id);
     }
+}
 

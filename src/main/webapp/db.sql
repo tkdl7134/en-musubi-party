@@ -74,12 +74,14 @@ create table wedding_info(
     w_date date not null,
     w_wedding_time date not null,
     w_wedding_assemble date not null,
-    w_wedding_building varchar2(50 char) not null,
+    w_wedding_postcode varchar2(10 char) not null,
     w_wedding_address varchar2(200 char) not null,
+    w_wedding_building varchar2(50 char) not null,
     w_reception_time date not null,
     w_reception_assemble date not null,
-    w_reception_building varchar2(50 char) not null,
+    w_reception_postcode varchar2(10 char) not null,
     w_reception_address varchar2(200 char) not null,
+    w_reception_building varchar2(50 char) not null,
     w_message_invite varchar2(500 char) not null,
     w_message_bye varchar2(500 char) not null,
     w_img1 varchar2 (50 char) not null,
@@ -91,6 +93,7 @@ create table wedding_info(
     foreign key (t_pk) references template(t_pk)
 );
 select * from WEDDING_iNFO;
+
 
 -- 위시리스트
 create table wishlist(
@@ -111,13 +114,14 @@ create table guest(
     g_attend_afterparty varchar2(5 char) not null,
     g_guest_type varchar2(5 char) not null,
     g_allergy_or varchar2(5 char) not null,
-    g_relation varchar2(10 char) not null,
+    g_relation varchar2(20 char) not null,
     g_relation_detail varchar2(30 char) not null,
 
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
 select * from guest;
+
 
 -- 알러지
 create table allergy(
@@ -136,11 +140,21 @@ create table party(
     m_id varchar2(50 char) not null,
     p_accompany_type varchar2(5 char) not null,
     p_accompany_num number(3) not null,
+    p_fam_kangi varchar2(50 char) not null,
+    p_name_kangi varchar2(50 char) not null,
+    p_fam_kana varchar2(50 char) not null,
+    p_name_kana varchar2(50 char) not null,
+    p_fam_eng varchar2(50 char) not null,
+    p_name_eng varchar2(50 char) not null,
+    p_gender varchar2(10 char) not null,
+    p_allergy_or varchar2(5 char) not null,
+    p_relation varchar2(20 char) not null,
 
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
 select * from party;
+
 
 -- 축하메세지
 create table message(
