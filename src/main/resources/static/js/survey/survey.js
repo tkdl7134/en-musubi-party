@@ -259,6 +259,18 @@ function etcAllergy() {
 $(document).ready(function () {
     let partyCount = 0;
 
+    // Function to allow only one checkbox to be selected within each div
+    function handleCheckboxGroup(groupClass) {
+        $(document).on('change', `.${groupClass} input[type="checkbox"]`, function() {
+            let $checkboxGroup = $(this).closest(`.${groupClass}`).find('input[type="checkbox"]');
+            $checkboxGroup.not(this).prop('checked', false);
+        });
+    }
+
+    // Initial call to set up the checkboxes for existing elements
+    handleCheckboxGroup('tk_survey-accompany');
+    handleCheckboxGroup('tk_survey-gender-accompany');
+
     $("#addPartyMember").change(function () {
         if (this.checked) {
             addPartyMemberDiv();
@@ -339,6 +351,10 @@ $(document).ready(function () {
         partyDiv += "</div>";
         partyDiv += partyCount > 1 ? '<button class="remove-party-member" data-id="' + partyCount + '">削除する</button>' : '';
         $("#partyContainer").append(partyDiv);
+
+        // Apply the checkbox group handler to the newly added divs
+        handleCheckboxGroup('tk_survey-accompany');
+        handleCheckboxGroup('tk_survey-gender-accompany');
     }
 
     $(document).on("click", ".remove-party-member", function () {
@@ -441,4 +457,46 @@ document.addEventListener('DOMContentLoaded', () => {
     handleSelection('wedding-selection', 'g_attend_wedding');
     handleSelection('afterparty-selection', 'g_attend_afterparty');
 
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to allow only one checkbox to be selected within a given div
+    function handleCheckboxGroup(div) {
+        const checkboxes = div.querySelectorAll('input[type="checkbox"]');
+
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    checkboxes.forEach(function(box) {
+                        if (box !== checkbox) {
+                            box.checked = false;
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    // Observe the body for new divs being added
+    const observer = new MutationObserver(function(mutationsList) {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1 && node.classList.contains('tk_survey-accompany')) {
+                        handleCheckboxGroup(node);
+                    }
+                    if (node.nodeType === 1 && node.classList.contains('tk_survey-gender-accompany')) {
+                        handleCheckboxGroup(node);
+                    }
+                });
+            }
+        }
+    });
+
+    // Start observing the document for new divs being added
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Initial call to set up existing divs
+    document.querySelectorAll('.tk_survey-accompany').forEach(handleCheckboxGroup);
+    document.querySelectorAll('.tk_survey-gender-accompany').forEach(handleCheckboxGroup);
 });
