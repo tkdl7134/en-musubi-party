@@ -7,7 +7,7 @@ function addClickListener(boxId, photoId) {
 addClickListener("je_photobox1", "je_photoInput1");
 addClickListener("je_photobox2", "je_photoInput2");
 addClickListener("je_photobox3", "je_photoInput3");
-addClickListener("je_photobox4", "je_photoInput4");
+// addClickListener("je_photobox4", "je_photoInput4");
 
 // div에 띄우기
 function handleFileInputChange(event, outputId) {
@@ -43,11 +43,11 @@ document
     .addEventListener("change", function (event) {
         handleFileInputChange(event, "je_photoOut3");
     });
-document
-    .getElementById("je_photoInput4")
-    .addEventListener("change", function (event) {
-        handleFileInputChange(event, "je_photoOut4");
-    });
+// document
+//     .getElementById("je_photoInput4")
+//     .addEventListener("change", function (event) {
+//         handleFileInputChange(event, "je_photoOut4");
+//     });
 
 // 파일 여러개 업로드한 거 리스트 보여주기
 var fileNo = 0;
@@ -64,8 +64,8 @@ function addFile(obj) {
         alert("共有写真は最大" + maxFileCnt + "枚まで添付できます。");
     }
 
-    let filesToAdd = [];
-    let htmlData = "";
+    // let filesToAdd = [];
+    // let htmlData = "";
 
     for (var i = 0; i < Math.min(curFileCnt, remainFileCnt); i++) {
         const file = obj.files[i];
@@ -75,10 +75,12 @@ function addFile(obj) {
             // 파일 배열에 담기
             var reader = new FileReader();
             reader.onload = function () {
-                filesToAdd.push(file);
+                filesArr.push(file);
+                reader.readAsDataURL(file)
+
                 // 파일 목록을 추가한 후에 목록을 업데이트
-                if (filesToAdd.length === Math.min(curFileCnt, remainFileCnt)) {
-                    updateFileList(filesToAdd);
+                if (filesArr.length === Math.min(curFileCnt, remainFileCnt)) {
+                    updateFileList(filesArr);
                     // 슬릭 슬라이드를 업데이트
                     setTimeout(updateSlickSlider, 0); // DOM 업데이트 후 업데이트
                 }
@@ -86,6 +88,7 @@ function addFile(obj) {
             reader.readAsDataURL(file);
 
             // 목록 추가
+            var htmlData = '';
             htmlData += '<div id="je_file' + fileNo + '" class="je_filebox">';
             htmlData += '   <p class="je_file-name">' + file.name + "</p>";
             htmlData +=
@@ -93,15 +96,15 @@ function addFile(obj) {
                 fileNo +
                 ');">⌫</a>';
             htmlData += "</div>";
+            $(".je_photo-list").append(htmlData);
             fileNo++;
         } else {
             continue;
         }
     }
-    $(".je_photo-list").append(htmlData);
-
-    // 초기화
-    document.querySelector("#je_photo-input").value = "";
+    //
+    // // 초기화
+    // document.querySelector("#je_photo-input").value = "";
 }
 
 // 파일 목록 업데이트 함수
@@ -145,18 +148,27 @@ function updateSlickSlider() {
     $(".je_photo-list").slick("refresh"); // 슬릭 슬라이드를 리프레시하여 즉시 반영
 }
 
-// 폼 전송
-function submitForm() {
-    // 폼데이터 담기
-    var form = document.querySelector("form");
-    var formData = new FormData(form);
-    for (var i = 0; i < filesArr.length; i++) {
-        // 삭제되지 않은 파일만 폼데이터에 담기
-        if (!filesArr[i].is_delete) {
-            formData.append("attach_file", filesArr[i]);
-        }
-    }
-}
+// 확정된 파일 리스트 담기
+// function setFilesList(){
+//     var form = document.querySelector("form");
+//     var formData = new FormData(form);
+//     for (var i = 0; i < filesArr.length; i++) {
+//         // 삭제되지 않은 파일만 폼데이터에 담기
+//         if (!filesArr[i].is_delete) {
+//             formData.append("attach_file", filesArr[i]);
+//         }
+//     }
+//
+//     // FormData를 폼에 직접 설정하여 제출
+//     var input = document.createElement("input");
+//     input.type = "hidden";
+//     input.name = "form_data";
+//     input.value = JSON.stringify([...formData.entries()]);
+//     form.appendChild(input);
+//
+//     form.submit(); // 폼 제출
+// }
+
 
 /*-----------------------------------------------------------------------------------------*/
 // MODAL 창
@@ -173,6 +185,7 @@ var closingClose = document.getElementById("je_closing-close");
 
 // 버튼 클릭 시 모달 열기
 invitationBtn.onclick = function () {
+    console.log('click');
     invitation.style.display = "block";
 };
 
