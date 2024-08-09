@@ -46,6 +46,7 @@ selectOptions.forEach(option => {
     option.onclick = function() {
         const value = this.getAttribute('data-value');
         const price = this.getAttribute('data-price');
+        const eno = this.getAttribute('data-eno');
         hiddenInput.value = price;  // 숨겨진 인풋에 가격 값을 설정
         console.log(`Selected Value: ${value}, Price: ${price}`);
         modal.style.display = 'none'; // 선택 후 모달 닫기
@@ -110,7 +111,7 @@ selectOptions.forEach(option => {
 
         let Wlno = this.value;
         console.log(Wlno)
-        fetch('/statistics/getNewProductDetails/' + Wlno)
+        fetch('/statistics/getNewProductDetails/' + Wlno + '/' + eno)
             .then(response => response.json())
             .then(
                 data => {

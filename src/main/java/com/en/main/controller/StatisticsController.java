@@ -155,10 +155,15 @@ public @ResponseBody List<JhFundSqlVo> reorderByDateDesc(@PathVariable int no , 
 
     return statisticsFundingService.reorderListByDateDesc(no);
 }
-@GetMapping("/getNewProductDetails/{no}")
-    public @ResponseBody List getNewProductDetails (@PathVariable int no){
+@GetMapping("/getNewProductDetails/{Wlno}/{eno}")
+    public @ResponseBody List getNewProductDetails (@PathVariable int Wlno , @PathVariable int eno){
     ArrayList productDataLists = new ArrayList() ;
 
+    productDataLists.add(statisticsFundingService.getHighestPriceByWishlistNo(Wlno , eno));
+    productDataLists.add(statisticsFundingService.getNumberOfPeopleByWishlistNo(Wlno , eno));
+    productDataLists.add(statisticsFundingService.getPopularWishlistByWishlistNo(Wlno , eno));
+    productDataLists.add(statisticsFundingService.getPopulatedDateByWishlistNo(Wlno , eno));
+    System.out.println(productDataLists);
     return productDataLists;
 
 }

@@ -630,7 +630,7 @@
                             <ul id="jh_wishlist_items" style="list-style-type: none; padding: 0;">
                                 <c:forEach items="${wishlists}" var="w">
                                     <li style="margin: 10px 0;">
-                                        <button class="jh_wishlists" name="${w.wl_price}" value="${w.wl_no}" data-value="${w.wl_no}" data-price="${w.wl_price}">${w.wl_product}</button>
+                                        <button class="jh_wishlists" name="${w.wl_price}" value="${w.wl_no}" data-eno = "${w.e_no}" data-value="${w.wl_no}" data-price="${w.wl_price}">${w.wl_product}</button>
                                     </li>
                                 </c:forEach>
                             </ul>

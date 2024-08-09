@@ -105,39 +105,38 @@ public interface StatisticsFundingMapper {
     List<JhFundSqlVo> reorderListByDateDesc(int no);
 
 
-/*
 
-    @Select("select count(M_ID)  from pay where p_type = 'fund' and E_NO =  #{no}")
-    int getNumberOfPeopleByWishlistNo (int no);
+    @Select("select count(M_ID)  from pay where p_type = 'fund' and E_NO =  #{eno} and wl_no = #{Wlno}")
+    int getNumberOfPeopleByWishlistNo (int Wlno , int eno);
 
-    @Select("select max(P_PRICE) from pay where p_type = 'fund' and E_NO = #{no}")
-    int getHighestPriceByWishlistNo(int no);
+    @Select("select max(P_PRICE) from pay where p_type = 'fund' and E_NO = #{eno} and wl_no = #{Wlno}")
+    int getHighestPriceByWishlistNo(int Wlno , int eno);
 
     @Select("SELECT p_date\n" +
             "FROM (\n" +
             "         SELECT p_date, COUNT(p_date) AS occurrence_count\n" +
             "         FROM pay\n" +
-            "         WHERE p_type = 'fund' AND e_no = #{no}\n" +
+            "         WHERE p_type = 'fund' AND e_no = #{eno}\n" +
             "         GROUP BY p_date\n" +
             "         ORDER BY occurrence_count DESC\n" +
             "     )\n" +
-            "WHERE ROWNUM = 1")
-    String getPopulatedDateByWishlistNo(int no);
+            "WHERE ROWNUM = 1 and wl_no  = #{Wlno}")
+    String getPopulatedDateByWishlistNo(int Wlno , int eno);
 
     @Select("WITH RankedWlNo AS (\n" +
             "    SELECT wl_no,\n" +
             "           ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS rn\n" +
             "    FROM pay\n" +
-            "    WHERE p_type = 'fund' AND e_no = #{no}\n" +
+            "    WHERE p_type = 'fund' AND e_no = #{eno}\n" +
             "    GROUP BY wl_no\n" +
             ")\n" +
             "SELECT w.wl_product\n" +
             "FROM wishlist w\n" +
             "         JOIN RankedWlNo r ON w.wl_no = r.wl_no\n" +
-            "WHERE r.rn = 1 and wl_no=" )
-    String getPopularWishlistByWishlistNo(int no);
+            "WHERE r.rn = 1 and w.wl_no=#{Wlno}" )
+    String getPopularWishlistByWishlistNo(int Wlno , int eno);
 
-*/
+
 
 
 
