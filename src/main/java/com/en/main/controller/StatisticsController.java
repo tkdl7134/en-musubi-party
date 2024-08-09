@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/statistics")
@@ -24,7 +25,7 @@ public class StatisticsController {
    private StatisticsFundingService statisticsFundingService;
 
     @GetMapping("/funding")
-    public String goStatisticsFundingPage(Model model , PayVo payVo , JhFundSqlVo jhFundSqlVo){
+    public String goStatisticsFundingPage(Model model , PayVo payVo , JhFundSqlVo jhFundSqlVo ){
         int eno = 5;
        model.addAttribute("wishlists" ,  statisticsFundingService.getWishlistData(eno));
         System.out.println(statisticsFundingService.getWishlistData(eno));
@@ -65,12 +66,45 @@ public class StatisticsController {
     }
 
     @GetMapping("/send")
-    public String goStatisticsSendPage(){
+    public String goStatisticsingPage(Model model , PayVo payVo , JhFundSqlVo jhFundSqlVo ) {
+        int eno = 5;
+        model.addAttribute("wishlists", statisticsFundingService.getWishlistData(eno));
+        System.out.println(statisticsFundingService.getWishlistData(eno));
+        model.addAttribute("dates", statisticsFundingService.getDate(eno));
+        System.out.println(statisticsFundingService.getDate(eno));
+        List<WishlistVO> wishlist = statisticsFundingService.getWishlistData(eno);
+        WishlistVO firstItem = wishlist.get(0);
+        int firstWlNo = firstItem.getWl_no();
+        int firstWlPrice = firstItem.getWl_price();
+        model.addAttribute("payPrice", statisticsFundingService.getPrices(payVo, firstWlNo));
+        model.addAttribute("NumberOfPeople", statisticsFundingService.getNumberOfPeople(eno));
+        System.out.println(statisticsFundingService.getNumberOfPeople(eno));
 
-        return "statistics/statisticsSend";
+        DecimalFormat formatter = new DecimalFormat("#,###");
+        String formattedNumber = formatter.format(statisticsFundingService.getHighestPrice(eno));
+
+        model.addAttribute("highestPrice", formattedNumber);
+
+        String PopulestDate = statisticsFundingService.getPopulatedDate(eno);
+        System.out.println(PopulestDate);
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime dateTime = LocalDateTime.parse(PopulestDate, inputFormatter);
+
+        // 날짜 부분만 추출하기 위한 포맷터
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy年-MM月-dd日");
+        String formattedDate = dateTime.format(outputFormatter);
+        System.out.println(formattedDate);
+        model.addAttribute("PopularDate", formattedDate);
+
+        model.addAttribute("PopularWishlist", statisticsFundingService.getPopularWishlist(eno));
+
+
+        model.addAttribute("listupDatas", statisticsFundingService.getListupInfos(eno));
+        System.out.println(statisticsFundingService.getListupInfos(eno));
+        return "/statistics/send";
     }
 
-    @GetMapping("/getProductPrice/{no}")
+        @GetMapping("/getProductPrice/{no}")
     public @ResponseBody int getProductPrice(PayVo payVo, @PathVariable int no){
         System.out.println(no);
         System.out.println(statisticsFundingService.getPrices(payVo , no));
@@ -121,7 +155,13 @@ public @ResponseBody List<JhFundSqlVo> reorderByDateDesc(@PathVariable int no , 
 
     return statisticsFundingService.reorderListByDateDesc(no);
 }
+@GetMapping("/getNewProductDetails/{no}")
+    public @ResponseBody List getNewProductDetails (@PathVariable int no){
+    ArrayList productDataLists = new ArrayList() ;
 
+    return productDataLists;
+
+}
 
 
 }
