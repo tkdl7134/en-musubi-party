@@ -16,129 +16,56 @@
     <a class="hw_mypage" href=""></a>
 </header>
 <div class="hw_container">
-    <div class="hw_title"> - テンプレート管理 -</div>
-    <div class="hw_titleline"><img src="/resources/img/title.png" alt=""></div>
-
-    <div class="hw_card">
+    <c:forEach items="${weddingList}" var="w">
         <div class="hw_content">
-            <div><img src="/resources/img/template1.jpg" alt=""></div>
-            <div><img src="/resources/img/template2.jpg" alt=""></div>
-            <div><img src="/resources/img/template3.jpg" alt=""></div>
-        </div>
-        <div class="hw_mytemplate-button-container">
-            <div class="hw_button">
-                <button type="button" onclick="navigateToTemplate(${w.e_no})"><img
-                        src="/resources/img/free-icon-reunion.png" alt="Group Icon">テンプレート
-                </button>
-            </div>
-            <div class="hw_button">
-                <button type="button" onclick="navigateToSurvey(${w.e_no})"><img
-                        src="/resources/img/free-icon-checklist.png" alt="Guest Icon">アンケート
-                </button>
-            </div>
-            <div class="hw_button">
-                <button type="button" onclick="navigateToStatistics(${w.e_no})"><img
-                        src="/resources/img/free-icon-line-chart.png" alt="Graph Icon">通計
-                </button>
-            </div>
-            <div class="hw_button">
-                <button type="button" onclick="navigateToLine(${w.e_no})"><img
-                        src="/resources/img/free-icon-line.png" alt="Line Icon">line
-                </button>
-            </div>
-        </div>
-        <div class="hw_content">
-            <div><img src="/resources/img/template1.jpg" alt=""></div>
-            <div><img src="/resources/img/template2.jpg" alt=""></div>
-            <div><img src="/resources/img/template3.jpg" alt=""></div>
-        </div>
-        <div class="hw_mytemplate-button-container">
-            <div class="hw_button">
-                <button type="button" onclick="navigateToTemplate(${w.e_no})"><img
-                        src="/resources/img/free-icon-reunion.png" alt="Group Icon">テンプレート
-                </button>
-            </div>
-            <div class="hw_button">
-                <button type="button" onclick="navigateToSurvey(${w.e_no})"><img
-                        src="/resources/img/free-icon-checklist.png" alt="Guest Icon">アンケート
-                </button>
-            </div>
-            <div class="hw_button">
-                <button type="button" onclick="navigateToStatistics(${w.e_no})"><img
-                        src="/resources/img/free-icon-line-chart.png" alt="Graph Icon">通計
-                </button>
-            </div>
-            <div class="hw_button">
-                <button type="button" onclick="navigateToLine(${w.e_no})"><img
-                        src="/resources/img/free-icon-line.png" alt="Line Icon">line
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="hw_card">
-        <div class="hw_content">
-            <div><img src="/resources/img/template1.jpg" alt=""></div>
-            <div><img src="/resources/img/template2.jpg" alt=""></div>
-            <div><img src="/resources/img/template3.jpg" alt=""></div>
-        </div>
-        <div class="hw_mytemplate-button-container">
-            <div class="hw_button">
-                <button type="button" onclick="navigateToTemplate(${w.e_no})"><img
-                        src="/resources/img/free-icon-reunion.png" alt="Group Icon">テンプレート
-                </button>
-            </div>
-            <div class="hw_button">
-                <button type="button" onclick="navigateToSurvey(${w.e_no})"><img
-                        src="/resources/img/free-icon-checklist.png" alt="Guest Icon">アンケート
-                </button>
-            </div>
-            <div class="hw_button">
-                <button type="button" onclick="navigateToStatistics(${w.e_no})"><img
-                        src="/resources/img/free-icon-line-chart.png" alt="Graph Icon">通計
-                </button>
-            </div>
-            <div class="hw_button">
-                <button type="button" onclick="navigateToLine(${w.e_no})"><img
-                        src="/resources/img/free-icon-line.png" alt="Line Icon">line
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="hw_card">
-        <div class="hw_content">
-            <c:forEach items="${weddingList}" var="w">
-                <div>${w.w_img1}</div>
-                <div>${w.w_img2}</div>
-                <div>${w.w_img3}</div>
-            </c:forEach> <!-- 반복문 닫기 -->
-        </div>
-        <div class="hw_mytemplate-button-container">
-            <c:forEach items="${weddingList}" var="w">
-                <div class="hw_button">
-                    <button type="button" onclick="navigateToTemplate(${w.e_no})"><img
-                            src="/resources/img/free-icon-reunion.png" alt="Group Icon">テンプレート
-                    </button>
+            <div class="hw_card">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="${w.w_img1}" alt="Template 1">
+                        </div>
+                        <div class="card-back">
+                            <button type="button" onclick="navigateToTemplate(${w.e_no})">
+                                <img src="/resources/img/free-icon-reunion.png" alt="Group Icon">
+                            </button>
+                            <span>テンプレート</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="hw_button">
-                    <button type="button" onclick="navigateToSurvey(${w.e_no})"><img
-                            src="/resources/img/free-icon-checklist.png" alt="Guest Icon">アンケート
-                    </button>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="${w.w_img2}" alt="Template 2">
+                        </div>
+                        <div class="card-back">
+                            <button type="button" onclick="navigateToSurvey(${w.e_no})">
+                                <img src="/resources/img/free-icon-checklist.png" alt="Guest Icon">
+                            </button>
+                            <span>アンケート</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="hw_button">
-                    <button type="button" onclick="navigateToStatistics(${w.e_no})"><img
-                            src="/resources/img/free-icon-line-chart.png" alt="Graph Icon">通計
-                    </button>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="${w.w_img3}" alt="Template 3">
+                        </div>
+                        <div class="card-back">
+                            <button type="button" onclick="navigateToStatistics(${w.e_no})">
+                                <img src="/resources/img/free-icon-line-chart.png" alt="Graph Icon">
+                            </button>
+                            <span>通計</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="hw_button">
-                    <button type="button" onclick="navigateToLine(${w.e_no})"><img
-                            src="/resources/img/free-icon-line.png" alt="Line Icon">line
-                    </button>
-                </div>
-            </c:forEach>
+            </div>
+            <div class="line-button">
+                <button type="button" onclick="navigateToShare(${w.e_no})">
+                    <img src="/resources/img/free-icon-line.png" alt="line Icon">
+                </button>
+            </div>
         </div>
-    </div>
-
+    </c:forEach>
 </div>
-</form>
 </body>
 </html>
