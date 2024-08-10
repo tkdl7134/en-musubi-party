@@ -51,5 +51,10 @@ public class SurveyService {
 
        return surveyMapper.selectMemberInfo(m_id);
     }
+
+    public MessageVO getMessage(int e_no) {
+
+        return surveyMapper.selectMessageInfo(e_no);
+    }
 }
 
