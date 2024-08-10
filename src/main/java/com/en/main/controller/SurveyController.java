@@ -21,22 +21,21 @@ public class SurveyController {
     @GetMapping()
     public String survey(Model model) {
         String m_id= "test9";
-        int e_no= 68;
         model.addAttribute("2222" ,  surveyService.getMember( m_id) )  ;
-        model.addAttribute("3333" ,  surveyService.getMessage( e_no ) )  ;
         return "survey/survey";
     }
 
     @PostMapping("/create")
     public String addGuest(MessageVO messageVO, GuestVO guestVO,
                            @RequestParam(value = "me_img2", required = false) MultipartFile file,
-                           MemberVO memberVO, CompanionVO companionVO, AllergyVO allergyVO) {
+                           MemberVO memberVO, CompanionVO companionVO) {
         System.out.println(messageVO);
         System.out.println(guestVO);
         System.out.println(file.getOriginalFilename());
         System.out.println(memberVO);
         System.out.println(companionVO);
-        System.out.println(allergyVO);
+
+
 
         //      surveyService.addGuest(messageVO, guestVO, file);
       return "redirect:/survey";
