@@ -40,6 +40,8 @@
                                 </div>
                                 <div class="survey-form">
                                     <form action="survey/create" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="m_id" value="${2222}">
+                                        <input type="hidden" name="e_no" value="${3333}">
                                         <div class="tk_survey-guestType">
                                             <div class="tk_survey-titleName">ゲスト様</div>
                                             <div>

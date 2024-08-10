@@ -121,21 +121,24 @@ create table guest(
     foreign key (m_id) references member(m_id)
 );
 select * from guest;
+drop table guest;
 
 
 -- 알러지
 create table allergy(
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
-    allergy varchar2(10 char) not null,
+    allergy varchar2(100 char) not null,
 
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
 select * from allergy;
+drop table allergy;
 
 -- 동반자 유형
 create table party(
+    p_pk number(5) primary key,
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
     p_accompany_type varchar2(5 char) not null,
@@ -153,7 +156,27 @@ create table party(
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
+create sequence partyAllergy_seq;
+
 select * from party;
+drop table party;
+
+-- 동반자 알러지
+create table partyAllergy(
+    p_pk number(5) not null,
+    e_no number(5) not null,
+    m_id varchar2(50 char) not null,
+    allergy varchar2(100 char) not null,
+
+    foreign key(p_pk) references party(p_pk),
+    foreign key(e_no) references event(e_no),
+    foreign key (m_id) references member(m_id)
+);
+
+
+create sequence partyAllergy_seq;
+select * from partyAllergy;
+drop table partyAllergy;
 
 
 -- 축하메세지
