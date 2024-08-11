@@ -77,12 +77,24 @@ create table wedding_info(
     w_name_jp_bride varchar2(10 char) not null,
     w_fam_eng_bride varchar2(50 char) not null,
     w_name_eng_bride varchar2(50 char) not null,
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
     w_date varchar2(10 char) not null,
+=======
+--     w_date date not null,
+--     w_wedding_time timestamp not null,
+--     w_wedding_assemble timestamp not null,
+    w_date varchar2(30 char) not null,
+>>>>>>> 07c8ec685fef094e321ccb0413ba90881816bda8:src/main/webapp/db.sql
     w_wedding_time varchar2(10 char) not null,
     w_wedding_assemble varchar2(10 char) not null,
     w_wedding_postcode varchar2(10 char) not null,
     w_wedding_address varchar2(200 char) not null,
     w_wedding_building varchar2(50 char) not null,
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
+=======
+--     w_reception_time timestamp not null,
+--     w_reception_assemble timestamp not null,--
+>>>>>>> 07c8ec685fef094e321ccb0413ba90881816bda8:src/main/webapp/db.sql
     w_reception_time varchar2(10 char) not null,
     w_reception_assemble varchar2(10 char) not null,
     w_reception_postcode varchar2(10 char) not null,
@@ -98,7 +110,11 @@ create table wedding_info(
     foreign key(e_no) references event(e_no),
     foreign key (t_pk) references template(t_pk)
 );
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
 select * from WEDDING_iNFO;
+=======
+select * from WEDDING_INFO;
+>>>>>>> 07c8ec685fef094e321ccb0413ba90881816bda8:src/main/webapp/db.sql
 drop table wedding_info;
 
 
@@ -128,21 +144,24 @@ create table guest(
     foreign key (m_id) references member(m_id)
 );
 select * from guest;
+drop table guest;
 
 
 -- 알러지
 create table allergy(
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
-    allergy varchar2(10 char) not null,
+    allergy varchar2(100 char) not null,
 
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
 select * from allergy;
+drop table allergy;
 
 -- 동반자 유형
 create table party(
+    p_pk number(5) primary key,
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
     p_accompany_type varchar2(5 char) not null,
@@ -160,7 +179,27 @@ create table party(
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
+create sequence partyAllergy_seq;
+
 select * from party;
+drop table party;
+
+-- 동반자 알러지
+create table partyAllergy(
+    p_pk number(5) not null,
+    e_no number(5) not null,
+    m_id varchar2(50 char) not null,
+    allergy varchar2(100 char) not null,
+
+    foreign key(p_pk) references party(p_pk),
+    foreign key(e_no) references event(e_no),
+    foreign key (m_id) references member(m_id)
+);
+
+
+create sequence partyAllergy_seq;
+select * from partyAllergy;
+drop table partyAllergy;
 
 
 -- 축하메세지

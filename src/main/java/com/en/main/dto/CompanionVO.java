@@ -1,26 +1,12 @@
 package com.en.main.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
-public class GuestVO {
+public class CompanionVO {
+    private int p_accompany_num;
     private int e_no;
     private String m_id;
-
-    private String g_attend_wedding;
-    private String g_attend_afterParty;
-    private String g_guest_type;
-    private String g_allergy_or;
-    private String g_allergy;
-    private String g_relation;
-    private String g_relation_detail;
-
-    private String allergy;
-
-    private String p_accompany_num;
-
     private String p_accompany_type;
     private String p_fam_kanji;
     private String p_name_kanji;
@@ -30,7 +16,6 @@ public class GuestVO {
     private String p_name_eng;
     private String p_gender;
     private String p_allergy_or;
+    private String p_allergy;
     private String p_relation;
-
-
 }
