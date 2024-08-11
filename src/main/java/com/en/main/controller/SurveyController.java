@@ -36,6 +36,7 @@ public class SurveyController {
         System.out.println(file.getOriginalFilename());
         System.out.println(memberVO);
         System.out.println(companionVO);
+        System.out.println(companionVO.getP_accompany_num()); // CompanionVO에서 p_accompany_num 확인
         System.out.println(allergyVO);
 
         //      surveyService.addGuest(messageVO, guestVO, file);

@@ -347,7 +347,8 @@ $(document).ready(function () {
                <div class="tk_allergy">
                    <div class="tk_survey-accompany-titleName">アレルギー</div>
                    <div class="tk_survey-allergy-checkbox">
-                       <input type="checkbox" id="allergyHave-${partyCount}" data-conid="allergyDetailContainer${partyCount}" class="allergyHave" name="p_allergy_or" value="Yes"/>
+                       <input type="checkbox" id="allergyHave-${partyCount}" data-conid="allergyDetailContainer${partyCount}" 
+                       class="allergyHave" name="p_allergy_or" value="Yes"/>
                        <label class="cb2" for="allergyHave-${partyCount}"></label>
                        <span>アレルギー情報を入力する</span>
                    </div>
