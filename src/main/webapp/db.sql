@@ -156,7 +156,8 @@ create table party(
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
-create sequence partyAllergy_seq;
+create sequence party_seq;
+insert into party values (party_seq.nextval, '68', 'test9', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', '有', '姉');
 
 select * from party;
 drop table party;

@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class partyAllergyVO {
+public class PartyAllergyVO {
     private int p_pk;
     private int e_no;
     private String m_id;
