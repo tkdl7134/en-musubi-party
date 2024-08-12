@@ -127,21 +127,24 @@ create table guest(
     foreign key (m_id) references member(m_id)
 );
 select * from guest;
+drop table guest;
 
 
 -- 알러지
 create table allergy(
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
-    allergy varchar2(10 char) not null,
+    allergy varchar2(100 char) not null,
 
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
 select * from allergy;
+drop table allergy;
 
 -- 동반자 유형
 create table party(
+    p_pk number(5) primary key,
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
     p_accompany_type varchar2(5 char) not null,
@@ -159,7 +162,28 @@ create table party(
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
+create sequence party_seq;
+insert into party values (party_seq.nextval, '68', 'test9', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', '有', '姉');
+
 select * from party;
+drop table party;
+
+-- 동반자 알러지
+create table partyAllergy(
+    p_pk number(5) not null,
+    e_no number(5) not null,
+    m_id varchar2(50 char) not null,
+    allergy varchar2(100 char) not null,
+
+    foreign key(p_pk) references party(p_pk),
+    foreign key(e_no) references event(e_no),
+    foreign key (m_id) references member(m_id)
+);
+
+
+create sequence partyAllergy_seq;
+select * from partyAllergy;
+drop table partyAllergy;
 
 
 -- 축하메세지
@@ -213,6 +237,8 @@ create table en_party(
     foreign key (m_id) references member(m_id)
 );
 select * from en_party;
+alter table en_party add ep_selectedType varchar2(300 char);
+alter table en_party add ep_finalChoice varchar2(100 char);
 
 -- 엔파티 채팅
 create table en_chatting(

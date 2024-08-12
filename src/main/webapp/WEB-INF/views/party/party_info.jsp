@@ -19,7 +19,7 @@
     <div class="yr_title">縁パーティー</div>
     <div class="yr_party-red-loof"><img src="footer.png" alt="" /></div>
     <div class="yr_go_to_chat_wrap">
-        <button id="yr_go_to_chat" onclick="location.href='party/chat'">
+        <button id="yr_go_to_chat" onclick="location.href='chat'">
             <img src="glass-shoes.png" alt="" />
             <span>
             縁パーティー<br />

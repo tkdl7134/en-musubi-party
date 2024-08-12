@@ -5,16 +5,13 @@ import com.en.main.service.PartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @RequestMapping("/party")
 @Controller
@@ -23,7 +20,7 @@ public class PartyController {
     @Autowired
     private PartyService partyService;
 
-    @GetMapping("")
+    @GetMapping("/apply")
     public String partyApply() {
         return "/party/party_apply";
     }
@@ -56,5 +53,59 @@ public class PartyController {
 
         return "/party/party_info";
     }
+
+    @GetMapping("/main")
+    public String partyMain(Model model) {
+
+        model.addAttribute("partyMembers", partyService.getPartyMembers());
+
+        return "/party/party_main";
+    }
+
+    @ResponseBody
+    @PostMapping("/main")
+    public int partySelectedType(@RequestBody PartyVO partyVO) {
+    return partyService.updateSelectedType(partyVO);
+    }
+
+    @ResponseBody
+    @PostMapping("/main/type")
+    public Map<String, Object> partySelectedTypeGroup() {
+
+        Map<String, List<Map<String, String>>> groupedTypes = partyService.getSimilarSelectedTypeGroups();
+        String[] groupNames = {"A", "B", "C", "D", "E", "F", "G", "H"};
+
+        Map<String, List<Map<String, String>>> namedGroupedTypes = new LinkedHashMap<>();
+
+        int index = 0;
+        for (Map.Entry<String, List<Map<String, String>>> entry : groupedTypes.entrySet()) {
+            String groupName = (index < groupNames.length) ? groupNames[index] : "Other";
+            namedGroupedTypes.put(groupName, entry.getValue());
+            index++;
+        }
+
+        namedGroupedTypes.forEach((key, group) -> {
+            System.out.println("Group " + key);
+            group.forEach(map -> {
+                System.out.println("\tm_id: " + map.get("m_id"));
+                System.out.println("\tep_selectedType: " + map.get("ep_selectedType"));
+            });
+        });
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", "success");
+        response.put("groupedTypes", namedGroupedTypes);
+
+        return response;
+
+    }
+
+    @ResponseBody
+    @PutMapping("/main")
+    public int partyFinalChoice(@RequestBody PartyVO partyVO) {
+        System.out.println(partyVO);
+        return partyService.updateFinalChoice(partyVO);
+    }
+
 }
 
