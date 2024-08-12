@@ -177,6 +177,7 @@
                                                         value="Yes"
                                                         class="allergyHave"
                                                         data-conid="allergyDetailContainer"
+                                                        data-type="guest"
                                                 />
                                                 <label class="cb2" for="allergyHave"></label>
                                                 <span>アレルギー情報を入力する</span>

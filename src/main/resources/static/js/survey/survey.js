@@ -88,10 +88,19 @@ $(function () {
 
     $(document).on("change", ".allergyHave", function (e) {
         const allergyDetailContainer = e.target.dataset.conid;
+        const allergyType = $(e.target).data('type');
         activeAllergyInput = e.target;
+
+        let nameAttribute = "allergy";
+        if (allergyType === "party") {
+            nameAttribute = `companions[${$(this).data('index')}].partyAllergy.allergy`;
+        } else if (allergyType === "guest") {
+            nameAttribute = "guestAllergy.allergy"
+        }
+
         if (this.checked) {
             $("#" + allergyDetailContainer).html(
-                `<input type="text" id="allergyDetail" data-refid="${this.id}" class="allergyDetail" name="allergy"
+                `<input type="text" id="allergyDetail" data-refid="${this.id}" class="allergyDetail" name="${nameAttribute}"
                 'placeholder="アレルギー詳細を入力してください " autocomplete="off" >`
             );
         } else {
@@ -347,7 +356,9 @@ $(document).ready(function () {
                <div class="tk_allergy">
                    <div class="tk_survey-accompany-titleName">アレルギー</div>
                    <div class="tk_survey-allergy-checkbox">
-                       <input type="checkbox" id="allergyHave-${partyCount}" data-conid="allergyDetailContainer${partyCount}" class="allergyHave" name="p_allergy_or" value="Yes"/>
+                       <input type="checkbox" id="allergyHave-${partyCount}" data-conid="allergyDetailContainer${partyCount}"
+                       data-type="type" data-index="${partyCount}"   
+                       class="allergyHave" name="p_allergy_or" value="Yes"/>
                        <label class="cb2" for="allergyHave-${partyCount}"></label>
                        <span>アレルギー情報を入力する</span>
                    </div>
