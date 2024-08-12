@@ -131,4 +131,6 @@ public void insertWeddingInfo(WeddingVO weddingVO,
     }
 
 
+    public void getInvitationInfo(int e_no) {
+    }
 }
