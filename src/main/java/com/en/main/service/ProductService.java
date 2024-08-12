@@ -78,7 +78,6 @@ public void insertWeddingInfo(WeddingVO weddingVO,
     }
 }
 
-
     private String saveFile(MultipartFile file) {
         if (file != null && !file.isEmpty()) {
             try {
