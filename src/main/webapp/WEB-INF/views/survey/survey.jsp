@@ -40,6 +40,8 @@
                                 </div>
                                 <div class="survey-form">
                                     <form action="survey/create" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="m_id" value="${2222}">
+                                        <input type="hidden" name="e_no" value="${3333}">
                                         <div class="tk_survey-guestType">
                                             <div class="tk_survey-titleName">ゲスト様</div>
                                             <div>
@@ -175,6 +177,7 @@
                                                         value="Yes"
                                                         class="allergyHave"
                                                         data-conid="allergyDetailContainer"
+                                                        data-type="guest"
                                                 />
                                                 <label class="cb2" for="allergyHave"></label>
                                                 <span>アレルギー情報を入力する</span>
