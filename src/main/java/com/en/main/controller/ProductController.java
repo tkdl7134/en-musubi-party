@@ -52,9 +52,16 @@ public class ProductController {
     }
 
     @GetMapping("/invitation-preview/{e_no}")
-    public String getWeddingInfo(Model model, @PathVariable int e_no) {
+    public String getWeddingInfo(Model model, @PathVariable int e_no, WeddingVO weddingVO) {
         model.addAttribute("weddingInfo", productService.getWeddingInfo(e_no));
-        System.out.println(productService.getWeddingInfo(e_no));
+        String str = productService.getWeddingInfo(e_no).getW_img_share();
+        String[] list = str.split(",");
+        String viewImg = list[0];
+        System.out.println("============");
+        System.out.println(viewImg);
+        System.out.println("============");
+        model.addAttribute("viewImg", viewImg);
+        model.addAttribute("ShareImg", list);
         return "product/invitation_preview";
     }
 

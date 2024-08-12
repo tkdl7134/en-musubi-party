@@ -63,16 +63,6 @@ public void insertWeddingInfo(WeddingVO weddingVO,
         weddingVO.setW_img2(img2);
         weddingVO.setW_img3(img3);
         weddingVO.setW_img_share(imgShare);
-
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
-//        LocalDate weddingDate = LocalDate.parse(w_date_before.split(" ")[0], formatter);
-//        weddingVO.setW_date(weddingDate);
-//---------------
-//        String day = w_date.charAt(11)+ ""; // 요일
-//        String remove = w_date.replace(day, "").trim(); // 요일 제거버전
-//        System.out.println(remove);
-//        LocalDate weddingDate = LocalDate.parse(remove);
-//        weddingVO.setW_date(weddingDate);
         System.out.println(weddingVO);
         System.out.println(imgShare);
         productMapper.insertWeddingInfo(weddingVO);
@@ -83,15 +73,14 @@ public void insertWeddingInfo(WeddingVO weddingVO,
     }
 }
 
-//    @Value("${file.upload-dir}") // 파일 경로를 외부 설정 파일(application.properties)에서 관리
-//    private String uploadDir;
 
     private String saveFile(MultipartFile file) {
         if (file != null && !file.isEmpty()) {
             try {
                 String fileRealName = file.getOriginalFilename();
                 String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."));
-                String uploadFolder = "/Users/se_ong/Desktop/sbt9/uploadTest";
+//                String uploadFolder = "Users/se_ong/Desktop/sbt9/uploadTest";
+                String uploadFolder = new File("src/main/resources/static/img/").getAbsolutePath();
 
                 UUID uuid = UUID.randomUUID();
                 String uniqueName = uuid.toString().split("-")[0];

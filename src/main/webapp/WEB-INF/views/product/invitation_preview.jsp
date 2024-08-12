@@ -44,7 +44,7 @@
             </div>
             <div class="je_invitation-message">
                 <div class="je_couple-img">
-                    <img src="resources/img/couple-example.jpg" alt="" />
+                    <img src="/resources/img/${weddingInfo.w_img1}" alt="" />
                 </div>
                 <div class="je_message-txt">
                     ${weddingInfo.w_message_invite}
@@ -54,7 +54,7 @@
                 <div>
                     <div class="je_groom">
                         <div class="je_groom-photo-box">
-                            <div class="je_photo-box"></div>
+                            <div class="je_photo-box"><img src="/resources/img/${weddingInfo.w_img2}"></div>
                             <div class="je_photo-box-inner"></div>
                         </div>
                         <div class="je_groom-name">
@@ -67,7 +67,7 @@
                     </div>
                     <div class="je_bride">
                         <div class="je_bride-photo-box">
-                            <div class="je_photo-box"></div>
+                            <div class="je_photo-box"><img src="/resources/img/${weddingInfo.w_img3}"> </div>
                             <div class="je_photo-box-inner"></div>
                         </div>
                         <div class="je_bride-name">
@@ -82,18 +82,13 @@
                 <div class="je_share-photos">
                     <div class="je_share-photos-title">「ギャラリー」</div>
                     <div>
-                        <img id="je_view-photo" src="/resources/img/couple-example.jpg" alt="" />
+
+                        <img id="je_view-photo" src="/resources/img/${viewImg}" alt="" />
                     </div>
                     <ul id="je_share-photos-list">
-                        <li><img src="/resources/img/couple-example.jpg" alt="" /></li>
-                        <li><img src="/resources/img/couple-example2.jpg" alt="" /></li>
-                        <li><img src="/resources/img/couple-example.jpg" alt="" /></li>
-                        <li><img src="/resources/img/couple-example2.jpg" alt="" /></li>
-                        <li><img src="/resources/img/couple-example.jpg" alt="" /></li>
-                        <li><img src="/resources/img/couple-example2.jpg" alt="" /></li>
-                        <li><img src="/resources/img/couple-example.jpg" alt="" /></li>
-                        <li><img src="/resources/img/couple-example2.jpg" alt="" /></li>
-                        <li><img src="/resources/img/couple-example.jpg" alt="" /></li>
+                    <c:forEach var="s" items="${ShareImg}">
+                        <li><img src="/resources/img/${s}" alt="" /></li>
+                    </c:forEach>
                     </ul>
                 </div>
             </div>
