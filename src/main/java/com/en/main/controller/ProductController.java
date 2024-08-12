@@ -1,13 +1,16 @@
 package com.en.main.controller;
 
+import com.en.main.dto.WeddingVO;
 import com.en.main.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @RequestMapping("/product")
 @Controller
@@ -36,9 +39,16 @@ public class ProductController {
         return "product/product_make";
     }
 
-    @PostMapping("/{t_pk}/completed-ver")
-    public String productCompleted( @PathVariable int t_pk, Model model) {
-
-        return "product/product_complete";
+    @PostMapping("/invitation-preview")
+    public String productCompleted(WeddingVO weddingVO,
+//                                   @RequestParam String w_date_before,
+//                                   @RequestParam String w_wedding_time_before, @RequestParam String w_wedding_assemble_before,
+//                                   @RequestParam String w_reception_time_before, @RequestParam String w_reception_assemble_before
+                                   @RequestParam MultipartFile w_img1_file,
+                                   @RequestParam MultipartFile w_img2_file, @RequestParam MultipartFile w_img3_file,
+                                   @RequestParam MultipartFile[] w_img_share_files) {
+        productService.insertWeddingInfo(weddingVO, w_img1_file, w_img2_file, w_img3_file, w_img_share_files);
+        return "product/invitation_preview";
     }
+
 }
