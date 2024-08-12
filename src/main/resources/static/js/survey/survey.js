@@ -399,7 +399,7 @@ $(function () {
     confirmImgButton.addEventListener("click", () => {
         if (selectedImgSrc) {
             document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">
-                                                                           <input type="hidden" name="me_img" value="${selectedImgSrc}">`;
+                                                                           <input type="hidden" name="me_img" id="meImgInput" value="${selectedImgSrc}">`;
             alert("アップロード完了!");
             defaultImgModal.close();
         }
@@ -505,9 +505,13 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.tk_survey-gender-accompany').forEach(handleCheckboxGroup);
 });
 
-document.getElementById('imgInput').addEventListener('change', function() {
-    if (this.files && this.files[0]) {
-        // 파일이 선택된 경우 me_img 필드 값을 비워서 파일이 우선시되도록 함
-        document.getElementById('meImgInput').value = '';
-    }
-});
+var imgInput = document.getElementById('imgInput');
+if (imgInput) {
+    imgInput.addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+            document.getElementById('meImgInput').value = '';
+        }
+    });
+} else {
+    console.error("imgInput 요소를 찾을 수 없습니다.");
+}
