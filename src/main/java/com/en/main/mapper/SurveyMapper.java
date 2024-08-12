@@ -21,6 +21,9 @@ public interface SurveyMapper {
             "#{p_fam_kana}, #{p_name_kana}, #{p_fam_eng}, #{p_name_eng}, #{p_gender}, #{p_allergy_or}, #{p_relation}")
     void insertCompanions(CompanionVO companion);
 
+    @Insert("insert into message values (#{e_no}, #{m_id}, #{me_content}, #{me_img})")
+    String insertMessage(MessageVO messageVO);
+
     @Select("select * from member where m_id = #{m_id}")
     MemberVO selectMemberInfo( String m_id);
 

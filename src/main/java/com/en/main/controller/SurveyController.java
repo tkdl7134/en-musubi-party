@@ -43,14 +43,7 @@ public class SurveyController {
         System.out.println(allergyVO);
         System.out.println(partyAllergyVO);
 
-        if (!file.isEmpty()) {
-            // 파일 업로드 처리
-            surveyService.uploadFile(messageVO, file);
-        }
-
-        //      surveyService.addGuest(messageVO, guestVO, file);
         surveyService.addGuest(messageVO, guestVO, allergyVO, file, companions.getCompanions());
-
         return "redirect:/survey";
     }
 

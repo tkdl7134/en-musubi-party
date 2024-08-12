@@ -504,14 +504,3 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.tk_survey-accompany').forEach(handleCheckboxGroup);
     document.querySelectorAll('.tk_survey-gender-accompany').forEach(handleCheckboxGroup);
 });
-
-var imgInput = document.getElementById('imgInput');
-if (imgInput) {
-    imgInput.addEventListener('change', function() {
-        if (this.files && this.files[0]) {
-            document.getElementById('meImgInput').value = '';
-        }
-    });
-} else {
-    console.error("imgInput 요소를 찾을 수 없습니다.");
-}
