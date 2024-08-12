@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const typeContent = document.querySelector(".yr_type");
     const typeItems = document.querySelectorAll(".yr_type_item");
     const typeButton = document.querySelector("#yr_type_button");
+    const typeLoading = document.querySelector(".yr_type_loading");
     const typeGroup = document.querySelector(".yr_type_group");
     const typeMention = document.querySelector(".yr_type_mention");
     const typeGroupSelect = document.querySelector(".yr_type_group_select");
@@ -173,6 +174,40 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
+                    if (data === 1) {
+                        fetch('/party/main/type', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+
+                    })
+                            .then(response => response.json())
+                            .then(groupedData => {
+                                console.log('Group:', groupedData);
+
+                                const targetMId = 'test2';
+                                let foundKey = null;
+
+
+                                for (const [key, value] of Object.entries(groupedData.groupedTypes)) {
+                                    const found = value.some(item => item.m_id === targetMId);
+                                    if (found) {
+                                        foundKey = key;
+                                        break;
+                                    }
+                                }
+                                document.querySelector(".yr_type_group_select p").textContent = foundKey;
+                            })
+                            .catch(error => {
+                                console.error('Error in second request:', error);
+                            });
+
+
+                    } else {
+                        console.error('Failed to update selected type');
+                    }
+
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -182,7 +217,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     });
-
 
 
     // ------------------------------------------------------------------------------choice

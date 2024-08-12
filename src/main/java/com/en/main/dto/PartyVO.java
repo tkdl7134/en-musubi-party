@@ -11,6 +11,7 @@ public class PartyVO {
     private int e_no;
     private String m_id;
     private String ep_type;
+    private String m_fam_kanji;
     private String m_name_kanji;
     private String m_gender;
     private String m_phone;

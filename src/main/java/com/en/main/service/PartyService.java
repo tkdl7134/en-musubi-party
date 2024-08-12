@@ -2,15 +2,19 @@ package com.en.main.service;
 
 import com.en.main.dto.PartyVO;
 import com.en.main.mapper.PartyMapper;
+import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class PartyService implements PartyMapper {
     @Autowired
     private PartyMapper partyMapper;
+
+    private static final int SIMILARITY_THRESHOLD = 3;
 
     @Override
     public List<PartyVO> getPartyMembers() {
@@ -20,6 +24,52 @@ public class PartyService implements PartyMapper {
     @Override
     public List<PartyVO> getSelectedType() {
         return partyMapper.getSelectedType();
+    }
+
+    private boolean similar(String type1, String type2) {
+        LevenshteinDistance levenshteinDistance = new LevenshteinDistance();
+        int distance = levenshteinDistance.apply(type1, type2);
+        return distance <= SIMILARITY_THRESHOLD;
+    }
+
+    public Map<String, List<Map<String, String>>> getSimilarSelectedTypeGroups() {
+        List<PartyVO> selectedTypes = getSelectedType();
+
+        Map<String, List<Map<String, String>>> groupedTypes = new HashMap<>();
+
+        for (PartyVO party : selectedTypes) {
+            boolean addedToGroup = false;
+            String currentType = party.getEp_selectedType();
+
+            for (String key : groupedTypes.keySet()) {
+                if (similar(currentType, key)) {
+                    List<Map<String, String>> group = groupedTypes.get(key);
+                    Map<String, String> map = new HashMap<>();
+                    map.put("m_id", party.getM_id());
+                    map.put("ep_selectedType", currentType);
+                    group.add(map);
+                    addedToGroup = true;
+                    break;
+                }
+            }
+
+            if (!addedToGroup) {
+                List<Map<String, String>> newGroup = new ArrayList<>();
+                Map<String, String> map = new HashMap<>();
+                map.put("m_id", party.getM_id());
+                map.put("ep_selectedType", currentType);
+                newGroup.add(map);
+                groupedTypes.put(currentType, newGroup);
+            }
+        }
+
+        return groupedTypes;
+    }
+
+
+    @Override
+    public List<PartyVO> getAllParty() {
+        return partyMapper.getAllParty();
     }
 
     @Override

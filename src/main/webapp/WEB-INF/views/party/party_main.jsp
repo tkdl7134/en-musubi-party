@@ -1,5 +1,7 @@
 
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +19,7 @@
 <body>
 <div class="yr_party_main_container">
     <div class="yr_title">縁パーティー</div>
-    <div class="yr_party-red-loof"><img src="footer.png" alt="" /></div>
+<%--    <div class="yr_party-red-loof"><img src="footer.png" alt="" /></div>--%>
     <div class="yr_party_wrapper">
         <div class="yr_party_welcome">
             <p>
@@ -30,30 +32,12 @@
             <div class="yr_party_list all">
                 <p>list</p>
                 <div class="yr_list_all">
-                    <div class="yr_list">
-                        <div class="yr_list_number">1</div>
-                        <div class="yr_list_name">河・ユリ</div>
-                    </div>
-                    <div class="yr_list">
-                        <div class="yr_list_number">2</div>
-                        <div class="yr_list_name">キム・ユジョン</div>
-                    </div>
-                    <div class="yr_list">
-                        <div class="yr_list_number">3</div>
-                        <div class="yr_list_name">パク・ジョンウン</div>
-                    </div>
-                    <div class="yr_list">
-                        <div class="yr_list_number">4</div>
-                        <div class="yr_list_name">イ·テゴン</div>
-                    </div>
-                    <div class="yr_list">
-                        <div class="yr_list_number">5</div>
-                        <div class="yr_list_name">ジョン・ジェフン</div>
-                    </div>
-                    <div class="yr_list">
-                        <div class="yr_list_number">6</div>
-                        <div class="yr_list_name">ナム・ヒョンウ</div>
-                    </div>
+                    <c:forEach items="${partyMembers}" var="p" varStatus="status">
+                        <div class="yr_list">
+                            <div class="yr_list_number">${status.count}</div>
+                            <div class="yr_list_name">${p.m_fam_kanji} ${p.m_name_kanji}</div>
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
 
@@ -83,8 +67,8 @@
                             <input class="yr_type_item" id="indoor" value="インドア" type="button">
                             <input class="yr_type_item" id="religion_yes" value="宗教あり" type="button">
                             <input class="yr_type_item" id="religion_no" value="宗教なし" type="button">
-                            <input class="yr_type_item" id="smoker" value="スモーカ" type="button">
-                            <input class="yr_type_item" id="non-smoker" value="ノンスモーカ" type="button">
+<%--                            <input class="yr_type_item" id="smoker" value="スモーカ" type="button">--%>
+<%--                            <input class="yr_type_item" id="non-smoker" value="ノンスモーカ" type="button">--%>
                         </div>
                         <div class="yr_type_group2">
                             <input class="yr_type_item" id="coffee" value="コーヒー" type="button">
@@ -108,7 +92,7 @@
                     </div>
                     <button id="yr_type_button" type="submit">提出</button>
                     <div class="yr_type_group_select">
-                        <p>A</p>
+                        <p></p>
                         グループに移動してください
                     </div>
                 </div>
@@ -126,36 +110,14 @@
                     </div>
 <%--                    <form action="/party/main" method="post">--%>
 <%--                        <input type="hidden" name="_method" value="put">--%>
-                    <div class="yr_list_choice">
-                        <input type="hidden" value="河・ユリ">
-                        <div class="yr_list_number_choice">1</div>
-                        <div class="yr_list_name_choice">河・ユリ</div>
-                    </div>
-                    <div class="yr_list_choice">
-                        <input type="hidden" value="キム・ユジョン">
-                        <div class="yr_list_number_choice">2</div>
-                        <div class="yr_list_name_choice">キム・ユジョン</div>
-                    </div>
-                    <div class="yr_list_choice">
-                        <input type="hidden" value="パク・ジョンウン">
-                        <div class="yr_list_number_choice">3</div>
-                        <div class="yr_list_name_choice">パク・ジョンウン</div>
-                    </div>
-                    <div class="yr_list_choice">
-                        <input type="hidden" value="イ·テゴン">
-                        <div class="yr_list_number_choice">4</div>
-                        <div class="yr_list_name_choice">イ·テゴン</div>
-                    </div>
-                    <div class="yr_list_choice">
-                        <input type="hidden" value="ジョン・ジェフン">
-                        <div class="yr_list_number_choice">5</div>
-                        <div class="yr_list_name_choice">ジョン・ジェフン</div>
-                    </div>
-                    <div class="yr_list_choice">
-                        <input type="hidden" value="ナム・ヒョンウ">
-                        <div class="yr_list_number_choice">6</div>
-                        <div class="yr_list_name_choice">ナム・ヒョンウ</div>
-                    </div>
+                    <c:forEach items="${partyMembers}" var="p" varStatus="status">
+                        <div class="yr_list_choice">
+                            <input type="hidden" value="${p.m_fam_kanji} ${p.m_name_kanji}">
+                            <div class="yr_list_number_choice">${status.count}</div>
+                            <div class="yr_list_name_choice">${p.m_fam_kanji} ${p.m_name_kanji}</div>
+                        </div>
+                    </c:forEach>
+
                     <button type="submit" id="yr_choice_button">提出</button>
 <%--                    </form>--%>
                 </div>
