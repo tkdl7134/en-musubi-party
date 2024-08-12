@@ -1,11 +1,8 @@
 package com.en.main.service;
 
-import com.en.main.dto.MemberVO;
-import com.en.main.dto.MessageVO;
-import com.en.main.dto.PartyVO;
+import com.en.main.dto.*;
 import com.en.main.mapper.FileMapper;
 import com.en.main.mapper.SurveyMapper;
-import com.en.main.dto.GuestVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,11 +21,14 @@ public class SurveyService {
 
     private static final String UPLOAD_ImgDIRECTORY = "src/main/resources/img/";
 
-    public void addGuest(MessageVO messageVO, GuestVO guestVO, MultipartFile file) {
+
+
+    public void addGuest(MessageVO messageVO, GuestVO guestVO, AllergyVO allergyVO, MultipartFile file) {
         if (!file.isEmpty()) {
             uploadFile(messageVO, file);
+            surveyMapper.insertGuest(guestVO);
+            surveyMapper.insertAllergy(allergyVO);
         }
-        surveyMapper.insertSurvey(guestVO);
     }
 
     private void uploadFile(MessageVO messageVO, MultipartFile file) {

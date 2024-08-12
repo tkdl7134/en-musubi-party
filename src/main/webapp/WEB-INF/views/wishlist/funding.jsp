@@ -3,22 +3,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="finance/css/fund.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/wishlist/fund.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="finance/js/fund.js" defer></script>
+<script type="text/javascript" src="/resources/js/wishlist/fund.js" defer></script>
 
 <div class="kh-f-card-container">
 	<div class="kh-f-mousemove kh-f-none">
-		<img alt="" src="finance/img/dragbtn.png">
+		<img alt="" src="resources/img/dragbtn.png">
 	</div>
 	<div class="kh-f-card-fake"></div>
 	<!-- <div class="kh-f-card-out">
 		<input type="hidden" class="cardInfos">
 		<div class="kh-fund-card">
 			<div style="height: 18rem">
-				<img style="height: 100%" alt="noImg" src="finance/img/机.png" />
+				<img style="height: 100%" alt="noImg" src="resources/img/机.png" />
 			</div>
 			<div>
 				<h3></h3>
@@ -32,7 +32,7 @@
 <div class="kh-f-popup">
 	<div class="kh-f-popup-in">
 		<div class="kh-f-img-box">
-			<img alt="noImg" style="height: 100%" id="kh-f-img"  src="" onerror="this.onerror=null; this.src='finance/img/プレゼント.png';"/>
+			<img alt="noImg" style="height: 100%" id="kh-f-img"  src="" onerror="this.onerror=null; this.src='resources/img/プレゼント.png';"/>
 		</div>
 		<div class="kh-f-product-des">
 			<h3>
@@ -48,7 +48,7 @@
 			<div style="font-size: 2rem" id="kh-input-box">
 				<input class="kh-f-input" type="text" maxlength="8"
 					oninput="numberMaxLength(this)" onclick="removeWarn()" />円 <img
-					alt="" src="finance/img/money.png">
+					alt="" src="resources/img/money.png">
 			</div>
 			<span id="kh-warn-text"
 				style="color: red; position: absolute; bottom: -20px"
@@ -68,26 +68,26 @@
 	<div class="kh-f-statistic-pop-in">
 		<div class="kh-f-statistic-title">
 			<div>
-				<img alt="" src="finance/img/crown.png">
+				<img alt="" src="resources/img/crown.png">
 			</div>
 			<h1>ファンディングランキング</h1>
 			<div>
-				<img alt="" src="finance/img/crown.png">
+				<img alt="" src="resources/img/crown.png">
 			</div>
 		</div>
 		<div class="kh-f-statistic-conCon">
 			<!-- <div class="kh-f-statistic-content">
 				<div class="kh-f-statistic-name">
-					<div class="kh-f-none"><span>私の選択</span><img alt="noImg" src="finance/img/flash.png"> </div>
+					<div class="kh-f-none"><span>私の選択</span><img alt="noImg" src="resources/img/flash.png"> </div>
 					<h1>${element.wl_product}</h1>
 				</div>
 				<div class="kh-f-statistic-bar">
 					<div>
-						<div class="kh-f-statistic-abled-bar"><div><img alt="noImg" src="finance/img/menubtn.png"></div></div>
+						<div class="kh-f-statistic-abled-bar"><div><img alt="noImg" src="resources/img/menubtn.png"></div></div>
 					</div>
 				</div>
 				<div class="kh-f-statistic-percent" data-value="${element.percent}">
-					<img class="kh-f-none" alt="noImg" src="finance/img/threehearts.png">
+					<img class="kh-f-none" alt="noImg" src="resources/img/threehearts.png">
 					<h1><span>0</span>％ 達成</h1>
 				</div>
 			</div> -->

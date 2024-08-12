@@ -1,2 +1,7 @@
-package com.en.main.service;public class FundingService {
+package com.en.main.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class FundingService {
 }
