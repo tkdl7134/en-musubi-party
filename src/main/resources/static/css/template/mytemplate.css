@@ -139,6 +139,7 @@
     cursor: pointer;
     text-align: center; /* 텍스트 가운데 정렬 */
     padding: 0.5rem 0; /* 텍스트와 이미지의 간격 조정 */
+    margin: 0.5rem;
 }
 
 .card-back button img {
@@ -160,6 +161,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem; /* 20px -> 1.25rem */
+    margin-top: 5rem;
 }
 
 .hw_title {

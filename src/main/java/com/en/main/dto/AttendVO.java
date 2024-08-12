@@ -1,25 +1,30 @@
 package com.en.main.dto;
 
+
 import lombok.Data;
 
 @Data
-public class GuestVO {
+public class AttendVO {
 
     private int e_no;
     private String m_id;
-    private int p_pk;
+
+    private String m_fam_kanji;
+    private String m_name_kanji;
+    private String m_email;
+    private String m_phone;
 
     private String g_attend_wedding;
-    private String g_attend_afterParty;
+
     private String g_guest_type;
     private String g_allergy_or;
 
-    private String allergy;
+    private String g_allergy;
 
     private String g_relation;
     private String g_relation_detail;
 
-    private String p_allergy;
+    private String allergy;
 
     private String p_accompany_num;
     private String p_accompany_type;

@@ -32,76 +32,25 @@
             </select>
         </div>
 
-
         <!-- 탭 콘텐츠 -->
         <div class="hw_content">
             <ul class="hw_list">
-                <li class="hw_tab-button">全体</li>
-                <li class="hw_tab-button active">新郎</li>
-                <li class="hw_tab-button">新婦</li>
+                <li class="hw_tab-button active" data-filter="all">全体</li>
+                <li class="hw_tab-button" data-filter="新郎">新郎</li>
+                <li class="hw_tab-button" data-filter="新婦">新婦</li>
             </ul>
 
             <div class="hw_tab-button-content">
-                <div class="hw_tab-content">
-
-                    <span>이름 : 김철수1</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-
-                </div>
-            </div>
-            <div class="hw_tab-button-content show">
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수2</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
-            </div>
-            <div class="hw_tab-button-content">
-                <div class="hw_tab-content">
-                    <span>이름 : 김철수3</span>
-                    <span>유형 : 신부</span>
-                    <span>번호 : 010-1234-1234</span>
-                    <span>이메일 : aaaa@gmail.com</span>
-                </div>
+                <c:forEach items="${attendList}" var="attend">
+                    <c:if test="${attend.g_attend_wedding == '出席'}">
+                        <div class="hw_tab-content" data-type="${attend.g_guest_type}">
+                            <span>이름 : ${attend.m_fam_kanji} ${attend.m_name_kanji}</span>
+                            <span>유형 : ${attend.g_guest_type}</span>
+                            <span>번호 : ${attend.m_phone}</span>
+                            <span>이메일 : ${attend.m_email}</span>
+                        </div>
+                    </c:if>
+                </c:forEach>
             </div>
         </div>
     </div>

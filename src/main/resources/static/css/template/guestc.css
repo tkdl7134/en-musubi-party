@@ -70,9 +70,6 @@ ul.list {
     color: white;
 }
 
-.hw_tab-button-content {
-    display: none;
-}
 
 .show {
     display: block;
@@ -83,8 +80,8 @@ ul.list {
 .hw_tab-content{
     display: grid;
     justify-content: space-around;
-    height: 5rem;
-    width: 17rem;
+    height: 6rem;
+    width: 20rem;
     background-color: #fff5f4;
     border: 3px solid #ffdbdb;
     border-radius: 15px;
