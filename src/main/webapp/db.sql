@@ -237,6 +237,8 @@ create table en_party(
     foreign key (m_id) references member(m_id)
 );
 select * from en_party;
+alter table en_party add ep_selectedType varchar2(300 char);
+alter table en_party add ep_finalChoice varchar2(100 char);
 
 -- 엔파티 채팅
 create table en_chatting(
