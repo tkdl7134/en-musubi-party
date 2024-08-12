@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class MemberController {
@@ -65,7 +66,13 @@ public class MemberController {
     }
 
     @PostMapping("/member/resetPW")
-    public String resetPW(@RequestParam("token") String token, @RequestParam("newPW") String newPW, Model model) {
+    public String resetPW(@RequestParam("token") String token, @RequestParam("newPW") String newPW, @RequestParam("confirmPW") String confirmPW, Model model) {
+        if (!newPW.equals(confirmPW)) {
+            model.addAttribute("error", "새 비밀번호가 일치하지 않습니다.");
+            model.addAttribute("token", token);
+            return "member/resetPW"; // 비밀번호 재설정 페이지로 돌아가기
+        }
+
         boolean result = memberService.resetPW(token, newPW);
         if (result) {
             model.addAttribute("message", "비밀번호가 성공적으로 재설정되었습니다.");
@@ -75,4 +82,24 @@ public class MemberController {
         return "member/resetPW"; // 비밀번호 재설정 결과 페이지 (같은 페이지에서 결과를 보여줌)
     }
 
+    @PostMapping("/register/submit")
+    public String register(@RequestBody MemberVO memberVO) {
+        memberService.registerMember(memberVO);  // 회원 등록 서비스 호출
+
+        return "Registration successful";
+    }
+
+    @GetMapping("/myInfo")
+    public String myInfo(Model model, @RequestParam("m_id") String m_id) {
+        MemberVO member = memberService.getMemberInfo(m_id);
+        model.addAttribute("member", member);
+        return "member/myInfo";
+    }
+
+    @PostMapping("/myInfo/update")
+    public String updateMemberInfo(@RequestBody MemberVO memberVO, Model model) {
+        memberService.updateMemberInfo(memberVO);
+        model.addAttribute("member", memberVO);
+        return "redirect:/myInfo?m_id=" + memberVO.getM_id();  // 수정 후에도 myInfo 페이지로 이동
+    }
 }
