@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -23,15 +24,18 @@ public class SurveyService {
 
 
 
-    public void addGuest(MessageVO messageVO, GuestVO guestVO, AllergyVO allergyVO, MultipartFile file) {
+    public void addGuest(MessageVO messageVO, GuestVO guestVO, AllergyVO allergyVO, MultipartFile file, List<CompanionVO> companions) {
         if (!file.isEmpty()) {
             uploadFile(messageVO, file);
             surveyMapper.insertGuest(guestVO);
             surveyMapper.insertAllergy(allergyVO);
+            for (CompanionVO companion : companions) {
+                surveyMapper.insertCompanions(companion);
+            }
         }
     }
 
-    private void uploadFile(MessageVO messageVO, MultipartFile file) {
+    public void uploadFile(MessageVO messageVO, MultipartFile file) {
         String fileRealName = file.getOriginalFilename();
         String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."));
         String uniqueName = UUID.randomUUID().toString().replace("-", "") + fileExtension;

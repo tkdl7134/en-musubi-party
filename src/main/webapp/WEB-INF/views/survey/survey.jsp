@@ -80,7 +80,7 @@
                                         <div class="tk_survey-relationship-detail">
                                             <div class="tk_survey-titleName">間柄</div>
                                             <div>
-                                                <select name="g_relationship">
+                                                <select name="g_relation">
                                                     <option value="family">家族</option>
                                                     <option value="friend">親友</option>
                                                 </select>
@@ -271,7 +271,7 @@
                                                     保留
                                                 </div>
                                             </div>
-                                            <input type="hidden" name="g_attend_afterparty" id="g_attend_afterparty">
+                                            <input type="hidden" name="g_attend_afterParty" id="g_attend_afterparty">
                                         </div>
 
                                         <div class="tk_division-line"></div>

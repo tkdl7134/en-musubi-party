@@ -30,10 +30,11 @@ public class SurveyController {
     @PostMapping("/create")
     public String addGuest(MessageVO messageVO, GuestVO guestVO,
                            @RequestParam(value = "me_img2", required = false) MultipartFile file,
-                           MemberVO memberVO, @ModelAttribute CompanionsVO companions , AllergyVO allergyVO, PartyAllergyVO partyAllergyVO) {
+                           MemberVO memberVO, @ModelAttribute CompanionsVO companions , AllergyVO allergyVO,
+                           PartyAllergyVO partyAllergyVO) {
         for (CompanionVO companion : companions.getCompanions()) {
             System.out.println("p_accompany_num: " + companion.getP_accompany_num());
-            System.out.println("p_accompany_num: " + companion.getP_accompany_type());
+            System.out.println("p_accompany_type: " + companion.getP_accompany_type());
         }
         System.out.println(messageVO);
         System.out.println(guestVO);
@@ -42,8 +43,15 @@ public class SurveyController {
         System.out.println(allergyVO);
         System.out.println(partyAllergyVO);
 
+        if (!file.isEmpty()) {
+            // 파일 업로드 처리
+            surveyService.uploadFile(messageVO, file);
+        }
+
         //      surveyService.addGuest(messageVO, guestVO, file);
-      return "redirect:/survey";
+        surveyService.addGuest(messageVO, guestVO, allergyVO, file, companions.getCompanions());
+
+        return "redirect:/survey";
     }
 
 }

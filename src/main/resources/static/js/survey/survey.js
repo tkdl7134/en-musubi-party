@@ -398,7 +398,8 @@ $(function () {
 
     confirmImgButton.addEventListener("click", () => {
         if (selectedImgSrc) {
-            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">`;
+            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">
+                                                                           <input type="hidden" name="me_img" value="${selectedImgSrc}">`;
             alert("アップロード完了!");
             defaultImgModal.close();
         }
@@ -502,4 +503,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initial call to set up existing divs
     document.querySelectorAll('.tk_survey-accompany').forEach(handleCheckboxGroup);
     document.querySelectorAll('.tk_survey-gender-accompany').forEach(handleCheckboxGroup);
+});
+
+document.getElementById('imgInput').addEventListener('change', function() {
+    if (this.files && this.files[0]) {
+        // 파일이 선택된 경우 me_img 필드 값을 비워서 파일이 우선시되도록 함
+        document.getElementById('meImgInput').value = '';
+    }
 });
