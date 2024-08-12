@@ -1,0 +1,248 @@
+.kh-s-card-container {
+	height: 30rem;
+	display: flex;
+	align-self: center;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	overflow-x: scroll;
+	gap: 5rem;
+}
+
+.kh-s-card-container::-webkit-scrollbar {
+	display: none;
+}
+
+.kh-send-card {
+	padding: 20px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-shrink: 0;
+	width: 18rem;
+	height: 26rem;
+	scale: 87%;
+	border-radius: 50%/30%;
+	border: 2px solid #ff0000;
+	box-shadow: inset 0 0 8px #FFD600;
+}
+
+.kh-s-card-out {
+	width: 18rem;
+	height: 26rem;
+	border: 1px solid #ff0000;
+	border-radius: 50%/30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 0.1s ease-in;
+}
+
+.kh-s-mousemove {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 100;
+	pointer-events: none;
+}
+
+.kh-s-block {
+	display: block;
+}
+
+.kh-s-none {
+	display: none;
+}
+/* modal */
+.kh-s-popup {
+	width: 32rem;
+	height: 40rem;
+	border-radius: 50%/30%;
+	background-color: white;
+	border: 3px solid #FF0000;
+	box-shadow: 2px 2px 4px 0px #cccccc;
+	gap: 2rem;
+}
+
+.kh-s-popup-in {
+	position:relative;
+	width: 32rem;
+	height: 40rem;
+	scale: 97%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-color: #fffbf7;
+	border: 3px solid #FF0000;
+	border-radius: 50%/30%;
+	gap: 1rem;
+	box-shadow: inset 0 0 8px #FFD600;
+	justify-content: center;
+}
+
+.kh-s-popup-in>div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.kh-s-envelope{
+	width:10rem;
+	position:absolute;
+	right:0px;
+	transform:translate(90%,0);
+}
+#kh-input-box {
+	border-bottom: 30px solid red;
+	border-image: url("../img/funder.png") 40;
+	font-size: 1.5rem;
+	margin-top: 1rem;
+}
+
+.kh-s-input {
+	width: 18rem;
+	height: 3rem;
+	border: none;
+	background: none;
+	font-size: 2rem;
+	text-align: center;
+	color:#474747;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+ .kh-s-modal-box{
+ display: flex;
+ gap:2rem;
+ }
+ .kh-s-modal-box > div > div{
+ display:flex;
+ justify-content: center;
+ text-align: center;
+ }
+ .kh-s-modal-btn-box{
+ display:flex;
+ gap:1rem;
+ }
+
+.kh-s-btn {
+	width: 7rem;
+	height: 2.5rem;
+	padding: 0 10px;
+	border-radius: 20%/70%;
+	background-color: #fff4f4;
+	box-shadow: 2px 2px 2px 0px #bbbbbb;
+	border: 2px solid #c82626;
+	color: #ff7e81;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 1.2rem;
+	margin-top: 1rem;
+}
+
+.kh-s-btn:hover {
+	cursor: pointer;
+	background-color: #FF3B3F;
+	color:white;
+}
+
+.kh-s-btn:active {
+	box-shadow: none;
+}
+
+.kh-s-product-box {
+	display: flex;
+	gap: 2rem;
+}
+
+.kh-s-product-des {
+	display: flex;
+	flex-direction: column;
+	font-size: 2rem;
+	text-wrap: nowrap;
+}
+
+.kh-s-product-des>h3 {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+.kh-s-rotate {
+	animation: rotate 1s 1;
+}
+
+.kh-s-rotate-full {
+	animation: rotate-full 1s infinite;
+}
+
+@keyframes rotate { 
+	0% {
+	transform: rotateY(180deg);
+	opacity: 0;
+	}
+	50% {}
+	100% {
+	transform:rotateY(0deg);
+	opacity:1;
+	}
+}
+@keyframes rotate-full { 
+	0% {
+	transform: rotateY(180deg);
+	filter: blur(10px);
+	}
+
+50%{}
+100%{
+transform:rotateY(0deg);
+}
+}
+.modal-button {
+	display: inline-block;
+	margin: 20px;
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+dialog {
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#modal {
+	background: none !important;
+	box-shadow: none;
+	padding:6rem 10rem;
+}
+
+#modal::-webkit-scrollbar {
+	display: none !important;
+}
+
+.modal-content {
+	padding: 20px;
+}
+
+.close-button {
+	margin-top: 10px;
+	padding: 10px 20px;
+	background-color: #dc3545;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+dialog:-internal-dialog-in-top-layer::backdrop {
+	background: rgba(0, 0, 0, 0.5);
+}
