@@ -33,4 +33,6 @@ public interface ProductMapper {
             "#{w_img1}, #{w_img2}, #{w_img3}, #{w_img_share} )")
     void insertWeddingInfo(WeddingVO weddingVO);
 
+    @Select("select * from wedding_info where e_no = #{e_no}")
+    WeddingVO getWeddingInfo(int e_no);
 }
