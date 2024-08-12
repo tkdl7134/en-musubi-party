@@ -20,4 +20,17 @@ public interface MemberMapper {
 
     @Update("UPDATE member SET m_pw = #{newPW} WHERE m_id = #{m_id}")
     void updatePW(@Param("m_id") String m_id, @Param("newPW") String newPW);
+
+    // 회원등록
+    @Insert("INSERT INTO member (m_id, m_pw, m_fam_kanji, m_name_kanji, m_fam_kana, m_name_kana, m_fam_eng, m_name_eng, m_birth, m_gender, m_email, m_phone, m_address, m_zipcode) " +
+            "VALUES (#{m_id}, #{m_pw}, #{m_fam_kanji}, #{m_name_kanji}, #{m_fam_kana}, #{m_name_kana}, #{m_fam_eng}, #{m_name_eng}, #{m_birth}, #{m_gender}, #{m_email}, #{m_phone}, #{m_address}, #{m_zipcode})")
+    void insertMember(MemberVO memberVO);
+
+    @Select("SELECT * FROM member WHERE m_id = #{m_id}")
+    MemberVO findMemberById(@Param("m_id") String m_id);
+
+    @Update("UPDATE member SET m_pw = #{m_pw}, m_fam_kanji = #{m_fam_kanji}, m_name_kanji = #{m_name_kanji}, m_fam_kana = #{m_fam_kana}, m_name_kana = #{m_name_kana}, " +
+            "m_fam_eng = #{m_fam_eng}, m_name_eng = #{m_name_eng}, m_birth = #{m_birth}, m_gender = #{m_gender}, m_email = #{m_email}, m_phone = #{m_phone}, " +
+            "m_address = #{m_address}, m_zipcode = #{m_zipcode} WHERE m_id = #{m_id}")
+    void updateMember(MemberVO memberVO);
 }
