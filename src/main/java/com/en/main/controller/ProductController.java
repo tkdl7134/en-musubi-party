@@ -41,14 +41,21 @@ public class ProductController {
 
     @PostMapping("/invitation-preview")
     public String productCompleted(WeddingVO weddingVO,
-                                   @RequestParam int e_no,
                                    @RequestParam MultipartFile w_img1_file,
                                    @RequestParam MultipartFile w_img2_file, @RequestParam MultipartFile w_img3_file,
-                                   @RequestParam MultipartFile[] w_img_share_files) {
+                                   @RequestParam MultipartFile[] w_img_share_files,
+                                   Model model) {
         productService.insertWeddingInfo(weddingVO, w_img1_file, w_img2_file, w_img3_file, w_img_share_files);
-        productService.getInvitationInfo(e_no);
-        return "product/invitation_preview";
+        System.out.println(weddingVO.getE_no());
+
+        return "redirect:/product/invitation-preview/"+weddingVO.getE_no();
     }
 
+    @GetMapping("/invitation-preview/{e_no}")
+    public String getWeddingInfo(Model model, @PathVariable int e_no) {
+        model.addAttribute("weddingInfo", productService.getWeddingInfo(e_no));
+        System.out.println(productService.getWeddingInfo(e_no));
+        return "product/invitation_preview";
+    }
 
 }

@@ -131,6 +131,7 @@ public void insertWeddingInfo(WeddingVO weddingVO,
     }
 
 
-    public void getInvitationInfo(int e_no) {
+    public WeddingVO getWeddingInfo(int e_no) {
+        return productMapper.getWeddingInfo(e_no);
     }
 }

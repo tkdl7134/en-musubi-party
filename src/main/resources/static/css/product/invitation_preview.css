@@ -53,6 +53,6 @@ body {
 
 /* content */
 .je_page-content {
-    width: 100%;
+    width: 100vw;
     margin-top: 2rem;
 }
