@@ -57,12 +57,12 @@ public class ProductController {
         String str = productService.getWeddingInfo(e_no).getW_img_share();
         String[] list = str.split(",");
         String viewImg = list[0];
-        System.out.println("============");
-        System.out.println(viewImg);
-        System.out.println("============");
         model.addAttribute("viewImg", viewImg);
         model.addAttribute("ShareImg", list);
         return "product/invitation_preview";
     }
+
+
+
 
 }

@@ -135,7 +135,7 @@
         </div>
 
         <div class="je_buttons">
-            <button>修整</button>
+            <button onclick="">修整</button>
             <button>ウィッシュ設定</button>
         </div>
 </body>
