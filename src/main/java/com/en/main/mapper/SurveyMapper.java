@@ -1,9 +1,6 @@
 package com.en.main.mapper;
 
-import com.en.main.dto.EventVO;
-import com.en.main.dto.GuestVO;
-import com.en.main.dto.MemberVO;
-import com.en.main.dto.MessageVO;
+import com.en.main.dto.*;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -20,4 +17,7 @@ public interface SurveyMapper {
 
     @Select("select * from message where e_no = #{e_no}")
     MessageVO selectMessageInfo(int e_no);
+
+    @Select("select * from party where p_pk = #{p_pk}")
+    PartyVO selectPartyInfo(int p_pk);
 }

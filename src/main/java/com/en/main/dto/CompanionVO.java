@@ -1,9 +1,14 @@
 package com.en.main.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class CompanionVO {
+    private int p_pk;
     private int p_accompany_num;
     private int e_no;
     private String m_id;

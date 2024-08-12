@@ -2,6 +2,7 @@ package com.en.main.service;
 
 import com.en.main.dto.MemberVO;
 import com.en.main.dto.MessageVO;
+import com.en.main.dto.PartyVO;
 import com.en.main.mapper.FileMapper;
 import com.en.main.mapper.SurveyMapper;
 import com.en.main.dto.GuestVO;
@@ -23,7 +24,7 @@ public class SurveyService {
 
     private static final String UPLOAD_ImgDIRECTORY = "src/main/resources/img/";
 
-    public void addGuest(MessageVO messageVO ,GuestVO guestVO, MultipartFile file) {
+    public void addGuest(MessageVO messageVO, GuestVO guestVO, MultipartFile file) {
         if (!file.isEmpty()) {
             uploadFile(messageVO, file);
         }
@@ -46,15 +47,21 @@ public class SurveyService {
         }
     }
 
-    public MemberVO getMember( String m_id) {
+    public MemberVO getMember(String m_id) {
 
 
-       return surveyMapper.selectMemberInfo(m_id);
+        return surveyMapper.selectMemberInfo(m_id);
     }
 
     public MessageVO getMessage(int e_no) {
 
         return surveyMapper.selectMessageInfo(e_no);
     }
+
+    public PartyVO getParty(int p_pk) {
+
+        return surveyMapper.selectPartyInfo(p_pk);
+    }
+
 }
 
