@@ -48,6 +48,11 @@ public void insertWeddingInfo(WeddingVO weddingVO,
     productMapper.createEvent();
     int eventNo = productMapper.getCurrentEventNo();
     weddingVO.setE_no(eventNo);
+    String hello = weddingVO.getW_message_invite();
+    String bye = weddingVO.getW_message_bye();
+    weddingVO.setW_message_invite(hello.replaceAll("\r\n", "<br/>"));
+    weddingVO.setW_message_bye(bye.replaceAll("\r\n", "<br/>"));
+
     for(MultipartFile w_img : w_img_share_files) {
     System.out.println("test -----" + w_img.getOriginalFilename());
 
@@ -72,7 +77,6 @@ public void insertWeddingInfo(WeddingVO weddingVO,
             System.out.println("파일 저장 중 오류");
     }
 }
-
 
     private String saveFile(MultipartFile file) {
         if (file != null && !file.isEmpty()) {
