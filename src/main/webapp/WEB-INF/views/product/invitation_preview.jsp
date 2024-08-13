@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/resources/css/product/invitation.css" />
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr_INGyCid919lfqYa4VrQ-yYqeLeKX8c&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&callback=initMap"></script>
     <script src="/resources/js/product/invitation.js" defer></script>
 </head>
 <body>
@@ -44,7 +44,7 @@
             </div>
             <div class="je_invitation-message">
                 <div class="je_couple-img">
-                    <img src="/resources/img/${weddingInfo.w_img1}" alt="" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${weddingInfo.w_img1}?alt=media" alt="" />
                 </div>
                 <div class="je_message-txt">
                     ${weddingInfo.w_message_invite}
@@ -54,7 +54,8 @@
                 <div>
                     <div class="je_groom">
                         <div class="je_groom-photo-box">
-                            <div class="je_photo-box"><img src="/resources/img/${weddingInfo.w_img2}"></div>
+                            <div class="je_photo-box">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${weddingInfo.w_img2}?alt=media" alt="" /></div>
                             <div class="je_photo-box-inner"></div>
                         </div>
                         <div class="je_groom-name">
@@ -67,7 +68,8 @@
                     </div>
                     <div class="je_bride">
                         <div class="je_bride-photo-box">
-                            <div class="je_photo-box"><img src="/resources/img/${weddingInfo.w_img3}"> </div>
+                            <div class="je_photo-box">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${weddingInfo.w_img3}?alt=media" alt="" /></div>
                             <div class="je_photo-box-inner"></div>
                         </div>
                         <div class="je_bride-name">
@@ -82,12 +84,11 @@
                 <div class="je_share-photos">
                     <div class="je_share-photos-title">「ギャラリー」</div>
                     <div>
-
-                        <img id="je_view-photo" src="/resources/img/${viewImg}" alt="" />
+                        <img id="je_view-photo" src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${viewImg}?alt=media" alt="" />
                     </div>
                     <ul id="je_share-photos-list">
                     <c:forEach var="s" items="${ShareImg}">
-                        <li><img src="/resources/img/${s}" alt="" /></li>
+                        <li><img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${s}?alt=media" alt="" /></li>
                     </c:forEach>
                     </ul>
                 </div>
