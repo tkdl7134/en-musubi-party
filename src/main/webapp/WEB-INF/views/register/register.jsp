@@ -82,15 +82,14 @@
             </div>
         </div>
 
-
         <div class="slide" id="slide4">
             <h2>아이디 및 패스워드 입력</h2>
             <div class="input-group">
                 <p>아이디</p>
-                <input type="text" id="username" placeholder="아이디" maxlength="20">
+                <input type="text" id="ID" placeholder="아이디" maxlength="20">
             </div>
-            <button id="check-username" onclick="checkUsername()" disabled>중복 확인</button>
-            <div id="usernameFeedback"></div>
+            <button id="check-ID" onclick="checkID()" disabled>중복 확인</button>
+            <div id="IDFeedback"></div>
 
             <div class="input-group">
                 <p>패스워드</p>

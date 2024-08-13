@@ -2,7 +2,7 @@ $(document).ready(function () {
     var $slider = $('.slider-container');
     var $prevButton = $('.prev-button');
     var $nextButton = $('.next-button');
-    var $checkButton = $('#check-username');
+    var $checkButton = $('#check-ID');
     var totalSlides = $slider.find('.slide').length;
 
     $slider.slick({
@@ -103,17 +103,19 @@ $(document).ready(function () {
         this.value = this.value.replace(/[^0-9\+\-]/g, '');
     });
 
-    // 아이디 입력 제한 및 중복 확인 버튼 활성화/비활성화
-    $('#username').on('input', function () {
+// ID入力制限 ・ 重複確認ボタンのON&OFF
+    $('#ID').on('input', function () {
         this.value = this.value.replace(/[^a-zA-Z0-9]/g, ''); // 알파벳과 숫자 이외의 문자를 제거
-        var username = this.value;
-        var usernamePattern = /^[A-Za-z][A-Za-z0-9]{5,19}$/;
+        var ID = this.value;
+        var IDPattern = /^[A-Za-z][A-Za-z0-9]{5,19}$/;
         var feedback = '';
 
-        if (username.length < 6 || username.length > 20) {
+        console.log(ID);
+
+        if (ID.length < 6 || ID.length > 20) {
             feedback = '아이디는 6자 이상, 20자 이하로 입력해야 합니다.';
             $checkButton.prop('disabled', true); // 중복 확인 버튼 비활성화
-        } else if (!usernamePattern.test(username)) {
+        } else if (!IDPattern.test(ID)) {
             feedback = '아이디는 알파벳으로 시작하고 숫자만 포함할 수 있습니다.';
             $checkButton.prop('disabled', true); // 중복 확인 버튼 비활성화
         } else {
@@ -121,22 +123,22 @@ $(document).ready(function () {
             $checkButton.prop('disabled', false); // 중복 확인 버튼 활성화
         }
 
-        $('#usernameFeedback').text(feedback);
+        $('#IDFeedback').text(feedback);
     });
 
-    // 아이디 중복 확인 함수
-    $('#check-username').on('click', function() {
-        var username = $('#username').val();
+    // ID重複確認
+    $('#check-ID').on('click', function() {
+        var ID = $('#ID').val();
 
         $.ajax({
-            url: '/api/check-username',  // 서버에서 아이디 중복 검사를 처리하는 URL
+            url: '/check-id',  // 서버에서 아이디 중복 검사를 처리하는 URL
             type: 'POST',
-            data: { username: username },
+            data: { ID: ID },
             success: function(response) {
                 if (response === '사용 가능한 아이디입니다.') {
-                    $('#usernameFeedback').text('사용 가능한 아이디입니다.').css('color', 'green');
+                    $('#IDFeedback').text('사용 가능한 아이디입니다.').css('color', 'green');
                 } else {
-                    $('#usernameFeedback').text('이미 사용 중인 아이디입니다.').css('color', 'red');
+                    $('#IDFeedback').text('이미 사용 중인 아이디입니다.').css('color', 'red');
                 }
             },
             error: function() {
@@ -251,7 +253,7 @@ $(document).ready(function () {
             m_zipcode: $('#zipcode').val(),
             m_address: $('#address').val() + ' ' + $('#building').val() // 주소와 건물주소 결합
         };
-
+console.log(formData);
         // AJAX로 데이터 전송
         $.ajax({
             url: '/register/submit', // 서버의 회원가입 처리 URL
@@ -261,7 +263,8 @@ $(document).ready(function () {
             success: function(response) {
                 console.log(response);  // 서버 응답 확인
                 if (response === 'Registration successful') {
-                    window.location.href = '/member/myInfo';
+                    var memberId = formData.m_id;
+                    window.location.href = '/myInfo?m_id=' + memberId;
                 } else {
                     alert('처리 중 문제가 발생했습니다.');
                 }
