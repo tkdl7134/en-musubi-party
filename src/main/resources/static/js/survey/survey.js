@@ -88,10 +88,19 @@ $(function () {
 
     $(document).on("change", ".allergyHave", function (e) {
         const allergyDetailContainer = e.target.dataset.conid;
+        const allergyType = $(e.target).data('type');
         activeAllergyInput = e.target;
+
+        let nameAttribute = "allergy";
+        if (allergyType === "party") {
+            nameAttribute = `companions[${$(this).data('index')}].partyAllergy.allergy`;
+        } else if (allergyType === "guest") {
+            nameAttribute = "guestAllergy.allergy"
+        }
+
         if (this.checked) {
             $("#" + allergyDetailContainer).html(
-                `<input type="text" id="allergyDetail" data-refid="${this.id}" class="allergyDetail" name="allergy"
+                `<input type="text" id="allergyDetail" data-refid="${this.id}" class="allergyDetail" name="${nameAttribute}"
                 'placeholder="アレルギー詳細を入力してください " autocomplete="off" >`
             );
         } else {
@@ -259,6 +268,18 @@ function etcAllergy() {
 $(document).ready(function () {
     let partyCount = 0;
 
+    // Function to allow only one checkbox to be selected within each div
+    function handleCheckboxGroup(groupClass) {
+        $(document).on('change', `.${groupClass} input[type="checkbox"]`, function() {
+            let $checkboxGroup = $(this).closest(`.${groupClass}`).find('input[type="checkbox"]');
+            $checkboxGroup.not(this).prop('checked', false);
+        });
+    }
+
+    // Initial call to set up the checkboxes for existing elements
+    handleCheckboxGroup('tk_survey-accompany');
+    handleCheckboxGroup('tk_survey-gender-accompany');
+
     $("#addPartyMember").change(function () {
         if (this.checked) {
             addPartyMemberDiv();
@@ -275,70 +296,68 @@ $(document).ready(function () {
     });
 
     function addPartyMemberDiv() {
-        partyCount++;
+
         let partyDiv =
             `<div class= "party-member" id="party-member-${partyCount}">
               <input type="hidden" name="companions[${partyCount}].p_accompany_num" value="${partyCount}" />
-              <div class="tk_justName">
-                   <div class="tk_survey-titleName">お名前</div>
-                       <input type="text" name="m_name_first" />
-                       <input type="text" name="m_name_second}" />
-              </div>
-              <div class="tk_kataName">
-                   <div class="tk_survey-titleName">カタカナ</div>
-                       <input type="text" name="m_name_kana_first" />
-                       <input type="text" name="m_name_kana_second" />
-               </div>
-               <div class="tk_romeName">
-                   <div class="tk_survey-titleName">ローマ字</div>
-                       <input type="text" name="m_name_rome_first" />
-                       <input type="text" name="m_name_rome_second" />
-               </div> 
-               <div class="tk_survey-accompany">
-                   <div class="tk_survey-titleName">お連れ様について</div>
-                   <div>
-                       <input
-                           type="checkbox" id="adultAccompany${partyCount}" name="p_accompany_type" value="ご成年"/>
-                       <label class="cb1" for="adultAccompany${partyCount}"></label>
-                       <label for="adultAccompany${partyCount}">ご成年</label>
-                       <input
-                           type="checkbox" id="childAccompany${partyCount}" name="p_accompany_type" value="お子様"/>
-                       <label class="cb1" for="childAccompany${partyCount}"></label>
-                       <label for="femaleGender${partyCount}">お子様</label>
-                       <input
-                           type="checkbox" id="babyAccompany${partyCount}" name="p_accompany_type" value="幼子"/>
-                       <label class="cb1" for="babyAccompany${partyCount}"></label>
-                       <label for="babyAccompany${partyCount}">幼子</label>
-                   </div>
-               </div>
-               <div class="tk_survey-gender-accompany">
-                   <div class="tk_survey-titleName">性別</div>
-                   <div>
-                       <input
-                           type="checkbox" id="maleGender-accompany${partyCount}" name="m_gender" value="男性"/>
-                       <label class="cb1" for="maleGender-accompany${partyCount}"></label>
-                       <label for="maleGender-accompany${partyCount}">男性</label>
-                       <input
-                           type="checkbox" id="femaleGender-accompany${partyCount}" name="m_gender" value="女性"/>
-                       <label class="cb1" for="femaleGender-accompany${partyCount}"></label>
-                       <label for="femaleGender-accompany${partyCount}">女性</label>
-                       <input
-                           type="checkbox" id="othersGender-accompany${partyCount}" name="m_gender" value="その他"/>
-                       <label class="cb1" for="othersGender-accompany${partyCount}"></label>
-                       <label for="othersGender-accompany${partyCount}">その他</label>
-                  </div>
-               </div>
-               <div class="tk_allergy">
-                   <div class="tk_survey-titleName">アレルギー</div>
-                   <div class="tk_survey-allergy-checkbox">
-                       <input type="checkbox" id="allergyHave-${partyCount}" data-conid="allergyDetailContainer${partyCount}" class="allergyHave" name="allergy_or" value="Yes"/>
-                       <label class="cb2" for="allergyHave-${partyCount}"></label>
-                       <span>アレルギー情報を入力する</span>
-                   </div>
+                <div class="tk_justName">
+                     <div class="tk_survey-accompany-titleName">お名前</div>
+                     <input type="text" name="companions[${partyCount}].p_fam_kanji" />  <!-- 이름 필드들 -->
+                     <input type="text" name="companions[${partyCount}].p_name_kanji" />
+                </div>
+                <div class="tk_kataName">
+                     <div class="tk_survey-accompany-titleName">カタカナ</div>
+                     <input type="text" name="companions[${partyCount}].p_fam_kana" />
+                     <input type="text" name="companions[${partyCount}].p_name_kana" />
+                </div>
+                <div class="tk_romeName">
+                     <div class="tk_survey-accompany-titleName">ローマ字</div>
+                     <input type="text" name="companions[${partyCount}].p_fam_eng" />
+                     <input type="text" name="companions[${partyCount}].p_name_eng" />
+                </div> 
+                <div class="tk_survey-accompany">
+                    <div class="tk_survey-accompany-titleName">お連れ様について</div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="adultAccompany${partyCount}" name="companions[${partyCount}].p_accompany_type" value="ご成年"/>
+                        <label class="cb1" for="adultAccompany${partyCount}"></label>
+                        <label for="adultAccompany${partyCount}">ご成年</label>
+                        <input type="checkbox" id="childAccompany${partyCount}" name="companions[${partyCount}].p_accompany_type" value="お子様"/>
+                        <label class="cb1" for="childAccompany${partyCount}"></label>
+                        <label for="femaleGender${partyCount}">お子様</label>
+                        <input type="checkbox" id="babyAccompany${partyCount}" name="companions[${partyCount}].p_accompany_type" value="幼子"/>
+                        <label class="cb1" for="babyAccompany${partyCount}"></label>
+                        <label for="babyAccompany${partyCount}">幼子</label>
+                    </div>
+                </div>
+                <div class="tk_survey-gender-accompany">
+                    <div class="tk_survey-accompany-titleName">性別</div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="maleGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="男性"/>
+                        <label class="cb1" for="maleGender-accompany${partyCount}"></label>
+                        <label for="maleGender-accompany${partyCount}">男性</label>
+                        <input type="checkbox" id="femaleGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="女性"/>
+                        <label class="cb1" for="femaleGender-accompany${partyCount}"></label>
+                        <label for="femaleGender-accompany${partyCount}">女性</label>
+                        <input type="checkbox" id="othersGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="その他"/>
+                        <label class="cb1" for="othersGender-accompany${partyCount}"></label>
+                        <label for="othersGender-accompany${partyCount}">その他</label>
+                    </div>
+                </div>
+                <div class="tk_allergy">
+                    <div class="tk_survey-accompany-titleName">アレルギー</div>
+                    <div class="tk_survey-allergy-checkbox">
+                        <input type="checkbox" id="allergyHave-${partyCount}" data-conid="allergyDetailContainer${partyCount}" data-type="type" data-index="${partyCount}" class="allergyHave" name="companions[${partyCount}].p_allergy_or" value="Yes"/>
+                        <label class="cb2" for="allergyHave-${partyCount}"></label>
+                        <span>アレルギー情報を入力する</span>
+                    </div>
                    <div class="tk_survey-allergy-detail"  id="allergyDetailContainer${partyCount}" >`;
         partyDiv += "</div>";
-        partyDiv += partyCount > 1 ? '<button class="remove-party-member" data-id="' + partyCount + '">削除する</button>' : '';
+        partyDiv += partyCount > 0 ? '<button class="remove-party-member" data-id="' + partyCount + '">削除する</button>' : '';
         $("#partyContainer").append(partyDiv);
+        partyCount++;
+        // Apply the checkbox group handler to the newly added divs
+        handleCheckboxGroup('tk_survey-accompany');
+        handleCheckboxGroup('tk_survey-gender-accompany');
     }
 
     $(document).on("click", ".remove-party-member", function () {
@@ -354,7 +373,7 @@ $(function () {
     const closeImgModalButton = document.getElementById("closeImgModalButton");
     const defaultImgModal = document.getElementById("defaultImgModal");
     const confirmImgButton = document.getElementById("confirmImgButton");
-    const imgDeleteButton = document.getElementById("ImgDeleteButton");
+    const imgDeleteButton = document.getElementById("imgDeleteButton");
     let selectedImgSrc = '';
 
     openImgModalButton.addEventListener("click", () => {
@@ -379,13 +398,14 @@ $(function () {
 
     confirmImgButton.addEventListener("click", () => {
         if (selectedImgSrc) {
-            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">`;
+            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">
+                                                                           <input type="hidden" name="me_img" id="meImgInput" value="${selectedImgSrc}">`;
             alert("アップロード完了!");
             defaultImgModal.close();
         }
     });
 
-    document.getElementById('ImgUploadButton').addEventListener('click', function () {
+    document.getElementById('imgUploadButton').addEventListener('click', function () {
         document.getElementById('imgInput').click();
     })
 
@@ -441,4 +461,46 @@ document.addEventListener('DOMContentLoaded', () => {
     handleSelection('wedding-selection', 'g_attend_wedding');
     handleSelection('afterparty-selection', 'g_attend_afterparty');
 
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Function to allow only one checkbox to be selected within a given div
+    function handleCheckboxGroup(div) {
+        const checkboxes = div.querySelectorAll('input[type="checkbox"]');
+
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    checkboxes.forEach(function(box) {
+                        if (box !== checkbox) {
+                            box.checked = false;
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    // Observe the body for new divs being added
+    const observer = new MutationObserver(function(mutationsList) {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1 && node.classList.contains('tk_survey-accompany')) {
+                        handleCheckboxGroup(node);
+                    }
+                    if (node.nodeType === 1 && node.classList.contains('tk_survey-gender-accompany')) {
+                        handleCheckboxGroup(node);
+                    }
+                });
+            }
+        }
+    });
+
+    // Start observing the document for new divs being added
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Initial call to set up existing divs
+    document.querySelectorAll('.tk_survey-accompany').forEach(handleCheckboxGroup);
+    document.querySelectorAll('.tk_survey-gender-accompany').forEach(handleCheckboxGroup);
 });

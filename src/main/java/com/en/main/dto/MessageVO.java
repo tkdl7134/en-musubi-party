@@ -10,5 +10,4 @@ public class MessageVO {
     private String m_id;
     private String me_content;
     private String me_img;
-
 }

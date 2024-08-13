@@ -1,0 +1,247 @@
+
+.je_invitation-container {
+    background-color: #fffbf7;
+    width: 100vw;
+    padding-bottom: 3rem;
+}
+/* MAIN */
+.je_invitation-main {
+    height: 100vh;
+    background-color: yellowgreen;
+}
+
+/* MESSAGE */
+.je_couple-img {
+    /* width: 100%; */
+    img {
+        width: 100%;
+    }
+}
+
+.je_message-txt {
+    text-align: center;
+    margin: 2rem 1.5rem;
+}
+
+/* 신랑신부 정보 */
+.je_invitation-couple-info {
+    background-color: #fff4f4;
+    padding: 5rem 2rem;
+}
+
+.je_groom,
+.je_bride {
+    margin-bottom: 2rem;
+}
+
+.je_groom-photo-box {
+    display: flex;
+    justify-content: left;
+    position: relative;
+}
+.je_bride-photo-box {
+    display: flex;
+    justify-content: right;
+    position: relative;
+}
+
+.je_photo-box {
+    background-color: #ffffff;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    width: 13rem;
+    height: 13rem;
+    z-index: 100;
+}
+
+.je_photo-box > img{
+    width: 100%;
+}
+
+.je_groom-photo-box > .je_photo-box-inner {
+    width: 13rem;
+    height: 13rem;
+    background-color: #dbf9ff;
+    opacity: 0.6;
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+
+}
+.je_bride-photo-box > .je_photo-box-inner {
+    width: 13rem;
+    height: 13rem;
+    background-color: #ff7e81;
+    opacity: 0.6;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+}
+
+.je_groom-name,
+.je_bride-name {
+    margin-top: 1rem;
+}
+
+.je_name-jp {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.je_name-eng {
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.je_bride-name > div {
+    text-align: right;
+}
+
+/* 이미지 갤러리 */
+.je_share-photos {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.je_share-photos-title {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #474747;
+}
+
+#je_view-photo {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    img {
+        width: 100%;
+    }
+}
+
+#je_share-photos-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 1rem auto;
+    gap: 0.5rem;
+    /* padding: 1rem; */
+    /* background-color: #ffd1d0; */
+}
+#je_share-photos-list > li {
+    /* background-color: #ff7e81; */
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    /* margin: auto;
+    width: 25%;
+    height: auto;
+    border-radius: 1rem;  */
+}
+
+#je_share-photos-list > li > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* transition: opacity 0.5s ease; */
+}
+
+/* INFORMATION */
+/* .je_invitation-information {
+  background-color: aqua;
+} */
+
+.je_information-title {
+    margin: 1.5rem;
+    writing-mode: vertical-lr;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+}
+
+.je_information-box {
+    text-align: center;
+    font-weight: 600;
+}
+
+.je_information-wedding,
+.je_information-reception {
+    background-color: #fff5f4;
+    border: 1px solid #ffdbdb;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.je_wedding-datetime,
+.je_reception-datetime {
+    margin: 1rem;
+}
+.je_wedding-datetime > p:nth-child(1),
+.je_reception-datetime > p:nth-child(1) {
+    font-size: 1.5rem;
+}
+.je_wedding-datetime > p:nth-child(2),
+.je_reception-datetime > p:nth-child(2) {
+    font-size: 1.3rem;
+}
+.je_wedding-datetime > p:nth-child(3),
+.je_reception-datetime > p:nth-child(3) {
+    font-size: 1.3rem;
+    margin: 1rem;
+}
+
+.je_wedding-place,
+.je_reception-place {
+    p {
+        font-size: 1.3rem;
+    }
+}
+
+/* MAP */
+#je_wedding-map,
+#je_reception-map {
+    width: 100%;
+    height: 20rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* 페이지 이동 버튼 */
+.je_buttons {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 2rem;
+    gap: 1rem;
+}
+.je_buttons > button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: rgba(200, 38, 38) 0px 3px 8px;
+    border-radius: 1rem;
+    border: 2px solid #c82626;
+
+    /* writing-mode: vertical-lr; */
+}
+.je_buttons > button:nth-child(1) {
+    width: 30%;
+    background-color: #fff4f4;
+    color: #5c5c5c;
+}
+.je_buttons > button:nth-child(2) {
+    width: 50%;
+    background-color: #ff3b3f;
+    color: #ffffff;
+}
+@media (min-width: 769px) {
+    .je_invitation-container {
+        width: 30vw;
+        margin: 0 auto;
+    }
+}

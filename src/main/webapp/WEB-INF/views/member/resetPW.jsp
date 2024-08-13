@@ -23,6 +23,7 @@
         <input type="password" id="confirmPW" name="confirmPW" required>
         <i class="fas fa-eye-slash password-toggle" onclick="togglePWVisibility('confirmPW')"></i>
     </div>
+    <p id="password-error" style="color: red;"></p>
     <button type="submit">재설정</button>
 </form>
 <c:if test="${not empty message}">

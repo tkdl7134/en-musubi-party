@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: #fffbf7;
+}
+
+/* 메뉴 - 헤더 */
+.je_menu-bar {
+    width: 100%;
+    height: 3rem;
+    background-color: #ffd1d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#je_logo {
+    width: 2rem;
+}
+#je_logo img {
+    width: 100%;
+}
+
+#je_invitation-preview-container {
+    width: 100vw;
+}
+
+/* 타이틀 */
+.je_page-title {
+    /* background-color: aquamarine; */
+    margin-top: 2rem;
+}
+
+.je_page-title-txt,
+.je_page-title-line {
+    display: flex;
+    justify-content: center;
+}
+
+.je_page-title-txt {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.je_page-title-line > img {
+    width: 10rem;
+}
+
+/* content */
+.je_page-content {
+    width: 100vw;
+    margin-top: 2rem;
+}

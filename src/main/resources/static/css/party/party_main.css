@@ -62,6 +62,7 @@ body {
     transition: height 0.5s ease;
     align-content: center;
 }
+
 /* 각 메뉴당 높이 조절 */
 .yr_party_list.expanded {
     height: max-content;
@@ -89,6 +90,8 @@ body {
     display: none;
     margin-bottom: 5rem;
 }
+
+/* 참가자 list*/
 .yr_list {
     background-color: #fff;
     height: 7rem;
@@ -222,7 +225,7 @@ body {
     padding: 1rem;
 }
 .yr_type_item {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 700;
     width: 15.5rem;
     height: 5rem;
@@ -232,6 +235,7 @@ body {
     border: 3px solid #ff7e81;
     align-content: center;
     letter-spacing: -0.1rem;
+    color: #ff7e81;
 }
 .yr_type_item.selected {
     background-color: #ff7e81;
