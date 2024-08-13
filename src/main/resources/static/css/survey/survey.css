@@ -114,7 +114,7 @@ form {
 }
 
 .tk_survey-accompany-titleName {
-    font-size: 12px;
+    font-size: 1.2rem;
     margin: 1rem 0 1rem 0;
     font-weight: bold;
 }
@@ -144,7 +144,7 @@ select {
 
 /*설문조사 주소 input / button 꾸미기*/
 .tk_survey-postcode {
-    font-size: 14px;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
@@ -155,6 +155,7 @@ select {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 1.2rem;
+    margin-left: 0.2rem;
 }
 
 .tk_survey-postcode button {
@@ -164,7 +165,7 @@ select {
     border-radius: 4px;
     background: gray;
     color: white;
-    font-size: 13px;
+    font-size: 1.2rem;
 }
 
 /*상세주소 input 꾸미기*/
@@ -176,28 +177,31 @@ select {
 
 .tk_survey-address input {
     width: calc(95% - 10px);
-    padding: 0.6rem;
+    padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 1.2rem;
 }
 
 /*이메일 input 꾸미기*/
 .tk_survey-email input {
-    width: calc(85% - 8px);
-    padding: 0.6rem;
+    width: calc(90% - 8px);
+    padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 1.2rem;
 }
 
 /*폰번호 input 꾸미기*/
 .tk_survey-phone input{
-    width: calc(85% - 8px);
-    padding: 0.6rem;
+    width: calc(90% - 8px);
+    padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 1.2rem;
 }
 
 .tk_survey-allergy-checkbox {
@@ -205,16 +209,30 @@ select {
     margin-bottom: 1rem;
 }
 
+.tk_survey-allergy-checkbox span {
+    font-size: 1.2rem;
+}
+
 .tk_survey-allergy-detail input {
     width: calc(90% - 8px);
-    padding: 0.6rem;
+    padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+.tk_survey-party-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.tk_survey-party-checkbox span {
+    font-size: 1.2rem;
 }
 
 .party-member {
-    margin-top: 10px;
+    margin-top: 1.5rem;
 }
 
 .remove-party-member {
@@ -500,5 +518,5 @@ dialog::backdrop {
 
 .party-container {
     border-left: 1px solid;
-    padding-left: 0.5rem;
+    padding-left: 1rem;
 }

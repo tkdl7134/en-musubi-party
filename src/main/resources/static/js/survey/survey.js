@@ -49,8 +49,8 @@ $(function () {
     const japanAddressApi = () => {
         let searchValue;
         const searchPostcodeInput = $(".search-postcode");
-        const addressInput = $("input[name='a_address']");
-        const otherAddressInput = $("input[name='other-address']");
+        const addressInput = $("input[name='m_address']");
+        const otherAddressInput = $("input[name='m_other_address']");
 
         searchPostcodeInput.on("input", () => {
             searchValue = searchPostcodeInput.val();
@@ -68,7 +68,7 @@ $(function () {
                     console.log(response);
                     if (response.code === 200) {
                         const address = response.data.fullAddress;
-                        $("input[name='a_address']").val(address);
+                        $("input[name='m_address']").val(address);
                     } else {
                         console.log("Address not found");
                     }
@@ -322,7 +322,7 @@ $(document).ready(function () {
                 </div> 
                 <div class="tk_survey-accompany">
                     <div class="tk_survey-accompany-titleName">お連れ様について</div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.7rem;font-size: 1.2rem;">
                         <input type="checkbox" id="adultAccompany${partyCount}" name="companions[${partyCount}].p_accompany_type" value="ご成年"/>
                         <label class="cb1" for="adultAccompany${partyCount}"></label>
                         <label for="adultAccompany${partyCount}">ご成年</label>
@@ -336,7 +336,7 @@ $(document).ready(function () {
                 </div>
                 <div class="tk_survey-gender-accompany">
                     <div class="tk_survey-accompany-titleName">性別</div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.7rem;font-size: 1.2rem;">
                         <input type="checkbox" id="maleGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="男性"/>
                         <label class="cb1" for="maleGender-accompany${partyCount}"></label>
                         <label for="maleGender-accompany${partyCount}">男性</label>
