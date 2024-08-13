@@ -12,11 +12,14 @@ function goToSendPage() {
     /*나중에 여기에다가 필요한거 보낼거면 추가로 보낼것*/
 
 
-    location.href = '/statistics/send/';
+    location.href = '/statistics/send';
 
 
 }
+function goToFundPage(){
+    location.href = '/statistics/funding';
 
+}
 // 모달 열기
 const modal = document.getElementById('jh_modal');
 const modalBtn = document.getElementById('jh_select_tag');
@@ -50,6 +53,7 @@ selectOptions.forEach(option => {
         hiddenInput.value = price;  // 숨겨진 인풋에 가격 값을 설정
         console.log(`Selected Value: ${value}, Price: ${price}`);
         modal.style.display = 'none'; // 선택 후 모달 닫기
+        console.log(eno);
 
         const buttonText = this.innerText;
         // 클릭된 버튼의 value와 name 속성 값을 가져오기
@@ -116,6 +120,30 @@ selectOptions.forEach(option => {
             .then(
                 data => {
                 console.log(data);
+            let highestPrice = data[0];
+            let numberOfPeople = data[1];
+            let rankingOfWishlist = data[2];
+            let popularDate = data[3];
+
+            console.log(highestPrice);
+            console.log(numberOfPeople);
+            console.log(rankingOfWishlist);
+            console.log(popularDate);
+
+           let dateOnly = popularDate.split(' ')[0];
+                    const [year, month, day] = dateOnly.split('-');
+                    const formattedDate = `${year}年-${month}月-${day}日`;
+            document.getElementById('jh_detailHead').innerText = buttonText + 'の情報'
+            document.getElementById('jh_numberOfPeople').innerText ='繋がれた因縁 :' + numberOfPeople + '名';
+            document.getElementById('jh_highestPrice').innerText ='最も大きい思い :' +highestPrice.toLocaleString() + '円';
+            document.getElementById('jh_rankingOfWishlist').innerText ='人気ランキング :'+ rankingOfWishlist + '位';
+            document.getElementById('jh_popularDate').innerText ='一番数多くの因縁が訪れた日 : ' +  formattedDate;
+
+
+
+
+
+
 
 
                 }

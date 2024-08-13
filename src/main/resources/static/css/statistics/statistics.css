@@ -126,6 +126,7 @@ div {
     background-color: white;
     font-family: "Noto Serif JP", serif;
     font-weight: bold;
+    font-size: 27px;
 }
 
 .jh_prev_btn {
@@ -138,6 +139,8 @@ div {
     font-family: "Noto Serif JP", serif;
     font-weight: bold;
     margin-bottom: 20%;
+    font-size: 30px;
+    margin-top: 10%;
 }
 
 .jh_next_btn {
@@ -150,6 +153,8 @@ div {
     font-family: "Noto Serif JP", serif;
     font-weight: bold;
     margin-bottom: 20%;
+    margin-top: 10%;
+    font-size: 30px;
 }
 /* 모달 배경 */
 .jh_modal {
@@ -171,8 +176,9 @@ div {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 21%;
+    width: 25%;
     max-width: 500px;
+    transform: translateX(6px);
 }
 
 /* 닫기 버튼 */
