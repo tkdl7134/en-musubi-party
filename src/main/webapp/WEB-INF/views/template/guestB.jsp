@@ -40,12 +40,12 @@
             </ul>
 
             <div id="guest-list" class="hw_tab-button-content">
-                <c:forEach items="${guestList}" var="guest">
-                    <div class="hw_tab-content" data-type="${guest.g_guest_type}">
-                        <span>이름 : ${guest.m_fam_kanji}${guest.m_name_kanji}</span>
-                        <span>동반인수 : ${guest.p_accompany_num}</span>
-                        <span>알레르기 : ${guest.allergy}</span>
-                        <span>요청내용 : ${guest.g_relation_detail}</span>
+                <c:forEach items="${guestDetailList}" var="g">
+                    <div class="hw_tab-content" data-type="${g.g_guest_type}">
+                        <span>이름 : ${g.m_fam_kanji}${g.m_name_kanji}</span>
+                        <span>동반인수 : ${g.p_accompany_num}</span>
+                        <span>알레르기 : ${g.allergy}</span>
+                        <span>요청내용 : ${g.g_relation_detail}</span>
                     </div>
                 </c:forEach>
             </div>

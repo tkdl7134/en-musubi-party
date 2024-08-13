@@ -1,6 +1,7 @@
 package com.en.main.service;
 
 import com.en.main.dto.AttendVO;
+import com.en.main.dto.GuestDetailVO;
 import com.en.main.dto.GuestVO;
 import com.en.main.dto.WeddingVO;
 import com.en.main.mapper.TemplateMapper;
@@ -22,7 +23,8 @@ public class TemplateService {
     public List<AttendVO> getAttend() {
         return templateMapper.getAttend();
     }
-    public List<GuestVO> getGuest() {
-        return templateMapper.getGuest();
+
+    public List<GuestDetailVO> getGuestDetail() {
+        return  templateMapper.getGuestDetail();
     }
 }

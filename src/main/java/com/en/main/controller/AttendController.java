@@ -29,13 +29,6 @@ public class AttendController {
     }
 
 
-    @GetMapping("/guestB")
-    public String guestB(Model model) {
-        populateAttendList(model);
-        return "template/guestB";
-    }
-
-
     @GetMapping("/guestC")
     public String guestC(Model model) {
         populateAttendList(model);

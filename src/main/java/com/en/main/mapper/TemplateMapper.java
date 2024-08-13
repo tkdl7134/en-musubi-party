@@ -1,6 +1,7 @@
 package com.en.main.mapper;
 
 import com.en.main.dto.AttendVO;
+import com.en.main.dto.GuestDetailVO;
 import com.en.main.dto.GuestVO;
 import com.en.main.dto.WeddingVO;
 import org.apache.ibatis.annotations.Mapper;
@@ -28,15 +29,14 @@ public interface TemplateMapper {
 
     @Select("SELECT e.e_no, m.m_id, " +
             "m.m_fam_kanji, m.m_name_kanji, g.g_allergy_or, a.allergy, pa.p_allergy, " +
-            "p.p_accompany_num, p.p_accompany_type, p.p_fam_kanji, p.p_name_kanji " +
+            "p.p_accompany_num, p.p_accompany_type, p.p_fam_kangi, p.p_name_kangi " +
             "FROM guest g " +
             "LEFT JOIN member m ON g.m_id = m.m_id " +
             "LEFT JOIN event e ON g.e_no = e.e_no " +
-            "LEFT JOIN party p ON g.p_pk = p.m_id " +
-            "LEFT JOIN allergy a ON g.e_no = a.e_no " +
-            "LEFT JOIN partyAllergy pa ON g.e_no = pa.e_no " +
+            "LEFT JOIN party p ON g.m_id = p.m_id " +
+            "LEFT JOIN allergy a ON g.m_id = a.m_id " +
+            "LEFT JOIN partyAllergy pa ON g.m_id = pa.m_id " +
             "WHERE g.e_no = 5")
-    List<GuestVO> getGuest();
-
+    List<GuestDetailVO> getGuestDetail();
 
 }
