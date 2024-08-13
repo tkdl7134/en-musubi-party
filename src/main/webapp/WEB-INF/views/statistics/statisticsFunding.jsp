@@ -502,24 +502,20 @@
         <div class="slick">
             <div class="jh_slider">
                 <div class="jh_pageNavigation" style="">
-                    <div class="jh_pageNavigationA" onclick="goToFundPage()">
-                        <div class="jh_pageNavigationB" style="color: red">ファンディング</div>
-                        <div class="jh_pageNavigationB" style="color: red">の現状</div>
+                    <div class="jh_pageNavigationA" style="background-color: red;" onclick="goToFundPage()">
+                        <div class="jh_pageNavigationB" style="color: white">ファンディング</div>
                     </div>
                     <div class="jh_pageNavigationA" onclick="goToSendPage()">
                         <div class="jh_pageNavigationB">ご祝儀</div>
-                        <div class="jh_pageNavigationB">の現状</div>
                     </div>
                 </div>
-                <div class="jh_title" style="  ">
-                    <div class="jh_titleName" style="  ">通計ページ</div>
+                <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
+                <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 30vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                 </div>
-                <div><img style="width : 100%;" src="/resources/img/111.png" alt=""></div>
 
 
-                <div class="jh_message">大切な因縁から繋がった心の証</div>
-                <div style="display: flex;
-    justify-content: center;"><img style="width: 90%" src="/resources/img/lineShort.png" alt=""></div>
+
                 <div class="jh_funding_message">✿ファンディングの現状✿</div>
                 <div class="jh_wishlist_message">ウィッシュリストの情報</div>
 
@@ -545,8 +541,10 @@
                     </div>
 
                 </div>
-                <div style="text-align: center">
-                    <button style="margin-top : 10%; " class="jh_next_btn">次に</button>
+                <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
+                    <img class="jh_prev_btn"  src="/resources/img/Prev.png">
+                    <img  src="/resources/img/Dots1.png">
+                    <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
                 </div>
 
 
@@ -557,7 +555,6 @@
                 <div class="jh_title" style="  ">
                     <div class="jh_titleName" style="  ">通計ページ</div>
                 </div>
-                <div><img style="width :100%;" src="/resources/img/222.png" alt=""></div>
                 <div style="      margin-top: 10%;
     padding-top: 10%;  padding-bottom: 10%;background-color: #FFDBDB; margin-top: 5vh; " class="jh_allList_container">
                     <div>
@@ -611,20 +608,16 @@
                         </c:forEach>
                     </div>
                 </div>
-                <div style="display: flex; justify-content: space-around">
-                    <div style="text-align: center">
-                        <button class="jh_prev_btn">先に</button>
-                    </div>
-                    <div style="text-align: center">
-                        <button class="jh_next_btn">次に</button>
-                    </div>
+                <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
+                    <img class="jh_prev_btn"  src="/resources/img/Prev.png">
+                    <img  src="/resources/img/Dots2.png">
+                    <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
                 </div>
             </div>
             <div class="jh_slider">
                 <div class="jh_title" style="">
                     <div class="jh_titleName" style="  ">通計ページ</div>
                 </div>
-                <div><img style="width: 100%;" src="/resources/img/333.png" alt=""></div>
                 <div class="jh_product_detail_container" style="margin-top: 10%;">
 
                     <button id="jh_select_tag"
@@ -688,8 +681,10 @@
 
                 </div>
 
-                <div>
-                    <button style="margin-left: 27%" class="jh_prev_btn">先に</button>
+                <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
+                    <img class="jh_prev_btn"  src="/resources/img/Prev.png">
+                    <img  src="/resources/img/Dots3.png">
+                    <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
                 </div>
 
 
