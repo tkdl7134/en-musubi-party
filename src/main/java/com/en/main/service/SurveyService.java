@@ -72,7 +72,6 @@ public class SurveyService {
 }
     public MemberVO getMember(String m_id) {
 
-
         return surveyMapper.selectMemberInfo(m_id);
     }
 

@@ -2,6 +2,8 @@
 .tk_survey-guestType div, .tk_survey-gender div {
     display: flex;
     align-items: center;
+    font-size: 1.2rem;
+    gap: 0.5rem;
 }
 
 .tk_survey-guestType label {
@@ -15,8 +17,8 @@
 }
 
 .cb1 {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 2rem;
+    width: 2rem;
     background-color: transparent;
     border: 1px solid black;
     border-radius: 100%;
@@ -35,7 +37,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + .cb1 {
-    border-width: 6px;
+    border-width: 8px;
     border-color: #ed0606;
     animation: pulse 0.5s ease;
 }

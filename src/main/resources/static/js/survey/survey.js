@@ -291,8 +291,20 @@ $(document).ready(function () {
     function addPartyMemberDiv() {
 
         let partyDiv =
+
             `<div class= "party-member" id="party-member-${partyCount}">
               <input type="hidden" name="companions[${partyCount}].p_accompany_num" value="${partyCount}" />
+                <div class="tk_survey-relationship">
+                      <div class="tk_survey-titleName">ご関係</div>
+                      <div>
+                         <select name="companions[${partyCount}].p_relation">
+                            <option value="家族">家族</option>
+                            <option value="親友">親友</option>
+                            <option value="職場同僚">職場同僚</option>
+                             <option value="その他">その他</option>
+                         </select>
+                      </div>
+                </div>
                 <div class="tk_justName">
                      <div class="tk_survey-accompany-titleName">お名前</div>
                      <input type="text" name="companions[${partyCount}].p_fam_kanji" />  <!-- 이름 필드들 -->

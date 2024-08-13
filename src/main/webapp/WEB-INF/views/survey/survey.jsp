@@ -26,8 +26,8 @@
     <div class="je_page-content">
         <div class="je_preview-container">
             <div class="tk_iphone-container">
-                <div class="tk_iphone">
-                    <img src="/resources/img/iphone-box.png" alt="" />
+<%--                <div class="tk_iphone">--%>
+<%--                    <img src="/resources/img/iphone-box.png" alt=""/>--%>
                     <div class="tk_survey-container">
                         <div class="tk_page-content">
                             <div class="tk_form-container">
@@ -40,9 +40,9 @@
                                 </div>
                                 <div class="survey-form">
                                     <form action="survey/create" method="post" enctype="multipart/form-data">
-                                        <input type="hidden" name="m_id" value="${Member.m_id}">
-                                        <input type="hidden" name="e_no" value="${Message.e_no}">
-                                        <input type="hidden" name="p_pk" value="${Party.p_pk}">
+                                        <input type="hidden" name="m_id" value="${Member}">
+                                        <input type="hidden" name="e_no" value="${Message}">
+                                        <input type="hidden" name="p_pk" value="${Party}">
                                         <div class="tk_survey-guestType">
                                             <div class="tk_survey-titleName">ゲスト様</div>
                                             <div>
@@ -198,7 +198,7 @@
                                                 <label class="cb2" for="addPartyMember"></label>
                                                 <span>お連れ様を追加する</span>
                                             </div>
-                                            <div id="partyContainer"></div>
+                                            <div id="partyContainer" class="party-container"></div>
                                             <button type="button" id="addPartyButton" style="display: none;">追加する</button>
                                         </div>
 
@@ -289,7 +289,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+<%--                </div>--%>
             </div>
         </div>
         <div id="allergyModalContainer"></div>
