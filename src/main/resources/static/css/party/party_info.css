@@ -1,19 +1,16 @@
 * {
     margin: 0;
-    padding: 0;
     font-family: "Noto Serif JP", serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
 html,
 body {
-    height: 100%;
     background-color: #fff5f4;
+    overflow-y: auto;
 }
 
 .yr_party-info-container {
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-items: center;

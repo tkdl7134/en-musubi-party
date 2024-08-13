@@ -78,11 +78,14 @@ create table wedding_info(
     w_fam_eng_bride varchar2(50 char) not null,
     w_name_eng_bride varchar2(50 char) not null,
 <<<<<<< HEAD:src/main/resources/static/css/login/db.sql
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
     w_date varchar2(10 char) not null,
 =======
 --     w_date date not null,
 --     w_wedding_time timestamp not null,
 --     w_wedding_assemble timestamp not null,
+=======
+>>>>>>> a8232119e5db9bca2a38883a65d4ce76c5541d5f:src/main/webapp/db.sql
     w_date varchar2(30 char) not null,
 >>>>>>> 07c8ec685fef094e321ccb0413ba90881816bda8:src/main/webapp/db.sql
     w_wedding_time varchar2(10 char) not null,
@@ -91,10 +94,13 @@ create table wedding_info(
     w_wedding_address varchar2(200 char) not null,
     w_wedding_building varchar2(50 char) not null,
 <<<<<<< HEAD:src/main/resources/static/css/login/db.sql
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
 =======
 --     w_reception_time timestamp not null,
 --     w_reception_assemble timestamp not null,--
 >>>>>>> 07c8ec685fef094e321ccb0413ba90881816bda8:src/main/webapp/db.sql
+=======
+>>>>>>> a8232119e5db9bca2a38883a65d4ce76c5541d5f:src/main/webapp/db.sql
     w_reception_time varchar2(10 char) not null,
     w_reception_assemble varchar2(10 char) not null,
     w_reception_postcode varchar2(10 char) not null,
@@ -179,7 +185,8 @@ create table party(
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
-create sequence partyAllergy_seq;
+create sequence party_seq;
+insert into party values (party_seq.nextval, '68', 'test9', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', '有', '姉');
 
 select * from party;
 drop table party;
@@ -253,6 +260,8 @@ create table en_party(
     foreign key (m_id) references member(m_id)
 );
 select * from en_party;
+alter table en_party add ep_selectedType varchar2(300 char);
+alter table en_party add ep_finalChoice varchar2(100 char);
 
 -- 엔파티 채팅
 create table en_chatting(

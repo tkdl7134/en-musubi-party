@@ -2,9 +2,6 @@ package com.en.main.dto;
 
 import lombok.Data;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 @Data
 public class WeddingVO {
 
@@ -22,16 +19,11 @@ public class WeddingVO {
     private String w_date;
     private String w_wedding_time;
     private String w_wedding_assemble;
-    //    private LocalDate w_date;
-//    private LocalDateTime w_wedding_time;
-//    private LocalDateTime w_wedding_assemble;
     private String w_wedding_postcode;
     private String w_wedding_building;
     private String w_wedding_address;
     private String w_reception_time;
     private String w_reception_assemble;
-    //    private LocalDateTime w_reception_time;
-//    private LocalDateTime w_reception_assemble;
     private String w_reception_postcode;
     private String w_reception_building;
     private String w_reception_address;

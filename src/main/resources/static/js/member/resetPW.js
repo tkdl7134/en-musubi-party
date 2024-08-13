@@ -12,3 +12,17 @@ function togglePWVisibility(inputID) {
         icon.classList.add('fa-eye-slash');
     }
 }
+
+function validatePasswords() {
+    const newPW = document.getElementById('newPW').value;
+    const confirmPW = document.getElementById('confirmPW').value;
+    const errorElement = document.getElementById('password-error');
+
+    if (newPW !== confirmPW) {
+        errorElement.textContent = '비밀번호가 일치하지 않습니다.';
+        return false;
+    }
+
+    errorElement.textContent = '';
+    return true;
+}
