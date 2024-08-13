@@ -24,7 +24,6 @@ div {
 
 .jh_title {
 
-    margin-top: 3rem;
 
 
 }
@@ -37,7 +36,6 @@ div {
 .jh_pageNavigation {
 
     display: flex;
-    margin-top: 6rem;
     justify-content: space-evenly;
     text-align: center;
     align-items: center;

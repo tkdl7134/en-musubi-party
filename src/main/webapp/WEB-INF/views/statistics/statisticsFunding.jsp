@@ -501,23 +501,30 @@
 
         <div class="slick">
             <div class="jh_slider">
-                <div class="jh_pageNavigation" style="">
-                    <div class="jh_pageNavigationA" style="background-color: red;" onclick="goToFundPage()">
+
+<div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
+    <div><img src="/resources/img/Logo.png" alt=""></div>
+
+                <div class="jh_pageNavigation" style="     width: 64%;
+    transform: translateX(-25%);">
+
+                    <div class="jh_pageNavigationA" style="background-color: red;     width: 110vw;" onclick="goToFundPage()">
                         <div class="jh_pageNavigationB" style="color: white">ファンディング</div>
                     </div>
                     <div class="jh_pageNavigationA" onclick="goToSendPage()">
                         <div class="jh_pageNavigationB">ご祝儀</div>
                     </div>
                 </div>
+
+</div>
+
                 <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
-                <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 30vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                 </div>
 
 
 
-                <div class="jh_funding_message">✿ファンディングの現状✿</div>
-                <div class="jh_wishlist_message">ウィッシュリストの情報</div>
 
                 <div>
                     <c:forEach items="${wishlists}" var="w">
@@ -530,12 +537,12 @@
                 </div>
 
 
-                <div style="display: flex; justify-content: center">
+                <div style="display: flex; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
                     <canvas style="width: 100vw ; height: 50vh; " id="myChart"></canvas>
                 </div>
                 <div style="background-color: white; margin-top: 5rem; border: 1px solid #555555; border-radius: 30px"
                      class="jh_week_data">
-                    <div class="jh_week_data_message">一週間集まった想い</div>
+                    <div class="jh_week_data_message">最近の一週間集まった想い</div>
                     <div style="display: flex; justify-content: center;">
                         <canvas style="" id="week-data-chart"></canvas>
                     </div>
@@ -552,11 +559,28 @@
 
 
             <div class="jh_slider">
-                <div class="jh_title" style="  ">
-                    <div class="jh_titleName" style="  ">通計ページ</div>
+                <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
+                    <div><img src="/resources/img/Logo.png" alt=""></div>
+
+                    <div class="jh_pageNavigation" style="     width: 64%;
+    transform: translateX(-25%);">
+
+                        <div class="jh_pageNavigationA" style="background-color: red;     width: 110vw;" onclick="goToFundPage()">
+                            <div class="jh_pageNavigationB" style="color: white">ファンディング</div>
+                        </div>
+                        <div class="jh_pageNavigationA" onclick="goToSendPage()">
+                            <div class="jh_pageNavigationB">ご祝儀</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
+                <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                 </div>
                 <div style="      margin-top: 10%;
-    padding-top: 10%;  padding-bottom: 10%;background-color: #FFDBDB; margin-top: 5vh; " class="jh_allList_container">
+    padding-top: 10%;  padding-bottom: 10%;background-color: #FFDBDB; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
+    scrollbar-width: none;  " class="jh_allList_container">
                     <div>
                         <div style="display: flex; justify-content: space-around;">
                             <div class="jh_arrange_button">
@@ -615,9 +639,27 @@
                 </div>
             </div>
             <div class="jh_slider">
-                <div class="jh_title" style="">
-                    <div class="jh_titleName" style="  ">通計ページ</div>
+                <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
+                    <div><img src="/resources/img/Logo.png" alt=""></div>
+
+                    <div class="jh_pageNavigation" style="     width: 64%;
+    transform: translateX(-25%);">
+
+                        <div class="jh_pageNavigationA" style="background-color: red;     width: 110vw;" onclick="goToFundPage()">
+                            <div class="jh_pageNavigationB" style="color: white">ファンディング</div>
+                        </div>
+                        <div class="jh_pageNavigationA" onclick="goToSendPage()">
+                            <div class="jh_pageNavigationB">ご祝儀</div>
+                        </div>
+                    </div>
+
+
                 </div>
+                <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
+                <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                </div>
+
                 <div class="jh_product_detail_container" style="margin-top: 10%;">
 
                     <button id="jh_select_tag"
