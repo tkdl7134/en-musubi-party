@@ -91,16 +91,9 @@ $(function () {
         const allergyType = $(e.target).data('type');
         activeAllergyInput = e.target;
 
-        let nameAttribute = "allergy";
-        if (allergyType === "party") {
-            nameAttribute = `companions[${$(this).data('index')}].partyAllergy.allergy`;
-        } else if (allergyType === "guest") {
-            nameAttribute = "guestAllergy.allergy"
-        }
-
         if (this.checked) {
             $("#" + allergyDetailContainer).html(
-                `<input type="text" id="allergyDetail" data-refid="${this.id}" class="allergyDetail" name="${nameAttribute}"
+                `<input type="text" id="allergyDetail" data-refid="${this.id}" class="allergyDetail" name="allergy"
                 'placeholder="アレルギー詳細を入力してください " autocomplete="off" >`
             );
         } else {

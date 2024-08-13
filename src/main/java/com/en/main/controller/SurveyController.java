@@ -21,9 +21,9 @@ public class SurveyController {
         String m_id= "test9";
         int e_no= 68;
         int p_pk= 21;
-        model.addAttribute("2222" ,  surveyService.getMember( m_id) )  ;
-        model.addAttribute("3333" ,  surveyService.getMessage( e_no ) )  ;
-        model.addAttribute("4444" ,  surveyService.getParty( p_pk ) )  ;
+        model.addAttribute("Member" ,  surveyService.getMember( m_id) )  ;
+        model.addAttribute("Message" ,  surveyService.getEvent( e_no ) )  ;
+        model.addAttribute("Party" ,  surveyService.getParty( p_pk ) )  ;
         return "survey/survey";
     }
 
@@ -38,7 +38,6 @@ public class SurveyController {
         }
         System.out.println(messageVO);
         System.out.println(guestVO);
-        System.out.println(file.getOriginalFilename());
         System.out.println(memberVO);
         System.out.println(allergyVO);
         System.out.println(partyAllergyVO);

@@ -130,12 +130,13 @@ label.cb3:has(input[type="checkbox"]:checked) {
 .modal_body {
     position: absolute;
     top: 50%;
+    left: -5%;
     width: 24rem;
     text-align: center;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-    transform: translate(6%, -50%);
+    transform: translate(6%, -40%);
 }
 
 #etc-allergy {
@@ -250,15 +251,15 @@ label.cb3:has(input[type="checkbox"]:checked) {
 
 .modal-close {
     position: absolute;
-    top: 4rem;
-    right: 1.5rem;
+    top: 4.5rem;
+    right: 0.5rem;
     background-color: white;
     border: transparent;
     border-radius: 5px;
     font-size: 1.5rem;
     color: black;
     z-index: 1;
-    padding: 0.1rem 0.2rem 0 0.2rem;
+    padding: 0.1rem 0.3rem 0 0.3rem;
     text-align: center;
 }
 

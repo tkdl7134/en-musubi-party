@@ -40,9 +40,9 @@
                                 </div>
                                 <div class="survey-form">
                                     <form action="survey/create" method="post" enctype="multipart/form-data">
-                                        <input type="hidden" name="m_id" value="${2222}">
-                                        <input type="hidden" name="e_no" value="${3333}">
-                                        <input type="hidden" name="p_pk" value="${4444}">
+                                        <input type="hidden" name="m_id" value="${Member.m_id}">
+                                        <input type="hidden" name="e_no" value="${Message.e_no}">
+                                        <input type="hidden" name="p_pk" value="${Party.p_pk}">
                                         <div class="tk_survey-guestType">
                                             <div class="tk_survey-titleName">ゲスト様</div>
                                             <div>
@@ -222,7 +222,7 @@
                                                 </div>
                                             </div>
                                             <div class="tk_survey-messageText">
-                                                <textarea></textarea>
+                                                <textarea name="me_content" rows="10" cols="30"></textarea>
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
