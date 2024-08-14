@@ -124,6 +124,7 @@ public void insertWeddingInfo(WeddingVO weddingVO,
             for (MultipartFile file : files) {
                 if (!file.isEmpty()) {
                     try {
+                        // 이름 만드는 동시에 저장함
                         String savedFileName = saveFile(file);
                         if (savedFileName != null) {
                             if (savedFileNames.length() > 0) {
