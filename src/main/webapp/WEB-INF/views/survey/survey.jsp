@@ -47,8 +47,11 @@
                                         <input type="hidden" name="e_no" value="${Message}">
                                         <input type="hidden" name="p_pk" value="${Party}">
                                         <div class="tk_survey-guestType">
-                                            <div class="tk_survey-titleName">ゲスト様</div>
-                                            <div>
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">ゲスト様</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
+                                            <div class="tk_survey-guestType-checkbox">
                                                 <input
                                                         type="checkbox"
                                                         id="groomGuest"
@@ -56,7 +59,7 @@
                                                         value="新郎ゲスト"
                                                 />
                                                 <label class="cb1" for="groomGuest"></label>
-                                                <label for="groomGuest">新郎ゲスト</label>
+                                                <label for="groomGuest">新郎側ゲスト</label>
                                                 <input
                                                         type="checkbox"
                                                         id="brideGuest"
@@ -64,12 +67,15 @@
                                                         value="新婦ゲスト"
                                                 />
                                                 <label class="cb1" for="brideGuest"></label>
-                                                <label for="brideGuest">新婦ゲスト</label>
+                                                <label for="brideGuest">新婦側ゲスト</label>
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-relationship">
-                                            <div class="tk_survey-titleName">ご関係</div>
+                                                <div class="tk_survey-titleName-container">
+                                                    <div class="tk_survey-titleName">ご関係</div>
+                                                    <div class="tk-survey-essential">必須</div>
+                                                </div>
                                             <div>
                                                 <select name="g_relation_detail">
                                                     <option value="家族">家族</option>
@@ -80,8 +86,18 @@
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
+                                        <div class="tk_attention-if-change">
+                                            <div>
+                                                入力済みの情報から変更する
+                                                </br>
+                                                部分がある場合は変更してください
+                                            </div>
+                                        </div>
                                         <div class="tk_survey-relationship-detail">
-                                            <div class="tk_survey-titleName">間柄</div>
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">間柄</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
                                             <div>
                                                 <select name="g_relation">
                                                     <option value="family">家族</option>
@@ -91,31 +107,44 @@
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_justName">
-                                            <div class="tk_survey-titleName">お名前</div>
-                                            <input type="text" name="m_fam_kanji" />
-                                            <input type="text" name="m_name_kanji" />
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">お名前</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
+                                            <input type="text" name="m_fam_kanji" value="${member.m_fam_kanji}"/>
+                                            <input type="text" name="m_name_kanji" value="${member.m_name_kanji}"/>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_kataName">
-                                            <div class="tk_survey-titleName">カタカナ</div>
-                                            <input type="text" name="m_fam_kana" />
-                                            <input type="text" name="m_name_kana" />
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">カタカナ</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
+                                            <input type="text" name="m_fam_kana" value="${member.m_fam_kana}"/>
+                                            <input type="text" name="m_name_kana" value="${member.m_name_kana}"/>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_romeName">
-                                            <div class="tk_survey-titleName">ローマ字</div>
-                                            <input type="text" name="m_fam_eng" />
-                                            <input type="text" name="m_name_eng" />
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">ローマ字</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
+                                            <input type="text" name="m_fam_eng" value="${member.m_fam_eng}"/>
+                                            <input type="text" name="m_name_eng" value="${member.m_name_eng}"/>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-gender">
-                                            <div class="tk_survey-titleName">性別</div>
-                                            <div>
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">性別</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
+                                            <div class="tk_survey-gender-checkbox">
                                                 <input
                                                         type="checkbox"
                                                         id="maleGender"
                                                         name="m_gender"
                                                         value="男性"
+                                                        <c:if test="${member.m_gender == '男性'}"> checked </c:if>
                                                 />
                                                 <label class="cb1" for="maleGender"></label>
                                                 <label for="maleGender">男性</label>
@@ -124,6 +153,7 @@
                                                         id="femaleGender"
                                                         name="m_gender"
                                                         value="女性"
+                                                        <c:if test="${member.m_gender == '女'}"> checked </c:if>
                                                 />
                                                 <label class="cb1" for="femaleGender"></label>
                                                 <label for="femaleGender">女性</label>
@@ -132,6 +162,7 @@
                                                         id="othersGender"
                                                         name="m_gender"
                                                         value="その他"
+                                                        <c:if test="${member.m_gender == 'その他'}"> checked </c:if>
                                                 />
                                                 <label class="cb1" for="othersGender"></label>
                                                 <label for="othersGender">その他</label>
@@ -139,35 +170,45 @@
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_address">
-                                            <div class="tk_survey-titleName">住所</div>
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">住所</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
                                             <div class="tk_survey-postcode">
                                                 郵便番号
                                                 <input
                                                         class="search-postcode"
                                                         type="text"
                                                         name="m_zipcode"
+                                                        value="${member.m_zipcode}"
                                                 />
                                                 <button type="button" class="search-post-btn">
                                                     検索
                                                 </button>
                                             </div>
                                             <div class="tk_survey-address">
-                                                <input type="text" name="m_address" />
+                                                <input type="text" name="m_address" value="${member.m_address}"/>
                                                 <input type="text" name="m_other_address" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-email">
-                                            <div class="tk_survey-titleName">メールアドレス</div>
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">メールアドレス</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
                                             <div>
-                                                <input type="text" name="m_email" />
+                                                <input type="text" name="m_email" value="${member.m_email}" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-phone">
-                                            <div class="tk_survey-titleName">電話番号</div>
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">電話番号</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
                                             <div>
-                                                <input type="text" name="m_phone" />
+                                                <input type="text" name="m_phone" value="${member.m_phone}" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>

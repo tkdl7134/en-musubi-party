@@ -105,6 +105,18 @@ form {
     align-items: center;
 }
 
+.tk_survey-titleName-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 0.5rem;
+}
+
+.tk_survey-entry-container {
+    display: flex;
+    justify-content: start;
+    text-align: center;
+}
 
 /*설문조사 각 input 이름*/
 .tk_survey-titleName {
@@ -113,10 +125,45 @@ form {
     font-weight: bold;
 }
 
+.tk-survey-essential {
+    margin-bottom: 1rem;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 0.2rem 0.2rem;
+    background: red;
+    color: wheat;
+    font-size: 1rem;
+}
+
+.tk_attention-if-change {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 85%;
+    background-color: red;
+    color: wheat;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tk_attention-if-change {
+    border: 1px solid salmon;
+}
+
 .tk_survey-accompany-titleName {
     font-size: 1.2rem;
     margin: 1rem 0 1rem 0;
     font-weight: bold;
+}
+
+.tk_survey-accompany-essential {
+    margin: 1rem 0 1rem 0;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 0.2rem 0.2rem;
+    background: red;
+    color: wheat;
+    font-size: 0.8rem;
 }
 
 /*설문조사 모든 select 태그 꾸미기*/
