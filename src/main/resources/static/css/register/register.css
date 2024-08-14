@@ -1,3 +1,4 @@
+/* 전체 슬라이드 공통 스타일 */
 body {
     font-family: 'Noto Serif JP', serif;
     margin: 0;
@@ -44,86 +45,21 @@ body {
     align-items: center;
 }
 
-.slide_title {
-    display: flex;
-    justify-content: center;
-}
-
-.register-name-input, .gender-selection, .input-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.register-name-input p, .input-group p {
-    margin: 0;
-    padding-left: 60px;
-    padding-bottom: 5px;
-    font-weight: bold;
-    text-align: left; /* 텍스트를 왼쪽 정렬 */
-    width: 100%; /* p 태그가 입력 필드의 전체 너비를 차지하도록 설정 */
-}
-
 input, select {
     margin: 10px 0;
     padding: 10px;
     font-size: 20px;
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
 }
 
+/* 버튼 스타일 */
 button {
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
-}
-
-input[type="text"], input[type="password"], input[type="tel"], input[type="email"], input[type="date"] {
-    width: 80%;
-    border: none;
-    border-bottom: 1px solid #000;
-    outline: none;
-    font-size: 20px;
-}
-
-/* 생년월일 입력 필드 스타일 */
-#birthdate {
-    width: 80%;
-    border: none;
-    border-bottom: 1px solid #000;
-    outline: none;
-    font-size: 20px;
-    padding: 10px;
-    text-align: center;
-    color: #808080; /* 초기 색상 설정 */
-}
-
-/* 우편번호 입력 필드 스타일 */
-#zipcode {
-    width: 60%;
-    border: none;
-    border-bottom: 1px solid #000;
-    outline: none;
-    font-size: 20px;
-    color: #808080; /* 초기 색상 설정 */
-}
-
-/* Flatpickr 캘린더 스타일 */
-.flatpickr-calendar {
-    font-family: 'Noto Serif JP', serif;
-}
-
-/* 검증 메시지 스타일 */
-#verifyMessage {
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-/* 인증 코드 그룹 숨기기 */
-#verificationCodeGroup {
-    display: none;
-}
-
-button {
     cursor: pointer;
 }
 
@@ -132,6 +68,7 @@ button:disabled {
     opacity: 0.5;
 }
 
+/* 슬라이더 컨트롤 버튼 스타일 */
 .slider-controls {
     position: absolute;
     bottom: 50px;
@@ -143,6 +80,40 @@ button:disabled {
     width: 200px; /* 버튼의 부모 요소 크기 설정 */
 }
 
+/* 검증 메시지 스타일 */
+.error-message, .success-message {
+    font-size: 14px;
+    margin-top: 10px;
+    color: red;
+}
+
+.success-message {
+    color: green;
+}
+
+/* 슬라이드 1: 이름 입력 필드 스타일 */
+.slide_title {
+    display: flex;
+    justify-content: center;
+}
+
+.register-name-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-name-input p {
+    margin: 0;
+    padding-left: 60px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    text-align: left; /* 텍스트를 왼쪽 정렬 */
+    width: 100%; /* p 태그가 입력 필드의 전체 너비를 차지하도록 설정 */
+}
+
+/* 슬라이드 2: 성별 및 생년월일 입력 스타일 */
 .gender-selection {
     display: flex;
     justify-content: center;
@@ -158,4 +129,95 @@ button:disabled {
 
 .gender-selection input[type="radio"] {
     margin-right: 5px;
+}
+
+/* 생년월일 입력 필드 스타일 */
+.birthdate-input {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.birthdate-input input {
+    width: 32%; /* 년, 월, 일 필드 크기 조정 */
+}
+
+/* 슬라이드 3: 전화번호 및 이메일 입력 스타일 */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group p {
+    margin: 0;
+    padding-left: 60px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    text-align: left; /* 텍스트를 왼쪽 정렬 */
+    width: 100%; /* p 태그가 입력 필드의 전체 너비를 차지하도록 설정 */
+}
+
+/* 인증 코드 그룹 숨기기 */
+#verificationCodeGroup {
+    display: none;
+}
+
+/* 이메일 성공 메시지 스타일 */
+#emailSuccess {
+    color: green;
+}
+
+/* 이메일 오류 메시지 스타일 */
+#emailError {
+    color: red;
+}
+
+/* 인증 코드 메시지 스타일 */
+#verifyMessage {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 슬라이드 4: 아이디 및 패스워드 입력 스타일 */
+#ID {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 20px;
+}
+
+#password {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 20px;
+}
+
+/* 슬라이드 5: 일본 주소 입력 스타일 */
+#zipcode {
+    width: 60%;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 20px;
+    color: #808080; /* 초기 색상 설정 */
+}
+
+#state-city, #town, #building {
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+
+/* Flatpickr 캘린더 스타일 */
+.flatpickr-calendar {
+    font-family: 'Noto Serif JP', serif;
 }

@@ -21,6 +21,9 @@ public class RegisterController {
 
     @PostMapping("/check-id")
     public @ResponseBody String checkID(@RequestParam("ID") String ID) {
+
+        System.out.println(ID);
+
         boolean isAvailable = memberService.isIDAvailable(ID);
         if (isAvailable) {
             return "사용 가능한 아이디입니다.";
