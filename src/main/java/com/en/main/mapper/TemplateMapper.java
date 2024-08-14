@@ -28,15 +28,15 @@ public interface TemplateMapper {
     List<AttendVO> getAttend();
 
     @Select("SELECT e.e_no, m.m_id, " +
-            "m.m_fam_kanji, m.m_name_kanji, g.g_allergy_or, a.allergy, pa.p_allergy, " +
-            "p.p_accompany_num, p.p_accompany_type, p.p_fam_kangi, p.p_name_kangi " +
+            "m.m_fam_kanji, m.m_name_kanji, g.g_allergy_or, g.g_relation, a.allergy, " +
+            "c.p_accompany_num, c.p_accompany_type, c.p_fam_kanji, c.p_name_kanji " + // 마지막 필드 뒤에 쉼표 제거
             "FROM guest g " +
             "LEFT JOIN member m ON g.m_id = m.m_id " +
             "LEFT JOIN event e ON g.e_no = e.e_no " +
-            "LEFT JOIN party p ON g.m_id = p.m_id " +
+            "LEFT JOIN companion c ON g.m_id = c.m_id " +
             "LEFT JOIN allergy a ON g.m_id = a.m_id " +
-            "LEFT JOIN partyAllergy pa ON g.m_id = pa.m_id " +
             "WHERE g.e_no = 5")
     List<GuestDetailVO> getGuestDetail();
+
 
 }
