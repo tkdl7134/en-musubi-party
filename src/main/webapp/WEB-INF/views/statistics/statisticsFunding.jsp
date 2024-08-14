@@ -559,7 +559,7 @@
 
             <div class="jh_slider">
 
-                <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
+                <div style="background-color: #FFDBDB ; color : red; text-align: center">詳しいファンディング現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                 </div>
@@ -625,7 +625,7 @@
             </div>
             <div class="jh_slider">
 
-                <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
+                <div style="background-color: #FFDBDB ; color : red; text-align: center">個別贈り物の現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                 </div>

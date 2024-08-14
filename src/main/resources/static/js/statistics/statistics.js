@@ -104,7 +104,7 @@ selectOptions.forEach(option => {
                         data: [PaidPriceData, WishlistPrice - PaidPriceData],
                         backgroundColor: [
                             'rgb(255, 99, 132)',
-                            'rgb(255, 255, 255)'
+                            'rgb(255, 194, 194)'
                         ],
                         hoverOffset: 4
                     }]
