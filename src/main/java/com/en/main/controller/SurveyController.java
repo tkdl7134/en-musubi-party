@@ -24,6 +24,10 @@ public class SurveyController {
         model.addAttribute("Member" ,  m_id )  ;
         model.addAttribute("Message" ,  e_no )  ;
         model.addAttribute("Party" ,  p_pk )  ;
+
+        MemberVO memberInfo = surveyService.getMember(m_id);
+        model.addAttribute("member", memberInfo);
+
         return "survey/survey";
     }
 
@@ -32,20 +36,26 @@ public class SurveyController {
                            @RequestParam(value = "me_img2", required = false) MultipartFile file,
                            MemberVO memberVO, @ModelAttribute CompanionsVO companions , AllergyVO allergyVO) {
         // 초대장의 pk
-        int e_no = messageVO.getE_no();
-        String m_id = messageVO.getM_id();
-        for (CompanionVO companion : companions.getCompanions()) {
-            System.out.println("p_accompany_num: " + companion.getP_accompany_num());
-            System.out.println("p_accompany_type: " + companion.getP_accompany_type());
-            companion.setM_id(m_id);
-            companion.setE_no(e_no);
-            companion.setP_accompany_num(         companions.getCompanions().size());
+        if (messageVO != null && messageVO.getE_no() != 0 && messageVO.getM_id() != null) {
+            int e_no = messageVO.getE_no();
+            String m_id = messageVO.getM_id();
+
+            for (CompanionVO companion : companions.getCompanions()) {
+                System.out.println("p_accompany_num: " + companion.getP_accompany_num());
+                System.out.println("p_accompany_type: " + companion.getP_accompany_type());
+                companion.setM_id(m_id);
+                companion.setE_no(e_no);
+                companion.setP_accompany_num(companions.getCompanions().size());
+            }
+
         }
         System.out.println(messageVO);
         System.out.println(guestVO);
         System.out.println(memberVO);
         System.out.println(allergyVO);
         System.out.println(companions);
+
+        surveyService.updateMemberInfo(memberVO);
 
         surveyService.addGuest(messageVO, guestVO, allergyVO, file, companions.getCompanions());
         return "redirect:/survey";

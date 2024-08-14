@@ -306,22 +306,34 @@ $(document).ready(function () {
                       </div>
                 </div>
                 <div class="tk_justName">
-                     <div class="tk_survey-accompany-titleName">お名前</div>
+                     <div class="tk_survey-titleName-container">
+                          <div class="tk_survey-accompany-titleName">お名前</div>
+                          <div class="tk_survey-accompany-essential">必須</div>
+                     </div>
                      <input type="text" name="companions[${partyCount}].p_fam_kanji" />  <!-- 이름 필드들 -->
                      <input type="text" name="companions[${partyCount}].p_name_kanji" />
                 </div>
                 <div class="tk_kataName">
-                     <div class="tk_survey-accompany-titleName">カタカナ</div>
+                    <div class="tk_survey-titleName-container">
+                        <div class="tk_survey-accompany-titleName">カタカナ</div>
+                        <div class="tk_survey-accompany-essential">必須</div>
+                    </div>
                      <input type="text" name="companions[${partyCount}].p_fam_kana" />
                      <input type="text" name="companions[${partyCount}].p_name_kana" />
                 </div>
                 <div class="tk_romeName">
-                     <div class="tk_survey-accompany-titleName">ローマ字</div>
+                    <div class="tk_survey-titleName-container">
+                        <div class="tk_survey-accompany-titleName">ローマ字</div>
+                        <div class="tk_survey-accompany-essential">必須</div>
+                    </div>
                      <input type="text" name="companions[${partyCount}].p_fam_eng" />
                      <input type="text" name="companions[${partyCount}].p_name_eng" />
                 </div> 
                 <div class="tk_survey-accompany">
-                    <div class="tk_survey-accompany-titleName">お連れ様について</div>
+                    <div class="tk_survey-titleName-container">
+                        <div class="tk_survey-accompany-titleName">お連れ様について</div>
+                        <div class="tk_survey-accompany-essential">必須</div>
+                    </div>
                     <div style="display: flex; align-items: center; gap: 0.7rem;font-size: 1.2rem;">
                         <input type="checkbox" id="adultAccompany${partyCount}" name="companions[${partyCount}].p_accompany_type" value="ご成年"/>
                         <label class="cb1" for="adultAccompany${partyCount}"></label>
@@ -335,7 +347,10 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <div class="tk_survey-gender-accompany">
-                    <div class="tk_survey-accompany-titleName">性別</div>
+                    <div class="tk_survey-titleName-container">
+                        <div class="tk_survey-accompany-titleName">性別</div>
+                        <div class="tk_survey-accompany-essential">必須</div>
+                    </div>
                     <div style="display: flex; align-items: center; gap: 0.7rem;font-size: 1.2rem;">
                         <input type="checkbox" id="maleGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="男性"/>
                         <label class="cb1" for="maleGender-accompany${partyCount}"></label>

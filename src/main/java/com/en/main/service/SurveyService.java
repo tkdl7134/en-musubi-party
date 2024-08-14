@@ -23,6 +23,9 @@ public class SurveyService {
 
     private static final String UPLOAD_ImgDIRECTORY = "src/main/resources/img/";
 
+    public void updateMemberInfo(MemberVO memberVO) {
+        surveyMapper.updateMember(memberVO);
+    }
 
     @Transactional
     public void addGuest(MessageVO messageVO, GuestVO guestVO, AllergyVO allergyVO, MultipartFile file, List<CompanionVO> companions) {
