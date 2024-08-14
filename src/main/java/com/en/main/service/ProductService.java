@@ -3,6 +3,9 @@ package com.en.main.service;
 import com.en.main.dto.TemplateProductVO;
 import com.en.main.dto.WeddingVO;
 import com.en.main.mapper.ProductMapper;
+import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,6 +25,13 @@ import java.util.UUID;
 
 @Service
 public class ProductService {
+
+    private Storage storage;
+
+    @Autowired
+    public ProductService(Storage storage) {
+        this.storage = storage;
+    }
 
     @Autowired
     private ProductMapper productMapper;
@@ -45,6 +55,10 @@ public class ProductService {
 public void insertWeddingInfo(WeddingVO weddingVO,
                               MultipartFile w_img1_file, MultipartFile w_img2_file, MultipartFile w_img3_file,
                               MultipartFile[] w_img_share_files) {
+    String img1 =  saveFile(w_img1_file);
+    String img2 =  saveFile(w_img2_file);
+    String img3 =  saveFile(w_img3_file);
+
     productMapper.createEvent();
     int eventNo = productMapper.getCurrentEventNo();
     weddingVO.setE_no(eventNo);
@@ -59,9 +73,6 @@ public void insertWeddingInfo(WeddingVO weddingVO,
     }
     try {
 
-        String img1 =  saveFile(w_img1_file);
-        String img2 =  saveFile(w_img2_file);
-        String img3 =  saveFile(w_img3_file);
         String imgShare = saveMultipleFiles(w_img_share_files);
 
         weddingVO.setW_img1(img1);
@@ -76,6 +87,7 @@ public void insertWeddingInfo(WeddingVO weddingVO,
             e.printStackTrace();
             System.out.println("파일 저장 중 오류");
     }
+
 }
 
     private String saveFile(MultipartFile file) {
@@ -84,14 +96,20 @@ public void insertWeddingInfo(WeddingVO weddingVO,
                 String fileRealName = file.getOriginalFilename();
                 String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."));
 //                String uploadFolder = "Users/se_ong/Desktop/sbt9/uploadTest";
-                String uploadFolder = new File("src/main/resources/static/img/").getAbsolutePath();
+                //String uploadFolder = new File("src/main/resources/static/img/").getAbsolutePath();
 
                 UUID uuid = UUID.randomUUID();
                 String uniqueName = uuid.toString().split("-")[0];
                 String savedFileName = uniqueName + fileExtension;
-                File saveFile = new File(uploadFolder + "/" + savedFileName);
+                //File saveFile = new File(uploadFolder + "/" + savedFileName);
 
-                file.transferTo(saveFile);
+                System.out.println("업로드 -----------");
+                String mimeType = file.getContentType();
+                storage.create( BlobInfo.newBuilder("enmusubi-8f0dc.appspot.com", "upload/" + savedFileName).setContentType(mimeType).build(),
+                        file.getBytes());
+                System.out.println("업로드 -----------");
+
+                //file.transferTo(saveFile);
                 return savedFileName;
             }catch (Exception e){
                 e.printStackTrace();
