@@ -22,8 +22,28 @@ public class PartyService implements PartyMapper {
     }
 
     @Override
+    public List<PartyVO> getPartyMyInfo() {
+        return partyMapper.getPartyMyInfo();
+    }
+
+    @Override
     public List<PartyVO> getSelectedType() {
         return partyMapper.getSelectedType();
+    }
+
+    @Override
+    public List<PartyVO> getFinalChoice() {
+        return partyMapper.getFinalChoice();
+    }
+
+    @Override
+    public int updateSelectedType(PartyVO partyVO) {
+        return partyMapper.updateSelectedType(partyVO);
+    }
+
+    @Override
+    public int updateFinalChoice(PartyVO partyVO) {
+        return partyMapper.updateFinalChoice(partyVO);
     }
 
     private boolean similar(String type1, String type2) {
@@ -34,7 +54,6 @@ public class PartyService implements PartyMapper {
 
     public Map<String, List<Map<String, String>>> getSimilarSelectedTypeGroups() {
         List<PartyVO> selectedTypes = getSelectedType();
-
         Map<String, List<Map<String, String>>> groupedTypes = new HashMap<>();
 
         for (PartyVO party : selectedTypes) {
@@ -66,27 +85,20 @@ public class PartyService implements PartyMapper {
         return groupedTypes;
     }
 
+    public Map<String, String> getFinalSelectedChoice(){
+        List<PartyVO> selectedChoices = getFinalChoice();
+        Map<String, String> finalChoiceBoth = new HashMap<>();
 
-    @Override
-    public List<PartyVO> getAllParty() {
-        return partyMapper.getAllParty();
+        for (PartyVO choice : selectedChoices) {
+            String m_id = choice.getM_id();
+            String ep_finalChoice = choice.getEp_finalChoice();
+
+                finalChoiceBoth.put(m_id, ep_finalChoice);
+        }
+        return finalChoiceBoth;
+
     }
 
-    @Override
-    public List<PartyVO> getFinalChoice() {
-        return partyMapper.getFinalChoice();
-    }
-
-
-    @Override
-    public int updateSelectedType(PartyVO partyVO) {
-        return partyMapper.updateSelectedType(partyVO);
-    }
-
-    @Override
-    public int updateFinalChoice(PartyVO partyVO) {
-       return partyMapper.updateFinalChoice(partyVO);
-    }
 
 
 }
