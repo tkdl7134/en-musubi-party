@@ -498,23 +498,24 @@
         <p>This is a layout for tablet screens.</p>
     </div>
     <div id="jh_top" class="mobile">
+        <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
+            <div><img src="/resources/img/Logo.png" alt=""></div>
 
+            <div id="jh_pageNavi1" class="jh_pageNavigation" style="width: 64%; transform: translateX(-25%);">
+                <div id="jh_pageNavi2" class="jh_pageNavigationA" style="background-color: red;     width: 64vw;" onclick="goToFundPage()">
+                    <div id="jh_pageNavi3" class="jh_pageNavigationB" style="color: white">贈り物</div>
+                </div>
+                <div id="jh_pageNavi4" class="jh_pageNavigationA" onclick="goToSendPage()">
+                    <div  id="jh_pageNavi5" class="jh_pageNavigationB">ご祝儀</div>
+                </div>
+            </div>
+
+        </div>
         <div class="slick">
+
             <div class="jh_slider">
 
-<div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
-    <div><img src="/resources/img/Logo.png" alt=""></div>
 
-                <div id="jh_pageNavi1" class="jh_pageNavigation" style="width: 64%; transform: translateX(-25%);">
-                    <div id="jh_pageNavi2" class="jh_pageNavigationA" style="background-color: red;     width: 110vw;" onclick="goToFundPage()">
-                        <div id="jh_pageNavi3" class="jh_pageNavigationB" style="color: white">ファンディング</div>
-                    </div>
-                    <div id="jh_pageNavi4" class="jh_pageNavigationA" onclick="goToSendPage()">
-                        <div  id="jh_pageNavi5" class="jh_pageNavigationB">ご祝儀</div>
-                    </div>
-                </div>
-
-</div>
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
@@ -557,21 +558,7 @@
 
 
             <div class="jh_slider">
-                <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
-                    <div><img src="/resources/img/Logo.png" alt=""></div>
 
-                    <div class="jh_pageNavigation" style="     width: 64%;
-    transform: translateX(-25%);">
-
-                        <div class="jh_pageNavigationA" style="background-color: red;     width: 110vw;" onclick="goToFundPage()">
-                            <div class="jh_pageNavigationB" style="color: white">ファンディング</div>
-                        </div>
-                        <div class="jh_pageNavigationA" onclick="goToSendPage()">
-                            <div class="jh_pageNavigationB">ご祝儀</div>
-                        </div>
-                    </div>
-
-                </div>
                 <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
@@ -637,22 +624,7 @@
                 </div>
             </div>
             <div class="jh_slider">
-                <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
-                    <div><img src="/resources/img/Logo.png" alt=""></div>
 
-                    <div class="jh_pageNavigation" style="     width: 64%;
-    transform: translateX(-25%);">
-
-                        <div class="jh_pageNavigationA" style="background-color: red;     width: 110vw;" onclick="goToFundPage()">
-                            <div class="jh_pageNavigationB" style="color: white">ファンディング</div>
-                        </div>
-                        <div class="jh_pageNavigationA" onclick="goToSendPage()">
-                            <div class="jh_pageNavigationB">ご祝儀</div>
-                        </div>
-                    </div>
-
-
-                </div>
                 <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>

@@ -11,10 +11,10 @@ function goToTop() {
 function goToSendPage() {
     /*나중에 여기에다가 필요한거 보낼거면 추가로 보낼것*/
 
-    document.getElementById('jh_pageNavi1').style.cssText = 'width : 73% ; transform : translateX(-17%);transition : 0.2s';
-    document.getElementById('jh_pageNavi2').style.cssText ='background-color : #EDEDED; width: 85vw ;transition : 0.2s'
+    document.getElementById('jh_pageNavi1').style.cssText = 'width : 64% ; transform : translateX(-25%);transition : 0.2s';
+    document.getElementById('jh_pageNavi2').style.cssText ='background-color : #EDEDED; width: 64vw ;transition : 0.2s'
     document.getElementById('jh_pageNavi3').style.cssText ='color : black;transition : 0.2s'
-    document.getElementById('jh_pageNavi4').style.cssText ='width : 110vw; background-color : red;transition : 0.2s'
+    document.getElementById('jh_pageNavi4').style.cssText ='width : 64vw; background-color : red;transition : 0.2s'
     document.getElementById('jh_pageNavi5').style.cssText = 'color : white;transition : 0.2s'
 
 /*    location.href = '/statistics/send';*/
@@ -24,7 +24,7 @@ function goToSendPage() {
 function goToFundPage(){
 
  document.getElementById('jh_pageNavi1').style.cssText = 'width: 64%; transform: translateX(-25%); transition : 0.2s;'
-    document.getElementById('jh_pageNavi2').style.cssText ='background-color: red;     width: 110vw; transition : 0.2s'
+    document.getElementById('jh_pageNavi2').style.cssText ='background-color: red;     width: 64vw; transition : 0.2s'
     document.getElementById('jh_pageNavi3').style.cssText ='color : white;transition : 0.2s'
     document.getElementById('jh_pageNavi4').style.cssText ='background-color :#EDEDED ;transition : 0.2s'
     document.getElementById('jh_pageNavi5').style.cssText = 'color : black; transition : 0.2s'
