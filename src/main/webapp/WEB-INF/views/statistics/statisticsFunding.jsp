@@ -425,7 +425,7 @@
                 data: [PaidPriceData, WishlistPrice - PaidPriceData],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
-                    'rgb(255, 255, 255)'
+                    'rgb(255, 194, 194)'
                 ],
                 hoverOffset: 4
             }]
@@ -505,14 +505,12 @@
 <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
     <div><img src="/resources/img/Logo.png" alt=""></div>
 
-                <div class="jh_pageNavigation" style="     width: 64%;
-    transform: translateX(-25%);">
-
-                    <div class="jh_pageNavigationA" style="background-color: red;     width: 110vw;" onclick="goToFundPage()">
-                        <div class="jh_pageNavigationB" style="color: white">ファンディング</div>
+                <div id="jh_pageNavi1" class="jh_pageNavigation" style="width: 64%; transform: translateX(-25%);">
+                    <div id="jh_pageNavi2" class="jh_pageNavigationA" style="background-color: red;     width: 110vw;" onclick="goToFundPage()">
+                        <div id="jh_pageNavi3" class="jh_pageNavigationB" style="color: white">ファンディング</div>
                     </div>
-                    <div class="jh_pageNavigationA" onclick="goToSendPage()">
-                        <div class="jh_pageNavigationB">ご祝儀</div>
+                    <div id="jh_pageNavi4" class="jh_pageNavigationA" onclick="goToSendPage()">
+                        <div  id="jh_pageNavi5" class="jh_pageNavigationB">ご祝儀</div>
                     </div>
                 </div>
 
