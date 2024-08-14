@@ -25,56 +25,29 @@
         <!-- 드롭다운 메뉴 -->
         <div class="dropdown">
             <select id="dropdown-select" class="dropbtn">
-                <option value="" disabled selected>세부사항</option>
-                <option value="/mypage/guest">참가자</option>
-                <option value="/mypage/guestC">결석자</option>
+                <option value="" disabled selected>参加者情報</option>
+                <option value="/mypage/guest">参加者</option>
+                <option value="/mypage/guestC">欠席者</option>
             </select>
         </div>
-
 
         <!-- 탭 콘텐츠 -->
         <div class="hw_content">
             <ul class="hw_list">
-                <li class="hw_tab-button">전체</li>
-                <li class="hw_tab-button active">신랑</li>
-                <li class="hw_tab-button">신부</li>
+                <li class="hw_tab-button active" data-filter="all">全体</li>
+                <li class="hw_tab-button" data-filter="新郎">新郎</li>
+                <li class="hw_tab-button" data-filter="新婦">新婦</li>
             </ul>
 
-            <div class="hw_tab-button-content">
-                <div class="hw_tab-content">
-                    <span>이름 : 김영수</span>
-                    <span>동반인수 : 어른 1 어린이 1 유아 1</span>
-                    <span>알레르기 : 꽃알러지</span>
-                    <span>요청내용 : 꽃시러</span>
-                </div>
-            </div>
-            <div class="hw_tab-button-content show">
-                <div class="hw_tab-content">
-                    <span>이름 : 김영수</span>
-                    <span>동반인수 : 어른 1 어린이 1 유아 1</span>
-                    <span>알레르기 : 꽃알러지</span>
-                    <span>요청내용 : 꽃시러</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김영수</span>
-                    <span>동반인수 : 어른 1 어린이 1 유아 1</span>
-                    <span>알레르기 : 꽃알러지</span>
-                    <span>요청내용 : 꽃시러</span>
-                </div>
-                <div class="hw_tab-content">
-                    <span>이름 : 김영수</span>
-                    <span>동반인수 : 어른 1 어린이 1 유아 1</span>
-                    <span>알레르기 : 꽃알러지</span>
-                    <span>요청내용 : 꽃시러</span>
-                </div>
-            </div>
-            <div class="hw_tab-button-content">
-                <div class="hw_tab-content">
-                    <span>이름 : 김영수</span>
-                    <span>동반인수 : 어른 1 어린이 1 유아 1</span>
-                    <span>알레르기 : 꽃알러지</span>
-                    <span>요청내용 : 꽃시러</span>
-                </div>
+            <div id="guest-list" class="hw_tab-button-content">
+                <c:forEach items="${guestDetailList}" var="g">
+                    <div class="hw_tab-content" data-type="${g.g_guest_type}">
+                        <span>이름 : ${g.m_fam_kanji}${g.m_name_kanji}</span>
+                        <span>동반인수 : ${g.p_accompany_num}</span>
+                        <span>알레르기 : ${g.allergy}</span>
+                        <span>요청내용 : ${g.g_relation}</span>
+                    </div>
+                </c:forEach>
             </div>
         </div>
     </div>

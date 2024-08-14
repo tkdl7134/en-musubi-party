@@ -1,4 +1,10 @@
--- 멤버
+There was an unexpected error (type=Internal Server Error, status=500).
+Property [date] not found on type [com.en.main.dto.WeddingVO]
+jakarta.el.PropertyNotFoundException: Property [date] not found on type [com.en.main.dto.WeddingVO]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at org.apache.jasper.el.JasperELResolver.getValue(JasperELResolver.java:130)-- 멤버
 create table member(
     m_id varchar2(50 char) primary key,
     m_pw varchar2(50 char) not null,
@@ -71,12 +77,30 @@ create table wedding_info(
     w_name_jp_bride varchar2(10 char) not null,
     w_fam_eng_bride varchar2(50 char) not null,
     w_name_eng_bride varchar2(50 char) not null,
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
+    w_date varchar2(10 char) not null,
+=======
+--     w_date date not null,
+--     w_wedding_time timestamp not null,
+--     w_wedding_assemble timestamp not null,
+=======
+>>>>>>> a8232119e5db9bca2a38883a65d4ce76c5541d5f:src/main/webapp/db.sql
     w_date varchar2(30 char) not null,
+>>>>>>> 07c8ec685fef094e321ccb0413ba90881816bda8:src/main/webapp/db.sql
     w_wedding_time varchar2(10 char) not null,
     w_wedding_assemble varchar2(10 char) not null,
     w_wedding_postcode varchar2(10 char) not null,
     w_wedding_address varchar2(200 char) not null,
     w_wedding_building varchar2(50 char) not null,
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
+=======
+--     w_reception_time timestamp not null,
+--     w_reception_assemble timestamp not null,--
+>>>>>>> 07c8ec685fef094e321ccb0413ba90881816bda8:src/main/webapp/db.sql
+=======
+>>>>>>> a8232119e5db9bca2a38883a65d4ce76c5541d5f:src/main/webapp/db.sql
     w_reception_time varchar2(10 char) not null,
     w_reception_assemble varchar2(10 char) not null,
     w_reception_postcode varchar2(10 char) not null,
@@ -92,7 +116,11 @@ create table wedding_info(
     foreign key(e_no) references event(e_no),
     foreign key (t_pk) references template(t_pk)
 );
+<<<<<<< HEAD:src/main/resources/static/css/login/db.sql
+select * from WEDDING_iNFO;
+=======
 select * from WEDDING_INFO;
+>>>>>>> 07c8ec685fef094e321ccb0413ba90881816bda8:src/main/webapp/db.sql
 drop table wedding_info;
 
 
@@ -112,7 +140,7 @@ create table guest(
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
     g_attend_wedding varchar2(5 char) not null,
-    g_attend_afterparty varchar2(5 char) not null,
+    g_attend_afterParty varchar2(5 char) not null,
     g_guest_type varchar2(5 char) not null,
     g_allergy_or varchar2(5 char) not null,
     g_relation varchar2(20 char) not null,
@@ -138,14 +166,14 @@ select * from allergy;
 drop table allergy;
 
 -- 동반자 유형
-create table party(
+create table companion(
     p_pk number(5) primary key,
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
     p_accompany_type varchar2(5 char) not null,
     p_accompany_num number(3) not null,
-    p_fam_kangi varchar2(50 char) not null,
-    p_name_kangi varchar2(50 char) not null,
+    p_fam_kanji varchar2(50 char) not null,
+    p_name_kanji varchar2(50 char) not null,
     p_fam_kana varchar2(50 char) not null,
     p_name_kana varchar2(50 char) not null,
     p_fam_eng varchar2(50 char) not null,
@@ -157,10 +185,10 @@ create table party(
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
-create sequence party_seq;
-insert into party values (party_seq.nextval, '68', 'test9', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', '有', '姉');
+create sequence companion_seq;
+insert into companion values (companion_seq.nextval, '68', 'test9', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', '有', '姉');
 
-select * from party;
+select * from companion;
 drop table party;
 
 -- 동반자 알러지
@@ -174,7 +202,6 @@ create table partyAllergy(
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
-
 
 create sequence partyAllergy_seq;
 select * from partyAllergy;

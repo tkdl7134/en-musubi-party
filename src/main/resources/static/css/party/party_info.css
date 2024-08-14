@@ -86,11 +86,11 @@ body {
     width: 6.5rem;
 }
 .yr_graph_wrap .yr_graph #yr_graph_bar1 {
-    left: 7rem;
+    left: 6rem;
     background: #76ceff;
 }
 .yr_graph_wrap .yr_graph #yr_graph_bar2 {
-    left: 18.5rem;
+    left: 18rem;
     background: #ff99d6;
 }
 /*.man {*/
@@ -120,10 +120,10 @@ body {
 }
 .yr_graph_label_wrap {
     font-size: 1.5rem;
-    width: 23rem;
+    width: 24rem;
     display: flex;
     justify-content: space-around;
-    margin-left: 4.5rem;
+    margin-left: 3.5rem;
 }
 
 .yr_apply_cancel {

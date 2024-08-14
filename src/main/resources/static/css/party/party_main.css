@@ -212,6 +212,8 @@ body {
 /* type */
 .yr_type_mention {
     font-size: 2rem;
+    height: 5rem;
+    width: 100%;
 }
 .yr_type_group1,
 .yr_type_group2,

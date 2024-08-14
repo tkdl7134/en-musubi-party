@@ -23,24 +23,36 @@ public class SurveyService {
 
     private static final String UPLOAD_ImgDIRECTORY = "src/main/resources/img/";
 
+    public void updateMemberInfo(MemberVO memberVO) {
+        surveyMapper.updateMember(memberVO);
+    }
 
     @Transactional
     public void addGuest(MessageVO messageVO, GuestVO guestVO, AllergyVO allergyVO, MultipartFile file, List<CompanionVO> companions) {
         try {
+            // Guest를 먼저 삽입
+            surveyMapper.insertGuest(guestVO);
+
+            // 알레르기 정보 삽입
+            surveyMapper.insertAllergy(allergyVO);
+
+            // 파일 업로드 및 메시지 설정
             if (!file.isEmpty()) {
-                uploadFile(messageVO, file);
                 String img = uploadFile(messageVO, file);
                 messageVO.setMe_img(img);
-                } else {
-                surveyMapper.insertMessage(messageVO);
             }
-                surveyMapper.insertGuest(guestVO);
-                surveyMapper.insertAllergy(allergyVO);
-                for (CompanionVO companion : companions) {
-                    surveyMapper.insertCompanions(companion);
+
+            // Message를 나중에 삽입
+            surveyMapper.insertMessage(messageVO);
+
+            // 동반자 정보 삽입
+            for (CompanionVO companion : companions) {
+                surveyMapper.insertCompanions(companion);
             }
         } catch (Exception e) {
             e.printStackTrace();
+
+            throw new RuntimeException(("Error during addGuest process"));
         }
     }
 
@@ -58,17 +70,17 @@ public class SurveyService {
             return uniqueName;
         } catch (Exception e) {
             e.printStackTrace();
-        } return null;
+            throw new RuntimeException("File upload failed", e);
+        }
 }
     public MemberVO getMember(String m_id) {
-
 
         return surveyMapper.selectMemberInfo(m_id);
     }
 
-    public MessageVO getMessage(int e_no) {
+    public EventVO getEvent(int e_no) {
 
-        return surveyMapper.selectMessageInfo(e_no);
+        return surveyMapper.selectEventInfo(e_no);
     }
 
     public PartyVO getParty(int p_pk) {

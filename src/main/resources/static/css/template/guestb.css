@@ -54,6 +54,7 @@ ul.list {
     display: flex;
     list-style: none;
     justify-content: space-around;
+    gap: 1.3rem;
 }
 
 .hw_tab-button {
@@ -84,7 +85,7 @@ ul.list {
     display: grid;
     justify-content: space-around;
     height: 5rem;
-    width: 17rem;
+    width: 20rem;
     background-color: #fff5f4;
     border: 3px solid #ffdbdb;
     border-radius: 15px;
