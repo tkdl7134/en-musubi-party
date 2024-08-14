@@ -3,6 +3,8 @@
 <html style="zoom : 100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/product/product_preview.css"/>
     <link rel="stylesheet" href="/resources/css/survey/survey.css">
