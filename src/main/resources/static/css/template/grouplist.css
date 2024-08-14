@@ -7,11 +7,6 @@
     font-style: normal;
 }
 
-html, body {
-    height: 100%;
-    overflow-y: auto; /* 스크롤을 가능하게 수정 */
-}
-
 .hw_header {
     position: fixed;
     top: 0;
@@ -29,69 +24,126 @@ html, body {
     background-color: #FFD1D0;
 }
 
-.hw_container {
-    width: 100%;
-    height: calc(100% - 3rem); /* 고정된 헤더 높이를 고려하여 높이 조정 */
-    margin-top: 3rem; /* 컨텐츠가 헤더 아래에서 시작되도록 조정 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-
-.hw_card {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    scroll-snap-align: start;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hw_card.flipped {
-    transform: rotateY(180deg);
-}
-
-.hw_content, .hw_mytemplate-list-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.hw_mytemplate-list-container {
-    /*display: grid;*/
-    /*grid-template-rows: repeat(2, 1fr);*/
-    /*grid-template-columns: repeat(2, 1fr);*/
-    flex-direction: column;
-    transform: rotateY(180deg);
-}
-
 .hw_logo img {
     width: 1rem;
     height: 1rem;
 }
 
-.hw_content img {
-    width: 100%;
-    height: auto;
+.hw_container {
+    perspective: 62.5rem; /* 1000px -> 62.5rem, 1rem = 16px */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem; /* 20px -> 1.25rem */
+    margin-top: 4rem; /* Header의 높이를 고려하여 컨텐츠 시작 위치 조정 */
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh; /* 화면 전체를 차지하도록 설정 */
 }
-
-.hw_content, .hw_mytemplate-list-container {
-    width: 70%;
-    height: 95%;
+.hw_content{
+    scroll-snap-align: start;
+    height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.card {
+    width: 18rem; /* 카드의 너비 */
+    height: 10rem; /* 카드의 높이 */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.625rem; /* 10px -> 0.625rem */
+    overflow: hidden;
+}
+
+.card-front {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 2;
+    transform: rotateY(0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front img {
+    width: 100%; /* 카드 너비에 맞게 이미지 크기 조정 */
+    height: 100%; /* 카드 높이에 맞게 이미지 크기 조정 */
+    object-fit: cover; /* 이미지가 카드에 꽉 차게 조정, 비율 유지 */
+    border-radius: 0.625rem; /* 이미지도 카드의 모서리와 동일하게 둥글게 */
+}
+
+.card-back {
+    background-color: #FFD1D0;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+.card-back img {
+    width: 3rem; /* 이미지가 적절한 크기로 조정됨 */
+    height: 3rem; /* 비율을 유지하면서 높이 조정 */
+    object-fit: contain; /* 이미지가 크기에 맞도록 조정되지만, 비율 유지 */
+}
+
+.card-back button {
+    display: flex;  /* flexbox로 설정 */
+    justify-content: center;  /* 가로 중앙 정렬 */
+    align-items: center;  /* 세로 중앙 정렬 */
+    flex-direction: column; /* 아이콘과 텍스트를 세로로 배치 */
+    width: 15rem; /* 버튼 너비 */
+    height: 6rem; /* 버튼 높이를 콘텐츠에 맞게 자동으로 설정 */
+    background-color: rgb(255, 209, 208);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    padding: 0.5rem 0; /* 텍스트와 이미지의 간격 조정 */
+}
+
+
+.card-back button img {
+    margin-bottom: 0.25rem; /* 이미지와 텍스트 사이의 간격 최소화 */
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.hw_card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; /* 20px -> 1.25rem */
+    margin-top: 5rem;
+}
+
+.hw_title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
 }

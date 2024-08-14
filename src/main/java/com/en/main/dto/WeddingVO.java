@@ -2,9 +2,6 @@ package com.en.main.dto;
 
 import lombok.Data;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 @Data
 public class WeddingVO {
 
