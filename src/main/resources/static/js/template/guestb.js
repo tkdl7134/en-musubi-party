@@ -21,6 +21,38 @@ $(document).ready(function () {
         });
     });
 
+    // 全体 버튼 클릭 시 정렬
+    let sortOrder = 'asc';
+    $('#all-button').on('click', function () {
+        let guestList = $('#guest-list .hw_tab-content').get();
+        guestList.sort(function(a, b) {
+            let nameA = $(a).find('span:first').text().toUpperCase();
+            let nameB = $(b).find('span:first').text().toUpperCase();
+            if (sortOrder === 'asc') {
+                return (nameA > nameB) ? 1 : (nameA < nameB) ? -1 : 0;
+            } else {
+                return (nameA < nameB) ? 1 : (nameA > nameB) ? -1 : 0;
+            }
+        });
+        sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+        $('#guest-list').html(guestList);
+    });
+
+    // 新郎 버튼 클릭 시 필터링
+    $('#groom-button').on('click', function () {
+        $('.hw_tab-content').hide();
+        $('.hw_tab-content[data-type="新郎"]').show();
+    });
+
+    // 新婦 버튼 클릭 시 필터링
+    $('#bride-button').on('click', function () {
+        $('.hw_tab-content').hide();
+        $('.hw_tab-content[data-type="新婦"]').show();
+    });
+
+    // 초기 로드 시 新郎 탭 데이터만 표시
+    $('#groom-button').click();
+
     // "더보기" 버튼 클릭 시 처리
     $("#more").click(function () {
         $(".hw_detail-guest").toggle(); // 모든 숨겨진 콘텐츠를 토글
