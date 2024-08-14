@@ -32,7 +32,7 @@ public class SurveyController {
 
         return "survey/survey";
     }
-@Transactional
+    @Transactional
     @PostMapping("/create")
     public String addGuest(MessageVO messageVO, GuestVO guestVO,
                            @RequestParam(value = "me_img2", required = false) MultipartFile file,
