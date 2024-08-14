@@ -24,6 +24,10 @@ public class SurveyController {
         model.addAttribute("Member" ,  m_id )  ;
         model.addAttribute("Message" ,  e_no )  ;
         model.addAttribute("Party" ,  p_pk )  ;
+
+        MemberVO memberInfo = surveyService.getMember(m_id);
+        model.addAttribute("member", memberInfo);
+
         return "survey/survey";
     }
 
@@ -46,6 +50,8 @@ public class SurveyController {
         System.out.println(memberVO);
         System.out.println(allergyVO);
         System.out.println(companions);
+
+        surveyService.updateMemberInfo(memberVO);
 
         surveyService.addGuest(messageVO, guestVO, allergyVO, file, companions.getCompanions());
         return "redirect:/survey";

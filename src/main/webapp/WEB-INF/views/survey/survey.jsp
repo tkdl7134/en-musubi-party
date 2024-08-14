@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
 <head>
@@ -203,28 +204,28 @@
                                             <div id="partyContainer" class="party-container"></div>
                                             <button type="button" id="addPartyButton" style="display: none;">追加する</button>
                                         </div>
-
-                                        <div class="tk_survey-message">
-                                            <div class="tk_survey-messageImg">
-                                                <div class="tk_messageImg" id="messageImg">
-
-                                                </div>
-
-                                                <div class="tk_imgButton-container">
-                                                    <div>
-                                                        <button id="defaultImgButton" type="button">イメージ選択</button>
+                                        <div class="tk_survey-message-container">
+                                            <div class="tk_survey-message">
+                                                <div class="tk_survey-messageImg">
+                                                    <div class="tk_messageImg" id="messageImg">
                                                     </div>
-                                                    <div>
-                                                        <button id="imgUploadButton" type="button">写真アップロード</button>
-                                                        <input type="file" name="me_img2" id="imgInput" style="display: none;" accept="image/*">
+
+                                                    <div class="tk_imgButton-container">
+                                                        <div>
+                                                            <button id="defaultImgButton" type="button">イメージ選択</button>
+                                                        </div>
+                                                        <div>
+                                                            <button id="imgUploadButton" type="button">写真アップロード</button>
+                                                            <input type="file" name="me_img2" id="imgInput" style="display: none;" accept="image/*">
+                                                        </div>
+                                                        <div>
+                                                            <button id="imgDeleteButton" type="button">写真削除</button>
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                        <button id="imgDeleteButton" type="button">写真削除</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tk_survey-messageText">
-                                                <textarea name="me_content" rows="10" cols="30"></textarea>
+                                                 </div>
+                                                 <div class="tk_survey-messageText">
+                                                    <textarea name="me_content" rows="10" cols="30"></textarea>
+                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
