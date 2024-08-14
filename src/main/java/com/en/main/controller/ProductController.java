@@ -17,6 +17,8 @@ import java.time.format.DateTimeFormatter;
 public class ProductController {
 
     @Autowired
+    private String googleMapApiKey;
+    @Autowired
     private ProductService productService;
 
     @GetMapping
@@ -59,6 +61,7 @@ public class ProductController {
         String viewImg = list[0];
         model.addAttribute("viewImg", viewImg);
         model.addAttribute("ShareImg", list);
+        model.addAttribute("googleMapApiKey", googleMapApiKey);
         return "product/invitation_preview";
     }
 
