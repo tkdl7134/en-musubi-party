@@ -20,11 +20,10 @@ public class GuestDetailVO {
 
     private String p_accompany_num;
     private String p_accompany_type;
-    private String p_fam_kangi;
-    private String p_name_kangi;
+    private String p_fam_kanji;
+    private String p_name_kanji;
     private String p_allergy_or;
     private String p_relation;
 
-    private String p_allergy;
 
 }
