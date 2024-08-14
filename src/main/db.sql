@@ -119,7 +119,7 @@ create table guest(
     g_attend_wedding varchar2(5 char) not null,
     g_attend_afterparty varchar2(5 char) not null,
     g_guest_type varchar2(5 char) not null,
-    g_allergy_or varchar2(5 char) not null,
+    g_allergy_or varchar2(5 char),
     g_relation varchar2(20 char) not null,
     g_relation_detail varchar2(30 char) not null,
 
@@ -128,19 +128,21 @@ create table guest(
 );
 select * from guest;
 drop table guest;
-
+delete from guest where e_no = 68;
 
 -- 알러지
 create table allergy(
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
-    allergy varchar2(100 char) not null,
+    allergy varchar2(100 char),
 
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
 select * from allergy;
 drop table allergy;
+
+delete from allergy where e_no = 68;
 
 -- 동반자 유형
 create table party(
@@ -190,13 +192,15 @@ drop table partyAllergy;
 create table message(
     e_no number(5) not null,
     m_id varchar2(50 char) not null,
-    me_content varchar2(300 char) not null,
-    me_img varchar2(200 char) not null,
+    me_content varchar2(300 char),
+    me_img varchar2(200 char),
 
     foreign key(e_no) references event(e_no),
     foreign key (m_id) references member(m_id)
 );
 select * from message;
+drop table message;
+delete from message where e_no = 68;
 
 -- 지불
 create table pay(
