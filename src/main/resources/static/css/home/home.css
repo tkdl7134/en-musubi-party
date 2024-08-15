@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.home-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 219, 219, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-white-box {
+    width: 87%;
+    height: 96.5%;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+.home-beige-box {
+    width: calc(90% - 2.5rem); /* 흰색 박스보다 더 작게 */
+    height: 83%;
+    border-radius: 10px;
+    background-color: #FFEFDE;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.home-left-cover {
+    width: 50%;
+    height: 98%;
+    border-radius: 0 250px 0 0;
+    background-color: rgba(255, 251, 247, 0.65);
+    box-shadow: 3px -3px 5px #FFBDBB;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+.home-right-cover {
+    width: 70%;
+    height: 68%;
+    border-radius: 350px 0 0 0;
+    border: 2px solid #FFC700;
+    border-right: none;
+    border-bottom: none;
+    background-color: rgba(255, 251, 247, 0.8);
+    box-shadow: -3px -3px 5px #FF9F9C;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+}
+
+.home-vertical-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3F3F3F;
+    letter-spacing: 5px;
+    text-shadow: 0 0 3px #FFBDBB;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 4.5rem;
+    left: 2.5rem;
+    z-index: 5;
+}
+
+.home-vertical-text1 {
+    writing-mode: vertical-rl;
+    margin-bottom: 1rem;
+}
+
+.home-vertical-text2 {
+    writing-mode: vertical-rl;
+    margin-left: 2rem;
+}
+
+.home-logo-img {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.home-logo-img img {
+    width: 8.75rem;
+    height: auto;
+}
+
+.home-button {
+    width: 2.5rem;
+    height: 8.75rem;
+    position: absolute;
+    right: 3.3rem;
+    bottom: 4rem;
+    z-index: 5;
+}
+
+.home-button button {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 0px 8px #d01015;
+    padding: 15px 13px;
+    background-color: #FFFBF7;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3F3F3F;
+}
+
+.home-button button:active {
+    background-color: #ff908e;
+    color: #FFFBF7;
+}
+
+/* Media Query for larger screens */
+@media (min-width: 768px) {
+    .home-container {
+        width: 30vw;
+        margin: auto;
+    }
+}
