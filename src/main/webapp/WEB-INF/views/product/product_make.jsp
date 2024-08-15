@@ -3,13 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-<<<<<<< HEAD
 <%--    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>--%>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-=======
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
->>>>>>> 0aaa1f0a05292e06079fdc2de68bb38c59afee44
     <title>制作</title>
     <!-- Noto Serif Japanese 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
