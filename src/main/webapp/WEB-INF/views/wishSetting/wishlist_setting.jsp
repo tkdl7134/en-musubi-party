@@ -57,8 +57,11 @@
                     </label>
                 </div>
                 <div id="je_amazon-link">
-                    <input type="text" placeholder="AMAZONのウィッシュリスト入力" />
-                    <button class="je_amazon-btn">登録</button>
+                    <input type="text"
+                           id="amazonLink" value="${eventVO.e_amazon}" />
+                    <div id="checkIcon"><img src="/resources/img/check-icon.gif"> </div>
+                    <button id="amazonLink_btn" class="je_amazon-btn"
+                            onclick="updateAmazonLink(${eventVO.e_no})">登録</button>
                 </div>
             </div>
             <div class="je_wishlist">
@@ -76,7 +79,7 @@
                 </div>
             </div>
             <div id="je_nextpage-button">
-                <button>ファンディング 設定</button>
+                <button onclick="location.href='/${eventVO.e_no}/wishlist-setting/funding'">ファンディング 設定</button>
             </div>
         </div>
     </div>

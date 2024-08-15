@@ -99,6 +99,7 @@ body{
 .je_slider-btn {
     /* background-color: aquamarine; */
     width: 2rem;
+    display: none;
 }
 
 .je_slider-btn img {

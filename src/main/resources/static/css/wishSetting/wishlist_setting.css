@@ -186,6 +186,19 @@ body {
     opacity: 1;
 }
 
+#checkIcon {
+    /*background-color: #4CAF50;*/
+    display: none;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 3.5rem;
+img{
+    width: 100%;
+    transition-duration: 1s;
+}
+}
+
 #je_nextpage-button {
     display: flex;
     justify-content: center;

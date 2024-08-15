@@ -137,7 +137,8 @@
 
         <div class="je_buttons">
             <button onclick="">修整</button>
-            <button>ウィッシュ設定</button>
+            <button onclick="location.href='/${weddingInfo.e_no}/wishlist-setting'">ウィッシュ設定</button>
+
         </div>
 </body>
 </html>
