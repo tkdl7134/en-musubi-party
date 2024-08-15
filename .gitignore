@@ -46,6 +46,7 @@ src/main/resources/application.properties
 .idea
 
 AccountKey.json
+/src/main/resources/AccountKey.json
 
 ### sql ###
 .sql
