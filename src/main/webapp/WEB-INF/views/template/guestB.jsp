@@ -45,7 +45,7 @@
                         <span>이름 : ${g.m_fam_kanji}${g.m_name_kanji}</span>
                         <span>동반인수 : ${g.p_accompany_num}</span>
                         <span>알레르기 : ${g.allergy}</span>
-                        <span>요청내용 : ${g.g_relation_detail}</span>
+                        <span>요청내용 : ${g.g_relation}</span>
                     </div>
                 </c:forEach>
             </div>

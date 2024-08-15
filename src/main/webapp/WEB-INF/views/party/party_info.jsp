@@ -47,10 +47,77 @@
         </div>
     </div>
 <%--    <button class="yr_apply_cancel">参加 キャンセル</button>--%>
-    ${partyMembers}
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 <script src="/resources/js/party/party_info.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const ageDistribution = {
+            "20代初め": ${ageDistribution['20代初め']},
+            "20代半ば": ${ageDistribution['20代半ば']},
+            "20代後半": ${ageDistribution['20代後半']},
+            "30代初め": ${ageDistribution['30代初め']},
+            "30代半ば": ${ageDistribution['30代半ば']},
+            "30代後半": ${ageDistribution['30代後半']}
+        };
+
+        const total = Object.values(ageDistribution).reduce((a, b) => a + b, 0);
+
+        const ctx = document.getElementById("ageDonutChart").getContext("2d");
+        const ageDonutChart = new Chart(ctx, {
+            type: "doughnut",
+            data: {
+                labels: Object.keys(ageDistribution),
+                datasets: [
+                    {
+                        label: "Age Distribution",
+                        data: Object.values(ageDistribution),
+                        backgroundColor: [
+                            "#ef696e",
+                            "#ff8b92",
+                            "#ff5a5f",
+                            "#ffc0c3",
+                            "#f56c7a",
+                            "#ffb0b4",
+                        ],
+                        hoverOffset: 4,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: "60%",
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: "bottom",
+                    },
+                    datalabels: {
+                        display: true,
+                        color: 'black',
+                        formatter: function(value, context) {
+                            if (value === 0) {
+                                return ''; // 값이 0인 경우 빈 문자열을 반환하여 레이블을 표시하지 않음
+                            }
+                            const percentage = ((value / total) * 100).toFixed(1) + '%';
+                            const label = context.chart.data.labels[context.dataIndex];
+                            return label + `\n` + percentage;
+                        },
+                        font: {
+                            weight: 'bold',
+                            size: 23
+                        },
+                        anchor: 'end',
+                        align: 'start'
+                    }
+                },
+            },
+            plugins: [ChartDataLabels]
+        });
+    });
+</script>
 </body>
 </html>

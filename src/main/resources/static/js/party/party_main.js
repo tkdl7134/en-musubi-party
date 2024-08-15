@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const choiceItems = document.querySelectorAll(".yr_list_choice");
     let choiceCount = 0;
 
+
     listAllContent.style.display = "none";
     randomLoading.style.display = "none";
     randomGroup.style.display = "none";
@@ -81,13 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }, index * 300);
         });
     }
-
     function hideListItems() {
         listItems.forEach((item) => {
             item.classList.remove("visible");
         });
     }
-
     function showListItems2() {
         choiceItems.forEach((item, index) => {
             setTimeout(() => {
@@ -100,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
             item.classList.remove("visible");
         });
     }
-
 
     // 다른 화면 눌렀을 때 초기화
     function resetAllLists() {
@@ -120,8 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     document.addEventListener("click", resetAllLists);
 
-
-
     // 랜덤버튼 눌렀을때 애니메이션 효과
     randomButton.addEventListener("click", function () {
         randomButton.style.display = "none";
@@ -133,8 +129,75 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1500);
     });
 
+    // --------------------------------------------------------------------------------------random
+    // ------------------------------------------------------------------------random grouping logic
+    document
+        .querySelector(".yr_random_button")
+        .addEventListener("click", function () {
 
-    // ------------------------------------------------------------------------------type
+            // 참가자 명단
+            const participants = [];
+            const participant = document.querySelectorAll('.yr_list_name');
+            participant.forEach(participant => {
+                participants.push(participant.textContent.trim());
+            });
+
+            function shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+            // 20명 초과일 경우 그룹은 5~6명, 이하는 3~4명
+            function createGroups(participants) {
+                let groupSize;
+                const numberOfParticipants = participants.length;
+
+                if (numberOfParticipants > 20) {
+                    groupSize = 5 + Math.floor(Math.random() * 2); // 5 or 6명 그룹
+                } else {
+                    groupSize = 3 + Math.floor(Math.random() * 2); // 3 or 4명 그룹
+                }
+
+                shuffle(participants);
+
+                const groups = [];
+                for (let i = 0; i < numberOfParticipants; i += groupSize) {
+                    groups.push(participants.slice(i, i + groupSize));
+                }
+                return groups;
+            }
+
+            // 그룹명 지어주기
+            const groups = createGroups(participants);
+            const groupNames = "ABCDEFGHIJKL".split("");
+
+            const participantToGroupMap = new Map();
+
+            groups.forEach((group, index) => {
+                group.forEach((participant) => {
+                    participantToGroupMap.set(participant, groupNames[index]);
+                });
+            });
+
+            // 그룹을 화면에 표시
+            // const randomGroupElement = document.querySelector(".yr_random_group p");
+            let groupText = "";
+
+            participantToGroupMap.forEach((group, participant) => {
+                groupText += `${participant} is in ${group}  group \n`;
+            });
+            // randomGroupElement.innerHTML = groupText;
+            console.log(groupText)
+
+            // 랜덤 버튼 클릭 시 그룹명을 띄우는 기능
+            const randomIndex = Math.floor(Math.random() * groups.length);
+            document.querySelector(".yr_random_group p").textContent =
+                groupNames[randomIndex];
+        });
+
+
+    // --------------------------------------------------------------------------------------type
     // type 토글시 색변경
     typeItems.forEach((item) => {
         item.addEventListener("click", () => {
@@ -180,15 +243,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             headers: {
                                 'Content-Type': 'application/json'
                             }
-
                     })
                             .then(response => response.json())
                             .then(groupedData => {
                                 console.log('Group:', groupedData);
 
-                                const targetMId = 'test2';
+                                const targetMId = 'test1';
                                 let foundKey = null;
-
 
                                 for (const [key, value] of Object.entries(groupedData.groupedTypes)) {
                                     const found = value.some(item => item.m_id === targetMId);
@@ -202,8 +263,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             .catch(error => {
                                 console.error('Error in second request:', error);
                             });
-
-
                     } else {
                         console.error('Failed to update selected type');
                     }
@@ -235,13 +294,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+
+    const myName = document.querySelector("#yr_my_name").value;
+    const myId = document.querySelector("#yr_my_id").value;
+    console.log("id : " + myId);
+    console.log("name : " + myName);
+
+
+    // 최종선택 버튼 눌러서 db UPDATE
     document
         .getElementById("yr_choice_button")
         .addEventListener("click", function () {
             const jsonObj2 = {};
             if (choiceCount > 0) {
-                //document.querySelector(".yr_party_wrapper").classList.add("hidden");
-
                const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value);
                 console.log(finalChoice);
                 jsonObj2.ep_finalChoice = JSON.stringify(finalChoice);
@@ -257,6 +322,33 @@ document.addEventListener("DOMContentLoaded", function () {
                     .then(response => response.json())
                     .then(data => {
                         console.log('Success:', data);
+
+                        if(data === 1) {
+                            fetch('/party/main/choice', {
+                                method : 'put',
+                                headers:{
+                                    'Content-Type' : 'application/json'
+                                }
+                            })
+                                .then(response => response.json())
+                                .then(finalChoiceData => {
+                                    console.log(finalChoiceData);
+                                    console.log(finalChoiceData.ep_finalChoice);
+
+                                    let finalChoices = finalChoiceData.ep_finalChoice;
+                                    let matchFound = false;
+
+                                    if (finalChoices.includes(myName)) {
+                                        matchFound = true;
+                                    }
+
+                                    if (matchFound) {
+                                        console.log("매칭 성공");
+                                    } else {
+                                        console.log("매칭 실패");
+                                    }
+                                })
+                        }
                     })
                     .catch((error) => {
                         console.error('Error:', error);
@@ -269,74 +361,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-    // ------------------------------------------------------------------------------random group logic
-    // 참가자 명단
-    const participants = [
-        "河・ユリ",
-        "キム・ユジョン",
-        "パク・ジョンウン",
-        "イ·テゴン",
-        "ジョン・ジェフン",
-        "ナム・ヒョンウ",
-
-    ];
-
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
-    // 20명 초과일 경우 그룹은 5~6명, 이하는 3~4명
-    function createGroups(participants) {
-        let groupSize;
-        const numberOfParticipants = participants.length;
-
-        if (numberOfParticipants > 20) {
-            groupSize = 5 + Math.floor(Math.random() * 2); // 5 or 6명 그룹
-        } else {
-            groupSize = 3 + Math.floor(Math.random() * 2); // 3 or 4명 그룹
-        }
-
-        shuffle(participants);
-
-        const groups = [];
-        for (let i = 0; i < numberOfParticipants; i += groupSize) {
-            groups.push(participants.slice(i, i + groupSize));
-        }
-        return groups;
-    }
-
-    // 그룹명 지어주기
-    const groups = createGroups(participants);
-    const groupNames = "ABCDEFGHIJKL".split("");
-
-    const participantToGroupMap = new Map();
-
-    groups.forEach((group, index) => {
-        group.forEach((participant) => {
-            participantToGroupMap.set(participant, groupNames[index]);
-        });
-    });
-
-    // 그룹을 화면에 표시
-    // const randomGroupElement = document.querySelector(".yr_random_group p");
-    let groupText = "";
-
-    participantToGroupMap.forEach((group, participant) => {
-        groupText += `${participant} is in ${group}  group   `;
-    });
-    // randomGroupElement.innerHTML = groupText;
-        console.log(groupText)
-
-    // 랜덤 버튼 클릭 시 그룹명을 띄우는 기능
-    document
-        .querySelector(".yr_random_button")
-        .addEventListener("click", function () {
-            const randomIndex = Math.floor(Math.random() * groups.length);
-            document.querySelector(".yr_random_group p").textContent =
-                groupNames[randomIndex];
-        });
 });
 
 

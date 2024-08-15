@@ -23,9 +23,12 @@ public class SurveyService {
 
     private static final String UPLOAD_ImgDIRECTORY = "src/main/resources/img/";
 
+    public void updateMemberInfo(MemberVO memberVO) {
+        surveyMapper.updateMember(memberVO);
+    }
 
     @Transactional
-    public void addGuest(MessageVO messageVO, GuestVO guestVO, AllergyVO allergyVO, MultipartFile file, List<CompanionVO> companions) {
+    public void addAll(GuestVO guestVO, AllergyVO allergyVO, List<CompanionVO> companions) {
         try {
             // Guest를 먼저 삽입
             surveyMapper.insertGuest(guestVO);
@@ -33,25 +36,49 @@ public class SurveyService {
             // 알레르기 정보 삽입
             surveyMapper.insertAllergy(allergyVO);
 
-            // 파일 업로드 및 메시지 설정
-            if (!file.isEmpty()) {
-                String img = uploadFile(messageVO, file);
-                messageVO.setMe_img(img);
-            }
-
-            // Message를 나중에 삽입
-            surveyMapper.insertMessage(messageVO);
-
             // 동반자 정보 삽입
             for (CompanionVO companion : companions) {
                 surveyMapper.insertCompanions(companion);
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void addGuest(GuestVO guestVO) {
+        surveyMapper.insertGuest(guestVO);
+    }
+
+    public void addGuestNAllergy(GuestVO guestVO, AllergyVO allergyVO) {
+            // Guest를 먼저 삽입
+            surveyMapper.insertGuest(guestVO);
+
+            // 알레르기 정보 삽입
+            surveyMapper.insertAllergy(allergyVO);
+
+    }
+
+    public void addMessage(MessageVO messageVO, MultipartFile file) {
+
+        try {
+            surveyMapper.insertMessage(messageVO);
+            if (!file.isEmpty()) {
+                String img = uploadFile(messageVO, file);
+                messageVO.setMe_img(img);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
 
             throw new RuntimeException(("Error during addGuest process"));
         }
     }
+
+    public void addCompanion(List<CompanionVO> companions) {
+        // 동반자 정보 삽입
+        for (CompanionVO companion : companions) {
+            surveyMapper.insertCompanions(companion);
+        }    }
 
     public String uploadFile(MessageVO messageVO, MultipartFile file) {
 
