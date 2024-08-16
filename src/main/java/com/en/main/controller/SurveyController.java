@@ -3,11 +3,13 @@ import com.en.main.dto.*;
 import com.en.main.service.SurveyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Objects;
 
 @RequestMapping("/survey")
 @Controller
@@ -30,34 +32,55 @@ public class SurveyController {
 
         return "survey/survey";
     }
-
+    @Transactional
     @PostMapping("/create")
     public String addGuest(MessageVO messageVO, GuestVO guestVO,
                            @RequestParam(value = "me_img2", required = false) MultipartFile file,
                            MemberVO memberVO, @ModelAttribute CompanionsVO companions , AllergyVO allergyVO) {
         // 초대장의 pk
-        if (messageVO != null && messageVO.getE_no() != 0 && messageVO.getM_id() != null) {
-            int e_no = messageVO.getE_no();
-            String m_id = messageVO.getM_id();
-
-            for (CompanionVO companion : companions.getCompanions()) {
-                System.out.println("p_accompany_num: " + companion.getP_accompany_num());
-                System.out.println("p_accompany_type: " + companion.getP_accompany_type());
-                companion.setM_id(m_id);
-                companion.setE_no(e_no);
-                companion.setP_accompany_num(companions.getCompanions().size());
-            }
-
+        int e_no = messageVO.getE_no();
+        String m_id = messageVO.getM_id();
+        for (CompanionVO companion : companions.getCompanions()) {
+            System.out.println("p_accompany_num: " + companion.getP_accompany_num());
+            System.out.println("p_accompany_type: " + companion.getP_accompany_type());
+            companion.setM_id(m_id);
+            companion.setE_no(e_no);
+            companion.setP_accompany_num(companions.getCompanions().size());
         }
+
         System.out.println(messageVO);
         System.out.println(guestVO);
+        System.out.println(guestVO.getG_allergy_or());
         System.out.println(memberVO);
         System.out.println(allergyVO);
         System.out.println(companions);
 
         surveyService.updateMemberInfo(memberVO);
 
-        surveyService.addGuest(messageVO, guestVO, allergyVO, file, companions.getCompanions());
+        if(messageVO.getMe_img() == null && Objects.equals(messageVO.getMe_content(), "")){
+            System.out.println((String) null);
+            messageVO.setMe_img("none");
+            messageVO.setMe_content("none");
+            System.out.println("메세지 노우");
+        } else {
+            surveyService.addMessage(messageVO,file);
+            System.out.println("메세지 예쓰");
+        }
+
+        if(guestVO.getG_allergy_or() == null){
+            surveyService.addGuest(guestVO);
+            System.out.println("알러지 없음");
+        } else {
+            surveyService.addGuestNAllergy(guestVO, allergyVO);
+            System.out.println("알러지 있음");
+        }
+
+        if (!companions.getCompanions().isEmpty()) {
+            surveyService.addCompanion(companions.getCompanions());
+            System.out.println("동반자 있음!");
+        }
+
+//        surveyService.addGuest(messageVO, guestVO, allergyVO, file, companions.getCompanions());
         return "redirect:/survey";
     }
 
