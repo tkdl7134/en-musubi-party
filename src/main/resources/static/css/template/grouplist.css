@@ -98,14 +98,13 @@
 }
 
 .card-back {
-    background-color: #FFD1D0;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.25rem;
     box-sizing: border-box;
+    border: 2px solid #ffa2a2;
 }
 
 .card-back img {

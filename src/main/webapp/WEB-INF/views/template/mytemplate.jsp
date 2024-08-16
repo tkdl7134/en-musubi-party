@@ -17,52 +17,34 @@
 </header>
 <div class="hw_container">
     <c:forEach items="${weddingList}" var="w">
-        <div class="hw_content">
-            <div class="hw_card">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img src="${w.w_img1}" alt="Template 1">
-                        </div>
-                        <div class="card-back">
+        <div class="hw_card">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="${w.w_img1}" alt="Template 1">
+                    </div>
+                    <div class="card-back">
                             <button type="button" onclick="navigateToTemplate(${w.e_no})">
                                 <img src="/resources/img/free-icon-reunion.png" alt="Group Icon">
+                                <span>テンプレート</span>
                             </button>
-                            <span>テンプレート</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img src="${w.w_img2}" alt="Template 2">
-                        </div>
-                        <div class="card-back">
                             <button type="button" onclick="navigateToSurvey(${w.e_no})">
                                 <img src="/resources/img/free-icon-checklist.png" alt="Guest Icon">
+                                <span>アンケート</span>
                             </button>
-                            <span>アンケート</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img src="${w.w_img3}" alt="Template 3">
-                        </div>
-                        <div class="card-back">
+
                             <button type="button" onclick="navigateToStatistics(${w.e_no})">
                                 <img src="/resources/img/free-icon-line-chart.png" alt="Graph Icon">
+                                <span>通計</span>
                             </button>
-                            <span>通計</span>
-                        </div>
+
+                            <button type="button" onclick="navigateToShare(${w.e_no})">
+                                <img src="/resources/img/free-icon-line.png" alt="line Icon">
+                                <span>ライン</span>
+                            </button>
+
                     </div>
                 </div>
-            </div>
-            <div class="line-button">
-                <button type="button" onclick="navigateToShare(${w.e_no})">
-                    <img src="/resources/img/free-icon-line.png" alt="line Icon">
-                </button>
             </div>
         </div>
     </c:forEach>
