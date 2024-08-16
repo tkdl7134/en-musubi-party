@@ -517,9 +517,11 @@
 
 
 
-                <div style="background-color: #FFDBDB ; color : red; text-align: center">全体ファンディング現況 </div>
-                <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                <div style="background-color: #FFDBDB ; color : red; height: 8vh; align-content: center; text-align: center">全体ファンディング現況 </div>
+                <div class="jh_title" style="margin-top: 10%; width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                    <div style="width : auto; position : absolute;     right: 3%;
+    bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
                 </div>
 
 
@@ -562,6 +564,8 @@
                 <div style="background-color: #FFDBDB ; color : red; text-align: center">詳しいファンディング現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                    <div style="width : auto; position : absolute;     right: 3%;
+    bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
                 </div>
                 <div style="      margin-top: 10%;
     padding-top: 10%;  padding-bottom: 10%;background-color: #FFDBDB; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
@@ -628,8 +632,21 @@
                 <div style="background-color: #FFDBDB ; color : red; text-align: center">個別贈り物の現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                    <div style="width : auto; position : absolute;     right: 3%;
+    bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
                 </div>
+                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
+                     class="jh_other_infos">
+                    <div style="margin-top: 2vh;" id="jh_detailHead" class="jh_funding_detail">全体的な情報</div>
+                    <div style="margin-top: 5vh;" id="jh_numberOfPeople" class="jh_funding_detail">繋がれた因縁
+                        : ${NumberOfPeople}名
+                    </div>
+                    <div id="jh_popularDate" class="jh_funding_detail">一番数多くの因縁が訪れた日 : ${PopularDate}</div>
+                    <div id="jh_highestPrice" class="jh_funding_detail">最も大きい思い :　${highestPrice}円</div>
+                    <div id="jh_rankingOfWishlist" class="jh_funding_detail">一番人気のプレゼント
+                        : ${PopularWishlist}</div>
 
+                </div>
                 <div class="jh_product_detail_container" style="margin-top: 10%;">
 
                     <button id="jh_select_tag"
@@ -671,8 +688,7 @@
                            </label>
                            <input id="jh_price_input" type="hidden" value="${payPrice}">
                        </div>--%>
-                    <div class="jh_product_image"><img style="margin-top : 1rem;width: 100%"
-                                                       src="/resources/img/ソファー.png" alt=""></div>
+
                     <div class="jh_product_chart">
                         <canvas id="jh_product_chart"></canvas>
                     </div>
@@ -680,18 +696,7 @@
 
                 </div>
 
-                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
-                     class="jh_other_infos">
-                    <div style="margin-top: 2vh;" id="jh_detailHead" class="jh_funding_detail">全体的な情報</div>
-                    <div style="margin-top: 5vh;" id="jh_numberOfPeople" class="jh_funding_detail">繋がれた因縁
-                        : ${NumberOfPeople}名
-                    </div>
-                    <div id="jh_popularDate" class="jh_funding_detail">一番数多くの因縁が訪れた日 : ${PopularDate}</div>
-                    <div id="jh_highestPrice" class="jh_funding_detail">最も大きい思い :　${highestPrice}円</div>
-                    <div id="jh_rankingOfWishlist" class="jh_funding_detail">一番人気のプレゼント
-                        : ${PopularWishlist}</div>
 
-                </div>
 
                 <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
                     <img class="jh_prev_btn"  src="/resources/img/Prev.png">
