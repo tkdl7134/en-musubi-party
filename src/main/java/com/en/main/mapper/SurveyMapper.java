@@ -27,7 +27,7 @@ public interface SurveyMapper {
 
     @Update("update member set m_fam_kanji = #{m_fam_kanji}, m_name_kanji = #{m_name_kanji}, m_fam_kana = #{m_fam_kana}, m_name_kana = #{m_name_kana}, " +
             "m_fam_eng = #{m_fam_eng}, m_name_eng = #{m_name_eng}, m_email = #{m_email}, m_phone = #{m_phone}, m_address = #{m_address}, " +
-            "m_zipcode = #{m_zipcode}, where m_id = #{m_id}")
+            "m_zipcode = #{m_zipcode} where m_id = #{m_id}")
     void updateMember(MemberVO memberVO);
 
     @Select("select * from member where m_id = #{m_id}")

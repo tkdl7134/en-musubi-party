@@ -24,49 +24,41 @@ div {
 
 .jh_title {
 
-    height: 75px;
-    background-color: #FFFBF7;
-    margin-top: 3rem;
 
 
 }
 
 .jh_titleName {
     text-align: center;
-    margin-top: 25px;
     font-size: 30px;
 }
 
 .jh_pageNavigation {
 
     display: flex;
-    margin-top: 6rem;
     justify-content: space-evenly;
     text-align: center;
     align-items: center;
+    border-radius: 50px;
+    background-color: #EDEDED;
 }
 
 .jh_pageNavigationA {
     text-decoration: none;
-    background-image: url('../../img/opt-pink.png');
-    background-size: contain;
-    height: 10rem;
-    background-repeat: no-repeat;
-    background-position: center;
     text-align: center;
-
+    border-radius: 50px;
     align-content: center;
+
 }
 
 .jh_pageNavigationB {
     text-align: center;
     font-size: 18px;
-
+    border-radius: 50px;
 
 }
 
 .jh_pageNavigationA:hover {
-    background-image: url('../../img/opt_yellow.png');
 
 }
 
@@ -131,30 +123,20 @@ div {
 
 .jh_prev_btn {
 
-    width: 10rem;
-    height: 10rem;
     text-align: center;
-    background-color: #F8C8C9;
-    border-radius: 30px;
     font-family: "Noto Serif JP", serif;
     font-weight: bold;
-    margin-bottom: 20%;
-    font-size: 30px;
-    margin-top: 10%;
+    margin-bottom: 15%;
+    margin-top: 15%;
 }
 
 .jh_next_btn {
 
-    width: 10rem;
-    height: 10rem;
     text-align: center;
-    background-color: #F8C8C9;
-    border-radius: 30px;
     font-family: "Noto Serif JP", serif;
     font-weight: bold;
-    margin-bottom: 20%;
-    margin-top: 10%;
-    font-size: 30px;
+    margin-bottom: 15%;
+    margin-top: 15%;
 }
 /* 모달 배경 */
 .jh_modal {
