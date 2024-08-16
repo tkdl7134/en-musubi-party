@@ -45,7 +45,8 @@ src/main/resources/application.properties
 .metadata
 .idea
 
-AccountKey.json
+### JSON ###
+.json
 
 ### sql ###
 .sql
