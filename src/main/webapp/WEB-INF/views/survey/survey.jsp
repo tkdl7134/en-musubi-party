@@ -92,7 +92,7 @@
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
                                             <div>
-                                                <select name="g_relation_detail" id="g_relation_family" style="display:none;">
+                                                <select name="g_relation_detail_family" id="g_relation_family" style="display:none;">
                                                     <option value="father">お父さん (おとうさん)</option>
                                                     <option value="mother">お母さん (おかあさん)</option>
                                                     <option value="olderBrother">お兄さん (おにいさん)</option>
@@ -103,7 +103,8 @@
                                                     <option value="grandmother">おばあさん</option>
                                                 </select>
 
-                                                <select name="g_relation_detail" id="g_relation_friend" style="display:none;">
+                                                <select name="g_relation_detail_friend" id="g_relation_friend" style="display:none;">
+                                                    <option value="the best friend">幼馴染</option>
                                                     <option value="elementaryFriend">小学校の同級生</option>
                                                     <option value="middleSchoolFriend">中学校の同級生</option>
                                                     <option value="highSchoolFriend">高校の同級生</option>
@@ -114,7 +115,7 @@
                                                     <option value="overseasFriend">海外の友達</option>
                                                 </select>
 
-                                                <select name="g_relation_detail" id="g_relation_colleagues" style="display:none;">
+                                                <select name="g_relation_detail_colleagues" id="g_relation_colleagues" style="display:none;">
                                                     <option value="supervisor">上司</option>
                                                     <option value="subordinate">部下</option>
                                                     <option value="colleague">同僚</option>
@@ -122,7 +123,7 @@
                                                     <option value="junior">後輩</option>
                                                 </select>
 
-                                                <input type="text" name="g_relation_detail" id="g_relation_other" style="display:none;" placeholder="ご関係を入力してください">
+                                                <input type="text" name="g_relation_detail_other" id="g_relation_other" style="display:none;" placeholder="ご関係を入力してください">
 
                                             </div>
                                         </div>

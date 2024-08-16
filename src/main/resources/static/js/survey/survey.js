@@ -529,19 +529,40 @@ $(document).ready(function () {
     $(".survey-submit-button").on("click", function(event) {
         event.preventDefault(); // 제출 막음
 
-        //필수 입력 필드 선택자 목록
+        let allValid = true;
+
+        // g_relation_other가 필수인 경우 검사
+        const otherField = document.getElementById('g_relation_other');
+        if (otherField.style.display !== 'none' && !otherField.value.trim()) {
+            allValid = false;
+            alert("ご関係を入力してください"); // 오류 메시지 표시
+
+            // 해당 필드로 스크롤 이동 및 포커스 설정
+            otherField.focus();
+            window.scrollTo({
+                top: otherField.getBoundingClientRect().top + window.pageYOffset - 60,
+                behavior: 'smooth'
+            });
+
+            return false; // 다른 검사를 수행하지 않고 종료
+        }
+
+        // 필수 입력 필드 선택자 목록
         const requiredFields = [
             {
                 selector: ".tk_survey-guestType input[name='g_guest_type']:checked",
                 errorMessage: "ゲスト様 項目を入力してください"
             },
-            {selector: ".tk_justName input[name='m_fam_kanji']", errorMessage: "お名前 項目を入力してください"},
-            {selector: ".tk_justName input[name='m_name_kanji']", errorMessage: "お名前 項目を入力してください"},
-            {selector: ".tk_kataName input[name='m_fam_kana']", errorMessage: "カタカナ 項目を入力してください"},
+            {selector: ".tk_justName input[name='m_fam_kanji']", errorMessage: "お名前 項目を 입력하십시오"},
+            {selector: ".tk_justName input[name='m_name_kanji']", errorMessage: "お名前 項目을 입력하십시오"},
+            {selector: ".tk_kataName input[name='m_fam_kana']", errorMessage: "カタカナ 項目을 입력하십시오"},
             {selector: ".tk_kataName input[name='m_name_kana']", errorMessage: "カタカナ 項目을 입력하십시오"},
             {selector: ".tk_romeName input[name='m_fam_eng']", errorMessage: "ローマ字 項目을 입력하십시오"},
             {selector: ".tk_romeName input[name='m_name_eng']", errorMessage: "ローマ字 項目을 입력하십시오"},
-            {selector: ".tk_survey-gender input[name='m_gender']:checked", errorMessage: "性別 項目을 입력하십시오"},
+            {
+                selector: ".tk_survey-gender input[name='m_gender']:checked",
+                errorMessage: "性別 項目을 입력하십시오"
+            },
             {selector: ".tk_address input[name='m_zipcode']", errorMessage: "住所 項目을 입력하십시오"},
             {selector: ".tk_address input[name='m_address']", errorMessage: "住所 項目을 입력하십시오"},
             {selector: ".tk_survey-email input[name='m_email']", errorMessage: "メールアドレス 項目을 입력하십시오"},
@@ -555,8 +576,6 @@ $(document).ready(function () {
                 errorMessage: "アフターパーティー 項目을 선택하십시오"
             }
         ];
-
-        let allValid = true;
 
         // 필수 입력 필드 확인
         for (let i = 0; i < requiredFields.length; i++) {
@@ -616,30 +635,41 @@ $(document).ready(function () {
     });
 });
 
-function updateRelationOptions() {
-    const relationValue = document.getElementById('g_relation').value;
-
-    // 모든 관계 세부 사항 select 및 input 요소를 숨깁니다.
-    document.getElementById('g_relation_family').style.display = 'none';
-    document.getElementById('g_relation_friend').style.display = 'none';
-    document.getElementById('g_relation_colleagues').style.display = 'none';
-    document.getElementById('g_relation_other').style.display = 'none';
-
-    // 선택한 값에 따라 적절한 요소를 표시합니다.
-    if (relationValue === '家族') {
-        document.getElementById('g_relation_family').style.display = 'inline-block';
-    } else if (relationValue === '親友') {
-        document.getElementById('g_relation_friend').style.display = 'inline-block';
-    } else if (relationValue === '職場同僚') {
-        document.getElementById('g_relation_colleagues').style.display = 'inline-block';
-    } else if (relationValue === 'その他') {
-        document.getElementById('g_relation_other').style.display = 'inline-block';
-    }
-}
-
-// 페이지 로드 시와 선택이 변경될 때마다 옵션 업데이트
 document.addEventListener('DOMContentLoaded', function() {
     updateRelationOptions(); // 초기 로드 시 실행
     document.getElementById('g_relation').addEventListener('change', updateRelationOptions); // 변경 시 실행
 });
 
+function updateRelationOptions() {
+    // 모든 g_relation_detail 요소의 name 속성을 비활성화
+    document.getElementById('g_relation_family').name = '';
+    document.getElementById('g_relation_friend').name = '';
+    document.getElementById('g_relation_colleagues').name = '';
+    document.getElementById('g_relation_other').name = '';
+    document.getElementById('g_relation_other').required = false; // 필수 입력 해제
+
+    // 모든 g_relation_detail 요소를 숨김
+    document.getElementById('g_relation_family').style.display = 'none';
+    document.getElementById('g_relation_friend').style.display = 'none';
+    document.getElementById('g_relation_colleagues').style.display = 'none';
+    document.getElementById('g_relation_other').style.display = 'none';
+
+    const relationValue = document.getElementById('g_relation').value;
+
+    // 선택한 값에 따라 적절한 요소를 표시하고, name 속성을 활성화
+    if (relationValue === '家族') {
+        document.getElementById('g_relation_family').style.display = 'inline-block';
+        document.getElementById('g_relation_family').name = 'g_relation_detail';
+    } else if (relationValue === '親友') {
+        document.getElementById('g_relation_friend').style.display = 'inline-block';
+        document.getElementById('g_relation_friend').name = 'g_relation_detail';
+    } else if (relationValue === '職場同僚') {
+        document.getElementById('g_relation_colleagues').style.display = 'inline-block';
+        document.getElementById('g_relation_colleagues').name = 'g_relation_detail';
+    } else if (relationValue === 'その他') {
+        const otherField = document.getElementById('g_relation_other');
+        otherField.style.display = 'inline-block';
+        otherField.name = 'g_relation_detail';
+        otherField.required = true; // 필수 입력 설정
+    }
+}
