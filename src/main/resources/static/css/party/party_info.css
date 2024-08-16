@@ -17,12 +17,18 @@ body {
     align-items: center;
     justify-content: center;
     overflow-y: auto;
+    gap: 0.5rem;
 }
 .yr_title {
-    font-size: 5rem;
+    font-size: 2.5rem;
     font-weight: 600;
     padding: 1rem;
-    height: 10rem;
+    height: 5rem;
+    width: 100%;
+    background-color: #FFDBDB;
+    color: #FF494C;
+    text-align: center;
+    align-content: center;
 }
 .yr_party-red-loof img {
     width: 58rem;
@@ -34,13 +40,14 @@ body {
     height: 15rem;
     font-size: 3.2rem;
     border-radius: 2rem;
-    border-style: none;
     background-color: #ffff;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-bottom: 2rem;
+    border: 2px solid #FF8B8B;
 }
 #yr_go_to_chat:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -55,20 +62,23 @@ body {
     font-weight: 400;
 }
 .yr_ratio {
-    margin-top: 1.5rem;
+    margin: 0rem 1.5rem 2rem 1.5rem;
     text-align: center;
     width: 48rem;
-    height: 35rem;
+    height: 30rem;
     font-size: 2.5rem;
     border-radius: 2rem;
     background-color: #ffff;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
     padding: 1rem;
+    border: 2px solid #FF8B8B;
 }
 .yr_ratio span {
     font-weight: 300;
 }
-
+.yr_ratio.age{
+    height: 35rem;
+}
 .yr_graph_wrap {
     position: relative;
     width: 30rem;
@@ -93,31 +103,31 @@ body {
     left: 18rem;
     background: #ff99d6;
 }
-/*.man {*/
+.man {
 
-/*    animation: man 2s forwards;*/
-/*}*/
-/*.woman {*/
-
-/*    animation: woman 2s forwards;*/
-/*}*/
-
-@keyframes man {
-    from {
-        height: 0%;
-    }
-    to {
-        height: 100%;
-    }
+    animation: man 1.5s forwards;
 }
-@keyframes woman {
-    from {
-        height: 0%;
-    }
-    to {
-        height: 100%;
-    }
+.woman {
+
+    animation: woman 1.5s forwards;
 }
+
+/*@keyframes man {*/
+/*    from {*/
+/*        height: 0%;*/
+/*    }*/
+/*    to {*/
+/*        height: 100%;*/
+/*    }*/
+/*}*/
+/*@keyframes woman {*/
+/*    from {*/
+/*        height: 0%;*/
+/*    }*/
+/*    to {*/
+/*        height: 100%;*/
+/*    }*/
+/*}*/
 .yr_graph_label_wrap {
     font-size: 1.5rem;
     width: 24rem;
@@ -126,18 +136,18 @@ body {
     margin-left: 3.5rem;
 }
 
-.yr_apply_cancel {
-    margin: 3rem;
-    width: 23rem;
-    height: 7rem;
-    font-size: 2rem;
-    color: #dd2025;
-    border-radius: 2rem;
-    border-style: none;
-    background-color: #ffdbdb9f;
-    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
+/*.yr_apply_cancel {*/
+/*    margin: 3rem;*/
+/*    width: 23rem;*/
+/*    height: 7rem;*/
+/*    font-size: 2rem;*/
+/*    color: #dd2025;*/
+/*    border-radius: 2rem;*/
+/*    border-style: none;*/
+/*    background-color: #ffdbdb9f;*/
+/*    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
+/*    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);*/
+/*}*/
 /*.yr_apply_cancel:hover {*/
 /*    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);*/
 /*    background-color: #ffdbdb;*/

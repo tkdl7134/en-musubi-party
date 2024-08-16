@@ -13,10 +13,29 @@
             rel="stylesheet"
     />
     <link rel="stylesheet" href="/resources/css/party/party_info.css" />
+    <style>
+
+        @keyframes man {
+            from {
+                height: 0%;
+            }
+            to {
+                height: ${malePercentage}%;
+            }
+        }
+        @keyframes woman {
+            from {
+                height: 0%;
+            }
+            to {
+                height: ${femalePercentage}%;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="yr_party-info-container">
-    <div class="yr_title">縁パーティー</div>
+    <div class="yr_title"> 縁パーティー 参加者情報</div>
     <div class="yr_party-red-loof"><img src="footer.png" alt="" /></div>
     <div class="yr_go_to_chat_wrap">
         <button id="yr_go_to_chat" onclick="location.href='chat'">
