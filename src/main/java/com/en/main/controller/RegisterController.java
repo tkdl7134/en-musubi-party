@@ -14,10 +14,10 @@ public class RegisterController {
     @Autowired
     private MemberService memberService;
 
-    @GetMapping("/register")
-    public String registerMember() {
-        return "register/register";
-    }
+//    @GetMapping("/register")
+//    public String goToRegister() {
+//        return "register/register";
+//    }
 
     @PostMapping("/check-id")
     public @ResponseBody String checkID(@RequestParam("ID") String ID) {

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping("/")
-    public String home() {
+    public String goToHome() {
         return "home/home";
     }
 
@@ -15,6 +15,7 @@ public class HomeController {
     public String goToMain(){
         return "main/main";
     }
+
 }
 
 

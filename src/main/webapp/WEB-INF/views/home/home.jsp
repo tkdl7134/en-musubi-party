@@ -20,10 +20,10 @@
         <p class="home-vertical-text2"> 縁結びへ ✿ </p>
     </div>
     <div class="home-logo-img">
-        <img src="/resources/img/home-logo-img.png" alt="home-logo-img">
+        <img src="/resources/img/logo-img.png" alt="home-logo-img">
     </div>
     <div class="home-button">
-        <button onclick="location.href='/main'"> 招待承諾 </button>
+        <button onclick="changeColorNRedirect(this)"> 招待承諾 </button>
     </div>
 </div>
 

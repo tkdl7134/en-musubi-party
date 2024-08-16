@@ -120,14 +120,15 @@
     font-size: 18px;
     font-weight: bold;
     color: #3F3F3F;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.home-button button:active {
+.home-button button:active,
+.home-button button.active {
     background-color: #ff908e;
     color: #FFFBF7;
 }
 
-/* Media Query for larger screens */
 @media (min-width: 768px) {
     .home-container {
         width: 30vw;
