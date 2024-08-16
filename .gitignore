@@ -45,8 +45,14 @@ src/main/resources/application.properties
 .metadata
 .idea
 
+<<<<<<< HEAD
 AccountKey.json
 /src/main/resources/AccountKey.json
+=======
+### JSON ###
+.json
+>>>>>>> 9bc99bc3e43040463dcdecac37ff0bbe4d4f844d
 
 ### sql ###
 .sql
+src/main/resources/AccountKey.json
