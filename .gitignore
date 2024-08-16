@@ -50,3 +50,4 @@ src/main/resources/application.properties
 
 ### sql ###
 .sql
+src/main/resources/AccountKey.json
