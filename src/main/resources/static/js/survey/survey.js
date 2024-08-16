@@ -524,3 +524,122 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.tk_survey-accompany').forEach(handleCheckboxGroup);
     document.querySelectorAll('.tk_survey-gender-accompany').forEach(handleCheckboxGroup);
 });
+
+$(document).ready(function () {
+    $(".survey-submit-button").on("click", function(event) {
+        event.preventDefault(); // 제출 막음
+
+        //필수 입력 필드 선택자 목록
+        const requiredFields = [
+            {
+                selector: ".tk_survey-guestType input[name='g_guest_type']:checked",
+                errorMessage: "ゲスト様 項目を入力してください"
+            },
+            {selector: ".tk_justName input[name='m_fam_kanji']", errorMessage: "お名前 項目を入力してください"},
+            {selector: ".tk_justName input[name='m_name_kanji']", errorMessage: "お名前 項目を入力してください"},
+            {selector: ".tk_kataName input[name='m_fam_kana']", errorMessage: "カタカナ 項目を入力してください"},
+            {selector: ".tk_kataName input[name='m_name_kana']", errorMessage: "カタカナ 項目을 입력하십시오"},
+            {selector: ".tk_romeName input[name='m_fam_eng']", errorMessage: "ローマ字 項目을 입력하십시오"},
+            {selector: ".tk_romeName input[name='m_name_eng']", errorMessage: "ローマ字 項目을 입력하십시오"},
+            {selector: ".tk_survey-gender input[name='m_gender']:checked", errorMessage: "性別 項目을 입력하십시오"},
+            {selector: ".tk_address input[name='m_zipcode']", errorMessage: "住所 項目을 입력하십시오"},
+            {selector: ".tk_address input[name='m_address']", errorMessage: "住所 項目을 입력하십시오"},
+            {selector: ".tk_survey-email input[name='m_email']", errorMessage: "メールアドレス 項目을 입력하십시오"},
+            {selector: ".tk_survey-phone input[name='m_phone']", errorMessage: "電話番号 項目을 입력하십시오"},
+            {
+                selector: "#wedding-selection .survey-selection-option.selected",
+                errorMessage: "挙式・披露宴 項目을 선택하십시오"
+            },
+            {
+                selector: "#afterparty-selection .survey-selection-option.selected",
+                errorMessage: "アフターパーティー 項目을 선택하십시오"
+            }
+        ];
+
+        let allValid = true;
+
+        // 필수 입력 필드 확인
+        for (let i = 0; i < requiredFields.length; i++) {
+            const field = requiredFields[i];
+            const element = $(field.selector).get(0); // 첫 번째 DOM 요소를 가져옵니다.
+
+            // 요소가 존재하지 않거나, 값이 비어 있을 경우
+            if (!element || (element.tagName === "INPUT" || element.tagName === "SELECT") && (!element.value || !element.value.trim())) {
+                allValid = false;
+                alert(field.errorMessage);
+
+                // 체크박스 또는 라디오 버튼의 경우: 선택된 요소가 없으면 첫 번째 요소로 포커스 이동
+                if (!element && field.selector.includes(":checked")) {
+                    const fallbackElement = $(field.selector.replace(":checked", "")).get(0);
+                    focusOnField(fallbackElement);
+                } else {
+                    focusOnField(field.selector);
+                }
+
+                break;
+            }
+        }
+
+        // 모든 필수 입력 필드가 채워진 경우 폼 제출
+        if (allValid) {
+            $("form").submit();
+        }
+    });
+
+    function focusOnField(element) {
+        if (!element) {
+            console.error("Invalid element provided to focusOnField:", element);
+            return;
+        }
+
+        const $element = $(element);
+        const buttonPosition = $(".survey-submit-button").offset().top; // 버튼의 현재 위치
+        const elementOffset = $element.offset();
+
+        // 요소의 위치가 버튼 위치보다 위에 있는 경우에만 스크롤 애니메이션 실행
+        if (elementOffset.top < buttonPosition) {
+            $('html, body').animate({
+                scrollTop: elementOffset.top - 60 // 요소의 상단에서 20px 위로 스크롤
+            }, 500, function() { // 스크롤이 완료된 후 실행되는 콜백 함수
+                $element.focus(); // 스크롤이 끝난 후 포커스 설정
+            });
+        } else {
+            $element.focus(); // 요소가 이미 버튼 위치 위에 있다면 즉시 포커스 설정
+        }
+    }
+
+    $(".survey-selection-option").on("click", function () {
+        $(this).siblings().removeClass("selected");
+        $(this).addClass("selected");
+        const hiddenField = $(this).closest(".survey-selection").siblings("input[type='hidden']");
+        hiddenField.val($(this).data("value"));
+    });
+});
+
+function updateRelationOptions() {
+    const relationValue = document.getElementById('g_relation').value;
+
+    // 모든 관계 세부 사항 select 및 input 요소를 숨깁니다.
+    document.getElementById('g_relation_family').style.display = 'none';
+    document.getElementById('g_relation_friend').style.display = 'none';
+    document.getElementById('g_relation_colleagues').style.display = 'none';
+    document.getElementById('g_relation_other').style.display = 'none';
+
+    // 선택한 값에 따라 적절한 요소를 표시합니다.
+    if (relationValue === '家族') {
+        document.getElementById('g_relation_family').style.display = 'inline-block';
+    } else if (relationValue === '親友') {
+        document.getElementById('g_relation_friend').style.display = 'inline-block';
+    } else if (relationValue === '職場同僚') {
+        document.getElementById('g_relation_colleagues').style.display = 'inline-block';
+    } else if (relationValue === 'その他') {
+        document.getElementById('g_relation_other').style.display = 'inline-block';
+    }
+}
+
+// 페이지 로드 시와 선택이 변경될 때마다 옵션 업데이트
+document.addEventListener('DOMContentLoaded', function() {
+    updateRelationOptions(); // 초기 로드 시 실행
+    document.getElementById('g_relation').addEventListener('change', updateRelationOptions); // 변경 시 실행
+});
+
