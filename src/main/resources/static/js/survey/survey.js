@@ -551,29 +551,29 @@ $(document).ready(function () {
         const requiredFields = [
             {
                 selector: ".tk_survey-guestType input[name='g_guest_type']:checked",
-                errorMessage: "ゲスト様 項目を入力してください"
+                errorMessage: "ゲスト様項目を入力してください"
             },
-            {selector: ".tk_justName input[name='m_fam_kanji']", errorMessage: "お名前 項目を 입력하십시오"},
-            {selector: ".tk_justName input[name='m_name_kanji']", errorMessage: "お名前 項目을 입력하십시오"},
-            {selector: ".tk_kataName input[name='m_fam_kana']", errorMessage: "カタカナ 項目을 입력하십시오"},
-            {selector: ".tk_kataName input[name='m_name_kana']", errorMessage: "カタカナ 項目을 입력하십시오"},
-            {selector: ".tk_romeName input[name='m_fam_eng']", errorMessage: "ローマ字 項目을 입력하십시오"},
-            {selector: ".tk_romeName input[name='m_name_eng']", errorMessage: "ローマ字 項目을 입력하십시오"},
+            {selector: ".tk_justName input[name='m_fam_kanji']", errorMessage: "お名前項目を入力してください"},
+            {selector: ".tk_justName input[name='m_name_kanji']", errorMessage: "お名前項目を入力してください"},
+            {selector: ".tk_kataName input[name='m_fam_kana']", errorMessage: "カタカナ項目を入力してください"},
+            {selector: ".tk_kataName input[name='m_name_kana']", errorMessage: "カタカナ項目を入力してください"},
+            {selector: ".tk_romeName input[name='m_fam_eng']", errorMessage: "ローマ字項目を入力してください"},
+            {selector: ".tk_romeName input[name='m_name_eng']", errorMessage: "ローマ字項目を入力してください"},
             {
                 selector: ".tk_survey-gender input[name='m_gender']:checked",
                 errorMessage: "性別 項目을 입력하십시오"
             },
-            {selector: ".tk_address input[name='m_zipcode']", errorMessage: "住所 項目을 입력하십시오"},
-            {selector: ".tk_address input[name='m_address']", errorMessage: "住所 項目을 입력하십시오"},
-            {selector: ".tk_survey-email input[name='m_email']", errorMessage: "メールアドレス 項目을 입력하십시오"},
-            {selector: ".tk_survey-phone input[name='m_phone']", errorMessage: "電話番号 項目을 입력하십시오"},
+            {selector: ".tk_address input[name='m_zipcode']", errorMessage: "住所項目を入力してください"},
+            {selector: ".tk_address input[name='m_address']", errorMessage: "住所項目を入力してください"},
+            {selector: ".tk_survey-email input[name='m_email']", errorMessage: "メールアドレス項目を入力してください"},
+            {selector: ".tk_survey-phone input[name='m_phone']", errorMessage: "電話番号項目を入力してください"},
             {
                 selector: "#wedding-selection .survey-selection-option.selected",
-                errorMessage: "挙式・披露宴 項目을 선택하십시오"
+                errorMessage: "挙式・披露宴項目を選択してください"
             },
             {
                 selector: "#afterparty-selection .survey-selection-option.selected",
-                errorMessage: "アフターパーティー 項目을 선택하십시오"
+                errorMessage: "アフターパーティー 選択してください"
             }
         ];
 
@@ -587,11 +587,13 @@ $(document).ready(function () {
                 allValid = false;
                 alert(field.errorMessage);
 
-                // 체크박스 또는 라디오 버튼의 경우: 선택된 요소가 없으면 첫 번째 요소로 포커스 이동
+                // 체크박스 또는 라디오 버튼의 경우: 선택된 요소가 없으면 체크되지 않은 첫 번째 요소로 포커스 이동
                 if (!element && field.selector.includes(":checked")) {
-                    const fallbackElement = $(field.selector.replace(":checked", "")).get(0);
+                    console.log("check 1");
+                    const fallbackElement = $(field.selector.replace(":checked", ":not(:checked)")).get(0); // 체크되지 않은 첫 번째 요소를 선택
                     focusOnField(fallbackElement);
                 } else {
+                    console.log("check 2");
                     focusOnField(field.selector);
                 }
 
