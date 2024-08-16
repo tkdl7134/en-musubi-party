@@ -12,46 +12,22 @@ $(document).ready(function () {
     });
 
     // 탭 버튼 클릭 시 처리
-    $('.hw_tab-button').each(function (index) {
-        $(this).on('click', function () {
-            $('.hw_tab-button').removeClass('active');
-            $(this).addClass('active');
-            $('.hw_tab-button-content').removeClass('show');
-            $('.hw_tab-button-content').eq(index).addClass('show');
-        });
+    $('.hw_tab-button').on('click', function () {
+        $('.hw_tab-button').removeClass('active');
+        $(this).addClass('active');
+
+        var tabType = $(this).text(); // 탭 버튼의 텍스트를 가져옴 (전체, 신랑, 신부)
+
+        if (tabType === '全体') {
+            $('.hw_tab-content').show(); // 전체를 보여줌
+        } else {
+            $('.hw_tab-content').hide(); // 모든 콘텐츠를 숨기고
+            $('.hw_tab-content[data-type*="' + tabType + '"]').show(); // 선택된 유형만 표시
+        }
     });
 
-    // 全体 버튼 클릭 시 정렬
-    let sortOrder = 'asc';
-    $('#all-button').on('click', function () {
-        let guestList = $('#guest-list .hw_tab-content').get();
-        guestList.sort(function(a, b) {
-            let nameA = $(a).find('span:first').text().toUpperCase();
-            let nameB = $(b).find('span:first').text().toUpperCase();
-            if (sortOrder === 'asc') {
-                return (nameA > nameB) ? 1 : (nameA < nameB) ? -1 : 0;
-            } else {
-                return (nameA < nameB) ? 1 : (nameA > nameB) ? -1 : 0;
-            }
-        });
-        sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-        $('#guest-list').html(guestList);
-    });
-
-    // 新郎 버튼 클릭 시 필터링
-    $('#groom-button').on('click', function () {
-        $('.hw_tab-content').hide();
-        $('.hw_tab-content[data-type="新郎"]').show();
-    });
-
-    // 新婦 버튼 클릭 시 필터링
-    $('#bride-button').on('click', function () {
-        $('.hw_tab-content').hide();
-        $('.hw_tab-content[data-type="新婦"]').show();
-    });
-
-    // 초기 로드 시 新郎 탭 데이터만 표시
-    $('#groom-button').click();
+    // 초기 로드 시 전체 탭의 데이터를 표시
+    $('.hw_tab-button.active').click();
 
     // "더보기" 버튼 클릭 시 처리
     $("#more").click(function () {
@@ -61,5 +37,31 @@ $(document).ready(function () {
         } else {
             $("#more").text("더보기"); // 숨겨지면 버튼 텍스트를 "더보기"로 변경
         }
+    });
+
+    // 알러지 여부와 참석 여부에 따른 필터링
+    $('.hw_tab-content').each(function () {
+        var attendWedding = $(this).data('attend-wedding');
+        var allergyOr = $(this).data('allergy-or');
+
+        if (attendWedding !== 'ご出席' || allergyOr !== 'yes') {
+            $(this).hide(); // 조건에 맞지 않는 콘텐츠 숨기기
+        }
+    });
+
+    // 필터링 기능 구현 (전체 탭에서도 적용)
+    $('#filter-input').on('input', function () {
+        var filterText = $(this).val().toLowerCase();
+
+        $('.hw_tab-content').each(function () {
+            var contentType = $(this).data('type').toLowerCase();
+            var contentText = $(this).text().toLowerCase();
+
+            if (contentText.includes(filterText) || contentType.includes(filterText)) {
+                $(this).show(); // 필터 텍스트가 포함된 콘텐츠 표시
+            } else {
+                $(this).hide(); // 포함되지 않은 콘텐츠 숨김
+            }
+        });
     });
 });
