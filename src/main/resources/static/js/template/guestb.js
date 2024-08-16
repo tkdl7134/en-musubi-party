@@ -16,7 +16,7 @@ $(document).ready(function () {
         $('.hw_tab-button').removeClass('active');
         $(this).addClass('active');
 
-        var tabType = $(this).text(); // 탭 버튼의 텍스트를 가져옴 (전체, 신랑, 신부)
+        var tabType = $(this).text(); // 탭 버튼의 텍스트를 가져옴 (全体, 新郎, 新婦)
 
         if (tabType === '全体') {
             $('.hw_tab-content').show(); // 전체를 보여줌
@@ -36,16 +36,6 @@ $(document).ready(function () {
             $("#more").text("접기"); // 표시되면 버튼 텍스트를 "접기"로 변경
         } else {
             $("#more").text("더보기"); // 숨겨지면 버튼 텍스트를 "더보기"로 변경
-        }
-    });
-
-    // 알러지 여부와 참석 여부에 따른 필터링
-    $('.hw_tab-content').each(function () {
-        var attendWedding = $(this).data('attend-wedding');
-        var allergyOr = $(this).data('allergy-or');
-
-        if (attendWedding !== 'ご出席' || allergyOr !== 'yes') {
-            $(this).hide(); // 조건에 맞지 않는 콘텐츠 숨기기
         }
     });
 

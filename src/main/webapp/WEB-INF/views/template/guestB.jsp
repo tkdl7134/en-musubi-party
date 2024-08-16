@@ -33,7 +33,7 @@
         </div>
 
         <!-- 필터 입력 필드 -->
-        <input type="text" id="filter-input" placeholder="입력">
+        <input type="text" id="filter-input" placeholder="필터 텍스트 입력">
 
         <!-- 탭 콘텐츠 -->
         <div class="hw_content">
@@ -45,11 +45,8 @@
 
             <div class="hw_tab-button-content">
                 <c:forEach items="${guestDetailList}" var="g">
-                    <c:if test="${g.g_attend_wedding == 'ご出席' && g.g_allergy_or == 'yes'}">
-                        <div class="hw_tab-content"
-                             data-type="${g.g_guest_type}"
-                             data-attend-wedding="${g.g_attend_wedding}"
-                             data-allergy-or="${g.g_allergy_or}">
+                    <c:if test="${g.g_attend_wedding == 'ご出席' && g.g_allergy_or == 'Yes'}">
+                        <div class="hw_tab-content" data-type="${g.g_guest_type}">
                             <span>이름 : ${g.m_fam_kanji} ${g.m_name_kanji}</span>
                             <span>유형 : ${g.g_guest_type}</span>
                             <span>참석 여부 : ${g.g_attend_wedding}</span>
@@ -58,7 +55,6 @@
                     </c:if>
                 </c:forEach>
             </div>
-
         </div>
     </div>
 </form>

@@ -16,6 +16,7 @@ $(document).ready(function () {
         $('.hw_tab-button').removeClass('active');
         $(this).addClass('active');
 
+        var tabType = $(this).text(); // 탭 버튼의 텍스트를 가져옴 (全体, 新郎, 新婦)
 
         if (tabType === '全体') {
             $('.hw_tab-content').show(); // 전체를 보여줌

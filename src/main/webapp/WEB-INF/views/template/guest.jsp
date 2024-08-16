@@ -39,8 +39,8 @@
         <div class="hw_content">
             <ul class="hw_list">
                 <li class="hw_tab-button active" data-filter="all">全体</li>
-                <li class="hw_tab-button" data-filter="新郎">新郎</li>
-                <li class="hw_tab-button" data-filter="新婦">新婦</li>
+                <li class="hw_tab-button" data-filter="新郎ゲスト">新郎</li>
+                <li class="hw_tab-button" data-filter="新婦ゲスト">新婦</li>
             </ul>
 
             <div class="hw_tab-button-content">
