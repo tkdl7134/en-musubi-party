@@ -140,8 +140,8 @@
                                                 <div class="tk_survey-titleName">お名前</div>
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
-                                            <input type="text" name="m_fam_kanji" value="${member.m_fam_kanji}"/>
-                                            <input type="text" name="m_name_kanji" value="${member.m_name_kanji}"/>
+                                            <input type="text" id="kanji-fam" name="m_fam_kanji" value="${member.m_fam_kanji}"/>
+                                            <input type="text" id="kanji-name" name="m_name_kanji" value="${member.m_name_kanji}"/>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_kataName">
@@ -149,8 +149,8 @@
                                                 <div class="tk_survey-titleName">カタカナ</div>
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
-                                            <input type="text" name="m_fam_kana" value="${member.m_fam_kana}"/>
-                                            <input type="text" name="m_name_kana" value="${member.m_name_kana}"/>
+                                            <input type="text" id="kana-fam" name="m_fam_kana" value="${member.m_fam_kana}"/>
+                                            <input type="text" id="kana-name" name="m_name_kana" value="${member.m_name_kana}"/>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_romeName">
@@ -158,8 +158,8 @@
                                                 <div class="tk_survey-titleName">ローマ字</div>
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
-                                            <input type="text" name="m_fam_eng" value="${member.m_fam_eng}"/>
-                                            <input type="text" name="m_name_eng" value="${member.m_name_eng}"/>
+                                            <input type="text" id="eng-fam" name="m_fam_eng" value="${member.m_fam_eng}"/>
+                                            <input type="text" id="eng-name" name="m_name_eng" value="${member.m_name_eng}"/>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-gender">
@@ -210,14 +210,15 @@
                                                         type="text"
                                                         name="m_zipcode"
                                                         value="${member.m_zipcode}"
+                                                        id="zipcode"
                                                 />
                                                 <button type="button" class="search-post-btn">
                                                     検索
                                                 </button>
                                             </div>
                                             <div class="tk_survey-address">
-                                                <input type="text" name="m_address" value="${member.m_address}"/>
-                                                <input type="text" name="m_other_address" />
+                                                <input type="text" name="m_address" value="${member.m_address}" id="address"/>
+                                                <input type="text" name="m_other_address" id="address-others"/>
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
@@ -227,7 +228,7 @@
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
                                             <div>
-                                                <input type="text" name="m_email" value="${member.m_email}" />
+                                                <input type="text" id="email" name="m_email" value="${member.m_email}" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
@@ -237,7 +238,7 @@
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
                                             <div>
-                                                <input type="text" name="m_phone" value="${member.m_phone}" />
+                                                <input type="text" id="phoneNum" name="m_phone" value="${member.m_phone}" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
@@ -294,7 +295,7 @@
                                                     </div>
                                                  </div>
                                                  <div class="tk_survey-messageText">
-                                                    <textarea name="me_content" rows="10" cols="30"></textarea>
+                                                    <textarea name="me_content" rows="10" cols="30" id="messageContent"></textarea>
                                                  </div>
                                             </div>
                                         </div>
