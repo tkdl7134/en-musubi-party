@@ -1,12 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".card");
 
-    // 카드 클릭 시 플립과 버튼 표시
-    cards.forEach(card => {
-        card.addEventListener("click", function () {
-            card.classList.toggle("flipped");
-        });
-    });
 
     // 버튼 클릭 이벤트
     const buttons = document.querySelectorAll('.card-back button, .line-button button');
@@ -38,11 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const container = document.querySelector('.hw_container');
-    const contents = document.querySelectorAll('.hw_content');
-
     let currentIndex = 0;
 
     function scrollToContent(index) {
+        const contents = document.querySelectorAll('.hw_card');
         if (index >= 0 && index < contents.length) {
             contents[index].scrollIntoView({ behavior: 'smooth' });
             currentIndex = index;
@@ -59,9 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowDown') {
+        if (event.key === 'ArrowRight') {
             scrollToContent(currentIndex + 1);
-        } else if (event.key === 'ArrowUp') {
+        } else if (event.key === 'ArrowLeft') {
             scrollToContent(currentIndex - 1);
         }
     });
