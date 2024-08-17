@@ -95,13 +95,12 @@ public void insertWeddingInfo(WeddingVO weddingVO,
             try {
                 String fileRealName = file.getOriginalFilename();
                 String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."));
-//                String uploadFolder = "Users/se_ong/Desktop/sbt9/uploadTest";
-                //String uploadFolder = new File("src/main/resources/static/img/").getAbsolutePath();
+
 
                 UUID uuid = UUID.randomUUID();
                 String uniqueName = uuid.toString().split("-")[0];
                 String savedFileName = uniqueName + fileExtension;
-                //File saveFile = new File(uploadFolder + "/" + savedFileName);
+
 
                 System.out.println("업로드 -----------");
                 String mimeType = file.getContentType();
@@ -109,7 +108,6 @@ public void insertWeddingInfo(WeddingVO weddingVO,
                         file.getBytes());
                 System.out.println("업로드 -----------");
 
-                //file.transferTo(saveFile);
                 return savedFileName;
             }catch (Exception e){
                 e.printStackTrace();

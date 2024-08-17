@@ -36,7 +36,8 @@
     </div>
 </div>
 <!-- content -->
-<form action="/product/invitation-preview" method="post" enctype="multipart/form-data">
+<form action="/product/invitation-preview" method="post" enctype="multipart/form-data"
+      onsubmit="return setFilesList(event)">
     <input type="hidden" name="t_pk" value="${t_pk}">
     <div id="je_product-make-container">
         <div class="je_page-title">
@@ -324,50 +325,54 @@
                             </div>
                         </div>
                         <div class="je_content-photo">
-                            <div id="je_photobox1" class="je_photobox">
-                                <input
-                                        type="file"
-                                        name="w_img1_file"
-                                        id="je_photoInput1"
-                                        onchange="readURL(this);"
-                                        oninput="return photoType1()"
-                                />
-                                <div id="je_photoOut1"></div>
-                                <span>写真１</span>
+                            <div class="je_photoBox-container">
+                                <div class="je_photobox-icon">
+                                    <img src="/resources/img/couple-icon.png">
+                                </div>
+                                <div id="je_photobox1" class="je_photobox">
+                                    <input
+                                            type="file"
+                                            name="w_img1_file"
+                                            id="je_photoInput1"
+                                            onchange="readURL(this);"
+                                            oninput="return photoType1()"
+                                    />
+                                    <div id="je_photoOut1"></div>
+                                    <span>写真１</span>
+                                </div>
                             </div>
-                            <div id="je_photobox2" class="je_photobox">
-                                <input
-                                        type="file"
-                                        name="w_img2_file"
-                                        id="je_photoInput2"
-                                        onchange="readURL(this);"
-                                        oninput="return photoType2()"
-                                />
-                                <div id="je_photoOut2"></div>
-                                <span>写真２</span>
+                            <div class="je_photoBox-container">
+                                <div class="je_photobox-icon">
+                                    <img src="/resources/img/groom-icon.png" style="transform: scaleX(-1);">
+                                </div>
+                                <div id="je_photobox2" class="je_photobox">
+                                    <input
+                                            type="file"
+                                            name="w_img2_file"
+                                            id="je_photoInput2"
+                                            onchange="readURL(this);"
+                                            oninput="return photoType2()"
+                                    />
+                                    <div id="je_photoOut2"></div>
+                                    <span>写真２</span>
+                                </div>
                             </div>
-                            <div id="je_photobox3" class="je_photobox">
-                                <input
-                                        type="file"
-                                        name="w_img3_file"
-                                        id="je_photoInput3"
-                                        onchange="readURL(this);"
-                                        oninput="return photoType3()"
-                                />
-                                <div id="je_photoOut3"></div>
-                                <span>写真３</span>
+                            <div class="je_photoBox-container">
+                                <div class="je_photobox-icon">
+                                    <img src="/resources/img/bride-icon.png">
+                                </div>
+                                <div id="je_photobox3" class="je_photobox">
+                                    <input
+                                            type="file"
+                                            name="w_img3_file"
+                                            id="je_photoInput3"
+                                            onchange="readURL(this);"
+                                            oninput="return photoType3()"
+                                    />
+                                    <div id="je_photoOut3"></div>
+                                    <span>写真３</span>
+                                </div>
                             </div>
-                            <%--                            <div id="je_photobox4" class="je_photobox">--%>
-                            <%--                                <input--%>
-                            <%--                                        type="file"--%>
-                            <%--                                        name="photo4"--%>
-                            <%--                                        id="je_photoInput4"--%>
-                            <%--                                        onchange="readURL(this);"--%>
-                            <%--                                        oninput="return photoType4()"--%>
-                            <%--                                />--%>
-                            <%--                                <div id="je_photoOut4"></div>--%>
-                            <%--                                <span>写真4</span>--%>
-                            <%--                            </div>--%>
                         </div>
                     </div>
                     <div class="je_box-content">
@@ -403,7 +408,7 @@
         <div class="je_slider-buttons">
             <button id="je_prev-button" type="button">前へ</button>
             <button id="je_next-button" type="button">次へ</button>
-            <button id="je_submit-button" >作成完了</button>
+            <button id="je_submit-button" type="submit">作成完了</button>
         </div>
     </div>
 </form>

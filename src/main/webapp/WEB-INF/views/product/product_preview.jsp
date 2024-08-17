@@ -37,7 +37,8 @@
                     <img src="/resources/img/iphone-box.png" alt="" />
                     <div id="je_overlay">
                         <div class="je_overlay-txt">
-                            画像をスクロールすると、<br />
+                            1回タッチした後、 <br /> <br>
+                            画像をドラッグすると、<br />
                             詳しく見ることができます
                         </div>
                         <div class="scroll-downs">

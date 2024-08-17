@@ -342,8 +342,8 @@ a.je_btn-layerClose:not(hover) {
 
     /* 스크롤 유도 */
     .je_overlay-txt {
-        font-size: 10px;
-        margin-top: 9rem;
+        font-size: 12px;
+        margin-top: 10rem;
     }
 
     /* 팝업 */
