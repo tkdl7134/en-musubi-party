@@ -1,11 +1,9 @@
 package com.en.main.controller;
 
+import com.en.main.dto.MemberVO;
 import com.en.main.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -14,10 +12,13 @@ public class RegisterController {
     @Autowired
     private MemberService memberService;
 
-//    @GetMapping("/register")
-//    public String goToRegister() {
-//        return "register/register";
-//    }
+    @PostMapping("/register/submit")
+    public @ResponseBody String register(@RequestBody MemberVO memberVO) {
+        System.out.println(memberVO);
+        memberService.registerMember(memberVO);  // 회원 등록 서비스 호출
+
+        return "Registration successful";
+    }
 
     @PostMapping("/check-id")
     public @ResponseBody String checkID(@RequestParam("ID") String ID) {

@@ -1,16 +1,35 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="ko">
+<html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>회원 정보 확인 및 수정</title>
-    <link rel="stylesheet" href="/resources/css/register/register.css">
-    <!-- 기타 필요한 CSS 파일 추가 -->
+    <title>Member Update</title>
+    <link rel="stylesheet" href="/resources/css/mypage/myInfo.css">
+    <script defer src="/resources/js/mypage/myInfo.js"></script>
+
 </head>
 <body>
 <div class="register">
     <h2>회원 정보 확인 및 수정</h2>
-    <form action="/myInfo/update" method="post">
+    <form action="/myInfo-update" method="post" enctype="multipart/form-data">
+
+        <div class="input-group">
+            <label for="m_img">프로필:</label>
+            <%-- 기존 이미지 --%>
+            <input type="hidden"  id="m_img" name="oldProfile" value="${member.m_img}">
+            <%-- 새로운 이미지 --%>
+            <input type="file" id="m_img" name="profile">
+            <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${member.m_img}?alt=media" alt="" />
+        </div>
+
+        <div class="input-group">
+            <label for="m_id">아이디:</label>
+            <input id="m_id" name="m_id" value="${member.m_id}" readonly>
+        </div>
+        <div class="input-group">
+            <label for="m_pw">아이디:</label>
+            <input id="m_pw" name="m_pw" value="${member.m_pw}" type="hidden">
+        </div>
         <!-- 한자 성 -->
         <div class="input-group">
             <label for="m_fam_kanji">한자 성:</label>
@@ -87,7 +106,11 @@
         <div class="input-group">
             <button type="submit">정보 수정</button>
         </div>
+
     </form>
+        <div class="input-group">
+            <button onclick="deleteCheck('${member.m_id}')">삭제</button>
+        </div>
 </div>
 </body>
 </html>
