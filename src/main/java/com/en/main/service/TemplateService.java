@@ -1,9 +1,6 @@
 package com.en.main.service;
 
-import com.en.main.dto.AttendVO;
-import com.en.main.dto.GuestDetailVO;
-import com.en.main.dto.GuestVO;
-import com.en.main.dto.WeddingVO;
+import com.en.main.dto.*;
 import com.en.main.mapper.TemplateMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +23,8 @@ public class TemplateService {
 
     public List<GuestDetailVO> getGuestDetail() {
         return  templateMapper.getGuestDetail();
+    }
+    public List<AllGuestVO> getAllGuest() {
+        return templateMapper.getAllGuest();
     }
 }
