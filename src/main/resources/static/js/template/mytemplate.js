@@ -1,61 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll(".card");
-
-
-    // 버튼 클릭 이벤트
-    const buttons = document.querySelectorAll('.card-back button, .line-button button');
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const buttonType = e.currentTarget.textContent.trim();
-            handleButtonClick(buttonType);
-        });
-    });
-
-    function handleButtonClick(buttonType) {
-        switch (buttonType) {
-            case 'テンプレート':
-                alert('テンプレート 버튼 클릭');
-                break;
-            case 'アンケート':
-                alert('アンケート 버튼 클릭');
-                break;
-            case '通計':
-                alert('通計 버튼 클릭');
-                break;
-            case 'line':
-                alert('line 버튼 클릭');
-                break;
-            default:
-                console.log('알 수 없는 버튼 클릭');
-        }
-    }
-
-    const container = document.querySelector('.hw_container');
+    const slides = document.querySelectorAll(".hw_card");
+    const indicators = document.querySelectorAll(".indicator");
     let currentIndex = 0;
 
-    function scrollToContent(index) {
-        const contents = document.querySelectorAll('.hw_card');
-        if (index >= 0 && index < contents.length) {
-            contents[index].scrollIntoView({ behavior: 'smooth' });
-            currentIndex = index;
+    function updateIndicators(index) {
+        if (index === 0) {
+            indicators[0].classList.add("active");
+            indicators[1].classList.remove("active");
+            indicators[2].classList.remove("active");
+        } else if (index === slides.length - 1) {
+            indicators[0].classList.remove("active");
+            indicators[1].classList.remove("active");
+            indicators[2].classList.add("active");
+        } else {
+            indicators[0].classList.remove("active");
+            indicators[1].classList.add("active");
+            indicators[2].classList.remove("active");
         }
     }
 
-    container.addEventListener('wheel', (event) => {
-        event.preventDefault(); // 기본 스크롤 이벤트 방지
+    function scrollToSlide(index) {
+        if (index >= 0 && index < slides.length) {
+            slides[index].scrollIntoView({ behavior: "smooth" });
+            currentIndex = index;
+            updateIndicators(index);
+        }
+    }
+
+    document.querySelector(".hw_container").addEventListener("wheel", (event) => {
+        event.preventDefault();
         if (event.deltaY > 0) {
-            scrollToContent(currentIndex + 1);
+            scrollToSlide(currentIndex + 1);
         } else {
-            scrollToContent(currentIndex - 1);
+            scrollToSlide(currentIndex - 1);
         }
     });
 
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight') {
-            scrollToContent(currentIndex + 1);
-        } else if (event.key === 'ArrowLeft') {
-            scrollToContent(currentIndex - 1);
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+            scrollToSlide(currentIndex + 1);
+        } else if (event.key === "ArrowLeft") {
+            scrollToSlide(currentIndex - 1);
         }
     });
 });

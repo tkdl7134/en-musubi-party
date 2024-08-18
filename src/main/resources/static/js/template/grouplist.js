@@ -1,66 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".card-inner");
 
-    // 카드 클릭 시 플립과 버튼 표시
+    function updateIndicators(index) {
+        const indicators = document.querySelectorAll(".indicator");
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle("active", i === index);
+        });
+    }
+
+    function scrollToSlide(index) {
+        const container = document.querySelector('.hw_container');
+        const cardWidth = container.offsetWidth;
+        const scrollPosition = index * cardWidth;
+        container.scrollTo({ left: scrollPosition, behavior: "smooth" });
+        updateIndicators(index);
+    }
+
+    // 카드 클릭 시 플립 효과
     cards.forEach(card => {
         card.addEventListener("click", function () {
             card.classList.toggle("flipped");
         });
     });
 
-    // 버튼 클릭 이벤트
-    const buttons = document.querySelectorAll('.card-back button, .line-button button');
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const buttonType = e.currentTarget.textContent.trim();
-            handleButtonClick(buttonType);
-        });
-    });
-
+    // 페이지 넘김을 위한 변수 설정
     const container = document.querySelector('.hw_container');
-    const contents = document.querySelectorAll('.hw_content');
-
+    const totalPages = Math.ceil(cards.length / 3); // 3개의 카드가 한 페이지에 나타남
     let currentIndex = 0;
-    const itemsPerPage = 3;
-    let totalPages = Math.ceil(contents.length / itemsPerPage);
-
-    function showPage(index) {
-        // 모든 콘텐츠를 숨기고
-        contents.forEach(content => content.style.display = 'none');
-
-        // 현재 페이지에 해당하는 콘텐츠만 표시
-        const start = index * itemsPerPage;
-        const end = start + itemsPerPage;
-        for (let i = start; i < end && i < contents.length; i++) {
-            contents[i].style.display = 'block';
-        }
-    }
-
-    function scrollToContent(index) {
-        if (index >= 0 && index < totalPages) {
-            showPage(index);
-            currentIndex = index;
-        }
-    }
 
     container.addEventListener('wheel', (event) => {
-        event.preventDefault(); // 기본 스크롤 이벤트 방지
+        event.preventDefault();
         if (event.deltaY > 0) {
-            scrollToContent(currentIndex + 1);
+            currentIndex = Math.min(currentIndex + 1, totalPages - 1);
         } else {
-            scrollToContent(currentIndex - 1);
+            currentIndex = Math.max(currentIndex - 1, 0);
         }
+        scrollToSlide(currentIndex);
     });
 
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowDown') {
-            scrollToContent(currentIndex + 1);
-        } else if (event.key === 'ArrowUp') {
-            scrollToContent(currentIndex - 1);
+        if (event.key === 'ArrowRight') {
+            currentIndex = Math.min(currentIndex + 1, totalPages - 1);
+            scrollToSlide(currentIndex);
+        } else if (event.key === 'ArrowLeft') {
+            currentIndex = Math.max(currentIndex - 1, 0);
+            scrollToSlide(currentIndex);
         }
     });
 
     // 초기 페이지를 0으로 설정하여 첫 페이지 콘텐츠를 보여줌
-    showPage(currentIndex);
+    scrollToSlide(currentIndex);
 });

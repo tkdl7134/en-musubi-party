@@ -95,9 +95,9 @@ body {
 }
 
 .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* 이미지 너비를 부모 요소에 맞춤 */
+    height: 100%; /* 비율을 유지하면서 높이 조정 */
+    object-fit: contain; /* 비율을 유지하며 컨테이너 안에 맞춤 */
 }
 
 .share-button {
@@ -140,4 +140,26 @@ body {
 
 .card-back button:hover {
     background-color: #FFD1D0;
+}
+
+.slider-indicators {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: #ff5155;
 }
