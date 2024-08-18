@@ -16,13 +16,13 @@ $(document).ready(function () {
         $('.hw_tab-button').removeClass('active');
         $(this).addClass('active');
 
-        var tabType = $(this).text(); // 탭 버튼의 텍스트를 가져옴 (전체, 신랑, 신부)
+        var tabType = $(this).text(); // 탭 버튼의 텍스트를 가져옴 (全体, 新郎, 新婦)
 
         if (tabType === '全体') {
             $('.hw_tab-content').show(); // 전체를 보여줌
         } else {
             $('.hw_tab-content').hide(); // 모든 콘텐츠를 숨기고
-            $('.hw_tab-content[data-type="' + tabType + '"]').show(); // 선택된 유형만 표시
+            $('.hw_tab-content[data-type*="' + tabType + '"]').show(); // 선택된 유형만 표시
         }
     });
 
@@ -37,5 +37,21 @@ $(document).ready(function () {
         } else {
             $("#more").text("더보기"); // 숨겨지면 버튼 텍스트를 "더보기"로 변경
         }
+    });
+
+    // 필터링 기능 구현 (전체 탭에서도 적용)
+    $('#filter-input').on('input', function () {
+        var filterText = $(this).val().toLowerCase();
+
+        $('.hw_tab-content').each(function () {
+            var contentType = $(this).data('type').toLowerCase();
+            var contentText = $(this).text().toLowerCase();
+
+            if (contentText.includes(filterText) || contentType.includes(filterText)) {
+                $(this).show(); // 필터 텍스트가 포함된 콘텐츠 표시
+            } else {
+                $(this).hide(); // 포함되지 않은 콘텐츠 숨김
+            }
+        });
     });
 });
