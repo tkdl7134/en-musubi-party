@@ -25,6 +25,8 @@
     <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
     <script src="/resources/js/product/slick-slide.js"></script>
     <script src="/resources/js/product/datepicker.js" defer></script>
+    <script src="/resources/js/je_validChk/validChk.js" defer></script>
+    <script src="/resources/js/je_validChk/product_make_validChk.js" defer></script>
     <script src="/resources/js/product/product_make.js" defer></script>
 </head>
 
@@ -36,7 +38,7 @@
     </div>
 </div>
 <!-- content -->
-<form action="/product/invitation-preview" method="post" enctype="multipart/form-data">
+<form action="/product/invitation-preview" method="post" enctype="multipart/form-data" onsubmit="return emptyChk()">
     <input type="hidden" name="t_pk" value="${t_pk}">
     <div id="je_product-make-container">
         <div class="je_page-title">
@@ -76,15 +78,15 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">漢字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="姓" name="w_fam_jp_groom"/>
-                                    <input type="text" placeholder="名" name="w_name_jp_groom"/>
+                                    <input type="text" placeholder="姓" class="jp-input" name="w_fam_jp_groom" maxlength="10"/>
+                                    <input type="text" placeholder="名" class="jp-input" name="w_name_jp_groom" maxlength="10"/>
                                 </div>
                             </div>
                             <div class="je_input-box">
                                 <div class="je_input-box-title">ローマ字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="Last Name" name="w_fam_eng_groom"/><input
-                                        type="text" placeholder="First Name" name="w_name_eng_groom"/>
+                                    <input type="text" placeholder="Last Name" class="eng-input" name="w_fam_eng_groom" maxlength="50"/>
+                                    <input type="text" placeholder="First Name" class="eng-input" name="w_name_eng_groom" maxlength="50"/>
                                 </div>
                             </div>
                         </div>
@@ -100,15 +102,15 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">漢字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="姓" name="w_fam_jp_bride"/>
-                                    <input type="text" placeholder="名" name="w_name_jp_bride"/>
+                                    <input type="text" placeholder="姓" class="jp-input" name="w_fam_jp_bride" maxlength="10"/>
+                                    <input type="text" placeholder="名" class="jp-input" name="w_name_jp_bride" maxlength="10"/>
                                 </div>
                             </div>
                             <div class="je_input-box">
                                 <div class="je_input-box-title">ローマ字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="Last Name" name="w_fam_eng_bride"/><input
-                                        type="text" placeholder="First Name" name="w_name_eng_bride"/>
+                                    <input type="text" placeholder="Last Name" class="eng-input" name="w_fam_eng_bride" maxlength="50"/>
+                                    <input type="text" placeholder="First Name" class="eng-input" name="w_name_eng_bride" maxlength="50"/>
                                 </div>
                             </div>
                         </div>
@@ -161,13 +163,14 @@
                                         <div class="je_input-box-title">住所</div>
                                         <div class="je_address-input">
                                               <textarea class="p-region p-locality p-street-address p-extended-address"
-                                                        name="w_wedding_address"></textarea>
+                                                        name="w_wedding_address" maxlength="200"></textarea>
                                         </div>
                                     </div>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">建物名</div>
                                         <div class="je_address-input">
-                                            <div><input type="text" class="je_building-name" name="w_wedding_building"/>
+                                            <div>
+                                                <input type="text" class="je_building-name" name="w_wedding_building" maxlength="50"/>
                                             </div>
                                         </div>
                                     </div>
@@ -214,14 +217,14 @@
                                         <div class="je_input-box-title">住所</div>
                                         <div class="je_address-input">
                                             <textarea class="p-region p-locality p-street-address p-extended-address"
-                                                      name="w_reception_address"></textarea>
+                                                      name="w_reception_address" maxlength="200"></textarea>
                                         </div>
                                     </div>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">建物名</div>
                                         <div class="je_address-input">
                                             <div><input type="text" class="je_building-name"
-                                                        name="w_reception_building"/></div>
+                                                        name="w_reception_building" maxlength="50"/></div>
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +265,7 @@
                             招待文句 SAMPLE
                         </div>
                         <div class="je_content-message">
-                            <textarea name="w_message_invite" id="je_invitation-textarea"></textarea>
+                            <textarea name="w_message_invite" id="je_invitation-textarea" maxlength="300"></textarea>
                         </div>
                     </div>
                     <div class="je_box-content">
@@ -276,7 +279,7 @@
                             仕上げの文句 SAMPLE
                         </div>
                         <div class="je_content-message">
-                            <textarea name="w_message_bye" id="je_closing-textarea"></textarea>
+                            <textarea name="w_message_bye" id="je_closing-textarea" maxlength="300"></textarea>
                         </div>
                     </div>
                 </div>

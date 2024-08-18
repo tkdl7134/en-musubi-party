@@ -46,6 +46,7 @@ document
 
 /*------------------------------------------------------*/
 // 첨부파일 리스트 보여주기
+const share_photo = document.querySelector("input[name='w_img_share_files']");
 
 function addFile(obj) {
     var files = obj.files;
@@ -55,6 +56,7 @@ function addFile(obj) {
     // 첨부파일 개수 확인
     if (9 < curFileCnt) {
         alert("共有写真は最大9枚まで添付できます。");
+        share_photo.value = "";
         return false;
     }
 
@@ -69,7 +71,8 @@ function addFile(obj) {
             //   '   <a class="je_file-delete" onclick="deleteFile(' + i + ');">⌫</a>';
             htmlData += "</div>";
         } else {
-            continue;
+            share_photo.value = "";
+            return false;
         }
     }
 

@@ -16,19 +16,6 @@ function onlyEng(input){
     }
 }
 
-function onlyKana(input){
-    let ok = "アァイィウゥエェオォカキクケコガギグゲゴサシスセソザジズゼゾタチツテトダヂヅデドッナニヌネノハヒフヘホバビブベボパピプペポマミムメモヤャユュヨョラリルレロワヮヲンヴ―ー";
-    for (let i = 0; i < input.value.length; i++) {
-        if (ok.indexOf(input.value[i]) == -1) {
-            return true;
-        }
-    }
-}
-
-function lessThen(input, length){
-    return input.value.length <= length;
-}
-
 function isNotType(input, type){
     type ="." + type;
     return input.value.indexOf(type) == -1;
