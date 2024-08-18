@@ -48,8 +48,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.8rem;
-    font-size: 1.5rem;
+    gap: 0.5rem;
+}
+
+.tk_survey-title-bigTitle {
+    font-size: 1.8rem;
+}
+
+.tk_survey-title-description {
+    font-size: 1rem;
 }
 
 #tk_survey-line > img {

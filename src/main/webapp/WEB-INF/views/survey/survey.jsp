@@ -35,10 +35,12 @@
                         <div class="tk_page-content">
                             <div class="tk_form-container">
                                 <div class="tk_survey-title">
-                                    <div>ゲスト様入力項目</div>
-                                    <div>までご返信お願いします</div>
+                                    <div class="tk_survey-title-bigTitle">ゲスト様入力項目</div>
+                                    <div class="tk_survey-title-description">お手数ではございますが</div>
+                                    <div class="tk_survey-title-description">出欠のご回答をくださいますよう</div>
+                                    <div class="tk_survey-title-description">お願い申し上げます</div>
                                     <div id="tk_survey-line">
-                                        <img src="/resources/img/head.png" />
+                                        <img src="/resources/img/head-deco.png" />
                                     </div>
                                 </div>
                                 <div class="survey-form">
