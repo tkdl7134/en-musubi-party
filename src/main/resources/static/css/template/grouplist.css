@@ -32,23 +32,27 @@
 .hw_container {
     perspective: 62.5rem; /* 1000px -> 62.5rem, 1rem = 16px */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap; /* 콘텐츠가 한 줄에 나열되도록 설정 */
+    justify-content: center; /* 콘텐츠가 가로로 가운데 정렬되도록 설정 */
+    align-items: center; /* 콘텐츠가 세로로 가운데 정렬되도록 설정 */
     gap: 1.25rem; /* 20px -> 1.25rem */
-    margin-top: 4rem; /* Header의 높이를 고려하여 컨텐츠 시작 위치 조정 */
-    flex-direction: column;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh; /* 화면 전체를 차지하도록 설정 */
+    margin-top: 3rem; /* Header의 높이를 고려하여 컨텐츠 시작 위치 조정 */
+    flex-direction: column; /* 콘텐츠를 세로로 정렬 */
+    scroll-snap-type: y mandatory; /* 세로 스크롤로 변경 */
+    overflow-y: scroll; /* 세로 스크롤 활성화 */
+    height: 85vh; /* 화면 전체를 차지하도록 설정 */
 }
-.hw_content{
-    scroll-snap-align: start;
-    height: 100vh;
+
+.hw_content {
+    scroll-snap-align: center; /* 스크롤 스냅이 중앙에 맞춰지도록 설정 */
+    width: 100vw; /* 화면 전체 너비를 차지하도록 설정 */
+    height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* 콘텐츠를 가로로 가운데 정렬 */
+    align-items: center; /* 콘텐츠를 세로로 가운데 정렬 */
     flex-direction: column;
 }
+
 .card {
     width: 18rem; /* 카드의 너비 */
     height: 10rem; /* 카드의 높이 */
@@ -94,14 +98,13 @@
 }
 
 .card-back {
-    background-color: #FFD1D0;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.25rem;
     box-sizing: border-box;
+    border: 2px solid #ffa2a2;
 }
 
 .card-back img {
@@ -125,7 +128,6 @@
     padding: 0.5rem 0; /* 텍스트와 이미지의 간격 조정 */
 }
 
-
 .card-back button img {
     margin-bottom: 0.25rem; /* 이미지와 텍스트 사이의 간격 최소화 */
 }
@@ -136,10 +138,11 @@
 
 .hw_card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap; /* 콘텐츠가 한 줄에 나열되도록 설정 */
+    justify-content: center; /* 콘텐츠가 가로로 가운데 정렬되도록 설정 */
+    align-items: center; /* 콘텐츠가 세로로 가운데 정렬되도록 설정 */
     gap: 1rem; /* 20px -> 1.25rem */
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 .hw_title {

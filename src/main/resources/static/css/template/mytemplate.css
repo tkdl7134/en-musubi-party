@@ -1,10 +1,18 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Noto Serif JP", serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #f8f8f8;
 }
 
 .hw_header {
@@ -12,160 +20,124 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 3rem;
-    background-color: #FFD1D0;
+    height: 4rem;  /* 두 줄이기 때문에 전체 높이를 늘림 */
     display: flex;
+    flex-direction: column; /* 두 줄로 표현하기 위해 수직 방향으로 배치 */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     z-index: 1000;
 }
-
-.hw_maker {
-    background-color: #FFD1D0;
+.menubar {
+    width: 100%;
+    background-color: #ffffff;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;  /* 흰줄 아래에 테두리 추가 */
 }
-
-.hw_logo img {
-    width: 1rem;
-    height: 1rem;
+.hw_maker {
+    width: 100%;
+    background-color: #FFD1D0;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
 }
 
 .hw_container {
-    perspective: 62.5rem; /* 1000px -> 62.5rem, 1rem = 16px */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.25rem; /* 20px -> 1.25rem */
-    margin-top: 4rem; /* Header의 높이를 고려하여 컨텐츠 시작 위치 조정 */
-    flex-direction: column;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh; /* 화면 전체를 차지하도록 설정 */
-}
-.hw_content{
-    scroll-snap-align: start;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.card {
-    width: 18rem; /* 카드의 너비 */
-    height: 10rem; /* 카드의 높이 */
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-    cursor: pointer;
-}
-
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-}
-
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 0.625rem; /* 10px -> 0.625rem */
-    overflow: hidden;
-}
-
-.card-front {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    z-index: 2;
-    transform: rotateY(0deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-front img {
-    width: 100%; /* 카드 너비에 맞게 이미지 크기 조정 */
-    height: 100%; /* 카드 높이에 맞게 이미지 크기 조정 */
-    object-fit: cover; /* 이미지가 카드에 꽉 차게 조정, 비율 유지 */
-    border-radius: 0.625rem; /* 이미지도 카드의 모서리와 동일하게 둥글게 */
-}
-
-.card-back {
-    background-color: #FFD1D0;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.25rem;
-    box-sizing: border-box;
-}
-.line-button{
-    display: ruby-text;
-}
-.card-back img, .line-button img {
-    width: 3rem; /* 이미지가 적절한 크기로 조정됨 */
-    height: 3rem; /* 비율을 유지하면서 높이 조정 */
-    object-fit: contain; /* 이미지가 크기에 맞도록 조정되지만, 비율 유지 */
-}
-
-.card-back button {
-    display: flex;  /* flexbox로 설정 */
-    justify-content: center;  /* 가로 중앙 정렬 */
-    align-items: center;  /* 세로 중앙 정렬 */
-    flex-direction: column; /* 아이콘과 텍스트를 세로로 배치 */
-    width: 15rem; /* 버튼 너비 */
-    height: 6rem; /* 버튼 높이를 콘텐츠에 맞게 자동으로 설정 */
-    background-color: rgb(255, 209, 208);
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    text-align: center; /* 텍스트 가운데 정렬 */
-    padding: 0.5rem 0; /* 텍스트와 이미지의 간격 조정 */
-}
-.line-button button {
-    display: flex;  /* flexbox로 설정 */
-    justify-content: center;  /* 가로 중앙 정렬 */
-    align-items: center;  /* 세로 중앙 정렬 */
-    flex-direction: column; /* 아이콘과 텍스트를 세로로 배치 */
-    width: 15rem; /* 버튼 너비 */
-    height: 6rem; /* 버튼 높이를 콘텐츠에 맞게 자동으로 설정 */
-    background-color: #39cd00;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    text-align: center; /* 텍스트 가운데 정렬 */
-    padding: 0.5rem 0; /* 텍스트와 이미지의 간격 조정 */
-    margin: 0.5rem;
-}
-
-.card-back button img {
-    margin-bottom: 0.25rem; /* 이미지와 텍스트 사이의 간격 최소화 */
-}
-
-.line-button button {
-    width: 4rem;
-    background-color: #39cd00;
-    height: 4rem;
-}
-
-.card.flipped .card-inner {
-    transform: rotateY(180deg);
+    flex-direction: row;
+    width: 100vw;
+    height: calc(100vh - 3rem);
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
 
 .hw_card {
+    min-width: 100vw;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem; /* 20px -> 1.25rem */
-    margin-top: 5rem;
+    align-items: center;
+    scroll-snap-align: start;
 }
 
-.hw_title {
-    text-align: center;
-    font-size: 1.5rem;
+.card {
+    width: 90%;  /* 부모 컨테이너의 전체 너비 사용 */
+    max-width: 100%;  /* 최대 너비를 100%로 설정 */
+    height: 85%;  /* 부모 컨테이너의 전체 높이를 사용 */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.image-container {
+    width: 100%;  /* 부모 요소의 전체 너비 사용 */
+    height: 80%;  /* 높이를 더 크게 설정 */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    border: solid 1px #ddd;  /* 테두리 추가 */
+    height: 25rem;
+
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.share-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    color: #ff5155;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: solid 1px #ff787b;
+}
+
+.card-back {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;  /* 부모 요소의 전체 너비 사용 */
+    padding-top: 2rem;
+}
+
+.card-back button {
+    flex: 1;  /* 각 버튼이 동일한 비율로 넓어지도록 설정 */
+    margin: 0 0.25rem;  /* 버튼 사이에 간격을 줌 */
+    padding: 0.5rem 0;
+    border: 1px solid #ff7e81;
+    border-radius: 10px;
+    background-color: #ffe2e2;
+    font-size: 0.9rem;
     color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 6rem;
+    height: 2.5rem;
+}
+
+.card-back button:hover {
+    background-color: #FFD1D0;
 }
