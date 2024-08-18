@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,4 +33,23 @@ public class FundingController {
         return "wishlist/funding";
     }
 
+    @GetMapping("/check-finance")
+    public String checkFinance(PayVo payVo,Model model, HttpServletRequest request) {
+        boolean hasFinanced = fundingService.financeCheck(payVo.getM_id(), payVo.getE_no());
+        model.addAttribute("hasFinanced", hasFinanced);
+        return "wishlist/finance-check-result";
+    }
+
+    @GetMapping("/check-id-type")
+    public String checkIdType(PayVo payVo, Model model, HttpServletRequest request) {
+        String idTpye = fundingService.IDTypeCheck(payVo.getM_id());
+        model.addAttribute("idType", idTpye);
+        return "wishlist/check-id-type";
+    }
+
+    @PostMapping("/insert")
+    public String insertFunding(PayVo payVo, Model model, HttpServletRequest request) {
+        fundingService.insertWishPick(payVo);
+        return "redirect:/funding";
+    }
 }
