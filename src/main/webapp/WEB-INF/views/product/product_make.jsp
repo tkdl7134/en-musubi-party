@@ -36,8 +36,7 @@
     </div>
 </div>
 <!-- content -->
-<form action="/product/invitation-preview" method="post" enctype="multipart/form-data"
-      onsubmit="return setFilesList(event)">
+<form action="/product/invitation-preview" method="post" enctype="multipart/form-data">
     <input type="hidden" name="t_pk" value="${t_pk}">
     <div id="je_product-make-container">
         <div class="je_page-title">
@@ -77,9 +76,8 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">漢字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="姓" name="w_fam_jp_groom"/><input type="text"
-                                                                                                      placeholder="名"
-                                                                                                      name="w_name_jp_groom"/>
+                                    <input type="text" placeholder="姓" name="w_fam_jp_groom"/>
+                                    <input type="text" placeholder="名" name="w_name_jp_groom"/>
                                 </div>
                             </div>
                             <div class="je_input-box">
@@ -102,9 +100,8 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">漢字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="姓" name="w_fam_jp_bride"/><input type="text"
-                                                                                                      placeholder="名"
-                                                                                                      name="w_name_jp_bride"/>
+                                    <input type="text" placeholder="姓" name="w_fam_jp_bride"/>
+                                    <input type="text" placeholder="名" name="w_name_jp_bride"/>
                                 </div>
                             </div>
                             <div class="je_input-box">
@@ -167,12 +164,6 @@
                                                         name="w_wedding_address"></textarea>
                                         </div>
                                     </div>
-                                    <%--                                    <div class="je_input-box">--%>
-                                    <%--                                        <div class="je_input-box-title">番地</div>--%>
-                                    <%--                                        <div class="je_address-input">--%>
-                                    <%--                                            <div><input type="text" id="je_address-number1" /></div>--%>
-                                    <%--                                        </div>--%>
-                                    <%--                                    </div>--%>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">建物名</div>
                                         <div class="je_address-input">
@@ -226,12 +217,6 @@
                                                       name="w_reception_address"></textarea>
                                         </div>
                                     </div>
-                                    <%--                                    <div class="je_input-box">--%>
-                                    <%--                                        <div class="je_input-box-title">番地</div>--%>
-                                    <%--                                        <div class="je_address-input">--%>
-                                    <%--                                            <div><input type="text" id="je_address-number2" /></div>--%>
-                                    <%--                                        </div>--%>
-                                    <%--                                    </div>--%>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">建物名</div>
                                         <div class="je_address-input">

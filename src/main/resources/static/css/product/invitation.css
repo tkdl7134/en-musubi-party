@@ -56,6 +56,8 @@
 
 .je_photo-box > img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .je_groom-photo-box > .je_photo-box-inner {

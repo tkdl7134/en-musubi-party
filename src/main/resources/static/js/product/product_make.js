@@ -44,58 +44,36 @@ document
     });
 
 
-// 파일 여러개 업로드한 거 리스트 보여주기
-var fileNo = 0;
-var filesArr = [];
+/*------------------------------------------------------*/
+// 첨부파일 리스트 보여주기
 
 function addFile(obj) {
-    var maxFileCnt = 9; // 첨부파일 최대 갯수
-    var attFileCnt = document.querySelectorAll(".je_filebox").length; // 기존 추가된 첨부파일 개수
-    var remainFileCnt = maxFileCnt - attFileCnt; // 추가 첨부 가능 개수
-    var curFileCnt = obj.files.length;
+    var files = obj.files;
+    var htmlData = "";
+    var curFileCnt = files.length;
 
     // 첨부파일 개수 확인
-    if (curFileCnt > remainFileCnt) {
-        alert("共有写真は最大" + maxFileCnt + "枚まで添付できます。");
+    if (9 < curFileCnt) {
+        alert("共有写真は最大9枚まで添付できます。");
+        return false;
     }
 
-    for (var i = 0; i < Math.min(curFileCnt, remainFileCnt); i++) {
-        const file = obj.files[i];
+    for (var i = 0; i < files.length; i++) {
+        const file = files[i];
 
         // 첨부파일 검증
         if (validChk(file)) {
-            // 파일 배열에 담기
-            var reader = new FileReader();
-            reader.onload = function () {
-                filesArr.push(file);
-            };
-            reader.readAsDataURL(file);
-
-            // 목록 추가
-            var htmlData = '';
-            htmlData += '<div id="je_file' + fileNo + '" class="je_filebox">';
+            htmlData += '<div id="je_file' + i + '" class="je_filebox">';
             htmlData += '   <p class="je_file-name">' + file.name + "</p>";
-            htmlData +=
-                '   <a class="je_file-delete" onclick="deleteFile(' +
-                fileNo +
-                ');">⌫</a>';
+            // htmlData +=
+            //   '   <a class="je_file-delete" onclick="deleteFile(' + i + ');">⌫</a>';
             htmlData += "</div>";
-            $(".je_photo-list").append(htmlData);
-            fileNo++;
         } else {
             continue;
         }
     }
-    //
-    // // 초기화
-    // document.querySelector("#je_photo-input").value = "";
-}
 
-// 파일 목록 업데이트 함수
-function updateFileList(files) {
-    files.forEach((file) => {
-        filesArr.push(file);
-    });
+    document.querySelector(".je_photo-list").innerHTML = htmlData;
 }
 
 // 유효성 검사
@@ -116,43 +94,6 @@ function validChk(obj) {
     } else {
         return true;
     }
-}
-
-// 첨부파일 삭제
-function deleteFile(num) {
-    document.querySelector("#je_file" + num).remove();
-    filesArr[num].is_delete = true;
-
-}
-
-// 슬릭 슬라이드를 업데이트
-function updateSlickSlider() {
-    $(".je_photo-list").slick("refresh"); // 슬릭 슬라이드를 리프레시하여 즉시 반영
-}
-
-// 확정된 파일 리스트 담기
-function setFilesList(event){
-
-    event.preventDefault();
-    console.log('폼제출 막음')
-
-    var form = document.querySelector("form");
-    var formData = new FormData(form);
-    for (var i = 0; i < filesArr.length; i++) {
-        // 삭제되지 않은 파일만 폼데이터에 담기
-        if (!filesArr[i].is_delete) {
-            formData.append("attach_file", filesArr[i]);
-        }
-    }
-
-    // FormData를 폼에 직접 설정하여 제출
-    var input = document.createElement("input");
-    input.type = "hidden";
-    input.name = "w_img_share_files";
-    input.value = JSON.stringify([...formData.entries()]);
-    form.appendChild(input);
-
-    form.submit(); // 폼 제출
 }
 
 
