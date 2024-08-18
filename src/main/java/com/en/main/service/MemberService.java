@@ -72,4 +72,7 @@ public class MemberService {
         memberMapper.updateMember(memberVO);  // 회원 정보 업데이트
     }
 
+    public void deleteMemberInfo(String m_id) {
+        memberMapper.deleteMember(m_id);
+    }
 }

@@ -15,11 +15,11 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping("/login")
-    public String login(Model model) {
-        model.addAttribute("memberVO", new MemberVO());
-        return "login/login";
-    }
+//    @GetMapping("/login")
+//    public String goToLogin(Model model) {
+//        model.addAttribute("memberVO", new MemberVO());
+//        return "login/login";
+//    }
 
     @PostMapping("/login")
     public String login(MemberVO memberVO, Model model, HttpSession session) {
