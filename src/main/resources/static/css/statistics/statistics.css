@@ -175,3 +175,13 @@ div {
     text-decoration: none;
     cursor: pointer;
 }
+
+.jh_slider.slick-slide.slick-current.slick-active {
+    width : auto;
+
+
+}
+.slick-list.draggable {
+    height:  auto;
+
+}

@@ -62,6 +62,13 @@ public class StatisticsController {
         System.out.println(statisticsFundingService.getListupInfos(eno));
 
 
+        System.out.println(statisticsFundingService.getSendInfos(eno));
+        model.addAttribute("sendDatas" , statisticsFundingService.getSendInfos(eno));
+
+
+
+
+
         return "statistics/statisticsFunding";
     }
 

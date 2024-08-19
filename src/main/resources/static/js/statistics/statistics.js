@@ -16,7 +16,12 @@ function goToSendPage() {
     document.getElementById('jh_pageNavi3').style.cssText ='color : black;transition : 0.2s'
     document.getElementById('jh_pageNavi4').style.cssText ='width : 64vw; background-color : red;transition : 0.2s'
     document.getElementById('jh_pageNavi5').style.cssText = 'color : white;transition : 0.2s'
-
+    document.getElementById('jh_slick2').style.cssText = 'display : block;'
+    document.getElementById('jh_slick1').style.cssText = 'display : none'
+    document.getElementsByClassName('slick-list').item(1).cssText = 'height : auto;'
+    document.getElementById('jh_slider111').style.cssText = 'width : auto;'
+    document.getElementById('jh_slider222').style.cssText = 'width : auto;'
+    document.getElementById('jh_slider333').style.cssText = 'width : auto;'
 /*    location.href = '/statistics/send';*/
 
 
@@ -28,7 +33,8 @@ function goToFundPage(){
     document.getElementById('jh_pageNavi3').style.cssText ='color : white;transition : 0.2s'
     document.getElementById('jh_pageNavi4').style.cssText ='background-color :#EDEDED ;transition : 0.2s'
     document.getElementById('jh_pageNavi5').style.cssText = 'color : black; transition : 0.2s'
-
+    document.getElementById('jh_slick2').style.cssText = 'display : none;'
+    document.getElementById('jh_slick1').style.cssText = 'display : block'
 
     /*location.href = '/statistics/funding';*/
 

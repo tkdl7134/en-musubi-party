@@ -2,6 +2,7 @@ package com.en.main.mapper;
 
 import com.en.main.dto.JhFundSqlVo;
 import com.en.main.dto.PayVo;
+import com.en.main.dto.StatisticsSendVo;
 import com.en.main.dto.WishlistVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -134,7 +135,8 @@ public interface StatisticsFundingMapper {
             "WHERE wl_no = #{Wlno}" )
     String getPopularWishlistByWishlistNo(int Wlno , int eno);
 
-
+@Select("select p_price , p_date , g_relation , G_RELATION_DETAIL , m_fam_kanji , m_name_kanji from pay join guest on pay.E_NO = guest.E_NO and pay.M_ID= guest.M_ID join EN.MEMBER M on M.M_ID = guest.M_ID where p_type = 'send' and PAY.E_NO = #{eno}")
+    List<StatisticsSendVo> getSendInfos (int eno);
 
 
 

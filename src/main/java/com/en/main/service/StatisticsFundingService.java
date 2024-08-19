@@ -2,6 +2,7 @@ package com.en.main.service;
 
 import com.en.main.dto.JhFundSqlVo;
 import com.en.main.dto.PayVo;
+import com.en.main.dto.StatisticsSendVo;
 import com.en.main.dto.WishlistVO;
 import com.en.main.mapper.StatisticsFundingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,6 +104,11 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     @Override
     public String getPopularWishlistByWishlistNo(int Wlno, int eno) {
         return statisticsFundingMapper.getPopularWishlistByWishlistNo(Wlno, eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfos(int eno) {
+        return statisticsFundingMapper.getSendInfos(eno);
     }
 
 
