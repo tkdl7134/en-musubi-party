@@ -37,11 +37,11 @@ public interface TemplateMapper {
 
     @Select("SELECT e.e_no, m.m_id, " +
             "m.m_fam_kanji, m.m_name_kanji, m.m_email, m.m_phone, g.g_allergy_or, g.g_relation, a.allergy, " +
-            "w.w_img1, w.w_img2, w.w_img3, w.w_img_share, " +
+            "w.w_img1, w.w_img2, w.w_img3, w.w_img_share, w.w_date, w.w_wedding_address," +
             "g.g_attend_wedding, g.g_guest_type , c.p_accompany_num, c.p_accompany_type, c.p_fam_kanji, c.p_name_kanji " + // 마지막 필드 뒤에 쉼표 제거
             "FROM guest g " +
             "LEFT JOIN member m ON g.m_id = m.m_id " +
-            "LEFT JOIN wedding_info w ON g.w_id = w.m_id " +
+            "LEFT JOIN wedding_info w ON g.e_no = w.e_no " +
             "LEFT JOIN event e ON g.e_no = e.e_no " +
             "LEFT JOIN companion c ON g.m_id = c.m_id " +
             "LEFT JOIN allergy a ON g.m_id = a.m_id " +

@@ -20,7 +20,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 4rem;
+    height: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +31,7 @@ body {
 .menubar {
     width: 100%;
     background-color: #ffffff;
-    height: 2rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +41,7 @@ body {
 .hw_maker {
     width: 100%;
     background-color: #FFD1D0;
-    height: 2rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,9 +59,9 @@ body {
 
 .hw_card {
     flex: 0 0 90%;
-    height: 84%;
+    height: 82%;
     margin: 0 20%; /* 좌우에 20%의 공백을 설정하여 화면 중앙에 배치 */
-    margin-top: 6rem;
+    margin-top: 6.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,7 +69,7 @@ body {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 1.5rem;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s ease;
@@ -77,11 +77,17 @@ body {
     scroll-snap-align: center; /* 스크롤 시 카드가 화면의 중앙에 위치하도록 설정 */
 }
 
+.red{
+    border: red solid 1px;
+}
 
+.yellow{
+    border: yellow solid 1px;
+}
 
 .card-inner {
     width: 100%;
-    height: 32%; /* 카드 내부 요소를 세로로 3개 배치 */
+    height: 33%; /* 카드 내부 요소를 세로로 3개 배치 */
     background-color: white;
     position: relative;
     transform-style: preserve-3d; /* 3D 변환을 위한 설정 */
@@ -131,11 +137,11 @@ body {
 
 .slider-indicators {
     position: fixed;
-    bottom: 10px;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 4rem;
 }
 
 .indicator {
