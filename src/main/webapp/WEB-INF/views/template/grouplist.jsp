@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>会リスト</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/template/grouplist.css">
-    <script src="${pageContext.request.contextPath}/resources/js/template/grouplist.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/template/grouplist.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -22,21 +22,15 @@
 
         <div class="card-inner">
             <div class="card-front">
-                <div class="red">
-                    <div class="yellow">
-                        <div class="image-container">
-                            <img src="${pageContext.request.contextPath}/resources/img/Template1.jpg"
-                                 alt="Template ${status.index + 1}">
-                        </div>
-                    </div>
+                <div class="image-container">
+                    <img src="/resources/img/Template1.jpg" alt="Template 1">
+
                 </div>
             </div>
             <div class="card-back">
                 <div>✿${g.m_fam_kanji} ${g.m_name_kanji}✿</div>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
-
-
             </div>
         </div>
 
@@ -52,6 +46,5 @@
     <span class="indicator"></span>
     <span class="indicator"></span>
 </div>
-
 </body>
 </html>
