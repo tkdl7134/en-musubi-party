@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>招待状プレビュー2</title>
+    <title>招待状プレビュー</title>
     <!-- Noto Serif Japanese 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,6 +13,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/resources/css/product/invitation_preview.css" />
     <link rel="stylesheet" href="/resources/css/product/invitation.css" />
+    <link rel="stylesheet" href="/resources/css/product/sakura.min.css" />
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&callback=initMap"></script>
@@ -20,22 +21,20 @@
 </head>
 <body>
 <!-- header -->
-<div class="je_menu-bar">
-    <div id="je_logo">
-        <img src="/resources/img/en-musubi-logo.png" alt="" />
-    </div>
+<div class="je_menu-header">
+    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
 <!-- content -->
 <div id="je_invitation-preview-container">
-    <div class="je_page-title">
-        <div class="je_page-title-txt">プレビュー</div>
-        <div class="je_page-title-line">
-            <img src="/resources/img/page-title-line.png" alt="" />
-        </div>
-    </div>
+    <div class="je_page-title">プレビュー</div>
     <div class="je_page-content">
 
         <div class="je_invitation-container">
+            <audio controls>
+                <source src="" type="audio/mpeg">
+            </audio>
             <div class="je_invitation-main"
                  style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),
                         url('https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${weddingInfo.w_img1}?alt=media')">
@@ -56,7 +55,7 @@
                     <div class="je_intro-msg">ご挨拶申し上げます</div>
                 </div>
                 <div class="je_musubi-line">
-                    <img src="./img/red-line-musubi.png" alt="" srcset="" />
+                    <img src="/resources/img/red-line-musubi.png" alt="" srcset="" />
                 </div>
                 <div class="je_message-txt">
                     ${weddingInfo.w_message_invite}
@@ -65,7 +64,7 @@
 
             <div class="je_invitation-couple-info">
                 <div class="je_red-line-BG">
-                    <img src="./img/red-line-background.png" alt="" />
+                    <img src="/resources/img/red-line-background.png" alt="" />
                 </div>
                 <div>
                     <div class="je_groom">
@@ -113,7 +112,7 @@
                 <div class="je_information-box">
                     <div class="je_information-wedding">
                         拳式
-                        <img src="./img/Bird.png" alt="" />
+                        <img src="/resources/img/Bird.png" alt="" />
                     </div>
                     <div class="je_wedding-datetime">
                         <p>${weddingInfo.w_date}</p>
@@ -133,7 +132,7 @@
                 <div class="je_information-box">
                     <div class="je_information-reception">
                         披露宴
-                        <img src="./img/Bird.png" alt="" />
+                        <img src="/resources/img//Bird.png" alt="" />
                     </div>
                     <div class="je_reception-datetime">
                         <p>${weddingInfo.w_date}</p>
@@ -161,19 +160,35 @@
                     <c:forEach var="s" items="${ShareImg}">
                         <li><img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${s}?alt=media" alt="" /></li>
                     </c:forEach>
+                    <div class="je_list-back">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </div>
                 </ul>
             </div>
             <div class="je_message-txt2">
                 ${weddingInfo.w_message_bye}
                 <div>✿✿✿</div>
-                <div><img src="./img/red-line-musubi.png" alt="" srcset="" /></div>
+                <div><img src="/resources/img/red-line-musubi.png" alt="" srcset="" /></div>
             </div>
         </div>
 
         <div class="je_buttons">
             <button onclick="">修整</button>
             <button onclick="location.href='/${weddingInfo.e_no}/wishlist-setting'">ウィッシュ設定</button>
-
         </div>
+    </div>
+</div>
+<script src="/resources/js/product/sakura.min.js"></script>
+<script>
+    var sakura = new Sakura(".je_invitation-main");
+</script>
 </body>
 </html>

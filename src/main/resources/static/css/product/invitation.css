@@ -10,7 +10,7 @@
     background-color: #fffbf7;
     width: 100vw;
     padding-bottom: 3rem;
-    background-image: url("./img/Paper_BG.png");
+    background-image: url('/resources/img/Paper_BG.png');
 }
 /* MAIN */
 .je_invitation-main {
@@ -19,6 +19,7 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 .je_main-title {
@@ -43,16 +44,18 @@
     font-weight: 900;
     padding: 2rem 0;
     letter-spacing: 0.1rem;
+    text-transform: capitalize;
 }
 .je_main-day {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.1rem;
+    padding-bottom: 7rem;
 }
 
 /* introduce & message */
 .je_invitation-message {
-    background-image: url("./img/Red\ Line\ BG-retouch.png");
+    background-image: url('/resources/img/Red\ Line\ BG-retouch.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: -3rem;
@@ -91,7 +94,7 @@
 
 /* 신랑신부 정보 */
 .je_invitation-couple-info {
-    background-image: url("./img/Paper_BG.png");
+    background-image: url('/resources/img/Paper_BG.png');
     background-size: cover;
     padding: 5rem 3.5rem 1rem 3.5rem;
     position: relative;
@@ -289,6 +292,7 @@
 /* share-image */
 .je_share-photos {
     width: 100%;
+    height: 50rem;
     background-color: #ffffff;
 }
 
@@ -315,6 +319,7 @@
 #je_share-photos-list {
     display: flex;
     justify-content: center;
+    position: relative;
     padding: 2rem 0;
     flex-wrap: wrap;
     width: 100%;
@@ -324,9 +329,23 @@
     display: inline-block;
     width: 6rem;
     height: 6rem;
-
     background-color: #ffc8c8;
     border-radius: 5px;
+    z-index: 1;
+}
+.je_list-back{
+    position: absolute;
+    top: 1.7rem;
+    left: 2rem;
+
+    li{
+        display: inline-block;
+        width: 6rem;
+        height: 6rem;
+        background-color: #ffc8c8;
+        border-radius: 5px;
+        margin: .3rem;
+    }
 }
 
 #je_share-photos-list > li > img {
@@ -383,5 +402,29 @@
 @media (min-width: 769px) {
     .je_invitation-container {
         width: 30vw;
+        margin: 0 auto;
+    }
+
+    .je_invitation-message{
+        margin-top: -3.5rem;
+    }
+
+    #je_view-photo{
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .je_share-photos{
+        height: 73rem;
+    }
+
+    #je_share-photos-list > li {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .je_list-back > li {
+        width: 10rem;
+        height: 10rem;
     }
 }
