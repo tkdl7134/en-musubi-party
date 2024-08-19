@@ -1,29 +1,38 @@
 .kh-f-card-container {
-	height: 30rem;
+	height: 100rem;
 	display: flex;
 	align-self: center;
 	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
 	overflow-x: scroll;
-	gap: 5rem;
+	gap: 1rem;
 }
 
 .kh-f-card-container::-webkit-scrollbar {
 	display: none;
 }
 
+.kh-fund-card-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .kh-fund-card {
 	padding: 20px 10px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	justify-content: center;
+	align-items: initial;
+	/* text-align: center; */
 	flex-shrink: 0;
 	gap: 2rem;
 	width: 20rem;
-	height: 26rem;
-	scale: 87%;
-	border-radius: 50%/30%;
+	height: 80rem;
+	/* scale: 87%; */
+	/* border-radius: 50% / 30%; */
 	border: 2px solid #ff0000;
 	box-shadow: inset 0 0 8px #FFD600;
 }

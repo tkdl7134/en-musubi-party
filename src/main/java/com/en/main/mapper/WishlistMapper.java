@@ -11,11 +11,18 @@ import java.util.List;
 @Mapper
 public interface WishlistMapper {
 
-    @Select("select wl.wl_no, wl.wl_price, wl.wl_product, wl.e_no, COALESCE(SUM(p.p_price), 0) " +
-            "AS payed FROM s_wishlist wl " +
-            "LEFT JOIN pay p ON wl.wl_no = p.wl_no AND p_type = 'fund' " +
-            "WHERE wl.e_no = #{e_no} " +
-            "GROUP BY wl.wl_no, wl.wl_price, wl.wl_product, wl.e_no")
+    @Select("WITH wish_fund AS (SELECT wl_no, " +
+            "                          wl_price," +
+            "                          wl_product," +
+            "                          e_no," +
+            "                          (SELECT SUM(p_price) FROM pay sp WHERE p_type = 'fund' AND wl_no = sw.wl_no) AS payed," +
+            "                          FLOOR((SELECT SUM(p_price) FROM pay sp WHERE p_type = 'fund' AND wl_no = sw.wl_no) / " +
+            "                                wl_price * 100)                                                        AS percent " +
+            "                   FROM wishlist sw " +
+            "                   WHERE e_no = #{e_no}) " +
+            "SELECT wl_no, wl_price, wl_product, e_no, payed, COALESCE(percent, 0) AS percent " +
+            "FROM wish_fund " +
+            "ORDER BY percent DESC")
     List<WishlistVO> getWishlistWIthPayment(int e_no);
 
     @Select("select * from s_pay where m_id = #{m_id} AND e_no = #{e_no}")

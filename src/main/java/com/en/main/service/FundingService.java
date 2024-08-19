@@ -17,13 +17,6 @@ public class FundingService {
     public List<WishlistVO> getFundList(int e_no) {
         // 1. 기본 데이터 조회
         List<WishlistVO> wishlist = wishlistMapper.getWishlistWIthPayment(e_no);
-
-        // 2. 퍼센트 계산
-        for (WishlistVO wish : wishlist) {
-            int percent = (int) ((double)wish.getPayed() / wish.getWl_price() * 100);
-            // 필요한 경우 percent를 VO에 추가하거나 바로 처리
-            wish.setPercent(percent); // 이 필드를 사용하지 않는다면 생략 가능
-        }
         return wishlist;
 
     }

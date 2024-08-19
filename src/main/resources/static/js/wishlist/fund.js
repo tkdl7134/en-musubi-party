@@ -1,26 +1,29 @@
-let eventno = 1;
+let eventno = 5;
 let scrollTimeout;
 let isMouseOverCard;
 let jsoninfos;
 //카드 초기배치
 $.ajax({
 	type: "post",
-	url: "FundC",
+	url: "/wishlist/funding",
 	data: { eno: eventno },
 	async: false,
 	dataType: "json",
 	success: function(response) {
 		jsoninfos = response;
+		console.log(jsoninfos)
 		response.forEach((element, index) => {
 			eventno = element.e_no;
 			$(".kh-f-card-container").append(`
 				<div class="kh-f-card-out">
 					<div class="kh-fund-card" value="${element.wl_no}">
-						<div style="height: 18rem">
-							<img style="height: 100%" alt="noImg" src="finance/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='finance/img/プレゼント.png';"/>
-						</div>
-						<div>
-							<h1 style="margin:0">${element.wl_product}</h1>
+						<div class="kh-fund-card-box">
+							<div style="height: 18rem">
+								<img style="height: 100%" alt="noImg" src="/resources/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/resources/img/パソコン.png';"/>
+							</div>
+							<div>
+								<h1 style="margin:0">${element.wl_product}</h1>
+							</div>
 						</div>
 					</div>
 				</div>`);
@@ -61,7 +64,7 @@ $.ajax({
 						otherCard.style.filter = "grayscale(100%)";
 					}
 					document.querySelector(".kh-f-mousemove > img").src =
-						"finance/img/viewbtn.png";
+						"/resources/img/viewbtn.png";
 					mouseicn.classList.remove("kh-f-none");
 					mouseicn.classList.add("kh-f-block");
 				});
@@ -90,14 +93,16 @@ $.ajax({
 				}
 				event.stopPropagation();
 			});
+
 			element.addEventListener("click", function(event) {
 				let cardParent = event.target.closest(".kh-fund-card");
 				element.classList.add("kh-f-rotate");
 				if (cardParent) {
 					let wlno = event.target.closest(".kh-fund-card").getAttribute("value");
 					let selectobj = jsoninfos.find(function(element) {
-						return element.wl_no === wlno;
+						return element.wl_no == wlno;
 					});
+					console.log(selectobj)
 					if (selectobj.percent === undefined) {
 						percent = 0;
 					}
@@ -107,10 +112,10 @@ $.ajax({
 					document.querySelector("#kh-f-price").innerHTML = percent;
 					document.querySelector("#kh-f-product").innerHTML = selectobj.wl_product;
 					document.querySelector(".kh-f-btn").setAttribute("value", selectobj.wl_no);
-					document.querySelector("#kh-f-img").src = "finance/img/" + selectobj.wl_product + ".png";
+					document.querySelector("#kh-f-img").src = "/resources/img/" + selectobj.wl_product + ".png";
 					openModal()
 					document.querySelector(".kh-f-mousemove > img").src =
-						"finance/img/backbtn.png";
+						"/resources/img/backbtn.png";
 					fpop.classList.add("kh-f-rotate");
 				}
 				scrollTimeout = setTimeout(() => {
@@ -157,7 +162,7 @@ $.ajax({
 		cardCon.addEventListener("mouseover", function(event) {
 			if (event.target === cardCon) {
 				document.querySelector(".kh-f-mousemove > img").src =
-					"finance/img/dragbtn.png";
+					"/resources/img/dragbtn.png";
 			}
 			cardCon.style.cursor = "none";
 			mouseicn.classList.remove("kh-f-none");
@@ -286,7 +291,7 @@ function goStatistic(wlno) {
 					let doms = `
 				<div class="kh-f-statistic-content">
 					<div class="kh-f-statistic-name">
-						<div class="kh-f-none"><span>私の選択</span><img alt="noImg" src="finance/img/flash.png"> </div>
+						<div class="kh-f-none"><span>私の選択</span><img alt="noImg" src="resources/img/flash.png"> </div>
 						<h1>${element.wl_product}</h1>
 					</div>
 					<div class="kh-f-statistic-bar">
@@ -295,7 +300,7 @@ function goStatistic(wlno) {
 						</div>
 					</div>
 					<div class="kh-f-statistic-percent" >
-						<img class="kh-f-none" alt="noImg" src="finance/img/threehearts.png">
+						<img class="kh-f-none" alt="noImg" src="resources/img/threehearts.png">
 						<h1><span data-value="${element.percent}">10</span>％ 達成</h1>
 					</div>
 				</div>

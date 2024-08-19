@@ -2,16 +2,19 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html style="zoom : 100% !important;" lang="en">
 <link rel="stylesheet" type="text/css" href="/resources/css/wishlist/fund.css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="/resources/js/wishlist/fund.js" defer></script>
-
+${fundingList}
+<header>
+	<div></div>
+</header>
 <div class="kh-f-card-container">
 	<div class="kh-f-mousemove kh-f-none">
-		<img alt="" src="resources/img/dragbtn.png">
+		<img alt="" src="/resources/img/dragbtn.png">
 	</div>
 	<div class="kh-f-card-fake"></div>
 	<!-- <div class="kh-f-card-out">
@@ -27,12 +30,11 @@
 	</div> -->
 </div>
 
-
 <dialog id="modal" class="modal">
 <div class="kh-f-popup">
 	<div class="kh-f-popup-in">
 		<div class="kh-f-img-box">
-			<img alt="noImg" style="height: 100%" id="kh-f-img"  src="" onerror="this.onerror=null; this.src='resources/img/プレゼント.png';"/>
+			<img alt="noImg" style="height: 100%" id="kh-f-img"  src="" onerror="this.onerror=null; this.src='/resources/img/パソコン.png';"/>
 		</div>
 		<div class="kh-f-product-des">
 			<h3>
@@ -48,7 +50,7 @@
 			<div style="font-size: 2rem" id="kh-input-box">
 				<input class="kh-f-input" type="text" maxlength="8"
 					oninput="numberMaxLength(this)" onclick="removeWarn()" />円 <img
-					alt="" src="resources/img/money.png">
+					alt="" src="/resources/img/money.png">
 			</div>
 			<span id="kh-warn-text"
 				style="color: red; position: absolute; bottom: -20px"
@@ -68,11 +70,11 @@
 	<div class="kh-f-statistic-pop-in">
 		<div class="kh-f-statistic-title">
 			<div>
-				<img alt="" src="resources/img/crown.png">
+				<img alt="" src="/resources/img/crown.png">
 			</div>
 			<h1>ファンディングランキング</h1>
 			<div>
-				<img alt="" src="resources/img/crown.png">
+				<img alt="" src="/resources/img/crown.png">
 			</div>
 		</div>
 		<div class="kh-f-statistic-conCon">
