@@ -64,20 +64,25 @@ textarea{
 }
 
 /* 메뉴 - 헤더 */
-.je_menu-bar {
+.je_menu-header {
     width: 100%;
-    height: 3rem;
-    background-color: #ffd1d0;
+    height: 3.125rem;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 7.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2e2e2e;
 }
 
-#je_logo {
-    width: 2rem;
-}
-#je_logo img {
-    width: 100%;
+.je_logo-icon,
+.je_menu-icon {
+    width: 1.8rem;
+    img {
+        width: 100%;
+    }
 }
 
 #je_product-make-container {
@@ -86,23 +91,16 @@ textarea{
 
 /* 타이틀 */
 .je_page-title {
-    /* background-color: aquamarine; */
-    margin-top: 1rem;
-}
-
-.je_page-title-txt,
-.je_page-title-line {
+    width: 100%;
+    height: 2.5rem;
     display: flex;
     justify-content: center;
-}
-
-.je_page-title-txt {
-    font-size: 1rem;
+    align-items: center;
+    background-color: #ffdbdb;
+    text-align: center;
+    font-size: 14px;
     font-weight: 900;
-}
-
-.je_page-title-line > img {
-    width: 10rem;
+    color: #ff494c;
 }
 
 /* content */
@@ -163,7 +161,7 @@ textarea{
 
 .je_box-content {
     margin-top: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 
 .je_content-title {
@@ -502,7 +500,9 @@ input:-ms-input-placeholder {
 #je_photoOut2 img,
 #je_photoOut3 img,
 #je_photoOut4 img {
-    width: 70%;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
 }
 
 /* photo - 공유 */

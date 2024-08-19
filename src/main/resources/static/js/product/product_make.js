@@ -44,62 +44,6 @@ document
     });
 
 
-/*------------------------------------------------------*/
-// 첨부파일 리스트 보여주기
-const share_photo = document.querySelector("input[name='w_img_share_files']");
-
-function addFile(obj) {
-    var files = obj.files;
-    var htmlData = "";
-    var curFileCnt = files.length;
-
-    // 첨부파일 개수 확인
-    if (9 < curFileCnt) {
-        alert("共有写真は最大9枚まで添付できます。");
-        share_photo.value = "";
-        return false;
-    }
-
-    for (var i = 0; i < files.length; i++) {
-        const file = files[i];
-
-        // 첨부파일 검증
-        if (validChk(file)) {
-            htmlData += '<div id="je_file' + i + '" class="je_filebox">';
-            htmlData += '   <p class="je_file-name">' + file.name + "</p>";
-            // htmlData +=
-            //   '   <a class="je_file-delete" onclick="deleteFile(' + i + ');">⌫</a>';
-            htmlData += "</div>";
-        } else {
-            share_photo.value = "";
-            return false;
-        }
-    }
-
-    document.querySelector(".je_photo-list").innerHTML = htmlData;
-}
-
-// 유효성 검사
-function validChk(obj) {
-    const fileTypes = ["image/gif", "image/jpeg", "image/jpg", "image/png"];
-    if (obj.name.length > 50) {
-        alert("ファイル名が50文字以上のものは除外されました。");
-        return false;
-    } else if (obj.size > 10 * 1024 * 1024) {
-        alert("最大ファイル容量の 10MB を超えたものは除外されました。");
-        return false;
-    } else if (obj.name.lastIndexOf(".") == -1) {
-        alert("拡張子のないファイルは除外されました。");
-        return false;
-    } else if (!fileTypes.includes(obj.type)) {
-        alert("添付できないファイルは除外されました。");
-        return false;
-    } else {
-        return true;
-    }
-}
-
-
 /*-----------------------------------------------------------------------------------------*/
 // MODAL 창
 
@@ -308,3 +252,59 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+/*------------------------------------------------------*/
+// 첨부파일 리스트 보여주기
+const share_photo = document.querySelector("input[name='w_img_share_files']");
+
+function addFile(obj) {
+    var files = obj.files;
+    var htmlData = "";
+    var curFileCnt = files.length;
+
+    // 첨부파일 개수 확인
+    if (9 < curFileCnt) {
+        alert("共有写真は最大9枚まで添付できます。");
+        share_photo.value = "";
+        return false;
+    }
+
+    for (var i = 0; i < files.length; i++) {
+        const file = files[i];
+
+        // 첨부파일 검증
+        if (validChk(file)) {
+            htmlData += '<div id="je_file' + i + '" class="je_filebox">';
+            htmlData += '   <p class="je_file-name">' + file.name + "</p>";
+            // htmlData +=
+            //   '   <a class="je_file-delete" onclick="deleteFile(' + i + ');">⌫</a>';
+            htmlData += "</div>";
+        } else {
+            share_photo.value = "";
+            return false;
+        }
+    }
+
+    document.querySelector(".je_photo-list").innerHTML = htmlData;
+}
+
+// 유효성 검사
+function validChk(obj) {
+    const fileTypes = ["image/gif", "image/jpeg", "image/jpg", "image/png"];
+    if (obj.name.length > 50) {
+        alert("ファイル名が50文字以上のものは除外されました。");
+        return false;
+    } else if (obj.size > 10 * 1024 * 1024) {
+        alert("最大ファイル容量の 10MB を超えたものは除外されました。");
+        return false;
+    } else if (obj.name.lastIndexOf(".") == -1) {
+        alert("拡張子のないファイルは除外されました。");
+        return false;
+    } else if (!fileTypes.includes(obj.type)) {
+        alert("添付できないファイルは除外されました。");
+        return false;
+    } else {
+        return true;
+    }
+}

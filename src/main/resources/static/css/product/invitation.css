@@ -137,33 +137,36 @@
     z-index: 0;
 }
 
-.je_photo-box > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.je_groom-photo-box > .je_photo-box {
+.je_photo-box{
     width: 13rem;
     height: 13rem;
     position: absolute;
+    border-radius: 0.4rem;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.je_groom-photo-box > .je_photo-box {
     top: -0.5rem;
     left: -2rem;
     background-color: rgba(236, 0, 0, 0.1);
     border: 1px solid rgba(236, 0, 0, 1);
-    border-radius: 0.4rem;
-    z-index: 1;
 }
 .je_bride-photo-box > .je_photo-box {
-    width: 13rem;
-    height: 13rem;
-    position: absolute;
     top: -0.5rem;
     right: -2rem;
     background-color: rgba(255, 204, 0, 0.1);
     border: 1px solid rgba(255, 204, 0, 1);
-    border-radius: 0.4rem;
-    z-index: 1;
+
+}
+
+.je_photo-box > img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
 }
 
 .je_photo-box-title {

@@ -25,25 +25,22 @@
     <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
     <script src="/resources/js/product/slick-slide.js"></script>
     <script src="/resources/js/product/datepicker.js" defer></script>
+    <script src="/resources/js/product/product_make.js" defer></script>
     <script src="/resources/js/je_validChk/validChk.js" defer></script>
     <script src="/resources/js/je_validChk/product_make_validChk.js" defer></script>
-    <script src="/resources/js/product/product_make.js" defer></script>
 </head>
-
 <body>
 <!-- header -->
-<div class="je_menu-bar">
-    <div id="je_logo">
-        <img src="/resources/img/en-musubi-logo.png" alt=""/>
-    </div>
+<div class="je_menu-header">
+    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
 <!-- content -->
 <form action="/product/invitation-preview" method="post" enctype="multipart/form-data" onsubmit="return emptyChk()">
     <input type="hidden" name="t_pk" value="${t_pk}">
     <div id="je_product-make-container">
-        <div class="je_page-title">
-            <div class="je_page-title-txt">制作</div>
-        </div>
+        <div class="je_page-title">招待状 プレビュー</div>
         <div id="je_product-make-slider">
             <!-- 신랑신부 및 일정 -->
             <div class="je_page-content">

@@ -18,18 +18,15 @@
     <script src="/resources/js/product/product_preview.js"></script>
 </head>
 <body>
-<div class="je_menu-bar">
-    <div id="je_logo">
-        <img src="/resources/img/en-musubi-logo.png" alt="" />
-    </div>
+<!-- header -->
+<div class="je_menu-header">
+    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
+</div>
 </div>
 <div id="je_product-preview-container">
-    <div class="je_page-title">
-        <div class="je_page-title-txt">プレビュー</div>
-        <div class="je_page-title-line">
-            <img src="/resources/img/page-title-line.png" alt="" />
-        </div>
-    </div>
+    <div class="je_page-title">プレビュー</div>
     <div class="je_page-content">
         <div class="je_preview-container">
             <div class="je_preview">

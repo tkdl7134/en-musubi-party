@@ -20,16 +20,14 @@
     <script src="/resources/js/product/swiper-slide-center.js"></script>
 </head>
 <body>
-<div class="je_menu-bar">
-    <div id="je_logo"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+<!-- header -->
+<div class="je_menu-header">
+    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
 <div id="je_product-container">
-    <div class="je_page-title">
-        <div class="je_page-title-txt">テンプレート一覧</div>
-        <div class="je_page-title-line">
-            <img src="/resources/img/page-title-line.png" alt="" />
-        </div>
-    </div>
+    <div class="je_page-title">テンプレート一覧</div>
     <div class="je_page-content">
         <div class="slider">
             <div class="inner">
