@@ -548,20 +548,24 @@ $(document).ready(function () {
 
         // 필수 입력 필드 확인
         const requiredFields = [
-            {
-                selector: ".tk_survey-guestType input[name='g_guest_type']:checked",
-                errorMessage: "ゲスト様項目をチェックしてください"
-            },
+            // {
+            //     selector: ".tk_survey-guestType input[name='g_guest_type']:nth-of-type(1)",
+            //     errorMessage: "ゲスト様項目をチェックしてください"
+            // },
+            // {
+            //     selector: ".tk_survey-guestType input[name='g_guest_type']:nth-of-type(2)",
+            //     errorMessage: "ゲスト様項目をチェックしてください"
+            // },
             {selector: ".tk_justName input[name='m_fam_kanji']", errorMessage: "お名前項目を入力してください"},
             {selector: ".tk_justName input[name='m_name_kanji']", errorMessage: "お名前項目を入力してください"},
             {selector: ".tk_kataName input[name='m_fam_kana']", errorMessage: "カタカナ項目を入力してください"},
             {selector: ".tk_kataName input[name='m_name_kana']", errorMessage: "カタカナ項目を入力してください"},
             {selector: ".tk_romeName input[name='m_fam_eng']", errorMessage: "ローマ字項目を入力してください"},
             {selector: ".tk_romeName input[name='m_name_eng']", errorMessage: "ローマ字項目を入力してください"},
-            {
-                selector: ".tk_survey-gender input[name='m_gender']:checked",
-                errorMessage: "性別項目をチェックしてください"
-            },
+            // {
+            //     selector: ".tk_survey-gender input[name='m_gender']:checked",
+            //     errorMessage: "性別項目をチェックしてください"
+            // },
             {selector: ".tk_address input[name='m_zipcode']", errorMessage: "住所項目を入力してください"},
             {selector: ".tk_address input[name='m_address']", errorMessage: "住所項目を入力してください"},
             {selector: ".tk_survey-email input[name='m_email']", errorMessage: "メールアドレス項目を入力してください"},
@@ -575,20 +579,61 @@ $(document).ready(function () {
                 errorMessage: "アフターパーティー 選択してください"
             }
         ];
+        const guestTypeCheckboxes = $(".tk_survey-guestType input[name='g_guest_type']");
+        const genderTypeCheckboxes = $(".tk_survey-gender input[name='m_gender']");
+        let isGuestTypeChecked = guestTypeCheckboxes.is(":checked");
+        let isGenderType = genderTypeCheckboxes.is(":checked");
 
-        for (let i = 0; i < requiredFields.length; i++) {
-            const field = requiredFields[i];
-            const element = $(field.selector).get(0);
+        if (!isGuestTypeChecked) {
+            alert("ゲスト様項目をチェックしてください");
+            focusOnField(".tk_survey-guestType input[name='g_guest_type']:first");
+            allValid = false;
+        }else if(!isGenderType){
+            alert("性別項目をチェックしてください");
+            console.log(genderTypeCheckboxes[0])
+            console.log($(genderTypeCheckboxes).offset());
+            focusOnField(".tk_survey-gender");
+            allValid = false;
+        }  else {
 
-            if (!element || (element.tagName === "INPUT" || element.tagName === "SELECT") && (!element.value || !element.value.trim())) {
-                allValid = false;
-                alert(field.errorMessage);
 
-                focusOnField(field.selector);
-                break;
+            for (let i = 0; i < requiredFields.length; i++) {
+                const field = requiredFields[i];
+                const element = $(field.selector).get(0);
+
+                if (!element || (element.tagName === "INPUT" || element.tagName === "SELECT") && (!element.value || !element.value.trim())) {
+                    allValid = false;
+                    alert(field.errorMessage);
+
+                    focusOnField(field.selector);
+                    break;
+                }
             }
         }
+        let isValid = true;
+        let firstInvalidInput = null;
 
+        // 모든 입력 필드 검사
+        document.querySelectorAll('input').forEach(function(inputElement) {
+            const existingError = inputElement.parentNode.querySelector('.error-message');
+            console.log(existingError)
+            if (existingError) {
+                isValid = false;
+                if (!firstInvalidInput) {
+                    firstInvalidInput = existingError;
+                }
+            }
+        });
+
+        // 유효하지 않은 필드가 있으면 해당 필드로 스크롤 이동
+        if (!isValid) {
+            console.log("유효성 검사 실패 - 제출이 막힘");
+            console.log(firstInvalidInput);
+            focusOnField(firstInvalidInput);
+            firstInvalidInput.focus();
+            firstInvalidInput.scrollIntoView({ behavior: 'smooth' });
+            return;
+        }
         if (allValid) {
             console.log("모든 필드가 유효합니다. 폼을 제출합니다.");
             $("form").off("submit").submit();  // 여기서 off()로 이벤트 리스너를 제거하고 폼 제출
@@ -602,11 +647,12 @@ $(document).ready(function () {
         if (!element) {
             return;
         }
-
+        console.log(element)
         const elementOffset = element.offset().top;
+        console.log(elementOffset)
 
         $('html, body').animate({
-            scrollTop: elementOffset - 60
+            scrollTop: elementOffset-60
         }, 500, function() {
             element.focus();
         });
@@ -661,9 +707,8 @@ function updateRelationOptions() {
 
 document.addEventListener('DOMContentLoaded', function () {
     // 허용되지 않은 문자를 입력할 수 없도록 하는 함수
-    function preventInvalidInput(event, allowedChars, maxLength) {
+    function preventInvalidInput(event, allowedChars, maxLength, errorMessage) {
         const input = event.target;
-        const inputValue = input.value + event.data;
 
         // 글자 수 제한 체크
         if (input.value.length >= maxLength) {
@@ -673,14 +718,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // 허용된 문자만 입력
-        if (!allowedChars.test(event.data)) {
+        const inputValue = event.data || '';  // event.data가 null일 경우 빈 문자열로 대체
+        if (inputValue && !allowedChars.test(inputValue)) {
             event.preventDefault();
-            showErrorMessage(input, "허용되지 않은 문자를 입력할 수 없습니다。");
+            showErrorMessage(input, errorMessage);
         } else {
             clearErrorMessage(input);
         }
     }
-
     // 오류 메시지를 표시하는 함수
     function showErrorMessage(input, message) {
         const existingError = input.parentNode.querySelector('.error-message');
@@ -707,40 +752,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // 폼 제출 시 유효성 검사
-    function validateForm(event) {
-        event.preventDefault(); // 폼 제출 무조건 막기
-        console.log("폼 제출이 시도됨");
-
-        let isValid = true;
-        let firstInvalidInput = null;
-
-        // 모든 입력 필드 검사
-        document.querySelectorAll('input').forEach(function(inputElement) {
-            const existingError = inputElement.parentNode.querySelector('.error-message');
-            if (existingError) {
-                isValid = false;
-                if (!firstInvalidInput) {
-                    firstInvalidInput = inputElement;
-                }
-            }
-        });
-
-        // 유효하지 않은 필드가 있으면 해당 필드로 스크롤 이동
-        if (!isValid) {
-            console.log("유효성 검사 실패 - 제출이 막힘");
-            firstInvalidInput.focus();
-            firstInvalidInput.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            console.log("유효성 검사 통과 - 폼 제출");
-            // 여기에 form.submit()을 호출하지 않으므로 제출되지 않음
-        }
-    }
-
     // 각 입력 필드에 이벤트 리스너 추가
     const kanjiInputs = [
-        document.getElementById('kanji-fam'),
-        document.getElementById('kanji-name'),
         document.getElementById('kana-fam'),
         document.getElementById('kana-name')
     ];
@@ -753,47 +766,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.getElementById('g_relation_other')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, 30);
+    const fields = [
+        { id: 'g_relation_other', regex: /./, maxLength: 30},
+        { id: 'eng-fam', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
+        { id: 'eng-name', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
+        { id: 'email', regex: /[a-zA-Z0-9@.]/, maxLength: 50, errorMessage: "メールアドレス形式で入力してください。" },
+        { id: 'phoneNum', regex: /[0-9\-]/, maxLength: 20, errorMessage: "数字のみ入力可能です。" },
+        { id: 'zipcode', regex: /[0-9\-]/, maxLength: 10, errorMessage: "郵便番号形式で入力してください。" },
+        { id: 'address', regex: /./, maxLength: 100},
+        { id: 'otherAllergy', regex: /./, maxLength: 100},
+        { id: 'allergyDetail', regex: /./, maxLength: 100},
+        { id: 'messageContent', regex: /./, maxLength: 300},
+        { id: 'kana-fam', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" },
+        { id: 'kana-name', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" }
+    ];
+
+    fields.forEach(function (field) {
+        const inputElement = document.getElementById(field.id);
+        if (inputElement) {
+            inputElement.addEventListener('beforeinput', function (event) {
+                preventInvalidInput(event, field.regex, field.maxLength, field.errorMessage);
+            });
+        }
     });
 
-    document.getElementById('eng-fam')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /[a-zA-Z\s]/, 50);
-    });
-
-    document.getElementById('eng-name')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /[a-zA-Z\s]/, 50);
-    });
-
-    document.getElementById('email')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /[a-zA-Z0-9@.]/, 50);
-    });
-
-    document.getElementById('phoneNum')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /[0-9\-]/, 20);
-    });
-
-    document.getElementById('zipcode')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /[0-9\-]/, 10);
-    });
-
-    document.getElementById('address')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /./, 100);
-    });
-
-    document.getElementById('otherAllergy')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /./, 100);
-    });
-
-    document.getElementById('allergyDetail')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /./, 100);
-    });
-
-    document.getElementById('messageContent')?.addEventListener('beforeinput', function (event) {
-        preventInvalidInput(event, /./, 300);
-    });
-
-    // 폼 제출 이벤트 리스너 추가
-    const form = document.querySelector('form');
-    form.addEventListener('submit', validateForm);
+    // // 폼 제출 이벤트 리스너 추가
+    // const form = document.querySelector('form');
+    // form.addEventListener('submit', validateForm);
 });
