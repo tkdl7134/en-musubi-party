@@ -8,6 +8,9 @@ $(document).ready(function () {
         speed: 300,
         slidesToShow: 1,
         adaptiveHeight: true,
+        draggable: false,
+        swipe: false,      // 터치 스와이프 비활성화
+        touchMove: false,  // 터치 이동 비활성화
 
         prevArrow: $("#je_prev-button"),
         nextArrow: $("#je_next-button"),

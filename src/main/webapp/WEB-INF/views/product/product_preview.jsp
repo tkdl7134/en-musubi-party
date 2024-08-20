@@ -6,28 +6,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>テンプレート プレビュー</title>
+    <!-- Noto Serif Japanese 폰트 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet"/>
+    <%--  CSS --%>
     <link rel="stylesheet" href="/resources/css/product/product_preview.css" />
-    <script
-            src="https://code.jquery.com/jquery-3.7.1.js"
-            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-            crossorigin="anonymous"
-    ></script>
+    <%--  JS --%>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script src="/resources/js/product/product_preview.js"></script>
 </head>
 <body>
-<div class="je_menu-bar">
-    <div id="je_logo">
-        <img src="/resources/img/en-musubi-logo.png" alt="" />
-    </div>
+<!-- header -->
+<div class="je_menu-header">
+    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
+</div>
 </div>
 <div id="je_product-preview-container">
-    <div class="je_page-title">
-        <div class="je_page-title-txt">プレビュー</div>
-        <div class="je_page-title-line">
-            <img src="/resources/img/page-title-line.png" alt="" />
-        </div>
-    </div>
+    <div class="je_page-title">プレビュー</div>
     <div class="je_page-content">
         <div class="je_preview-container">
             <div class="je_preview">
@@ -35,7 +34,8 @@
                     <img src="/resources/img/iphone-box.png" alt="" />
                     <div id="je_overlay">
                         <div class="je_overlay-txt">
-                            画像をスクロールすると、<br />
+                            1回タッチした後、 <br /> <br>
+                            画像をドラッグすると、<br />
                             詳しく見ることができます
                         </div>
                         <div class="scroll-downs">

@@ -74,3 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
     container.addEventListener("touchstart", hideOverlay);
     container.addEventListener("touchend", showOverlay);
 });
+
+
+// DRAG 이벤트

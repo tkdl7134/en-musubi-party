@@ -25,7 +25,7 @@ public class ProductController {
     public String product(Model model) {
         System.out.println(productService.getAllTemplates());
         model.addAttribute("templates", productService.getAllTemplates());
-        return "product/product";
+        return "product/product_main";
     }
 
     @GetMapping("/{t_pk}")
