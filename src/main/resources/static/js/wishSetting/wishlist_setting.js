@@ -1,6 +1,32 @@
 // 각 버튼 체크 시, 추가 요소
+const moneyChk = document.getElementById("je_money-switch");
+const moneyOk = document.getElementById("je_moneyOkMsg");
+const moneyNo = document.getElementById("je_moneyNoMsg");
+
+moneyChk.addEventListener("change", function () {
+    if (moneyChk.checked) {
+        moneyOKToast();
+    } else {
+        moneyNOToast();
+    }
+});
+
+function moneyOKToast() {
+    moneyOk.classList.add("show");
+    setTimeout(function () {
+        moneyOk.classList.remove("show");
+    }, 2000);
+}
+function moneyNOToast() {
+    moneyNo.classList.add("show");
+    setTimeout(function () {
+        moneyNo.classList.remove("show");
+    }, 2000);
+}
+
 const presentChk = document.getElementById("je_present-switch");
 const hiddenInput = document.getElementById("je_amazon-link");
+
 presentChk.addEventListener("change", function () {
     if (presentChk.checked) {
         hiddenInput.classList.add("show");
@@ -11,6 +37,7 @@ presentChk.addEventListener("change", function () {
 
 const fundingChk = document.getElementById("je_funding-switch");
 const hiddenBtn = document.getElementById("je_nextpage-button");
+
 fundingChk.addEventListener("change", function () {
     if (fundingChk.checked) {
         hiddenBtn.classList.add("show");
@@ -20,11 +47,12 @@ fundingChk.addEventListener("change", function () {
 });
 
 
+
 // AMAZON 입력창 관련
 const amazonInput = document.getElementById("amazonLink");
     if (amazonInput.value === "https://www.amazon.co.jp/"){
         amazonInput.value = "";
-        amazonInput.placeholder = "AMAZONのウィッシュリスト入力";
+        amazonInput.placeholder = "Amazon「ほしい物リスト」のURL";
     } else {
         amazonInput.placeholder = "";
 
