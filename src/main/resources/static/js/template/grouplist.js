@@ -18,33 +18,28 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    function handleButtonClick(buttonType) {
-        switch (buttonType) {
-            case 'テンプレート':
-                alert('テンプレート 버튼 클릭');
-                break;
-            case 'アンケート':
-                alert('アンケート 버튼 클릭');
-                break;
-            case '通計':
-                alert('通計 버튼 클릭');
-                break;
-            case 'line':
-                alert('line 버튼 클릭');
-                break;
-            default:
-                console.log('알 수 없는 버튼 클릭');
-        }
-    }
-
     const container = document.querySelector('.hw_container');
     const contents = document.querySelectorAll('.hw_content');
 
     let currentIndex = 0;
+    const itemsPerPage = 3;
+    let totalPages = Math.ceil(contents.length / itemsPerPage);
+
+    function showPage(index) {
+        // 모든 콘텐츠를 숨기고
+        contents.forEach(content => content.style.display = 'none');
+
+        // 현재 페이지에 해당하는 콘텐츠만 표시
+        const start = index * itemsPerPage;
+        const end = start + itemsPerPage;
+        for (let i = start; i < end && i < contents.length; i++) {
+            contents[i].style.display = 'block';
+        }
+    }
 
     function scrollToContent(index) {
-        if (index >= 0 && index < contents.length) {
-            contents[index].scrollIntoView({ behavior: 'smooth' });
+        if (index >= 0 && index < totalPages) {
+            showPage(index);
             currentIndex = index;
         }
     }
@@ -65,4 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             scrollToContent(currentIndex - 1);
         }
     });
+
+    // 초기 페이지를 0으로 설정하여 첫 페이지 콘텐츠를 보여줌
+    showPage(currentIndex);
 });
