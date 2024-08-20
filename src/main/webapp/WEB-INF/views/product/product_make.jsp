@@ -26,8 +26,8 @@
     <script src="/resources/js/product/slick-slide.js"></script>
     <script src="/resources/js/product/datepicker.js" defer></script>
     <script src="/resources/js/product/product_make.js" defer></script>
-    <script src="/resources/js/je_validChk/validChk.js" defer></script>
     <script src="/resources/js/je_validChk/product_make_validChk.js" defer></script>
+    <script src="/resources/js/je_validChk/validChk.js" defer></script>
 </head>
 <body>
 <!-- header -->
@@ -405,7 +405,6 @@
         <div class="je_modal-content">
             <div class="je_theme-buttons">
                 <div>ALL</div>
-                <!-- <button>BEST</button> -->
                 <div>季節</div>
                 <div>丁重な</div>
                 <div>ユーモラスな</div>
@@ -781,6 +780,39 @@
         </div>
     </div>
 </div>
+
+<%--alert--%>
+<div id="emptyWarning-msg">
+    未入力のフィールドがあります。<br />
+    入力してください。
+</div>
+
+<div id="typeWarning-msg">
+    添付するファイルは
+    <p>gif・jpg・png・jpeg</p>
+    形式にしてください。
+</div>
+
+<div id="jpWarning-msg">
+    このフィールドには<br>
+    <p>漢字、ひらがな、カタカナ</p>
+    入力してください。
+</div>
+
+<div id="engWarning-msg">
+    <p>英字のみ</p>入力してください。
+</div>
+
+<div id="filesWarning-msg">
+    ファイル名は<span>50文字</span>まで、<br>
+    ファイルサイズは<span>最大10MB</span>まで対応しています。
+</div>
+
+<div id="filesCntWarning-msg">
+    共有写真は <br>
+    <span>最大9枚まで</span> 添付できます。
+</div>
+
 
 </body>
 </html>

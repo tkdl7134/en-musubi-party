@@ -265,9 +265,8 @@ function addFile(obj) {
 
     // 첨부파일 개수 확인
     if (9 < curFileCnt) {
-        alert("共有写真は最大9枚まで添付できます。");
         share_photo.value = "";
-        return false;
+        return filesCntToastOn();
     }
 
     for (var i = 0; i < files.length; i++) {
@@ -293,18 +292,71 @@ function addFile(obj) {
 function validChk(obj) {
     const fileTypes = ["image/gif", "image/jpeg", "image/jpg", "image/png"];
     if (obj.name.length > 50) {
-        alert("ファイル名が50文字以上のものは除外されました。");
+        return filesToastOn();
         return false;
     } else if (obj.size > 10 * 1024 * 1024) {
-        alert("最大ファイル容量の 10MB を超えたものは除外されました。");
-        return false;
+        return filesToastOn();
     } else if (obj.name.lastIndexOf(".") == -1) {
-        alert("拡張子のないファイルは除外されました。");
-        return false;
+        return TypeToastOn();
     } else if (!fileTypes.includes(obj.type)) {
-        alert("添付できないファイルは除外されました。");
-        return false;
+        return TypeToastOn();
     } else {
         return true;
     }
 }
+
+
+
+const m_photo1 = document.querySelector("input[name='w_img1_file']");
+const m_photo2 = document.querySelector("input[name='w_img2_file']");
+const m_photo3 = document.querySelector("input[name='w_img3_file']");
+
+// 메인 사진 확장자 체크
+function photoType1(){
+    if (isNotType(m_photo1, "jpg") && isNotType(m_photo1, "png") && isNotType(m_photo1, "jpeg")) {
+        m_photo1.value = "";
+        return TypeToastOn();
+    }
+}
+function photoType2(){
+    if (isNotType(m_photo2, "jpg") && isNotType(m_photo2, "png") && isNotType(m_photo2, "jpeg")) {
+        m_photo2.value = "";
+        return TypeToastOn();
+    }
+}
+function photoType3(){
+    if (isNotType(m_photo3, "jpg") && isNotType(m_photo3, "png") && isNotType(m_photo3, "jpeg")) {
+        m_photo3.value = "";
+        return TypeToastOn();
+    }
+}
+
+
+// FILE - ALERT BUTTON
+var typeWarning = document.getElementById("typeWarning-msg");
+function TypeToastOn() {
+    typeWarning.classList.add("active");
+    setTimeout(function () {
+        typeWarning.classList.remove("active");
+    }, 3000);
+    return false;
+}
+
+var filesWarning = document.getElementById("filesWarning-msg");
+function filesToastOn() {
+    filesWarning.classList.add("active");
+    setTimeout(function () {
+        filesWarning.classList.remove("active");
+    }, 3000);
+    return false;
+}
+
+var filesCntWarning = document.getElementById("filesCntWarning-msg");
+function filesCntToastOn() {
+    filesCntWarning.classList.add("active");
+    setTimeout(function () {
+        filesCntWarning.classList.remove("active");
+    }, 3000);
+    return false;
+}
+
