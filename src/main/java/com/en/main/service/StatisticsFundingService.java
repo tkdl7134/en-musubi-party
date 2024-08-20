@@ -111,5 +111,18 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
         return statisticsFundingMapper.getSendInfos(eno);
     }
 
+    @Override
+    public List<PayVo> getSendDate(int eno) {
+
+    return statisticsFundingMapper.getSendDate(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getPriceOrderByRelation(int eno) {
+
+    return statisticsFundingMapper.getPriceOrderByRelation(eno);
+
+    }
+
 
 }

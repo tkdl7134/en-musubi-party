@@ -294,6 +294,7 @@
 
 
         const ctx = document.getElementById('myChart').getContext('2d');
+        const ctx2 = document.getElementById('myChart2').getContext('2d');
         const config = document.getElementById('week-data-chart').getContext('2d');
         const config3 = document.getElementById('week-data-chart2').getContext('2d');
 
@@ -333,7 +334,33 @@
             array3.push(wishlist.value / 10000);
         })
         console.log(array3);
+        let array4 = []
+        let sendlists = document.getElementsByClassName('jh_send_price')
+        Array.from(sendlists).forEach(function (wishlist) {
+            let sendPrices = wishlist.value;
+            let sendPriceNumber = parseFloat(sendPrices); // Convert the string to a number
+            array4.push(sendPriceNumber / 10000); // Divide by 10000 and push to array4
+        });
 
+        console.log(array4 );
+        console.log('array4');
+        let array5 = [];
+        let PriceByRelation = document.getElementsByClassName('jh_priceByRelation');
+
+// HTMLCollection을 배열로 변환한 후 forEach 사용
+        Array.from(PriceByRelation).forEach(function (wishlist) {
+            let sendPrices = wishlist.value;
+            let sendPriceNumber = parseFloat(sendPrices); // 문자열을 숫자로 변환
+            array5.push(sendPriceNumber / 10000); // 10000으로 나눈 값을 array5에 추가
+        });
+
+        let array6 = [];
+        let Relation = document.getElementsByClassName('jh_send_relation');
+
+// HTMLCollection을 배열로 변환한 후 forEach 사용
+        Array.from(Relation).forEach(function (wishlist) {
+            array6.push(wishlist.value); // 값들을 array6에 추가
+        });
 
         for (let i = 6; i > -1; i--) {
             const date = new Date(today);
@@ -420,7 +447,7 @@
             labels: labels,
             datasets: [{
                 label: '頂いた想い',
-                data: array3,
+                data: array4,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 159, 64, 0.2)',
@@ -487,6 +514,26 @@
         new Chart(config2, {
             type: 'doughnut',
             data: data2,
+        });
+
+
+
+
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: array6,
+                datasets: [{
+                    label: '繋がった想い',
+                    data: array5,
+                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255, 165, 0)', 'rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(75, 0, 130)', 'rgb(238, 130, 238)'],
+                    hoverOffset: 4
+                }]
+            }, options: {
+
+                responsive: false
+
+            }
         });
 
 
@@ -783,7 +830,10 @@
 
 
 
-
+                <c:forEach var="s" items="${  SendPriceOrderByRelation}">
+                    <div><input class="jh_priceByRelation" type="hidden" value="${s.p_price}"></div>
+                    <div><input class="jh_send_relation" type="hidden" value="${s.g_relation}"></div>
+                </c:forEach>
                 <div style="display: flex; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
                     <canvas style="width: 100vw ; height: 50vh; " id="myChart2"></canvas>
                 </div>
@@ -793,6 +843,9 @@
                     <div style="display: flex; justify-content: center;">
                         <canvas style="" id="week-data-chart2"></canvas>
                     </div>
+                    <c:forEach var="s" items="${SumPricesOfSend}">
+                        <div><input class="jh_send_price" type="hidden" value="${s.p_price}"></div>
+                    </c:forEach>
 
                 </div>
                 <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
@@ -829,7 +882,7 @@
                                 </button>
                             </div>
                             <div class="jh_arrange_button">
-                                <button onclick="reorderByDate(5)" class="jh_arrange_button_button" id="jh_button_date"
+                                <button onclick="reorderByDate(5)" class="jh_arrange_button_button" id="jh_button_date2"
                                         type="submit">日付順
                                 </button>
                             </div>
@@ -854,7 +907,7 @@
 
 
                                     <div style="  font-size: 24px;text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
-                                    <div style="  font-size: 24px;text-align: center">${l.p_price}円</div>
+                                    <div   style="  font-size: 24px;text-align: center">${l.p_price}円</div>
                                 </div>
                                 <div style="display: flex; justify-content: space-around;margin-top: 2.5rem">
                                     <div style="  font-size: 24px;text-align: center">${l.g_relation}</div>
@@ -884,12 +937,12 @@
                 <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
                      class="jh_other_infos">
                     <div style="margin-top: 2vh;" id="jh_detailHead2" class="jh_funding_detail">全体的な情報</div>
-                    <div style="margin-top: 5vh;" id="jh_numberOfPeople2" class="jh_funding_detail">繋がれた因縁
+                    <div style="margin-top: 5vh;" id="jh_numberOfPeople2" class="jh_funding_detail">ご祝儀を送った人
                         : ${NumberOfPeople}名
                     </div>
                     <div id="jh_popularDate2" class="jh_funding_detail">一番数多くの因縁が訪れた日 : ${PopularDate}</div>
-                    <div id="jh_highestPrice2" class="jh_funding_detail">最も大きい思い :　${highestPrice}円</div>
-                    <div id="jh_rankingOfWishlist2" class="jh_funding_detail">一番人気のプレゼント
+                    <div id="jh_highestPrice2" class="jh_funding_detail">最も大きい祝儀 :　${highestPrice}円</div>
+                    <div id="jh_rankingOfWishlist2" class="jh_funding_detail">一番多い関係
                         : ${PopularWishlist}</div>
 
                 </div>

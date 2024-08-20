@@ -65,6 +65,11 @@ public class StatisticsController {
         System.out.println(statisticsFundingService.getSendInfos(eno));
         model.addAttribute("sendDatas" , statisticsFundingService.getSendInfos(eno));
 
+        System.out.println(statisticsFundingService.getSendInfos(eno));
+        model.addAttribute("SumPricesOfSend" , statisticsFundingService.getSendInfos(eno));
+        System.out.println(statisticsFundingService.getPriceOrderByRelation(eno));
+        model.addAttribute("SendPriceOrderByRelation" ,statisticsFundingService.getPriceOrderByRelation(eno) );
+
 
 
 

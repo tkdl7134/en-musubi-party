@@ -138,8 +138,22 @@ public interface StatisticsFundingMapper {
 @Select("select p_price , p_date , g_relation , G_RELATION_DETAIL , m_fam_kanji , m_name_kanji from pay join guest on pay.E_NO = guest.E_NO and pay.M_ID= guest.M_ID join EN.MEMBER M on M.M_ID = guest.M_ID where p_type = 'send' and PAY.E_NO = #{eno}")
     List<StatisticsSendVo> getSendInfos (int eno);
 
+    @Select("SELECT \n" +
+            "    TRUNC(p_date) AS transaction_date, \n" +
+            "    SUM(p_price) AS total_price\n" +
+            "FROM \n" +
+            "    pay\n" +
+            "WHERE \n" +
+            "    p_date BETWEEN TRUNC(SYSDATE - 7) AND TRUNC(SYSDATE) + INTERVAL '1' DAY - INTERVAL '1' SECOND\n" +
+            "    AND e_no = #{eno} \n" +
+            "    AND p_type = 'send'\n" +
+            "GROUP BY \n" +
+            "    TRUNC(p_date)\n" +
+            "ORDER BY \n" +
+            "    TRUNC(p_date)")
+    List<PayVo> getSendDate(int eno);
 
-
-
+    @Select("SELECT g.g_relation, SUM(p.p_price) AS p_price FROM guest g JOIN pay p ON g.m_id = p.m_id AND g.e_no = p.e_no WHERE g.e_no = #{eno} AND p.p_type = 'send' GROUP BY g.g_relation")
+    List<StatisticsSendVo> getPriceOrderByRelation (int eno);
 
 }
