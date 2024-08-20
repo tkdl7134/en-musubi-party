@@ -18,23 +18,43 @@
 <body>
 <div class="yr_party_main_container">
     <div class="yr_title">縁パーティー</div>
-    <%--    <div class="yr_party-red-loof"><img src="footer.png" alt="" /></div>--%>
+
     <div class="yr_party_wrapper">
         <div class="yr_party_welcome">
             <p>
-                ようこそ <br/>
-                縁パーティーへ
+                以下のステップに従って、順番に進めてください
             </p>
         </div>
-        <div class="yr_party_list_container">
+
             <!-- list -->
             <div class="yr_party_list all">
-                <p>list</p>
+                <div class="yr_list_title"><span>✿</span> Step 1 <span>✿</span></div>
+                <div class="yr_list_title2">パーティー参加者リストを確認してください</div>
                 <div class="yr_list_all">
                     <c:forEach items="${partyMembers}" var="p" varStatus="status">
                         <div class="yr_list">
-                            <div class="yr_list_number">${status.count}</div>
-                            <div class="yr_list_name" id="yr_list_name">${p.m_fam_kanji} ${p.m_name_kanji}</div>
+                            <div class="yr_list_left">
+                                <c:choose>
+                                    <c:when test="${p.g_guest_type == '新郎ゲスト'}">
+                                        <img src="/resources/img/groom.png">
+                                    </c:when>
+                                    <c:otherwise>
+                                        <img src="/resources/img/bride.png">
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+
+                            <div class="yr_list_name" id="yr_list_name">${p.m_fam_kanji} &nbsp; ${p.m_name_kanji}</div>
+                            <div class="yr_list_right">
+                                <c:choose>
+                                    <c:when test="${p.m_gender == '男'}">
+                                        <img src="/resources/img/blue_heart.png">
+                                    </c:when>
+                                    <c:otherwise>
+                                        <img src="/resources/img/pink_heart.png">
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
                         </div>
                     </c:forEach>
                 </div>
@@ -42,7 +62,8 @@
 
             <!-- random -->
             <div class="yr_party_list random">
-                <p>random</p>
+                <div class="yr_list_title"><span>✿</span> Step 2 <span>✿</span></div>
+                <div class="yr_list_title2">最初のラウンドでランダムに割り当てます</div>
                 <div class="yr_random">
                     <div class="yr_random_button">start</div>
                     <div class="yr_random_loading">
@@ -59,12 +80,12 @@
 
             <!-- type -->
             <div class="yr_party_list type">
-                <p>type</p>
+                <div class="yr_list_title"><span>✿</span> Step 3 <span>✿</span></div>
+                <div class="yr_list_title2">自分のタイプを選択してください</div>
                 <div class="yr_type">
-                    <div class="yr_type_mention">自分のタイプを選んでください</div>
                     <div class="yr_type_group">
                         <div class="yr_type_group1">
-                            <div class="yr_type_mention">최대 2개 선택</div>
+                            <div class="yr_type_mention">最大で2つまで選択できます</div>
                             <input class="yr_type_item" id="outdoor" value="アウトドア" type="button">
                             <input class="yr_type_item" id="indoor" value="インドア" type="button">
                             <input class="yr_type_item" id="religion_yes" value="宗教あり" type="button">
@@ -73,20 +94,19 @@
                             <%--                            <input class="yr_type_item" id="non-smoker" value="ノンスモーカ" type="button">--%>
                         </div>
                         <div class="yr_type_group2">
-                            <div class="yr_type_mention">최대 3개 선택</div>
+                            <div class="yr_type_mention">最大で2つまで選択できます</div>
                             <input class="yr_type_item" id="coffee" value="コーヒー" type="button">
                             <input class="yr_type_item" id="tea" value="お茶" type="button">
                             <input class="yr_type_item" id="beer" value="ビール" type="button">
                             <input class="yr_type_item" id="sake" value="サケ" type="button">
-                            <input class="yr_type_item" id="gourmet" value="美食" type="button">
                         </div>
                         <div class="yr_type_group3">
-                            <div class="yr_type_mention">최대 3개 선택</div>
+                            <div class="yr_type_mention">最大で３つまで選択できます</div>
                             <input class="yr_type_item" id="movie" value="映画" type="button">
-                            <input class="yr_type_item" id="museum" value="美術館" type="button">
-                            <input class="yr_type_item" id="photo" value="写真" type="button">
+                            <input class="yr_type_item" id="museum" value="美術" type="button">
+                            <%--                            <input class="yr_type_item" id="photo" value="写真" type="button">--%>
                             <input class="yr_type_item" id="music" value="音楽" type="button">
-                            <input class="yr_type_item" id="fashion" value="ファッション" type="button">
+                            <%--                            <input class="yr_type_item" id="fashion" value="ファッション" type="button">--%>
                             <input class="yr_type_item" id="drive" value="ドライブ" type="button">
                             <input class="yr_type_item" id="pet" value="ペット" type="button">
                             <input class="yr_type_item" id="travel" value="旅行" type="button">
@@ -104,36 +124,62 @@
 
             <!-- final choice -->
             <div class="yr_party_list choice">
-                <p>最終選択</p>
+                <div class="yr_list_title"><span>✿</span> Step 4 <span>✿</span></div>
+                <div class="yr_list_title2">最終選択の時間です</div>
+
                 <div class="yr_choice">
-                    <div class="yr_choice_mention">
-                        最も気に入った方を <br/>
-                        3名選んでください。 <br/>
-                        お互いに気持ちが通じ合った方々には、<br/>
-                        LINE IDを送って<br/>縁を結ぶ機会が与えられます。
-                    </div>
-                    <%--                    <form action="/party/main" method="post">--%>
-                    <%--                        <input type="hidden" name="_method" value="put">--%>
-                    <c:forEach items="${partyMembers}" var="p" varStatus="status">
+                    <div class="yr_choice_mention" style="color: #696969">
+                        最も気に入った方を3名お選びください<br/> <br/>
+                        お互いに気持ちが通じ合った方々には、<br/>  連絡先が送られ、</div>
+
+                    <div class="yr_choice_mention" style="color: #474747"> <span>✿</span> 縁がつながる機会が提供されます <span>✿</span></div>
+                    <c:forEach items="${partyMembers}" var="p">
                         <div class="yr_list_choice">
-                            <input type="hidden" value="${p.m_fam_kanji} ${p.m_name_kanji}">
-                            <div class="yr_list_number_choice">${status.count}</div>
-                            <div class="yr_list_name_choice">${p.m_fam_kanji} ${p.m_name_kanji}</div>
+                            <input value="${p.m_id}" type="hidden">
+                            <div class="yr_list_left">
+                                <c:choose>
+                                    <c:when test="${p.g_guest_type == '新郎ゲスト'}">
+                                        <img src="/resources/img/groom.png">
+                                    </c:when>
+                                    <c:otherwise>
+                                        <img src="/resources/img/bride.png">
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+                            <div class="yr_list_name_choice">${p.m_fam_kanji} &nbsp; ${p.m_name_kanji}</div>
+                            <div class="yr_list_right">
+                                <c:choose>
+                                <c:when test="${p.m_gender == '男'}">
+                                    <img src="/resources/img/blue_heart.png">
+                                </c:when>
+                                <c:otherwise>
+                                    <img src="/resources/img/pink_heart.png">
+                                </c:otherwise>
+                            </c:choose>
+                            </div>
                         </div>
                     </c:forEach>
 
                     <button type="submit" id="yr_choice_button">提出</button>
-                    <%--                    </form>--%>
+
                 </div>
+
+
             </div>
-        </div>
+        <img class="yr_bottom_img" src="/resources/img/Bird.png">
     </div>
-    <div class="yr_selected_choices"></div>
+
+
     <c:forEach items="${partyMyInfo}" var="my">
-        <input id="yr_my_name" value="${my.m_fam_kanji} ${my.m_name_kanji}" type="hidden">
+        <input id="yr_my_name" value="${my.m_fam_kanji}  ${my.m_name_kanji}" type="hidden">
         <input id="yr_my_id" value="${my.m_id}" type="hidden">
     </c:forEach>
+    <input id="userId" name="userId" value="test1" type="hidden">
+
+
 </div>
+
+
 <script src="/resources/js/party/party_main.js"></script>
 
 </body>
