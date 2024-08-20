@@ -127,16 +127,19 @@ $.ajax({
 
 		// 카드 스타일 초기화
 		let card = document.querySelectorAll(".kh-f-card-out");
+		const colors = ['#FDEEF4', '#FFF5F8', '#FDF7FF', '#FFF0F5', '#FEEEF5', '#FFE4E6'];
+
 		card.forEach((element, index) => {
 			let cardIn = element.querySelector(".kh-fund-card");
-			if (index % 2 === 0) {
-				element.style.transform = "scale(0.9)";
-				element.classList.add("kh-f-card-min");
-				cardIn.style.background = "#FFF1E0"
-			} else {
-				cardIn.style.background = "#FFE0E0";
-			}
-			element.style.transition = "0.8s ease-in-out"
+
+			// 모든 카드 크기를 동일하게 설정
+			element.style.transform = "scale(1)"; // 모든 카드를 원래 크기로 설정
+
+			// 각 카드에 다른 색상을 적용
+			cardIn.style.background = colors[index % colors.length];
+
+			// 애니메이션 설정
+			element.style.transition = "0.8s ease-in-out";
 		});
 	}
 });
@@ -178,18 +181,18 @@ $.ajax({
 			const card = event.target.closest(".kh-f-card-out");
 
 			if (card) {
-				card.style.transform = card.classList.contains("kh-f-card-min") ? "scale(1)" : "scale(1.1)";
-				card.style.filter = "none";
+				card.style.transform = "scale(1.1)"; // 모든 카드에서 동일하게 1.1배 확대
+				card.style.filter = "none"; // 필터 제거
 				event.stopPropagation();
 			}
 		});
 
 		cardCon.addEventListener("mouseout", function (event) {
-			const card = event.target.closest(".kt-f-card-out");
+			const card = event.target.closest(".kh-f-card-out");
 
 			if (card) {
-				card.style.transform = card.classList.contains("kh-f-card-min") ? "scale(0.9)" : "scale(1)";
-				card.style.filter = "grayscale(100%)";
+				card.style.transform = "scale(1)"; // 마우스가 벗어났을 때 원래 크기로 축소
+				card.style.filter = "grayscale(100%)"; // 회색조 필터 적용
 				event.stopPropagation();
 			}
 		})
@@ -273,14 +276,17 @@ $.ajax({
 
 		// 무한 스크롤 구현
 		cardCon.addEventListener("scroll", function () {
-		const scrollWidthHalf = cardCon.scrollWidth / 2;
+			const scrollWidthHalf = cardCon.scrollWidth / 2;
 
-		if (cardCon.scrollLeft >= scrollWidthHalf) {
-		// 스크롤 위치를 조정하여 간격 줄이기
-		cardCon.scrollLeft -= (scrollWidthHalf - offset);
+			if (cardCon.scrollLeft >= scrollWidthHalf) {
+				// 오른쪽 끝에 도달하면 첫 번째 카드를 복제하여 추가
+				cardCon.scrollLeft -= scrollWidthHalf;
+				cards.forEach(card => cardCon.appendChild(card.cloneNode(true)));
 			} else if (cardCon.scrollLeft <= 0) {
-		cardCon.scrollLeft += (scrollWidthHalf - offset);
-		}
+				// 왼쪽 끝에 도달하면 마지막 카드를 복제하여 앞에 추가
+				cardCon.scrollLeft += scrollWidthHalf;
+				cards.reverse().forEach(card => cardCon.prepend(card.cloneNode(true)));
+			}
 		});
 
 		//마우스 휠할때 도는 애니메이션
@@ -374,6 +380,7 @@ function goStatistic(wlno) {
 	const container = document.querySelector("#kh-input-box");
 	const finput = document.querySelector(".kh-f-input");
 	const warnspan = document.querySelector("#kh-warn-text");
+	const m_id = document.querySelector("#m_id").value;
 	if (finput.value == "") {
 		container.classList.add("vibration");
 		setTimeout(function() {
@@ -387,27 +394,28 @@ function goStatistic(wlno) {
 		let justnum = finput.value.replace(',', '');
 		$.ajax({
 			type: "post",
-			url: "InsertFundC",
-			data: { eno: eventno, paytype: 'fund', price: justnum, wlno: wlno },
+			url: "funding/insert",
+			data: { e_no: eventno, p_type: 'fund', p_price: justnum, wl_no: wlno, m_id },
 			dataType: "json",
 			success: function(response) {
+				console.log(response)
 				$(".kh-f-statistic-conCon").html("");
 				closeModal();
 				response.forEach((element, index) => {
 					let doms = `
 				<div class="kh-f-statistic-content">
 					<div class="kh-f-statistic-name">
-						<div class="kh-f-none"><span>私の選択</span><img alt="noImg" src="resources/img/flash.png"> </div>
+						<div class="kh-f-none"><span>私の選択</span><img alt="noImg" src="/resources/img/flash.png"> </div>
 						<h1>${element.wl_product}</h1>
 					</div>
 					<div class="kh-f-statistic-bar">
 						<div>
-							<div class="kh-f-statistic-abled-bar" data-value="${element.percent}"><div><img alt="noImg" src="finance/img/menubtn.png"></div></div>
+							<div class="kh-f-statistic-abled-bar" data-value="${element.percent}"><div><img alt="noImg" src="/resources/img/menubtn.png"></div></div>
 						</div>
 					</div>
 					<div class="kh-f-statistic-percent" >
 						<img class="kh-f-none" alt="noImg" src="resources/img/threehearts.png">
-						<h1><span data-value="${element.percent}">10</span>％ 達成</h1>
+						<h1><span data-value="${element.percent}">${element.percent}</span> ％ 達成</h1>
 					</div>
 				</div>
 			`;
@@ -421,15 +429,15 @@ function goStatistic(wlno) {
 				});
 
 				openStatistic();
-				// statisticModal.querySelector('.kh-f-statistic-name > div:nth-child(1)').classList.remove('kh-f-none');
-				// let statisBars = statisticModal.querySelectorAll('.kh-f-statistic-abled-bar')
-				// statisBars.forEach((element) => {
-				// 	element.style.width = element.getAttribute("data-value") + "%";
-				// });
-				// let statisNumber = statisticModal.querySelectorAll('.kh-f-statistic-percent > h1 > span')
-				// statisNumber.forEach((element) => {
-				// 	animateValue(element, 0, parseInt(element.getAttribute("data-value")), 1000);
-				// });
+				statisticModal.querySelector('.kh-f-statistic-name > div:nth-child(1)').classList.remove('kh-f-none');
+				let statisBars = statisticModal.querySelectorAll('.kh-f-statistic-abled-bar')
+				statisBars.forEach((element) => {
+					element.style.width = element.getAttribute("data-value") + "%";
+				});
+				let statisNumber = statisticModal.querySelectorAll('.kh-f-statistic-percent > h1 > span')
+				statisNumber.forEach((element) => {
+					animateValue(element, 0, parseInt(element.getAttribute("data-value")), 1000);
+				});
 
 				// 복제된 요소도 포함하여 초기화 작업 수행
 				let staticBars = document.querySelectorAll('.kh-f-statistic-abled-bar');
@@ -450,7 +458,7 @@ function goStatistic(wlno) {
 
 				//페이지 이동
 				setTimeout(function() {
-					location.href = "ResultC";
+					location.href = "/wishlist/funding/result";
 				}, 10000);
 
 

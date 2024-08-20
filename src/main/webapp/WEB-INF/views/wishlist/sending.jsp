@@ -2,113 +2,252 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="finance/css/send.css" />
-<script src="finance/js/send.js" defer></script>
-<div class="kh-s-card-container">
-	<div class="kh-s-mousemove kh-f-none">
-		<img alt="" src="finance/img/dragbtn.png" />
-	</div>
-	<div class="kh-s-fake-card"></div>
-	<div class="kh-s-card-out">
-		<input type="hidden" />
-		<div class="kh-send-card">
-			<div style="height: 10rem">
-				<img style="height: 100%; width: 12rem" alt="noImg"
-					src="finance/img/familly.png" />
-			</div>
-			<div>
-				<h3 style="text-align: center; font-weight: 500">家族には</h3>
-				<h2 style="text-align: center; color: #ff464a">5万円</h2>
-				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
-			</div>
-			<div>
-				<button class="kh-s-btn" onclick="sendModal('50000')">選択</button>
-			</div>
-		</div>
-	</div>
-
-	<div class="kh-s-card-out">
-		<input type="hidden" />
-		<div class="kh-send-card">
-			<div style="height: 10rem">
-				<img style="height: 100%; width: 12rem" alt="noImg"
-					src="finance/img/relative.png" />
-			</div>
-			<div>
-				<h3 style="text-align: center; font-weight: 500">親戚には</h3>
-				<h2 style="text-align: center; color: #ff464a">3万円</h2>
-				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
-			</div>
-			<div>
-				<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>
-			</div>
-		</div>
-	</div>
-
-	<div class="kh-s-card-out">
-		<input type="hidden" />
-		<div class="kh-send-card">
-			<div style="height: 10rem">
-				<img style="height: 100%; width: 12rem" alt="noImg"
-					src="finance/img/boss.png" />
-			</div>
-			<div>
-				<h3 style="text-align: center; font-weight: 500">職場の上司には</h3>
-				<h2 style="text-align: center; color: #ff464a">5万円</h2>
-				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
-			</div>
-			<div>
-				<button class="kh-s-btn" onclick="sendModal('50000')">選択</button>
-			</div>
-		</div>
-	</div>
-
-	<div class="kh-s-card-out">
-		<input type="hidden" />
-		<div class="kh-send-card">
-			<div style="height: 10rem">
-				<img style="height: 100%; width: 12rem" alt="noImg"
-					src="finance/img/teammate.png" />
-			</div>
-			<div>
-				<h3 style="text-align: center; font-weight: 500">職場の同期には</h3>
-				<h2 style="text-align: center; color: #ff464a">3万円</h2>
-				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
-			</div>
-			<div>
-				<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>
-			</div>
-		</div>
-	</div>
-
-	<div class="kh-s-card-out">
-		<input type="hidden" />
-		<div class="kh-send-card">
-			<div style="height: 10rem">
-				<img style="height: 100%; width: 12rem" alt="noImg"
-					src="finance/img/bestfriend.png" />
-			</div>
-			<div>
-				<h3 style="text-align: center; font-weight: 500">親友には</h3>
-				<h2 style="text-align: center; color: #ff464a">5万円</h2>
-				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
-			</div>
-			<div>
-				<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>
-			</div>
-		</div>
-	</div>
-	<div class="kh-s-fake-card"></div>
+<link rel="stylesheet" href="/resources/css/wishlist/send.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="/resources/css/product/swiper-slide-center.css" />
+<link rel="stylesheet" href="/resources/css/product/product.css" />
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/resources/js/product/swiper-slide-center.js"></script>
+<script src="/resources/js/wishlist/send.js" defer></script>
+<div class="je_menu-bar">
+	<div id="je_logo"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
 </div>
+<div id="je_product-container">
+	<div class="je_page-title">
+		<div class="je_page-title-txt">テンプレート一覧</div>
+		<div class="je_page-title-line">
+			<img src="/resources/img/page-title-line.png" alt="" />
+		</div>
+	</div>
+	<div class="je_page-content">
+		<div class="slider">
+			<div class="inner">
+				<ul class="swiper-wrapper slide_list">
+					<li class="swiper-slide">
+						<div class="kh-s-card-container">
+						<div class="kh-s-mousemove kh-f-none">
+							<img alt="" src="/resources/img/dragbtn.png" />
+						</div>
+						<div class="kh-s-fake-card"></div>
+							<li class="swiper-slide">
+								<div class="kh-s-card-out">
+									<input type="hidden" />
+										<div class="kh-send-card">
+										<div style="height: 10rem">
+											<img style="height: 100%; width: 12rem" alt="noImg"
+											 src="/resources/img/familly.png" />
+										</div>
+										<div>
+											<h3 style="text-align: center; font-weight: 500">家族には</h3>
+											<h2 style="text-align: center; color: #ff464a">5万円</h2>
+											<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
+										</div>
+								<div>
+									<button class="kh-s-btn" onclick="sendModal('50000')">選択</button>
+								</div>
+							</div>
+						</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="kh-s-card-out">
+									<input type="hidden" />
+									<div class="kh-send-card">
+										<div style="height: 10rem">
+											<img style="height: 100%; width: 12rem" alt="noImg"
+										 	src="/resources/img/relative.png" />
+										</div>
+										<div>
+											<h3 style="text-align: center; font-weight: 500">親戚には</h3>
+											<h2 style="text-align: center; color: #ff464a">3万円</h2>
+											<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
+										</div>
+									<div>
+										<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>
+									</div>
+								</div>
+								</div>
+							</li>
+							<li class="swiper-slide">
+								<div class="kh-s-card-out">
+									<input type="hidden" />
+									<div class="kh-send-card">
+										<div style="height: 10rem">
+											<img style="height: 100%; width: 12rem" alt="noImg"
+											 src="/resources/img/boss.png" />
+										</div>
+										<div>
+										<h3 style="text-align: center; font-weight: 500">職場の上司には</h3>
+										<h2 style="text-align: center; color: #ff464a">5万円</h2>
+										<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
+										</div>
+										<div>
+											<button class="kh-s-btn" onclick="sendModal('50000')">選択</button>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="kh-s-card-out">
+									<input type="hidden" />
+										<div class="kh-send-card">
+											<div style="height: 10rem">
+												<img style="height: 100%; width: 12rem" alt="noImg"
+										 		src="/resources/img/teammate.png" />
+											</div>
+											<div>
+												<h3 style="text-align: center; font-weight: 500">職場の同期には</h3>
+												<h2 style="text-align: center; color: #ff464a">3万円</h2>
+												<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
+											</div>
+											<div>
+												<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>
+											</div>
+										</div>
+								</div>
+							</li>
+							<li>
+								<div class="kh-s-card-out">
+									<input type="hidden" />
+										<div class="kh-send-card">
+											<div style="height: 10rem">
+												<img style="height: 100%; width: 12rem" alt="noImg"
+											 	src="/resources/img/bestfriend.png" />
+											</div>
+										<div>
+											<h3 style="text-align: center; font-weight: 500">親友には</h3>
+											<h2 style="text-align: center; color: #ff464a">5万円</h2>
+											<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
+										</div>
+										<div>
+											<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>
+										</div>
+										</div>
+								</div>
+							</li>
+							<div class="kh-s-fake-card"></div>
+						</div>
+				</ul>
+			</div>
+			<!-- 양 옆 버튼 -->
+			<div class="je_slider-buttons">
+				<div class="je_slider-btn btn_prev">
+					<img src="/resources/img/left-arrow-icon.png" alt="이젼" />
+				</div>
+				<div class="je_template-slide-paging fraction"></div>
+				<div class="je_slider-btn btn_next">
+					<img src="/resources/img/right-arrow-icon.png" alt="다음" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%--<div class="kh-s-card-container">--%>
+<%--	<div class="kh-s-mousemove kh-f-none">--%>
+<%--		<img alt="" src="/resources/img/dragbtn.png" />--%>
+<%--	</div>--%>
+<%--	<div class="kh-s-fake-card"></div>--%>
+<%--	<div class="kh-s-card-out">--%>
+<%--		<input type="hidden" />--%>
+<%--		<div class="kh-send-card">--%>
+<%--			<div style="height: 10rem">--%>
+<%--				<img style="height: 100%; width: 12rem" alt="noImg"--%>
+<%--					src="/resources/img/familly.png" />--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">家族には</h3>--%>
+<%--				<h2 style="text-align: center; color: #ff464a">5万円</h2>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<button class="kh-s-btn" onclick="sendModal('50000')">選択</button>--%>
+<%--			</div>--%>
+<%--		</div>--%>
+<%--	</div>--%>
+
+<%--	<div class="kh-s-card-out">--%>
+<%--		<input type="hidden" />--%>
+<%--		<div class="kh-send-card">--%>
+<%--			<div style="height: 10rem">--%>
+<%--				<img style="height: 100%; width: 12rem" alt="noImg"--%>
+<%--					src="/resources/img/relative.png" />--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">親戚には</h3>--%>
+<%--				<h2 style="text-align: center; color: #ff464a">3万円</h2>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>--%>
+<%--			</div>--%>
+<%--		</div>--%>
+<%--	</div>--%>
+
+<%--	<div class="kh-s-card-out">--%>
+<%--		<input type="hidden" />--%>
+<%--		<div class="kh-send-card">--%>
+<%--			<div style="height: 10rem">--%>
+<%--				<img style="height: 100%; width: 12rem" alt="noImg"--%>
+<%--					src="/resources/img/boss.png" />--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">職場の上司には</h3>--%>
+<%--				<h2 style="text-align: center; color: #ff464a">5万円</h2>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<button class="kh-s-btn" onclick="sendModal('50000')">選択</button>--%>
+<%--			</div>--%>
+<%--		</div>--%>
+<%--	</div>--%>
+
+<%--	<div class="kh-s-card-out">--%>
+<%--		<input type="hidden" />--%>
+<%--		<div class="kh-send-card">--%>
+<%--			<div style="height: 10rem">--%>
+<%--				<img style="height: 100%; width: 12rem" alt="noImg"--%>
+<%--					src="/resources/img/teammate.png" />--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">職場の同期には</h3>--%>
+<%--				<h2 style="text-align: center; color: #ff464a">3万円</h2>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>--%>
+<%--			</div>--%>
+<%--		</div>--%>
+<%--	</div>--%>
+
+<%--	<div class="kh-s-card-out">--%>
+<%--		<input type="hidden" />--%>
+<%--		<div class="kh-send-card">--%>
+<%--			<div style="height: 10rem">--%>
+<%--				<img style="height: 100%; width: 12rem" alt="noImg"--%>
+<%--					src="/resources/img/bestfriend.png" />--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">親友には</h3>--%>
+<%--				<h2 style="text-align: center; color: #ff464a">5万円</h2>--%>
+<%--				<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>--%>
+<%--			</div>--%>
+<%--		</div>--%>
+<%--	</div>--%>
+<%--	<div class="kh-s-fake-card"></div>--%>
+<%--</div>--%>
 
 <dialog id="modal">
 <div class="kh-s-popup">
 	<div class="kh-s-popup-in">
 		<div class="kh-s-envelope">
-			<img alt="noImg" src="finance/img/envelope01.png" style="width: 100%">
+			<img alt="noImg" src="/resources/img/envelope01.png" style="width: 100%">
 		</div>
 		<div>
-			<img alt="noImg" src="finance/img/mark_syuku.png">
+			<img alt="noImg" src="/resources/img/mark_syuku.png">
 		</div>
 		<div class="kh-s-modal-box">
 			<div>
@@ -141,7 +280,7 @@
 		<div style="font-size: 2rem" id="kh-input-box">
 			&nbsp;総<input class="kh-s-input" type="text" maxlength="8"
 				onclick="removeWarn()" readonly />円 <img alt=""
-				src="finance/img/money.png">
+				src="/resources/img/money.png">
 		</div>
 		<div>
 			<button class="kh-s-btn" onclick="goFinal('nodata')">送金</button>

@@ -1,3 +1,10 @@
+* {
+	font-family: "Noto Serif JP", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+}
+
 .kh-f-card-container {
 	height: 100rem;
 	display: flex;
@@ -6,6 +13,7 @@
 	align-items: center;
 	width: 100%;
 	overflow-x: scroll;
+	user-select: none;
 }
 
 .kh-f-card-container::-webkit-scrollbar {
@@ -42,14 +50,14 @@
 
 .kh-f-card-out {
 	width: 20rem;
-	height: 26rem;
+	height: 25rem;
 	border: 1px solid #ff0000;
 	border-radius: 50%/30%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: transform 0.1s ease-in;
-	margin: 6.5rem;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+	margin: 7rem;
 }
 
 .kh-f-card-disable {

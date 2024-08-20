@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -57,6 +57,8 @@ ${fundingList}
 				class="kh-none">金額をご入力してください。</span>
 		</div>
 		<div style="display: flex; justify-content: center;">
+<%--			<input hidden="hidden" id="m_id" value="${authenticatedMember.m_id}">--%>
+			<input hidden="hidden" id="m_id" value="test9">
 			<div class="kh-f-btn"
 				onclick="goStatistic(this.getAttribute('value'))" value="">ファンディング
 			</div>

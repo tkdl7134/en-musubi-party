@@ -4,6 +4,7 @@ import com.en.main.dto.PayVo;
 import com.en.main.dto.WishlistVO;
 import com.en.main.service.FundingService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,9 +46,19 @@ public class FundingController {
         return "wishlist/check-id-type";
     }
 
+    @ResponseBody
     @PostMapping("/insert")
-    public String insertFunding(PayVo payVo, Model model, HttpServletRequest request) {
+    public List<WishlistVO> insertFunding(PayVo payVo, Model model, HttpServletRequest request) {
+        System.out.println(payVo);
         fundingService.insertWishPick(payVo);
-        return "redirect:/funding";
+        return getFundingList(payVo.getE_no());
     }
+
+    @GetMapping("/result")
+    public String financeResult(HttpSession session){
+        session.setAttribute("loginType", "normal");
+        return "wishlist/financeresult";
+    }
+
+
 }

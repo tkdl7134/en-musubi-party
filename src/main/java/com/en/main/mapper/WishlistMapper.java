@@ -34,7 +34,7 @@ public interface WishlistMapper {
             "END FROM dual")
     String IDTpyeCheck(String m_id);
 
-    @Insert("insert into s_pay (e_no, m_id, p_type, p_price, wl_no, p_date) " +
+    @Insert("insert into pay (e_no, m_id, p_type, p_price, wl_no, p_date) " +
             "VALUES (#{e_no}, #{m_id}, #{p_type}, #{p_price}, #{wl_no}, sysdate)")
     void insertWishPick(PayVo payVo);
 }
