@@ -2,6 +2,7 @@ package com.en.main.controller;
 
 import com.en.main.dto.JhFundSqlVo;
 import com.en.main.dto.PayVo;
+import com.en.main.dto.StatisticsSendVo;
 import com.en.main.dto.WishlistVO;
 import com.en.main.service.StatisticsFundingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -130,6 +131,48 @@ public class StatisticsController {
         model.addAttribute("listupDatas" , statisticsFundingService.getListupInfos(no));
 
         return statisticsFundingService.getListupInfos(no);
+    }
+    @GetMapping("/reorderSendByRelation/{no}")
+    public @ResponseBody List<StatisticsSendVo> reorderSendByProduct(@PathVariable int no , Model model){
+        System.out.println(no);
+        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByRelation(no));
+
+        return statisticsFundingService.getSendInfosByRelation(no);
+    }
+    @GetMapping("/reorderSendByRelationDesc/{no}")
+    public @ResponseBody List<StatisticsSendVo> reorderSendByProductDesc(@PathVariable int no , Model model){
+        System.out.println(no);
+        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByRelationDesc(no));
+
+        return statisticsFundingService.getSendInfosByRelationDesc(no);
+    }
+    @GetMapping("/reorderSendByMoney/{no}")
+    public @ResponseBody List<StatisticsSendVo> reorderSendByMoney(@PathVariable int no , Model model){
+        System.out.println(no);
+        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByRelation(no));
+        return statisticsFundingService.getSendInfosByMoneyDesc(no);
+
+    }
+    @GetMapping("/reorderSendByMoneyDesc/{no}")
+    public @ResponseBody List<StatisticsSendVo> reorderSendByMoneyDesc(@PathVariable int no , Model model){
+        System.out.println(no);
+        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByRelationDesc(no));
+
+        return statisticsFundingService.getSendInfosByMoney(no);
+    }
+    @GetMapping("/reorderSendByDate/{no}")
+    public @ResponseBody List<StatisticsSendVo> reorderSendByDate(@PathVariable int no , Model model){
+        System.out.println(no);
+        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByRelation(no));
+
+        return statisticsFundingService.getSendInfosByDate(no);
+    }
+    @GetMapping("/reorderSendByDateDesc/{no}")
+    public @ResponseBody List<StatisticsSendVo> reorderSendByDateDesc(@PathVariable int no , Model model){
+        System.out.println(no);
+        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByRelationDesc(no));
+
+        return statisticsFundingService.getSendInfosByDateDesc(no);
     }
     @GetMapping("/reorderByProductDesc/{no}")
     public @ResponseBody List<JhFundSqlVo> reorderByProductDesc(@PathVariable int no , Model model){

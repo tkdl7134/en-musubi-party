@@ -137,6 +137,18 @@ public interface StatisticsFundingMapper {
 
 @Select("select p_price , p_date , g_relation , G_RELATION_DETAIL , m_fam_kanji , m_name_kanji from pay join guest on pay.E_NO = guest.E_NO and pay.M_ID= guest.M_ID join EN.MEMBER M on M.M_ID = guest.M_ID where p_type = 'send' and PAY.E_NO = #{eno}")
     List<StatisticsSendVo> getSendInfos (int eno);
+@Select("select p_price , p_date , g_relation , G_RELATION_DETAIL , m_fam_kanji , m_name_kanji from pay join guest on pay.E_NO = guest.E_NO and pay.M_ID= guest.M_ID join EN.MEMBER M on M.M_ID = guest.M_ID where p_type = 'send' and PAY.E_NO = #{eno} order by g_relation")
+    List<StatisticsSendVo> getSendInfosByRelation (int eno);
+@Select("select p_price , p_date , g_relation , G_RELATION_DETAIL , m_fam_kanji , m_name_kanji from pay join guest on pay.E_NO = guest.E_NO and pay.M_ID= guest.M_ID join EN.MEMBER M on M.M_ID = guest.M_ID where p_type = 'send' and PAY.E_NO = #{eno} order by g_relation desc")
+    List<StatisticsSendVo> getSendInfosByRelationDesc (int eno);
+@Select("select p_price , p_date , g_relation , G_RELATION_DETAIL , m_fam_kanji , m_name_kanji from pay join guest on pay.E_NO = guest.E_NO and pay.M_ID= guest.M_ID join EN.MEMBER M on M.M_ID = guest.M_ID where p_type = 'send' and PAY.E_NO = #{eno} order by p_price")
+    List<StatisticsSendVo> getSendInfosByMoney (int eno);
+@Select("select p_price , p_date , g_relation , G_RELATION_DETAIL , m_fam_kanji , m_name_kanji from pay join guest on pay.E_NO = guest.E_NO and pay.M_ID= guest.M_ID join EN.MEMBER M on M.M_ID = guest.M_ID where p_type = 'send' and PAY.E_NO = #{eno} order by p_price desc")
+    List<StatisticsSendVo> getSendInfosByMoneyDesc (int eno);
+@Select("select p_price , p_date , g_relation , G_RELATION_DETAIL , m_fam_kanji , m_name_kanji from pay join guest on pay.E_NO = guest.E_NO and pay.M_ID= guest.M_ID join EN.MEMBER M on M.M_ID = guest.M_ID where p_type = 'send' and PAY.E_NO = #{eno} order by p_date desc")
+    List<StatisticsSendVo> getSendInfosByDate (int eno);
+@Select("select p_price , p_date , g_relation , G_RELATION_DETAIL , m_fam_kanji , m_name_kanji from pay join guest on pay.E_NO = guest.E_NO and pay.M_ID= guest.M_ID join EN.MEMBER M on M.M_ID = guest.M_ID where p_type = 'send' and PAY.E_NO = #{eno} order by p_date ")
+    List<StatisticsSendVo> getSendInfosByDateDesc (int eno);
 
     @Select("SELECT \n" +
             "    TRUNC(p_date) AS transaction_date, \n" +

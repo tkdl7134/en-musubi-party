@@ -105,6 +105,268 @@
 
 
     }
+    function reorderSendByRelation(no) {
+
+
+        let productEl = document.getElementById("jh_button_product2");
+        let moneyEl = document.getElementById("jh_button_money2");
+        let dateEl = document.getElementById("jh_button_date2");
+
+
+        // fetch 요청 URL 결정
+        let fetchUrl = productEl.innerText.includes("↓")
+            ? '/statistics/reorderSendByRelation/' + no
+            : '/statistics/reorderSendByRelationDesc/' + no;
+
+        fetch(fetchUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let testEl = document.getElementById("jh_foreach_test2");
+
+                // 요소의 내용을 제거합니다.
+                testEl.innerHTML = '';
+
+                // 데이터를 반복하여 HTML 요소를 생성합니다.
+                data.forEach(l => {
+                    let div = document.createElement('div');
+                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+
+                    // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
+                    let firstRowDiv = document.createElement('div');
+                    firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
+
+                    let kanjiDiv = document.createElement('div');
+                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
+                    firstRowDiv.appendChild(kanjiDiv);
+
+                    let priceDiv = document.createElement('div');
+                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.textContent = l.p_price + '円';
+                    firstRowDiv.appendChild(priceDiv);
+
+                    div.appendChild(firstRowDiv);
+
+                    // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
+                    let secondRowDiv = document.createElement('div');
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
+
+                    let productDiv = document.createElement('div');
+                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    productDiv.textContent = l.g_relation;
+                    secondRowDiv.appendChild(productDiv);
+
+                    let dateDiv = document.createElement('div');
+                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    secondRowDiv.appendChild(dateDiv);
+
+                    div.appendChild(secondRowDiv);
+
+                    testEl.appendChild(div);
+                });
+                moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
+                dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+                dateEl.style.backgroundColor = 'white';
+                dateEl.style.color = 'black';
+                productEl.style.backgroundColor = 'red';
+                productEl.style.color = 'white';
+                moneyEl.style.backgroundColor = 'white';
+                moneyEl.style.color = 'black';
+                // jh_button_money 버튼의 텍스트에 화살표 토글
+                if (productEl.innerText.includes("↓")) {
+                    productEl.innerText = productEl.innerText.replace("↓", "↑");
+                } else if (productEl.innerText.includes("↑")) {
+                    productEl.innerText = productEl.innerText.replace("↑", "↓");
+                    fetchUrl = '/statistics/reorderSendByRelation/' + no;
+                } else {
+                    productEl.innerText += "↓";
+                    fetchUrl = '/statistics/reorderSendByRelationDesc/' + no;
+                }
+
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+
+    }
+
+    function reorderSendByMoney(no) {
+
+
+        let productEl = document.getElementById("jh_button_product2");
+        let moneyEl = document.getElementById("jh_button_money2");
+        let dateEl = document.getElementById("jh_button_date2");
+
+
+        // fetch 요청 URL 결정
+        let fetchUrl = moneyEl.innerText.includes("↓")
+            ? '/statistics/reorderSendByMoney/' + no
+            : '/statistics/reorderSendByMoneyDesc/' + no;
+
+        fetch(fetchUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let testEl = document.getElementById("jh_foreach_test2");
+
+                // 요소의 내용을 제거합니다.
+                testEl.innerHTML = '';
+
+                // 데이터를 반복하여 HTML 요소를 생성합니다.
+                data.forEach(l => {
+                    let div = document.createElement('div');
+                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+
+                    // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
+                    let firstRowDiv = document.createElement('div');
+                    firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
+
+                    let kanjiDiv = document.createElement('div');
+                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
+                    firstRowDiv.appendChild(kanjiDiv);
+
+                    let priceDiv = document.createElement('div');
+                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.textContent = l.p_price + '円';
+                    firstRowDiv.appendChild(priceDiv);
+
+                    div.appendChild(firstRowDiv);
+
+                    // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
+                    let secondRowDiv = document.createElement('div');
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
+
+                    let productDiv = document.createElement('div');
+                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    productDiv.textContent = l.g_relation;
+                    secondRowDiv.appendChild(productDiv);
+
+                    let dateDiv = document.createElement('div');
+                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    secondRowDiv.appendChild(dateDiv);
+
+                    div.appendChild(secondRowDiv);
+
+                    testEl.appendChild(div);
+                });
+                productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
+                dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
+                dateEl.style.backgroundColor = 'white';
+                dateEl.style.color = 'black';
+                moneyEl.style.backgroundColor = 'red';
+                moneyEl.style.color = 'white';
+                productEl.style.backgroundColor = 'white';
+                productEl.style.color = 'black';
+                // jh_button_money 버튼의 텍스트에 화살표 토글
+                if (moneyEl.innerText.includes("↓")) {
+                    moneyEl.innerText = moneyEl.innerText.replace("↓", "↑");
+                } else if (moneyEl.innerText.includes("↑")) {
+                    moneyEl.innerText = moneyEl.innerText.replace("↑", "↓");
+                    fetchUrl = '/statistics/reorderSendByMoney/' + no;
+                } else {
+                    moneyEl.innerText += "↓";
+                    fetchUrl = '/statistics/reorderSendByMoneyDesc/' + no;
+                }
+
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+
+    }
+    function reorderSendByDate(no) {
+
+
+        let productEl = document.getElementById("jh_button_product2");
+        let moneyEl = document.getElementById("jh_button_money2");
+        let dateEl = document.getElementById("jh_button_date2");
+
+
+        // fetch 요청 URL 결정
+        let fetchUrl = dateEl.innerText.includes("↓")
+            ? '/statistics/reorderSendByMoney/' + no
+            : '/statistics/reorderSendByMoneyDesc/' + no;
+
+        fetch(fetchUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let testEl = document.getElementById("jh_foreach_test2");
+
+                // 요소의 내용을 제거합니다.
+                testEl.innerHTML = '';
+
+                // 데이터를 반복하여 HTML 요소를 생성합니다.
+                data.forEach(l => {
+                    let div = document.createElement('div');
+                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+
+                    // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
+                    let firstRowDiv = document.createElement('div');
+                    firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
+
+                    let kanjiDiv = document.createElement('div');
+                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
+                    firstRowDiv.appendChild(kanjiDiv);
+
+                    let priceDiv = document.createElement('div');
+                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.textContent = l.p_price + '円';
+                    firstRowDiv.appendChild(priceDiv);
+
+                    div.appendChild(firstRowDiv);
+
+                    // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
+                    let secondRowDiv = document.createElement('div');
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
+
+                    let productDiv = document.createElement('div');
+                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    productDiv.textContent = l.g_relation;
+                    secondRowDiv.appendChild(productDiv);
+
+                    let dateDiv = document.createElement('div');
+                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    secondRowDiv.appendChild(dateDiv);
+
+                    div.appendChild(secondRowDiv);
+
+                    testEl.appendChild(div);
+                });
+                moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
+                productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
+                moneyEl.style.backgroundColor = 'white';
+                moneyEl.style.color = 'black';
+                dateEl.style.backgroundColor = 'red';
+                dateEl.style.color = 'white';
+                productEl.style.backgroundColor = 'white';
+                productEl.style.color = 'black';
+                // jh_button_money 버튼의 텍스트에 화살표 토글
+                if (dateEl.innerText.includes("↓")) {
+                    dateEl.innerText = dateEl.innerText.replace("↓", "↑");
+                } else if (dateEl.innerText.includes("↑")) {
+                    dateEl.innerText = dateEl.innerText.replace("↑", "↓");
+                    fetchUrl = '/statistics/reorderSendByDate/' + no;
+                } else {
+                    dateEl.innerText += "↓";
+                    fetchUrl = '/statistics/reorderSendByDateDesc/' + no;
+                }
+
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+
+    }
 
     function reorderByMoney(no) {
         let moneyEl = document.getElementById("jh_button_money");
@@ -278,6 +540,21 @@
     }
 
     $(document).ready(function () {
+        $('.slick22').slick({
+            dots: false,
+            infinite: false,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: true,
+
+            prevArrow: $(".jh_prev_btn2"),
+            nextArrow: $(".jh_next_btn2"),
+
+
+        });
+
+
         $('.slick').slick({
             dots: false,
             infinite: false,
@@ -616,7 +893,7 @@
             </div>
 
         </div>
-        <div id="jh_slick1" class="slick">
+        <div id="jh_slick1" class="slick22">
 
             <div class="jh_slider">
 
@@ -655,9 +932,9 @@
 
                 </div>
                 <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
-                    <img class="jh_prev_btn"  src="/resources/img/Prev.png">
+                    <img class="jh_prev_btn2"  src="/resources/img/Prev.png">
                     <img  src="/resources/img/Dots1.png">
-                    <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
+                    <img  class="jh_next_btn2" src="/resources/img/Next.png" alt="">
                 </div>
 
 
@@ -727,9 +1004,9 @@
                     </div>
                 </div>
                 <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
-                    <img class="jh_prev_btn"  src="/resources/img/Prev.png">
+                    <img class="jh_prev_btn2"  src="/resources/img/Prev.png">
                     <img  src="/resources/img/Dots2.png">
-                    <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
+                    <img  class="jh_next_btn2" src="/resources/img/Next.png" alt="">
                 </div>
             </div>
             <div class="jh_slider">
@@ -804,9 +1081,9 @@
 
 
                 <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
-                    <img class="jh_prev_btn"  src="/resources/img/Prev.png">
+                    <img class="jh_prev_btn2"  src="/resources/img/Prev.png">
                     <img  src="/resources/img/Dots3.png">
-                    <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
+                    <img  class="jh_next_btn2" src="/resources/img/Next.png" alt="">
                 </div>
 
 
@@ -856,8 +1133,6 @@
 
 
             </div>
-
-
             <div class="jh_slider" id="jh_slider222">
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center; height:  8vh ;align-content: center; font-size: 20px">詳しいファンディング現況 </div>
@@ -872,17 +1147,17 @@
                     <div>
                         <div style="display: flex; justify-content: space-around;">
                             <div class="jh_arrange_button">
-                                <button onclick="reorderByProduct(5)" class="jh_arrange_button_button"
+                                <button onclick="reorderSendByRelation(5)" class="jh_arrange_button_button"
                                         id="jh_button_product2" type="submit">関係別
                                 </button>
                             </div>
                             <div class="jh_arrange_button">
-                                <button onclick="reorderByMoney(5)" class="jh_arrange_button_button"
+                                <button onclick="reorderSendByMoney(5)" class="jh_arrange_button_button"
                                         id="jh_button_money2" type="submit">金額順
                                 </button>
                             </div>
                             <div class="jh_arrange_button">
-                                <button onclick="reorderByDate(5)" class="jh_arrange_button_button" id="jh_button_date2"
+                                <button onclick="reorderSendByDate(5)" class="jh_arrange_button_button" id="jh_button_date2"
                                         type="submit">日付順
                                 </button>
                             </div>
@@ -1005,8 +1280,6 @@
 
 
             </div>
-
-
         </div>
 
 

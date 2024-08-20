@@ -112,6 +112,36 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     }
 
     @Override
+    public List<StatisticsSendVo> getSendInfosByRelation(int eno) {
+        return statisticsFundingMapper.getSendInfosByRelation(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByRelationDesc(int eno) {
+        return statisticsFundingMapper.getSendInfosByRelationDesc(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByMoney(int eno) {
+        return statisticsFundingMapper.getSendInfosByMoney(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByMoneyDesc(int eno) {
+        return statisticsFundingMapper.getSendInfosByMoneyDesc(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByDate(int eno) {
+        return statisticsFundingMapper.getSendInfosByDate(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByDateDesc(int eno) {
+        return statisticsFundingMapper.getSendInfosByDateDesc(eno);
+    }
+
+    @Override
     public List<PayVo> getSendDate(int eno) {
 
     return statisticsFundingMapper.getSendDate(eno);

@@ -185,3 +185,20 @@ div {
     height:  auto;
 
 }
+.jh_prev_btn2 {
+
+    text-align: center;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+    margin-bottom: 15%;
+    margin-top: 15%;
+}
+
+.jh_next_btn2 {
+
+    text-align: center;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+    margin-bottom: 15%;
+    margin-top: 15%;
+}
