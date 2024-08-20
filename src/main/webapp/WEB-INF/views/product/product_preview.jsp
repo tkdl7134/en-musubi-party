@@ -24,7 +24,7 @@
     <div>縁結び</div>
     <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
-</div>
+
 <div id="je_product-preview-container">
     <div class="je_page-title">プレビュー</div>
     <div class="je_page-content">
