@@ -39,8 +39,9 @@
 <!-- content -->
 <form action="/product/invitation-preview" method="post" enctype="multipart/form-data" onsubmit="return emptyChk()">
     <input type="hidden" name="t_pk" value="${t_pk}">
+    <input type="hidden" name="m_id" value="${authenticatedMember.m_id}">
     <div id="je_product-make-container">
-        <div class="je_page-title">招待状 プレビュー</div>
+        <div class="je_page-title">制作</div>
         <div id="je_product-make-slider">
             <!-- 신랑신부 및 일정 -->
             <div class="je_page-content">

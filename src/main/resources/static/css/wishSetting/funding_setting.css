@@ -10,45 +10,48 @@ body {
 }
 
 /* 메뉴 - 헤더 */
-.je_menu-bar {
+.je_menu-header {
     width: 100%;
-    height: 3rem;
-    background-color: #ffd1d0;
+    height: 3.125rem;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 7.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2e2e2e;
 }
 
-#je_logo {
-    width: 2rem;
-}
-#je_logo img {
-    width: 100%;
+.je_logo-icon,
+.je_menu-icon {
+    width: 1.8rem;
+    img {
+        width: 100%;
+    }
 }
 
-#je_funding-setting-container {
+#je_product-container {
     width: 100vw;
 }
 
 /* 타이틀 */
 .je_page-title {
-    /* background-color: aquamarine; */
-    margin-top: 2rem;
-}
-
-.je_page-title-txt,
-.je_page-title-line {
+    width: 100%;
+    height: 2.5rem;
     display: flex;
     justify-content: center;
-}
-
-.je_page-title-txt {
-    font-size: 1rem;
+    align-items: center;
+    background-color: #ffdbdb;
+    text-align: center;
+    font-size: 14px;
     font-weight: 900;
+    color: #ff494c;
 }
 
-.je_page-title-line > img {
-    width: 10rem;
+#je_funding-setting-container {
+    width: 100vw;
+    height: 100vh;
 }
 
 /* content */
@@ -166,9 +169,14 @@ body {
 }
 
 @media (min-width: 769px) {
-    #je_funding-setting-container {
-        display: flex;
-        justify-content: center;
-        /* width: 30vw; */
+    .je_menu-header{
+        width: 30vw;
+        margin: 0 auto;
+        gap: 13rem;
     }
+    #je_funding-setting-container {
+        width: 30vw;
+        margin: 0 auto;
+    }
+
 }
