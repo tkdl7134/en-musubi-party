@@ -6,12 +6,15 @@
     margin: 0;
 }
 body {
-    background-color: #fff5f4;
+    background-image: url("../../img/Paper_BG.png");
     overflow-y: auto;
 }
 
 .yr_party_wrapper {
     transition: transform 0.5s ease-in-out;
+    justify-content: center;
+    width: 100%;
+    color: #FF8B8B;
 }
 .yr_party_wrapper.hidden {
     transform: translateX(-180%);
@@ -19,26 +22,23 @@ body {
 .yr_party_main_container {
     display: flex;
     flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    height: max-content;
-    margin-bottom: 10rem;
 }
 .yr_title {
-    font-size: 5rem;
+    font-size: 2.5rem;
     font-weight: 600;
-    padding: 50px 40px 40px 50px;
-    height: 10rem;
-}
-.yr_party-red-loof img {
-    width: 58rem;
-}
-.yr_party_welcome {
-    font-size: 3rem;
+    height: 6rem;
+    width: 100%;
+    background-color: #FFDBDB;
+    color: #FF494C;
     text-align: center;
-    color: #dd2025;
-    height: 18rem;
+    align-content: center;
+}
+
+.yr_party_welcome {
+    font-size: 2.2rem;
+    text-align: center;
+    color: #696969;
+    height: 10rem;
     align-content: center;
     transition: opacity 0.5s ease, height 0.5s ease;
     opacity: 1;
@@ -49,40 +49,55 @@ body {
     height: 0;
 }
 
-/* party list */
+/* ----------------------- party list */
 .yr_party_list {
-    height: 13rem;
-    width: 50rem;
-    background-color: #ffe7e7;
-    margin-bottom: 1.5rem;
-    border-radius: 2rem;
-    color: #ff7e81;
-    font-size: 3.5rem;
+    font-size: 2.1rem;
+    height: 12rem;
+    width: 47rem;
+    border-radius: 2.5rem;
     text-align: center;
     transition: height 0.5s ease;
+    border: 3px solid #FF8B8B;
+    box-shadow: 0 5px 5px #FF8B8B;
+    background-color: white;
+    margin: auto auto 3rem auto;
     align-content: center;
+    padding: 1.5rem;
+}
+.yr_list_title{
+    color:#696969;
+    padding-bottom: 1.8rem;
+}
+.yr_list_title span,
+.yr_choice_mention span{
+    color:#FF494C;
+}
+.yr_list_title2{
+    color:#474747;
+    padding: 0 0 1.8rem;
 }
 
 /* 각 메뉴당 높이 조절 */
 .yr_party_list.expanded {
     height: max-content;
-    align-content: baseline;
+    border: 3px solid #F03434;
+    box-shadow: 0 0 0 8px white, 0 0 0 12px #FFC700;
 }
 .yr_party_list.collapsed {
-    height: 7rem;
+    height: 9rem;
+    margin-top: 2rem;
 }
 .yr_party_list.all.expanded {
     height: max-content;
+    margin-top: 4rem;
 }
 .yr_party_list.random.expanded {
-    height: max-content;
+    height: 35rem;
 }
 .yr_party_list.choice.expanded {
     height: max-content;
 }
-.yr_party_list.expanded p {
-    padding: 2rem;
-}
+
 .yr_list_all,
 .yr_random,
 .yr_type,
@@ -91,15 +106,18 @@ body {
     margin-bottom: 5rem;
 }
 
-/* 참가자 list*/
+/* 참가자*/
 .yr_list {
-    background-color: #fff;
+    background-color: #FFFBF7;
+    border: 3px solid #FF8B8B;
     height: 7rem;
     width: 40rem;
-    border-radius: 5rem;
+    margin: 1.5rem auto;
+    border-radius: 2rem;
+
     display: flex;
     align-items: center;
-    margin: auto auto 1.5rem;
+
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -108,31 +126,35 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-.yr_list_number {
-    width: 5rem;
-    height: 5rem;
-    background-color: #ff7e81;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 0.8em;
-    margin-left: 0.5rem;
-    align-content: center;
+.yr_list_left,.yr_list_right{
+    width: 7rem;
+}
+.yr_list_left img{
+    width: 4rem;
+    margin-left: 1rem;
 }
 .yr_list_name {
-    color: #ff7e81;
+    color: #696969;
     margin: auto;
 }
+.yr_list_right img{
+    width: 3rem;
+    margin-right: 1rem;
+}
 
-/* random */
+
+/* --------------------------random */
 .yr_random_button {
-    width: 15rem;
-    height: 5rem;
-    background-color: #ff7e81;
-    color: #fff;
-    font-weight: 200;
-    font-size: 3rem;
-    border-radius: 10rem;
-    margin: 12.5rem auto;
+    width: 11rem;
+    height: 4.5rem;
+    border-radius: 1rem;
+    font-size: 2.3rem;
+    font-weight: 600;
+    border: 4px solid #FF8B8B;
+    background-color: #FF5050;
+    color: white;
+    align-content: center;
+    margin: 8rem auto;
 }
 .yr_random_loading {
     height: 30rem;
@@ -144,12 +166,12 @@ body {
 .lds-heart div:after,
 .lds-heart div:before {
     box-sizing: border-box;
+    color: #FF5050;
 }
 .lds-heart {
     display: inline-block;
     position: relative;
     width: 80px;
-    /* height: 80px; */
     transform: rotate(45deg);
     transform-origin: 40px 40px;
 }
@@ -172,11 +194,11 @@ body {
     background: currentColor;
 }
 .lds-heart div:before {
-    left: -95px;
+    left: -85px;
     border-radius: 50% 0 0 50%;
 }
 .lds-heart div:after {
-    top: -95px;
+    top: -85px;
     border-radius: 50% 50% 0 0;
 }
 .yr_random_group {
@@ -184,10 +206,144 @@ body {
     height: 30rem;
     opacity: 0;
     animation: fadeIn 1s forwards;
+    color: black;
+    font-weight: 400;
 }
 .yr_random_group p {
     font-size: 12rem;
+    color:#FF5050;
 }
+
+/* ---------------------------- type */
+.yr_type_group1,
+.yr_type_group2,
+.yr_type_group3 {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    margin: 2rem auto;
+    background-color: #FFFBF7;
+    width: 40rem;
+    border-radius: 1rem;
+    border: 5px solid #FFDBDB;
+    padding: 2rem 0;
+}
+.yr_type_mention{
+    width: 100%;
+    color: #696969;
+    font-weight: 400;
+    height: 4rem;
+    font-size: 1.8rem;
+}
+.yr_type_item {
+    font-size: 1.8rem;
+    width: 12rem;
+    height: 4rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    margin: 1rem 2rem;
+    border: 4px solid #FF5050;
+    align-content: center;
+    letter-spacing: -0.1rem;
+    font-weight: 300;
+}
+.yr_type_item.selected {
+    background-color: #FF5050;
+    color: white;
+}
+#yr_type_button {
+    background-color: #fff;
+    color: #ff7e81;
+    width: 11rem;
+    height: 4.5rem;
+    border-radius: 1rem;
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin: 1rem auto 0;
+    border: 4px solid #FF8B8B;
+}
+#yr_type_button:hover{
+    background-color: #FF5050;
+}
+.yr_type_group_select {
+    width: 40rem;
+    height: 38rem;
+    background-color: #fff;
+    margin: 2rem auto;
+    border-radius: 3rem;
+    font-size: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    font-weight: 400;
+    color: #474747;
+}
+.yr_type_group_select p {
+    font-size: 12rem;
+    color: #FF5050;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ---------------------------choice */
+.yr_choice_mention {
+    font-size: 2rem;
+    margin: 3rem auto 5rem;
+}
+.yr_list_choice {
+    background-color: #FFFBF7;
+    border: 3px solid #FF8B8B;
+    height: 7rem;
+    width: 40rem;
+    margin: 1.5rem auto;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.yr_list_choice:hover {
+    /* box-shadow: inset 0 0 15px; */
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+    box-shadow: 0 0 10px;
+}
+.yr_list_choice.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.yr_list_name_choice {
+    margin: auto;
+    color: #696969;
+}
+.yr_list_choice.selected {
+    box-shadow: inset 0 0 30px;
+}
+#yr_choice_button {
+    background-color: #fff;
+    color: #ff7e81;
+    width: 11rem;
+    height: 4.5rem;
+    border-radius: 1rem;
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin: 1rem auto 0;
+    border: 4px solid #FF8B8B;
+}
+#yr_choice_button:hover{
+    background-color: #FF5050;
+    color: white;
+}
+.yr_bottom_img{
+    width: 90%;
+    margin: 0 5% 10%;
+}
+
 @keyframes lds-heart {
     0% {
         transform: scale(0.95);
@@ -207,130 +363,4 @@ body {
     100% {
         transform: scale(0.9);
     }
-}
-
-/* type */
-.yr_type_mention {
-    font-size: 2rem;
-    height: 5rem;
-    width: 100%;
-}
-.yr_type_group1,
-.yr_type_group2,
-.yr_type_group3 {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2rem auto;
-    background-color: #fff;
-    width: 40rem;
-    border-radius: 3rem;
-    padding: 1rem;
-}
-.yr_type_item {
-    font-size: 2.3rem;
-    font-weight: 700;
-    width: 15.5rem;
-    height: 5rem;
-    background-color: #fff;
-    border-radius: 10rem;
-    margin: 1rem 2rem;
-    border: 3px solid #ff7e81;
-    align-content: center;
-    letter-spacing: -0.1rem;
-    color: #ff7e81;
-}
-.yr_type_item.selected {
-    background-color: #ff7e81;
-    color: white;
-}
-#yr_type_button {
-    background-color: #fff;
-    color: #ff7e81;
-    width: 15.5rem;
-    height: 5rem;
-    border: none;
-    border-radius: 10rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 4rem auto 2rem;
-}
-.yr_type_group_select {
-    width: 40rem;
-    height: 38rem;
-    background-color: #fff;
-    margin: 2rem auto;
-    border-radius: 3rem;
-    font-size: 2rem;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-.yr_type_group_select p {
-    font-size: 12rem;
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* choice */
-.yr_choice_mention {
-    font-size: 2rem;
-    margin: 3rem auto 5rem;
-}
-.yr_list_choice {
-    background-color: #fff;
-    height: 7rem;
-    width: 40rem;
-    border-radius: 5rem;
-    display: flex;
-    align-items: center;
-    margin: auto auto 1.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.yr_list_choice:hover {
-    /* box-shadow: inset 0 0 15px; */
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
-    box-shadow: 0 0 10px;
-}
-.yr_list_choice.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.yr_list_number_choice {
-    width: 5rem;
-    height: 5rem;
-    background-color: #ff7e81;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 0.8em;
-    margin-left: 0.5rem;
-    align-content: center;
-}
-.yr_list_name_choice {
-    color: #ff7e81;
-    margin: auto;
-}
-.yr_list_choice.selected {
-    box-shadow: inset 0 0 15px;
-}
-#yr_choice_button {
-    background-color: #ff7e81;
-    color: #fff;
-    width: 15.5rem;
-    height: 5rem;
-    border: none;
-    border-radius: 10rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 4rem auto 2rem;
-    text-align: center;
-}
-.yr_selected_choices {
-    position: absolute;
 }

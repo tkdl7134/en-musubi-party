@@ -4,25 +4,21 @@
     font-optical-sizing: auto;
     font-style: normal;
 }
-html,
 body {
     background-color: #fff5f4;
-    overflow-y: auto;
+    background-image: url("../../img/Paper_BG.png");
 }
 
 .yr_party-info-container {
     display: flex;
     flex-direction: column;
-    justify-items: center;
     align-items: center;
     justify-content: center;
-    overflow-y: auto;
-    gap: 0.5rem;
+    gap: 2rem;
 }
 .yr_title {
     font-size: 2.5rem;
     font-weight: 600;
-    padding: 1rem;
     height: 5rem;
     width: 100%;
     background-color: #FFDBDB;
@@ -30,17 +26,15 @@ body {
     text-align: center;
     align-content: center;
 }
-.yr_party-red-loof img {
-    width: 58rem;
-    margin-bottom: 0.5rem;
-}
 
-#yr_go_to_chat {
-    width: 50rem;
+/* -------채팅 가는 버튼 -------- */
+#yr_go_to_chat,
+#yr_go_to_chat2 {
+    width: 53rem;
     height: 15rem;
     font-size: 3.2rem;
     border-radius: 2rem;
-    background-color: #ffff;
+    background-color: #fff;
     /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
     display: flex;
     justify-content: center;
@@ -50,115 +44,164 @@ body {
     border: 2px solid #FF8B8B;
 }
 #yr_go_to_chat:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 0 15px 10px rgba(244, 80, 82, 0.5);
+    background-color: #fff;
+}
+#yr_go_to_chat span {
+    font-weight: 500;
+}
+.yr_go_to_chat_wrap img{
+    position: absolute;
+    top: 18rem;
+    right: 4rem;
+}
+
+#yr_go_to_chat2:hover {
+    box-shadow: 0 0 15px 10px rgba(244, 80, 82, 0.5);
     background-color: #fff;
 }
 
-#yr_go_to_chat img {
-    width: 10rem;
-    margin-right: 5rem;
+#yr_go_to_chat2 span {
+    font-weight: 500;
 }
-#yr_go_to_chat span {
-    font-weight: 400;
-}
+
 .yr_ratio {
     margin: 0rem 1.5rem 2rem 1.5rem;
     text-align: center;
-    width: 48rem;
-    height: 30rem;
-    font-size: 2.5rem;
+    width: 50rem;
+    height: 50rem;
+    font-size: 3.2rem;
     border-radius: 2rem;
     background-color: #ffff;
-    /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
     padding: 1rem;
     border: 2px solid #FF8B8B;
 }
+.yr_ratio p {
+    font-weight: 500;
+    margin: 1.5rem;
+}
 .yr_ratio span {
-    font-weight: 300;
+    font-weight: 100;
 }
-.yr_ratio.age{
-    height: 35rem;
-}
+
 .yr_graph_wrap {
     position: relative;
-    width: 30rem;
-    height: 20rem;
+    width: 35rem;
+    height: 25rem;
     margin: 1rem auto 1rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #000;
 }
 .yr_graph_wrap .yr_graph {
-    height: 20rem;
-    font-size: 0.5rem;
+    height: 25rem;
+
 }
 .yr_graph_wrap .yr_graph div {
     position: absolute;
     bottom: 0;
     width: 6.5rem;
 }
+
+/* ------- 신랑신부측 비율 막대 그래프-------- */
+.yr_graph_wrap .yr_graph #yr_side_graph_bar1 {
+    left: 7rem;
+    background: #FF5153;
+}
+.yr_graph_wrap .yr_graph #yr_side_graph_bar2 {
+    left: 21rem;
+    background: #FFC700;
+}
+.yr_graph_percent_wrap{
+    display: flex;
+    justify-content: center;
+    font-size: 1.9rem;
+    font-weight: 100;
+    align-items: center;
+    gap: 1rem;
+    margin: 50px auto;
+}
+.yr_groom {
+    animation: yr_groom 1.5s forwards;
+}
+.yr_bride {
+    animation: yr_bride 1.5s forwards;
+}
+
+.circle1{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #FF5153;
+}
+.circle2{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #FFC700;
+}
+
+
+/* ------- 남녀 분포 비율 막대 그래프 -------- */
 .yr_graph_wrap .yr_graph #yr_graph_bar1 {
-    left: 6rem;
-    background: #76ceff;
+    left: 7rem;
+    background: #FF5153;
 }
 .yr_graph_wrap .yr_graph #yr_graph_bar2 {
-    left: 18rem;
-    background: #ff99d6;
-}
-.man {
-
-    animation: man 1.5s forwards;
-}
-.woman {
-
-    animation: woman 1.5s forwards;
+    left: 21rem;
+    background: #FFC700;
 }
 
-/*@keyframes man {*/
-/*    from {*/
-/*        height: 0%;*/
-/*    }*/
-/*    to {*/
-/*        height: 100%;*/
-/*    }*/
-/*}*/
-/*@keyframes woman {*/
-/*    from {*/
-/*        height: 0%;*/
-/*    }*/
-/*    to {*/
-/*        height: 100%;*/
-/*    }*/
-/*}*/
-.yr_graph_label_wrap {
-    font-size: 1.5rem;
-    width: 24rem;
+.yr_man {
+    animation: yr_man 1.5s forwards;
+}
+.yr_woman {
+    animation: yr_woman 1.5s forwards;
+}
+
+.yr_graph_label_wrap1,
+.yr_graph_label_wrap2 {
+    font-size: 1.8rem;
+    font-weight: 200;
+    width: 28rem;
     display: flex;
     justify-content: space-around;
     margin-left: 3.5rem;
+    margin-top: 3rem;
+}
+.yr_graph_label_wrap1{
+    margin-top: 2rem;
 }
 
-/*.yr_apply_cancel {*/
-/*    margin: 3rem;*/
-/*    width: 23rem;*/
-/*    height: 7rem;*/
-/*    font-size: 2rem;*/
-/*    color: #dd2025;*/
-/*    border-radius: 2rem;*/
-/*    border-style: none;*/
-/*    background-color: #ffdbdb9f;*/
-/*    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
-/*    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);*/
-/*}*/
-/*.yr_apply_cancel:hover {*/
-/*    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);*/
-/*    background-color: #ffdbdb;*/
-/*}*/
+/* ------- 도넛 그래프 -------- */
+.yr_ratio.age{
+    height: 53rem;
+}
 .yr_graph_donut {
     position: relative;
-    width: 30rem;
-    height: 30rem;
-    margin: 20px auto;
+    width: 40rem;
+    height: 40rem;
+    margin: 20px auto 50px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* ------- 채팅 버튼 애니메이션 -------- */
+@keyframes buttonPulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 15px 10px rgba(244, 80, 82, 0.5);
+    }
+    50% {
+        transform: scale(0.97);
+        box-shadow: 0 0 15px 5px rgba(244, 80, 82, 0.5);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 15px 10px rgba(244, 80, 82, 0.5);
+    }
+}
+
+#yr_go_to_chat2 {
+    animation: buttonPulse 1.5s infinite;
 }

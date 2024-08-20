@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     [array[i], array[j]] = [array[j], array[i]];
                 }
             }
-            // 20명 초과일 경우 그룹은 5~6명, 이하는 3~4명
+            // 랜덤 그룹 배정 인원수 로직
             function createGroups(participants) {
                 let groupSize;
                 const numberOfParticipants = participants.length;
@@ -156,7 +156,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (numberOfParticipants > 20) {
                     groupSize = 5 + Math.floor(Math.random() * 2); // 5 or 6명 그룹
                 } else {
-                    groupSize = 3 + Math.floor(Math.random() * 2); // 3 or 4명 그룹
+                    if(numberOfParticipants % 4 ==0){
+                        groupSize = 4;
+                    } else if(numberOfParticipants % 5 ==0){
+                        groupSize = 5;
+                    } else {
+                        groupSize = 3 + Math.floor(Math.random() * 2); // 3 or 4명 그룹
+                    }
+
                 }
 
                 shuffle(participants);
@@ -199,9 +206,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // --------------------------------------------------------------------------------------type
     // type 토글시 색변경
-    typeItems.forEach((item) => {
-        item.addEventListener("click", () => {
-            item.classList.toggle("selected");
+    // typeItems.forEach((item) => {
+    //     item.addEventListener("click", () => {
+    //         item.classList.toggle("selected");
+    //     });
+    // });
+
+    // 그룹별 최대 선택 개수
+    const maxSelection = {
+        'yr_type_group1': 2,
+        'yr_type_group2': 2,
+        'yr_type_group3': 3
+    };
+
+    const group1Items = document.querySelectorAll('.yr_type_group1 .yr_type_item');
+    const group2Items = document.querySelectorAll('.yr_type_group2 .yr_type_item');
+    const group3Items = document.querySelectorAll('.yr_type_group3 .yr_type_item');
+
+    // 그룹별로 이벤트 리스너 추가
+    [group1Items, group2Items, group3Items].forEach((groupItems, index) => {
+        const groupName = `yr_type_group${index + 1}`;
+        groupItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const selectedItems = document.querySelectorAll(`.${groupName} .yr_type_item.selected`);
+                if (selectedItems.length < maxSelection[groupName] || item.classList.contains('selected')) {
+                    item.classList.toggle('selected');
+                } else {
+                    alert(`${maxSelection[groupName]}つまで選択できます`);
+                }
+            });
         });
     });
 
@@ -237,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    if (data === 1) {
+                    if (data === 1 || data===2) {
                         fetch('/party/main/type', {
                             method: 'POST',
                             headers: {
@@ -307,9 +340,10 @@ document.addEventListener("DOMContentLoaded", function () {
         .addEventListener("click", function () {
             const jsonObj2 = {};
             if (choiceCount > 0) {
-               const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value);
+
+               const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value).join(","); ;
                 console.log(finalChoice);
-                jsonObj2.ep_finalChoice = JSON.stringify(finalChoice);
+                jsonObj2.ep_finalChoice =finalChoice;
                 console.log(jsonObj2);
 
                 fetch('/party/main', {
@@ -322,33 +356,56 @@ document.addEventListener("DOMContentLoaded", function () {
                     .then(response => response.json())
                     .then(data => {
                         console.log('Success:', data);
+                            location.href='/party/main/choice';
 
-                        if(data === 1) {
-                            fetch('/party/main/choice', {
-                                method : 'put',
-                                headers:{
-                                    'Content-Type' : 'application/json'
-                                }
-                            })
-                                .then(response => response.json())
-                                .then(finalChoiceData => {
-                                    console.log(finalChoiceData);
-                                    console.log(finalChoiceData.ep_finalChoice);
 
-                                    let finalChoices = finalChoiceData.ep_finalChoice;
-                                    let matchFound = false;
-
-                                    if (finalChoices.includes(myName)) {
-                                        matchFound = true;
-                                    }
-
-                                    if (matchFound) {
-                                        console.log("매칭 성공");
-                                    } else {
-                                        console.log("매칭 실패");
-                                    }
-                                })
-                        }
+                        // if(data === 1) {
+                        //     fetch('/party/main/choice', {
+                        //         method : 'put',
+                        //         headers:{
+                        //             'Content-Type' : 'application/json'
+                        //         }
+                        //     })
+                        //         .then(response => response.json())
+                        //         .then(finalChoiceData => {
+                        //
+                        //             console.log(finalChoiceData);
+                        //
+                        //             const myId = 'test1';
+                        //             const finalChoices = finalChoiceData.finalChoice;
+                        //
+                        //             // 특정 ID가 선택한 값을 가져오기
+                        //             const myFinalChoices = finalChoices[myId]; //["test2"]
+                        //
+                        //             console.log(myFinalChoices);
+                        //             console.log(finalChoices[myFinalChoices]);
+                        //
+                        //
+                        //
+                        //
+                        //
+                        //
+                        //
+                        //             let matchFound = false;
+                        //
+                        //
+                        //             if (finalChoices[myId]) {
+                        //                 const selectedIds = JSON.parse(finalChoices[myId]);
+                        //                 if (selectedIds.includes(myId)) {
+                        //                     matchFound = true;
+                        //                 }
+                        //             }
+                        //
+                        //             if (matchFound) {
+                        //                 console.log("매칭 성공");
+                        //                 alert("매칭 성공!");
+                        //             } else {
+                        //                 console.log("매칭 실패");
+                        //
+                        //             }
+                        //
+                        //         })
+                        // }
                     })
                     .catch((error) => {
                         console.error('Error:', error);
