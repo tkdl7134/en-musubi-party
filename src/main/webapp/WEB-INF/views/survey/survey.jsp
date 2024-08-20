@@ -77,12 +77,54 @@
                                                     <div class="tk-survey-essential">必須</div>
                                                 </div>
                                             <div>
-                                                <select name="g_relation_detail">
+                                                <select name="g_relation" id="g_relation">
                                                     <option value="家族">家族</option>
                                                     <option value="親友">親友</option>
                                                     <option value="職場同僚">職場同僚</option>
                                                     <option value="その他">その他</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div class="tk_division-line"></div>
+                                        <div class="tk_survey-relationship-detail">
+                                            <div class="tk_survey-titleName-container">
+                                                <div class="tk_survey-titleName">間柄</div>
+                                                <div class="tk-survey-essential">必須</div>
+                                            </div>
+                                            <div>
+                                                <select name="g_relation_detail_family" id="g_relation_family" style="display:none;">
+                                                    <option value="father">お父さん (おとうさん)</option>
+                                                    <option value="mother">お母さん (おかあさん)</option>
+                                                    <option value="olderBrother">お兄さん (おにいさん)</option>
+                                                    <option value="olderSister">お姉さん (おねえさん)</option>
+                                                    <option value="youngerBrother">弟 (おとうと)</option>
+                                                    <option value="youngerSister">妹 (いもうと)</option>
+                                                    <option value="grandfather">おじいさん</option>
+                                                    <option value="grandmother">おばあさん</option>
+                                                </select>
+
+                                                <select name="g_relation_detail_friend" id="g_relation_friend" style="display:none;">
+                                                    <option value="the best friend">幼馴染</option>
+                                                    <option value="elementaryFriend">小学校の同級生</option>
+                                                    <option value="middleSchoolFriend">中学校の同級生</option>
+                                                    <option value="highSchoolFriend">高校の同級生</option>
+                                                    <option value="universityFriend">大学の同級生</option>
+                                                    <option value="onlineFriend">ネット友達</option>
+                                                    <option value="partTimeFriend">バイト仲間</option>
+                                                    <option value="clubFriend">部活の仲間</option>
+                                                    <option value="overseasFriend">海外の友達</option>
+                                                </select>
+
+                                                <select name="g_relation_detail_colleagues" id="g_relation_colleagues" style="display:none;">
+                                                    <option value="supervisor">上司</option>
+                                                    <option value="subordinate">部下</option>
+                                                    <option value="colleague">同僚</option>
+                                                    <option value="senior">先輩</option>
+                                                    <option value="junior">後輩</option>
+                                                </select>
+
+                                                <input type="text" name="g_relation_detail_other" id="g_relation_other" style="display:none;" placeholder="ご関係を入力してください">
+
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
@@ -93,26 +135,13 @@
                                                 部分がある場合は変更してください
                                             </div>
                                         </div>
-                                        <div class="tk_survey-relationship-detail">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">間柄</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <div>
-                                                <select name="g_relation">
-                                                    <option value="family">家族</option>
-                                                    <option value="friend">親友</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="tk_division-line"></div>
                                         <div class="tk_justName">
                                             <div class="tk_survey-titleName-container">
                                                 <div class="tk_survey-titleName">お名前</div>
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
-                                            <input type="text" name="m_fam_kanji" value="${member.m_fam_kanji}"/>
-                                            <input type="text" name="m_name_kanji" value="${member.m_name_kanji}"/>
+                                            <input type="text" id="kanji-fam" name="m_fam_kanji" value="${member.m_fam_kanji}"/>
+                                            <input type="text" id="kanji-name" name="m_name_kanji" value="${member.m_name_kanji}"/>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_kataName">
@@ -120,8 +149,8 @@
                                                 <div class="tk_survey-titleName">カタカナ</div>
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
-                                            <input type="text" name="m_fam_kana" value="${member.m_fam_kana}"/>
-                                            <input type="text" name="m_name_kana" value="${member.m_name_kana}"/>
+                                            <input type="text" id="kana-fam" name="m_fam_kana" value="${member.m_fam_kana}"/>
+                                            <input type="text" id="kana-name" name="m_name_kana" value="${member.m_name_kana}"/>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_romeName">
@@ -129,8 +158,8 @@
                                                 <div class="tk_survey-titleName">ローマ字</div>
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
-                                            <input type="text" name="m_fam_eng" value="${member.m_fam_eng}"/>
-                                            <input type="text" name="m_name_eng" value="${member.m_name_eng}"/>
+                                            <input type="text" id="eng-fam" name="m_fam_eng" value="${member.m_fam_eng}"/>
+                                            <input type="text" id="eng-name" name="m_name_eng" value="${member.m_name_eng}"/>
                                         </div>
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-gender">
@@ -181,14 +210,15 @@
                                                         type="text"
                                                         name="m_zipcode"
                                                         value="${member.m_zipcode}"
+                                                        id="zipcode"
                                                 />
                                                 <button type="button" class="search-post-btn">
                                                     検索
                                                 </button>
                                             </div>
                                             <div class="tk_survey-address">
-                                                <input type="text" name="m_address" value="${member.m_address}"/>
-                                                <input type="text" name="m_other_address" />
+                                                <input type="text" name="m_address" value="${member.m_address}" id="address"/>
+                                                <input type="text" name="m_other_address" id="address-others"/>
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
@@ -198,7 +228,7 @@
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
                                             <div>
-                                                <input type="text" name="m_email" value="${member.m_email}" />
+                                                <input type="text" id="email" name="m_email" value="${member.m_email}" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
@@ -208,7 +238,7 @@
                                                 <div class="tk-survey-essential">必須</div>
                                             </div>
                                             <div>
-                                                <input type="text" name="m_phone" value="${member.m_phone}" />
+                                                <input type="text" id="phoneNum" name="m_phone" value="${member.m_phone}" />
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
@@ -265,7 +295,7 @@
                                                     </div>
                                                  </div>
                                                  <div class="tk_survey-messageText">
-                                                    <textarea name="me_content" rows="10" cols="30"></textarea>
+                                                    <textarea name="me_content" rows="10" cols="30" id="messageContent"></textarea>
                                                  </div>
                                             </div>
                                         </div>

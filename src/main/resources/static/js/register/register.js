@@ -415,12 +415,13 @@ $(document).ready(function () {
         };
 
         // 여기서 formData를 서버에 전송하거나 처리할 수 있습니다.
+        console.log('Button clicked');
         console.log(formData); // formData 확인용 콘솔 출력
 
         // AJAX로 데이터 전송
         $.ajax({
             url: '/register/submit', // 서버의 회원가입 처리 URL
-            type: 'POST',
+            method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(formData),
             success: function (response) {
