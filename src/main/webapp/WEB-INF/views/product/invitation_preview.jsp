@@ -32,12 +32,12 @@
     <div class="je_page-content">
 
         <div class="je_invitation-container">
-            <iframe
-                    width="2px" height="2px" style="display: none"
-                    scrolling="no" frameborder="0" allow="autoplay"
-<%--                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1252967488&color=%23e9e6e5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"--%>
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1163500603&color=%23e9e6e5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-            ></iframe>
+<%--            <iframe--%>
+<%--                    width="2px" height="2px" style="display: none"--%>
+<%--                    scrolling="no" frameborder="0" allow="autoplay"--%>
+<%--&lt;%&ndash;                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1252967488&color=%23e9e6e5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"&ndash;%&gt;--%>
+<%--                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1163500603&color=%23e9e6e5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"--%>
+<%--            ></iframe>--%>
             <div class="je_invitation-main"
                  style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),
                         url('https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${weddingInfo.w_img1}?alt=media')">

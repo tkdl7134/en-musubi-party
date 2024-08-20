@@ -1,5 +1,6 @@
 package com.en.main.service;
 
+import com.en.main.dto.MemberVO;
 import com.en.main.dto.TemplateProductVO;
 import com.en.main.dto.WeddingVO;
 import com.en.main.mapper.ProductMapper;
@@ -52,14 +53,14 @@ public class ProductService {
 
 //    @Override
 @Transactional
-public void insertWeddingInfo(WeddingVO weddingVO,
+public void insertWeddingInfo(WeddingVO weddingVO, MemberVO memberVO,
                               MultipartFile w_img1_file, MultipartFile w_img2_file, MultipartFile w_img3_file,
                               MultipartFile[] w_img_share_files) {
     String img1 =  saveFile(w_img1_file);
     String img2 =  saveFile(w_img2_file);
     String img3 =  saveFile(w_img3_file);
 
-    productMapper.createEvent();
+    productMapper.createEvent(memberVO);
     int eventNo = productMapper.getCurrentEventNo();
     weddingVO.setE_no(eventNo);
     String hello = weddingVO.getW_message_invite();

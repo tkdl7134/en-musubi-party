@@ -26,6 +26,7 @@
     <div>縁結び</div>
     <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
+<%-- content --%>
 <div id="je_product-container">
     <div class="je_page-title">テンプレート一覧</div>
     <div class="je_page-content">
@@ -34,8 +35,8 @@
                 <ul class="swiper-wrapper slide_list">
                     <c:forEach var="t" items="${templates}">
                         <li class="swiper-slide">
-                            <div class="je_template-box" onclick="location.href='/product/${t.t_pk}'">
-                                <div class="je_template-preview">
+                            <div class="je_template-box">
+                                <div class="je_template-preview" onclick="location.href='/product/${t.t_pk}'">
                                     <img src="/resources/img/${t.t_preview}" alt="" />
                                 </div>
                                 <div class="je_template-title">${t.t_title}</div>

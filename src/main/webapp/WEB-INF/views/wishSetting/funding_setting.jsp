@@ -18,19 +18,15 @@
 </head>
 <body>
 <!-- header -->
-<div class="je_menu-bar">
-    <div id="je_logo">
-        <img src="/resources/img/en-musubi-logo.png" alt="" />
-    </div>
+<div class="je_menu-header">
+    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
 <!-- content -->
 <div id="je_funding-setting-container">
-    <div class="je_page-title">
-        <div class="je_page-title-txt">ファンディング 管理</div>
-        <div class="je_page-title-line">
-            <img src="/resources/img/page-title-line.png" alt="" />
-        </div>
-        <div class="je_page-content">
+    <div class="je_page-title">ファンディング 管理</div>
+    <div class="je_page-content">
             <!-- 예시 -->
             <div class="je_funding-box">
                 <div class="je_inner-yellow"></div>
@@ -96,7 +92,6 @@
             <div class="je_top-btn" onclick="goToTop()">
                 <span>トップ</span>
             </div>
-        </div>
     </div>
 </div>
 </body>
