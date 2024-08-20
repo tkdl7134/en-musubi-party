@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +49,23 @@
     <span class="indicator"></span>
     <span class="indicator"></span>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const shareButtons = document.querySelectorAll(".share-button");
+
+        shareButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                // 버튼의 active 상태를 토글
+                button.classList.toggle("active");
+
+                // 부모 요소인 image-container의 active 상태를 토글
+                const imageContainer = button.closest(".image-container");
+                imageContainer.classList.toggle("active");
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -24,11 +24,11 @@
             <div class="card-front">
                 <div class="image-container">
                     <img src="/resources/img/Template1.jpg" alt="Template 1">
-
                 </div>
             </div>
             <div class="card-back">
-                <div>✿${g.m_fam_kanji} ${g.m_name_kanji}✿</div>
+                <div><span style="color: red">✿</span>${g.m_fam_kanji} ${g.m_name_kanji}<span
+                        style="color: red">✿</span></div>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
             </div>
@@ -38,13 +38,12 @@
             </div>
         </c:if>
     </c:forEach>
-</div>
 
-<!-- 슬라이드 인디케이터 -->
-<div class="slider-indicators">
-    <span class="indicator active"></span>
-    <span class="indicator"></span>
-    <span class="indicator"></span>
+    <div class="slider-indicators">
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+    </div>
 </div>
 </body>
 </html>

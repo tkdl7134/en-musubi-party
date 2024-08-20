@@ -44,6 +44,7 @@ body {
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid #ddd;
+    color: #ff494c;
 }
 
 .hw_container {
@@ -84,17 +85,22 @@ body {
 }
 
 .image-container {
-    width: 19.5rem;  /* 부모 요소의 전체 너비 사용 */
-    height: 160%;  /* 높이를 더 크게 설정 */
+    width: 19.5rem;
+    height: 160%;
     overflow: hidden;
     position: relative;
-    border: solid 1px #ddd;  /* 테두리 추가 */
+    border: solid 1px #ddd;
+    transition: filter 0.3s, box-shadow 0.3s;
+}
+
+.image-container.active {
+    filter: brightness(0.7);
 }
 
 .image-container img {
-    width: 100%; /* 이미지 너비를 부모 요소에 맞춤 */
-    height: 100%; /* 비율을 유지하면서 높이 조정 */
-    object-fit: contain; /* 비율을 유지하며 컨테이너 안에 맞춤 */
+    width: 100%;
+    height: 100%;
+    /*object-fit: contain;*/
 }
 
 .share-button {
@@ -110,6 +116,12 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     border: solid 1px #ff787b;
+}
+
+/* 버튼이 활성화되었을 때의 상태 */
+.share-button.active {
+    background-color: #ff787b;
+    color: #ffffff;
 }
 
 .card-back {
@@ -132,10 +144,6 @@ body {
     transition: background-color 0.3s;
     width: 6rem;
     height: 2.5rem;
-}
-
-.card-back button:hover {
-    background-color: #FFD1D0;
 }
 
 .slider-indicators {

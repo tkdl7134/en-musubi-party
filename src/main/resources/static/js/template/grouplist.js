@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalPages = Math.ceil(cards.length / 3);
     let currentIndex = 0;
 
+
+
+
     if (!cards.length || !container) {
         console.warn("Required elements are not found in the DOM.");
         return;

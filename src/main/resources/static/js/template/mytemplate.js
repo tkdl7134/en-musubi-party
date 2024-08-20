@@ -43,4 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
             scrollToSlide(currentIndex - 1);
         }
     });
+
+
 });
