@@ -6,7 +6,6 @@
 	align-items: center;
 	width: 100%;
 	overflow-x: scroll;
-	gap: 1rem;
 }
 
 .kh-f-card-container::-webkit-scrollbar {
@@ -50,6 +49,7 @@
 	justify-content: center;
 	align-items: center;
 	transition: transform 0.1s ease-in;
+	margin: 6.5rem;
 }
 
 .kh-f-card-disable {
