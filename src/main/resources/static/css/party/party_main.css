@@ -9,6 +9,28 @@ body {
     background-image: url("../../img/Paper_BG.png");
     overflow-y: auto;
 }
+/* 메뉴 - 헤더 */
+.je_menu-header {
+    width: 100%;
+    height: 3.125rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2e2e2e;
+}
+
+.je_logo-icon,
+.je_menu-icon {
+    width: 1.8rem;
+    img {
+        width: 100%;
+    }
+}
+
 
 .yr_party_wrapper {
     transition: transform 0.5s ease-in-out;
@@ -22,11 +44,12 @@ body {
 .yr_party_main_container {
     display: flex;
     flex-direction: column;
+    width: 100vw;
 }
 .yr_title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    height: 6rem;
+    font-size: 14px;
+    font-weight: 900;
+    height: 2.5rem;
     width: 100%;
     background-color: #FFDBDB;
     color: #FF494C;
@@ -35,10 +58,10 @@ body {
 }
 
 .yr_party_welcome {
-    font-size: 2.2rem;
+    font-size: 1rem;
     text-align: center;
     color: #696969;
-    height: 10rem;
+    height: 4.5rem;
     align-content: center;
     transition: opacity 0.5s ease, height 0.5s ease;
     opacity: 1;
@@ -51,22 +74,22 @@ body {
 
 /* ----------------------- party list */
 .yr_party_list {
-    font-size: 2.1rem;
-    height: 12rem;
-    width: 47rem;
-    border-radius: 2.5rem;
+    font-size: 0.91rem;
+    height: 4rem;
+    width: 78%;
+    border-radius: 1rem;
     text-align: center;
     transition: height 0.5s ease;
-    border: 3px solid #FF8B8B;
-    box-shadow: 0 5px 5px #FF8B8B;
+    border: 2px solid #FF8B8B;
+    box-shadow: 0 3px 5px #FF8B8B;
     background-color: white;
-    margin: auto auto 3rem auto;
+    margin: 0 auto 20px auto;
     align-content: center;
-    padding: 1.5rem;
+    padding: 0.8rem;
 }
 .yr_list_title{
     color:#696969;
-    padding-bottom: 1.8rem;
+    padding-bottom: 0.6rem;
 }
 .yr_list_title span,
 .yr_choice_mention span{
@@ -74,25 +97,25 @@ body {
 }
 .yr_list_title2{
     color:#474747;
-    padding: 0 0 1.8rem;
+    padding: 0 0 1rem;
 }
 
 /* 각 메뉴당 높이 조절 */
 .yr_party_list.expanded {
     height: max-content;
-    border: 3px solid #F03434;
-    box-shadow: 0 0 0 8px white, 0 0 0 12px #FFC700;
+    border: 2px solid #F03434;
+    box-shadow: 0 0 0 5px white, 0 0 0 6px #FFC700;
 }
 .yr_party_list.collapsed {
-    height: 9rem;
-    margin-top: 2rem;
+    height: 3rem;
+    margin-top: 1rem;
 }
 .yr_party_list.all.expanded {
     height: max-content;
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 .yr_party_list.random.expanded {
-    height: 35rem;
+    height: 15rem;
 }
 .yr_party_list.choice.expanded {
     height: max-content;
@@ -103,21 +126,18 @@ body {
 .yr_type,
 .yr_choice {
     display: none;
-    margin-bottom: 5rem;
+    margin-bottom: 1.5rem;
 }
 
 /* 참가자*/
 .yr_list {
     background-color: #FFFBF7;
     border: 3px solid #FF8B8B;
-    height: 7rem;
-    width: 40rem;
-    margin: 1.5rem auto;
-    border-radius: 2rem;
-
+    height: 3rem;
+    margin: 0.5rem auto;
+    border-radius: 1rem;
     display: flex;
     align-items: center;
-
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -127,37 +147,37 @@ body {
     transform: translateY(0);
 }
 .yr_list_left,.yr_list_right{
-    width: 7rem;
+    width: 2rem;
 }
 .yr_list_left img{
-    width: 4rem;
-    margin-left: 1rem;
+    width: 1.8rem;
+    margin-left: 10px;
 }
 .yr_list_name {
     color: #696969;
     margin: auto;
 }
 .yr_list_right img{
-    width: 3rem;
-    margin-right: 1rem;
+    width: 1.4rem;
+    margin-right: 10px;
 }
 
 
 /* --------------------------random */
 .yr_random_button {
-    width: 11rem;
-    height: 4.5rem;
+    width: 6rem;
+    height: 2.5rem;
     border-radius: 1rem;
-    font-size: 2.3rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    border: 4px solid #FF8B8B;
+    border: 2px solid #FF8B8B;
     background-color: #FF5050;
     color: white;
     align-content: center;
-    margin: 8rem auto;
+    margin: 3rem auto;
 }
 .yr_random_loading {
-    height: 30rem;
+    height: 15rem;
 }
 
 /* 하트모양 로딩 애니메이션 */
@@ -173,14 +193,14 @@ body {
     position: relative;
     width: 80px;
     transform: rotate(45deg);
-    transform-origin: 40px 40px;
+    transform-origin: 80px 20px;
 }
 .lds-heart div {
-    top: 100px;
-    left: 100px;
+    top: 50px;
+    left: 50px;
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background: currentColor;
     animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -189,28 +209,28 @@ body {
     content: " ";
     position: absolute;
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background: currentColor;
 }
 .lds-heart div:before {
-    left: -85px;
+    left: -35px;
     border-radius: 50% 0 0 50%;
 }
 .lds-heart div:after {
-    top: -85px;
+    top: -35px;
     border-radius: 50% 50% 0 0;
 }
 .yr_random_group {
-    font-size: 2rem;
-    height: 30rem;
+    font-size: 1rem;
+    height: 10rem;
     opacity: 0;
     animation: fadeIn 1s forwards;
     color: black;
     font-weight: 400;
 }
 .yr_random_group p {
-    font-size: 12rem;
+    font-size: 5rem;
     color:#FF5050;
 }
 
@@ -220,28 +240,27 @@ body {
 .yr_type_group3 {
     /*display: flex;*/
     /*flex-wrap: wrap;*/
-    margin: 2rem auto;
+    margin: 1rem auto;
     background-color: #FFFBF7;
-    width: 40rem;
     border-radius: 1rem;
-    border: 5px solid #FFDBDB;
-    padding: 2rem 0;
+    border: 2px solid #FFDBDB;
+    padding: 1rem 0;
 }
 .yr_type_mention{
     width: 100%;
     color: #696969;
     font-weight: 400;
-    height: 4rem;
-    font-size: 1.8rem;
+    height: 2rem;
+    font-size: 1rem;
 }
 .yr_type_item {
-    font-size: 1.8rem;
-    width: 12rem;
-    height: 4rem;
+    font-size: 1.1rem;
+    width: 6rem;
+    height: 2.3rem;
     background-color: #fff;
-    border-radius: 1rem;
-    margin: 1rem 2rem;
-    border: 4px solid #FF5050;
+    border-radius: 0.6rem;
+    margin: 0.3rem 0.7rem;
+    border: 2px solid #FF5050;
     align-content: center;
     letter-spacing: -0.1rem;
     font-weight: 300;
@@ -253,31 +272,29 @@ body {
 #yr_type_button {
     background-color: #fff;
     color: #ff7e81;
-    width: 11rem;
-    height: 4.5rem;
-    border-radius: 1rem;
-    font-size: 2.3rem;
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin: 1rem auto 0;
-    border: 4px solid #FF8B8B;
+    border: 3px solid #FF8B8B;
 }
 #yr_type_button:hover{
     background-color: #FF5050;
 }
 .yr_type_group_select {
-    width: 40rem;
-    height: 38rem;
+    height: 15rem;
     background-color: #fff;
-    margin: 2rem auto;
-    border-radius: 3rem;
-    font-size: 2rem;
+    margin: 1rem auto;
+    font-size: 1rem;
     opacity: 0;
     animation: fadeIn 1s forwards;
     font-weight: 400;
     color: #474747;
 }
 .yr_type_group_select p {
-    font-size: 12rem;
+    font-size: 3rem;
     color: #FF5050;
 }
 @keyframes fadeIn {
@@ -291,16 +308,15 @@ body {
 
 /* ---------------------------choice */
 .yr_choice_mention {
-    font-size: 2rem;
-    margin: 3rem auto 5rem;
+    font-size: 1rem;
+    margin: 1rem auto 2rem;
 }
 .yr_list_choice {
     background-color: #FFFBF7;
     border: 3px solid #FF8B8B;
-    height: 7rem;
-    width: 40rem;
-    margin: 1.5rem auto;
-    border-radius: 2rem;
+    height: 3rem;
+    margin: 0.5rem auto;
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     opacity: 0;
@@ -322,18 +338,18 @@ body {
     color: #696969;
 }
 .yr_list_choice.selected {
-    box-shadow: inset 0 0 30px;
+    box-shadow: inset 0 0 18px;
 }
 #yr_choice_button {
     background-color: #fff;
     color: #ff7e81;
-    width: 11rem;
-    height: 4.5rem;
-    border-radius: 1rem;
-    font-size: 2.3rem;
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin: 1rem auto 0;
-    border: 4px solid #FF8B8B;
+    border: 3px solid #FF8B8B;
 }
 #yr_choice_button:hover{
     background-color: #FF5050;
@@ -341,7 +357,7 @@ body {
 }
 .yr_bottom_img{
     width: 90%;
-    margin: 0 5% 10%;
+    margin: 3% 5% 10%;
 }
 
 @keyframes lds-heart {

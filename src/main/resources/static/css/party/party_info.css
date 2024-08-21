@@ -1,25 +1,49 @@
 * {
     margin: 0;
+    padding: 0;
     font-family: "Noto Serif JP", serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
 body {
-    background-color: #fff5f4;
+    width: 100vw;
     background-image: url("../../img/Paper_BG.png");
 }
 
+.je_menu-header {
+    width: 100%;
+    height: 3.125rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2e2e2e;
+}
+
+.je_logo-icon,
+.je_menu-icon {
+    width: 1.8rem;
+    img {
+        width: 100%;
+    }
+}
+
 .yr_party-info-container {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
+    margin-bottom: 40px;
 }
 .yr_title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    height: 5rem;
+    font-size: 14px;
+    font-weight: 900;
+    height: 2.5rem;
     width: 100%;
     background-color: #FFDBDB;
     color: #FF494C;
@@ -30,17 +54,17 @@ body {
 /* -------채팅 가는 버튼 -------- */
 #yr_go_to_chat,
 #yr_go_to_chat2 {
-    width: 53rem;
-    height: 15rem;
-    font-size: 3.2rem;
-    border-radius: 2rem;
+    width: 22rem;
+    height: 5rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
     background-color: #fff;
     /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    margin-bottom: 2rem;
+
     border: 2px solid #FF8B8B;
 }
 #yr_go_to_chat:hover {
@@ -52,8 +76,9 @@ body {
 }
 .yr_go_to_chat_wrap img{
     position: absolute;
-    top: 18rem;
-    right: 4rem;
+    top: 9.4rem;
+    right: 2rem;
+    width: 3.5rem;
 }
 
 #yr_go_to_chat2:hover {
@@ -66,19 +91,20 @@ body {
 }
 
 .yr_ratio {
-    margin: 0rem 1.5rem 2rem 1.5rem;
+    /* margin: 0rem 1.5rem 2rem 1.5rem; */
     text-align: center;
-    width: 50rem;
-    height: 50rem;
-    font-size: 3.2rem;
-    border-radius: 2rem;
+    width: 21.6rem;
+    height: 23.3rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
     background-color: #ffff;
-    padding: 1rem;
+    /* padding: 0.5rem; */
     border: 2px solid #FF8B8B;
 }
 .yr_ratio p {
     font-weight: 500;
-    margin: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.3rem;
 }
 .yr_ratio span {
     font-weight: 100;
@@ -86,38 +112,38 @@ body {
 
 .yr_graph_wrap {
     position: relative;
-    width: 35rem;
-    height: 25rem;
-    margin: 1rem auto 1rem;
-    border-bottom: 1px solid #000;
+    width: 14rem;
+    height: 11rem;
+    margin: 0 auto 0.8rem;
+    border-bottom: 1px solid #ccc;
 }
 .yr_graph_wrap .yr_graph {
-    height: 25rem;
+    height: 11.5rem;
 
 }
 .yr_graph_wrap .yr_graph div {
     position: absolute;
     bottom: 0;
-    width: 6.5rem;
+    width: 2.8rem;
 }
 
 /* ------- 신랑신부측 비율 막대 그래프-------- */
 .yr_graph_wrap .yr_graph #yr_side_graph_bar1 {
-    left: 7rem;
+    left: 3rem;
     background: #FF5153;
 }
 .yr_graph_wrap .yr_graph #yr_side_graph_bar2 {
-    left: 21rem;
+    left: 8.5rem;
     background: #FFC700;
 }
 .yr_graph_percent_wrap{
     display: flex;
-    justify-content: center;
-    font-size: 1.9rem;
+    justify-content: space-around;
+    font-size: 0.8rem;
     font-weight: 100;
     align-items: center;
-    gap: 1rem;
-    margin: 50px auto;
+    /* gap: 0.3rem; */
+    margin: 30px auto;
 }
 .yr_groom {
     animation: yr_groom 1.5s forwards;
@@ -127,26 +153,30 @@ body {
 }
 
 .circle1{
-    width: 2rem;
-    height: 2rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     background: #FF5153;
 }
 .circle2{
-    width: 2rem;
-    height: 2rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     background: #FFC700;
 }
 
 
 /* ------- 남녀 분포 비율 막대 그래프 -------- */
+.yr_ratio.type{
+    height: 22rem;
+}
+
 .yr_graph_wrap .yr_graph #yr_graph_bar1 {
-    left: 7rem;
+    left: 3rem;
     background: #FF5153;
 }
 .yr_graph_wrap .yr_graph #yr_graph_bar2 {
-    left: 21rem;
+    left: 8.5rem;
     background: #FFC700;
 }
 
@@ -159,27 +189,26 @@ body {
 
 .yr_graph_label_wrap1,
 .yr_graph_label_wrap2 {
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-weight: 200;
-    width: 28rem;
+    width: 11rem;
     display: flex;
     justify-content: space-around;
-    margin-left: 3.5rem;
-    margin-top: 3rem;
+    margin-left: 1.5rem;
 }
 .yr_graph_label_wrap1{
-    margin-top: 2rem;
+    margin-top: 0.2rem;
 }
 
 /* ------- 도넛 그래프 -------- */
 .yr_ratio.age{
-    height: 53rem;
+    height: 25.5rem;
 }
 .yr_graph_donut {
     position: relative;
-    width: 40rem;
-    height: 40rem;
-    margin: 20px auto 50px;
+    width: 20rem;
+    /* height: 40rem; */
+    margin: 20px auto;
     border-radius: 50%;
     display: flex;
     justify-content: center;

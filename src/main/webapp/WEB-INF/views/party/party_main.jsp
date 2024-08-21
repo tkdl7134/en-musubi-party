@@ -4,8 +4,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <title>Title</title>
+
+    <title>En-Party Main</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
@@ -16,7 +18,18 @@
 
 </head>
 <body>
+
+<header>
+    <div class="je_menu-header">
+        <div class="je_logo-icon"><img src="/static/img/en-musubi-logo.png" alt="" /></div>
+        <div>縁結び</div>
+        <div class="je_menu-icon"><img src="/static/img/menu-button.png" alt="" /></div>
+    </div>
+
+</header>
+
 <div class="yr_party_main_container">
+
     <div class="yr_title">縁パーティー</div>
 
     <div class="yr_party_wrapper">
@@ -65,6 +78,9 @@
                 <div class="yr_list_title"><span>✿</span> Step 2 <span>✿</span></div>
                 <div class="yr_list_title2">最初のラウンドでランダムに割り当てます</div>
                 <div class="yr_random">
+<%--                    <div class="lds-heart">--%>
+<%--                        <div></div>--%>
+<%--                    </div>--%>
                     <div class="yr_random_button">start</div>
                     <div class="yr_random_loading">
                         <div class="lds-heart">

@@ -3,8 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <title>Title</title>
+
+    <title>En-Party Info</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
@@ -52,6 +54,15 @@
     </style>
 </head>
 <body>
+<header>
+    <div class="je_menu-header">
+        <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+        <div>縁結び</div>
+        <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
+    </div>
+
+</header>
+
 <div class="yr_party-info-container">
 
     <div class="yr_title"> 縁パーティー 参加者情報</div>
@@ -175,11 +186,11 @@
                                 usePointStyle: true,
                                 pointStyle: 'circle',
                                 font: {
-                                    size: 27,
+                                    size: 14,
                                     family: 'Noto Serif JP'
                                 },
                                 color: 'black',
-                                padding: 40,
+                                padding: 18,
                             },
                         },
                         datalabels: {
@@ -195,7 +206,7 @@
                             },
                             font: {
                                 weight: '400',
-                                size: 27
+                                size: 14
                             },
                             anchor: 'center',
                             align: 'center'
