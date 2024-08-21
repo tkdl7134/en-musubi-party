@@ -18,12 +18,6 @@ public class GuestDetailController {
     @Autowired
     private TemplateService templateService;
 
-    @GetMapping("/guestB")
-    public String guestB(Model model, GuestDetailVO guestDetailVO) {
-        List<GuestDetailVO> guestDetailList = templateService.getGuestDetail();
-        model.addAttribute("guestDetailList", guestDetailList);
-        return "template/guestB";
-    }
 
     @GetMapping("/allguest")
     public String allguest(Model model, AllGuestVO allGuestVO) {
