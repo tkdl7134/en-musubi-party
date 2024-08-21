@@ -31,13 +31,9 @@ body {
     }
 }
 
-#je_product-container {
-    width: 100vw;
-}
-
 /* 타이틀 */
 .je_page-title {
-    width: 100%;
+    width: 100vw;
     height: 2.5rem;
     display: flex;
     justify-content: center;
@@ -52,10 +48,17 @@ body {
 #je_funding-setting-container {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 /* content */
+input {
+    width: 10rem;
+}
+
 .je_page-content {
+    margin: 0 auto;
     margin-top: 2rem;
 }
 
@@ -164,19 +167,29 @@ body {
     }
 }
 
-.item.temp{
+.item.temp {
     display: none;
 }
 
+.je_line {
+    border: 1px solid #ff494c;
+    width: 100%;
+    /* margin: 0 auto; */
+    /* margin-top: 1rem; */
+}
+
 @media (min-width: 769px) {
-    .je_menu-header{
+    .je_menu-header {
         width: 30vw;
         margin: 0 auto;
         gap: 13rem;
+    }
+    .je_page-title {
+        width: 30vw;
+        margin: 0 auto;
     }
     #je_funding-setting-container {
         width: 30vw;
         margin: 0 auto;
     }
-
 }
