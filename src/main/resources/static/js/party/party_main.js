@@ -82,11 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }, index * 300);
         });
     }
+
     function hideListItems() {
         listItems.forEach((item) => {
             item.classList.remove("visible");
         });
     }
+
     function showListItems2() {
         choiceItems.forEach((item, index) => {
             setTimeout(() => {
@@ -94,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }, index * 300);
         });
     }
+
     function hideListItems2() {
         choiceItems.forEach((item) => {
             item.classList.remove("visible");
@@ -116,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         hideListItems();
     }
+
     document.addEventListener("click", resetAllLists);
 
     // 랜덤버튼 눌렀을때 애니메이션 효과
@@ -148,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     [array[i], array[j]] = [array[j], array[i]];
                 }
             }
+
             // 랜덤 그룹 배정 인원수 로직
             function createGroups(participants) {
                 let groupSize;
@@ -156,9 +161,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (numberOfParticipants > 20) {
                     groupSize = 5 + Math.floor(Math.random() * 2); // 5 or 6명 그룹
                 } else {
-                    if(numberOfParticipants % 4 ==0){
+                    if (numberOfParticipants % 4 == 0) {
                         groupSize = 4;
-                    } else if(numberOfParticipants % 5 ==0){
+                    } else if (numberOfParticipants % 5 == 0) {
                         groupSize = 5;
                     } else {
                         groupSize = 3 + Math.floor(Math.random() * 2); // 3 or 4명 그룹
@@ -270,13 +275,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    if (data === 1 || data===2) {
+                    if (data === 1 || data === 2) {
                         fetch('/party/main/type', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
                             }
-                    })
+                        })
                             .then(response => response.json())
                             .then(groupedData => {
                                 console.log('Group:', groupedData);
@@ -304,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .catch((error) => {
                     console.error('Error:', error);
                 });
-                } else {
+        } else {
             console.error('No types selected');
 
         }
@@ -341,9 +346,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const jsonObj2 = {};
             if (choiceCount > 0) {
 
-               const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value).join(","); ;
+                const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value).join(",");
+                ;
                 console.log(finalChoice);
-                jsonObj2.ep_finalChoice =finalChoice;
+                jsonObj2.ep_finalChoice = finalChoice;
                 console.log(jsonObj2);
 
                 fetch('/party/main', {
@@ -356,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     .then(response => response.json())
                     .then(data => {
                         console.log('Success:', data);
-                            location.href='/party/main/choice';
+                        location.href = '/party/main/choice';
 
 
                         // if(data === 1) {
@@ -419,6 +425,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
-
 
 

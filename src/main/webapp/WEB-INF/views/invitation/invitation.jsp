@@ -10,12 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"/>
     <!-- CSS -->
-    <link rel="stylesheet" href="/resources/css/product/invitation.css" />
-    <link rel="stylesheet" href="/resources/css/product/sakura.min.css" />
+    <link rel="stylesheet" href="/css/product/invitation.css" />
+    <link rel="stylesheet" href="/css/product/sakura.min.css" />
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&callback=initMap"></script>
-    <script src="/resources/js/product/invitation.js" defer></script>
+    <script src="/js/product/invitation.js" defer></script>
 </head>
 <body>
 <div class="je_invitation-container">

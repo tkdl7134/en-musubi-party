@@ -38,3 +38,4 @@ document.querySelectorAll('.delete-btn').forEach(button => {
             .catch(error => console.error('Error:', error));
     });
 });
+

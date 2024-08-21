@@ -13,7 +13,7 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="/resources/css/comment.css">
+    <link rel="stylesheet" href="/css/comment.css">
 </head>
 <body>
 <div class="yr_comment_container">
@@ -42,10 +42,10 @@
 
                     <c:choose>
                         <c:when test="${c.c_type == '新郎側'}">
-                           <img src="/resources/img/blue_heart.png">
+                           <img src="/img/blue_heart.png">
                         </c:when>
                         <c:otherwise>
-                           <img src="/resources/img/pink_heart.png">
+                           <img src="/img/pink_heart.png">
                         </c:otherwise>
                     </c:choose></div>
             </div>
@@ -81,6 +81,6 @@
     </div>
 </div>
 
-<script src="/resources/js/comment.js"></script>
+<script src="/js/comment.js"></script>
 </body>
 </html>

@@ -14,16 +14,16 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="/resources/css/party/party_main.css"/>
+    <link rel="stylesheet" href="/css/party/party_main.css"/>
 
 </head>
 <body>
 
 <header>
     <div class="je_menu-header">
-        <div class="je_logo-icon"><img src="/static/img/en-musubi-logo.png" alt="" /></div>
+        <div class="je_logo-icon"><img src="/img/en-musubi-logo.png" alt="" /></div>
         <div>縁結び</div>
-        <div class="je_menu-icon"><img src="/static/img/menu-button.png" alt="" /></div>
+        <div class="je_menu-icon"><img src="/img/menu-button.png" alt="" /></div>
     </div>
 
 </header>
@@ -49,10 +49,10 @@
                             <div class="yr_list_left">
                                 <c:choose>
                                     <c:when test="${p.g_guest_type == '新郎ゲスト'}">
-                                        <img src="/resources/img/groom.png">
+                                        <img src="/img/groom.png">
                                     </c:when>
                                     <c:otherwise>
-                                        <img src="/resources/img/bride.png">
+                                        <img src="/img/bride.png">
                                     </c:otherwise>
                                 </c:choose>
                             </div>
@@ -61,10 +61,10 @@
                             <div class="yr_list_right">
                                 <c:choose>
                                     <c:when test="${p.m_gender == '男'}">
-                                        <img src="/resources/img/blue_heart.png">
+                                        <img src="/img/blue_heart.png">
                                     </c:when>
                                     <c:otherwise>
-                                        <img src="/resources/img/pink_heart.png">
+                                        <img src="/img/pink_heart.png">
                                     </c:otherwise>
                                 </c:choose>
                             </div>
@@ -155,10 +155,10 @@
                             <div class="yr_list_left">
                                 <c:choose>
                                     <c:when test="${p.g_guest_type == '新郎ゲスト'}">
-                                        <img src="/resources/img/groom.png">
+                                        <img src="/img/groom.png">
                                     </c:when>
                                     <c:otherwise>
-                                        <img src="/resources/img/bride.png">
+                                        <img src="/img/bride.png">
                                     </c:otherwise>
                                 </c:choose>
                             </div>
@@ -166,10 +166,10 @@
                             <div class="yr_list_right">
                                 <c:choose>
                                 <c:when test="${p.m_gender == '男'}">
-                                    <img src="/resources/img/blue_heart.png">
+                                    <img src="/img/blue_heart.png">
                                 </c:when>
                                 <c:otherwise>
-                                    <img src="/resources/img/pink_heart.png">
+                                    <img src="/img/pink_heart.png">
                                 </c:otherwise>
                             </c:choose>
                             </div>
@@ -182,7 +182,7 @@
 
 
             </div>
-        <img class="yr_bottom_img" src="/resources/img/Bird.png">
+        <img class="yr_bottom_img" src="/img/Bird.png">
     </div>
 
 
@@ -196,7 +196,7 @@
 </div>
 
 
-<script src="/resources/js/party/party_main.js"></script>
+<script src="/js/party/party_main.js"></script>
 
 </body>
 </html>

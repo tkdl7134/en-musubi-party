@@ -13,7 +13,7 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="/resources/css/party/party_choice.css"/>
+    <link rel="stylesheet" href="/css/party/party_choice.css"/>
 </head>
 <body>
 
@@ -64,9 +64,9 @@
                 <h2>라인 ID 교환</h2>
                 <form id="lineIdForm">
 
-                        <label for="lineId">라인 ID : </label>
-                        <input type="text" id="lineId" name="ep_lineID" required>
-                        <button type="submit">제출</button>
+                    <label for="lineId">라인 ID : </label>
+                    <input type="text" id="lineId" name="ep_lineID" required>
+                    <button type="submit">제출</button>
 
                 </form>
             </div>

@@ -13,7 +13,7 @@
             href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
             rel="stylesheet"
     />
-    <link rel="stylesheet" href="/resources/css/party/party_info.css"/>
+    <link rel="stylesheet" href="/css/party/party_info.css"/>
     <style>
 
         @keyframes yr_man {
@@ -139,7 +139,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-    <script src="/resources/js/party/party_info.js"></script>
+    <script src="/js/party/party_info.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const ageDistribution = {

@@ -146,13 +146,13 @@
 }
 
 .modal-content {
-     background-color: #fefefe;
-     margin: 35% auto;
-     padding: 10px;
-     width: 80%;
-     border-radius: 10px;
-     border: 2px solid #F03434;
-     box-shadow: 0 0 0 2.5px white, 0 0 0 4px #FFC700;
+    background-color: #fefefe;
+    margin: 35% auto;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid #F03434;
+    box-shadow: 0 0 0 2.5px white, 0 0 0 4px #FFC700;
     height: 15rem;
 }
 
