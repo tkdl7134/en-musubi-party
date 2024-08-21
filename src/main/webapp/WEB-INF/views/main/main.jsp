@@ -26,7 +26,7 @@
         </div>
         <hr class="main-welcome-line">
         <div class="main-welcome-register">
-            　　　<a href="/register" class="main-welcome-register-highlight button">メンバー登録</a>　後、<br>
+            　　　<div onclick="showBottomSheet()" class="main-welcome-register-highlight button">メンバー登録</div>　後、<br>
             お客様だけの特別なサービスを<br>
             お楽しみください！
         </div>
@@ -66,6 +66,25 @@
             <div class="main-enParty-envelope-top"></div>
             <div class="main-enParty-envelope-logo-img">
                 <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- 아래 뾰롱 -->
+    <div class="action-sheet" id="actionSheet" onclick="hideBottomSheet()">
+        <div class="action-options">
+            <div class="menu-container">
+                <div class="menu-imgBox">
+                    <div><img src="/resources/img/amazonList-icon.png" alt="" /></div>
+                </div>
+                <div class="menu-section">
+                    <div class="menu" onclick="location.href='/login'">
+                        ログイン
+                    </div>
+                    <div class="menu" onclick="location.href='/register'">
+                        会員登録
+                    </div>
+                </div>
             </div>
         </div>
     </div>

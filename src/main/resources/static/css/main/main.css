@@ -335,4 +335,103 @@
         width: 30vw;
         margin: auto;
     }
+
+    /*아래 뾰롱 추가*/
+    #actionSheet {
+        width: 30vw;
+        margin: 0 35%;
+    }
+}
+
+/* 아래 뾰롱 CSS */
+#actionSheet {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    /* 서서히 나타나는 효과 */
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+}
+#actionSheet.active {
+    /* 서서히 나타나는 효과 */
+    visibility: visible;
+    opacity: 1;
+}
+
+.action-options {
+    width: 100%;
+    background-image: url("/resources/img/Paper_BG_w_red_line.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 32rem;
+    /* 아래에서 위로 나타나는 효과, max-height과 동일하게 작성 */
+    position: relative;
+    bottom: -300px;
+    transition: 1s;
+}
+#actionSheet.active .action-options {
+    /* 아래에서 위로 나타나는 효과, max-height과 동일하게 작성 */
+    bottom: 0;
+}
+
+/* MENU CSS */
+.menu-container {
+    width: 100%;
+    position: relative;
+}
+
+.menu-imgBox {
+    /*background-color: red;*/
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 16rem;
+}
+
+.menu-imgBox div {
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 100%;
+    }
+}
+
+.menu-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* height: 15rem; */
+    gap: 2rem;
+    margin: 3rem auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem;
+    width: 7rem;
+    background-color: #ffffff;
+    color: #3f3f3f;
+    border-radius: 3rem;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid #ff7e81;
+    /* margin-bottom: 1rem; */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
+    rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
 }
