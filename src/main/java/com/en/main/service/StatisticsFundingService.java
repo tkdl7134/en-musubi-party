@@ -2,6 +2,7 @@ package com.en.main.service;
 
 import com.en.main.dto.JhFundSqlVo;
 import com.en.main.dto.PayVo;
+import com.en.main.dto.StatisticsSendVo;
 import com.en.main.dto.WishlistVO;
 import com.en.main.mapper.StatisticsFundingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +40,19 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     }
 
     @Override
+    public int getSendNumberOfPeople(int no) {
+        return statisticsFundingMapper.getSendNumberOfPeople(no);
+    }
+
+    @Override
     public int getHighestPrice(int no) {
         return statisticsFundingMapper.getHighestPrice(no);
 
+    }
+
+    @Override
+    public int getSendHighestPrice(int no) {
+        return statisticsFundingMapper.getSendHighestPrice(no);
     }
 
     @Override
@@ -50,8 +61,18 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     }
 
     @Override
+    public String getSendPopulatedDate(int no) {
+        return statisticsFundingMapper.getSendPopulatedDate(no);
+    }
+
+    @Override
     public String getPopularWishlist(int no) {
         return statisticsFundingMapper.getPopularWishlist(no);
+    }
+
+    @Override
+    public String getSendPopularRelation(int no) {
+        return statisticsFundingMapper.getSendPopulatedDate(no);
     }
 
     @Override
@@ -103,6 +124,54 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     @Override
     public String getPopularWishlistByWishlistNo(int Wlno, int eno) {
         return statisticsFundingMapper.getPopularWishlistByWishlistNo(Wlno, eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfos(int eno) {
+        return statisticsFundingMapper.getSendInfos(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByRelation(int eno) {
+        return statisticsFundingMapper.getSendInfosByRelation(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByRelationDesc(int eno) {
+        return statisticsFundingMapper.getSendInfosByRelationDesc(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByMoney(int eno) {
+        return statisticsFundingMapper.getSendInfosByMoney(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByMoneyDesc(int eno) {
+        return statisticsFundingMapper.getSendInfosByMoneyDesc(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByDate(int eno) {
+        return statisticsFundingMapper.getSendInfosByDate(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getSendInfosByDateDesc(int eno) {
+        return statisticsFundingMapper.getSendInfosByDateDesc(eno);
+    }
+
+    @Override
+    public List<PayVo> getSendDate(int eno) {
+
+    return statisticsFundingMapper.getSendDate(eno);
+    }
+
+    @Override
+    public List<StatisticsSendVo> getPriceOrderByRelation(int eno) {
+
+    return statisticsFundingMapper.getPriceOrderByRelation(eno);
+
     }
 
 
