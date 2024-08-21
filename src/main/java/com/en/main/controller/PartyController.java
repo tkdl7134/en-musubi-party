@@ -45,6 +45,13 @@ public class PartyController {
         double malePercentage = totalCount == 0 ? 0 : ((double) maleCount / totalCount) * 100;
         double femalePercentage = totalCount == 0 ? 0 : ((double) femaleCount / totalCount) * 100;
 
+        long groomGuestCount = partyMembers.stream().filter(member -> "新郎ゲスト".equals(member.getG_guest_type())).count();
+        long brideGuestCount = partyMembers.stream().filter(member -> "新婦ゲスト".equals(member.getG_guest_type())).count();
+        long totalGuestCount = groomGuestCount + brideGuestCount;
+
+        double groomGuestPercentage = totalGuestCount == 0 ? 0 : ((double) groomGuestCount / totalGuestCount) * 100;
+        double brideGuestPercentage = totalGuestCount == 0 ? 0 : ((double) brideGuestCount / totalGuestCount) * 100;
+
         Map<String, Integer> ageDistribution = new HashMap<>();
         ageDistribution.put("20代初め", 0);
         ageDistribution.put("20代半ば", 0);
@@ -77,7 +84,8 @@ public class PartyController {
         model.addAttribute("partyMembers", partyMembers);
         model.addAttribute("malePercentage", malePercentage);
         model.addAttribute("femalePercentage", femalePercentage);
-
+        model.addAttribute("groomGuestPercentage", groomGuestPercentage);
+        model.addAttribute("brideGuestPercentage", brideGuestPercentage);
         model.addAttribute("ageDistribution", ageDistribution);
 
         return "/party/party_info";
@@ -135,16 +143,76 @@ public class PartyController {
         return partyService.updateFinalChoice(partyVO);
     }
 
+//    @ResponseBody
+//    @PutMapping("/main/choice")
+//    public Map<String, Object> partyFinalChoiceBoth() {
+//        Map<String, Object> finalChoice = partyService.getFinalSelectedChoice();
+//        Map<String, Object> response = new HashMap<>();
+//        response.put("status", "success");
+//        response.put("finalChoice", finalChoice);
+//
+//        return response;
+//
+//    }
+
+
+    @GetMapping("/main/choice")
+    public String partyFinalChoiceBoth(Model model) {
+
+        Map<String, String> finalChoiceData = partyService.getFinalSelectedChoice();
+        System.out.println("Final Choice Data: " + finalChoiceData);
+
+        List<Map<String, String>> matchedCouples = new ArrayList<>();
+
+        for (String id1 : finalChoiceData.keySet()) {
+            // 사용자 id1이 선택한 사람 목록을 가져옵니다.
+            String choicesStr = finalChoiceData.get(id1);
+            // 선택한 사람 목록을 리스트로 변환합니다.
+            List<String> choices = Arrays.asList(choicesStr.split(","));
+
+            // 각 선택된 사람에 대해 매칭을 확인합니다.
+            for (String choice : choices) {
+                // 선택된 사람의 선택 값을 가져옵니다.
+                String choiceStr = finalChoiceData.get(choice);
+                if (choiceStr != null) {
+                    List<String> selectedByChoice = Arrays.asList(choiceStr.split(","));
+
+                    // id1의 선택 값에 choice가 포함되고, choice의 선택 값에 id1이 포함되어 있으면 매칭된 것입니다.
+                    if (selectedByChoice.contains(id1)) {
+                        // 매칭된 커플이 이미 리스트에 있는지 확인합니다 (중복 방지).
+                        boolean alreadyMatched = matchedCouples.stream()
+                                .anyMatch(couple -> (couple.get("person1").equals(id1) && couple.get("person2").equals(choice)) ||
+                                        (couple.get("person1").equals(choice) && couple.get("person2").equals(id1)));
+
+                        if (!alreadyMatched) {
+                            Map<String, String> couple = new HashMap<>();
+                            couple.put("person1", id1);
+                            couple.put("person2", choice);
+                            matchedCouples.add(couple);
+                            System.out.println("Match found for: " + id1 + " with " + choice);
+                        }
+                    }
+                }
+            }
+        }
+
+        model.addAttribute("matchedCouples", matchedCouples);
+
+        return "/party/party_choice";
+    }
+
     @ResponseBody
-    @PutMapping("/main/choice")
-    public Map<String, String> partyFinalChoiceBoth() {
-        Map<String, String> finalChoice = partyService.getFinalSelectedChoice();
-        Map<String, String> response = new HashMap<>();
-        response.put("status", "success");
-        response.put("finalChoice", finalChoice.toString());
+    @PostMapping("/main/choice")
+    public int partyExchangeLineID(@RequestBody PartyVO partyVO) {
+        return partyService.updateLineID(partyVO);
 
-        return response;
+    }
 
+    @GetMapping("/main/choice/line")
+    public String getPartnerLineID(Model model) {
+        model.addAttribute("partnerLineId", partyService.getPartnerLineID());
+
+        return "/party/party_choice_line";
     }
 
 
