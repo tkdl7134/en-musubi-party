@@ -178,6 +178,6 @@ function goFinal(wlno) {
 		}
 	} else {
 		let justnum = sinput.value.replace(',','');
-		location.href = "InsertFundC?paytype=send&price=" + justnum + "&wlno=" + wlno;
+		location.href = "sending/insert?p_type=send&p_price=" + justnum + "&wl_no=" + wlno;
 	}
 }

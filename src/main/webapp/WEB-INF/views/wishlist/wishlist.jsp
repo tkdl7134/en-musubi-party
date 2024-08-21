@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html style="zoom : 100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
