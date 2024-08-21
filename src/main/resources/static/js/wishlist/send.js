@@ -2,24 +2,24 @@
 let card = document.querySelectorAll(".kh-s-card-out");
 let spop = document.querySelector(".kh-s-popup");
 
-let scrollTimeout;
-card.forEach((element, index, array) => {
-	element.style.transition = "0.8s ease-in-out";
-	let cardIn = element.querySelector(".kh-send-card");
-	if (index % 2 == 0) {
-		cardIn.style.backgroundColor = "#FFF1E0";
-	} else {
-		cardIn.style.backgroundColor = "#FFE0E0";
-	}
-	element.addEventListener("mouseover", function(event) {
-		element.style.cursor = "default";
-		mouseicn.classList.remove("kh-s-block");
-		mouseicn.classList.add("kh-s-none");
-		event.stopPropagation();
-	});
-});
-const cardCon = document.querySelector(".kh-s-card-container");
-const mouseicn = document.querySelector(".kh-s-mousemove");
+// let scrollTimeout;
+// card.forEach((element, index, array) => {
+// 	element.style.transition = "0.8s ease-in-out";
+// 	let cardIn = element.querySelector(".kh-send-card");
+// 	if (index % 2 == 0) {
+// 		cardIn.style.backgroundColor = "#FFF1E0";
+// 	} else {
+// 		cardIn.style.backgroundColor = "#FFE0E0";
+// 	}
+// 	// element.addEventListener("mouseover", function(event) {
+// 	// 	element.style.cursor = "default";
+// 	// 	mouseicn.classList.remove("kh-s-block");
+// 	// 	mouseicn.classList.add("kh-s-none");
+// 	// 	event.stopPropagation();
+// 	// });
+// });
+// const cardCon = document.querySelector(".kh-s-card-container");
+// const mouseicn = document.querySelector(".kh-s-mousemove");
 //마우스 따라다니는 요소
 // cardCon.addEventListener("mouseover", function(event) {
 // 	if (event.target === cardCon) {
