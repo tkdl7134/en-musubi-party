@@ -335,13 +335,8 @@
         width: 30vw;
         margin: auto;
     }
-
-    /*아래 뾰롱 추가*/
-    #actionSheet {
-        width: 30vw;
-        margin: 0 35%;
-    }
 }
+
 
 /* 아래 뾰롱 CSS */
 #actionSheet {
@@ -434,4 +429,72 @@
     transition: background-color 0.3s ease;
     box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
     rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
+}
+
+
+/* 로그인 이후, */
+.main-account-box {
+    display: flex;
+    justify-content: right;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.main-account-name {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 10rem;
+    font-size: 20px;
+}
+
+.main-account-img {
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid #db2227;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 95%;
+        border-radius: 100%;
+    }
+}
+
+.main-account-box:nth-last-child(1) {
+    margin-top: 0.7rem;
+    gap: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.main-logout {
+    width: 7rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 3px #3f3f3f;
+    font-size: 14px;
+    color: #3f3f3f;
+}
+
+.main-account-mypage {
+    width: 7rem;
+    margin-right: 2rem;
+    padding: 0.5rem;
+    background-color: #ff5a55;
+    border-radius: 10px;
+    box-shadow: 0 0 3px #3f3f3f;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+
+    /*아래 뾰롱 추가*/
+    #actionSheet {
+        width: 30vw;
+        margin: 0 35%;
+    }
 }

@@ -58,3 +58,4 @@ function showBottomSheet() {
 function hideBottomSheet() {
     document.getElementById("actionSheet").classList.remove("active");
 }
+
