@@ -18,6 +18,7 @@ public class PartyVO {
     private String m_birth;
     private String ep_selectedType;
     private String ep_finalChoice;
-
+    private String g_guest_type;
+    private String ep_lineID;
 
 }
