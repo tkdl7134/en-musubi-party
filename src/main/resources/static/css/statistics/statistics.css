@@ -175,3 +175,33 @@ div {
     text-decoration: none;
     cursor: pointer;
 }
+
+.jh_slider.slick-slide.slick-current.slick-active {
+    width : auto;
+
+
+}
+.slick-list.draggable {
+    height:  1142px !important;
+
+}
+.slick-track {
+
+}
+.jh_prev_btn2 {
+
+    text-align: center;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+    margin-bottom: 15%;
+    margin-top: 15%;
+}
+
+.jh_next_btn2 {
+
+    text-align: center;
+    font-family: "Noto Serif JP", serif;
+    font-weight: bold;
+    margin-bottom: 15%;
+    margin-top: 15%;
+}

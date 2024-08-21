@@ -7,7 +7,6 @@ function addClickListener(boxId, photoId) {
 addClickListener("je_photobox1", "je_photoInput1");
 addClickListener("je_photobox2", "je_photoInput2");
 addClickListener("je_photobox3", "je_photoInput3");
-// addClickListener("je_photobox4", "je_photoInput4");
 
 // div에 띄우기
 function handleFileInputChange(event, outputId) {
@@ -43,131 +42,6 @@ document
     .addEventListener("change", function (event) {
         handleFileInputChange(event, "je_photoOut3");
     });
-// document
-//     .getElementById("je_photoInput4")
-//     .addEventListener("change", function (event) {
-//         handleFileInputChange(event, "je_photoOut4");
-//     });
-
-// 파일 여러개 업로드한 거 리스트 보여주기
-var fileNo = 0;
-var filesArr = [];
-
-function addFile(obj) {
-    var maxFileCnt = 9; // 첨부파일 최대 갯수
-    var attFileCnt = document.querySelectorAll(".je_filebox").length; // 기존 추가된 첨부파일 개수
-    var remainFileCnt = maxFileCnt - attFileCnt; // 추가 첨부 가능 개수
-    var curFileCnt = obj.files.length;
-
-    // 첨부파일 개수 확인
-    if (curFileCnt > remainFileCnt) {
-        alert("共有写真は最大" + maxFileCnt + "枚まで添付できます。");
-    }
-
-    // let filesToAdd = [];
-    // let htmlData = "";
-
-    for (var i = 0; i < Math.min(curFileCnt, remainFileCnt); i++) {
-        const file = obj.files[i];
-
-        // 첨부파일 검증
-        if (validChk(file)) {
-            // 파일 배열에 담기
-            var reader = new FileReader();
-            reader.onload = function () {
-                filesArr.push(file);
-                reader.readAsDataURL(file)
-
-                // 파일 목록을 추가한 후에 목록을 업데이트
-                if (filesArr.length === Math.min(curFileCnt, remainFileCnt)) {
-                    updateFileList(filesArr);
-                    // 슬릭 슬라이드를 업데이트
-                    setTimeout(updateSlickSlider, 0); // DOM 업데이트 후 업데이트
-                }
-            };
-            reader.readAsDataURL(file);
-
-            // 목록 추가
-            var htmlData = '';
-            htmlData += '<div id="je_file' + fileNo + '" class="je_filebox">';
-            htmlData += '   <p class="je_file-name">' + file.name + "</p>";
-            htmlData +=
-                '   <a class="je_file-delete" onclick="deleteFile(' +
-                fileNo +
-                ');">⌫</a>';
-            htmlData += "</div>";
-            $(".je_photo-list").append(htmlData);
-            fileNo++;
-        } else {
-            continue;
-        }
-    }
-    //
-    // // 초기화
-    // document.querySelector("#je_photo-input").value = "";
-}
-
-// 파일 목록 업데이트 함수
-function updateFileList(files) {
-    files.forEach((file) => {
-        filesArr.push(file);
-    });
-}
-
-// 유효성 검사
-function validChk(obj) {
-    const fileTypes = ["image/gif", "image/jpeg", "image/jpg", "image/png"];
-    if (obj.name.length > 50) {
-        alert("ファイル名が50文字以上のものは除外されました。");
-        return false;
-    } else if (obj.size > 10 * 1024 * 1024) {
-        alert("最大ファイル容量の 10MB を超えたものは除外されました。");
-        return false;
-    } else if (obj.name.lastIndexOf(".") == -1) {
-        alert("拡張子のないファイルは除外されました。");
-        return false;
-    } else if (!fileTypes.includes(obj.type)) {
-        alert("添付できないファイルは除外されました。");
-        return false;
-    } else {
-        return true;
-    }
-}
-
-// 첨부파일 삭제
-function deleteFile(num) {
-    document.querySelector("#je_file" + num).remove();
-    filesArr[num].is_delete = true;
-
-    // 슬릭 슬라이드를 업데이트하여 파일 삭제 후 목록을 갱신
-    setTimeout(updateSlickSlider, 0); // DOM 업데이트 후 업데이트
-}
-
-// 슬릭 슬라이드를 업데이트
-function updateSlickSlider() {
-    $(".je_photo-list").slick("refresh"); // 슬릭 슬라이드를 리프레시하여 즉시 반영
-}
-
-// 확정된 파일 리스트 담기
-// function setFilesList(){
-//     var form = document.querySelector("form");
-//     var formData = new FormData(form);
-//     for (var i = 0; i < filesArr.length; i++) {
-//         // 삭제되지 않은 파일만 폼데이터에 담기
-//         if (!filesArr[i].is_delete) {
-//             formData.append("attach_file", filesArr[i]);
-//         }
-//     }
-//
-//     // FormData를 폼에 직접 설정하여 제출
-//     var input = document.createElement("input");
-//     input.type = "hidden";
-//     input.name = "form_data";
-//     input.value = JSON.stringify([...formData.entries()]);
-//     form.appendChild(input);
-//
-//     form.submit(); // 폼 제출
-// }
 
 
 /*-----------------------------------------------------------------------------------------*/
@@ -378,3 +252,111 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+/*------------------------------------------------------*/
+// 첨부파일 리스트 보여주기
+const share_photo = document.querySelector("input[name='w_img_share_files']");
+
+function addFile(obj) {
+    var files = obj.files;
+    var htmlData = "";
+    var curFileCnt = files.length;
+
+    // 첨부파일 개수 확인
+    if (9 < curFileCnt) {
+        share_photo.value = "";
+        return filesCntToastOn();
+    }
+
+    for (var i = 0; i < files.length; i++) {
+        const file = files[i];
+
+        // 첨부파일 검증
+        if (validChk(file)) {
+            htmlData += '<div id="je_file' + i + '" class="je_filebox">';
+            htmlData += '   <p class="je_file-name">' + file.name + "</p>";
+            // htmlData +=
+            //   '   <a class="je_file-delete" onclick="deleteFile(' + i + ');">⌫</a>';
+            htmlData += "</div>";
+        } else {
+            share_photo.value = "";
+            return false;
+        }
+    }
+
+    document.querySelector(".je_photo-list").innerHTML = htmlData;
+}
+
+// 유효성 검사
+function validChk(obj) {
+    const fileTypes = ["image/gif", "image/jpeg", "image/jpg", "image/png"];
+    if (obj.name.length > 50) {
+        return filesToastOn();
+        return false;
+    } else if (obj.size > 10 * 1024 * 1024) {
+        return filesToastOn();
+    } else if (obj.name.lastIndexOf(".") == -1) {
+        return TypeToastOn();
+    } else if (!fileTypes.includes(obj.type)) {
+        return TypeToastOn();
+    } else {
+        return true;
+    }
+}
+
+
+
+const m_photo1 = document.querySelector("input[name='w_img1_file']");
+const m_photo2 = document.querySelector("input[name='w_img2_file']");
+const m_photo3 = document.querySelector("input[name='w_img3_file']");
+
+// 메인 사진 확장자 체크
+function photoType1(){
+    if (isNotType(m_photo1, "jpg") && isNotType(m_photo1, "png") && isNotType(m_photo1, "jpeg")) {
+        m_photo1.value = "";
+        return TypeToastOn();
+    }
+}
+function photoType2(){
+    if (isNotType(m_photo2, "jpg") && isNotType(m_photo2, "png") && isNotType(m_photo2, "jpeg")) {
+        m_photo2.value = "";
+        return TypeToastOn();
+    }
+}
+function photoType3(){
+    if (isNotType(m_photo3, "jpg") && isNotType(m_photo3, "png") && isNotType(m_photo3, "jpeg")) {
+        m_photo3.value = "";
+        return TypeToastOn();
+    }
+}
+
+
+// FILE - ALERT BUTTON
+var typeWarning = document.getElementById("typeWarning-msg");
+function TypeToastOn() {
+    typeWarning.classList.add("active");
+    setTimeout(function () {
+        typeWarning.classList.remove("active");
+    }, 3000);
+    return false;
+}
+
+var filesWarning = document.getElementById("filesWarning-msg");
+function filesToastOn() {
+    filesWarning.classList.add("active");
+    setTimeout(function () {
+        filesWarning.classList.remove("active");
+    }, 3000);
+    return false;
+}
+
+var filesCntWarning = document.getElementById("filesCntWarning-msg");
+function filesCntToastOn() {
+    filesCntWarning.classList.add("active");
+    setTimeout(function () {
+        filesCntWarning.classList.remove("active");
+    }, 3000);
+    return false;
+}
+

@@ -1,5 +1,6 @@
 package com.en.main.controller;
 
+import com.en.main.dto.MemberVO;
 import com.en.main.dto.WeddingVO;
 import com.en.main.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class ProductController {
     public String product(Model model) {
         System.out.println(productService.getAllTemplates());
         model.addAttribute("templates", productService.getAllTemplates());
-        return "product/product";
+        return "product/product_main";
     }
 
     @GetMapping("/{t_pk}")
@@ -42,12 +43,12 @@ public class ProductController {
     }
 
     @PostMapping("/invitation-preview")
-    public String productCompleted(WeddingVO weddingVO,
+    public String productCompleted(WeddingVO weddingVO, MemberVO memberVO,
                                    @RequestParam MultipartFile w_img1_file,
                                    @RequestParam MultipartFile w_img2_file, @RequestParam MultipartFile w_img3_file,
                                    @RequestParam MultipartFile[] w_img_share_files,
                                    Model model) {
-        productService.insertWeddingInfo(weddingVO, w_img1_file, w_img2_file, w_img3_file, w_img_share_files);
+        productService.insertWeddingInfo(weddingVO, memberVO, w_img1_file, w_img2_file, w_img3_file, w_img_share_files);
         System.out.println(weddingVO.getE_no());
 
         return "redirect:/product/invitation-preview/"+weddingVO.getE_no();
