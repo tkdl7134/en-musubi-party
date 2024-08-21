@@ -12,14 +12,6 @@ public class RegisterController {
     @Autowired
     private MemberService memberService;
 
-    @PostMapping("/register/submit")
-    public @ResponseBody String register(@RequestBody MemberVO memberVO) {
-        System.out.println(memberVO);
-        memberService.registerMember(memberVO);  // 회원 등록 서비스 호출
-
-        return "Registration successful";
-    }
-
     @PostMapping("/check-id")
     public @ResponseBody String checkID(@RequestParam("ID") String ID) {
 
@@ -32,4 +24,13 @@ public class RegisterController {
             return "이미 사용 중인 아이디입니다.";
         }
     }
+
+    @PostMapping("/register/submit")
+    public @ResponseBody String register(@RequestBody MemberVO memberVO) {
+        System.out.println(memberVO);
+        memberService.registerMember(memberVO);
+
+        return "登録成功";
+    }
+
 }

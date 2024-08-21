@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         enMusubiEnvelopePaper.classList.add("move-up");
         enMusubiEnvelopeText.classList.add("enlarge");
         setTimeout(function () {
-            window.location.href = "/???";
+            window.location.href = "/product";
         }, 1000);
     });
 
