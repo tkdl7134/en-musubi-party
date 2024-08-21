@@ -1,116 +1,97 @@
-
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <title>Title</title>
+
+    <title>En-Party Choice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/resources/css/party/party_choice.css"/>
 </head>
 <body>
 
-<div class="yr_choice">
+<header>
+    <div class="je_menu-header">
+        <div class="je_logo-icon"><img src="/static/img/en-musubi-logo.png" alt="" /></div>
+        <div>縁結び</div>
+        <div class="je_menu-icon"><img src="/static/img/menu-button.png" alt="" /></div>
+    </div>
 
-<%--    <c:if test="${not empty matchedCouples}">--%>
-<%--        <c:forEach items="${matchedCouples}" var="couple">--%>
-<%--            <div class="yr_list_choice">--%>
-<%--                <div class="yr_list_name_choice">--%>
-<%--                        ${couple.person1}와 ${couple.person2}가 매칭되었습니다!--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </c:forEach>--%>
-<%--    </c:if>--%>
+</header>
 
-    <c:if test="${not empty matchedCouples}">
-        <c:forEach items="${matchedCouples}" var="couple">
-            <c:choose>
-                <c:when test="${couple.person1 == 'test1' || couple.person2 == 'test1'}">
-                    <div class="yr_list_choice">
-                        <div class="yr_list_name_choice">
-                                ${couple.person1}와 ${couple.person2}가 매칭되었습니다!
-                            <button class="open-modal" data-couple="${couple.person1}" > 라인 id 교환 </button>
-                        </div>
-                    </div>
-                </c:when>
-            </c:choose>
-        </c:forEach>
-    </c:if>
+<div class="yr_party_choice_container">
 
-    <c:if test="${empty matchedCouples}">
-        <div class="yr_choice_mention" style="color: #696969">
-            매칭된 인연이 없습니다. 😢
+    <div class="yr_title">縁パーティー</div>
+
+    <div class="yr_party_wrapper">
+        <div class="yr_choice">
+            <c:if test="${not empty matchedCouples}">
+                <c:forEach items="${matchedCouples}" var="couple">
+                    <c:choose>
+                        <c:when test="${couple.person1 == 'test1' || couple.person2 == 'test1'}">
+                            <div class="yr_list_choice">
+                                <div class="yr_list_name_choice">
+                                        ${couple.person1}와 ${couple.person2}가 매칭되었습니다!
+
+                                </div>
+                                <button class="open-modal" data-couple="${couple.person1}"> 라인 id 교환</button>
+                            </div>
+                        </c:when>
+                    </c:choose>
+                </c:forEach>
+            </c:if>
+
+            <c:if test="${empty matchedCouples}">
+                <div class="yr_choice_mention" style="color: #696969">
+                    매칭된 인연이 없습니다. 😢
+                </div>
+            </c:if>
+
         </div>
-    </c:if>
-
-</div>
 
 
-<!-- 모달 창 HTML -->
-<div id="lineIdModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>라인 ID 교환</h2>
-        <form id="lineIdForm">
-            <div>
-                <label for="lineId">라인 ID : </label>
-                <input type="text" id="lineId" name="ep_lineID" required>
+        <!-- 모달 창 HTML -->
+        <div id="lineIdModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>라인 ID 교환</h2>
+                <form id="lineIdForm">
 
+                        <label for="lineId">라인 ID : </label>
+                        <input type="text" id="lineId" name="ep_lineID" required>
+                        <button type="submit">제출</button>
+
+                </form>
             </div>
-            <button type="submit">제출</button>
-        </form>
+        </div>
     </div>
 </div>
 
+
 <script>
     document.querySelectorAll('.open-modal').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             document.getElementById('lineIdModal').style.display = 'block';
 
         });
     });
 
-    document.querySelector('.close').addEventListener('click', function() {
+    document.querySelector('.close').addEventListener('click', function () {
         document.getElementById('lineIdModal').style.display = 'none';
     });
 
 
-    document.getElementById('lineIdForm').addEventListener('submit', function(event) {
+    document.getElementById('lineIdForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const lineId =document.getElementById('lineId').value;
+        const lineId = document.getElementById('lineId').value;
         const formData = {
             ep_lineID: lineId
         };
@@ -125,7 +106,7 @@
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
-                    location.href='/party/main/choice/line';
+                location.href = '/party/main/choice/line';
             })
             .catch(error => {
                 console.error('Error:', error);
