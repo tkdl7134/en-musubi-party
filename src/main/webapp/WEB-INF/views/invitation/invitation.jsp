@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Title</title>
     <!-- Noto Serif Japanese 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -163,6 +163,9 @@
             </div>
         </ul>
     </div>
+        <div class="yr_guest_book">
+            <button class="yr_guest_book_button" onclick="location.href ='/event-comment'"> <span>GUEST BOOK</span><br><span>ゲストブック</span> </button>
+        </div>
     <div class="je_message-txt2">
         ${weddingInfo.w_message_bye}
         <div>✿✿✿</div>
