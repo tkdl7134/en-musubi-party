@@ -6,9 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/resources/css/template/guestC.css">
+    <link rel="stylesheet" href="/resources/css/template/guest.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/resources/js/template/guestc.js"></script>
+    <script src="/resources/js/template/guest.js"></script>
 </head>
 <body>
 <form>
@@ -17,6 +17,7 @@
         <div class="hw_maker">縁結び</div>
         <a class="hw_mypage" href=""><img src="/resources/img/icon-user.png" alt=""></a>
     </header>
+
     <div class="hw_container">
 
         <div class="hw_title"> - アンケート管理 -</div>
@@ -26,10 +27,13 @@
         <div class="dropdown">
             <select id="dropdown-select" class="dropbtn">
                 <option value="" disabled selected>欠席者</option>
-                <option value="/mypage/guest">参加者</option>
-                <option value="/mypage/guestB">参加者情報</option>
+                <option value="/mypage/guest">出席者</option>
+                <option value="/mypage/guestB">出席者情報</option>
             </select>
         </div>
+
+        <!-- 필터 입력 필드 -->
+        <input type="text" id="filter-input" placeholder="필터 텍스트 입력">
 
         <!-- 탭 콘텐츠 -->
         <div class="hw_content">
@@ -41,12 +45,13 @@
 
             <div class="hw_tab-button-content">
                 <c:forEach items="${attendList}" var="attend">
-                    <c:if test="${attend.g_attend_wedding == '欠席'}">
+                    <c:if test="${attend.g_attend_wedding == 'ご欠席'}">
                         <div class="hw_tab-content" data-type="${attend.g_guest_type}">
                             <span>이름 : ${attend.m_fam_kanji} ${attend.m_name_kanji}</span>
                             <span>유형 : ${attend.g_guest_type}</span>
                             <span>번호 : ${attend.m_phone}</span>
                             <span>이메일 : ${attend.m_email}</span>
+                            <span>참석 여부 : ${attend.g_attend_wedding}</span>
                         </div>
                     </c:if>
                 </c:forEach>

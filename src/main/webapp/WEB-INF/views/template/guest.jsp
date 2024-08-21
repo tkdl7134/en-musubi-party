@@ -26,28 +26,32 @@
         <!-- 드롭다운 메뉴 -->
         <div class="dropdown">
             <select id="dropdown-select" class="dropbtn">
-                <option value="" disabled selected>参加者</option>
-                <option value="/mypage/guestB">参加者情報</option>
+                <option value="" disabled selected>出席者</option>
+                <option value="/mypage/guestB">出席者情報</option>
                 <option value="/mypage/guestC">欠席者</option>
             </select>
         </div>
+
+        <!-- 필터 입력 필드 -->
+        <input type="text" id="filter-input" placeholder="필터 텍스트 입력">
 
         <!-- 탭 콘텐츠 -->
         <div class="hw_content">
             <ul class="hw_list">
                 <li class="hw_tab-button active" data-filter="all">全体</li>
-                <li class="hw_tab-button" data-filter="新郎">新郎</li>
-                <li class="hw_tab-button" data-filter="新婦">新婦</li>
+                <li class="hw_tab-button" data-filter="新郎ゲスト">新郎</li>
+                <li class="hw_tab-button" data-filter="新婦ゲスト">新婦</li>
             </ul>
 
             <div class="hw_tab-button-content">
                 <c:forEach items="${attendList}" var="attend">
-                    <c:if test="${attend.g_attend_wedding == '出席'}">
+                    <c:if test="${attend.g_attend_wedding == 'ご出席'}">
                         <div class="hw_tab-content" data-type="${attend.g_guest_type}">
                             <span>이름 : ${attend.m_fam_kanji} ${attend.m_name_kanji}</span>
                             <span>유형 : ${attend.g_guest_type}</span>
                             <span>번호 : ${attend.m_phone}</span>
                             <span>이메일 : ${attend.m_email}</span>
+                            <span>참석 여부 : ${attend.g_attend_wedding}</span>
                         </div>
                     </c:if>
                 </c:forEach>

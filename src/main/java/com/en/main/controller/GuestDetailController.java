@@ -1,5 +1,6 @@
 package com.en.main.controller;
 
+import com.en.main.dto.AllGuestVO;
 import com.en.main.dto.GuestDetailVO;
 import com.en.main.service.TemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,19 @@ public class GuestDetailController {
         List<GuestDetailVO> guestDetailList = templateService.getGuestDetail();
         model.addAttribute("guestDetailList", guestDetailList);
         return "template/guestB";
+    }
+
+    @GetMapping("/allguest")
+    public String allguest(Model model, AllGuestVO allGuestVO) {
+        List<AllGuestVO> allGuestList = templateService.getAllGuest();
+        model.addAttribute("allGuestList", allGuestList);
+        return "template/allguest";
+    }
+
+    @GetMapping("/grouplist")
+    public String grouplist(Model model, AllGuestVO allGuestVO) {
+        List<AllGuestVO> allGuestList = templateService.getAllGuest();
+        model.addAttribute("allGuestList", allGuestList);
+        return "template/grouplist";
     }
 }

@@ -16,18 +16,14 @@
 </head>
 <body>
 <!-- header -->
-<div class="je_menu-bar">
-    <div id="je_logo">
-        <img src="/resources/img/en-musubi-logo.png" alt="" />
-    </div>
+<div class="je_menu-header">
+    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
 <!-- content -->
 <div id="je_wishlist-setting-container">
-    <div class="je_page-title">
-        <div class="je_page-title-txt">ウィッシュリスト</div>
-        <div class="je_page-title-line">
-            <img src="/resources/img/page-title-line.png" alt="" />
-        </div>
+    <div class="je_page-title">ウィッシュリスト</div>
         <div class="je_page-content">
             <div class="je_wishlist">
                 <div class="je_wishlist-icon">
@@ -57,8 +53,11 @@
                     </label>
                 </div>
                 <div id="je_amazon-link">
-                    <input type="text" placeholder="AMAZONのウィッシュリスト入力" />
-                    <button class="je_amazon-btn">登録</button>
+                    <input type="text"
+                           id="amazonLink" value="${eventVO.e_amazon}" />
+                    <div id="checkIcon"><img src="/resources/img/check-icon.gif"> </div>
+                    <button id="amazonLink_btn" class="je_amazon-btn"
+                            onclick="updateAmazonLink(${eventVO.e_no})">登録</button>
                 </div>
             </div>
             <div class="je_wishlist">
@@ -76,10 +75,9 @@
                 </div>
             </div>
             <div id="je_nextpage-button">
-                <button>ファンディング 設定</button>
+                <button onclick="location.href='/${eventVO.e_no}/wishlist-setting/funding'">ファンディング 設定</button>
             </div>
         </div>
-    </div>
 </div>
 </body>
 </html>

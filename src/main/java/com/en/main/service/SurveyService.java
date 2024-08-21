@@ -46,6 +46,7 @@ public class SurveyService {
     }
 
     public void addGuest(GuestVO guestVO) {
+        guestVO.setG_allergy_or("No");
         surveyMapper.insertGuest(guestVO);
     }
 

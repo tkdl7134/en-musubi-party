@@ -1,5 +1,6 @@
 package com.en.main.mapper;
 
+import com.en.main.dto.MemberVO;
 import com.en.main.dto.TemplateProductVO;
 import com.en.main.dto.WeddingVO;
 import org.apache.ibatis.annotations.Insert;
@@ -18,8 +19,8 @@ public interface ProductMapper {
     TemplateProductVO getTemplateByPk(int t_pk);
 
 //    @Insert("insert into event values (event_seq.nextval, '#{m_id}', ''")
-    @Insert("insert into event values (event_seq.nextval, 'test3', 'https://www.amazon.co.jp/')")
-    void createEvent();
+    @Insert("insert into event values (event_seq.nextval, #{m_id}, 'https://www.amazon.co.jp/')")
+    void createEvent(MemberVO memberVO);
 
     @Select("select event_seq.currval from dual")
     int getCurrentEventNo();

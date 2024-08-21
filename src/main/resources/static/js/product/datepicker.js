@@ -7,7 +7,7 @@ $(function () {
 });
 
 $.datepicker.setDefaults({
-    dateFormat: "yy.mm.dd DD",
+    dateFormat: "yy年mm月dd日 DD",
     prevText: "先月",
     nextText: "来月",
     monthNames: [

@@ -1,71 +1,71 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>招待状リスト</title>
     <link rel="stylesheet" href="/resources/css/template/mytemplate.css">
     <script src="/resources/js/template/mytemplate.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
 <header class="hw_header">
-    <a class="hw_logo" href=""><img src="/resources/img/logo.png" alt=""></a>
-    <div class="hw_maker">縁結び</div>
-    <a class="hw_mypage" href=""></a>
+    <div class="menubar">메뉴바</div>
+    <div class="hw_maker">招待状リスト</div>
 </header>
 <div class="hw_container">
     <c:forEach items="${weddingList}" var="w">
-        <div class="hw_content">
-            <div class="hw_card">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img src="${w.w_img1}" alt="Template 1">
-                        </div>
-                        <div class="card-back">
-                            <button type="button" onclick="navigateToTemplate(${w.e_no})">
-                                <img src="/resources/img/free-icon-reunion.png" alt="Group Icon">
-                            </button>
-                            <span>テンプレート</span>
-                        </div>
+        <div class="hw_card">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="image-container">
+                        <img src="${pageContext.request.contextPath}/resources/img/Template1.jpg" alt="Template 1">
+                        <button class="share-button" type="button" onclick="navigateToShare(${w.e_no})">
+                            <span>共有</span>
+                        </button>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img src="${w.w_img2}" alt="Template 2">
-                        </div>
-                        <div class="card-back">
-                            <button type="button" onclick="navigateToSurvey(${w.e_no})">
-                                <img src="/resources/img/free-icon-checklist.png" alt="Guest Icon">
-                            </button>
+                    <div class="card-back">
+                        <button type="button" onclick="navigateToTemplate(${w.e_no})">
+                            <span>プレビュー</span>
+                        </button>
+                        <button type="button" onclick="navigateToSurvey(${w.e_no})">
                             <span>アンケート</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img src="${w.w_img3}" alt="Template 3">
-                        </div>
-                        <div class="card-back">
-                            <button type="button" onclick="navigateToStatistics(${w.e_no})">
-                                <img src="/resources/img/free-icon-line-chart.png" alt="Graph Icon">
-                            </button>
+                        </button>
+                        <button type="button" onclick="navigateToStatistics(${w.e_no})">
                             <span>通計</span>
-                        </div>
+                        </button>
                     </div>
                 </div>
-            </div>
-            <div class="line-button">
-                <button type="button" onclick="navigateToShare(${w.e_no})">
-                    <img src="/resources/img/free-icon-line.png" alt="line Icon">
-                </button>
             </div>
         </div>
     </c:forEach>
 </div>
+
+<!-- 슬라이드 인디케이터 (점 3개) -->
+<div class="slider-indicators">
+    <span class="indicator active"></span>
+    <span class="indicator"></span>
+    <span class="indicator"></span>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const shareButtons = document.querySelectorAll(".share-button");
+
+        shareButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                // 버튼의 active 상태를 토글
+                button.classList.toggle("active");
+
+                // 부모 요소인 image-container의 active 상태를 토글
+                const imageContainer = button.closest(".image-container");
+                imageContainer.classList.toggle("active");
+            });
+        });
+    });
+</script>
+
 </body>
 </html>

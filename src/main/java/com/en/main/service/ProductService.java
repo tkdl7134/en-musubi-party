@@ -1,5 +1,6 @@
 package com.en.main.service;
 
+import com.en.main.dto.MemberVO;
 import com.en.main.dto.TemplateProductVO;
 import com.en.main.dto.WeddingVO;
 import com.en.main.mapper.ProductMapper;
@@ -52,14 +53,14 @@ public class ProductService {
 
 //    @Override
 @Transactional
-public void insertWeddingInfo(WeddingVO weddingVO,
+public void insertWeddingInfo(WeddingVO weddingVO, MemberVO memberVO,
                               MultipartFile w_img1_file, MultipartFile w_img2_file, MultipartFile w_img3_file,
                               MultipartFile[] w_img_share_files) {
     String img1 =  saveFile(w_img1_file);
     String img2 =  saveFile(w_img2_file);
     String img3 =  saveFile(w_img3_file);
 
-    productMapper.createEvent();
+    productMapper.createEvent(memberVO);
     int eventNo = productMapper.getCurrentEventNo();
     weddingVO.setE_no(eventNo);
     String hello = weddingVO.getW_message_invite();
@@ -95,13 +96,12 @@ public void insertWeddingInfo(WeddingVO weddingVO,
             try {
                 String fileRealName = file.getOriginalFilename();
                 String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."));
-//                String uploadFolder = "Users/se_ong/Desktop/sbt9/uploadTest";
-                //String uploadFolder = new File("src/main/resources/static/img/").getAbsolutePath();
+
 
                 UUID uuid = UUID.randomUUID();
                 String uniqueName = uuid.toString().split("-")[0];
                 String savedFileName = uniqueName + fileExtension;
-                //File saveFile = new File(uploadFolder + "/" + savedFileName);
+
 
                 System.out.println("업로드 -----------");
                 String mimeType = file.getContentType();
@@ -109,7 +109,6 @@ public void insertWeddingInfo(WeddingVO weddingVO,
                         file.getBytes());
                 System.out.println("업로드 -----------");
 
-                //file.transferTo(saveFile);
                 return savedFileName;
             }catch (Exception e){
                 e.printStackTrace();
@@ -124,6 +123,7 @@ public void insertWeddingInfo(WeddingVO weddingVO,
             for (MultipartFile file : files) {
                 if (!file.isEmpty()) {
                     try {
+                        // 이름 만드는 동시에 저장함
                         String savedFileName = saveFile(file);
                         if (savedFileName != null) {
                             if (savedFileNames.length() > 0) {

@@ -481,6 +481,14 @@ dialog::backdrop {
     font-size: 1.3rem;
 }
 
+#g_relation_other {
+    display: inline-block;
+    padding: 0.5rem 0.2rem 0.5rem 0.5rem;
+    width: 15rem;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+}
+
 .tk_survey-line2 {
     width: 14rem;
     display: flex;
