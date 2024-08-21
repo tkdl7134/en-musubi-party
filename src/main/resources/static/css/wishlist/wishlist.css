@@ -25,14 +25,37 @@
     flex-direction: column;
     justify-content: right;
     margin-top: 6rem;
+    margin-left: 2rem;
+
+}
+
+.tk_wishlist-btn-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
+}
+
+.tk_wishlist-btn-container button {
+    width: 50rem;
+    height: 15rem;
 }
 
 .tk_wishlist-text-container div:nth-child(1) {
     font-size: 3rem;
 }
 
-.tk_wishlist-text-container div:nth-child(2) {
+.tk_wishlist-text-container div:nth-child(2), div:nth-child(3) {
     font-size: 2rem;
+}
+
+.tk_wishlist-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 1rem;
 }
 
 .je_menu-bar {

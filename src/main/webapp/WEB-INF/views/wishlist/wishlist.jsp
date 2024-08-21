@@ -23,7 +23,7 @@
         <div class="tk_wishlist-btn-container">
             <div>
                 <button type="submit" onclick="location.href='wishlist/funding'">funding</button>
-                <button type="submit" onclick="location.href='wishlist/sending'">remittance</button>
+                <button type="submit" onclick="location.href='wishlist/sending?e_no=5'">remittance</button>
                 <button type="submit" onclick="location.href='wishlist/'">present</button>
             </div>
         </div>

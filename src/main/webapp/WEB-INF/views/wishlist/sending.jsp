@@ -4,7 +4,6 @@
 <html style="zoom : 100% !important;" lang="en">
 <link rel="stylesheet" href="/resources/css/wishlist/send.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<link rel="stylesheet" href="/resources/css/product/product.css" />
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/resources/js/wishlist/tk_swiper-slide-center.js"></script>
@@ -274,6 +273,7 @@
 			&nbsp;総<input class="kh-s-input" type="text" maxlength="8"
 				onclick="removeWarn()" readonly />円 <img alt=""
 				src="/resources/img/money.png">
+			<input hidden="hidden" value="">
 		</div>
 		<div>
 			<button class="kh-s-btn" onclick="goFinal(8)">送金</button>

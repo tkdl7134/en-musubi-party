@@ -162,6 +162,8 @@ function closeModal() {
 }
 
 function goFinal(wlno) {
+    const e_no = 5;
+    const m_id = "test9";
     const container = document.querySelector("#kh-input-box");
     const sinput = document.querySelector(".kh-s-input");
     const warnspan = document.querySelector("#kh-warn-text");
@@ -177,6 +179,6 @@ function goFinal(wlno) {
         }
     } else {
         let justnum = sinput.value.replace(',', '');
-        location.href = "sending/insert?p_type=send&p_price=" + justnum + "&wl_no=" + wlno;
+        location.href = "sending/insert?p_type=send&p_price=" + justnum + "&wl_no=" + wlno+ "&e_no="+e_no+"&m_id=" + m_id;
     }
 }

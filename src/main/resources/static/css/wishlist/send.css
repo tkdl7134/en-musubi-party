@@ -94,7 +94,7 @@
 }
 #kh-input-box {
 	border-bottom: 30px solid red;
-	border-image: url("../img/funder.png") 40;
+	border-image: url("resources/img/funder.png") 40;
 	font-size: 1.5rem;
 	margin-top: 1rem;
 }
@@ -299,7 +299,7 @@ dialog:-internal-dialog-in-top-layer::backdrop {
 	width: 35px;
 	height: 35px;
 	margin: 30px 15px 0;
-	background: url("images/arrow.png") center center no-repeat;
+	background: url("resources/img/arrow.png") center center no-repeat;
 	background-size: cover;
 	text-indent: -999em;
 	cursor: pointer;

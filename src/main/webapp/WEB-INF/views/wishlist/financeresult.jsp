@@ -15,7 +15,7 @@
 			</div>
 		</c:if>
 		<div class="kh-f-tex">
-			<a href="MainC">メインに戻る</a>
+			<a href="/">メインに戻る</a>
 		</div>
 	</div>
 </div>
