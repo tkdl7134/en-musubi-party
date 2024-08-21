@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
+<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>--%>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
     <title>制作</title>
     <!-- Noto Serif Japanese 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -26,22 +26,22 @@
     <script src="/resources/js/product/slick-slide.js"></script>
     <script src="/resources/js/product/datepicker.js" defer></script>
     <script src="/resources/js/product/product_make.js" defer></script>
+    <script src="/resources/js/je_validChk/product_make_validChk.js" defer></script>
+    <script src="/resources/js/je_validChk/validChk.js" defer></script>
 </head>
-
 <body>
 <!-- header -->
-<div class="je_menu-bar">
-    <div id="je_logo">
-        <img src="/resources/img/en-musubi-logo.png" alt=""/>
-    </div>
+<div class="je_menu-header">
+    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
 <!-- content -->
-<form action="/product/invitation-preview" method="post" enctype="multipart/form-data">
+<form action="/product/invitation-preview" method="post" enctype="multipart/form-data" onsubmit="return emptyChk()">
     <input type="hidden" name="t_pk" value="${t_pk}">
+    <input type="hidden" name="m_id" value="${authenticatedMember.m_id}">
     <div id="je_product-make-container">
-        <div class="je_page-title">
-            <div class="je_page-title-txt">制作</div>
-        </div>
+        <div class="je_page-title">制作</div>
         <div id="je_product-make-slider">
             <!-- 신랑신부 및 일정 -->
             <div class="je_page-content">
@@ -76,16 +76,15 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">漢字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="姓" name="w_fam_jp_groom"/><input type="text"
-                                                                                                      placeholder="名"
-                                                                                                      name="w_name_jp_groom"/>
+                                    <input type="text" placeholder="姓" class="jp-input" name="w_fam_jp_groom" maxlength="10"/>
+                                    <input type="text" placeholder="名" class="jp-input" name="w_name_jp_groom" maxlength="10"/>
                                 </div>
                             </div>
                             <div class="je_input-box">
                                 <div class="je_input-box-title">ローマ字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="Last Name" name="w_fam_eng_groom"/><input
-                                        type="text" placeholder="First Name" name="w_name_eng_groom"/>
+                                    <input type="text" placeholder="Last Name" class="eng-input" name="w_fam_eng_groom" maxlength="50"/>
+                                    <input type="text" placeholder="First Name" class="eng-input" name="w_name_eng_groom" maxlength="50"/>
                                 </div>
                             </div>
                         </div>
@@ -101,16 +100,15 @@
                             <div class="je_input-box">
                                 <div class="je_input-box-title">漢字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="姓" name="w_fam_jp_bride"/><input type="text"
-                                                                                                      placeholder="名"
-                                                                                                      name="w_name_jp_bride"/>
+                                    <input type="text" placeholder="姓" class="jp-input" name="w_fam_jp_bride" maxlength="10"/>
+                                    <input type="text" placeholder="名" class="jp-input" name="w_name_jp_bride" maxlength="10"/>
                                 </div>
                             </div>
                             <div class="je_input-box">
                                 <div class="je_input-box-title">ローマ字</div>
                                 <div class="je_name-input">
-                                    <input type="text" placeholder="Last Name" name="w_fam_eng_bride"/><input
-                                        type="text" placeholder="First Name" name="w_name_eng_bride"/>
+                                    <input type="text" placeholder="Last Name" class="eng-input" name="w_fam_eng_bride" maxlength="50"/>
+                                    <input type="text" placeholder="First Name" class="eng-input" name="w_name_eng_bride" maxlength="50"/>
                                 </div>
                             </div>
                         </div>
@@ -163,19 +161,14 @@
                                         <div class="je_input-box-title">住所</div>
                                         <div class="je_address-input">
                                               <textarea class="p-region p-locality p-street-address p-extended-address"
-                                                        name="w_wedding_address"></textarea>
+                                                        name="w_wedding_address" maxlength="200"></textarea>
                                         </div>
                                     </div>
-                                    <%--                                    <div class="je_input-box">--%>
-                                    <%--                                        <div class="je_input-box-title">番地</div>--%>
-                                    <%--                                        <div class="je_address-input">--%>
-                                    <%--                                            <div><input type="text" id="je_address-number1" /></div>--%>
-                                    <%--                                        </div>--%>
-                                    <%--                                    </div>--%>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">建物名</div>
                                         <div class="je_address-input">
-                                            <div><input type="text" class="je_building-name" name="w_wedding_building"/>
+                                            <div>
+                                                <input type="text" class="je_building-name" name="w_wedding_building" maxlength="50"/>
                                             </div>
                                         </div>
                                     </div>
@@ -222,20 +215,14 @@
                                         <div class="je_input-box-title">住所</div>
                                         <div class="je_address-input">
                                             <textarea class="p-region p-locality p-street-address p-extended-address"
-                                                      name="w_reception_address"></textarea>
+                                                      name="w_reception_address" maxlength="200"></textarea>
                                         </div>
                                     </div>
-                                    <%--                                    <div class="je_input-box">--%>
-                                    <%--                                        <div class="je_input-box-title">番地</div>--%>
-                                    <%--                                        <div class="je_address-input">--%>
-                                    <%--                                            <div><input type="text" id="je_address-number2" /></div>--%>
-                                    <%--                                        </div>--%>
-                                    <%--                                    </div>--%>
                                     <div class="je_input-box">
                                         <div class="je_input-box-title">建物名</div>
                                         <div class="je_address-input">
                                             <div><input type="text" class="je_building-name"
-                                                        name="w_reception_building"/></div>
+                                                        name="w_reception_building" maxlength="50"/></div>
                                         </div>
                                     </div>
                                 </div>
@@ -276,7 +263,7 @@
                             招待文句 SAMPLE
                         </div>
                         <div class="je_content-message">
-                            <textarea name="w_message_invite" id="je_invitation-textarea"></textarea>
+                            <textarea name="w_message_invite" id="je_invitation-textarea" maxlength="300"></textarea>
                         </div>
                     </div>
                     <div class="je_box-content">
@@ -290,7 +277,7 @@
                             仕上げの文句 SAMPLE
                         </div>
                         <div class="je_content-message">
-                            <textarea name="w_message_bye" id="je_closing-textarea"></textarea>
+                            <textarea name="w_message_bye" id="je_closing-textarea" maxlength="300"></textarea>
                         </div>
                     </div>
                 </div>
@@ -324,50 +311,54 @@
                             </div>
                         </div>
                         <div class="je_content-photo">
-                            <div id="je_photobox1" class="je_photobox">
-                                <input
-                                        type="file"
-                                        name="w_img1_file"
-                                        id="je_photoInput1"
-                                        onchange="readURL(this);"
-                                        oninput="return photoType1()"
-                                />
-                                <div id="je_photoOut1"></div>
-                                <span>写真１</span>
+                            <div class="je_photoBox-container">
+                                <div class="je_photobox-icon">
+                                    <img src="/resources/img/couple-icon.png">
+                                </div>
+                                <div id="je_photobox1" class="je_photobox">
+                                    <input
+                                            type="file"
+                                            name="w_img1_file"
+                                            id="je_photoInput1"
+                                            onchange="readURL(this);"
+                                            oninput="return photoType1()"
+                                    />
+                                    <div id="je_photoOut1"></div>
+                                    <span>写真１</span>
+                                </div>
                             </div>
-                            <div id="je_photobox2" class="je_photobox">
-                                <input
-                                        type="file"
-                                        name="w_img2_file"
-                                        id="je_photoInput2"
-                                        onchange="readURL(this);"
-                                        oninput="return photoType2()"
-                                />
-                                <div id="je_photoOut2"></div>
-                                <span>写真２</span>
+                            <div class="je_photoBox-container">
+                                <div class="je_photobox-icon">
+                                    <img src="/resources/img/groom-icon.png" style="transform: scaleX(-1);">
+                                </div>
+                                <div id="je_photobox2" class="je_photobox">
+                                    <input
+                                            type="file"
+                                            name="w_img2_file"
+                                            id="je_photoInput2"
+                                            onchange="readURL(this);"
+                                            oninput="return photoType2()"
+                                    />
+                                    <div id="je_photoOut2"></div>
+                                    <span>写真２</span>
+                                </div>
                             </div>
-                            <div id="je_photobox3" class="je_photobox">
-                                <input
-                                        type="file"
-                                        name="w_img3_file"
-                                        id="je_photoInput3"
-                                        onchange="readURL(this);"
-                                        oninput="return photoType3()"
-                                />
-                                <div id="je_photoOut3"></div>
-                                <span>写真３</span>
+                            <div class="je_photoBox-container">
+                                <div class="je_photobox-icon">
+                                    <img src="/resources/img/bride-icon.png">
+                                </div>
+                                <div id="je_photobox3" class="je_photobox">
+                                    <input
+                                            type="file"
+                                            name="w_img3_file"
+                                            id="je_photoInput3"
+                                            onchange="readURL(this);"
+                                            oninput="return photoType3()"
+                                    />
+                                    <div id="je_photoOut3"></div>
+                                    <span>写真３</span>
+                                </div>
                             </div>
-                            <%--                            <div id="je_photobox4" class="je_photobox">--%>
-                            <%--                                <input--%>
-                            <%--                                        type="file"--%>
-                            <%--                                        name="photo4"--%>
-                            <%--                                        id="je_photoInput4"--%>
-                            <%--                                        onchange="readURL(this);"--%>
-                            <%--                                        oninput="return photoType4()"--%>
-                            <%--                                />--%>
-                            <%--                                <div id="je_photoOut4"></div>--%>
-                            <%--                                <span>写真4</span>--%>
-                            <%--                            </div>--%>
                         </div>
                     </div>
                     <div class="je_box-content">
@@ -403,7 +394,7 @@
         <div class="je_slider-buttons">
             <button id="je_prev-button" type="button">前へ</button>
             <button id="je_next-button" type="button">次へ</button>
-            <button id="je_submit-button" >作成完了</button>
+            <button id="je_submit-button" type="submit">作成完了</button>
         </div>
     </div>
 </form>
@@ -415,7 +406,6 @@
         <div class="je_modal-content">
             <div class="je_theme-buttons">
                 <div>ALL</div>
-                <!-- <button>BEST</button> -->
                 <div>季節</div>
                 <div>丁重な</div>
                 <div>ユーモラスな</div>
@@ -791,6 +781,39 @@
         </div>
     </div>
 </div>
+
+<%--alert--%>
+<div id="emptyWarning-msg">
+    未入力のフィールドがあります。<br />
+    入力してください。
+</div>
+
+<div id="typeWarning-msg">
+    添付するファイルは
+    <p>gif・jpg・png・jpeg</p>
+    形式にしてください。
+</div>
+
+<div id="jpWarning-msg">
+    このフィールドには<br>
+    <p>漢字、ひらがな、カタカナ</p>
+    入力してください。
+</div>
+
+<div id="engWarning-msg">
+    <p>英字のみ</p>入力してください。
+</div>
+
+<div id="filesWarning-msg">
+    ファイル名は<span>50文字</span>まで、<br>
+    ファイルサイズは<span>最大10MB</span>まで対応しています。
+</div>
+
+<div id="filesCntWarning-msg">
+    共有写真は <br>
+    <span>最大9枚まで</span> 添付できます。
+</div>
+
 
 </body>
 </html>
