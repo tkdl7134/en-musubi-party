@@ -77,3 +77,25 @@ body {
     margin: 1rem;
     padding: 1rem;
 }
+
+.slider-indicators {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4rem;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: #ff5155;
+}

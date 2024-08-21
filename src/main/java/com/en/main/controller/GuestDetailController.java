@@ -31,4 +31,11 @@ public class GuestDetailController {
         model.addAttribute("allGuestList", allGuestList);
         return "template/allguest";
     }
+
+    @GetMapping("/grouplist")
+    public String grouplist(Model model, AllGuestVO allGuestVO) {
+        List<AllGuestVO> allGuestList = templateService.getAllGuest();
+        model.addAttribute("allGuestList", allGuestList);
+        return "template/grouplist";
+    }
 }
