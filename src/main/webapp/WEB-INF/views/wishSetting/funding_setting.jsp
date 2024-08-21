@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ include file="../menubar.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,14 +18,8 @@
     <script src="/resources/js/wishSetting/funding_setting.js" defer></script>
 </head>
 <body>
-<!-- header -->
-<div class="je_menu-header">
-    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
-    <div>縁結び</div>
-    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
-</div>
 <!-- content -->
-    <div class="je_page-title">ファンディング 管理</div>
+<div class="je_page-title">ファンディング 管理</div>
 <div id="je_funding-setting-container">
     <div class="je_page-content">
             <input type="hidden" id="eventNo" value="${e_no}">

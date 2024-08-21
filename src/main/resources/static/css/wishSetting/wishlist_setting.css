@@ -9,28 +9,6 @@ body {
     background-color: #fffbf7;
 }
 
-/* 메뉴 - 헤더 */
-.je_menu-header {
-    width: 100%;
-    height: 3.125rem;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7.5rem;
-    font-size: 20px;
-    font-weight: 600;
-    color: #2e2e2e;
-}
-
-.je_logo-icon,
-.je_menu-icon {
-    width: 1.8rem;
-    img {
-        width: 100%;
-    }
-}
-
 #je_product-container {
     width: 100vw;
 }

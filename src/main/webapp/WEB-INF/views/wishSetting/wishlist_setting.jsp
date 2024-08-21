@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ include file="../menubar.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +16,6 @@
     <script src="/resources/js/wishSetting/wishlist_setting.js" defer></script>
 </head>
 <body>
-<!-- header -->
-<div class="je_menu-header">
-    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
-    <div>縁結び</div>
-    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
-</div>
 <!-- content -->
 <div id="je_wishlist-setting-container">
     <div class="je_page-title">ウィッシュリスト</div>
