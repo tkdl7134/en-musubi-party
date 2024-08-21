@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
 <link rel="stylesheet" href="/resources/css/wishlist/send.css" />
+<link rel="stylesheet" href="/resources/css/wishlist/tk_slide.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

@@ -7,6 +7,11 @@
     font-style: normal;
 }
 
+body {
+    width: 100%;
+    height: 100%;
+}
+
 .tk_wishlist-body {
     background-color: #fffbf7;
     width: 100%;
@@ -24,38 +29,82 @@
     display: flex;
     flex-direction: column;
     justify-content: right;
-    margin-top: 6rem;
-    margin-left: 2rem;
-
-}
-
-.tk_wishlist-btn-container div {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    gap: 2rem;
-    margin-top: 3rem;
-    margin-left: 2rem;
+    margin-top: 12rem;
 }
 
 .tk_wishlist-btn-container button {
-    width: 50rem;
-    height: 15rem;
+    width: 52rem;
 }
 
 .tk_wishlist-text-container div:nth-child(1) {
-    font-size: 3rem;
+    font-size: 3.6rem;
 }
 
 .tk_wishlist-text-container div:nth-child(2), div:nth-child(3) {
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
+
 
 .tk_wishlist-btn-container {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    gap: 1rem;
+    gap: 3rem;
+    margin-top: 7rem;
+    margin-left: 3rem;
+}
+
+.tk_wishlist-btn-box button{
+    border-radius: 20px;
+    border: 5px solid red;
+    text-align: left;
+    padding: 0 4rem 0 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20rem;
+}
+
+.tk_wishlist-btn-box:nth-child(1) > button {
+    background-color: #FFE1E1;
+}
+
+.tk_wishlist-btn-box:nth-child(2) > button {
+    background-color: #FFD600;
+}
+
+.tk_wishlist-btn-box:nth-child(3) > button {
+    background-color: #FF7E81;
+}
+
+.tk_wishlist-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jp-text {
+    font-size: 3.6rem;
+}
+
+.eg-text {
+    font-size: 2rem;
+}
+
+.tk_wishlist-img-box {
+    border: transparent;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+}
+
+.tk_wishlist-btn-box img {
+    width: 12rem;
+    padding: 3rem;
 }
 
 .je_menu-bar {
@@ -79,4 +128,8 @@
         width: 100%;
         margin: 0 auto;
     }
+}
+
+.tk_bottom-bar{
+    background-color: #ffd1d0;
 }
