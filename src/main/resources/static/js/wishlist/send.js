@@ -1,4 +1,3 @@
-
 let card = document.querySelectorAll(".kh-s-card-out");
 let spop = document.querySelector(".kh-s-popup");
 
@@ -111,73 +110,73 @@ let spop = document.querySelector(".kh-s-popup");
 // });
 
 function envelopChanger() {
-	const envelope = document.querySelector(".kh-s-envelope > img");
-	const input = document.querySelector(".kh-s-input").value;
-	let inputVal = input.replace(',', '');
-	if (inputVal < 50000) {
-		envelope.src = "/resources/img/envelope01.png";
-	}
-	else if (inputVal < 70000) {
-		envelope.src = "/resources/img/envelope02.png";
-	}
-	else {
-		envelope.src = "/resources/img/envelope03.png";
-	}
+    const envelope = document.querySelector(".kh-s-envelope > img");
+    const input = document.querySelector(".kh-s-input").value;
+    let inputVal = input.replace(',', '');
+    if (inputVal < 50000) {
+        envelope.src = "/resources/img/envelope01.png";
+    } else if (inputVal < 70000) {
+        envelope.src = "/resources/img/envelope02.png";
+    } else {
+        envelope.src = "/resources/img/envelope03.png";
+    }
 }
-
 
 
 function sendModal(money) {
-	const input = document.querySelector(".kh-s-input");
-	let value = money;
-	// 숫자를 현지화된 문자열로 변환하여 천 단위마다 쉼표를 추가
-	value = Number(value).toLocaleString('ja-JP');
-	// 포맷된 값을 입력 상자에 설정
-	input.value = value;
-	envelopChanger();
-	openModal();
+    const input = document.querySelector(".kh-s-input");
+    let value = money;
+    // 숫자를 현지화된 문자열로 변환하여 천 단위마다 쉼표를 추가
+    value = Number(value).toLocaleString('ja-JP');
+    // 포맷된 값을 입력 상자에 설정
+    input.value = value;
+    envelopChanger();
+    openModal();
 }
+
 function setMoney(money) {
-	const input = document.querySelector(".kh-s-input");
-	let value = money;
-	// 숫자를 현지화된 문자열로 변환하여 천 단위마다 쉼표를 추가
-	value = Number(value).toLocaleString('ja-JP');
-	// 포맷된 값을 입력 상자에 설정
-	input.value = value;
-	envelopChanger();
+    const input = document.querySelector(".kh-s-input");
+    let value = money;
+    // 숫자를 현지화된 문자열로 변환하여 천 단위마다 쉼표를 추가
+    value = Number(value).toLocaleString('ja-JP');
+    // 포맷된 값을 입력 상자에 설정
+    input.value = value;
+    envelopChanger();
 }
 
 const modal = document.getElementById("modal");
-modal.addEventListener("click", function(event) {
-	if (!spop.contains(event.target)) {
-		closeModal();
-	}
+modal.addEventListener("click", function (event) {
+    if (!spop.contains(event.target)) {
+        closeModal();
+    }
 });
+
 function openModal() {
-	const modal = document.getElementById("modal");
-	modal.showModal();
+    const modal = document.getElementById("modal");
+    modal.showModal();
 }
 
 function closeModal() {
-	const modal = document.getElementById("modal");
-	modal.close();
+    const modal = document.getElementById("modal");
+    modal.close();
 }
 
 function goFinal(wlno) {
-	const container = document.querySelector("#kh-input-box");
-	const sinput = document.querySelector(".kh-s-input");
-	const warnspan = document.querySelector("#kh-warn-text");
-	if (sinput.value == "") {
-		container.classList.add("vibration");
-		setTimeout(function() {
-			container.classList.remove("vibration");
-		}, 300);
-		if (warnspan.classList.contains("kh-none")) {
-			warnspan.classList.remove("kh-none");
-			warnspan.classList.add("kh-show");
-		}
-	} else {
-		let justnum = sinput.value.replace(',','');
-		location.href = "sending/insert?p_type=send&p_price=" + justnum + "&wl_no=" + wlno;
-	}
+    const container = document.querySelector("#kh-input-box");
+    const sinput = document.querySelector(".kh-s-input");
+    const warnspan = document.querySelector("#kh-warn-text");
+    console.log(wlno)
+    if (sinput.value == "") {
+        container.classList.add("vibration");
+        setTimeout(function () {
+            container.classList.remove("vibration");
+        }, 300);
+        if (warnspan.classList.contains("kh-none")) {
+            warnspan.classList.remove("kh-none");
+            warnspan.classList.add("kh-show");
+        }
+    } else {
+        let justnum = sinput.value.replace(',', '');
+        location.href = "sending/insert?p_type=send&p_price=" + justnum + "&wl_no=" + wlno;
+    }
 }

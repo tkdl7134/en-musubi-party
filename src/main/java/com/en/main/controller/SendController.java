@@ -2,6 +2,7 @@ package com.en.main.controller;
 
 import com.en.main.dto.PayVo;
 import com.en.main.service.FundingService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,12 +23,13 @@ public class SendController {
     return "/wishlist/sending";
     }
 
-    @PostMapping
-    public String insertWish(PayVo payVo, Model model){
+    @GetMapping("/insert")
+    public String insertWish(PayVo payVo, Model model, HttpSession session){
+        session.setAttribute("loginType", "normal");
         System.out.println(payVo);
         fundingService.insertWishPick(payVo);
 
-    return "redirect:/wishlist/sending/result";
+    return "/wishlist/financeresult";
     }
 
 

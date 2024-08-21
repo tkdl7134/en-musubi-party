@@ -276,7 +276,7 @@
 				src="/resources/img/money.png">
 		</div>
 		<div>
-			<button class="kh-s-btn" onclick="goFinal('nodata')">送金</button>
+			<button class="kh-s-btn" onclick="goFinal(8)">送金</button>
 		</div>
 	</div>
 </div>

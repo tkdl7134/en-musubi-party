@@ -222,7 +222,15 @@ dialog {
 #modal {
 	background: none !important;
 	box-shadow: none;
-	padding:6rem 10rem;
+	/*padding:6rem 10rem;*/
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	padding: 0;
+	border: none;
+	z-index: 1000; /* 다른 요소들 위에 표시되도록 */
 }
 
 #modal::-webkit-scrollbar {
