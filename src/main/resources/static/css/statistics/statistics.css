@@ -182,7 +182,10 @@ div {
 
 }
 .slick-list.draggable {
-    height:  auto;
+    height:  1142px !important;
+
+}
+.slick-track {
 
 }
 .jh_prev_btn2 {

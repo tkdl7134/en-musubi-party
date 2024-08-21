@@ -40,9 +40,19 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     }
 
     @Override
+    public int getSendNumberOfPeople(int no) {
+        return statisticsFundingMapper.getSendNumberOfPeople(no);
+    }
+
+    @Override
     public int getHighestPrice(int no) {
         return statisticsFundingMapper.getHighestPrice(no);
 
+    }
+
+    @Override
+    public int getSendHighestPrice(int no) {
+        return statisticsFundingMapper.getSendHighestPrice(no);
     }
 
     @Override
@@ -51,8 +61,18 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     }
 
     @Override
+    public String getSendPopulatedDate(int no) {
+        return statisticsFundingMapper.getSendPopulatedDate(no);
+    }
+
+    @Override
     public String getPopularWishlist(int no) {
         return statisticsFundingMapper.getPopularWishlist(no);
+    }
+
+    @Override
+    public String getSendPopularRelation(int no) {
+        return statisticsFundingMapper.getSendPopulatedDate(no);
     }
 
     @Override

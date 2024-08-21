@@ -18,10 +18,11 @@ function goToSendPage() {
     document.getElementById('jh_pageNavi5').style.cssText = 'color : white;transition : 0.2s'
     document.getElementById('jh_slick2').style.cssText = 'display : block;'
     document.getElementById('jh_slick1').style.cssText = 'display : none'
-    document.getElementsByClassName('slick-list').item(1).cssText = 'height : auto;'
+    document.getElementsByClassName('slick-list').item(1).cssText = 'height : 1142px;'
     document.getElementById('jh_slider111').style.cssText = 'width : 100vw;'
     document.getElementById('jh_slider222').style.cssText = 'width : 100vw;'
     document.getElementById('jh_slider333').style.cssText = 'width : 100vw;'
+    document.querySelector('.slick-list').cssText = 'height : 1142px;'
 /*    location.href = '/statistics/send';*/
 
 

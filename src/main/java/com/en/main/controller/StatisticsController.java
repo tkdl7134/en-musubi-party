@@ -71,51 +71,18 @@ public class StatisticsController {
         System.out.println(statisticsFundingService.getPriceOrderByRelation(eno));
         model.addAttribute("SendPriceOrderByRelation" ,statisticsFundingService.getPriceOrderByRelation(eno) );
 
-
-
-
+        model.addAttribute("SendNumberOfPeople" , statisticsFundingService.getSendNumberOfPeople(eno));
+        System.out.println(statisticsFundingService.getSendNumberOfPeople(eno));
+        model.addAttribute("SendHighestPrice" , statisticsFundingService.getSendHighestPrice(eno));
+        System.out.println(statisticsFundingService.getSendHighestPrice(eno));
+        model.addAttribute("SendPopularDate" , statisticsFundingService.getSendPopulatedDate(eno));
+        System.out.println(statisticsFundingService.getSendHighestPrice(eno));
+        model.addAttribute("SendPopularRelation" , statisticsFundingService.getSendPopularRelation(eno));
+        System.out.println(statisticsFundingService.getSendPopularRelation(eno));
 
         return "statistics/statisticsFunding";
     }
 
-    @GetMapping("/send")
-    public String goStatisticsingPage(Model model , PayVo payVo , JhFundSqlVo jhFundSqlVo ) {
-        int eno = 5;
-        model.addAttribute("wishlists" ,  statisticsFundingService.getWishlistData(eno));
-        System.out.println(statisticsFundingService.getWishlistData(eno));
-        model.addAttribute("dates" , statisticsFundingService.getDate(eno));
-        System.out.println(statisticsFundingService.getDate(eno));
-        List<WishlistVO> wishlist = statisticsFundingService.getWishlistData(eno);
-        WishlistVO firstItem = wishlist.get(0);
-        int firstWlNo = firstItem.getWl_no();
-        int firstWlPrice = firstItem.getWl_price();
-        model.addAttribute("payPrice" ,statisticsFundingService.getPrices(payVo , firstWlNo) ) ;
-        model.addAttribute("NumberOfPeople" , statisticsFundingService.getNumberOfPeople(eno));
-        System.out.println(statisticsFundingService.getNumberOfPeople(eno));
-
-        DecimalFormat formatter = new DecimalFormat("#,###");
-        String formattedNumber = formatter.format(statisticsFundingService.getHighestPrice(eno));
-
-        model.addAttribute("highestPrice" , formattedNumber);
-
-        String PopulestDate = statisticsFundingService.getPopulatedDate(eno);
-        System.out.println(PopulestDate);
-        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime dateTime = LocalDateTime.parse(PopulestDate, inputFormatter);
-
-        // 날짜 부분만 추출하기 위한 포맷터
-        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy年-MM月-dd日");
-        String formattedDate = dateTime.format(outputFormatter);
-        System.out.println(formattedDate);
-        model.addAttribute("PopularDate" , formattedDate);
-
-        model.addAttribute("PopularWishlist" ,     statisticsFundingService.getPopularWishlist(eno));
-
-
-        model.addAttribute("listupDatas" , statisticsFundingService.getListupInfos(eno));
-        System.out.println(statisticsFundingService.getListupInfos(eno));
-        return "/statistics/statisticsSend";
-    }
 
         @GetMapping("/getProductPrice/{no}")
     public @ResponseBody int getProductPrice(PayVo payVo, @PathVariable int no){

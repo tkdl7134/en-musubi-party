@@ -48,9 +48,13 @@ public interface StatisticsFundingMapper {
 
         @Select("select count(M_ID)  from pay where p_type = 'fund' and E_NO =  #{no}")
     int getNumberOfPeople (int no);
+        @Select("select count(M_ID)  from pay where p_type = 'send' and E_NO =  #{no}")
+    int getSendNumberOfPeople (int no);
 
         @Select("select max(P_PRICE) from pay where p_type = 'fund' and E_NO = #{no}")
     int getHighestPrice(int no);
+        @Select("select max(P_PRICE) from pay where p_type = 'send' and E_NO = #{no}")
+    int getSendHighestPrice(int no);
 
         @Select("SELECT p_date\n" +
                 "FROM (\n" +
@@ -62,6 +66,16 @@ public interface StatisticsFundingMapper {
                 "     )\n" +
                 "WHERE ROWNUM = 1")
         String getPopulatedDate(int no);
+        @Select("SELECT p_date\n" +
+                "FROM (\n" +
+                "         SELECT p_date, COUNT(p_date) AS occurrence_count\n" +
+                "         FROM pay\n" +
+                "         WHERE p_type = 'send' AND e_no = #{no}\n" +
+                "         GROUP BY p_date\n" +
+                "         ORDER BY occurrence_count DESC\n" +
+                "     )\n" +
+                "WHERE ROWNUM = 1")
+        String getSendPopulatedDate(int no);
 
     @Select("WITH RankedWlNo AS (\n" +
             "    SELECT wl_no,\n" +
@@ -75,6 +89,16 @@ public interface StatisticsFundingMapper {
             "         JOIN RankedWlNo r ON w.wl_no = r.wl_no\n" +
             "WHERE r.rn = 1")
     String getPopularWishlist(int no);
+
+    @Select("SELECT g.g_relation\n" +
+            "FROM pay p\n" +
+            "         JOIN guest g ON p.m_id = g.m_id\n" +
+            "WHERE p.p_type = 'send'\n" +
+            "  AND p.e_no = #{no}\n" +
+            "GROUP BY g.g_relation\n" +
+            "ORDER BY COUNT(*) DESC\n" +
+            "    FETCH FIRST 1 ROWS ONLY")
+    String getSendPopularRelation(int no);
 
 
     @Select("SELECT pay.p_price, pay.p_date, member.M_FAM_KANJI, member.M_NAME_KANJI, wishlist.wl_product\n" +

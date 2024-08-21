@@ -1003,7 +1003,7 @@
                         </c:forEach>
                     </div>
                 </div>
-                <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
+                <div   style="height : 6rem;text-align: center ; display: flex; align-items: center; justify-content: space-around;">
                     <img class="jh_prev_btn2"  src="/resources/img/Prev.png">
                     <img  src="/resources/img/Dots2.png">
                     <img  class="jh_next_btn2" src="/resources/img/Next.png" alt="">
@@ -1195,7 +1195,7 @@
                         </c:forEach>
                     </div>
                 </div>
-                <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
+                <div   style="height : 6rem; text-align: center ; display: flex; align-items: center; justify-content: space-around;">
                     <img class="jh_prev_btn"  src="/resources/img/Prev.png">
                     <img  src="/resources/img/Dots2.png">
                     <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
@@ -1213,12 +1213,12 @@
                      class="jh_other_infos">
                     <div style="margin-top: 2vh;" id="jh_detailHead2" class="jh_funding_detail">全体的な情報</div>
                     <div style="margin-top: 5vh;" id="jh_numberOfPeople2" class="jh_funding_detail">ご祝儀を送った人
-                        : ${NumberOfPeople}名
+                        : ${SendNumberOfPeople}名
                     </div>
-                    <div id="jh_popularDate2" class="jh_funding_detail">一番数多くの因縁が訪れた日 : ${PopularDate}</div>
-                    <div id="jh_highestPrice2" class="jh_funding_detail">最も大きい祝儀 :　${highestPrice}円</div>
+                    <div id="jh_popularDate2" class="jh_funding_detail">一番数多くの因縁が訪れた日 : ${SendPopularDate}</div>
+                    <div id="jh_highestPrice2" class="jh_funding_detail">最も大きい祝儀 :　${SendHighestPrice}円</div>
                     <div id="jh_rankingOfWishlist2" class="jh_funding_detail">一番多い関係
-                        : ${PopularWishlist}</div>
+                        : ${SendPopularRelation}</div>
 
                 </div>
                 <div class="jh_product_detail_container" style="margin-top: 10%;">
