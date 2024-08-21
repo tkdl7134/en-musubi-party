@@ -116,18 +116,25 @@ body {
     align-items: center;
 }
 
-#je_logo {
-    width: 2rem;
-}
-#je_logo img {
-    width: 100%;
+.je_logo-icon,
+.je_menu-icon {
+    width: 1.8rem;
+    img {
+        width: 100%;
+    }
 }
 
 @media (min-width: 769px) {
-    .tk_wishlist-body {
-        width: 100%;
+    .je_menu-header{
+        width: 30vw;
+        margin: 0 auto;
+        gap: 13rem;
+    }
+    #je_product-container {
+        width: 30vw;
         margin: 0 auto;
     }
+
 }
 
 .tk_bottom-bar{

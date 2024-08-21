@@ -9,9 +9,22 @@
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="/resources/js/wishlist/fund.js" defer></script>
 ${fundingList}
-<header>
-	<div></div>
-</header>
+
+<div class="je_menu-header">
+	<div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+	<div>縁結び</div>
+	<div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
+</div>
+
+<div class="tk_funding-title">
+	<div>
+		<span>ファンディング</span>
+	</div>
+	<div>
+		<img src="/resources/img/head.png" alt="">
+	</div>
+</div>
+
 <div class="kh-f-card-container">
 	<div class="kh-f-mousemove kh-f-none">
 		<img alt="" src="/resources/img/dragbtn.png">

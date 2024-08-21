@@ -5,8 +5,24 @@
 	font-style: normal;
 }
 
+.tk_funding-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 6rem;
+}
+
+.tk_funding-title span {
+	font-size: 5rem;
+}
+
+.tk_funding-title img {
+	width: 52rem;
+}
+
 .kh-f-card-container {
-	height: 100rem;
+	height: 100%;
 	display: flex;
 	align-self: center;
 	justify-content: flex-start;
@@ -50,7 +66,7 @@
 
 .kh-f-card-out {
 	width: 20rem;
-	height: 25rem;
+	height: 100%;
 	border: 1px solid #ff0000;
 	border-radius: 50%/30%;
 	display: flex;
@@ -295,6 +311,7 @@ dialog {
 	justify-content: center;
 	color: #FF3B3F;
 	gap: 1rem;
+	margin-top: 15rem;
 }
 
 .kh-f-statistic-title>div {
@@ -419,4 +436,46 @@ dialog {
 }
 dialog:-internal-dialog-in-top-layer::backdrop {
 	background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.je_menu-bar {
+	width: 100%;
+	height: 10rem;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.je_logo-icon,
+.je_menu-icon {
+	width: 4.5rem;
+	img {
+		width: 100%;
+	}
+}
+
+/* 메뉴 - 헤더 */
+.je_menu-header {
+	height: 5rem;
+	background-color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+	font-weight: 600;
+	color: #2e2e2e;
+}
+
+@media (min-width: 769px) {
+	.je_menu-header{
+		width: 100%;
+		margin: 0 auto;
+		gap: 13rem;
+	}
+	#je_product-container {
+		width: 30vw;
+		margin: 0 auto;
+	}
+
 }

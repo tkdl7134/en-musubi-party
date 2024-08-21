@@ -12,6 +12,7 @@ $.ajax({
 	success: function (response) {
 		jsoninfos = response;
 		console.log(jsoninfos)
+
 		response.forEach((element, index) => {
 			eventno = element.e_no;
 			$(".kh-f-card-container").append(`
@@ -192,7 +193,7 @@ $.ajax({
 
 			if (card) {
 				card.style.transform = "scale(1)"; // 마우스가 벗어났을 때 원래 크기로 축소
-				card.style.filter = "grayscale(100%)"; // 회색조 필터 적용
+				// card.style.filter = "grayscale(100%)"; // 회색조 필터 적용
 				event.stopPropagation();
 			}
 		})
@@ -236,7 +237,7 @@ $.ajax({
 
 		// 컨테이너 내용을 복제하여 무한 스크롤 구현
 		const cards = Array.from(cardCon.children);
-		const cardCount = cards.length;
+		// const cardCount = cards.length;
 
 		// 컨텐츠 복제를 두 번 이상으로 확장하여 스크롤 간격을 줄임
 		for (let i = 0; i < 3; i++) {
@@ -276,17 +277,15 @@ $.ajax({
 
 		// 무한 스크롤 구현
 		cardCon.addEventListener("scroll", function () {
-			const scrollWidthHalf = cardCon.scrollWidth / 2;
+		const scrollWidthHalf = cardCon.scrollWidth / 2;
 
-			if (cardCon.scrollLeft >= scrollWidthHalf) {
-				// 오른쪽 끝에 도달하면 첫 번째 카드를 복제하여 추가
-				cardCon.scrollLeft -= scrollWidthHalf;
-				cards.forEach(card => cardCon.appendChild(card.cloneNode(true)));
-			} else if (cardCon.scrollLeft <= 0) {
-				// 왼쪽 끝에 도달하면 마지막 카드를 복제하여 앞에 추가
-				cardCon.scrollLeft += scrollWidthHalf;
-				cards.reverse().forEach(card => cardCon.prepend(card.cloneNode(true)));
-			}
+		if (cardCon.scrollLeft >= scrollWidthHalf) {
+		// 오른쪽 끝에 도달하면 첫 번째 카드를 복제하여 추가
+			cardCon.scrollLeft -= scrollWidthHalf;
+		} else if (cardCon.scrollLeft <= cardWidth) {
+		// 왼쪽 끝에 도달하면 마지막 카드가 바로 보이도록 처리
+			cardCon.scrollLeft += scrollWidthHalf - cardWidth;
+		}
 		});
 
 		//마우스 휠할때 도는 애니메이션

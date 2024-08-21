@@ -8,10 +8,10 @@
     <title>Title</title>
 </head>
 <body>
-<div class="je_menu-bar">
-    <div id="je_logo">
-        <img src="/resources/img/en-musubi-logo.png" alt="" />
-    </div>
+<div class="je_menu-header">
+    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
 <div class="tk_wishlist-body">
     <div class="tk_wishlist-container">
