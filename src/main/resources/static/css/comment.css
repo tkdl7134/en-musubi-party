@@ -9,7 +9,7 @@
 .yr_comment_container {
     width: 100vw;
     height: 100vh;
-    background-image: url('/resources/img/Paper_BG.png');
+    background-image: url('/img/Paper_BG.png');
 }
 
 .yr_title {
@@ -80,26 +80,36 @@
 .yr_comment_insert {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
+    margin: 20px auto;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 75%;
 }
 .yr_comment_insert_type{
     font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.yr_comment_insert_type img{
+    width: 1rem;
 }
 .yr_comment_insert_type input[type="radio"]{
     transform: scale(1);
     margin-right: 8px;
 }
 .yr_comment_insert_writer input,
-.yr_comment_insert_content input{
+.yr_comment_insert_content input,
+.yr_comment_insert_password input {
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border: none;
     padding: 0.5rem;
+    width: 50%;
 }
 .yr_comment_insert_button{
-    width: 95%;
+    width: 100%;
+    height: 2rem;
     display: flex;
     justify-content: center;
     margin-top: 15px;
@@ -108,22 +118,20 @@
     font-size: 1rem;
     width: 30%;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 
+
 /* 작성하기 버튼 */
-.yr_modal{
+.yr_comment_making_modal{
     width: 85%;
     height: 2rem;
     margin: 30px auto;
 }
 .yr_comment_modal{
-    border-radius: 0.5rem;
-    /* border: 1px solid black; */
+    border-radius: 0.3rem;
     text-align: center;
-    /* display: flex; */
-    /* float: right; */
     padding: 8px 20px;
     font-size: 1.3rem;
     font-weight: 600;
@@ -131,6 +139,7 @@
     color: #fff;
     background-color: #FF8B8B;
 }
+
 .modal {
     display: none;
     position: fixed;
@@ -149,13 +158,33 @@
     background-color: #fefefe;
     margin: 35% auto;
     padding: 10px;
-    width: 80%;
+    width: 70%;
     border-radius: 10px;
     border: 2px solid #F03434;
     box-shadow: 0 0 0 2.5px white, 0 0 0 4px #FFC700;
-    height: 15rem;
+    height: 17rem;
 }
 
+#deleteModal p{
+    height: 4rem;
+    align-content: center;
+    margin: 0 6%;
+}
+#deleteModal input{
+    font-size: 1.2rem;
+    margin: 0 25%;
+    width: 50%;
+}
+#deleteModal .modal-content{
+    height:12rem;
+}
+#deleteModal button {
+    font-size: 1rem;
+    width: 30%;
+    background: #fff;
+    border-radius: 10px;
+    margin: 1.5rem 35%;
+}
 .close {
     color: #aaa;
     float: right;
