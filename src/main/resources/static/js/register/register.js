@@ -6,14 +6,14 @@ $(document).ready(function () {
         var element = $('#' + elementId);
         element.text(message).show(); // 메시지를 표시
 
-        setTimeout(function() {
+        setTimeout(function () {
             element.fadeOut(); // 일정 시간 후 메시지를 사라지게 함
         }, timeout);
     }
 
     var $slider = $('.slider-container');
-    var $prevButton = $('.prev-button');
-    var $nextButton = $('.next-button');
+    var $prevButton = $('.register-slider-prevButton');
+    var $nextButton = $('.register-slider-nextButton');
     var $checkButton = $('#check-ID');
     var totalSlides = $slider.find('.slide').length;
     var emailVerified = false;  // 이메일 인증 상태 추적 변수
@@ -37,10 +37,10 @@ $(document).ready(function () {
 
         if (currentSlide === totalSlides - 1) {
             $nextButton.hide();
-            $('#submitButton').show(); // 마지막 슬라이드에서 등록 완료 버튼 보이기
+            $('#register-submitButton').show(); // 마지막 슬라이드에서 등록 완료 버튼 보이기
         } else {
             $nextButton.show();
-            $('#submitButton').hide(); // 다른 슬라이드에서 등록 완료 버튼 숨기기
+            $('#register-submitButton').hide(); // 다른 슬라이드에서 등록 완료 버튼 숨기기
         }
     });
 
@@ -73,22 +73,22 @@ $(document).ready(function () {
         });
 
         // 이메일 인증 확인 추가 (슬라이드 3의 경우)
-        if (currentSlide === 2 && !emailVerified) {
+        if (currentSlide === 3 && !emailVerified) {
             allFilled = false;
-        } else if (currentSlide === 2 && emailVerified) {
+        } else if (currentSlide === 3 && emailVerified && $("#phone").val() !== "") {
             allFilled = true;
         }
 
-        console.log('All inputs filled', allFilled);
 
-    console.log(currentSlide)
-        if (currentSlide === 3 && $("#IDFeedback").text() !== "사용 가능한 아이디입니다." && $("#passwordFeedback").text() !== '사용 가능한 패스워드입니다.') {
+        console.log(currentSlide)
+        if (currentSlide === 4 && $("#IDFeedback").text() !== "使用可能なIDです" && $("#passwordFeedback").text() !== '使用可能なPWです') {
             allFilled = false;
             console.log('돌고나서 true')
-        } else if (currentSlide === 3 && $('#IDFeedback').text() === '사용 가능한 아이디입니다.' && $('#passwordFeedback').text() === '사용 가능한 패스워드입니다.'){
+        } else if (currentSlide === 4 && $('#IDFeedback').text() === '使用可能なIDです' && $('#passwordFeedback').text() === '使用可能なPWです') {
             allFilled = true;
             console.log('돌고나서 false')
         }
+
         $nextButton.prop('disabled', !allFilled);
         console.log('Next button disabled state', $nextButton.prop('disabled'));
     }
@@ -106,7 +106,7 @@ $(document).ready(function () {
     // --- 슬라이드 2: 생년월일 입력 제한 기능 ---
 
     // 연도 입력 제한 (슬라이드 2)
-    document.getElementById('year').addEventListener('input', function() {
+    document.getElementById('year').addEventListener('input', function () {
         var year = parseInt(this.value, 10);
 
         if (this.value.length === 4) { // 네 자리 숫자일 때만 검증
@@ -120,7 +120,7 @@ $(document).ready(function () {
     });
 
     // 월 입력 제한 (슬라이드 2)
-    document.getElementById('month').addEventListener('input', function() {
+    document.getElementById('month').addEventListener('input', function () {
         var month = parseInt(this.value, 10);
 
         if (month < 1 || month > 12) {
@@ -132,7 +132,7 @@ $(document).ready(function () {
     });
 
     // 일 입력 제한 (슬라이드 2)
-    document.getElementById('day').addEventListener('input', function() {
+    document.getElementById('day').addEventListener('input', function () {
         var day = parseInt(this.value, 10);
         var month = parseInt(document.getElementById('month').value, 10);
         var year = parseInt(document.getElementById('year').value, 10);
@@ -156,7 +156,7 @@ $(document).ready(function () {
     // --- 슬라이드 3: 전화번호 및 이메일 인증 기능 ---
 
     // 전화번호 입력 제한 (슬라이드 3)
-    document.getElementById('phone').addEventListener('input', function() {
+    document.getElementById('phone').addEventListener('input', function () {
         var phone = this.value.replace(/[^0-9]/g, ''); // 숫자 이외의 문자 제거
 
         if (phone.length < 3) {
@@ -179,22 +179,22 @@ $(document).ready(function () {
         var email = $('#email').val().trim(); // 이메일 입력값에서 공백 제거
 
         if (email === "") {
-            showMessageWithTimeout('emailError', '이메일 주소를 입력해주세요.', 3000); // 이메일이 비어있을 경우 경고 메시지 표시
+            showMessageWithTimeout('emailError', 'メールアドレスを入力してください', 3000); // 이메일이 비어있을 경우 경고 메시지 표시
             $('#verificationCodeGroup').hide(); // 인증 코드 입력란 숨기기
         } else {
             $('#emailError').text(''); // 오류 메시지 지우기
             $.ajax({
                 url: '/api/verify-email/send-code',
                 type: 'POST',
-                data: { email: email },
+                data: {email: email},
                 success: function (response) {
-                    console.log("Email sent successfully:", response);
-                    showMessageWithTimeout('emailSuccess', response, 3000); // 성공 메시지 표시
+                    // console.log("Email sent successfully:", response);
+                    showMessageWithTimeout('emailSuccess', 'メールが正常に送信されました　', 3000); // 성공 메시지 표시
                     $('#verificationCodeGroup').show(); // 이메일 전송이 성공하면 인증 코드 입력란 보이기
                 },
                 error: function () {
                     console.log("Email sending failed.");
-                    showMessageWithTimeout('emailError', '이메일 전송에 실패했습니다.', 3000);
+                    showMessageWithTimeout('emailError', 'メールの送信に失敗しました　', 3000);
                     $('#verificationCodeGroup').hide(); // 전송 실패 시에도 인증 코드 입력란 숨기기
                 }
             });
@@ -212,20 +212,21 @@ $(document).ready(function () {
         $.ajax({
             url: '/api/verify-email/verify-code',
             type: 'POST',
-            data: { email: email, code: code },
+            data: {email: email, code: code},
             success: function (response) {
+                console.log(response);
                 if (response === 'Verification code verified successfully.') {
-                    $('#verifyMessage').text('인증이 성공적으로 완료되었습니다.').css('color', 'green');
+                    $('#verifyMessage').text('認証手続きが正常に完了しました').css('color', '#555555');
                     emailVerified = true;  // 이메일 인증 성공 시 상태 업데이트
                     console.log('Verification successful, updating next button state');
                     updateNextButtonState($slider.slick('slickCurrentSlide')); // 인증 코드가 확인되면 버튼 상태 업데이트
                 } else {
-                    showMessageWithTimeout('verifyMessage', '인증 코드가 올바르지 않습니다.', 3000);
+                    showMessageWithTimeout('verifyMessage', '認証コードが正しくありません', 3000);
                     emailVerified = false;
                 }
             },
             error: function () {
-                showMessageWithTimeout('verifyMessage', '인증 확인 중 오류가 발생했습니다.', 3000);
+                showMessageWithTimeout('verifyMessage', '認証中にエラーが発生しました', 3000);
                 emailVerified = false;
             }
         });
@@ -241,10 +242,10 @@ $(document).ready(function () {
         var feedback = '';
 
         if (ID.length < 6 || ID.length > 20) {
-            feedback = '아이디는 6자 이상, 20자 이하로 입력해야 합니다.';
+            feedback = '6〜20文字の英数字のみ使用可';
             $checkButton.prop('disabled', true); // 중복 확인 버튼 비활성화
         } else if (!IDPattern.test(ID)) {
-            feedback = '아이디는 알파벳으로 시작하고 숫자만 포함할 수 있습니다.';
+            feedback = 'アルファベットで始めてください';
             $checkButton.prop('disabled', true); // 중복 확인 버튼 비활성화
         } else {
             feedback = '';
@@ -263,16 +264,16 @@ $(document).ready(function () {
         $.ajax({
             url: '/check-id',  // 서버에서 아이디 중복 검사를 처리하는 URL
             type: 'POST',
-            data: { ID: ID },
+            data: {ID: ID},
             success: function (response) {
                 if (response === '사용 가능한 아이디입니다.') {
-                    $('#IDFeedback').text('사용 가능한 아이디입니다.').css('color', 'green');
+                    $('#IDFeedback').text('使用可能なIDです').css('color', '#555555');
                 } else {
-                    $('#IDFeedback').text('이미 사용 중인 아이디입니다.').css('color', 'red');
+                    $('#IDFeedback').text('使用不可なIDです').css('color', 'red');
                 }
             },
             error: function () {
-                $('#IDFeedback').text('아이디 확인 중 오류가 발생했습니다.').css('color', 'red');
+                $('#IDFeedback').text('ID確認中エラー発生').css('color', 'red');
             }
         });
     });
@@ -286,31 +287,18 @@ $(document).ready(function () {
         var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,32}$/;
 
         if (password.length < minLength) {
-            feedback = '패스워드는 최소 8자 이상이어야 합니다.';
+            feedback = '最低8文字以上';
         } else if (password.length > maxLength) {
-            feedback = '패스워드는 최대 32자 이하이어야 합니다.';
+            feedback = '最大32文字以下';
         } else if (!regex.test(password)) {
-            feedback = '패스워드는 대문자, 소문자, 숫자, 특수문자를 포함해야 합니다.';
+            feedback = '大文字・小文字・数字・記号のみ使用可';
         } else {
-            feedback = '사용 가능한 패스워드입니다.';
+            feedback = '使用可能なPWです';
         }
 
         $('#passwordFeedback').text(feedback);
 
     });
-
-
-//     // 이메일 인증 확인 추가 (슬라이드 3의 경우)
-//     if (currentSlide === 2 && !emailVerified) {
-//         allFilled = false;
-//     } else if (currentSlide === 2 && emailVerified) {
-//         allFilled = true;
-//     }
-//
-//     console.log('All inputs filled', allFilled);
-//     $nextButton.prop('disabled', !allFilled);
-//     console.log('Next button disabled state', $nextButton.prop('disabled'));
-// }
 
 
     // 패스워드 표시/숨기기 기능 (슬라이드 4)
@@ -346,15 +334,15 @@ $(document).ready(function () {
 
                         // 세 번째 입력란은 사용자가 직접 입력해야 하므로 건드리지 않음
                     } else {
-                        showMessageWithTimeout('zipcodeError', '해당 우편번호에 대한 주소를 찾을 수 없습니다.', 3000);
+                        showMessageWithTimeout('zipcodeError', '該当の郵便番号に対する住所が見つかりませんでした', 3000);
                     }
                 },
                 error: function () {
-                    showMessageWithTimeout('zipcodeError', '주소 검색 중 오류가 발생했습니다. 다시 시도해주세요.', 3000);
+                    showMessageWithTimeout('zipcodeError', '住所検索中にエラーが発生しました', 3000);
                 }
             });
         } else {
-            showMessageWithTimeout('zipcodeError', '유효한 우편번호를 입력해주세요.', 3000);
+            showMessageWithTimeout('zipcodeError', '有効な郵便番号を入力してください', 3000);
         }
     });
 
@@ -395,7 +383,7 @@ $(document).ready(function () {
     // --- 마지막 슬라이드: 등록 완료 버튼 클릭 시 폼 제출 기능 ---
 
     // 등록 완료 버튼 클릭 시 폼 제출 처리 (전체 슬라이드)
-    $('#submitButton').on('click', function () {
+    $('#register-submitButton').on('click', function () {
         // 모든 입력값 수집
         var formData = {
             m_id: $('#ID').val(),
@@ -425,16 +413,32 @@ $(document).ready(function () {
             contentType: 'application/json',
             data: JSON.stringify(formData),
             success: function (response) {
-                console.log(response);  // 서버 응답 확인
-                if (response === 'Registration successful') {
-                    var memberId = formData.m_id;
-                    window.location.href = '/myInfo?m_id=' + memberId;
-                } else {
-                    showMessageWithTimeout('submitError', '처리 중 문제가 발생했습니다.', 3000);
-                }
+                console.log(response);
+                var memberId = formData.m_id;
+                window.location.href = '/myInfo?m_id=' + memberId;
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                showMessageWithTimeout('submitError', '처리 중 문제가 발생했습니다.', 100000);
             }
         });
     });
 
-    $('#submitButton').hide(); // 기본적으로 숨김, 마지막 슬라이드에서만 보이도록 설정
+    $('#register-submitButton').hide(); // 기본적으로 숨김, 마지막 슬라이드에서만 보이도록 설정
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('register-submitButton').addEventListener('click', function() {
+        const button = this;
+
+        // 클릭 시 배경색 변경
+        button.style.backgroundColor = '#ff5155';
+        button.style.color = 'white'; // 필요 시 텍스트 색상도 변경
+
+        // 1초 후 배경색을 원래대로 돌려놓기 (1000ms = 1초)
+        setTimeout(function() {
+            button.style.backgroundColor = 'white';
+            button.style.color = 'black'; // 필요 시 텍스트 색상도 원래대로 변경
+        }, 1000);
+    });
+});
+
