@@ -142,7 +142,7 @@
                                                 </div>
                                                 <div class="tk_justName">
                                                     <div class="tk_survey-titleName-container">
-                                                        <div class="tk_survey-titleName">お名前</div>
+                                                        <div class="tk_survey-titleName">漢字</div>
                                                     </div>
                                                     <div>
                                                         <input type="text" id="kanji-fam" name="m_fam_kanji" value="${member.m_fam_kanji}"/>
@@ -174,79 +174,81 @@
                                                 </div>
                                                 <div class="tk_survey-gender">
                                                     <div class="tk_survey-gender-checkbox">
-                                                        <input
+                                                        <div>
+                                                            <input
                                                             type="checkbox"
                                                             id="maleGender"
                                                             name="m_gender"
                                                             value="男性"
                                                             <c:if test="${member.m_gender == '男性'}"> checked </c:if>
-                                                        />
-                                                        <label class="cb1" for="maleGender"></label>
-                                                        <label for="maleGender">男性</label>
-                                                        <input
-                                                            type="checkbox"
-                                                            id="femaleGender"
-                                                            name="m_gender"
-                                                            value="女性"
-                                                            <c:if test="${member.m_gender == '女'}"> checked </c:if>
-                                                        />
-                                                        <label class="cb1" for="femaleGender"></label>
-                                                        <label for="femaleGender">女性</label>
-                                                        <input
-                                                            type="checkbox"
-                                                            id="othersGender"
-                                                            name="m_gender"
-                                                            value="その他"
-                                                            <c:if test="${member.m_gender == 'その他'}"> checked </c:if>
-                                                        />
-                                                        <label class="cb1" for="othersGender"></label>
-                                                        <label for="othersGender">その他</label>
+                                                            />
+                                                            <label class="cb1" for="maleGender"></label>
+                                                            <label for="maleGender">男性</label>
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                                type="checkbox"
+                                                                id="femaleGender"
+                                                                name="m_gender"
+                                                                value="女性"
+                                                                <c:if test="${member.m_gender == '女'}"> checked </c:if>
+                                                            />
+                                                            <label class="cb1" for="femaleGender"></label>
+                                                            <label for="femaleGender">女性</label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tk_division-line"></div>
-                                        <div class="tk_address">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">住所</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <div class="tk_survey-postcode">
-                                                郵便番号
-                                                <input
-                                                        class="search-postcode"
-                                                        type="text"
-                                                        name="m_zipcode"
-                                                        value="${member.m_zipcode}"
-                                                        id="zipcode"
-                                                />
-                                                <button type="button" class="search-post-btn">
-                                                    検索
-                                                </button>
-                                            </div>
-                                            <div class="tk_survey-address">
-                                                <input type="text" name="m_address" value="${member.m_address}" id="address"/>
-                                                <input type="text" name="m_other_address" id="address-others"/>
-                                            </div>
-                                        </div>
-                                        <div class="tk_division-line"></div>
-                                        <div class="tk_survey-email">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">メールアドレス</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <div>
-                                                <input type="text" id="email" name="m_email" value="${member.m_email}" />
-                                            </div>
-                                        </div>
-                                        <div class="tk_division-line"></div>
-                                        <div class="tk_survey-phone">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">電話番号</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <div>
-                                                <input type="text" id="phoneNum" name="m_phone" value="${member.m_phone}" />
+
+                                        <div class="tk_yellow_border">
+                                            <div class="tk_red-border">
+                                                <div class="tk_box-title">
+                                                    <span>✿</span>
+                                                    <span>連絡先情報</span>
+                                                    <span>✿</span>
+                                                </div>
+                                                <div class="tk_survey-email">
+                                                    <div class="tk_survey-titleName-container">
+                                                        <div class="tk_survey-titleName">メールアドレス</div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" id="email" name="m_email" value="${member.m_email}" />
+                                                    </div>
+                                                </div>
+                                                <div class="tk_survey-phone">
+                                                    <div class="tk_survey-titleName-container">
+                                                        <div class="tk_survey-titleName">電話番号</div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" id="phoneNum" name="m_phone" value="${member.m_phone}" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="tk_address">
+
+                                                    <div class="tk_survey-postcode">
+                                                        郵便番号
+                                                        <input
+                                                                class="search-postcode"
+                                                                type="text"
+                                                                name="m_zipcode"
+                                                                value="${member.m_zipcode}"
+                                                                id="zipcode"
+                                                        />
+                                                        <button type="button" class="search-post-btn">
+                                                            検索
+                                                        </button>
+                                                    </div>
+                                                    <div class="tk_survey-titleName-container">
+                                                        <div class="tk_survey-titleName">住所</div>
+                                                    </div>
+                                                    <div class="tk_survey-address">
+                                                        <input type="text" name="m_address" value="${member.m_address}" id="address"/>
+                                                        <input type="text" name="m_other_address" id="address-others"/>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>

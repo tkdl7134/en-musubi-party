@@ -1,5 +1,5 @@
 
-.tk_survey-guestType-checkbox, .tk_survey-gender-checkbox {
+.tk_survey-guestType-checkbox {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
