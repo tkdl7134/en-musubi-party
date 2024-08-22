@@ -5,6 +5,7 @@
 	height:100vh;
 	flex-direction: column;
 	gap:2rem;
+	user-select: none;
 }
 .kh-f-res-img-box{
 	width:716px;

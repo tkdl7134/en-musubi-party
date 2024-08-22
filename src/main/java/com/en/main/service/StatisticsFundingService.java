@@ -72,7 +72,7 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
 
     @Override
     public String getSendPopularRelation(int no) {
-        return statisticsFundingMapper.getSendPopulatedDate(no);
+        return statisticsFundingMapper.getSendPopularRelation(no);
     }
 
     @Override
