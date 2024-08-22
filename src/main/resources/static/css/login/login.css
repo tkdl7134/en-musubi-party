@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFF5F4;
+    display: flex;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    margin-top: 100px;
+    padding: 30px;
+}
+
+.login-container p {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.form-group .fixed-label {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #aaa;
+    font-size: 10px;
+    padding: 0 5px;
+    pointer-events: none;
+}
+
+.form-group input {
+    width: 100%;
+    height: 54px;
+    padding: 14px 12px 0 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.clear-button,
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #aaa;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.clear-button {
+    width: 18px;
+    height: 17px;
+    right: 10px;
+    font-size: 15px;
+    /*line-height: 18px;*/
+    padding-top: 1px;
+}
+
+.password-toggle {
+    right: 40px;
+    font-size: 16px;
+}
+
+.form-group input:focus + .password-toggle,
+.form-group input:focus + .clear-button,
+.form-group input:not(:placeholder-shown) + .password-toggle,
+.form-group input:not(:placeholder-shown) + .clear-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-group input:focus ~ .password-toggle,
+.form-group input:focus ~ .clear-button,
+.form-group input:not(:placeholder-shown) ~ .password-toggle,
+.form-group input:not(:placeholder-shown) ~ .clear-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.clear-button:hover,
+.password-toggle:hover {
+    background-color: #666666;
+}
+
+.error {
+    color: #EC0000;
+    font-size: 12px !important;
+    margin-top: 5px;
+}
+
+.login-btn {
+    width: 100%;
+    height: 48px;
+    padding: 10px;
+    background-color: rgb(253, 223, 225);
+    border: none;
+    color: #EC0000;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.login-btn:hover {
+    background-color: #F8C8C9;
+}
+
+.login-options {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-options a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.login-options a:hover {
+    color: #EC0000;
+}
+
+.social-login {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.social-login img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+}

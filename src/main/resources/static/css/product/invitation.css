@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*  */
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+}
+
+.je_invitation-container {
+    background-color: #fffbf7;
+    width: 100vw;
+    padding-bottom: 3rem;
+    background-image: url('/resources/img/Paper_BG.png');
+}
+/* MAIN */
+.je_invitation-main {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.je_main-title {
+    display: flex;
+    justify-content: center;
+    padding: 30% 0;
+    span {
+        writing-mode: vertical-rl;
+        color: #ffffff;
+        font-size: 35px;
+        font-weight: 900;
+        letter-spacing: 0.7rem;
+    }
+}
+.je_main-info {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+.je_main-names {
+    font-size: 25px;
+    font-weight: 900;
+    padding: 2rem 0;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+}
+.je_main-day {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    padding-bottom: 7rem;
+}
+
+/* introduce & message */
+.je_invitation-message {
+    background-image: url('/resources/img/Red\ Line\ BG-retouch.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -3rem;
+    padding-top: 2.5rem;
+    position: relative;
+    z-index: 1;
+    color: #3f3f3f;
+    div {
+        text-align: center;
+    }
+}
+.je_intro-msg {
+    font-size: 18px;
+    margin: 2rem 0;
+}
+.je_introduce-couple {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.je_musubi-line {
+    width: 100%;
+    padding-bottom: 3rem;
+    img {
+        width: 100%;
+    }
+}
+
+.je_message-txt {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 900;
+    padding-bottom: 2rem;
+    /* margin: 2rem 1.5rem; */
+}
+
+/* 신랑신부 정보 */
+.je_invitation-couple-info {
+    background-image: url('/resources/img/Paper_BG.png');
+    background-size: cover;
+    padding: 5rem 3.5rem 1rem 3.5rem;
+    position: relative;
+}
+
+.je_red-line-BG {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+
+.je_groom,
+.je_bride {
+    margin-bottom: 2rem;
+}
+
+.je_groom-photo-box {
+    display: flex;
+    justify-content: left;
+    position: relative;
+}
+.je_bride-photo-box {
+    display: flex;
+    justify-content: right;
+    position: relative;
+}
+
+.je_photo-box-inner {
+    background-color: #ffffff;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 0.4rem;
+    position: relative;
+    z-index: 0;
+}
+
+.je_photo-box{
+    width: 13rem;
+    height: 13rem;
+    position: absolute;
+    border-radius: 0.4rem;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.je_groom-photo-box > .je_photo-box {
+    top: -0.5rem;
+    left: -2rem;
+    background-color: rgba(236, 0, 0, 0.1);
+    border: 1px solid rgba(236, 0, 0, 1);
+}
+.je_bride-photo-box > .je_photo-box {
+    top: -0.5rem;
+    right: -2rem;
+    background-color: rgba(255, 204, 0, 0.1);
+    border: 1px solid rgba(255, 204, 0, 1);
+
+}
+
+.je_photo-box > img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+}
+
+.je_photo-box-title {
+    position: absolute;
+    top: 1rem;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3f3f3f;
+    writing-mode: vertical-rl;
+    letter-spacing: 0.3rem;
+}
+.je_groom-photo-box > .je_photo-box-inner > .je_photo-box-title {
+    right: 0.3rem;
+}
+
+.je_bride-photo-box > .je_photo-box-inner > .je_photo-box-title {
+    left: 0.3rem;
+}
+
+.je_groom-name,
+.je_bride-name {
+    margin-top: 1rem;
+    color: #2e2e2e;
+}
+
+.je_name-jp {
+    font-size: 24px;
+    font-weight: 600;
+}
+.je_name-eng {
+    margin-top: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.je_bride-name > div {
+    text-align: right;
+}
+
+/* INFORMATION */
+
+.je_information-title {
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900;
+    color: #2e2e2e;
+    background-color: #ffffff;
+    border-top: 1px solid #ff8b8b;
+    border-bottom: 1px solid #ff8b8b;
+}
+
+.je_information-title > div:nth-child(2) {
+    margin-top: 2rem;
+    font-size: 18px;
+}
+
+.je_information-box {
+    text-align: center;
+    font-weight: 600;
+}
+
+.je_information-box:nth-last-child(1) {
+    padding-bottom: 1rem;
+    /* 2번째 지도 아래 여유공간 */
+}
+
+.je_information-wedding,
+.je_information-reception {
+    position: relative;
+    border: 1px solid #ffdbdb;
+    padding: 2rem 0;
+    font-size: 24px;
+    img {
+        position: absolute;
+        width: 85%;
+        bottom: -1.2rem;
+        left: 2rem;
+    }
+}
+
+.je_wedding-datetime,
+.je_reception-datetime {
+    background-color: #ffffff;
+    padding: 2rem 0;
+    color: #3f3f3f;
+}
+.je_wedding-datetime > p:nth-child(1),
+.je_reception-datetime > p:nth-child(1) {
+    font-size: 22px;
+    font-weight: 900;
+}
+.je_wedding-datetime > p:nth-child(2),
+.je_reception-datetime > p:nth-child(2) {
+    font-size: 22px;
+    font-weight: 600;
+}
+.je_wedding-datetime > p:nth-child(3),
+.je_reception-datetime > p:nth-child(3) {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 1.5rem;
+}
+
+.je_wedding-place,
+.je_reception-place {
+    p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+/* MAP */
+#je_wedding-map,
+#je_reception-map {
+    width: 100%;
+    height: 13.4rem;
+    border-top: 1px solid #ff8b8b;
+    border-bottom: 1px solid #ff8b8b;
+}
+
+#je_reception-map {
+    margin-bottom: 2rem;
+}
+
+/* share-image */
+.je_share-photos {
+    width: 100%;
+    height: 50rem;
+    background-color: #ffffff;
+}
+
+.je_share-photos-title {
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+#je_view-photo {
+    display: block;
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto;
+    object-fit: cover;
+    border: 2px solid #ff8b8b;
+    border-radius: 5px;
+    img {
+        width: 100%;
+    }
+}
+
+#je_share-photos-list {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.8rem;
+}
+#je_share-photos-list > li {
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    background-color: #ffc8c8;
+    border-radius: 5px;
+    z-index: 1;
+}
+.je_list-back{
+    position: absolute;
+    top: 1.7rem;
+    left: 2rem;
+
+    li{
+        display: inline-block;
+        width: 6rem;
+        height: 6rem;
+        background-color: #ffc8c8;
+        border-radius: 5px;
+        margin: .3rem;
+    }
+}
+
+#je_share-photos-list > li > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.je_message-txt2 {
+    margin-top: 3rem;
+    margin-bottom: -2rem;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3f3f3f;
+    div {
+        margin: 1rem 0;
+        color: #d30a0a;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+/* 페이지 이동 버튼 */
+.je_buttons {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 2rem;
+    gap: 1rem;
+}
+.je_buttons > button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: rgba(200, 38, 38) 0px 3px 8px;
+    border-radius: 1rem;
+    border: 2px solid #c82626;
+}
+.je_buttons > button:nth-child(1) {
+    width: 30%;
+    background-color: #fff4f4;
+    color: #5c5c5c;
+}
+.je_buttons > button:nth-child(2) {
+    width: 50%;
+    background-color: #ff3b3f;
+    color: #ffffff;
+}
+
+@media (min-width: 769px) {
+    .je_invitation-container {
+        width: 30vw;
+        margin: 0 auto;
+    }
+
+    .je_invitation-message{
+        margin-top: -3.5rem;
+    }
+
+    #je_view-photo{
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .je_share-photos{
+        height: 73rem;
+    }
+
+    #je_share-photos-list > li {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .je_list-back > li {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+
+
+/* yu - comment */
+.yr_guest_book{
+    margin: 25px 0;
+    text-align: center;
+}
+.yr_guest_book_button{
+    width: 85%;
+    padding: 5px 0;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 1rem;
+    background: #ffc8c8;
+    color: #fff;
+    border: 3px solid #FF494C;
+}

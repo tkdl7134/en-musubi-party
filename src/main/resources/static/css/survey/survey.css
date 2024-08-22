@@ -1,0 +1,589 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.tk_division-line {
+    border-top: 1px solid #444444;
+    margin: 2rem 0 2rem 1rem;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+body {
+    background-color: #fffbf7;
+}
+
+/* 메뉴 - 헤더 */
+
+.tk_menu-bar {
+    width: 100%;
+    height: 3rem;
+    background-color: #ffd1d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tk_logo {
+    width: 2rem;
+}
+
+#tk_logo img {
+    width: 100%;
+}
+
+#tk_survey-container {
+    width: 100%;
+}
+
+.tk_survey-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.5rem;
+}
+
+#tk_survey-line > img {
+    width: 24rem;
+}
+
+.tk_survey-container {
+    width: 100%;
+}
+
+.tk_iphone-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.tk_iphone {
+    /* background-color: yellow; */
+    width: 20rem;
+
+    position: relative;
+    img {
+        width: 100%;
+    }
+}
+
+.tk_survey-container {
+    /*position: absolute;*/
+    width: 100%;
+    /*height: 84%;*/
+    /*top: 3rem;*/
+    /*left: 5%;*/
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+.tk_survey-container::-webkit-scrollbar {
+    display: none;
+}
+
+/*form 태그쓸때 여백생기는 부분 없애기|작성자 현쓰애미*/
+form {
+    display : inline;
+    margin: 0;
+    padding: 0;
+}
+
+.survey-form {
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tk_survey-titleName-container {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 0.5rem;
+}
+
+.tk_survey-entry-container {
+    display: flex;
+    justify-content: start;
+    text-align: center;
+}
+
+/*설문조사 각 input 이름*/
+.tk_survey-titleName {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.tk-survey-essential {
+    margin-bottom: 1rem;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 0.2rem 0.2rem;
+    background: red;
+    color: wheat;
+    font-size: 1rem;
+}
+
+.tk_attention-if-change {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 85%;
+    background-color: red;
+    color: wheat;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tk_attention-if-change {
+    border: 1px solid salmon;
+}
+
+.tk_survey-accompany-titleName {
+    font-size: 1.2rem;
+    margin: 1rem 0 1rem 0;
+    font-weight: bold;
+}
+
+.tk_survey-accompany-essential {
+    margin: 1rem 0 1rem 0;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 0.2rem 0.2rem;
+    background: red;
+    color: wheat;
+    font-size: 0.8rem;
+}
+
+/*설문조사 모든 select 태그 꾸미기*/
+select {
+    font-size: 1.1rem;
+    width: 15rem;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSA2TDEwIDE1TDE5IDZIMTcuMUwxMCAxM0wzLjkgNkgxWiIgZmlsbD0iIzY2NiIvPjwvc3ZnPg==) no-repeat right 10px center;
+    background-color: white;
+}
+
+
+/*설문조사 이름 input 꾸미기*/
+.tk_justName input, .tk_kataName input, .tk_romeName input  {
+    width: calc(47% - 10px);
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*설문조사 주소 input / button 꾸미기*/
+.tk_survey-postcode {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.tk_survey-postcode input {
+    width: calc(54% - 10px);
+    padding: 0.4rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    margin-left: 0.2rem;
+}
+
+.tk_survey-postcode button {
+    width: 18%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 4px;
+    background: gray;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/*상세주소 input 꾸미기*/
+.tk_survey-address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tk_survey-address input {
+    width: calc(95% - 10px);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+/*이메일 input 꾸미기*/
+.tk_survey-email input {
+    width: calc(90% - 8px);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+/*폰번호 input 꾸미기*/
+.tk_survey-phone input{
+    width: calc(90% - 8px);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+.tk_survey-allergy-checkbox {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.tk_survey-allergy-checkbox span {
+    font-size: 1.2rem;
+}
+
+.tk_survey-allergy-detail input {
+    width: calc(90% - 8px);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+.tk_survey-party-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.tk_survey-party-checkbox span {
+    font-size: 1.2rem;
+}
+
+.party-member {
+    margin-top: 1.5rem;
+}
+
+.remove-party-member {
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.tk_survey-message-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.tk_survey-message {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20rem;
+    height: 40rem;
+    right: 1rem;
+}
+
+.tk_survey-messageImg {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tk_imgButton-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tk_survey-messageImg button {
+    border-radius: 5px;
+    padding: 0.2rem 1.2rem 0.2rem 1.2rem;
+    width: 10rem;
+}
+
+.tk_survey-messageText {
+    width: 100%;
+    height: 30%;
+    background-color: white;
+}
+
+.tk_messageImg {
+    width: 100%;
+    height: 100%;
+}
+
+.tk_survey-messageText textarea {
+    width: 95.6%;
+    height: 100%;
+    border-top: transparent;
+    border-right: solid 1px slategrey;
+    border-bottom: solid 1px slategrey;
+    border-left: solid 1px slategrey;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    resize: none;
+    padding: 0.4rem;
+    overflow-y: scroll;
+}
+
+dialog {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40rem;
+    width: 25rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+}
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+.close-button {
+    float: right;
+    font-size: 0.9rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.sample-imgList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    gap: 0.3rem;
+    padding: 0.1rem;
+    list-style:none;
+}
+
+.sample-imgList-item {
+    border: 5px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sample-imgList-item:hover {
+    border: 5px solid coral;
+}
+
+.sample-imgList-item:active {
+    border: 5px solid coral;
+}
+
+.sample-imgList-item img{
+    width: 7rem;
+    height: 12rem;
+}
+
+.ImgModalTitle{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+    font-size: 1rem;
+    color: black;
+}
+
+.ImgModalList {
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    margin: 1rem 0 0.5rem 0.5rem;
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+    border-left: 3px solid red;
+}
+
+.ImgModalCelebrate {
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    padding: 0.2rem 0.2rem 0.2rem .2rem;
+    background-color: #ffd1d0;
+    border-radius: 2px;
+    height: 5%;
+    color: indianred;
+    align-items: center;
+}
+
+.confirmImgButton-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#confirmImgButton {
+    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+    border-radius: 15px;
+    background-color: lightcoral;
+    color: white;
+    border: transparent;
+}
+
+.tk_survey-entry-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin-right: 1rem;
+}
+
+.tk_survey-entryTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tk_survey-entryTitle > div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+#g_relation_other {
+    display: inline-block;
+    padding: 0.5rem 0.2rem 0.5rem 0.5rem;
+    width: 15rem;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+}
+
+.tk_survey-line2 {
+    width: 14rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.survey-selection {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+}
+
+.survey-selection-option {
+    position: relative;
+    padding: 1.2rem;
+    cursor: pointer;
+}
+
+.survey-selection-option img {
+    position: absolute;
+    top: -0.5rem;
+    left: -0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.survey-selection-option img.hidden {
+    display: none;
+}
+
+.survey-selection-option img.visible {
+    display: block;
+    opacity: 1;
+}
+
+.survey-last-submit-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-right: 1rem;
+}
+
+.survey-submit-button {
+    position: relative;
+    overflow: hidden;
+    padding: 0.3rem 5rem 0.3rem 5rem;
+    border-radius: 15px;
+    background-color: white;
+    border: 3px solid salmon;
+    font-size: 1.2rem;
+}
+
+.survey-submit-button::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: salmon;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.survey-submit-button:hover {
+    color: black;
+    background: transparent;
+}
+
+.survey-submit-button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.survey-last-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.survey-last-img img {
+    width: 50%;
+}
+
+.party-container {
+    border-left: 1px solid;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
