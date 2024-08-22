@@ -39,7 +39,7 @@
                     <div>
                         <div class="main-account-box">
                             <div class="main-logout" id="logout-button">ログアウト</div>
-                            <div class="main-account-mypage" onclick="location.href='/mypage/mytemplate'">マイページ</div>
+                            <div class="main-account-mypage" onclick="location.href='/mypage/mytemplate/${sessionScope.authenticatedMember.m_id}'">マイページ</div>
                         </div>
                     </div>
                 </div>

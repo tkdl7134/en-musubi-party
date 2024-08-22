@@ -1,10 +1,12 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ include file="../menubar.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Title</title>
     <link rel="stylesheet" href="/resources/css/template/allguest.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -12,15 +14,14 @@
 </head>
 <body>
 <form>
-    <header class="hw_header">
-        <a class="hw_logo" href=""><img src="/resources/img/logo.png" alt=""></a>
-        <div class="hw_maker">縁結び</div>
-        <a class="hw_mypage" href=""><img src="/resources/img/icon-user.png" alt=""></a>
-    </header>
-
+<%--    <header class="hw_header">--%>
+<%--        <a class="hw_logo" href=""><img src="/resources/img/logo.png" alt=""></a>--%>
+<%--        <div class="hw_maker">縁結び</div>--%>
+<%--        <a class="hw_mypage" href=""><img src="/resources/img/icon-user.png" alt=""></a>--%>
+<%--    </header>--%>
+    <div class="je_page-title"> - アンケート管理 -</div>
     <div class="hw_container">
-
-        <div class="hw_title"> - アンケート管理 -</div>
+<%--        <div class="hw_title"> - アンケート管理 -</div>--%>
         <div class="hw_titleline"><img src="/resources/img/title.png" alt=""></div>
 
         <!-- 필터 입력 필드 -->

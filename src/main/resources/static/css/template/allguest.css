@@ -9,21 +9,18 @@
 body {
     background-color: #fffbf7;
 }
-.hw_header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3rem;
-    background-color: #FFD1D0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-}
 
-.hw_maker {
-    background-color: #FFD1D0;
+.je_page-title {
+    width: 100vw;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffdbdb;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 900;
+    color: #ff494c;
 }
 
 .hw_container {
