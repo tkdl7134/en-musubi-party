@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="/resources/css/mypage/myInfo.css">
+    <script src="/resources/js/mypage/myInfo.js"></script>
 </head>
 <body>
 <div class="myInfo-container">
