@@ -3,9 +3,9 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Member Update</title>
+    <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="/resources/css/mypage/myInfo.css">
-    <script defer src="/resources/js/mypage/myInfo.js"></script>
+    <script defer src="/resources/js/mypage/myInfoUpdate.js"></script>
 
 </head>
 <body>
