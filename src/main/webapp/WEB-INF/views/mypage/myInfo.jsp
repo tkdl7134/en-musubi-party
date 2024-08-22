@@ -22,7 +22,7 @@
     </div>
 
     <div class="myInfo-content">
-        <div>
+        <div class="myInfo-blank">
 
             <%-- プロフィール --%>
             <div class="myInfo-profile">

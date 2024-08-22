@@ -63,6 +63,15 @@ public class MyInfoController {
     @GetMapping("/myInfo-update")
     public String goTomyInfoUpdate(@RequestParam("m_id") String m_id, Model model) {
         MemberVO member = memberService.getMemberInfo(m_id);
+
+        // 生年月日
+        String memberBirth = member.getM_birth();
+
+        String formattedDate = memberBirth.replace("-", "年") + "日";
+        formattedDate = formattedDate.substring(0, 8) + "月" + formattedDate.substring(8);
+
+        member.setM_birth(formattedDate);
+
         model.addAttribute("member", member);
         return "/mypage/myInfoUpdate";
     }
