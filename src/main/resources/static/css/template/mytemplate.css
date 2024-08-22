@@ -96,12 +96,14 @@ body {
 }
 
 .image-container {
-    width: 19.5rem;
-    height: 160%;
-    overflow: hidden;
-    position: relative;
-    border: solid 1px #ddd;
-    transition: filter 0.3s, box-shadow 0.3s;
+        width: 19.5rem;
+        height: 215%;
+        overflow: hidden;
+        position: relative;
+        border: solid 1px #ddd;
+        transition: filter 0.3s, box-shadow 0.3s;
+        top: 0.5rem;
+    }
 }
 
 .image-container.active {
@@ -138,8 +140,9 @@ body {
 .card-back {
     display: flex;
     justify-content: space-between;
-    width: 100%;  /* 부모 요소의 전체 너비 사용 */
     padding-top: 2rem;
+    position: absolute;
+    top: 84%;
 }
 
 .card-back button {
