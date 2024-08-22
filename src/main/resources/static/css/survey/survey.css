@@ -152,12 +152,6 @@ form {
     color: #A0A0A0;
 }
 
-.tk_survey-entry-container {
-    display: flex;
-    justify-content: start;
-    text-align: center;
-}
-
 /*설문조사 각 input 이름*/
 .tk_survey-titleName {
     font-size: 1.2rem;
@@ -209,7 +203,7 @@ form {
 /*설문조사 모든 select 태그 꾸미기*/
 select {
     font-size: 1.1rem;
-    width: 15rem;
+    width: 17rem;
     padding: 0.6rem;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -379,6 +373,7 @@ select {
     border-bottom: 1px solid #A0A0A0;
     background-color: #FFFBF7;
 }
+
 
 .tk_survey-allergy-checkbox {
     display: flex;
@@ -594,7 +589,23 @@ dialog::backdrop {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.tk_box-entry-title span:nth-child(1) {
+    color: red
+}
+
+.tk_box-entry-title {
+    margin: 2rem 0 1rem 0;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .tk_survey-entryTitle {
@@ -603,13 +614,6 @@ dialog::backdrop {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-}
-
-.tk_survey-entryTitle > div {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.3rem;
 }
 
 #g_relation_other {
@@ -717,4 +721,35 @@ dialog::backdrop {
     border-left: 1px solid;
     padding-left: 1rem;
     margin-bottom: 1rem;
+}
+
+.tk_survey-guestType-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 3rem;
+}
+
+.tk_survey-guestType-checkbox div{
+    gap: 0.5rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.tk_survey-relationship div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tk_survey-relationship-detail {
+    margin-bottom: 2rem;
+}
+
+.tk_survey-relationship-detail div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

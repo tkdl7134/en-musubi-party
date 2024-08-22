@@ -43,88 +43,7 @@
                                         <input type="hidden" name="m_id" value="${sessionScope.authenticatedMember.m_id}">
                                         <input type="hidden" name="e_no" value="${sessionScope.e_no}">
                                         <input type="hidden" name="p_pk" value="${Party}">
-                                        <div class="tk_survey-guestType">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">ゲスト様</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <div class="tk_survey-guestType-checkbox">
-                                                <input
-                                                        type="checkbox"
-                                                        id="groomGuest"
-                                                        name="g_guest_type"
-                                                        value="新郎ゲスト"
-                                                />
-                                                <label class="cb1" for="groomGuest"></label>
-                                                <label for="groomGuest">新郎側ゲスト</label>
-                                                <input
-                                                        type="checkbox"
-                                                        id="brideGuest"
-                                                        name="g_guest_type"
-                                                        value="新婦ゲスト"
-                                                />
-                                                <label class="cb1" for="brideGuest"></label>
-                                                <label for="brideGuest">新婦側ゲスト</label>
-                                            </div>
-                                        </div>
-                                        <div class="tk_division-line"></div>
-                                        <div class="tk_survey-relationship">
-                                                <div class="tk_survey-titleName-container">
-                                                    <div class="tk_survey-titleName">ご関係</div>
-                                                    <div class="tk-survey-essential">必須</div>
-                                                </div>
-                                            <div>
-                                                <select name="g_relation" id="g_relation">
-                                                    <option value="家族">家族</option>
-                                                    <option value="親友">親友</option>
-                                                    <option value="職場同僚">職場同僚</option>
-                                                    <option value="その他">その他</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="tk_division-line"></div>
-                                        <div class="tk_survey-relationship-detail">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">間柄</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <div>
-                                                <select name="g_relation_detail_family" id="g_relation_family" style="display:none;">
-                                                    <option value="father">お父さん (おとうさん)</option>
-                                                    <option value="mother">お母さん (おかあさん)</option>
-                                                    <option value="olderBrother">お兄さん (おにいさん)</option>
-                                                    <option value="olderSister">お姉さん (おねえさん)</option>
-                                                    <option value="youngerBrother">弟 (おとうと)</option>
-                                                    <option value="youngerSister">妹 (いもうと)</option>
-                                                    <option value="grandfather">おじいさん</option>
-                                                    <option value="grandmother">おばあさん</option>
-                                                </select>
 
-                                                <select name="g_relation_detail_friend" id="g_relation_friend" style="display:none;">
-                                                    <option value="the best friend">幼馴染</option>
-                                                    <option value="elementaryFriend">小学校の同級生</option>
-                                                    <option value="middleSchoolFriend">中学校の同級生</option>
-                                                    <option value="highSchoolFriend">高校の同級生</option>
-                                                    <option value="universityFriend">大学の同級生</option>
-                                                    <option value="onlineFriend">ネット友達</option>
-                                                    <option value="partTimeFriend">バイト仲間</option>
-                                                    <option value="clubFriend">部活の仲間</option>
-                                                    <option value="overseasFriend">海外の友達</option>
-                                                </select>
-
-                                                <select name="g_relation_detail_colleagues" id="g_relation_colleagues" style="display:none;">
-                                                    <option value="supervisor">上司</option>
-                                                    <option value="subordinate">部下</option>
-                                                    <option value="colleague">同僚</option>
-                                                    <option value="senior">先輩</option>
-                                                    <option value="junior">後輩</option>
-                                                </select>
-
-                                                <input type="text" name="g_relation_detail_other" id="g_relation_other" style="display:none;" placeholder="ご関係を入力してください">
-
-                                            </div>
-                                        </div>
-                                        <div class="tk_division-line"></div>
                                         <div class="tk_attention-if-change">
                                             <div>
                                                 入力済みの情報から変更する
@@ -255,11 +174,11 @@
 
                                         <div class="tk_survey-entry-container">
                                             <div class="tk_survey-entryTitle">
-                                                <div>挙式・披露宴</div>
-                                                <div class="tk_survey-line2">
-                                                    <img src="/resources/img/head.png" />
+                                                <div class="tk_box-entry-title">
+                                                    <span>✿</span>
+                                                    <span>挙式・披露宴</span>
+                                                    <span>✿</span>
                                                 </div>
-                                            </div>
                                             <div class="survey-selection" id="wedding-selection">
                                                 <div class="survey-selection-option" data-value="ご出席">
                                                     <img src="/resources/img/select-Img.png" class="hidden" alt="ご出席">
@@ -274,10 +193,100 @@
                                                     保留
                                                 </div>
                                             </div>
+                                            </div>
                                         </div>
 
+                                        <div class="tk_yellow_border">
+                                            <div class="tk_red-border">
+                                                <div class="tk_box-title">
+                                                    <span>✿</span>
+                                                    <span>ゲスト様</span>
+                                                    <span>✿</span>
+                                                </div>
+                                                <div class="tk_survey-guestType">
+                                                    <div class="tk_survey-guestType-checkbox">
+                                                        <div>
+                                                            <input
+                                                                type="checkbox"
+                                                                id="groomGuest"
+                                                                name="g_guest_type"
+                                                                value="新郎"
+                                                            />
+                                                            <label class="cb1" for="groomGuest"></label>
+                                                            <label for="groomGuest">新郎</label>
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                                type="checkbox"
+                                                                id="brideGuest"
+                                                                name="g_guest_type"
+                                                                value="新婦"
+                                                            />
+                                                            <label class="cb1" for="brideGuest"></label>
+                                                            <label for="brideGuest">新婦</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tk_box-title">
+                                                    <span>✿</span>
+                                                    <span>ご関係</span>
+                                                    <span>✿</span>
+                                                </div>
+                                                <div class="tk_survey-relationship">
+                                                    <div>
+                                                        <select name="g_relation" id="g_relation">
+                                                            <option value="家族">家族</option>
+                                                            <option value="親友">親友</option>
+                                                            <option value="職場同僚">職場同僚</option>
+                                                            <option value="その他">その他</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="tk_box-title">
+                                                    <span>✿</span>
+                                                    <span>ご関係</span>
+                                                    <span>✿</span>
+                                                </div>
+                                                <div class="tk_survey-relationship-detail">
+                                                    <div>
+                                                        <select name="g_relation_detail_family" id="g_relation_family" style="display:none;">
+                                                            <option value="father">お父さん (おとうさん)</option>
+                                                            <option value="mother">お母さん (おかあさん)</option>
+                                                            <option value="olderBrother">お兄さん (おにいさん)</option>
+                                                            <option value="olderSister">お姉さん (おねえさん)</option>
+                                                            <option value="youngerBrother">弟 (おとうと)</option>
+                                                            <option value="youngerSister">妹 (いもうと)</option>
+                                                            <option value="grandfather">おじいさん</option>
+                                                            <option value="grandmother">おばあさん</option>
+                                                        </select>
 
-                                        <div class="tk_division-line"></div>
+                                                        <select name="g_relation_detail_friend" id="g_relation_friend" style="display:none;">
+                                                            <option value="the best friend">幼馴染</option>
+                                                            <option value="elementaryFriend">小学校の同級生</option>
+                                                            <option value="middleSchoolFriend">中学校の同級生</option>
+                                                            <option value="highSchoolFriend">高校の同級生</option>
+                                                            <option value="universityFriend">大学の同級生</option>
+                                                            <option value="onlineFriend">ネット友達</option>
+                                                            <option value="partTimeFriend">バイト仲間</option>
+                                                            <option value="clubFriend">部活の仲間</option>
+                                                            <option value="overseasFriend">海外の友達</option>
+                                                        </select>
+
+                                                        <select name="g_relation_detail_colleagues" id="g_relation_colleagues" style="display:none;">
+                                                            <option value="supervisor">上司</option>
+                                                            <option value="subordinate">部下</option>
+                                                            <option value="colleague">同僚</option>
+                                                            <option value="senior">先輩</option>
+                                                            <option value="junior">後輩</option>
+                                                        </select>
+
+                                                        <input type="text" name="g_relation_detail_other" id="g_relation_other" style="display:none;" placeholder="ご関係を入力してください">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="tk_survey-allergy">
                                             <div class="tk_survey-titleName">アレルギー</div>
                                             <div class="tk_survey-allergy-checkbox">
