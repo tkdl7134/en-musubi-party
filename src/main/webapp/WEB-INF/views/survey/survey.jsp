@@ -228,29 +228,55 @@
                                                 <div class="tk_address">
 
                                                     <div class="tk_survey-postcode">
-                                                        郵便番号
-                                                        <input
-                                                                class="search-postcode"
-                                                                type="text"
-                                                                name="m_zipcode"
-                                                                value="${member.m_zipcode}"
-                                                                id="zipcode"
-                                                        />
-                                                        <button type="button" class="search-post-btn">
-                                                            検索
-                                                        </button>
+                                                        <div>
+                                                            <span>郵便番号</span>
+                                                            <button type="button" class="search-post-btn">登録</button>
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                                    class="search-postcode"
+                                                                    type="text"
+                                                                    name="m_zipcode"
+                                                                    value="${member.m_zipcode}"
+                                                                    id="zipcode"
+                                                            />
+                                                        </div>
                                                     </div>
                                                     <div class="tk_survey-titleName-container">
-                                                        <div class="tk_survey-titleName">住所</div>
+                                                        <div class="tk_survey-titleName">ご住所</div>
                                                     </div>
                                                     <div class="tk_survey-address">
                                                         <input type="text" name="m_address" value="${member.m_address}" id="address"/>
                                                         <input type="text" name="m_other_address" id="address-others"/>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
+
+                                        <div class="tk_survey-entry-container">
+                                            <div class="tk_survey-entryTitle">
+                                                <div>挙式・披露宴</div>
+                                                <div class="tk_survey-line2">
+                                                    <img src="/resources/img/head.png" />
+                                                </div>
+                                            </div>
+                                            <div class="survey-selection" id="wedding-selection">
+                                                <div class="survey-selection-option" data-value="ご出席">
+                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご出席">
+                                                    ご出席
+                                                </div>
+                                                <div class="survey-selection-option" data-value="ご欠席">
+                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご欠席">
+                                                    ご欠席
+                                                </div>
+                                                <div class="survey-selection-option" data-value="保留">
+                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="保留">
+                                                    保留
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-allergy">
                                             <div class="tk_survey-titleName">アレルギー</div>
@@ -310,28 +336,6 @@
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
-                                        <div class="tk_survey-entry-container">
-                                            <div class="tk_survey-entryTitle">
-                                                <div>挙式・披露宴</div>
-                                                <div class="tk_survey-line2">
-                                                    <img src="/resources/img/head.png" />
-                                                </div>
-                                            </div>
-                                            <div class="survey-selection" id="wedding-selection">
-                                                <div class="survey-selection-option" data-value="ご出席">
-                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご出席">
-                                                    ご出席
-                                                </div>
-                                                <div class="survey-selection-option" data-value="ご欠席">
-                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご欠席">
-                                                    ご欠席
-                                                </div>
-                                                <div class="survey-selection-option" data-value="保留">
-                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="保留">
-                                                    保留
-                                                </div>
-                                            </div>
-                                        </div>
                                         <input type="hidden" name="g_attend_wedding" id="g_attend_wedding">
                                         <div class="tk_division-line"></div>
                                         <div class="tk_survey-entry-container">
