@@ -14,7 +14,7 @@ public class PartyService implements PartyMapper {
     @Autowired
     private PartyMapper partyMapper;
 
-    private static final int SIMILARITY_THRESHOLD = 3;
+    private static final int SIMILARITY_THRESHOLD = 8;
 
     @Override
     public List<PartyVO> getPartyMembers() {
@@ -45,6 +45,12 @@ public class PartyService implements PartyMapper {
     public int updateFinalChoice(PartyVO partyVO) {
         return partyMapper.updateFinalChoice(partyVO);
     }
+
+    @Override
+    public int updateLineID(PartyVO partyVO) {
+        return partyMapper.updateLineID(partyVO);
+    }
+
 
     private boolean similar(String type1, String type2) {
         LevenshteinDistance levenshteinDistance = new LevenshteinDistance();
@@ -85,20 +91,20 @@ public class PartyService implements PartyMapper {
         return groupedTypes;
     }
 
-    public Map<String, String> getFinalSelectedChoice(){
+    public Map<String, String> getFinalSelectedChoice() {
         List<PartyVO> selectedChoices = getFinalChoice();
         Map<String, String> finalChoiceBoth = new HashMap<>();
 
         for (PartyVO choice : selectedChoices) {
             String m_id = choice.getM_id();
             String ep_finalChoice = choice.getEp_finalChoice();
-
-                finalChoiceBoth.put(m_id, ep_finalChoice);
+            finalChoiceBoth.put(m_id, ep_finalChoice);
         }
         return finalChoiceBoth;
-
     }
 
-
-
+    @Override
+    public List<PartyVO>  getPartnerLineID() {
+        return partyMapper.getPartnerLineID();
+    }
 }
