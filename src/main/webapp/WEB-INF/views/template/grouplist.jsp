@@ -4,15 +4,15 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>会リスト</title>
+    <title>✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/template/grouplist.css">
     <script src="${pageContext.request.contextPath}/resources/js/template/grouplist.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <header class="hw_header">
-    <div class="menubar">메뉴바</div>
-    <div class="hw_maker">会リスト</div>
+    <div class="menubar"><img src="/resources/img/logo.png" alt=""> <img src="/resources/img/Menu.png" alt=""> </div>
+    <div class="hw_maker">招待状リスト</div>
 </header>
 <div class="hw_container">
     <c:forEach items="${allGuestList}" var="g" varStatus="status">
