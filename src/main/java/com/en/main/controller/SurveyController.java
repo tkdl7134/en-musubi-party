@@ -81,7 +81,7 @@ public class SurveyController {
         }
 
 //        surveyService.addGuest(messageVO, guestVO, allergyVO, file, companions.getCompanions());
-        return "redirect:/survey";
+        return "wishlist/wishlist";
     }
 
 }
