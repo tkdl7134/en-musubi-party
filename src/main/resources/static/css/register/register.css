@@ -5,14 +5,13 @@
 }
 
 .register-container {
+    position: relative;
     width: 100vw;
     height: 100vh;
-    /*background-color: #76ceff;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 /* Register Header */
@@ -26,7 +25,7 @@
 .register-header-logo {
     position: absolute;
     top: 18.5%;
-    left: 4.7%;
+    left: 6.5%;
 }
 
 .register-header-logo img {
@@ -44,7 +43,7 @@
     width: 2rem;
     height: auto;
     animation: heartbeat 1s infinite;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 @keyframes heartbeat {
@@ -52,7 +51,7 @@
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
 }
 
@@ -130,6 +129,10 @@ button:disabled {
     justify-content: space-between;
 }
 
+.register-slider-prevButton, .register-slider-nextButton {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .register-slider-prevButton {
     position: absolute;
     top: 50%;
@@ -171,6 +174,7 @@ button:disabled {
     background-color: white;
     font-size: 14px;
     font-weight: bold;
+    color: #555555;
     transition: background-color 0.5s ease, color 0.5s ease; /* 배경색과 텍스트 색상의 변화를 부드럽게 설정 */
 }
 
@@ -193,6 +197,7 @@ button:disabled {
     position: absolute;
     bottom: 14%;
     font-size: 14px;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -382,6 +387,7 @@ button:disabled {
     background-color: #555555;
     border: none;
     border-radius: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .register-verification-container {
@@ -423,7 +429,7 @@ button:disabled {
     color: red;
 }
 
-.register-verification-container button {
+#verifyCodeButton {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 2.5rem;
@@ -434,6 +440,7 @@ button:disabled {
     border: none;
     border-radius: 5px;
     justify-content: right;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 
@@ -489,6 +496,7 @@ button:disabled {
     background-color: #555555;
     border: none;
     border-radius: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* PW */
@@ -603,6 +611,7 @@ button:disabled {
     border: none;
     border-radius: 5px;
     margin-left: 1rem;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #zipcodeError {

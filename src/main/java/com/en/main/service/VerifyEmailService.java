@@ -23,21 +23,26 @@ public class VerifyEmailService {
     public boolean sendVerificationCode(String email) {
         String code = generateCode();
         verificationCodes.put(email, code);
+        System.out.println("==========");
         System.out.println(code);
+        System.out.println("==========");
         System.out.println(verificationCodes);
         // 이메일 발송 로직
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
-        message.setSubject("이메일 인증 코드");
-        message.setText("인증 코드는 " + code + " 입니다.");
+        message.setSubject("「縁結び」　✿ メール認証コード ✿");
+        message.setText("メール認証\n\n" +
+                "この度は　✿ 縁結び ✿　をご利用いただき、誠にありがとうございます！\n" +
+                "以下の認証コードをご利用いただき、メール認証を完了してください。\n\n\n" +
+                "縁結びの認証コード：" + code + "\n\n\n" +
+                "※ このコードをお客様がリクエストされていない場合は、このメールを無視してください。\n\n" +
+                "縁結びチーム");
         try {
             emailSender.send(message);
-            System.out.println(11);
             return true;
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(22);
             return false;
         }
     }
