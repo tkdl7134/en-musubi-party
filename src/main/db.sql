@@ -331,3 +331,11 @@ WITH wish_fund AS (SELECT wl_no,
 SELECT wl_no, wl_price, wl_product, e_no, payed, COALESCE(percent, 0) AS percent
 FROM wish_fund
 ORDER BY percent DESC;
+select * from en_chatting;
+
+
+SELECT *
+FROM wedding_info
+         JOIN event ON event.e_no = wedding_info.e_no
+         JOIN member ON event.m_id = member.m_id
+WHERE member.m_id = 'test778';

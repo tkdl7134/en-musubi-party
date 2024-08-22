@@ -1,10 +1,11 @@
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ include file="../menubar.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>招待状プレビュー</title>
     <!-- Noto Serif Japanese 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,12 +21,6 @@
     <script src="/resources/js/product/invitation.js" defer></script>
 </head>
 <body>
-<!-- header -->
-<div class="je_menu-header">
-    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
-    <div>縁結び</div>
-    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
-</div>
 <!-- content -->
 <div id="je_invitation-preview-container">
     <div class="je_page-title">招待状 プレビュー</div>

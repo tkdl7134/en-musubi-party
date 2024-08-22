@@ -1,9 +1,9 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ include file="../menubar.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-<%--    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>--%>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>制作</title>
     <!-- Noto Serif Japanese 폰트 적용 -->
@@ -30,18 +30,13 @@
     <script src="/resources/js/je_validChk/validChk.js" defer></script>
 </head>
 <body>
-<!-- header -->
-<div class="je_menu-header">
-    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
-    <div>縁結び</div>
-    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
-</div>
+
 <!-- content -->
 <form action="/product/invitation-preview" method="post" enctype="multipart/form-data" onsubmit="return emptyChk()">
     <input type="hidden" name="t_pk" value="${t_pk}">
     <input type="hidden" name="m_id" value="${authenticatedMember.m_id}">
     <div id="je_product-make-container">
-        <div class="je_page-title">制作</div>
+    <div class="je_page-title">制作</div>
         <div id="je_product-make-slider">
             <!-- 신랑신부 및 일정 -->
             <div class="je_page-content">
