@@ -11,14 +11,41 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.tk_yellow_border {
+    border: 2px solid #FFC700;
+    border-radius: 30px;
+    margin: 1rem 1rem 2.5rem 1rem;
+    background-color: #FFFBF7;
+}
+
+.tk_red-border {
+    border: 2px solid red;
+    border-radius: 30px;
+    background-color: transparent;
+    margin: 0.5rem
+}
+
 header {
     margin: 1rem 0 1rem 0;
-    font-size: 1.6rem;
-    color: salmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+header div:nth-child(1) {
+    font-size: 1.5rem;
+    color: #474747;
+}
+
+header div:nth-child(2) {
+    font-size: 1rem;
+    color: #797979;
 }
 
 .tk_division-line-modal {
-    border-top: 5px solid salmon;
+    border-top: 2px solid #FF8B8B;
     width: 100%;
 }
 
@@ -127,13 +154,12 @@ label.cb3:has(input[type="checkbox"]:checked) {
     border-style: solid;
     border-width: 0 0 0 3px;
     border-left-color: transparent;
-    border-bottom: 5px solid salmon;
 }
 
 /*모달 내용물 관한 위치 및 꾸미기*/
 .modal_body {
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
     padding-bottom: 2rem;
@@ -167,9 +193,12 @@ label.cb3:has(input[type="checkbox"]:checked) {
 }
 
 .tk_insert-others {
-    border: 2px solid salmon;
-    background-color: salmon;
-    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: transparent;
+    color: #797979;
     padding: 1rem;
 }
 

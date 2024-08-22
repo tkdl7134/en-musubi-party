@@ -288,9 +288,10 @@
                                         </div>
 
                                         <div class="tk_survey-allergy">
-                                            <div class="tk_survey-titleName">アレルギー</div>
-                                            <div class="tk_survey-allergy-checkbox">
-                                                <input
+                                            <div class="allergy-first-box">
+                                                <div class="tk_survey-titleName">アレルギー</div>
+                                                <div class="tk_survey-allergy-checkbox">
+                                                    <input
                                                         type="checkbox"
                                                         id="allergyHave"
                                                         name="g_allergy_or"
@@ -298,9 +299,10 @@
                                                         class="allergyHave"
                                                         data-conid="allergyDetailContainer"
                                                         data-type="guest"
-                                                />
-                                                <label class="cb2" for="allergyHave"></label>
-                                                <span>アレルギー情報を入力する</span>
+                                                    />
+                                                    <label class="cb2" for="allergyHave"></label>
+                                                    <span>アレルギー情報を入力する</span>
+                                                 </div>
                                             </div>
                                             <div
                                                     class="tk_survey-allergy-detail"
@@ -318,7 +320,7 @@
                                                 <span>お連れ様を追加する</span>
                                             </div>
                                             <div id="partyContainer" class="party-container"></div>
-                                            <button type="button" id="addPartyButton" style="display: none;">追加する</button>
+                                            <button type="button" class="tk_survey-party-button" id="addPartyButton" style="display: none;">追加</button>
                                         </div>
                                         <div class="tk_survey-message-container">
                                             <div class="tk_survey-message">
@@ -396,19 +398,18 @@
 <!-- modal -->
 
 <div id="allergyModal" class="modal">
+    <div class="tk_yellow_border">
+    <div class="tk_red-border">
     <button class="modal-close" id="modalCloseButton">&times;</button>
     <div class="modal_body">
         <header>
-            <div>アレルギー情報設定</div>
+            <div>✿ アレルギー情報入力 ✿</div>
+            <div>該当するアレルギー情報を選択してください</div>
         </header>
         <div class="tk_division-line-modal"></div>
         <div class="tk_allergy-mains">
-            <div class="tk_allergy-title">
-                <div>アレルギー情報の選択</div>
-                <div>該当するアレルギーを選択してください</div>
-            </div>
             <div class="tk_allergy-meat">
-                <div class="tk_allergy-type-first">肉</div>
+                <div class="tk_allergy-type-first">肉類</div>
                 <div class="tk_allergy-contents">
                     <label class="cb3">
                         <input type="checkbox" class="allergyOption" value="牛肉" />
@@ -569,10 +570,11 @@
                     />ゼラチン
                 </label>
             </div>
-
+            <div class="tk_division-line-modal"></div>
             <div class="tk_others-allergy">
                 <div class="tk_insert-others">
-                    該当するアレルギー情報が無い場合は、下記入力欄にアレルギー情報をご入力ください
+                    <div>該当するアレルギー情報が無い場合は</div>
+                    <div>下記入力欄にアレルギー情報をご入力ください</div>
                 </div>
                 <div class="allergySearch">
                     <div id="etc-allergy"></div>
@@ -588,12 +590,15 @@
                     <button class="tk_modal-button3" id="reset">RESET</button>
                 </div>
             </div>
+            <div class="tk_division-line-modal"></div>
             <div class="tk_allergy-search-btn">
                 <button class="tk_modal-button" id="addAllergies">追加する</button>
                 <button class="tk_modal-button2" id="closeModal">閉じる</button>
             </div>
 
         </div>
+    </div>
+    </div>
     </div>
 </div>
 
