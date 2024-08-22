@@ -33,8 +33,7 @@ public interface MemberMapper {
     MemberVO findMemberById(@Param("m_id") String m_id);
 
     @Update("UPDATE member SET m_img = #{m_img}, m_pw = #{m_pw}, m_fam_kanji = #{m_fam_kanji}, m_name_kanji = #{m_name_kanji}, m_fam_kana = #{m_fam_kana}, m_name_kana = #{m_name_kana}, " +
-            "m_fam_eng = #{m_fam_eng}, m_name_eng = #{m_name_eng}, m_birth = #{m_birth}, m_gender = #{m_gender}, m_email = #{m_email}, m_phone = #{m_phone}, " +
-            "m_address = #{m_address}, m_zipcode = #{m_zipcode} WHERE m_id = #{m_id}")
+            "m_fam_eng = #{m_fam_eng}, m_name_eng = #{m_name_eng}, m_phone = #{m_phone}, m_address = #{m_address}, m_zipcode = #{m_zipcode} WHERE m_id = #{m_id}")
     void updateMember(MemberVO memberVO);
 
     @Delete("DELETE member where m_id = #{m_id}")

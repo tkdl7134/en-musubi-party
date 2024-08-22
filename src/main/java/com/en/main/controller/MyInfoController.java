@@ -69,21 +69,20 @@ public class MyInfoController {
 
 
     @PostMapping("/myInfo-update")
-    public String updateMemberInfo(@ModelAttribute MemberVO memberVO, @RequestParam("profile") MultipartFile profile, @RequestParam String oldProfile, Model model) {
-        if (!profile.isEmpty()) {
+    public String updateMemberInfo(@ModelAttribute MemberVO memberVO, @RequestParam("newProfile") MultipartFile newProfile, @RequestParam String oldProfile, Model model) {
+        if (!newProfile.isEmpty()) {
             try {
-
                 // 파일 확장자 추출
-                String fileRealName = profile.getOriginalFilename();
+                String fileRealName = newProfile.getOriginalFilename();
                 String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."));
 
                 UUID uuid = UUID.randomUUID();
                 String uniqueName = uuid.toString().split("-")[0];
                 String savedFileName = uniqueName + fileExtension;
 
-                String mimeType = profile.getContentType();
+                String mimeType = newProfile.getContentType();
                 storage.create(BlobInfo.newBuilder("enmusubi-8f0dc.appspot.com", "upload/" + savedFileName).setContentType(mimeType).build(),
-                        profile.getBytes());
+                        newProfile.getBytes());
 
                 memberVO.setM_img(savedFileName);
 
@@ -93,6 +92,7 @@ public class MyInfoController {
         } else {
             memberVO.setM_img(oldProfile);
         }
+
 
         // 서비스 호출하여 멤버 정보 업데이트
         memberService.updateMemberInfo(memberVO);

@@ -14,3 +14,38 @@ function deleteCheck(ID) {
         // 추가적인 작업이 필요하면 여기에 추가할 수 있습니다.
     }
 }
+
+// 해당 div 누르면 input 창 활성화
+function addClickListener(boxID, photoID) {
+    document.getElementById(boxID).addEventListener("click", function () {
+        document.getElementById(photoID).click();
+    });
+}
+
+addClickListener("myInfoUpdate-profile-container", "newProfile");
+
+// div에 띄우기
+function handleFileInputChange(event, outputId) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const img = document.createElement("img");
+            img.src = e.target.result;
+
+            const imageDisplay = document.getElementById(outputId);
+
+            // 기존이미지 제거
+            imageDisplay.innerHTML = "";
+
+            imageDisplay.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+document
+    .getElementById("newProfile")
+    .addEventListener("change", function (event) {
+        handleFileInputChange(event, "myInfoUpdate-profile");
+    });
