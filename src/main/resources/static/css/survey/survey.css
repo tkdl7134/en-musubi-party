@@ -25,36 +25,79 @@ body {
 
 .tk_menu-bar {
     width: 100%;
-    height: 3rem;
-    background-color: #ffd1d0;
+    height: 10rem;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#tk_logo {
-    width: 2rem;
+
+.tk_logo-icon,
+.tk_menu-icon {
+    width: 4.5rem;
+    img {
+        width: 50%;
+    }
 }
 
-#tk_logo img {
-    width: 100%;
+/* 메뉴 - 헤더 */
+.tk_menu-header {
+    height: 4rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    gap: 4rem;
+    color: #2e2e2e;
 }
+
+@media (min-width: 769px) {
+    .tk_menu-header{
+        width: 100%;
+        margin: 0 auto;
+        gap: 4rem;
+    }
+
+
+}
+
+/*.tk_menu-bar {*/
+/*    width: 100%;*/
+/*    height: 3rem;*/
+/*    background-color: #ffd1d0;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+/*#tk_logo {*/
+/*    width: 2rem;*/
+/*}*/
+
+/*#tk_logo img {*/
+/*    width: 100%;*/
+/*}*/
 
 #tk_survey-container {
     width: 100%;
 }
 
 .tk_survey-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 1.5rem;
+    background-color: #FFDBDC;
+    margin-bottom: 4rem;
 }
 
-#tk_survey-line > img {
-    width: 24rem;
+.tk_survey-title-bigTitle {
+    font-size: 1.2rem;
+    color: #FE4A4C;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
 
 .tk_survey-container {
     width: 100%;
@@ -67,25 +110,22 @@ body {
     position: relative;
 }
 
-.tk_iphone {
-    /* background-color: yellow; */
-    width: 20rem;
+.tk_yellow_border {
+    border: 2px solid yellow;
+    border-radius: 5px;
+}
 
-    position: relative;
-    img {
-        width: 100%;
-    }
+.tk_red-border {
+    border: 2px solid red;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .tk_survey-container {
-    /*position: absolute;*/
-    width: 100%;
-    /*height: 84%;*/
-    /*top: 3rem;*/
-    /*left: 5%;*/
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
 }
 .tk_survey-container::-webkit-scrollbar {
     display: none;
@@ -99,7 +139,6 @@ form {
 }
 
 .survey-form {
-    margin-left: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,6 +217,13 @@ select {
     background-color: white;
 }
 
+.tk_justName, .tk_kataName, .tk_romeName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tk_justName, .tk_kataName, .tk_romeName
 
 /*설문조사 이름 input 꾸미기*/
 .tk_justName input, .tk_kataName input, .tk_romeName input  {
@@ -185,7 +231,6 @@ select {
     padding: 0.5rem;
     font-size: 1.3rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
     box-sizing: border-box;
 }
 
