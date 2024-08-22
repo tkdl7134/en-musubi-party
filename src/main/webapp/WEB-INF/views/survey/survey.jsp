@@ -19,15 +19,15 @@
     <script src="resources/js/survey/survey.js"></script>
 </head>
 <body>
-<div class="tk_menu-bar">
-    <div id="tk_logo">
-        <img src="/resources/img/en-musubi-logo.png" alt="" />
-    </div>
+<div class="tk_menu-header">
+    <div class="tk_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+    <div>縁結び</div>
+    <div class="tk_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
 
-<div id="je_product-preview-container">
-    <div class="je_page-content">
-        <div class="je_preview-container">
+<div id="tk_product-preview-container">
+    <div class="tk_page-content">
+        <div class="tk_preview-container">
             <div class="tk_iphone-container">
 <%--                <div class="tk_iphone">--%>
 <%--                    <img src="/resources/img/iphone-box.png" alt=""/>--%>
@@ -35,12 +35,7 @@
                         <div class="tk_page-content">
                             <div class="tk_form-container">
                                 <div class="tk_survey-title">
-                                    <div class="tk_survey-title-bigTitle">ゲスト様入力項目</div>
-                                    <div class="tk_survey-title-description">お手数ではございますが</div>
-                                    <div class="tk_survey-title-description">出欠のご回答をくださいますよう</div>
-                                    <div class="tk_survey-title-description">お願い申し上げます</div>
-                                    <div id="tk_survey-line">
-                                        <img src="/resources/img/head-deco.png" />
+                                    <div class="tk_survey-title-bigTitle">招待状の返信</div>
                                     </div>
                                 </div>
                                 <div class="survey-form">
@@ -137,66 +132,77 @@
                                                 部分がある場合は変更してください
                                             </div>
                                         </div>
-                                        <div class="tk_justName">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">お名前</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <input type="text" id="kanji-fam" name="m_fam_kanji" value="${member.m_fam_kanji}"/>
-                                            <input type="text" id="kanji-name" name="m_name_kanji" value="${member.m_name_kanji}"/>
-                                        </div>
-                                        <div class="tk_division-line"></div>
-                                        <div class="tk_kataName">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">カタカナ</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <input type="text" id="kana-fam" name="m_fam_kana" value="${member.m_fam_kana}"/>
-                                            <input type="text" id="kana-name" name="m_name_kana" value="${member.m_name_kana}"/>
-                                        </div>
-                                        <div class="tk_division-line"></div>
-                                        <div class="tk_romeName">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">ローマ字</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <input type="text" id="eng-fam" name="m_fam_eng" value="${member.m_fam_eng}"/>
-                                            <input type="text" id="eng-name" name="m_name_eng" value="${member.m_name_eng}"/>
-                                        </div>
-                                        <div class="tk_division-line"></div>
-                                        <div class="tk_survey-gender">
-                                            <div class="tk_survey-titleName-container">
-                                                <div class="tk_survey-titleName">性別</div>
-                                                <div class="tk-survey-essential">必須</div>
-                                            </div>
-                                            <div class="tk_survey-gender-checkbox">
-                                                <input
-                                                        type="checkbox"
-                                                        id="maleGender"
-                                                        name="m_gender"
-                                                        value="男性"
-                                                        <c:if test="${member.m_gender == '男性'}"> checked </c:if>
-                                                />
-                                                <label class="cb1" for="maleGender"></label>
-                                                <label for="maleGender">男性</label>
-                                                <input
-                                                        type="checkbox"
-                                                        id="femaleGender"
-                                                        name="m_gender"
-                                                        value="女性"
-                                                        <c:if test="${member.m_gender == '女'}"> checked </c:if>
-                                                />
-                                                <label class="cb1" for="femaleGender"></label>
-                                                <label for="femaleGender">女性</label>
-                                                <input
-                                                        type="checkbox"
-                                                        id="othersGender"
-                                                        name="m_gender"
-                                                        value="その他"
-                                                        <c:if test="${member.m_gender == 'その他'}"> checked </c:if>
-                                                />
-                                                <label class="cb1" for="othersGender"></label>
-                                                <label for="othersGender">その他</label>
+
+                                        <div class="tk_yellow_border">
+                                            <div class="tk_red-border">
+                                                <div class="tk_box-title">
+                                                    <span>✿</span>
+                                                    <span>お名前</span>
+                                                    <span>✿</span>
+                                                </div>
+                                                <div class="tk_justName">
+                                                    <div class="tk_survey-titleName-container">
+                                                        <div class="tk_survey-titleName">お名前</div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" id="kanji-fam" name="m_fam_kanji" value="${member.m_fam_kanji}"/>
+                                                        <input type="text" id="kanji-name" name="m_name_kanji" value="${member.m_name_kanji}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="tk_kataName">
+                                                    <div class="tk_survey-titleName-container">
+                                                        <div class="tk_survey-titleName">カタカナ</div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" id="kana-fam" name="m_fam_kana" value="${member.m_fam_kana}"/>
+                                                        <input type="text" id="kana-name" name="m_name_kana" value="${member.m_name_kana}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="tk_romeName">
+                                                    <div class="tk_survey-titleName-container">
+                                                        <div class="tk_survey-titleName">ローマ字</div>
+                                                    </div>
+                                                    <div>
+                                                        <input type="text" id="eng-fam" name="m_fam_eng" value="${member.m_fam_eng}"/>
+                                                        <input type="text" id="eng-name" name="m_name_eng" value="${member.m_name_eng}"/>
+                                                    </div>
+                                                </div>
+                                                <div class="tk_box-title">
+                                                    <span>✿</span>
+                                                    <span>性別</span>
+                                                    <span>✿</span>
+                                                </div>
+                                                <div class="tk_survey-gender">
+                                                    <div class="tk_survey-gender-checkbox">
+                                                        <input
+                                                            type="checkbox"
+                                                            id="maleGender"
+                                                            name="m_gender"
+                                                            value="男性"
+                                                            <c:if test="${member.m_gender == '男性'}"> checked </c:if>
+                                                        />
+                                                        <label class="cb1" for="maleGender"></label>
+                                                        <label for="maleGender">男性</label>
+                                                        <input
+                                                            type="checkbox"
+                                                            id="femaleGender"
+                                                            name="m_gender"
+                                                            value="女性"
+                                                            <c:if test="${member.m_gender == '女'}"> checked </c:if>
+                                                        />
+                                                        <label class="cb1" for="femaleGender"></label>
+                                                        <label for="femaleGender">女性</label>
+                                                        <input
+                                                            type="checkbox"
+                                                            id="othersGender"
+                                                            name="m_gender"
+                                                            value="その他"
+                                                            <c:if test="${member.m_gender == 'その他'}"> checked </c:if>
+                                                        />
+                                                        <label class="cb1" for="othersGender"></label>
+                                                        <label for="othersGender">その他</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="tk_division-line"></div>
