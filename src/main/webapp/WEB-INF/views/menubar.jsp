@@ -37,7 +37,7 @@
                     <div class="menu-user">
                         <div class="user-hi"><span>✿ </span> ようこそ <span> ✿</span></div>
                         <div class="user-name">${authenticatedMember.m_fam_kanji} 様</div>
-                        <div class="user-mypage">マイページ</div>
+                        <div class="user-mypage" onclick="location.href='/mypage/mytemplate'">マイページ</div>
                     </div>
                     <div class="menu-section menu-section2">
                         <div class="menu menu2" onclick="location.href='/product'">縁結び</div>
