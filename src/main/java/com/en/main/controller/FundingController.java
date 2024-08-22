@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/wishlist/funding")
+@RequestMapping("/wishlist/funding/{e_no}")
 public class FundingController {
 
     @Autowired
@@ -23,13 +23,15 @@ public class FundingController {
     public String getFundingList(PayVo payVo, Model model, HttpServletRequest request) {
         // 로그인 여부 체크는 Interceptor에서 처리
         // funding.jsp 페이지로 이동
+        System.out.println("여기로 오지롱");
         return "wishlist/funding";
     }
 
     @ResponseBody
     @PostMapping
-    public List<WishlistVO> getFundingList(@RequestParam int eno) {
-        return fundingService.getFundList(eno);
+    public List<WishlistVO> getFundingList(@PathVariable int e_no) {
+        System.out.println(e_no);
+        return fundingService.getFundList(e_no);
     }
 
     @GetMapping("/check-finance")
@@ -48,8 +50,9 @@ public class FundingController {
 
     @ResponseBody
     @PostMapping("/insert")
-    public List<WishlistVO> insertFunding(PayVo payVo, Model model, HttpServletRequest request) {
+    public List<WishlistVO> insertFunding(@PathVariable int e_no, PayVo payVo, Model model, HttpServletRequest request) {
         System.out.println(payVo);
+        System.out.println(payVo.getE_no());
         fundingService.insertWishPick(payVo);
         return getFundingList(payVo.getE_no());
     }

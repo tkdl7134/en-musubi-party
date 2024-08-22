@@ -22,7 +22,7 @@
         </div>
         <div class="tk_wishlist-btn-container">
             <div class="tk_wishlist-btn-box">
-                <button type="submit" onclick="location.href='wishlist/funding'">
+                <button type="submit" onclick="location.href='/wishlist/funding/${sessionScope.e_no}'">
                     <div class="tk_wishlist-text-box">
                         <div class="jp-text">ファンディング</div>
                         <div class="eg-text">FUNDING</div>
@@ -33,7 +33,7 @@
                 </button>
             </div>
             <div class="tk_wishlist-btn-box">
-                <button type="submit" onclick="location.href='wishlist/sending'">
+                <button type="submit" onclick="location.href='/wishlist/sending'">
                     <div class="tk_wishlist-text-box">
                         <div class="jp-text">ご祝儀</div>
                         <div class="eg-text">REMITTANCE</div>
