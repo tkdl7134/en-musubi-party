@@ -1,19 +1,22 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ include file="../menubar.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>✿ ~ 縁結び ~ ✿ </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>会リスト</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/template/grouplist.css">
     <script src="${pageContext.request.contextPath}/resources/js/template/grouplist.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<header class="hw_header">
-    <div class="menubar"><img src="/resources/img/logo.png" alt=""> <img src="/resources/img/Menu.png" alt=""> </div>
-    <div class="hw_maker">招待状リスト</div>
-</header>
+<%--<header class="hw_header">--%>
+<%--    <div class="menubar">메뉴바</div>--%>
+<%--    <div class="hw_maker">会リスト</div>--%>
+<%--</header>--%>
+<div class="je_page-title">会リスト</div>
 <div class="hw_container">
     <c:forEach items="${allGuestList}" var="g" varStatus="status">
         <c:if test="${status.index % 3 == 0}">

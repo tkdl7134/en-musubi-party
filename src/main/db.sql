@@ -257,3 +257,10 @@ create table en_chatting(
     foreign key (m_id) references member(m_id)
 );
 select * from en_chatting;
+
+
+SELECT *
+FROM wedding_info
+         JOIN event ON event.e_no = wedding_info.e_no
+         JOIN member ON event.m_id = member.m_id
+WHERE member.m_id = 'test778';
