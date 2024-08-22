@@ -1,3 +1,27 @@
+
+window.addEventListener('load', function () {
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    const partyWrapper = document.getElementById('partyWrapper');
+
+    setTimeout(function () {
+        // "ようこそ" 메시지를 서서히 사라지게 함
+        welcomeMessage.classList.add('hidden');
+
+        setTimeout(function () {
+            // "ようこそ" 메시지를 숨기고 yr_party_wrapper를 표시
+            welcomeMessage.style.display = 'none';
+            partyWrapper.style.display = 'block';
+
+            // yr_party_wrapper가 서서히 나타나게 함
+            setTimeout(function () {
+                partyWrapper.style.opacity = 1;
+            }, 500);
+        }, 700);
+    }, 800);
+});
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const partyLists = document.querySelectorAll(".yr_party_list");
     const partyWelcome = document.querySelector(".yr_party_welcome");
@@ -261,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ep_selectedType.push(item.value.trim());
         });
         console.log(ep_selectedType);
-        jsonObj.ep_selectedType = JSON.stringify(ep_selectedType);
+        jsonObj.ep_selectedType = ep_selectedType.join(',');
         console.log(jsonObj);
 
         if (ep_selectedType.length > 0) {
@@ -275,7 +299,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    if (data === 1 || data === 2) {
+                    if (data === 1|| data === 2) {
                         fetch('/party/main/type', {
                             method: 'POST',
                             headers: {

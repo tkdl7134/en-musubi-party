@@ -30,9 +30,20 @@
 
 <div class="yr_party_main_container">
 
-    <div class="yr_title">縁パーティー</div>
+    <div class="yr_title">✿ ~ 縁結び ~ 縁パーティー ~ ✿</div>
 
-    <div class="yr_party_wrapper">
+    <div id="welcomeMessage" class="welcome-message">
+        <div class="message right"> <span>✿</span>
+           &nbspよ う こ そ
+         </div>
+        <div class="message left">
+            縁 パ ❘ テ ィ ❘ へ&nbsp
+            <span>✿</span>
+    </div>
+
+    </div>
+
+    <div id="partyWrapper" class="yr_party_wrapper" style="display: none;">
         <div class="yr_party_welcome">
             <p>
                 以下のステップに従って、順番に進めてください
@@ -145,7 +156,7 @@
 
                 <div class="yr_choice">
                     <div class="yr_choice_mention" style="color: #696969">
-                        最も気に入った方を3名お選びください<br/> <br/>
+                        最も気に入った方を3名お選びください<br/>
                         お互いに気持ちが通じ合った方々には、<br/>  連絡先が送られ、</div>
 
                     <div class="yr_choice_mention" style="color: #474747"> <span>✿</span> 縁がつながる機会が提供されます <span>✿</span></div>

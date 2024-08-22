@@ -7,8 +7,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Title</title>
-
-    <title>Title</title>
     <style>
         * {
             font-family: "Noto Serif JP", serif;
@@ -19,7 +17,7 @@
         }
 
         body {
-            background-image: url("/resources/img/Paper_BG.png");
+            background-image: url("/img/Paper_BG.png");
             overflow-y: auto;
         }
 
@@ -66,16 +64,16 @@
 <body>
 <header>
     <div class="je_menu-header">
-        <div class="je_logo-icon"><img src="/static/img/en-musubi-logo.png" alt=""/></div>
+        <div class="je_logo-icon"><img src="/img/en-musubi-logo.png" alt=""/></div>
         <div>縁結び</div>
-        <div class="je_menu-icon"><img src="/static/img/menu-button.png" alt=""/></div>
+        <div class="je_menu-icon"><img src="/img/menu-button.png" alt=""/></div>
     </div>
 
 </header>
 
 <div class="yr_party_choice_container">
 
-    <div class="yr_title">縁パーティー</div>
+    <div class="yr_title">✿ ~ 縁結び ~ 縁パーティー ~ ✿</div>
 
     <c:forEach items="${partnerLineId}" var="line">
         <div> ${line.ep_lineID}</div>

@@ -14,7 +14,7 @@ public class PartyService implements PartyMapper {
     @Autowired
     private PartyMapper partyMapper;
 
-    private static final int SIMILARITY_THRESHOLD = 8;
+    private static final int SIMILARITY_THRESHOLD = 10;
 
     @Override
     public List<PartyVO> getPartyMembers() {
@@ -53,6 +53,10 @@ public class PartyService implements PartyMapper {
 
 
     private boolean similar(String type1, String type2) {
+        if (type1 == null || type2 == null) {
+            return false;  // 하나라도 null이면 유사하지 않다고 처리
+        }
+
         LevenshteinDistance levenshteinDistance = new LevenshteinDistance();
         int distance = levenshteinDistance.apply(type1, type2);
         return distance <= SIMILARITY_THRESHOLD;
@@ -65,6 +69,10 @@ public class PartyService implements PartyMapper {
         for (PartyVO party : selectedTypes) {
             boolean addedToGroup = false;
             String currentType = party.getEp_selectedType();
+
+            if (currentType == null) {
+                continue;  // null 값이 들어오면 무시하고 다음으로 진행
+            }
 
             for (String key : groupedTypes.keySet()) {
                 if (similar(currentType, key)) {

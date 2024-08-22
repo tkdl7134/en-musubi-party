@@ -28,7 +28,7 @@
 
 <div class="yr_party_choice_container">
 
-    <div class="yr_title">縁パーティー</div>
+    <div class="yr_title">✿ ~ 縁結び ~ 縁パーティー ~ ✿</div>
 
     <div class="yr_party_wrapper">
         <div class="yr_choice">

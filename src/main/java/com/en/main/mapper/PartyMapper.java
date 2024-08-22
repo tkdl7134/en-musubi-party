@@ -17,7 +17,7 @@ public interface PartyMapper {
     @Select("select e.e_no, m.m_id, m.m_fam_kanji, m.m_name_kanji FROM member m JOIN en_party e ON m.m_id = e.M_ID where m.m_id='test1'")
     List<PartyVO> getPartyMyInfo();
 
-    @Select("select m_id, ep_selectedType from en_party")
+    @Select("select m_id, ep_selectedType from en_party where e_no=5")
     List<PartyVO> getSelectedType();
 
     @Select("select m_id, ep_finalChoice from en_party where e_no=5")
