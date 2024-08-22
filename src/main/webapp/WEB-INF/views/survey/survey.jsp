@@ -16,7 +16,7 @@
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
             crossorigin="anonymous"
     ></script>
-    <script src="resources/js/survey/survey.js"></script>
+    <script src="/resources/js/survey/survey.js"></script>
 </head>
 <body>
 <div class="tk_menu-header">
@@ -39,9 +39,9 @@
                                     </div>
                                 </div>
                                 <div class="survey-form">
-                                    <form action="survey/create" method="post" enctype="multipart/form-data">
-                                        <input type="hidden" name="m_id" value="${Member}">
-                                        <input type="hidden" name="e_no" value="${Message}">
+                                    <form action="/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/create" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="m_id" value="${sessionScope.authenticatedMember.m_id}">
+                                        <input type="hidden" name="e_no" value="${sessionScope.e_no}">
                                         <input type="hidden" name="p_pk" value="${Party}">
                                         <div class="tk_survey-guestType">
                                             <div class="tk_survey-titleName-container">

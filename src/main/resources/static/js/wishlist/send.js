@@ -161,13 +161,16 @@ function closeModal() {
     modal.close();
 }
 
-function goFinal(wlno) {
-    const e_no = 5;
-    const m_id = "test9";
+var eno = document.getElementById("e_no").value;
+var e_no = parseInt(eno);
+var m_id = document.getElementById("m_id").value;
+
+function goFinal() {
+    const e_no = document.getElementById("e_no").value;
+    const m_id = document.getElementById("m_id").value;;
     const container = document.querySelector("#kh-input-box");
     const sinput = document.querySelector(".kh-s-input");
     const warnspan = document.querySelector("#kh-warn-text");
-    console.log(wlno)
     if (sinput.value == "") {
         container.classList.add("vibration");
         setTimeout(function () {
@@ -179,6 +182,6 @@ function goFinal(wlno) {
         }
     } else {
         let justnum = sinput.value.replace(',', '');
-        location.href = "sending/insert?p_type=send&p_price=" + justnum + "&wl_no=" + wlno+ "&e_no="+e_no+"&m_id=" + m_id;
+        location.href = "sending/insert?p_type=send&p_price=" + justnum + "&wl_no=0&e_no="+e_no+"&m_id=" + m_id;
     }
 }

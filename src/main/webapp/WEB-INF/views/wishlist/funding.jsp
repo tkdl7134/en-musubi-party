@@ -9,7 +9,8 @@
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="/resources/js/wishlist/fund.js" defer></script>
 ${fundingList}
-
+<input id="e_no" type="hidden" value="${sessionScope.e_no}">
+<input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
 <div class="je_menu-header">
 	<div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
 	<div>縁結び</div>
@@ -47,7 +48,7 @@ ${fundingList}
 <div class="kh-f-popup">
 	<div class="kh-f-popup-in">
 		<div class="kh-f-img-box">
-			<img alt="noImg" style="height: 100%" id="kh-f-img"  src="" onerror="this.onerror=null; this.src='/resources/img/パソコン.png';"/>
+			<img alt="noImg" style="height: 100%" id="kh-f-img"  src="" onerror="this.onerror=null; this.src='/resources/img/mashine.png';"/>
 		</div>
 		<div class="kh-f-product-des">
 			<h3>
@@ -71,7 +72,7 @@ ${fundingList}
 		</div>
 		<div style="display: flex; justify-content: center;">
 <%--			<input hidden="hidden" id="m_id" value="${authenticatedMember.m_id}">--%>
-			<input hidden="hidden" id="m_id" value="test9">
+			<input hidden="hidden" id="m_id" value="${sessionScope.authenticatedMember.m_id}">
 			<div class="kh-f-btn"
 				onclick="goStatistic(this.getAttribute('value'))" value="">ファンディング
 			</div>
