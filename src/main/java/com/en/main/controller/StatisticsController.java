@@ -73,10 +73,17 @@ public class StatisticsController {
 
         model.addAttribute("SendNumberOfPeople" , statisticsFundingService.getSendNumberOfPeople(eno));
         System.out.println(statisticsFundingService.getSendNumberOfPeople(eno));
-        model.addAttribute("SendHighestPrice" , statisticsFundingService.getSendHighestPrice(eno));
+
+        String formattedNumber2 = formatter.format(statisticsFundingService.getSendHighestPrice(eno));
+
+        model.addAttribute("SendHighestPrice" , formattedNumber2);
         System.out.println(statisticsFundingService.getSendHighestPrice(eno));
-        model.addAttribute("SendPopularDate" , statisticsFundingService.getSendPopulatedDate(eno));
-        System.out.println(statisticsFundingService.getSendHighestPrice(eno));
+
+                String SendPopulestDate = statisticsFundingService.getSendPopulatedDate(eno);
+        LocalDateTime SenddateTime = LocalDateTime.parse(SendPopulestDate, inputFormatter);
+        model.addAttribute("SendPopularDate" , SenddateTime.format(outputFormatter));
+
+
         model.addAttribute("SendPopularRelation" , statisticsFundingService.getSendPopularRelation(eno));
         System.out.println(statisticsFundingService.getSendPopularRelation(eno));
 

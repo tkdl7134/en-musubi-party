@@ -47,3 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+// 아래 뾰롱 JS 추가 부분
+// Show
+function showBottomSheet() {
+    document.getElementById("actionSheet").classList.add("active");
+}
+
+// Hide
+function hideBottomSheet() {
+    document.getElementById("actionSheet").classList.remove("active");
+}
+

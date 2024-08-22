@@ -9,6 +9,12 @@ import java.util.List;
 @Mapper
 public interface TemplateMapper {
 
+    @Select("SELECT * FROM wedding_info " +
+            "JOIN event ON event.e_no = wedding_info.e_no " +
+            "JOIN member ON event.m_id = member.m_id " +
+            "WHERE member.m_id = #{m_id}")
+    List<WeddingVO> getAllWedding(String m_id);
+
     @Select("SELECT wi.*, t.*, e.* " +
             "FROM wedding_Info wi " +
             "JOIN event e ON wi.e_no = e.e_no " +

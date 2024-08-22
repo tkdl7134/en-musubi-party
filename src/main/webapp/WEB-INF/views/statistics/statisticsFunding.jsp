@@ -1209,6 +1209,10 @@
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
                 </div>
+                <button id="jh_select_tag2"
+                        style="margin-top : 10%; background-color: white; width: 47%; padding: 5%; transform: translateX(47vw); text-align: center; font-family: 'Noto Serif JP', serif; font-weight: bold">
+                    物品をお選びください
+                </button>
                 <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
                      class="jh_other_infos">
                     <div style="margin-top: 2vh;" id="jh_detailHead2" class="jh_funding_detail">全体的な情報</div>
@@ -1223,10 +1227,7 @@
                 </div>
                 <div class="jh_product_detail_container" style="margin-top: 10%;">
 
-                    <button id="jh_select_tag"
-                            style="background-color: white; width: 47%; padding: 5%; transform: translateX(47vw); text-align: center; font-family: 'Noto Serif JP', serif; font-weight: bold">
-                        物品をお選びください
-                    </button>
+
 
                     <!-- 모달 구조 -->
                     <div id="jh_modal" class="jh_modal" style="display: none;">
