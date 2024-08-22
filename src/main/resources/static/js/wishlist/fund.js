@@ -2,11 +2,19 @@ let eventno = 5;
 let scrollTimeout;
 let isMouseOverCard;
 let jsoninfos;
+var eno = document.getElementById("e_no").value;
+var e_no = parseInt(eno);
+var m_id = document.getElementById("m_id").value;
+window.onload = () => {
+	getFunds(e_no)
+}
 //카드 초기배치
+function getFunds(e_no) {
+
 $.ajax({
 	type: "post",
-	url: "/wishlist/funding",
-	data: {eno: eventno},
+	url: `/wishlist/funding/${e_no}`,
+	data: {eno: e_no},
 	async: false,
 	dataType: "json",
 	success: function (response) {
@@ -372,6 +380,7 @@ $.ajax({
 			cardCon.scrollLeft = scrollLeft - walk;
 		});
 
+}
 //ajax 종료
 //크기,색상 호버시 확대 및 다른요소 비활성화
 
@@ -379,7 +388,6 @@ function goStatistic(wlno) {
 	const container = document.querySelector("#kh-input-box");
 	const finput = document.querySelector(".kh-f-input");
 	const warnspan = document.querySelector("#kh-warn-text");
-	const m_id = document.querySelector("#m_id").value;
 	if (finput.value == "") {
 		container.classList.add("vibration");
 		setTimeout(function() {
@@ -393,8 +401,8 @@ function goStatistic(wlno) {
 		let justnum = finput.value.replace(',', '');
 		$.ajax({
 			type: "post",
-			url: "funding/insert",
-			data: { e_no: eventno, p_type: 'fund', p_price: justnum, wl_no: wlno, m_id },
+			url: `/wishlist/funding/${e_no}/insert`,
+			data: {e_no, p_type: 'fund', p_price: justnum, wl_no: wlno, m_id },
 			dataType: "json",
 			success: function(response) {
 				console.log(response)
@@ -457,7 +465,7 @@ function goStatistic(wlno) {
 
 				//페이지 이동
 				setTimeout(function() {
-					location.href = "/wishlist/funding/result";
+					location.href = `/wishlist/funding/${e_no}/result`;
 				}, 10000);
 
 

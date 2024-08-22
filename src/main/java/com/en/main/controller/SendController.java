@@ -25,8 +25,8 @@ public class SendController {
 
     @GetMapping("/insert")
     public String insertWish(PayVo payVo, Model model, HttpSession session){
-        session.setAttribute("loginType", "normal");
         System.out.println(payVo);
+        model.addAttribute("payVo", payVo);
         fundingService.insertWishPick(payVo);
 
     return "/wishlist/financeresult";

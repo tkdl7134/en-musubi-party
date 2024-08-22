@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Title</title>
+    <title>✿ ~ 縁結び ~ ✿</title>
     <!-- Noto Serif Japanese 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -173,7 +173,7 @@
     </div>
 
     <div>
-        <button onclick="location.href='/survey'">답신 메세지</button>
+        <button onclick="location.href='/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}'">답신 메세지</button>
     </div>
 </div>
 <script src="/resources/js/product/sakura.min.js"></script>
