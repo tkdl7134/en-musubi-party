@@ -56,79 +56,79 @@
 <body>
 <header>
     <div class="je_menu-header">
-        <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+        <div class="je_logo-icon"><img src="/img/en-musubi-logo.png" alt="" /></div>
         <div>縁結び</div>
-        <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
+        <div class="je_menu-icon"><img src="/img/menu-button.png" alt="" /></div>
     </div>
 
 </header>
 
 <div class="yr_party-info-container">
 
-    <div class="yr_title"> 縁パーティー 参加者情報</div>
+    <div class="yr_title"> ✿ ~ 縁パーティー ~ インフォ ~ ✿</div>
 
-<%--     채팅방으로 가는 버튼--%>
+    <%--     채팅방으로 가는 버튼--%>
     <div class="yr_go_to_chat_wrap">
-        <button id="yr_go_to_chat" onclick="location.href='http://localhost:5173/'">
+        <button id="yr_go_to_chat" onclick="location.href='http://localhost:8090/r'">
             <span>
             縁パーティー<br/>
             チャットに参加
           </span>
         </button>
-        <img src="/resources/img/chat.png">
+        <img src="/img/chat.png">
     </div>
 
-<%--     신랑신부측 하객 비율 그래프--%>
-        <div class="yr_ratio side">
-            <p>新郎新婦のゲスト比率</p>
-            <div class="yr_graph_wrap">
-                <div class="yr_graph">
-                    <div id="yr_side_graph_bar1" class="yr_graph_bar1 yr_groom" style="height: ${groomGuestPercentage}%;"></div>
-                    <div id="yr_side_graph_bar2" class="yr_graph_bar2 yr_bride" style="height: ${brideGuestPercentage}%;"></div>
-                </div>
-                <div class="yr_graph_label_wrap1">
-                    <span class="yr_side_graph_label">新郎側<br/>ゲスト</span>
-                    <span class="yr_side_graph_label">新婦側<br/>ゲスト</span>
-                </div>
-                <div class="yr_graph_percent_wrap">
-                   <div class="circle1"></div>新郎側 &nbsp ${groomGuestPercentage}% &nbsp &nbsp
-                    <div class="circle2"></div>新婦側 &nbsp ${brideGuestPercentage}%
-                </div>
+    <%--     신랑신부측 하객 비율 그래프--%>
+    <div class="yr_ratio side">
+        <p>新郎新婦のゲスト比率</p>
+        <div class="yr_graph_wrap">
+            <div class="yr_graph">
+                <div id="yr_side_graph_bar1" class="yr_graph_bar1 yr_groom" style="height: ${groomGuestPercentage}%;"></div>
+                <div id="yr_side_graph_bar2" class="yr_graph_bar2 yr_bride" style="height: ${brideGuestPercentage}%;"></div>
+            </div>
+            <div class="yr_graph_label_wrap1">
+                <span class="yr_side_graph_label">新郎側<br/>ゲスト</span>
+                <span class="yr_side_graph_label">新婦側<br/>ゲスト</span>
+            </div>
+            <div class="yr_graph_percent_wrap">
+                <div class="circle1"></div>新郎側 &nbsp ${groomGuestPercentage}% &nbsp &nbsp
+                <div class="circle2"></div>新婦側 &nbsp ${brideGuestPercentage}%
+            </div>
 
+        </div>
+    </div>
+
+    <%--     남녀 분포도 그래프--%>
+    <div class="yr_ratio type">
+        <p>男女比率</p>
+        <div class="yr_graph_wrap">
+            <div class="yr_graph">
+                <div id="yr_graph_bar1" class="yr_graph_bar1 yr_man" style="height: ${malePercentage}%;"></div>
+                <div id="yr_graph_bar2" class="yr_graph_bar2 yr_woman" style="height: ${femalePercentage}%;"></div>
+            </div>
+            <div class="yr_graph_label_wrap2">
+                <span class="yr_graph_label">男子</span>
+                <span class="yr_graph_label">女子</span>
+            </div>
+            <div class="yr_graph_percent_wrap">
+                <div class="circle1"></div>男子 &nbsp ${malePercentage}% &nbsp &nbsp
+                <div class="circle2"></div>女子 &nbsp ${femalePercentage}%
             </div>
         </div>
+    </div>
 
-<%--     남녀 분포도 그래프--%>
-        <div class="yr_ratio type">
-            <p>男女比率</p>
-            <div class="yr_graph_wrap">
-                <div class="yr_graph">
-                    <div id="yr_graph_bar1" class="yr_graph_bar1 yr_man" style="height: ${malePercentage}%;"></div>
-                    <div id="yr_graph_bar2" class="yr_graph_bar2 yr_woman" style="height: ${femalePercentage}%;"></div>
-                </div>
-                <div class="yr_graph_label_wrap2">
-                    <span class="yr_graph_label">男子</span>
-                    <span class="yr_graph_label">女子</span>
-                </div>
-                <div class="yr_graph_percent_wrap">
-                    <div class="circle1"></div>男子 &nbsp ${malePercentage}% &nbsp &nbsp
-                    <div class="circle2"></div>女子 &nbsp ${femalePercentage}%
-                </div>
-            </div>
+    <%--     연령분포 그래프--%>
+    <div class="yr_ratio age">
+        <p>年齢分布</p>
+        <div class="yr_graph_donut">
+            <canvas id="ageDonutChart"></canvas>
         </div>
+    </div>
+    <%--    <button class="yr_apply_cancel">参加 キャンセル</button>--%>
 
-<%--     연령분포 그래프--%>
-        <div class="yr_ratio age">
-            <p>年齢分布</p>
-            <div class="yr_graph_donut">
-                <canvas id="ageDonutChart"></canvas>
-            </div>
-        </div>
-        <%--    <button class="yr_apply_cancel">参加 キャンセル</button>--%>
-
-<%--    마지막에도 채팅방으로 가는 버튼--%>
+    <%--    마지막에도 채팅방으로 가는 버튼--%>
     <div class="yr_go_to_chat_wrap">
-        <button id="yr_go_to_chat2" onclick="location.href='http://localhost:5173/'">
+        <button id="yr_go_to_chat2" onclick="location.href='http://localhost:8090/r'">
             <span>
             縁パーティー<br/>
             チャットに参加
