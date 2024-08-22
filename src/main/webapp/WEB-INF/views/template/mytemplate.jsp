@@ -11,7 +11,7 @@
     <script src="/resources/js/template/mytemplate.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body data-context-path="${pageContext.request.contextPath}">
 
 <%--<header class="hw_header">--%>
 <%--    <div class="menubar">메뉴바</div>--%>
@@ -62,9 +62,10 @@
                         <button type="button" onclick="location.href='/mypage/allguest'">
                             <span>アンケート</span>
                         </button>
-                        <button type="button" onclick="navigateToStatistics(${w.e_no})">
+                        <button type="button" onclick="window.location.href='http://localhost/statistics/funding?e_no=${w.e_no}'">
                             <span>通計</span>
                         </button>
+
                     </div>
                 </div>
             </div>
@@ -72,7 +73,6 @@
     </c:forEach>
 </div>
 
-<!-- 슬라이드 인디케이터 (점 3개) -->
 <div class="slider-indicators">
     <span class="indicator active"></span>
     <span class="indicator"></span>
@@ -81,14 +81,13 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        const contextPath = document.body.getAttribute("data-context-path");
+
         const shareButtons = document.querySelectorAll(".share-button");
 
         shareButtons.forEach(button => {
             button.addEventListener("click", function () {
-                // 버튼의 active 상태를 토글
                 button.classList.toggle("active");
-
-                // 부모 요소인 image-container의 active 상태를 토글
                 const imageContainer = button.closest(".image-container");
                 imageContainer.classList.toggle("active");
             });
