@@ -1,9 +1,6 @@
 package com.en.main.mapper;
 
-import com.en.main.dto.JhFundSqlVo;
-import com.en.main.dto.PayVo;
-import com.en.main.dto.StatisticsSendVo;
-import com.en.main.dto.WishlistVO;
+import com.en.main.dto.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -191,5 +188,39 @@ public interface StatisticsFundingMapper {
 
     @Select("SELECT g.g_relation, SUM(p.p_price) AS p_price FROM guest g JOIN pay p ON g.m_id = p.m_id AND g.e_no = p.e_no WHERE g.e_no = #{eno} AND p.p_type = 'send' GROUP BY g.g_relation")
     List<StatisticsSendVo> getPriceOrderByRelation (int eno);
+
+
+    @Select("SELECT\n" +
+            "    COUNT(CASE WHEN guest.G_GUEST_TYPE = '新郎ゲスト' THEN 1 END) AS groom_guest_count,\n" +
+            "    COUNT(CASE WHEN guest.G_GUEST_TYPE = '新婦ゲスト' THEN 1 END) AS bride_guest_count\n" +
+            "FROM\n" +
+            "    pay\n" +
+            "        JOIN\n" +
+            "    guest\n" +
+            "    ON\n" +
+            "        pay.M_ID = guest.M_ID\n" +
+            "            AND\n" +
+            "        pay.E_NO = guest.E_NO\n" +
+            "WHERE\n" +
+            "    PAY.E_NO = #{eno} and pay.p_type = 'send'")
+    JhGuestTypeVo getGuestTypeCount(int eno);
+
+
+    @Select ("SELECT\n" +
+            "    COUNT(CASE WHEN guest.G_ATTEND_WEDDING = 'ご欠席' THEN 1 END) AS not_attend_count,\n" +
+            "    COUNT(CASE WHEN guest.G_ATTEND_WEDDING = 'ご出席' THEN 1 END) AS attend_count\n" +
+            "FROM\n" +
+            "    pay\n" +
+            "        JOIN\n" +
+            "    guest\n" +
+            "    ON\n" +
+            "        pay.M_ID = guest.M_ID\n" +
+            "            AND\n" +
+            "        pay.E_NO = guest.E_NO\n" +
+            "WHERE\n" +
+            "    PAY.E_NO = 5 and pay.p_type = 'send'")
+    JhAttendVo getAttendCount(int eno);
+
+
 
 }

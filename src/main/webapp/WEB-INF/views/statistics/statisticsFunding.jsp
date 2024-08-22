@@ -576,6 +576,7 @@
         const config3 = document.getElementById('week-data-chart2').getContext('2d');
 
         const config2 = document.getElementById('jh_product_chart').getContext('2d');
+        const config4 = document.getElementById('jh_send_chart').getContext('2d');
         const today = new Date();
         const year = today.getFullYear();
         const month = ('0' + (today.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1
@@ -812,13 +813,37 @@
 
             }
         });
+          let brideCount =  document.getElementById("jh_guest_bribe_count").value
+      let groomCount =      document.getElementById("jh_guest_groom_count").value
+
+        new Chart(config4, {
+            type: 'doughnut',
+            data: {
+                labels: ['新郎ゲスト' , '新婦ゲスト'],
+                datasets: [{
+                    label: '繋がった想い',
+                    data: [groomCount , brideCount],
+                    backgroundColor: [ 'rgb(0, 0, 255)', 'rgb(255, 0, 0)'],
+                    hoverOffset: 4
+                }]
+            }, options: {
+
+                responsive: false
+
+            }
+        });
+
+
+
+
+
 
 
     });
 </script>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>✿ ~ 縁結び ~ ✿</title>
     <style>
         body {
             width: 100%;
@@ -1209,10 +1234,10 @@
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
                 </div>
-                <button id="jh_select_tag2"
-                        style="margin-top : 10%; background-color: white; width: 47%; padding: 5%; transform: translateX(47vw); text-align: center; font-family: 'Noto Serif JP', serif; font-weight: bold">
+               <%-- <button id="jh_select_tag2"
+                                                      style="margin-top : 10%; background-color: white; width: 47%; padding: 5%; transform: translateX(47vw); text-align: center; font-family: 'Noto Serif JP', serif; font-weight: bold">
                     物品をお選びください
-                </button>
+                </button>--%>
                 <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
                      class="jh_other_infos">
                     <div style="margin-top: 2vh;" id="jh_detailHead2" class="jh_funding_detail">全体的な情報</div>
@@ -1226,8 +1251,8 @@
 
                 </div>
                 <div class="jh_product_detail_container" style="margin-top: 10%;">
-
-
+                    <input id="jh_guest_groom_count" type="hidden" value="${GuestTypeCount.groom_guest_count}">
+                    <input id="jh_guest_bribe_count" type="hidden" value="${GuestTypeCount.bride_guest_count}">
 
                     <!-- 모달 구조 -->
                     <div id="jh_modal" class="jh_modal" style="display: none;">
@@ -1263,9 +1288,12 @@
                            </label>
                            <input id="jh_price_input" type="hidden" value="${payPrice}">
                        </div>--%>
-
-                    <div class="jh_product_chart">
+                    <div style="text-align: center">送った人々の情報</div>
+                    <div class="jh_product_chart" style="    display: flex; justify-content: center;">
                         <canvas id="jh_send_chart"></canvas>
+                    </div>
+                    <div class="jh_product_chart" style="    display: flex; justify-content: center;">
+                        <canvas id="jh_attend_chart"></canvas>
                     </div>
 
 

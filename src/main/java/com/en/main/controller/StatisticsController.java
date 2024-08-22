@@ -87,6 +87,10 @@ public class StatisticsController {
         model.addAttribute("SendPopularRelation" , statisticsFundingService.getSendPopularRelation(eno));
         System.out.println(statisticsFundingService.getSendPopularRelation(eno));
 
+
+        model.addAttribute("GuestTypeCount" , statisticsFundingService.getGuestTypeCount(eno));
+        model.addAttribute("AttendCount" , statisticsFundingService.getAttendCount(eno));
+
         return "statistics/statisticsFunding";
     }
 

@@ -1,9 +1,6 @@
 package com.en.main.service;
 
-import com.en.main.dto.JhFundSqlVo;
-import com.en.main.dto.PayVo;
-import com.en.main.dto.StatisticsSendVo;
-import com.en.main.dto.WishlistVO;
+import com.en.main.dto.*;
 import com.en.main.mapper.StatisticsFundingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -172,6 +169,17 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
 
     return statisticsFundingMapper.getPriceOrderByRelation(eno);
 
+    }
+
+    @Override
+    public JhGuestTypeVo getGuestTypeCount(int eno) {
+        return statisticsFundingMapper.getGuestTypeCount(eno);
+
+    }
+
+    @Override
+    public JhAttendVo getAttendCount(int eno) {
+        return statisticsFundingMapper.getAttendCount(eno);
     }
 
 
