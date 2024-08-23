@@ -25,10 +25,17 @@ public class TemplateService {
         return templateMapper.getAttend();
     }
 
-    public List<GuestDetailVO> getGuestDetail() {
-        return  templateMapper.getGuestDetail();
+    public List<GuestDetailVO> getGuestDetail(int eno) {
+        return  templateMapper.getGuestDetail(eno);
     }
-    public List<AllGuestVO> getAllGuest() {
-        return templateMapper.getAllGuest();
+    public List<AllGuestVO> getAllGuest(String m_id) {
+        return templateMapper.getAllGuest(m_id);
     }
+    public String getAttendAfterParty(String m_id, int eno){
+
+        return templateMapper.getAttendAfterParty(m_id,eno);
+    }
+
+
+
 }

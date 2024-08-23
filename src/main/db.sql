@@ -346,8 +346,10 @@ FROM wedding_info
          JOIN member ON event.m_id = member.m_id
 WHERE member.m_id = 'test778';
 
+
 select * from pay;
 
 select * from pay;
 select * from wishlist;
 select * from member;
+

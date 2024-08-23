@@ -63,6 +63,7 @@ body {
     font-size: 14px;
     font-weight: 900;
     color: #ff494c;
+    position: absolute;
 }
 
 .hw_container {
@@ -99,17 +100,18 @@ body {
     transform-style: preserve-3d;
     transition: transform 0.6s;
     cursor: pointer;
-    margin-top: 15%;
 }
 
 .image-container {
-    width: 19.5rem;
-    height: 160%;
-    overflow: hidden;
-    position: relative;
-    border: solid 1px #ddd;
-    transition: filter 0.3s, box-shadow 0.3s;
-}
+        width: 19.5rem;
+        height: 215%;
+        overflow: hidden;
+        position: relative;
+        border: solid 1px #ddd;
+        transition: filter 0.3s, box-shadow 0.3s;
+        top: 0.5rem;
+    }
+
 
 .image-container.active {
     filter: brightness(0.7);
@@ -145,8 +147,9 @@ body {
 .card-back {
     display: flex;
     justify-content: space-between;
-    width: 100%;  /* 부모 요소의 전체 너비 사용 */
     padding-top: 2rem;
+    position: absolute;
+    top: 84%;
 }
 
 .card-back button {
