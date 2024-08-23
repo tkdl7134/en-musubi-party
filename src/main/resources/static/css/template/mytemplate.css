@@ -13,44 +13,12 @@ body {
     width: 100vw;
     overflow: hidden;
     background-color: #f8f8f8;
-
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
-    user-select:none
+    user-select:none;
+    background-image: url("/resources/img/Paper_BG.png");
 }
-
-/*.hw_header {*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    right: 0;*/
-/*    height: 5rem;  !* 두 줄이기 때문에 전체 높이를 늘림 *!*/
-/*    display: flex;*/
-/*    flex-direction: column; !* 두 줄로 표현하기 위해 수직 방향으로 배치 *!*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    z-index: 1000;*/
-/*}*/
-/*.menubar {*/
-/*    width: 100%;*/
-/*    background-color: #ffffff;*/
-/*    height: 2.5rem;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    border-bottom: 1px solid #ddd;  !* 흰줄 아래에 테두리 추가 *!*/
-/*}*/
-/*.hw_maker {*/
-/*    width: 100%;*/
-/*    background-color: #FFD1D0;*/
-/*    height: 2.5rem;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    border-bottom: 1px solid #ddd;*/
-/*    color: #ff494c;*/
-/*}*/
 
 .je_page-title {
     width: 100vw;
@@ -63,6 +31,7 @@ body {
     font-size: 14px;
     font-weight: 900;
     color: #ff494c;
+    position: absolute;
 }
 
 .hw_container {
@@ -84,9 +53,9 @@ body {
 }
 
 .card {
-    width: 90%;  /* 부모 컨테이너의 전체 너비 사용 */
-    max-width: 100%;  /* 최대 너비를 100%로 설정 */
-    height: 80%;  /* 부모 컨테이너의 전체 높이를 사용 */
+    width: 90%;
+    max-width: 100%;
+    height: 80%;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -99,26 +68,31 @@ body {
     transform-style: preserve-3d;
     transition: transform 0.6s;
     cursor: pointer;
-    margin-top: 15%;
 }
 
 .image-container {
     width: 19.5rem;
-    height: 160%;
+    height: 215%;
     overflow: hidden;
     position: relative;
     border: solid 1px #ddd;
     transition: filter 0.3s, box-shadow 0.3s;
-}
-
-.image-container.active {
-    filter: brightness(0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0.5rem;
+    background-image: url("/resources/img/Paper_BG.png");
 }
 
 .image-container img {
-    width: 100%;
-    height: 100%;
-    /*object-fit: contain;*/
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-container.darken {
+    filter: brightness(0.5);
 }
 
 .share-button {
@@ -136,7 +110,6 @@ body {
     border: solid 1px #ff787b;
 }
 
-/* 버튼이 활성화되었을 때의 상태 */
 .share-button.active {
     background-color: #ff787b;
     color: #ffffff;
@@ -145,13 +118,14 @@ body {
 .card-back {
     display: flex;
     justify-content: space-between;
-    width: 100%;  /* 부모 요소의 전체 너비 사용 */
     padding-top: 2rem;
+    position: absolute;
+    top: 84%;
 }
 
 .card-back button {
-    flex: 1;  /* 각 버튼이 동일한 비율로 넓어지도록 설정 */
-    margin: 0 0.25rem;  /* 버튼 사이에 간격을 줌 */
+    flex: 1;
+    margin: 0 0.25rem;
     padding: 0.5rem 0;
     border: 1px solid #ff7e81;
     border-radius: 10px;
@@ -183,5 +157,53 @@ body {
 }
 
 .indicator.active {
+    background-color: #ff5155;
+}
+
+.share-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.share-popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#share-url {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#copy-button {
+    padding: 10px 20px;
+    background-color: #ff787b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#copy-button:hover {
     background-color: #ff5155;
 }
