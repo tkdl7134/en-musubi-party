@@ -101,10 +101,10 @@ header div:nth-child(2) {
 }
 
 .tk_allergy-contents label {
-    border: 3px solid salmon;
+    border: 3px solid #FF5050;
     margin-right: 0.5rem;
     font-size: 0.9rem;
-    color: salmon;
+    color: #696969;
 }
 
 .cb3 {
@@ -117,7 +117,7 @@ header div:nth-child(2) {
 }
 
 label.cb3:has(input[type="checkbox"]:checked) {
-    background-color: salmon;
+    background-color: #FF5050;
     color: white;
     animation: pulse 0.7s ease;
 }

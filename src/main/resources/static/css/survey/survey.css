@@ -85,7 +85,6 @@ body {
 
 .tk_survey-title {
     background-color: #FFDBDC;
-    margin-bottom: 4rem;
 }
 
 .tk_survey-title-bigTitle {
@@ -190,15 +189,15 @@ form {
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 85%;
-    background-color: red;
-    color: wheat;
+    color: white;
     padding: 1rem;
-    margin-bottom: 2rem;
 }
 
-.tk_attention-if-change {
-    border: 1px solid salmon;
+.tk_attention-if-change div {
+    border: 3px solid #FF8B8B;
+    border-radius: 20px;
+    background-color: #FF5050;
+
 }
 
 .tk_survey-accompany-titleName {
@@ -484,6 +483,7 @@ select {
     margin-left: 1.5rem;
     gap: 1rem;
     margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .tk_survey-party-checkbox {
@@ -777,7 +777,7 @@ dialog::backdrop {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .survey-last-img{
@@ -861,7 +861,7 @@ dialog::backdrop {
 /* 縁結び封筒 */
 .survey-submit-button {
     width: 50%;
-    height: 12rem;
+    height: 9rem;
     border-radius: 50px 50px 10px 10px;
     border: solid 1px rgba(255, 90, 85, 0.7);
     background-color: rgba(255, 255, 255, 0.8);
@@ -873,7 +873,7 @@ dialog::backdrop {
 
 .main-enMusubi-envelope-bottom {
     width: 97%;
-    height: 11.6rem;
+    height: 10.6rem;
     border-radius: 45px 45px 0 0;
     border: 1px solid #FFC700;
     border-bottom: none;
