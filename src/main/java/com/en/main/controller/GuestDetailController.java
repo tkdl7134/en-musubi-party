@@ -26,7 +26,7 @@ public class GuestDetailController {
         return "template/allguest";
     }
 
-    @GetMapping("/grouplist")
+    @GetMapping("/grouplist/{m_id}")
     public String grouplist(Model model, AllGuestVO allGuestVO) {
         List<AllGuestVO> allGuestList = templateService.getAllGuest();
         model.addAttribute("allGuestList", allGuestList);

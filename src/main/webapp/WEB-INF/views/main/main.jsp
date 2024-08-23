@@ -16,6 +16,7 @@
     <c:choose>
         <%-- 로그인 O --%>
         <c:when test="${not empty sessionScope.authenticatedMember.m_id}">
+        <input type="hidden" id="memberID" value="${sessionScope.authenticatedMember.m_id}">
             <div class="main-welcome-box">
                 <div class="main-logo-img">
                     <img src="/resources/img/logo-img.png" alt="main-logo-img" />
@@ -148,7 +149,7 @@
                         <p>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
                             <span style="color: #3f3f3f; font-size: 18px">
-                    会員情報修正
+                    会員情報
                   </span>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
                         </p>
@@ -176,7 +177,7 @@
                         <p>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
                             <span style="color: #3f3f3f; font-size: 18px">
-                    招待状 管理
+                    招待状
                   </span>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
                         </p>
