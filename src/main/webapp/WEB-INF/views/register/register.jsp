@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title> ✿ ~ 縁結び ~ ✿</title>
 
     <!-- Custom CSS 파일 -->
     <link rel="stylesheet" href="/resources/css/register/register.css">
@@ -55,7 +55,7 @@
 
         <%-- Slide 1 --%>
         <div class="slide" id="slide1">
-
+            <img src="">
         </div>
 
 
@@ -106,11 +106,11 @@
             <div class="register-gender-selection">
                 <div class="register-gender-container">
                     <label for="male" class="gender-label">
-                        <input type="radio" id="male" name="gender" value="male">
+                        <input type="radio" id="male" name="gender" value="男性">
                         <img src="/resources/img/register-male.png" alt="男性">
                     </label>
                     <label for="female" class="gender-label">
-                        <input type="radio" id="female" name="gender" value="female">
+                        <input type="radio" id="female" name="gender" value="女性">
                         <img src="/resources/img/register-female.png" alt="女性">
                     </label>
                 </div>
