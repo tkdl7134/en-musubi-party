@@ -15,6 +15,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 @Controller
@@ -33,34 +35,64 @@ public class MyInfoController {
     @GetMapping("/myInfo")
     public String goTomyInfo(@RequestParam("m_id") String m_id, Model model) {
         MemberVO member = memberService.getMemberInfo(m_id);
+
+        // 生年月日
+        String memberBirth = member.getM_birth();
+
+        String formattedDate = memberBirth.replace("-", "年") + "日";
+        formattedDate = formattedDate.substring(0, 8) + "月" + formattedDate.substring(8);
+
+        member.setM_birth(formattedDate);
+
+        // ご住所
+//        String memberAddr = member.getM_address();
+//        int firstSpaceIndex = memberAddr.indexOf(" ");
+//
+//        String formatAddr = memberAddr.substring(0, firstSpaceIndex)
+//                + memberAddr.substring(firstSpaceIndex + 1).replace(" ", "<br>");
+//        member.setM_address(formatAddr);
+//
+//
+//        member.setM_address(formatAddr);
+
+        // 移動
         model.addAttribute("member", member);
         return "/mypage/myInfo";
     }
 
+
     @GetMapping("/myInfo-update")
     public String goTomyInfoUpdate(@RequestParam("m_id") String m_id, Model model) {
         MemberVO member = memberService.getMemberInfo(m_id);
+
+        // 生年月日
+        String memberBirth = member.getM_birth();
+
+        String formattedDate = memberBirth.replace("-", "年") + "日";
+        formattedDate = formattedDate.substring(0, 8) + "月" + formattedDate.substring(8);
+
+        member.setM_birth(formattedDate);
+
         model.addAttribute("member", member);
         return "/mypage/myInfoUpdate";
     }
 
 
     @PostMapping("/myInfo-update")
-    public String updateMemberInfo(@ModelAttribute MemberVO memberVO, @RequestParam("profile") MultipartFile profile, @RequestParam String oldProfile, Model model) {
-        if (!profile.isEmpty()) {
+    public String updateMemberInfo(@ModelAttribute MemberVO memberVO, @RequestParam("newProfile") MultipartFile newProfile, @RequestParam String oldProfile, Model model) {
+        if (!newProfile.isEmpty()) {
             try {
-
                 // 파일 확장자 추출
-                String fileRealName = profile.getOriginalFilename();
+                String fileRealName = newProfile.getOriginalFilename();
                 String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."));
 
                 UUID uuid = UUID.randomUUID();
                 String uniqueName = uuid.toString().split("-")[0];
                 String savedFileName = uniqueName + fileExtension;
 
-                String mimeType = profile.getContentType();
-                storage.create( BlobInfo.newBuilder("enmusubi-8f0dc.appspot.com", "upload/" + savedFileName).setContentType(mimeType).build(),
-                        profile.getBytes());
+                String mimeType = newProfile.getContentType();
+                storage.create(BlobInfo.newBuilder("enmusubi-8f0dc.appspot.com", "upload/" + savedFileName).setContentType(mimeType).build(),
+                        newProfile.getBytes());
 
                 memberVO.setM_img(savedFileName);
 
@@ -70,6 +102,7 @@ public class MyInfoController {
         } else {
             memberVO.setM_img(oldProfile);
         }
+
 
         // 서비스 호출하여 멤버 정보 업데이트
         memberService.updateMemberInfo(memberVO);

@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: #fffbf7;
+}
+
+/* 메뉴 - 헤더 */
+.je_menu-header {
+    width: 100%;
+    height: 3.125rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2e2e2e;
+}
+
+/* 메뉴 바 */
+.je_logo-icon,
+.je_menu-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    img {
+        width: 100%;
+    }
+}
+
+.je_sitename {
+    width: 5rem;
+    text-align: center;
+}
+
+#actionSheet {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    /* 서서히 나타나는 효과 */
+    visibility: hidden;
+    opacity: 0;
+    z-index: 15;
+}
+#actionSheet.active {
+    /* 서서히 나타나는 효과 */
+    visibility: visible;
+    opacity: 1;
+}
+
+.action-options {
+    width: 100%;
+    /* background-image: url("/resources/img/Paper_BG_w_red_line.png"); */
+    background-image: url("/resources/img/Paper_BG_w_red_line.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    /* max-height: 300px; */
+    height: 25rem;
+    /* 아래에서 위로 나타나는 효과, max-height과 동일하게 작성 */
+    position: relative;
+    bottom: -300px;
+    transition: 1s;
+}
+#actionSheet.active .action-options {
+    /* 아래에서 위로 나타나는 효과, max-height과 동일하게 작성 */
+    bottom: 0;
+}
+
+.after-login > .action-options {
+    height: 35rem;
+}
+
+/* MENU CSS */
+.menu-container {
+    /* background-color: blue; */
+    width: 100%;
+    position: relative;
+}
+
+.menu-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+
+    img {
+        width: 3rem;
+        /* background-color: #ff7e81; */
+    }
+}
+
+.menu-profile {
+    margin-bottom: 1rem;
+    img {
+        width: 5rem;
+        border: 2px solid #db2227;
+        border-radius: 100%;
+    }
+}
+
+.menu-user {
+    color: #3f3f3f;
+}
+
+.menu-user .user-hi {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 900;
+    span {
+        color: #db2227;
+    }
+}
+.menu-user > .user-name {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.user-mypage {
+    margin: 1.5rem auto;
+    padding: 0.7rem;
+    width: 9rem;
+    border-radius: 3rem;
+    font-size: 16px;
+    font-weight: 900;
+    text-align: center;
+    border: 2px solid #ff7e81;
+    /* margin-bottom: 1rem; */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
+    rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
+}
+
+.menu-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* height: 15rem; */
+    gap: 2rem;
+    margin: 3rem auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem;
+    width: 7rem;
+    background-color: #ffffff;
+    color: #3f3f3f;
+    border-radius: 3rem;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid #ff7e81;
+    /* margin-bottom: 1rem; */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
+    rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
+}
+
+.menu2 {
+    background-color: #ff7e81;
+    color: #ffffff;
+    position: relative;
+    /* font-weight: 600; */
+    img {
+        width: 2rem;
+        position: absolute;
+    }
+}
+
+.menu2:nth-child(1) img {
+    top: -1rem;
+    left: 0;
+}
+
+.menu2:nth-child(2) img {
+    top: -1rem;
+    right: 0;
+}
+
+.logout-btn {
+    /* width: 100%; */
+    position: absolute;
+    bottom: -3rem;
+    /* left: 39%; */
+    right: 2%;
+    display: flex;
+    justify-content: right;
+    align-content: center;
+    margin-right: 0.5rem;
+    gap: 0.5rem;
+}
+
+.logout-btn div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-btn div:nth-child(1) {
+    font-size: 12px;
+    color: #2e2e2e;
+}
+
+.logout-btn div:nth-child(2) {
+    width: 1.2rem;
+    margin-right: 1rem;
+    img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .je_menu-header {
+        width: 30vw;
+        margin: 0 auto;
+        gap: 12rem;
+    }
+
+    #actionSheet {
+        width: 30vw;
+        margin: 0 35%;
+    }
+}

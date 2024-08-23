@@ -418,7 +418,7 @@ $(document).ready(function () {
                 window.location.href = '/myInfo?m_id=' + memberId;
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                showMessageWithTimeout('submitError', '처리 중 문제가 발생했습니다.', 100000);
+                showMessageWithTimeout('submitError', '全項目を入力してください', 3000);
             }
         });
     });
@@ -434,11 +434,60 @@ document.addEventListener("DOMContentLoaded", function () {
         button.style.backgroundColor = '#ff5155';
         button.style.color = 'white'; // 필요 시 텍스트 색상도 변경
 
-        // 1초 후 배경색을 원래대로 돌려놓기 (1000ms = 1초)
+
         setTimeout(function() {
             button.style.backgroundColor = 'white';
-            button.style.color = 'black'; // 필요 시 텍스트 색상도 원래대로 변경
-        }, 1000);
+            button.style.color = '#474747';
+        }, 500);
     });
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 이전 버튼에 대한 이벤트 리스너
+    document.querySelector('.register-slider-prevButton').addEventListener('click', function() {
+        const img = this.querySelector('img');
+
+        // 클릭 시 이미지 변경
+        img.src = '/resources/img/slide-prev-click.png'; // 변경할 이미지 경로
+
+        setTimeout(function() {
+            img.src = '/resources/img/slide-prev.png'; // 원래 이미지 경로로 복구
+        }, 500);
+    });
+
+    // 다음 버튼에 대한 이벤트 리스너
+    document.querySelector('.register-slider-nextButton').addEventListener('click', function() {
+        const img = this.querySelector('img');
+
+        // 클릭 시 이미지 변경
+        img.src = '/resources/img/slide-next-click.png'; // 변경할 이미지 경로
+
+        setTimeout(function() {
+            img.src = '/resources/img/slide-next.png'; // 원래 이미지 경로로 복구
+        }, 500);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll('#sendCodeButton, #verifyCodeButton, #check-ID, #searchAddress');
+
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            // 클릭 시 배경색과 텍스트 색상 변경
+            button.style.backgroundColor = '#333333'; // 변경할 색상
+            button.style.color = 'white';
+
+            // 일정 시간 후 원래 색상으로 돌아가기
+            setTimeout(function() {
+                button.style.backgroundColor = '#555555'; // 원래 색상
+                button.style.color = 'white';
+            }, 500);
+        });
+    });
+});
+
 

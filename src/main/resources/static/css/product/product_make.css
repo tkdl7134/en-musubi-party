@@ -63,27 +63,6 @@ textarea{
     font-weight: 900;
 }
 
-/* 메뉴 - 헤더 */
-.je_menu-header {
-    width: 100%;
-    height: 3.125rem;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7.5rem;
-    font-size: 20px;
-    font-weight: 600;
-    color: #2e2e2e;
-}
-
-.je_logo-icon,
-.je_menu-icon {
-    width: 1.8rem;
-    img {
-        width: 100%;
-    }
-}
 
 #je_product-make-container {
     width: 100vw;
@@ -484,8 +463,7 @@ input:-ms-input-placeholder {
 
 #je_photoOut1,
 #je_photoOut2,
-#je_photoOut3,
-#je_photoOut4 {
+#je_photoOut3{
     position: absolute;
     /* top: 1rem; */
     left: 0;
@@ -498,8 +476,7 @@ input:-ms-input-placeholder {
 }
 #je_photoOut1 img,
 #je_photoOut2 img,
-#je_photoOut3 img,
-#je_photoOut4 img {
+#je_photoOut3 img{
     width: 90%;
     height: 90%;
     object-fit: contain;

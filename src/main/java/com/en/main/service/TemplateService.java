@@ -13,6 +13,10 @@ public class TemplateService {
     @Autowired
     private TemplateMapper templateMapper;
 
+    public List<WeddingVO> getAllWedding(String m_id){
+        return templateMapper.getAllWedding(m_id);
+    }
+
     public List<WeddingVO> getWedding() {
         return templateMapper.getWedding();
     }
