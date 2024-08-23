@@ -116,9 +116,12 @@ public class PartyService implements PartyMapper {
     public int updateLineID(PartyVO partyVO) {
         return partyMapper.updateLineID(partyVO);
     }
+
+
+
     // 상대방의 LineID 가져오기
     @Override
-    public List<PartyVO> getPartnerLineID() {
-        return partyMapper.getPartnerLineID();
+    public List<PartyVO> getPartnerLineID(String partnerID) {
+        return partyMapper.getPartnerLineID(partnerID);
     }
 }

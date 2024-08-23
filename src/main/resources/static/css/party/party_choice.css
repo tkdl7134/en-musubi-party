@@ -52,6 +52,7 @@ body {
     transition: transform 0.5s ease-in-out;
     justify-content: center;
     width: 100%;
+    height: 100%;
 }
 
 .yr_list_choice{
@@ -136,9 +137,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    height: 50vh;
+    position: absolute;
+    height: 100%;
+    bottom: -50%;
+    opacity: 0; /* 초기 상태에서 투명하게 설정 */
+    transition: bottom 2s ease-in-out, opacity 2s ease-in-out; /* 애니메이션과 투명도 동시 적용 */
 }
+.move-up {
+    bottom: 0; /* 화면 중앙으로 이동 */
+    opacity: 1; /* 보이게 설정 */
+}
+
 .main-enParty-envelope {
     width: 90%;
     height: 12rem;
@@ -147,7 +156,7 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
     position: relative;
-    top: 42%;
+    top: 52%;
     z-index: 1;
 }
 .main-enParty-envelope-bottom {
@@ -175,15 +184,13 @@ body {
     margin: auto;
     left: 50%;
     right: 0;
-    bottom: 0.5rem;
+
     transform: translateX(-50%);
-    transition: bottom 1s ease-in-out;
+
     z-index: 3;
 }
 
-.move-up {
-    bottom: 25%;
-}
+
 
 .main-enParty-envelope-text {
     font-weight: bold;

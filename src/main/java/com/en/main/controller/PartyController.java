@@ -28,7 +28,7 @@ public class PartyController {
 //    public String partyApplyDone() {
 //        return "/party/party_apply_done";
 //    }
-//
+////
 //    @GetMapping("/chat")
 //    public String partyChat() {
 //        return "/party/party_chat";
@@ -100,6 +100,7 @@ public class PartyController {
 
     @GetMapping("/main")
     public String partyMain(Model model) {
+        System.out.println(partyService.getPartyMembers());
 
         model.addAttribute("partyMembers", partyService.getPartyMembers());
         model.addAttribute("partyMyInfo", partyService.getPartyMyInfo());
@@ -160,10 +161,11 @@ public class PartyController {
         List<Map<String, String>> matchedCouples = new ArrayList<>();
         List<PartyVO> partyMembers = partyService.getPartyMembers();
 
-
         for (String m_id : finalChoiceData.keySet()) {
             // 사용자 m_id이 선택한 사람 목록
             String choicesStr = finalChoiceData.get(m_id);
+            if (choicesStr == null) continue; // choicesStr이 null일 경우 건너뛰기
+
             // 선택한 사람 목록을 리스트로 변환
             List<String> choices = Arrays.asList(choicesStr.split(","));
 
@@ -171,46 +173,44 @@ public class PartyController {
             for (String choice : choices) {
                 // 선택된 사람의 선택 값
                 String choiceStr = finalChoiceData.get(choice);
-                if (choiceStr != null) {
-                    List<String> selectedByChoice = Arrays.asList(choiceStr.split(","));
+                if (choiceStr == null) continue; // choiceStr이 null일 경우 건너뛰기
 
-                    if (selectedByChoice.contains(m_id)) {
-                        // 중복 방지
-                        boolean alreadyMatched = matchedCouples.stream()
-                                .anyMatch(couple -> (couple.get("person1").equals(m_id) && couple.get("person2").equals(choice)) ||
-                                        (couple.get("person1").equals(choice) && couple.get("person2").equals(m_id)));
+                List<String> selectedByChoice = Arrays.asList(choiceStr.split(","));
 
-                        if (!alreadyMatched) {
-                            // 'test1'에 대한 매칭만 실어주기.,....
-                            if (m_id.equals("test1")) {
-                                Map<String, String> couple = new HashMap<>();
-                                couple.put("user", m_id);
-                                couple.put("partner", choice);
+                if (selectedByChoice.contains(m_id)) {
+                    // 중복 방지
+                    boolean alreadyMatched = matchedCouples.stream()
+                            .anyMatch(couple -> (couple.get("user").equals(m_id) && couple.get("partner").equals(choice)) ||
+                                    (couple.get("user").equals(choice) && couple.get("partner").equals(m_id)));
 
-                                // m_id와 choice에 해당하는 m_fam_kanji와 m_name_kanji를 찾아서 추가
-                                for (PartyVO member : partyMembers) {
-                                    if (member.getM_id().equals(m_id)) {
-                                        couple.put("userFamKanji", member.getM_fam_kanji());
-                                        couple.put("userNameKanji", member.getM_name_kanji());
-                                    }
-                                    if (member.getM_id().equals(choice)) {
-                                        couple.put("partnerFamKanji", member.getM_fam_kanji());
-                                        couple.put("partnerNameKanji", member.getM_name_kanji());
-                                    }
+                    if (!alreadyMatched) {
+                        // 'test2'에 대한 매칭만 실어주기
+                        if (m_id.equals("test4")) {
+                            Map<String, String> couple = new HashMap<>();
+                            couple.put("user", m_id);
+                            couple.put("partner", choice);
+
+                            // m_id와 choice에 해당하는 m_fam_kanji와 m_name_kanji를 찾아서 추가
+                            for (PartyVO member : partyMembers) {
+                                if (member.getM_id().equals(m_id)) {
+                                    couple.put("userFamKanji", member.getM_fam_kanji());
+                                    couple.put("userNameKanji", member.getM_name_kanji());
                                 }
-
-                                matchedCouples.add(couple);
-                                System.out.println("*****Match found for: " + m_id + " with " + choice);
+                                if (member.getM_id().equals(choice)) {
+                                    couple.put("partnerFamKanji", member.getM_fam_kanji());
+                                    couple.put("partnerNameKanji", member.getM_name_kanji());
+                                }
                             }
+
+                            matchedCouples.add(couple);
+                            System.out.println("*****Match found for: " + m_id + " with " + choice);
                         }
-//                        System.out.println("Match found for: " + m_id + " with " + choice);
                     }
                 }
             }
         }
 
         model.addAttribute("matchedCouples", matchedCouples);
-
 
         return "/party/party_choice";
     }
@@ -228,12 +228,13 @@ public class PartyController {
 //
 //        return "/party/party_choice_line";
 //    }
-@PutMapping("/main/choice/line")
-@ResponseBody
-public List<PartyVO> getPartnerLineID() {
-    return partyService.getPartnerLineID();
-}
 
+    @PutMapping("/main/choice/line")
+    @ResponseBody
+    public List<PartyVO> getPartnerLineID(@RequestBody Map<String, String> requestBody) {
+        String partnerID = requestBody.get("partnerID");
+        return partyService.getPartnerLineID(partnerID);
+    }
 
 }
 

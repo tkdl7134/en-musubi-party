@@ -42,7 +42,7 @@
                                 <div class="yr_list_name_choice">
                                        <span style="color: #3F3F3F"> ${couple.partnerFamKanji}&nbsp ${couple.partnerNameKanji}</span>様と  <br />マッチングされました💗
                                 </div>
-                                <input id="partnerId" name="partnerId" value="${couple.partner}" type="hidden">
+                                <input id="partnerID" name="partnerID" value="${couple.partner}" type="hidden">
                                 <button class="open-modal" > Line ID 交換</button>
                             </div>
 <%--                        </c:when>--%>
@@ -70,6 +70,9 @@
                 </form>
             </div>
         </div>
+
+
+        <!-- 편지지 봉투 -->
         <div class="main-envelope">
             <div class="main-enParty-envelope">
                 <div class="main-enParty-envelope-bottom"></div>
