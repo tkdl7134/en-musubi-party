@@ -28,10 +28,16 @@ public class GuestDetailController {
         return "template/allguest";
     }
 
+<<<<<<< HEAD
+    @GetMapping("/grouplist/{m_id}")
+    public String grouplist(Model model, AllGuestVO allGuestVO) {
+        List<AllGuestVO> allGuestList = templateService.getAllGuest();
+=======
 
     @GetMapping("/grouplist/{m_id}")
     public String grouplist(Model model, AllGuestVO allGuestVO , @PathVariable String m_id) {
         List<AllGuestVO> allGuestList = templateService.getAllGuest(m_id);
+>>>>>>> cfb761f151dbf32b8f99f3cf75b3e31635f82ea8
         model.addAttribute("allGuestList", allGuestList);
         int eno =   allGuestList.get(0).getE_no();
         m_id = "test778";

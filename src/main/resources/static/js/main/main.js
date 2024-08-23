@@ -66,8 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
         userInfoEnvelopeTop.classList.add("change-color");
         userInfoEnvelopePaper.classList.add("move-up");
         userInfoEnvelopeText.classList.add("enlarge");
+
+        var m_id = document.getElementById('memberID').value;
+        console.log(m_id); // 세션 값이 출력됩니다.
         setTimeout(function () {
-            window.location.href = "/???";
+            window.location.href = `/myInfo?m_id=${m_id}`;
         }, 2000);
     });
 
@@ -78,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// .main-invitationmanage-envelope -> 회원정보수정 페이지로
+// .main-invitationmanage-envelope -> 초대장 관리
 document.addEventListener("DOMContentLoaded", function () {
     const invitationmanageEnvelope = document.querySelector(
         ".main-invitationmanage-envelope"
@@ -97,8 +100,12 @@ document.addEventListener("DOMContentLoaded", function () {
         invitationmanageEnvelopeTop.classList.add("change-color");
         invitationmanageEnvelopePaper.classList.add("move-up");
         invitationmanageEnvelopeText.classList.add("enlarge");
+
+        var m_id = document.getElementById('memberID').value;
+        console.log(m_id); // 세션 값이 출력됩니다.
+
         setTimeout(function () {
-            window.location.href = "/???";
+            window.location.href = `/mypage/mytemplate/${m_id}`;
         }, 2000);
     });
 
@@ -109,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// .main-grouplist-envelope -> 회원정보수정 페이지로
+// .main-grouplist-envelope -> 참가한 이벤트 리스트
 document.addEventListener("DOMContentLoaded", function () {
     const grouplistEnvelope = document.querySelector(".main-grouplist-envelope");
     const grouplistEnvelopeTop = document.querySelector(
@@ -126,8 +133,11 @@ document.addEventListener("DOMContentLoaded", function () {
         grouplistEnvelopeTop.classList.add("change-color");
         grouplistEnvelopePaper.classList.add("move-up");
         grouplistEnvelopeText.classList.add("enlarge");
+
+        var m_id = document.getElementById('memberID').value;
+        console.log(m_id); // 세션 값이 출력됩니다.
         setTimeout(function () {
-            window.location.href = "/???";
+            window.location.href =`/mypage/grouplist/${m_id}`;
         }, 2000);
     });
 
