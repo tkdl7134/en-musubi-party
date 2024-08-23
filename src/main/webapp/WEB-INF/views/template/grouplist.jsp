@@ -36,6 +36,7 @@
                         style="color: red">✿</span></div>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
+                <button onclick="location.href='/party/info?${e_no}'">縁パーティー</button>
             </div>
         </div>
 
