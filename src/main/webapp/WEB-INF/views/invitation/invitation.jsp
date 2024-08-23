@@ -25,8 +25,7 @@
     <%--&lt;%&ndash;                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1252967488&color=%23e9e6e5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"&ndash;%&gt;--%>
     <%--                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1163500603&color=%23e9e6e5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"--%>
     <%--            ></iframe>--%>
-    <div class="je_invitation-main"
-         style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),
+    <div class="je_invitation-main" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),
                  url('https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${weddingInfo.w_img1}?alt=media')">
         <div class="je_main-title"><span>ご招待状</span></div>
         <div class="je_main-info je_main-names">${weddingInfo.w_name_eng_groom} & ${weddingInfo.w_name_eng_bride}</div>
@@ -172,8 +171,24 @@
         <div><img src="/resources/img/red-line-musubi.png" alt="" srcset="" /></div>
     </div>
 
-    <div>
-        <button onclick="location.href='/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}'">답신 메세지</button>
+    <div class="je_survey-button">
+        <input type="hidden" id="memberID" value="${sessionScope.authenticatedMember.m_id}">
+        <input type="hidden" id="eventNo" value="${sessionScope.e_no}">
+        <div class="main-survey-envelope">
+            <div class="main-survey-envelope-bottom"></div>
+            <div class="main-survey-envelope-paper"></div>
+            <div class="main-survey-envelope-text">
+                <p>
+                    <span style="color: #ff5a55; font-size: 16px">✿</span>
+                    <span style="color: #3f3f3f; font-size: 18px">返信</span>
+                    <span style="color: #ff5a55; font-size: 16px">✿</span>
+                </p>
+            </div>
+            <div class="main-survey-envelope-top"></div>
+            <div class="main-survey-envelope-logo-img">
+                <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img" />
+            </div>
+        </div>
     </div>
 </div>
 <script src="/resources/js/product/sakura.min.js"></script>
