@@ -36,7 +36,7 @@ public class LoginController {
             MemberVO authenticatedMember = loginService.login(memberVO);
             if (authenticatedMember != null) {
                 session.setAttribute("authenticatedMember", authenticatedMember);
-                return "redirect:/";
+                return "redirect:/main";
             } else {
                 model.addAttribute("error", "IDまたはパスワードが正しくありません");
             }
