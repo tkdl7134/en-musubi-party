@@ -39,7 +39,8 @@
                                     </div>
                                 </div>
                                 <div class="survey-form">
-                                    <form action="/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/create" method="post" enctype="multipart/form-data">
+                                    <form action="/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/create"
+                                          id="surveyForm" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="m_id" value="${sessionScope.authenticatedMember.m_id}">
                                         <input type="hidden" name="e_no" value="${sessionScope.e_no}">
                                         <input type="hidden" name="p_pk" value="${Party}">
@@ -193,6 +194,7 @@
                                                     保留
                                                 </div>
                                             </div>
+                                                <input type="hidden" name="g_attend_wedding" id="g_attend_wedding">
                                             </div>
                                         </div>
 
@@ -311,7 +313,6 @@
                                                 <!-- 텍스트 입력 필드는 체크박스 체크했을 경우에만 나오도록 설정 -->
                                             </div>
                                         </div>
-                                        <div class="tk_division-line"></div>
                                         <div class="tk_survey-party">
                                             <div class="tk_survey-titleName">お連れ様</div>
                                             <div class="tk_survey-party-checkbox">
@@ -322,38 +323,42 @@
                                             <div id="partyContainer" class="party-container"></div>
                                             <button type="button" class="tk_survey-party-button" id="addPartyButton" style="display: none;">追加</button>
                                         </div>
-                                        <div class="tk_survey-message-container">
-                                            <div class="tk_survey-message">
-                                                <div class="tk_survey-messageImg">
-                                                    <div class="tk_messageImg" id="messageImg">
+                                        <div class="tk_yellow_border-2">
+                                                <div class="tk_survey-message-container">
+                                                        <div class="tk_survey-message">
+                                                            <div class="tk_survey-messageImg">
+                                                                <div class="tk_messageImg" id="messageImg">
+                                                                    <img src="/resources/img/omedeto.png" alt="Default Image" style="width: 100%; height: 100%; border-radius: 30px;">
+                                                                    <input type="hidden" name="me_img" id="meImgInput" value="your-default-image.jpg">
+                                                                </div>
+                                                        </div>
+                                                            <div class="tk_imgButton-container">
+                                                                <div>
+                                                                    <button id="defaultImgButton" type="button">変更</button>
+                                                                </div>
+                                                                <div>
+                                                                    <button id="imgUploadButton" type="button">投稿</button>
+                                                                    <input type="file" name="me_img2" id="imgInput" style="display: none;" accept="image/*">
+                                                                </div>
+                                                                <div>
+                                                                    <button id="imgDeleteButton" type="button">削除</button>
+                                                                </div>
+                                                            </div>
+                                                        <div class="tk_survey-messageText">
+                                                            <div>
+                                                                <textarea name="me_content" rows="10" cols="30" id="messageContent"
+                                                                placeholder="お祝いメッセージ等をご自由に記入ください"></textarea>
+                                                            </div>
+                                                        </div>
                                                     </div>
-
-                                                    <div class="tk_imgButton-container">
-                                                        <div>
-                                                            <button id="defaultImgButton" type="button">イメージ選択</button>
-                                                        </div>
-                                                        <div>
-                                                            <button id="imgUploadButton" type="button">写真アップロード</button>
-                                                            <input type="file" name="me_img2" id="imgInput" style="display: none;" accept="image/*">
-                                                        </div>
-                                                        <div>
-                                                            <button id="imgDeleteButton" type="button">写真削除</button>
-                                                        </div>
-                                                    </div>
-                                                 </div>
-                                                 <div class="tk_survey-messageText">
-                                                    <textarea name="me_content" rows="10" cols="30" id="messageContent"></textarea>
-                                                 </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="tk_division-line"></div>
-                                        <input type="hidden" name="g_attend_wedding" id="g_attend_wedding">
-                                        <div class="tk_division-line"></div>
                                         <div class="tk_survey-entry-container">
                                             <div class="tk_survey-entryTitle">
-                                                <div>アフターパーティー</div>
-                                                <div class="tk_survey-line2">
-                                                    <img src="/resources/img/head.png" />
+                                                <div class="tk_box-entry-title">
+                                                    <span>✿</span>
+                                                    <span>挙式・披露宴</span>
+                                                    <span>✿</span>
                                                 </div>
                                             </div>
                                             <div class="survey-selection" id="afterparty-selection">
@@ -373,15 +378,39 @@
                                             <input type="hidden" name="g_attend_afterParty" id="g_attend_afterparty">
                                         </div>
 
-                                        <div class="tk_division-line"></div>
+                                        <div class="en-party-explain-container">
+                                            <div class="tk_box-party-title">
+                                                <span>✿</span>
+                                                <span>「縁パーティー」とは？</span>
+                                                <span>✿</span>
+                                            </div>
+                                            <div class="what-is-en-party">
+                                                <p> 🎉　内容内容内容内容内容内容内容内容　🥂 </p>
+                                                <p> 内容内容内容内容内容内容内容内容内容 </p>
+                                                <p> 🥰　内容内容内容内容内容内容内容内容　✨ </p>
+                                            </div>
+                                        </div>
 
                                         <div class="survey-last-submit-container">
-                                            <div>
-                                                <button class="survey-submit-button" type="submit">送信</button>
+                                            <div class="survey-submit-button">
+                                                <div class="main-enMusubi-envelope-bottom"></div>
+                                                <div class="main-enMusubi-envelope-paper"></div>
+                                                <div class="main-enMusubi-envelope-text">
+                                                    <p>
+                                                        <span style="color: #FF5A55; font-size: 16px;">✿</span>
+                                                        <span style="color: #3F3F3F; font-size: 18px;"> 送信 </span>
+                                                        <span style="color: #FF5A55; font-size: 16px;">✿</span>
+                                                    </p>
+                                                </div>
+                                                <div class="main-enMusubi-envelope-top"></div>
+                                                <div class="main-enMusubi-envelope-top-border"></div>
+                                                <div class="main-enMusubi-envelope-logo-img">
+                                                    <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img">
+                                                </div>
                                             </div>
-                                            <div class="survey-last-img">
-                                                <img src="/resources/img/enmusubi-logo.png" alt="" >
-                                            </div>
+<%--                                            <div>--%>
+<%--                                                <button class="survey-submit-button" type="submit">送信</button>--%>
+<%--                                            </div>--%>
                                         </div>
                                     </form>
                                 </div>
@@ -400,7 +429,9 @@
 <div id="allergyModal" class="modal">
     <div class="tk_yellow_border">
     <div class="tk_red-border">
-    <button class="modal-close" id="modalCloseButton">&times;</button>
+        <div class="modal-close-box">
+            <button class="modal-close" id="modalCloseButton">&times;</button>
+        </div>
     <div class="modal_body">
         <header>
             <div>✿ アレルギー情報入力 ✿</div>
@@ -482,6 +513,8 @@
                             value="ごま"
                     />ごま
                 </label>
+            </div>
+            <div class="tk_allergy-contents">
                 <label class="cb3">
                     <input
                             type="checkbox"
@@ -572,28 +605,27 @@
             </div>
             <div class="tk_division-line-modal"></div>
             <div class="tk_others-allergy">
-                <div class="tk_insert-others">
+                <div class="tk_insert-others">\
                     <div>該当するアレルギー情報が無い場合は</div>
                     <div>下記入力欄にアレルギー情報をご入力ください</div>
                 </div>
                 <div class="allergySearch">
                     <div id="etc-allergy"></div>
-                    <input
+                    <div class="allergySearch-box">
+                        <input
                             type="text"
                             id="otherAllergy"
                             placeholder="その他のアレルギー入力"
                             autocomplete="off"
-                    />
-                    <button id="etc-btn">追加</button>
-                </div>
-                <div class="tk_modal-reset-button">
-                    <button class="tk_modal-button3" id="reset">RESET</button>
+                        />
+                        <button id="etc-btn">追加</button>
+                    </div>
                 </div>
             </div>
             <div class="tk_division-line-modal"></div>
             <div class="tk_allergy-search-btn">
-                <button class="tk_modal-button" id="addAllergies">追加する</button>
-                <button class="tk_modal-button2" id="closeModal">閉じる</button>
+                <button class="tk_modal-button2" id="reset">初期化</button>
+                <button class="tk_modal-button" id="addAllergies">追加</button>
             </div>
 
         </div>
@@ -608,6 +640,9 @@
     <div class="ImgModalTitle">画像一覧</div>
     <div class="ImgModalList">サンプル画像</div>
     <ul class="sample-imgList">
+        <li class="sample-imgList-item">
+            <img src="/resources/img/omedeto.png" alt="">
+        </li>
         <li class="sample-imgList-item">
             <img src="/resources/img/celebratePic1.png" alt="">
         </li>

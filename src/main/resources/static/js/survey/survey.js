@@ -94,7 +94,7 @@ $(function () {
         if (this.checked) {
             $("#" + allergyDetailContainer).html(
                 `<input type="text" id="allergyDetail" data-refid="${this.id}" class="allergyDetail" name="allergy"
-                'placeholder="アレルギー詳細を入力してください " autocomplete="off" >`
+                placeholder="押してください" autocomplete="off" >`
             );
         } else {
             $("#" + allergyDetailContainer).html("");
@@ -383,6 +383,12 @@ $(function () {
     const imgDeleteButton = document.getElementById("imgDeleteButton");
     let selectedImgSrc = '';
 
+    // 초기 이미지가 설정되어 있는 경우 src 값을 selectedImgSrc 에 저장
+    const initialImgElement  = document.querySelector('.tk_messageImg img');
+    if (initialImgElement ) {
+        selectedImgSrc = initialImgElement .src;
+    }
+
     openImgModalButton.addEventListener("click", () => {
         defaultImgModal.showModal();
     });
@@ -405,7 +411,7 @@ $(function () {
 
     confirmImgButton.addEventListener("click", () => {
         if (selectedImgSrc) {
-            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">
+            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%; border-radius: 30px;"">
                                                                            <input type="hidden" name="me_img" id="meImgInput" value="${selectedImgSrc}">`;
             alert("アップロード完了!");
             defaultImgModal.close();
@@ -780,4 +786,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // // 폼 제출 이벤트 리스너 추가
     // const form = document.querySelector('form');
     // form.addEventListener('submit', validateForm);
+});
+
+// .survey-submit-button -> 위시리스트 페이지로
+document.addEventListener("DOMContentLoaded", function () {
+
+    const enMusubiEnvelope = document.querySelector(".survey-submit-button");
+    const enMusubiEnvelopeTop = document.querySelector(".main-enParty-envelope-top");
+    const enMusubiEnvelopePaper = document.querySelector(".main-enParty-envelope-paper");
+    const enMusubiEnvelopeText = document.querySelector(".main-enMusubi-envelope-text");
+    const surveyForm = document.getElementById("surveyForm");
+
+
+    enMusubiEnvelope.addEventListener("click", function () {
+        enMusubiEnvelopeTop.classList.add("change-color");
+        enMusubiEnvelopePaper.classList.add("move-up");
+        enMusubiEnvelopeText.classList.add("enlarge");
+        setTimeout(function () {
+            surveyForm.submit();
+        }, 1000);
+    });
+
+    enMusubiEnvelopePaper.addEventListener("transitionend", function () {
+        enMusubiEnvelopeTop.classList.remove("change-color");
+        enMusubiEnvelopePaper.classList.remove("move-up");
+        enMusubiEnvelopeText.classList.remove("enlarge");
+    });
+
 });

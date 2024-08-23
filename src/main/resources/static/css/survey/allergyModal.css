@@ -88,8 +88,9 @@ header div:nth-child(2) {
 }
 
 .tk_others-allergy {
-    display: inline-block;
-    margin: 1rem 0.5rem 0.5rem 0;
+    display: flow;
+    justify-content: center;
+    align-items: center;
 }
 
 .tk_others-allergy > div:nth-child(1) {
@@ -162,15 +163,13 @@ label.cb3:has(input[type="checkbox"]:checked) {
     background-color: transparent;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-    padding-bottom: 2rem;
 }
 
 #etc-allergy {
     display: flex;
     flex-wrap: wrap;
     max-width: 50rem;
-    margin: 0 0 1rem 0;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .allergy-wrap {
@@ -194,12 +193,14 @@ label.cb3:has(input[type="checkbox"]:checked) {
 
 .tk_insert-others {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
+    /* text-align: center; */
     align-items: center;
     background-color: transparent;
     color: #797979;
     padding: 1rem;
+    font-size: 0.8rem;
 }
 
 .allergySearch {
@@ -208,25 +209,34 @@ label.cb3:has(input[type="checkbox"]:checked) {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    border: 2px solid salmon;
+    margin-bottom: 1rem;
+}
+
+.allergySearch-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
 }
 
 .allergySearch input {
-    width: 65%;
+    width: 100%;
     height: 2rem;
-    border: 3px solid grey;
+    border: 3px solid #FF5050;
+    border-radius: 10px;
+    padding: 0.2rem;
 }
 
 .allergySearch button {
     width: 30%;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     border-radius: 10px;
     padding: 0.5rem;
-    color: tomato;
+    color: white;
     cursor: pointer;
-    border: 2px solid tomato;
-    background-color: transparent;
-    margin-bottom: 1rem;
+    border: 2px solid #FF8B8B;
+    background-color: #FF5050;
 }
 
 .tk_allergy-search-btn {
@@ -238,60 +248,41 @@ label.cb3:has(input[type="checkbox"]:checked) {
 }
 
 .tk_modal-button {
-    font-size: 1.2rem;
-    background-color: salmon;
-    color: white;
-    border: transparent;
-    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
-    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #FFFFFF;
+    background-color: #FF5050;
+    border: 3px solid #FF8B8B;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 10px;
 }
 
 .tk_modal-button2 {
-    font-size: 1.2rem;
-    background-color: lightpink;
-    color: white;
-    border: transparent;
-    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
-    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #F03434;
+    background-color: transparent;
+    border: 3px solid #FFC700;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 10px;
 }
 
-.tk_modal-reset-button {
+.modal-close-box {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.tk_modal-button3 {
-    margin: 0.2rem 0.5rem 0 0;
-    font-size: 0.7rem;
-    border: transparent;
-    cursor: pointer;
-    /*transition: all 0.8s ease;*/
-    color: red;
-}
-
-.tk_modal-button3:hover {
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    -o-transform: scale(1.05);
-    transform: scale(1.05);
+    align-items: center;
+    margin: 0.5rem;
 }
 
 .modal-close {
-    position: absolute;
-    bottom: 129rem;
-    right: 1rem;
-    background-color: white;
-    border: 2px solid lightgray;
+    background-color: transparent;
+    border: 2px solid #FFC700;
     font-size: 1.3rem;
-    z-index: 1000;
-    padding: 0.1rem 0.4rem;
+    padding: 0.1rem 0.5rem;
     cursor: pointer;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    color: red;
 }
 
 .modal-close:hover {
     transition: 0.3s ease-out;
-    color: red;
 }
