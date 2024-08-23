@@ -9,13 +9,8 @@
     <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/template/grouplist.css">
     <script src="${pageContext.request.contextPath}/resources/js/template/grouplist.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<%--<header class="hw_header">--%>
-<%--    <div class="menubar">메뉴바</div>--%>
-<%--    <div class="hw_maker">会リスト</div>--%>
-<%--</header>--%>
 <div class="je_page-title">会リスト</div>
 <div class="hw_container">
     <c:forEach items="${allGuestList}" var="g" varStatus="status">
@@ -23,12 +18,10 @@
             <div class="hw_card">
         </c:if>
 
-<%--        <div id="Hw_attend_div" style="display: none"><button>aaaa</button></div>--%>
-<%--        <input id="Hw_attend_btn" type="hidden" value="${Attend}">--%>
         <div class="card-inner">
             <div class="card-front">
                 <div class="image-container">
-                    <img src="/resources/img/Template1.jpg" alt="Template 1">
+                    <img src="${pageContext.request.contextPath}/resources/img/Template1.jpg" alt="Template 1">
                 </div>
             </div>
             <div class="card-back">
@@ -36,6 +29,7 @@
                         style="color: red">✿</span></div>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
+                <button onclick="location.href='/party/info?${g.e_no}'">縁パーティー</button>
             </div>
         </div>
 
