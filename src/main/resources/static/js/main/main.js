@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         enPartyEnvelopePaper.classList.add("move-up")
         enPartyEnvelopeText.classList.add("enlarge")
         setTimeout(function () {
-            window.location.href = "/???";
+            window.location.href = "/";
         }, 1000);
     });
 

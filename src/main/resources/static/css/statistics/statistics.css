@@ -160,7 +160,7 @@ div {
     border: 1px solid #888;
     width: 25%;
     max-width: 500px;
-    transform: translateX(6px);
+    transform: translate(6px, 15rem);
 }
 
 /* 닫기 버튼 */
