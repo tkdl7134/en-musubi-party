@@ -12,6 +12,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('/resources/img/paperBG.png');
+    background-size: auto;
+    background-repeat: repeat;
 }
 
 /* Register Header */
@@ -93,12 +96,13 @@
 }
 
 input, select {
+    width: 80%;
     margin: 10px 0;
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
     color: #474747;
-    width: 80%;
+    background-color: transparent;
     border: none;
     border-bottom: 1px solid #000;
     outline: none;
@@ -178,11 +182,6 @@ button:disabled {
     transition: background-color 0.5s ease, color 0.5s ease; /* 배경색과 텍스트 색상의 변화를 부드럽게 설정 */
 }
 
-/*#register-submitButton:active {*/
-/*    background-color: #ff5155; !* 클릭 시 배경색 변경 *!*/
-/*    color: white; !* 필요 시 텍스트 색상도 변경 *!*/
-/*}*/
-
 /* 검증 메시지 스타일 */
 .error-message {
     color: red;
@@ -199,6 +198,43 @@ button:disabled {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+}
+
+/* Slide 1 */
+.home-vertical-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3F3F3F;
+    letter-spacing: 5px;
+    text-shadow: 0 0 3px #FFBDBB;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 7rem;
+    left: 3.5rem;
+    z-index: 5;
+}
+
+.home-vertical-text1 {
+    writing-mode: vertical-rl;
+    margin-bottom: 1rem;
+}
+
+.home-vertical-text2 {
+    writing-mode: vertical-rl;
+    margin-left: 2rem;
+}
+
+.register-character {
+    position: absolute;
+    top: 53%;
+    left: 7%;
+}
+
+.register-character img {
+    width: 11rem;
+    height: auto
 }
 
 /* Slide 2 : お名前 */
@@ -342,6 +378,7 @@ button:disabled {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     input {
         width: 100%;
         margin: 10px;
@@ -398,6 +435,7 @@ button:disabled {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     input {
         width: 100%;
         margin: 10px;

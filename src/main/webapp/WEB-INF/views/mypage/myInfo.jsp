@@ -117,14 +117,14 @@
 
         <div class="myInfo-buttons">
             <%-- ホーム --%>
-            <form action="/main" method="get">
+            <form action="/main" method="get" id="myInfo-home-form">
                 <div class="myInfo-toMain">
                     <button type="submit" id="myInfo-home-button">ホーム</button>
                 </div>
             </form>
 
             <%-- 情報修整 --%>
-            <form action="/myInfo-update" method="get">
+            <form action="/myInfo-update" method="get" id="myInfo-update-form">
                 <input type="hidden" name="m_id" value="${member.m_id}">
                 <div class="myInfo-info-update">
                     <button type="submit" id="myInfo-info-update">情報修整</button>

@@ -6,8 +6,10 @@
 .myInfoUpdate-container {
     position: relative;
     width: 100vw;
-    height: 100vh;
-    /*background-color: #76ceff;*/
+    /*height: 100vh;*/
+    background-image: url('/resources/img/paperBG.png');
+    background-size: auto;
+    background-repeat: repeat;
 }
 
 /* Header */
@@ -18,7 +20,8 @@
     left: 0;
     width: 100%;
     height: 6.8rem;
-    background-color: white;
+    background-image: url('/resources/img/paperBG.png');
+    background-size: auto;
 }
 
 .myInfoUpdate-header-logo {
@@ -50,7 +53,6 @@
     justify-content: center;
     margin: 0 auto;
     margin-top: 6.8rem;
-    background-color: #ffb8b8
 }
 
 .myInfoUpdate-content-blank {
@@ -72,8 +74,8 @@
     width: 6rem;
     height: auto;
     border-radius: 100%;
+    border: 3px solid #ff5155;
 }
-
 
 .myInfoUpdate-profile-container {
     z-index: 1;
@@ -99,18 +101,11 @@
 }
 
 #myInfoUpdate-profile img {
-    /*width: 90%;*/
-    /*height: 90%;*/
-    /*object-fit: contain;*/
-    /*border-radius: 100%;*/
-
     width: 6rem;
     height: auto;
     border-radius: 100%;
+    border: 3px solid #ff5155;
 }
-
-/*여기까지*/
-
 
 .myInfo-info-box {
     width: 100%;
@@ -140,12 +135,13 @@
     width: 100%;
     height: 2.5rem;
     margin-bottom: 3rem;
+    padding-left: 10px;
     font-size: 20px;
     font-weight: bold;
     color: #3f3f3f;
+    background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid #999999;
     border-radius: 5px;
-    padding-left: 10px;
     box-sizing: border-box;
 }
 
@@ -185,18 +181,15 @@
     gap: 1rem;
 }
 
+/* Buttons */
 .myInfoUpdate-info-update {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-bottom: 4rem;
 }
 
 .myInfoUpdate-info-update button {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
     padding: 0.5rem 1rem;
     font-size: 14px;
     font-weight: bold;
@@ -204,10 +197,56 @@
     background-color: #555555;
     border: none;
     border-radius: 5px;
+    margin-top: 5%;
+    margin-bottom: 4rem;
+    margin-left: 0;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+}
+
+.myInfoUpdate-info-delete {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555555;
+    margin-bottom: 2rem;
+}
+
+.myInfoUpdate-info-delete span {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ff5155;
+    text-decoration: none;
+}
+
+.myInfoUpdate-info-delete span:hover {
+    color: #EC0000;
+}
+
+.myInfoUpdate-info-delete-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+#myInfo-account-delete-button {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    font-weight: bold;
+    color: #EC0000;
+    background-color: white;
+    border: 1px solid #EC0000;
+    border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/**/
+#myInfo-account-delete-button:hover {
+    color: white;
+    background-color: #EC0000;
+}
 
 @media (min-width: 768px) {
     .myInfoUpdate-container {
