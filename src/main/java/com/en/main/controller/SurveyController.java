@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 import java.util.Objects;
 
-@RequestMapping("/survey")
+@RequestMapping("/survey/{m_id}-{e_no}")
 @Controller
 public class SurveyController {
 
@@ -19,12 +19,12 @@ public class SurveyController {
     private SurveyService surveyService;
 
     @GetMapping()
-    public String survey(Model model) {
-        String m_id= "test9";
-        int e_no= 68;
+    public String survey(Model model, @PathVariable String m_id, @PathVariable int e_no) {
+//        String m_id= "test9";
+//        int e_no= 68;
         int p_pk= 21;
-        model.addAttribute("Member" ,  m_id )  ;
-        model.addAttribute("Message" ,  e_no )  ;
+//        model.addAttribute("Member" ,  m_id )  ;
+//        model.addAttribute("Message" ,  e_no )  ;
         model.addAttribute("Party" ,  p_pk )  ;
 
         MemberVO memberInfo = surveyService.getMember(m_id);
@@ -39,6 +39,7 @@ public class SurveyController {
                            MemberVO memberVO, @ModelAttribute CompanionsVO companions , AllergyVO allergyVO) {
         // 초대장의 pk
         int e_no = messageVO.getE_no();
+        System.out.println(e_no);
         String m_id = messageVO.getM_id();
         for (CompanionVO companion : companions.getCompanions()) {
             System.out.println("p_accompany_num: " + companion.getP_accompany_num());

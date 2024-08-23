@@ -255,17 +255,23 @@ create table pay
 (
     e_no    number(5)         not null,
     m_id    varchar2(50 char) not null,
-    wl_no   number(8)         not null,
+    wl_no   number(8) default 0 not null,
     p_type  varchar2(10 char) not null,
     p_price number(8)         not null,
     p_date  date              not null,
 
     foreign key (e_no) references event (e_no),
-    foreign key (m_id) references member (m_id),
-    foreign key (wl_no) references wishlist (wl_no)
+    foreign key (m_id) references member (m_id)
 );
 select *
 from pay;
+
+delete from pay;
+delete from member;
+delete from event;
+delete from wishlist;
+
+drop table pay cascade constraints purge ;
 
 -- 이벤트 댓글
 create table event_comment
@@ -327,7 +333,7 @@ WITH wish_fund AS (SELECT wl_no,
                           FLOOR((SELECT SUM(p_price) FROM pay sp WHERE p_type = 'fund' AND wl_no = sw.wl_no) /
                                 wl_price * 100)                                                        AS percent
                    FROM wishlist sw
-                   WHERE e_no = 5)
+                   WHERE e_no = 68)
 SELECT wl_no, wl_price, wl_product, e_no, payed, COALESCE(percent, 0) AS percent
 FROM wish_fund
 ORDER BY percent DESC;
@@ -341,10 +347,9 @@ FROM wedding_info
 WHERE member.m_id = 'test778';
 
 
-select g_attend_afterparty from guest join member on guest.m_id = member.m_id join event on member.m_id = event.m_id and guest.e_no = event.e_no where guest.m_id = 'SendTestUser1'  and event.e_no = 5;
-select * from guest;
-SELECT g.g_attend_afterparty
-FROM guest g
-         JOIN member m ON g.m_id = m.m_id
-         JOIN event e ON g.e_no = e.e_no
-WHERE g.m_id = 'SendTestUser1' AND e.e_no = 5;
+select * from pay;
+
+select * from pay;
+select * from wishlist;
+select * from member;
+

@@ -9,6 +9,8 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/resources/js/wishlist/tk_swiper-slide-center.js"></script>
 <script src="/resources/js/wishlist/send.js" defer></script>
+<input id="e_no" type="hidden" value="${sessionScope.e_no}">
+<input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
 <div class="je_menu-bar">
 	<div id="je_logo"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
 </div>
@@ -277,7 +279,7 @@
 			<input hidden="hidden" value="">
 		</div>
 		<div>
-			<button class="kh-s-btn" onclick="goFinal(8)">送金</button>
+			<button class="kh-s-btn" onclick="goFinal()">送金</button>
 		</div>
 	</div>
 </div>
