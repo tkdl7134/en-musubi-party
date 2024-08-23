@@ -60,6 +60,7 @@ public class MyInfoController {
         return "/mypage/myInfo";
     }
 
+
     @GetMapping("/myInfo-update")
     public String goTomyInfoUpdate(@RequestParam("m_id") String m_id, Model model) {
         MemberVO member = memberService.getMemberInfo(m_id);

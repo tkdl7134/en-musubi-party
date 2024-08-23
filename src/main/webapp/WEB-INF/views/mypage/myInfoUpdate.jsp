@@ -21,36 +21,31 @@
     <%-- My Info Update Form --%>
     <div class="myInfoUpdate-content">
 
-
         <form action="/myInfo-update" method="post" enctype="multipart/form-data">
-            <div class="myInfoUpdate-cover">
 
+            <div class="myInfoUpdate-content-blank">
                 <%-- プロフィール --%>
-<%--                <div class="myInfoUpdate-profile">--%>
-<%--                    <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${member.m_img}?alt=media"--%>
-<%--                         alt="myInfoUpdate-profile-img"/>--%>
-<%--                    <input type="hidden" id="m_img" name="oldProfile" value="${member.m_img}">--%>
-<%--                    <input type="file" id="newProfile" name="newProfile">--%>
-<%--                </div>--%>
+                <%--                <div class="myInfoUpdate-profile">--%>
+                <%--                    <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${member.m_img}?alt=media"--%>
+                <%--                         alt="myInfoUpdate-profile-img"/>--%>
+                <%--                    <input type="hidden" id="m_img" name="oldProfile" value="${member.m_img}">--%>
+                <%--                    <input type="file" id="newProfile" name="newProfile">--%>
+                <%--                </div>--%>
 
-                    <div class="myInfoUpdate-profile-container" id="myInfoUpdate-profile-container">
-                        <input
-                                type="file"
-                                name="newProfile"
-                                id="newProfile"
-                                onchange="readURL(this);"
-                                oninput="return photoType1()"
-                        />
-                        <input type="hidden" id="oldProfile" name="oldProfile" value="${member.m_img}">
-                        <div id="myInfoUpdate-profile">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${member.m_img}?alt=media"
-                                 alt="myInfoUpdate-profile-img"/>
-                        </div>
+                <div class="myInfoUpdate-profile-container" id="myInfoUpdate-profile-container">
+                    <input
+                            type="file"
+                            name="newProfile"
+                            id="newProfile"
+                            onchange="readURL(this);"
+                            oninput="return photoType1()"
+                    />
+                    <input type="hidden" id="oldProfile" name="oldProfile" value="${member.m_img}">
+                    <div id="myInfoUpdate-profile">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${member.m_img}?alt=media"
+                             alt="myInfoUpdate-profile-img"/>
                     </div>
-
-
-
-
+                </div>
 
                 <%-- ID --%>
                 <div class="myInfo-info-box">
@@ -64,9 +59,10 @@
 
                 <%-- お名前 (Name in various forms) --%>
                 <div class="myInfoUpdate-info-box">
+                    <div class="info-label">お名前</div>
                     <%-- 漢字 --%>
                     <div class="myInfoUpdate-info-box-name-kanji">
-                        <label for="m_fam_kanji" class="info-label-small">お名前 (漢字)</label>
+                        <label for="m_fam_kanji" class="info-label-small">漢字</label>
                         <div class="info-value-name-kanji">
                             <input type="text" id="m_fam_kanji" name="m_fam_kanji" class="info-value"
                                    value="${member.m_fam_kanji}" required>

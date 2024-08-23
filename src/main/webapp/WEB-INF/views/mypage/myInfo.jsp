@@ -115,13 +115,22 @@
         </div>
     </div>
 
-    <%-- 情報修整 --%>
-    <form action="/myInfo-update" method="get">
-        <input type="hidden" name="m_id" value="${member.m_id}">
-        <div class="myInfo-info-update">
-            <button type="submit" id="myInfo-info-update">情報修整</button>
+        <div class="myInfo-buttons">
+            <%-- ホーム --%>
+            <form action="/main" method="get">
+                <div class="myInfo-toMain">
+                    <button type="submit" id="myInfo-home-button">ホーム</button>
+                </div>
+            </form>
+
+            <%-- 情報修整 --%>
+            <form action="/myInfo-update" method="get">
+                <input type="hidden" name="m_id" value="${member.m_id}">
+                <div class="myInfo-info-update">
+                    <button type="submit" id="myInfo-info-update">情報修整</button>
+                </div>
+            </form>
         </div>
-    </form>
 
 </div>
 </body>

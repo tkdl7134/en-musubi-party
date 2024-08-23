@@ -275,7 +275,7 @@ button:disabled {
 
 .register-birthdate-container {
     width: calc(100% - 3rem);
-    max-width: 400px;
+    /*max-width: 400px;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -306,7 +306,7 @@ button:disabled {
 
 .register-phone-container {
     width: calc(100% - 3rem);
-    max-width: 400px;
+    /*max-width: 400px;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -336,7 +336,7 @@ button:disabled {
 
 .register-email-container {
     width: calc(100% - 3rem);
-    max-width: 400px;
+    /*max-width: 400px;*/
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -392,7 +392,7 @@ button:disabled {
 
 .register-verification-container {
     width: calc(100% - 3rem);
-    max-width: 400px;
+    /*max-width: 400px;*/
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -454,7 +454,7 @@ button:disabled {
 
 .register-ID-container {
     width: calc(100% - 3rem);
-    max-width: 400px;
+    /*max-width: 400px;*/
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -509,7 +509,7 @@ button:disabled {
 
 .register-PW-container {
     width: calc(100% - 3rem);
-    max-width: 400px;
+    /*max-width: 400px;*/
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -577,7 +577,7 @@ button:disabled {
 
 .register-address-container {
     width: calc(100% - 3rem);
-    max-width: 400px;
+    /*max-width: 400px;*/
     margin: 0 auto;
     display: flex;
     flex-direction: column;

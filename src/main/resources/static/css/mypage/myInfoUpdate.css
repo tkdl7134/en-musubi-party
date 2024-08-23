@@ -46,15 +46,14 @@
 }
 
 .myInfoUpdate-content {
-    /*display: flex;*/
-    width: 88%;
+    width: 90%;
     justify-content: center;
     margin: 0 auto;
     margin-top: 6.8rem;
     background-color: #ffb8b8
 }
 
-.myInfoUpdate-cover {
+.myInfoUpdate-content-blank {
     width: 100%;
     margin: 0 auto;
 }
@@ -79,7 +78,6 @@
 .myInfoUpdate-profile-container {
     z-index: 1;
     width: 100%;
-    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,6 +117,7 @@
 }
 
 .info-label {
+    display: flex;
     width: 100%;
     padding-bottom: 1.3rem;
     font-size: 18px;
@@ -127,17 +126,18 @@
 }
 
 .info-value-read {
-    width: 97%;
+    width: 100%;
     margin-bottom: 3rem;
     font-size: 20px;
     font-weight: bold;
     color: #3f3f3f;
     border-bottom: 1px solid #696969;
     padding-left: 10px;
+    box-sizing: border-box;
 }
 
 .info-value {
-    width: 96%;
+    width: 100%;
     height: 2.5rem;
     margin-bottom: 3rem;
     font-size: 20px;
@@ -146,6 +146,7 @@
     border: 1px solid #999999;
     border-radius: 5px;
     padding-left: 10px;
+    box-sizing: border-box;
 }
 
 .myInfoUpdate-info-box {
@@ -154,10 +155,11 @@
 }
 
 .info-label-small {
+    display: flex;
+    margin-bottom: 1rem;
     font-size: 14px;
     font-weight: bold;
     color: #777777;
-    margin-bottom: 1rem;
 }
 
 /* 漢字 */
