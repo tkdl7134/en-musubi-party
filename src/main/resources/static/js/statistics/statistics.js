@@ -36,6 +36,12 @@ function goToFundPage(){
     document.getElementById('jh_pageNavi5').style.cssText = 'color : black; transition : 0.2s'
     document.getElementById('jh_slick2').style.cssText = 'display : none;'
     document.getElementById('jh_slick1').style.cssText = 'display : block'
+    document.getElementById('jh_slider11').style.cssText = 'width : 100vw;'
+    document.getElementById('jh_slider22').style.cssText = 'width : 100vw;'
+    document.getElementById('jh_slider33').style.cssText = 'width : 100vw;'
+
+
+
 
     /*location.href = '/statistics/funding';*/
 
@@ -83,9 +89,9 @@ selectOptions.forEach(option => {
         console.log(optionVal);
         // priceData는 숨겨진 인풋 필드
         let priceData = document.getElementById('jh_price_input');
-
+        let enoVal = document.getElementById("jh_eno_input").value;
         // fetch 요청으로 데이터를 가져옴
-        fetch('/statistics/getProductPrice/' + optionVal)
+        fetch('/statistics/getProductPrice/' + optionVal +'/' + enoVal  )
             .then(response => response.json())
             .then(data => {
                 console.log(data);

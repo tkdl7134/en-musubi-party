@@ -8,10 +8,7 @@ import com.en.main.service.StatisticsFundingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
@@ -26,17 +23,19 @@ public class StatisticsController {
    private StatisticsFundingService statisticsFundingService;
 
     @GetMapping("/funding")
-    public String goStatisticsFundingPage(Model model , PayVo payVo , JhFundSqlVo jhFundSqlVo ){
-        int eno = 5;
+    public String goStatisticsFundingPage(Model model , PayVo payVo , JhFundSqlVo jhFundSqlVo , @RequestParam("e_no") int eno){
+        /*int eno = 5;*/
        model.addAttribute("wishlists" ,  statisticsFundingService.getWishlistData(eno));
         System.out.println(statisticsFundingService.getWishlistData(eno));
         model.addAttribute("dates" , statisticsFundingService.getDate(eno));
         System.out.println(statisticsFundingService.getDate(eno));
-    List<WishlistVO> wishlist = statisticsFundingService.getWishlistData(eno);
+    List<WishlistVO> wishlist = statisticsFundingService.getFundWishlistData(eno);
+
+
         WishlistVO firstItem = wishlist.get(0);
         int firstWlNo = firstItem.getWl_no();
         int firstWlPrice = firstItem.getWl_price();
-       model.addAttribute("payPrice" ,statisticsFundingService.getPrices(payVo , firstWlNo) ) ;
+       model.addAttribute("payPrice" ,statisticsFundingService.getPrices(payVo , firstWlNo , eno) ) ;
     model.addAttribute("NumberOfPeople" , statisticsFundingService.getNumberOfPeople(eno));
         System.out.println(statisticsFundingService.getNumberOfPeople(eno));
 
@@ -95,11 +94,11 @@ public class StatisticsController {
     }
 
 
-        @GetMapping("/getProductPrice/{no}")
-    public @ResponseBody int getProductPrice(PayVo payVo, @PathVariable int no){
+        @GetMapping("/getProductPrice/{no}/{eno}")
+    public @ResponseBody int getProductPrice(PayVo payVo, @PathVariable int no , @PathVariable int eno){
         System.out.println(no);
-        System.out.println(statisticsFundingService.getPrices(payVo , no));
-        return statisticsFundingService.getPrices(payVo , no);
+        System.out.println(statisticsFundingService.getPrices(payVo , no , eno));
+        return statisticsFundingService.getPrices(payVo , no , eno);
 
     }
 

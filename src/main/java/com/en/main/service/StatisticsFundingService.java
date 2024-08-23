@@ -21,13 +21,18 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     }
 
     @Override
+    public List<WishlistVO> getFundWishlistData(int eno) {
+        return statisticsFundingMapper.getFundWishlistData(eno);
+    }
+
+    @Override
     public List<PayVo> getDate(int eno) {
         return statisticsFundingMapper.getDate(eno);
     }
 
     @Override
-    public int getPrices(PayVo payVo, int no) {
-        return statisticsFundingMapper.getPrices(payVo,no);
+    public int getPrices(PayVo payVo, int no, int eno) {
+        return statisticsFundingMapper.getPrices(payVo,no , eno);
     }
 
     @Override

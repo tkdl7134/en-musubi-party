@@ -12,6 +12,8 @@ public interface StatisticsFundingMapper {
 
     @Select("select * from wishlist where e_no = #{eno}")
     List<WishlistVO> getWishlistData(int eno);
+    @Select("select * from wishlist join pay on wishlist.wl_no = pay.wl_no where wishlist.e_no = #{eno}")
+    List<WishlistVO> getFundWishlistData(int eno);
 
     @Select("SELECT \n" +
             "    TRUNC(p_date) AS transaction_date, \n" +
@@ -20,7 +22,7 @@ public interface StatisticsFundingMapper {
             "    pay\n" +
             "WHERE \n" +
             "    p_date BETWEEN TRUNC(SYSDATE - 7) AND TRUNC(SYSDATE) + INTERVAL '1' DAY - INTERVAL '1' SECOND\n" +
-            "    AND e_no = 5\n" +
+            "    AND e_no = #{eno}\n" +
             "    AND p_type = 'fund'\n" +
             "GROUP BY \n" +
             "    TRUNC(p_date)\n" +
@@ -37,11 +39,11 @@ public interface StatisticsFundingMapper {
             "    pay p ON w.wl_no = p.wl_no\n" +
             "WHERE\n" +
             "    p.p_type = 'fund'\n" +
-            "  AND p.e_no = 5\n" +
+            "  AND p.e_no = #{eno}\n" +
             "  AND w.wl_no = #{no}\n" +
             "GROUP BY\n" +
             "    w.wl_price ")
-            int getPrices(PayVo payVo ,int no);
+            int getPrices(PayVo payVo ,int no , int eno);
 
         @Select("select count(M_ID)  from pay where p_type = 'fund' and E_NO =  #{no}")
     int getNumberOfPeople (int no);

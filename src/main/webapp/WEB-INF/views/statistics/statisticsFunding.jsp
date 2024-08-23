@@ -920,7 +920,7 @@
         </div>
         <div id="jh_slick1" class="slick22">
 
-            <div class="jh_slider">
+            <div id="jh_slider11" class="jh_slider">
 
 
 
@@ -941,6 +941,9 @@
                     <c:forEach items="${dates}" var="d">
                         <input class="jh_pay_date" type="hidden" value="${d.total_price}">
                     </c:forEach>
+                        <c:forEach items="${wishlists}" var="wishlists">
+                            <input id="jh_eno_input" type="hidden" value = "${wishlists.e_no}">
+                        </c:forEach>
 
                 </div>
 
@@ -966,7 +969,7 @@
             </div>
 
 
-            <div class="jh_slider">
+            <div id="jh_slider22" class="jh_slider">
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center; height:  8vh ;align-content: center; font-size: 20px">詳しいファンディング現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%); margin-top : 10%;align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
@@ -1034,7 +1037,7 @@
                     <img  class="jh_next_btn2" src="/resources/img/Next.png" alt="">
                 </div>
             </div>
-            <div class="jh_slider">
+            <div id="slider33" class="jh_slider">
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 20px; height: 8vh;">個別贈り物の現況 </div>
                 <div class="jh_title" style="width: 90%;  transform: translateX(6%);align-items: center; height: 19vh; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
