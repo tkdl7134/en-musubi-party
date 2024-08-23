@@ -79,10 +79,10 @@ document.getElementById('confirmDeleteBtn').onclick = function() {
             .finally(() => {
                 // 모달 닫기
                 modal.style.display = 'none';
-
+                // input 창 초기화
                 document.getElementById('deletePassword').value = '';
             });
     } else {
-        alert('비밀번호가 일치하지 않습니다.');
+        alert('パスワードが一致しません。');
     }
 }
