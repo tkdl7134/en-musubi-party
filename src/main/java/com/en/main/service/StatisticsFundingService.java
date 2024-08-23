@@ -1,9 +1,6 @@
 package com.en.main.service;
 
-import com.en.main.dto.JhFundSqlVo;
-import com.en.main.dto.PayVo;
-import com.en.main.dto.StatisticsSendVo;
-import com.en.main.dto.WishlistVO;
+import com.en.main.dto.*;
 import com.en.main.mapper.StatisticsFundingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,13 +21,18 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     }
 
     @Override
+    public List<WishlistVO> getFundWishlistData(int eno) {
+        return statisticsFundingMapper.getFundWishlistData(eno);
+    }
+
+    @Override
     public List<PayVo> getDate(int eno) {
         return statisticsFundingMapper.getDate(eno);
     }
 
     @Override
-    public int getPrices(PayVo payVo, int no) {
-        return statisticsFundingMapper.getPrices(payVo,no);
+    public int getPrices(PayVo payVo, int no, int eno) {
+        return statisticsFundingMapper.getPrices(payVo,no , eno);
     }
 
     @Override
@@ -172,6 +174,17 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
 
     return statisticsFundingMapper.getPriceOrderByRelation(eno);
 
+    }
+
+    @Override
+    public JhGuestTypeVo getGuestTypeCount(int eno) {
+        return statisticsFundingMapper.getGuestTypeCount(eno);
+
+    }
+
+    @Override
+    public JhAttendVo getAttendCount(int eno) {
+        return statisticsFundingMapper.getAttendCount(eno);
     }
 
 
