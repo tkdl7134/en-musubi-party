@@ -137,85 +137,49 @@
             <div class="main-envelope2">
                 <!-- 会員情報修正 -->
                 <div class="main-userinfo-envelope main-mypage-envelope">
-                    <div
-                            class="main-userinfo-envelope-bottom main-mypage-envelope-bottom"
-                    ></div>
-                    <div
-                            class="main-userinfo-envelope-paper main-mypage-envelope-paper"
-                    ></div>
-                    <div
-                            class="main-userinfo-envelope-text main-mypage-envelope-text"
-                    >
+                    <div class="main-userinfo-envelope-bottom main-mypage-envelope-bottom"></div>
+                    <div class="main-userinfo-envelope-paper main-mypage-envelope-paper"></div>
+                    <div class="main-userinfo-envelope-text main-mypage-envelope-text">
                         <p>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
-                            <span style="color: #3f3f3f; font-size: 18px">
-                    会員情報
-                  </span>
+                            <span style="color: #3f3f3f; font-size: 18px">会員情報</span>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
                         </p>
                     </div>
-                    <div
-                            class="main-userinfo-envelope-top main-mypage-envelope-top"
-                    ></div>
-                    <div
-                            class="main-userinfo-envelope-logo-img main-mypage-envelope-logo-img"
-                    >
+                    <div class="main-userinfo-envelope-top main-mypage-envelope-top"></div>
+                    <div class="main-userinfo-envelope-logo-img main-mypage-envelope-logo-img">
                         <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img" />
                     </div>
                 </div>
                 <!-- 招待状 管理 -->
                 <div class="main-invitationmanage-envelope main-mypage-envelope">
-                    <div
-                            class="main-invitationmanage-envelope-bottom main-mypage-envelope-bottom"
-                    ></div>
-                    <div
-                            class="main-invitationmanage-envelope-paper main-mypage-envelope-paper"
-                    ></div>
-                    <div
-                            class="main-invitationmanage-envelope-text main-mypage-envelope-text"
-                    >
+                    <div class="main-invitationmanage-envelope-bottom main-mypage-envelope-bottom"></div>
+                    <div class="main-invitationmanage-envelope-paper main-mypage-envelope-paper"></div>
+                    <div class="main-invitationmanage-envelope-text main-mypage-envelope-text">
                         <p>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
-                            <span style="color: #3f3f3f; font-size: 18px">
-                    招待状
-                  </span>
+                            <span style="color: #3f3f3f; font-size: 18px">招待状</span>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
                         </p>
                     </div>
-                    <div
-                            class="main-invitationmanage-envelope-top main-mypage-envelope-top"
-                    ></div>
-                    <div
-                            class="main-invitationmanage-envelope-logo-img main-mypage-envelope-logo-img"
-                    >
+                    <div class="main-invitationmanage-envelope-top main-mypage-envelope-top"></div>
+                    <div class="main-invitationmanage-envelope-logo-img main-mypage-envelope-logo-img">
                         <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img" />
                     </div>
                 </div>
                 <!-- 参加リスト -->
                 <div class="main-grouplist-envelope main-mypage-envelope">
-                    <div
-                            class="main-grouplist-envelope-bottom main-mypage-envelope-bottom"
-                    ></div>
-                    <div
-                            class="main-grouplist-envelope-paper main-mypage-envelope-paper"
-                    ></div>
-                    <div
-                            class="main-grouplist-envelope-text main-mypage-envelope-text"
-                    >
+                    <div class="main-grouplist-envelope-bottom main-mypage-envelope-bottom" ></div>
+                    <div class="main-grouplist-envelope-paper main-mypage-envelope-paper" ></div>
+                    <div class="main-grouplist-envelope-text main-mypage-envelope-text">
                         <p>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
-                            <span style="color: #3f3f3f; font-size: 18px">
-                    参加リスト
-                  </span>
+                            <span style="color: #3f3f3f; font-size: 18px">参加リスト</span>
                             <span style="color: #ff5a55; font-size: 16px">✿</span>
                         </p>
                     </div>
-                    <div
-                            class="main-grouplist-envelope-top main-mypage-envelope-top"
-                    ></div>
-                    <div
-                            class="main-grouplist-envelope-logo-img main-mypage-envelope-logo-img"
-                    >
+                    <div class="main-grouplist-envelope-top main-mypage-envelope-top"></div>
+                    <div class="main-grouplist-envelope-logo-img main-mypage-envelope-logo-img" >
                         <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img" />
                     </div>
                 </div>
