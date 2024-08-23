@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>招待状リスト</title>
+    <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="/resources/css/template/mytemplate.css">
     <script src="/resources/js/template/mytemplate.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +59,7 @@
                         <button type="button" onclick="location.href='/product/invitation-preview/${w.e_no}'">
                             <span>プレビュー</span>
                         </button>
-                        <button type="button" onclick="location.href='/mypage/allguest'">
+                        <button type="button" onclick="location.href='/mypage/allguest?e_no=${w.e_no}'">
                             <span>アンケート</span>
                         </button>
                         <button type="button" onclick="window.location.href='http://localhost/statistics/funding?e_no=${w.e_no}'">

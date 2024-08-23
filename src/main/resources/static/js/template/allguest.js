@@ -1,33 +1,30 @@
 $(document).ready(function () {
-    // 중첩된 탭 버튼 클릭 시 처리
+    // 로그 추가
+    console.log($('.hw_tab-content.active .hw_tab-item'));
+
+    // 탭 전환 기능
     $('.hw_sub-tabs .hw_tab-button').on('click', function () {
         var tab = $(this).data('tab');
-
-        // 현재 클릭된 탭 활성화
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
-
-        // 모든 중첩 탭 콘텐츠 숨기고, 해당하는 탭 콘텐츠만 보여줌
         $(this).closest('.hw_section').find('.hw_tab-content').removeClass('active');
         $('#' + tab).addClass('active');
     });
 
-    // 필터링 기능 구현 (현재 활성화된 섹션에서 필터 적용)
+    // 필터링 기능
     $('#filter-input').on('input', function () {
         var filterText = $(this).val().toLowerCase();
-
-        // 현재 활성화된 탭에서 필터링 적용
         $('.hw_tab-content.active .hw_tab-item').each(function () {
             var contentText = $(this).text().toLowerCase();
             if (contentText.includes(filterText)) {
-                $(this).show(); // 필터 텍스트가 포함된 콘텐츠 표시
+                $(this).show();
             } else {
-                $(this).hide(); // 포함되지 않은 콘텐츠 숨김
+                $(this).hide();
             }
         });
     });
 
-    // 드래그로 스크롤 기능 추가
+    // 드래그를 통한 스크롤 기능
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -55,12 +52,12 @@ $(document).ready(function () {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - slider.offset().left;
-        const walk = (x - startX) * 3; // 스크롤 속도 조절
+        const walk = (x - startX) * 3; // 드래그 감도 조절
         slider.scrollLeft(scrollLeft - walk);
     });
 
-    // 스크롤 이벤트로 섹션 감지 및 인디케이터 업데이트
-    slider.on('scroll', function () {
+    // 페이지 인디케이터 및 스크롤 동기화
+    slider.on('scroll', debounce(function () {
         const sections = $('.hw_section');
         const indicators = $('.indicator');
         const sliderScrollLeft = slider.scrollLeft();
@@ -80,11 +77,40 @@ $(document).ready(function () {
             }
         });
 
-        // 인디케이터 업데이트 (출석=0, 정보=1, 결석=2)
         indicators.removeClass('active');
         indicators.eq(closestSection).addClass('active');
+    }, 100)); // debounce 적용으로 성능 최적화
+
+    slider.trigger('scroll');
+
+    // 상세 정보 토글 기능
+    $('.toggle-details').on('click', function () {
+        const details = $(this).closest('.hw_tab-item').find('.guest-details');
+        if (details.is(':visible')) {
+            details.hide();
+            $(this).text('見る');
+        } else {
+            details.show();
+            $(this).text('閉じる');
+        }
     });
 
-    // 초기 인디케이터 상태 설정
-    slider.trigger('scroll');
+    // 이전 페이지로 스크롤
+    $('.prev-page').on('click', function () {
+        slider.animate({ scrollLeft: '-=' + slider.width() }, 500);
+    });
+
+    // 다음 페이지로 스크롤
+    $('.next-page').on('click', function () {
+        slider.animate({ scrollLeft: '+=' + slider.width() }, 500);
+    });
+
+    // debounce 함수 정의 (성능 최적화)
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
 });

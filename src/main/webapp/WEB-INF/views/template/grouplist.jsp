@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>会リスト</title>
+    <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/template/grouplist.css">
     <script src="${pageContext.request.contextPath}/resources/js/template/grouplist.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,8 @@
             <div class="hw_card">
         </c:if>
 
+<%--        <div id="Hw_attend_div" style="display: none"><button>aaaa</button></div>--%>
+<%--        <input id="Hw_attend_btn" type="hidden" value="${Attend}">--%>
         <div class="card-inner">
             <div class="card-front">
                 <div class="image-container">

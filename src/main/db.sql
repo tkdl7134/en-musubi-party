@@ -339,3 +339,12 @@ FROM wedding_info
          JOIN event ON event.e_no = wedding_info.e_no
          JOIN member ON event.m_id = member.m_id
 WHERE member.m_id = 'test778';
+
+
+select g_attend_afterparty from guest join member on guest.m_id = member.m_id join event on member.m_id = event.m_id and guest.e_no = event.e_no where guest.m_id = 'SendTestUser1'  and event.e_no = 5;
+select * from guest;
+SELECT g.g_attend_afterparty
+FROM guest g
+         JOIN member m ON g.m_id = m.m_id
+         JOIN event e ON g.e_no = e.e_no
+WHERE g.m_id = 'SendTestUser1' AND e.e_no = 5;

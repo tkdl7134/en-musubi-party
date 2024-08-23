@@ -24,6 +24,7 @@ public class AllGuestVO {
     private String w_img_share;
 
     private String g_attend_wedding;
+    private String g_attend_afterparty;
     private String g_guest_type;
     private String g_allergy_or;
     private String g_relation;
