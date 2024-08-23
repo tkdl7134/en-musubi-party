@@ -18,6 +18,7 @@ body {
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none
+    background-image: url("/resources/img/Paper_BG.png");
 }
 
 /*.hw_header {*/

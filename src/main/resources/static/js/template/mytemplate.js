@@ -2,28 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll(".hw_card");
     const indicators = document.querySelectorAll(".indicator");
     const container = document.querySelector(".hw_container");
+    const sharePopup = document.getElementById("share-popup");
+    const shareUrlInput = document.getElementById("share-url");
+    const copyButton = document.getElementById("copy-button");
+    const closePopup = document.getElementById("close-popup");
+
     let currentIndex = 0;
     let startX = 0;
     let isDragging = false;
 
     // 인디케이터 업데이트 함수
     function updateIndicators(index) {
-        if (index === 0) {
-            indicators[0].classList.add("active");
-            indicators[1].classList.remove("active");
-            indicators[2].classList.remove("active");
-        } else if (index === slides.length - 1) {
-            indicators[0].classList.remove("active");
-            indicators[1].classList.remove("active");
-            indicators[2].classList.add("active");
-        } else {
-            indicators[0].classList.remove("active");
-            indicators[1].classList.add("active");
-            indicators[2].classList.remove("active");
-        }
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle("active", i === index);
+        });
     }
-
-
 
     // 슬라이드 이동 함수
     function scrollToSlide(index) {
@@ -33,6 +26,49 @@ document.addEventListener("DOMContentLoaded", function () {
             updateIndicators(index);
         }
     }
+
+    // 공유 버튼 클릭 시 팝업 열기 및 색상 변경
+    const shareButtons = document.querySelectorAll(".share-button");
+    shareButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const invitationUrl = button.getAttribute("data-url");
+            shareUrlInput.value = invitationUrl;
+
+            // 이미지 컨테이너 어둡게 하기
+            const imageContainer = button.closest(".image-container");
+            imageContainer.classList.add("darken");
+
+            // 3초 후 화면 밝기 복구
+            setTimeout(() => {
+                imageContainer.classList.remove("darken");
+            }, 3000);
+
+            // 버튼 색상 토글
+            button.classList.toggle("active");
+
+            // 팝업 표시
+            sharePopup.style.display = "block";
+        });
+    });
+
+    // 팝업 닫기
+    closePopup.addEventListener("click", function () {
+        sharePopup.style.display = "none";
+    });
+
+    // URL 복사
+    copyButton.addEventListener("click", function () {
+        shareUrlInput.select();
+        document.execCommand("copy");
+        alert("URLがコピーされました!");
+    });
+
+    // 팝업 외부 클릭 시 팝업 닫기
+    window.addEventListener("click", function (event) {
+        if (event.target === sharePopup) {
+            sharePopup.style.display = "none";
+        }
+    });
 
     // 터치 이벤트 처리
     container.addEventListener("touchstart", (event) => {
