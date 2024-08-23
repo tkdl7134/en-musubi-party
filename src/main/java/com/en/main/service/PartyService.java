@@ -14,8 +14,6 @@ public class PartyService implements PartyMapper {
     @Autowired
     private PartyMapper partyMapper;
 
-    private static final int SIMILARITY_THRESHOLD = 10;
-
     @Override
     public List<PartyVO> getPartyMembers() {
         return partyMapper.getPartyMembers();
@@ -32,25 +30,14 @@ public class PartyService implements PartyMapper {
     }
 
     @Override
-    public List<PartyVO> getFinalChoice() {
-        return partyMapper.getFinalChoice();
-    }
-
-    @Override
     public int updateSelectedType(PartyVO partyVO) {
         return partyMapper.updateSelectedType(partyVO);
     }
 
-    @Override
-    public int updateFinalChoice(PartyVO partyVO) {
-        return partyMapper.updateFinalChoice(partyVO);
-    }
+    //  ------------------------------------------------Type Grouping
 
-    @Override
-    public int updateLineID(PartyVO partyVO) {
-        return partyMapper.updateLineID(partyVO);
-    }
-
+    //    type 선택하면 문자열로 저장하고 유사도 검사
+    private static final int SIMILARITY_THRESHOLD = 10;
 
     private boolean similar(String type1, String type2) {
         if (type1 == null || type2 == null) {
@@ -61,6 +48,7 @@ public class PartyService implements PartyMapper {
         int distance = levenshteinDistance.apply(type1, type2);
         return distance <= SIMILARITY_THRESHOLD;
     }
+
 
     public Map<String, List<Map<String, String>>> getSimilarSelectedTypeGroups() {
         List<PartyVO> selectedTypes = getSelectedType();
@@ -99,6 +87,18 @@ public class PartyService implements PartyMapper {
         return groupedTypes;
     }
 
+    //  ------------------------------------------------  final choice
+    // 최종선택 고르기
+    @Override
+    public int updateFinalChoice(PartyVO partyVO) {
+        return partyMapper.updateFinalChoice(partyVO);
+    }
+
+    @Override
+    public List<PartyVO> getFinalChoice() {
+        return partyMapper.getFinalChoice();
+    }
+
     public Map<String, String> getFinalSelectedChoice() {
         List<PartyVO> selectedChoices = getFinalChoice();
         Map<String, String> finalChoiceBoth = new HashMap<>();
@@ -111,8 +111,14 @@ public class PartyService implements PartyMapper {
         return finalChoiceBoth;
     }
 
+    // 내 LineID 저장
     @Override
-    public List<PartyVO>  getPartnerLineID() {
+    public int updateLineID(PartyVO partyVO) {
+        return partyMapper.updateLineID(partyVO);
+    }
+    // 상대방의 LineID 가져오기
+    @Override
+    public List<PartyVO> getPartnerLineID() {
         return partyMapper.getPartnerLineID();
     }
 }

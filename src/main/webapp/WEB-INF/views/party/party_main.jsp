@@ -84,7 +84,7 @@
                 </div>
             </div>
 
-            <!-- random -->
+            <!------------------------------------- random ------------------------------------>
             <div class="yr_party_list random">
                 <div class="yr_list_title"><span>✿</span> Step 2 <span>✿</span></div>
                 <div class="yr_list_title2">最初のラウンドでランダムに割り当てます</div>
@@ -105,7 +105,7 @@
                 </div>
             </div>
 
-            <!-- type -->
+            <!------------------------------------- type -------------------------------------->
             <div class="yr_party_list type">
                 <div class="yr_list_title"><span>✿</span> Step 3 <span>✿</span></div>
                 <div class="yr_list_title2">自分のタイプを選択してください</div>
@@ -149,7 +149,7 @@
                 </div>
             </div>
 
-            <!-- final choice -->
+            <!------------------------------- final choice ------------------------------------>
             <div class="yr_party_list choice">
                 <div class="yr_list_title"><span>✿</span> Step 4 <span>✿</span></div>
                 <div class="yr_list_title2">最終選択の時間です</div>

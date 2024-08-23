@@ -40,21 +40,6 @@ public class CommentController {
     }
 
 
-//    @RequestMapping(value = "/{c_no}", method = RequestMethod.DELETE)
-//    public ResponseEntity<?> deleteComment(@PathVariable("c_no") int commentId, @RequestBody Map<String, String> payload) {
-//        String inputPassword = payload.get("c_delete_code");
-//
-//        // 데이터베이스에서 해당 댓글을 가져옵니다.
-//        Comment comment = commentService.getCommentById(commentId);
-//
-//        // 비밀번호 검증
-//        if (comment.getDeleteCode().equals(inputPassword)) {
-//            commentService.deleteComment(commentId);
-//            return ResponseEntity.ok().build();
-//        } else {
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-//        }
-//    }
 
 
 }

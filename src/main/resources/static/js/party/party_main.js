@@ -1,18 +1,17 @@
 
+// welcome En-party Animation
 window.addEventListener('load', function () {
     const welcomeMessage = document.getElementById('welcomeMessage');
     const partyWrapper = document.getElementById('partyWrapper');
 
     setTimeout(function () {
-        // "ようこそ" 메시지를 서서히 사라지게 함
         welcomeMessage.classList.add('hidden');
 
         setTimeout(function () {
-            // "ようこそ" 메시지를 숨기고 yr_party_wrapper를 표시
+            // "ようこそ" 메시지를 숨기기
             welcomeMessage.style.display = 'none';
             partyWrapper.style.display = 'block';
 
-            // yr_party_wrapper가 서서히 나타나게 함
             setTimeout(function () {
                 partyWrapper.style.opacity = 1;
             }, 500);
@@ -21,7 +20,7 @@ window.addEventListener('load', function () {
 });
 
 
-
+// En-party main program
 document.addEventListener("DOMContentLoaded", function () {
     const partyLists = document.querySelectorAll(".yr_party_list");
     const partyWelcome = document.querySelector(".yr_party_welcome");
@@ -371,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (choiceCount > 0) {
 
                 const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value).join(",");
-                ;
+                
                 console.log(finalChoice);
                 jsonObj2.ep_finalChoice = finalChoice;
                 console.log(jsonObj2);
@@ -388,54 +387,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         console.log('Success:', data);
                         location.href = '/party/main/choice';
 
-
-                        // if(data === 1) {
-                        //     fetch('/party/main/choice', {
-                        //         method : 'put',
-                        //         headers:{
-                        //             'Content-Type' : 'application/json'
-                        //         }
-                        //     })
-                        //         .then(response => response.json())
-                        //         .then(finalChoiceData => {
-                        //
-                        //             console.log(finalChoiceData);
-                        //
-                        //             const myId = 'test1';
-                        //             const finalChoices = finalChoiceData.finalChoice;
-                        //
-                        //             // 특정 ID가 선택한 값을 가져오기
-                        //             const myFinalChoices = finalChoices[myId]; //["test2"]
-                        //
-                        //             console.log(myFinalChoices);
-                        //             console.log(finalChoices[myFinalChoices]);
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //             let matchFound = false;
-                        //
-                        //
-                        //             if (finalChoices[myId]) {
-                        //                 const selectedIds = JSON.parse(finalChoices[myId]);
-                        //                 if (selectedIds.includes(myId)) {
-                        //                     matchFound = true;
-                        //                 }
-                        //             }
-                        //
-                        //             if (matchFound) {
-                        //                 console.log("매칭 성공");
-                        //                 alert("매칭 성공!");
-                        //             } else {
-                        //                 console.log("매칭 실패");
-                        //
-                        //             }
-                        //
-                        //         })
-                        // }
                     })
                     .catch((error) => {
                         console.error('Error:', error);
