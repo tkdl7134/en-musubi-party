@@ -13,8 +13,8 @@
 .cb1 {
     height: 2rem;
     width: 2rem;
-    background-color: transparent;
-    border: 1px solid black;
+    background-color: white;
+    border: 3px solid #C8C8C8;
     border-radius: 100%;
     box-sizing: border-box;
     position: relative;
@@ -23,7 +23,7 @@
 }
 
 .cb1:hover {
-    background-color: #cecece; /* 마우스를 올렸을 때 테두리 색을 회색으로 변경 */
+    background-color: white; /* 마우스를 올렸을 때 테두리 색을 회색으로 변경 */
 }
 
 input[type="checkbox"] {
@@ -32,7 +32,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked + .cb1 {
     border-width: 8px;
-    border-color: #ed0606;
+    border-color: #FF8B8B;
     animation: pulse 0.5s ease;
 }
 
@@ -65,22 +65,23 @@ input[type="checkbox"]:checked + .cb1 {
     box-sizing: border-box;
     position: relative;
     display: inline-block;
-    border: 3px solid #ed0606;
+    border: 3px solid #C8C8C8;
+    background-color: white;
     overflow: hidden;
 }
 
 .cb2:hover {
-    background-color: #cecece; /* 마우스를 올렸을 때 테두리 색을 회색으로 변경 */
+    background-color: white; /* 마우스를 올렸을 때 테두리 색을 회색으로 변경 */
 }
 
 .cb2::before, .cb2::after {
     position: absolute;
-    width: 0.3rem;
+    width: 0.2rem;
     background-color: white;
     box-sizing: border-box;
     display: inline-block;
     transform-origin: left top;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     content: ' ';
     transition: opacity ease 0.5s;
 }
@@ -92,8 +93,8 @@ input[type="checkbox"]:checked + .cb1 {
 }
 
 .cb2::after {
-    top: 6px;
-    left: -2.5px;
+    top: 5px;
+    left: -3.7px;
     transform: rotate(-45deg);
 }
 
@@ -102,17 +103,18 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked + .cb2 {
-    border: 3px solid #ed0606;
-    background-color: #ed0606;
+    border: 3px solid #FF8B8B;
+    background-color: #FF8B8B;
 }
 
 input[type="checkbox"]:checked + .cb2::after {
-    height: 25px;
+    height: 5px;
+    width: 3px;
     animation: bottomcheck 0.2s ease 0s forwards;
 }
 
 input[type="checkbox"]:checked + .cb2::before {
-    height: 30px; /* 첫 번째 내려가는 짝대기의 길이를 35px로 설정 */
+    height: 10px; /* 첫 번째 내려가는 짝대기의 길이를 35px로 설정 */
     animation: topcheck 0.5s ease 0s forwards;
 }
 

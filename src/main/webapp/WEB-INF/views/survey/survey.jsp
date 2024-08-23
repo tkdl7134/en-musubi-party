@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/resources/css/product/product_preview.css"/>
     <link rel="stylesheet" href="/resources/css/survey/survey.css">
     <link rel="stylesheet" href="/resources/css/survey/surveyCheckbox.css">
