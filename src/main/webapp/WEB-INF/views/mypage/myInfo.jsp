@@ -3,101 +3,135 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="/resources/css/mypage/myInfo.css">
-
+    <script src="/resources/js/mypage/myInfo.js"></script>
 </head>
 <body>
-<div class="register">
-    <h2>회원 정보 확인정</h2>
-    <form action="/myInfo-update">
+<div class="myInfo-container">
 
-        <div class="mypage-profile-img">
-            <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${member.m_img}?alt=media" alt="" />
+    <%-- My Info Header --%>
+    <div class="myInfo-header">
+
+        <div class="myInfo-header-logo">
+            <img src="/resources/img/logo-img.png" alt="myInfo-header-logo">
         </div>
 
-        <div class="input-group">
-            <label for="m_id">아이디:</label>
-            <input type="text" id="m_id" name="m_id" value="${member.m_id}" required>
+        <p class="myInfo-header-title"> 会員情報 </p>
+
+    </div>
+
+    <div class="myInfo-content">
+        <div class="myInfo-blank">
+
+            <%-- プロフィール --%>
+            <div class="myInfo-profile">
+                <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${member.m_img}?alt=media"
+                     alt="myInfo-profile-img"/>
+            </div>
+
+            <%-- ID --%>
+            <div class="myInfo-info-box">
+                <div class="info-label">ID</div>
+                <div class="info-value">${member.m_id}</div>
+            </div>
+
+            <%-- お名前 --%>
+            <div class="myInfo-info-box">
+
+                <%-- 漢字 --%>
+                <div class="myInfo-info-box-name-kanji">
+                    <div class="myInfo-info-box-name">
+                        <div class="info-label">お名前</div>
+                        <div class="info-label-small">漢字</div>
+                        <div class="info-value-name-kanji">
+                            <div class="info-value">${member.m_fam_kanji}</div>
+                            <div class="info-value">${member.m_name_kanji}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <%-- フリガナ --%>
+                <div class="myInfo-info-box-name-hurigana">
+                    <div class="myInfo-info-box-name">
+                        <div class="info-label-small">フリガナ</div>
+                        <div class="info-value-name-hurigana">
+                            <div class="info-value">${member.m_fam_kana}</div>
+                            <div class="info-value">${member.m_name_kana}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <%-- ローマ字　--%>
+                <div class="myInfo-info-box-name-eng">
+                    <div class="myInfo-info-box-name">
+                        <div class="info-label-small">ローマ字</div>
+                        <div class="info-value-name-eng">
+                            <div class="info-value">${member.m_fam_eng}</div>
+                            <div class="info-value">${member.m_name_eng}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <%-- 性別 --%>
+            <div class="myInfo-info-box">
+                <div class="info-label">性別</div>
+                <div class="info-value">${member.m_gender}</div>
+            </div>
+
+            <%-- 生年月日 --%>
+            <div class="myInfo-info-box">
+                <div class="info-label">生年月日</div>
+                <div class="info-value">${member.m_birth}</div>
+            </div>
+
+            <%-- 電話番号 --%>
+            <div class="myInfo-info-box">
+                <div class="info-label">電話番号</div>
+                <div class="info-value">${member.m_phone}</div>
+            </div>
+
+            <%-- メールアドレス --%>
+            <div class="myInfo-info-box">
+                <div class="info-label">メールアドレス</div>
+                <div class="info-value">${member.m_email}</div>
+            </div>
+
+            <%-- ご住所 --%>
+            <%-- 郵便番号 --%>
+            <div class="myInfo-info-box">
+                <div class="info-label">郵便番号</div>
+                <div class="info-value">${member.m_zipcode}</div>
+            </div>
+
+            <%-- アドレス --%>
+            <div class="myInfo-info-box">
+                <div class="info-label">ご住所</div>
+                <div class="info-value">${member.m_address}</div>
+            </div>
+
+        </div>
+    </div>
+
+        <div class="myInfo-buttons">
+            <%-- ホーム --%>
+            <form action="/main" method="get">
+                <div class="myInfo-toMain">
+                    <button type="submit" id="myInfo-home-button">ホーム</button>
+                </div>
+            </form>
+
+            <%-- 情報修整 --%>
+            <form action="/myInfo-update" method="get">
+                <input type="hidden" name="m_id" value="${member.m_id}">
+                <div class="myInfo-info-update">
+                    <button type="submit" id="myInfo-info-update">情報修整</button>
+                </div>
+            </form>
         </div>
 
-        <!-- 한자 성 -->
-        <div class="input-group">
-            <label for="m_fam_kanji">한자 성:</label>
-            <input type="text" id="m_fam_kanji" name="m_fam_kanji" value="${member.m_fam_kanji}" required>
-        </div>
-
-        <!-- 한자 이름 -->
-        <div class="input-group">
-            <label for="m_name_kanji">한자 이름:</label>
-            <input type="text" id="m_name_kanji" name="m_name_kanji" value="${member.m_name_kanji}" required>
-        </div>
-
-        <!-- 카나 성 -->
-        <div class="input-group">
-            <label for="m_fam_kana">카나 성:</label>
-            <input type="text" id="m_fam_kana" name="m_fam_kana" value="${member.m_fam_kana}" required>
-        </div>
-
-        <!-- 카나 이름 -->
-        <div class="input-group">
-            <label for="m_name_kana">카나 이름:</label>
-            <input type="text" id="m_name_kana" name="m_name_kana" value="${member.m_name_kana}" required>
-        </div>
-
-        <!-- 영어 성 -->
-        <div class="input-group">
-            <label for="m_fam_eng">영어 성:</label>
-            <input type="text" id="m_fam_eng" name="m_fam_eng" value="${member.m_fam_eng}" required>
-        </div>
-
-        <!-- 영어 이름 -->
-        <div class="input-group">
-            <label for="m_name_eng">영어 이름:</label>
-            <input type="text" id="m_name_eng" name="m_name_eng" value="${member.m_name_eng}" required>
-        </div>
-
-        <!-- 생년월일 -->
-        <div class="input-group">
-            <label for="m_birth">생년월일:</label>
-            <input type="text" id="m_birth" name="m_birth" value="${member.m_birth}" required>
-        </div>
-
-        <!-- 성별 -->
-        <div class="input-group">
-            <label for="m_gender">성별:</label>
-            <input type="text" id="m_gender" name="m_gender" value="${member.m_gender}" required>
-        </div>
-
-        <!-- 이메일 -->
-        <div class="input-group">
-            <label for="m_email">이메일:</label>
-            <input type="email" id="m_email" name="m_email" value="${member.m_email}" required>
-        </div>
-
-        <!-- 전화번호 -->
-        <div class="input-group">
-            <label for="m_phone">전화번호:</label>
-            <input type="tel" id="m_phone" name="m_phone" value="${member.m_phone}" required>
-        </div>
-
-        <!-- 주소 -->
-        <div class="input-group">
-            <label for="m_address">주소:</label>
-            <input type="text" id="m_address" name="m_address" value="${member.m_address}" required>
-        </div>
-
-        <!-- 우편번호 -->
-        <div class="input-group">
-            <label for="m_zipcode">우편번호:</label>
-            <input type="text" id="m_zipcode" name="m_zipcode" value="${member.m_zipcode}" required>
-        </div>
-
-        <!-- 정보 수정 버튼 -->
-        <div class="input-group">
-            <button type="submit">정보 수정</button>
-        </div>
-    </form>
 </div>
 </body>
 </html>
