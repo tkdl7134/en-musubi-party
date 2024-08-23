@@ -518,147 +518,149 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.tk_survey-gender-accompany').forEach(handleCheckboxGroup);
 });
 
-$(document).ready(function () {
-    $(".survey-submit-button").on("click", function(event) {
-        event.preventDefault(); // 폼 제출을 기본적으로 막음
+// $(document).ready(function () {
+//     $(".survey-submit-button").on("click", function(event) {
+//         event.preventDefault(); // 폼 제출을 기본적으로 막음
+//
+//         let allValid = true;
+//
+//         // g_relation_other가 필수인 경우 검사
+//         const otherField = document.getElementById('g_relation_other');
+//         if (otherField.style.display !== 'none' && !otherField.value.trim()) {
+//             allValid = false;
+//             alert("ご関係を入力してください");
+//
+//             otherField.focus();
+//             window.scrollTo({
+//                 top: otherField.getBoundingClientRect().top + window.pageYOffset - 60,
+//                 behavior: 'smooth'
+//             });
+//
+//             return false;
+//         }
+//
+//         // 필수 입력 필드 확인
+//         const requiredFields = [
+//             // {
+//             //     selector: ".tk_survey-guestType input[name='g_guest_type']:nth-of-type(1)",
+//             //     errorMessage: "ゲスト様項目をチェックしてください"
+//             // },
+//             // {
+//             //     selector: ".tk_survey-guestType input[name='g_guest_type']:nth-of-type(2)",
+//             //     errorMessage: "ゲスト様項目をチェックしてください"
+//             // },
+//             {selector: ".tk_justName input[name='m_fam_kanji']", errorMessage: "お名前項目を入力してください"},
+//             {selector: ".tk_justName input[name='m_name_kanji']", errorMessage: "お名前項目を入力してください"},
+//             {selector: ".tk_kataName input[name='m_fam_kana']", errorMessage: "カタカナ項目を入力してください"},
+//             {selector: ".tk_kataName input[name='m_name_kana']", errorMessage: "カタカナ項目を入力してください"},
+//             {selector: ".tk_romeName input[name='m_fam_eng']", errorMessage: "ローマ字項目を入力してください"},
+//             {selector: ".tk_romeName input[name='m_name_eng']", errorMessage: "ローマ字項目を入力してください"},
+//             // {
+//             //     selector: ".tk_survey-gender input[name='m_gender']:checked",
+//             //     errorMessage: "性別項目をチェックしてください"
+//             // },
+//             {selector: ".tk_address input[name='m_zipcode']", errorMessage: "住所項目を入力してください"},
+//             {selector: ".tk_address input[name='m_address']", errorMessage: "住所項目を入力してください"},
+//             {selector: ".tk_survey-email input[name='m_email']", errorMessage: "メールアドレス項目を入力してください"},
+//             {selector: ".tk_survey-phone input[name='m_phone']", errorMessage: "電話番号項目を入力してください"},
+//             {
+//                 selector: "#wedding-selection .survey-selection-option.selected",
+//                 errorMessage: "挙式・披露宴項目を選択してください"
+//             },
+//             {
+//                 selector: "#afterparty-selection .survey-selection-option.selected",
+//                 errorMessage: "アフターパーティー 選択してください"
+//             }
+//         ];
+//         const guestTypeCheckboxes = $(".tk_survey-guestType input[name='g_guest_type']");
+//         const genderTypeCheckboxes = $(".tk_survey-gender input[name='m_gender']");
+//         let isGuestTypeChecked = guestTypeCheckboxes.is(":checked");
+//         let isGenderType = genderTypeCheckboxes.is(":checked");
+//
+//         if (!isGuestTypeChecked) {
+//             alert("ゲスト様項目をチェックしてください");
+//             focusOnField(".tk_survey-guestType input[name='g_guest_type']:first");
+//             allValid = false;
+//         }else if(!isGenderType){
+//             alert("性別項目をチェックしてください");
+//             console.log(genderTypeCheckboxes[0])
+//             console.log($(genderTypeCheckboxes).offset());
+//             focusOnField(".tk_survey-gender");
+//             allValid = false;
+//         }  else {
+//
+//
+//             for (let i = 0; i < requiredFields.length; i++) {
+//                 const field = requiredFields[i];
+//                 const element = $(field.selector).get(0);
+//
+//                 if (!element || (element.tagName === "INPUT" || element.tagName === "SELECT") && (!element.value || !element.value.trim())) {
+//                     allValid = false;
+//                     alert(field.errorMessage);
+//
+//                     focusOnField(field.selector);
+//                     break;
+//                 }
+//             }
+//         }
+//         let isValid = true;
+//         let firstInvalidInput = null;
+//
+//         // 모든 입력 필드 검사
+//         document.querySelectorAll('input').forEach(function(inputElement) {
+//             const existingError = inputElement.parentNode.querySelector('.error-message');
+//             console.log(existingError)
+//             if (existingError) {
+//                 isValid = false;
+//                 if (!firstInvalidInput) {
+//                     firstInvalidInput = existingError;
+//                 }
+//             }
+//         });
+//
+//         // 유효하지 않은 필드가 있으면 해당 필드로 스크롤 이동
+//         if (!isValid) {
+//             console.log("유효성 검사 실패 - 제출이 막힘");
+//             console.log(firstInvalidInput);
+//             focusOnField(firstInvalidInput);
+//             firstInvalidInput.focus();
+//             firstInvalidInput.scrollIntoView({ behavior: 'smooth' });
+//             return;
+//         }
+//         if (allValid) {
+//             console.log("모든 필드가 유효합니다. 폼을 제출합니다.");
+//             $("form").off("submit").submit();  // 여기서 off()로 이벤트 리스너를 제거하고 폼 제출
+//         } else {
+//             console.log("유효하지 않은 필드가 있어 폼 제출이 막혔습니다.");
+//         }
+//     });
+//
+//     function focusOnField(selector) {
+//         const element = $(selector);
+//         if (!element) {
+//             return;
+//         }
+//         console.log(element)
+//         const elementOffset = element.offset().top;
+//         console.log(elementOffset)
+//
+//         $('html, body').animate({
+//             scrollTop: elementOffset-60
+//         }, 500, function() {
+//             element.focus();
+//         });
+//     }
+//
+//     $(".survey-selection-option").on("click", function () {
+//         $(this).siblings().removeClass("selected");
+//         $(this).addClass("selected");
+//         const hiddenField = $(this).closest(".survey-selection").siblings("input[type='hidden']");
+//         hiddenField.val($(this).data("value"));
+//     });
+// });
 
-        let allValid = true;
 
-        // g_relation_other가 필수인 경우 검사
-        const otherField = document.getElementById('g_relation_other');
-        if (otherField.style.display !== 'none' && !otherField.value.trim()) {
-            allValid = false;
-            alert("ご関係を入力してください");
-
-            otherField.focus();
-            window.scrollTo({
-                top: otherField.getBoundingClientRect().top + window.pageYOffset - 60,
-                behavior: 'smooth'
-            });
-
-            return false;
-        }
-
-        // 필수 입력 필드 확인
-        const requiredFields = [
-            // {
-            //     selector: ".tk_survey-guestType input[name='g_guest_type']:nth-of-type(1)",
-            //     errorMessage: "ゲスト様項目をチェックしてください"
-            // },
-            // {
-            //     selector: ".tk_survey-guestType input[name='g_guest_type']:nth-of-type(2)",
-            //     errorMessage: "ゲスト様項目をチェックしてください"
-            // },
-            {selector: ".tk_justName input[name='m_fam_kanji']", errorMessage: "お名前項目を入力してください"},
-            {selector: ".tk_justName input[name='m_name_kanji']", errorMessage: "お名前項目を入力してください"},
-            {selector: ".tk_kataName input[name='m_fam_kana']", errorMessage: "カタカナ項目を入力してください"},
-            {selector: ".tk_kataName input[name='m_name_kana']", errorMessage: "カタカナ項目を入力してください"},
-            {selector: ".tk_romeName input[name='m_fam_eng']", errorMessage: "ローマ字項目を入力してください"},
-            {selector: ".tk_romeName input[name='m_name_eng']", errorMessage: "ローマ字項目を入力してください"},
-            // {
-            //     selector: ".tk_survey-gender input[name='m_gender']:checked",
-            //     errorMessage: "性別項目をチェックしてください"
-            // },
-            {selector: ".tk_address input[name='m_zipcode']", errorMessage: "住所項目を入力してください"},
-            {selector: ".tk_address input[name='m_address']", errorMessage: "住所項目を入力してください"},
-            {selector: ".tk_survey-email input[name='m_email']", errorMessage: "メールアドレス項目を入力してください"},
-            {selector: ".tk_survey-phone input[name='m_phone']", errorMessage: "電話番号項目を入力してください"},
-            {
-                selector: "#wedding-selection .survey-selection-option.selected",
-                errorMessage: "挙式・披露宴項目を選択してください"
-            },
-            {
-                selector: "#afterparty-selection .survey-selection-option.selected",
-                errorMessage: "アフターパーティー 選択してください"
-            }
-        ];
-        const guestTypeCheckboxes = $(".tk_survey-guestType input[name='g_guest_type']");
-        const genderTypeCheckboxes = $(".tk_survey-gender input[name='m_gender']");
-        let isGuestTypeChecked = guestTypeCheckboxes.is(":checked");
-        let isGenderType = genderTypeCheckboxes.is(":checked");
-
-        if (!isGuestTypeChecked) {
-            alert("ゲスト様項目をチェックしてください");
-            focusOnField(".tk_survey-guestType input[name='g_guest_type']:first");
-            allValid = false;
-        }else if(!isGenderType){
-            alert("性別項目をチェックしてください");
-            console.log(genderTypeCheckboxes[0])
-            console.log($(genderTypeCheckboxes).offset());
-            focusOnField(".tk_survey-gender");
-            allValid = false;
-        }  else {
-
-
-            for (let i = 0; i < requiredFields.length; i++) {
-                const field = requiredFields[i];
-                const element = $(field.selector).get(0);
-
-                if (!element || (element.tagName === "INPUT" || element.tagName === "SELECT") && (!element.value || !element.value.trim())) {
-                    allValid = false;
-                    alert(field.errorMessage);
-
-                    focusOnField(field.selector);
-                    break;
-                }
-            }
-        }
-        let isValid = true;
-        let firstInvalidInput = null;
-
-        // 모든 입력 필드 검사
-        document.querySelectorAll('input').forEach(function(inputElement) {
-            const existingError = inputElement.parentNode.querySelector('.error-message');
-            console.log(existingError)
-            if (existingError) {
-                isValid = false;
-                if (!firstInvalidInput) {
-                    firstInvalidInput = existingError;
-                }
-            }
-        });
-
-        // 유효하지 않은 필드가 있으면 해당 필드로 스크롤 이동
-        if (!isValid) {
-            console.log("유효성 검사 실패 - 제출이 막힘");
-            console.log(firstInvalidInput);
-            focusOnField(firstInvalidInput);
-            firstInvalidInput.focus();
-            firstInvalidInput.scrollIntoView({ behavior: 'smooth' });
-            return;
-        }
-        if (allValid) {
-            console.log("모든 필드가 유효합니다. 폼을 제출합니다.");
-            $("form").off("submit").submit();  // 여기서 off()로 이벤트 리스너를 제거하고 폼 제출
-        } else {
-            console.log("유효하지 않은 필드가 있어 폼 제출이 막혔습니다.");
-        }
-    });
-
-    function focusOnField(selector) {
-        const element = $(selector);
-        if (!element) {
-            return;
-        }
-        console.log(element)
-        const elementOffset = element.offset().top;
-        console.log(elementOffset)
-
-        $('html, body').animate({
-            scrollTop: elementOffset-60
-        }, 500, function() {
-            element.focus();
-        });
-    }
-
-    $(".survey-selection-option").on("click", function () {
-        $(this).siblings().removeClass("selected");
-        $(this).addClass("selected");
-        const hiddenField = $(this).closest(".survey-selection").siblings("input[type='hidden']");
-        hiddenField.val($(this).data("value"));
-    });
-});
-
+// 관계 입력에 따라 detail 관계가 변경되는 function //
 document.addEventListener('DOMContentLoaded', function() {
     updateRelationOptions(); // 초기 로드 시 실행
     document.getElementById('g_relation').addEventListener('change', updateRelationOptions); // 변경 시 실행
@@ -698,7 +700,102 @@ function updateRelationOptions() {
     }
 }
 
+// document.addEventListener('DOMContentLoaded', function () {
+//     // 허용되지 않은 문자를 입력할 수 없도록 하는 함수
+//     function preventInvalidInput(event, allowedChars, maxLength, errorMessage) {
+//         const input = event.target;
+//
+//         // 글자 수 제한 체크
+//         if (input.value.length >= maxLength) {
+//             event.preventDefault();
+//             showErrorMessage(input, `最大${maxLength}文字まで入力可能です。`);
+//             return;
+//         }
+//
+//         // 허용된 문자만 입력
+//         const inputValue = event.data || '';  // event.data가 null일 경우 빈 문자열로 대체
+//         if (inputValue && !allowedChars.test(inputValue)) {
+//             event.preventDefault();
+//             showErrorMessage(input, errorMessage);
+//         } else {
+//             clearErrorMessage(input);
+//         }
+//     }
+//     // 오류 메시지를 표시하는 함수
+//     function showErrorMessage(input, message) {
+//         const existingError = input.parentNode.querySelector('.error-message');
+//         if (existingError) {
+//             existingError.remove();
+//         }
+//
+//         const errorMessage = document.createElement('span');
+//         errorMessage.className = 'error-message';
+//         errorMessage.style.color = 'red';
+//         errorMessage.style.fontSize = '12px';
+//         errorMessage.style.display = 'block';
+//         errorMessage.style.marginTop = '5px';
+//         errorMessage.textContent = message;
+//
+//         input.parentNode.appendChild(errorMessage);
+//     }
+//
+//     // 오류 메시지를 제거하는 함수
+//     function clearErrorMessage(input) {
+//         const existingError = input.parentNode.querySelector('.error-message');
+//         if (existingError) {
+//             existingError.remove();
+//         }
+//     }
+//
+//     // 각 입력 필드에 이벤트 리스너 추가
+//     const kanjiInputs = [
+//         document.getElementById('kana-fam'),
+//         document.getElementById('kana-name')
+//     ];
+//
+//     kanjiInputs.forEach(function (inputElement) {
+//         if (inputElement) {
+//             inputElement.addEventListener('beforeinput', function (event) {
+//                 preventInvalidInput(event, /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, 50);
+//             });
+//         }
+//     });
+//
+//     const fields = [
+//         { id: 'g_relation_other', regex: /./, maxLength: 30},
+//         { id: 'eng-fam', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
+//         { id: 'eng-name', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
+//         { id: 'email', regex: /[a-zA-Z0-9@.]/, maxLength: 50, errorMessage: "メールアドレス形式で入力してください。" },
+//         { id: 'phoneNum', regex: /[0-9\-]/, maxLength: 20, errorMessage: "数字のみ入力可能です。" },
+//         { id: 'zipcode', regex: /[0-9\-]/, maxLength: 10, errorMessage: "郵便番号形式で入力してください。" },
+//         { id: 'address', regex: /./, maxLength: 100},
+//         { id: 'otherAllergy', regex: /./, maxLength: 100},
+//         { id: 'allergyDetail', regex: /./, maxLength: 100},
+//         { id: 'messageContent', regex: /./, maxLength: 300},
+//         { id: 'kana-fam', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" },
+//         { id: 'kana-name', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" }
+//     ];
+//
+//     fields.forEach(function (field) {
+//         const inputElement = document.getElementById(field.id);
+//         if (inputElement) {
+//             inputElement.addEventListener('beforeinput', function (event) {
+//                 preventInvalidInput(event, field.regex, field.maxLength, field.errorMessage);
+//             });
+//         }
+//     });
+
+    // // 폼 제출 이벤트 리스너 추가
+    // const form = document.querySelector('form');
+    // form.addEventListener('submit', validateForm);
+// });
+
+// .survey-submit-button -> 위시리스트 페이지로
+
+
+// 해당 조건에 반하는 항목을 입력했을 경우 error 및 scroll 모션 function
 document.addEventListener('DOMContentLoaded', function () {
+
     // 허용되지 않은 문자를 입력할 수 없도록 하는 함수
     function preventInvalidInput(event, allowedChars, maxLength, errorMessage) {
         const input = event.target;
@@ -706,89 +803,134 @@ document.addEventListener('DOMContentLoaded', function () {
         // 글자 수 제한 체크
         if (input.value.length >= maxLength) {
             event.preventDefault();
-            showErrorMessage(input, `最大${maxLength}文字まで入力可能です。`);
-            return;
+            alert(`最大${maxLength}文字まで入力可能です。`);
+            focusOnField(input);
+            return false;
         }
 
         // 허용된 문자만 입력
         const inputValue = event.data || '';  // event.data가 null일 경우 빈 문자열로 대체
         if (inputValue && !allowedChars.test(inputValue)) {
             event.preventDefault();
-            showErrorMessage(input, errorMessage);
-        } else {
-            clearErrorMessage(input);
-        }
-    }
-    // 오류 메시지를 표시하는 함수
-    function showErrorMessage(input, message) {
-        const existingError = input.parentNode.querySelector('.error-message');
-        if (existingError) {
-            existingError.remove();
+            alert(errorMessage);
+            focusOnField(input);
+            return false;
         }
 
-        const errorMessage = document.createElement('span');
-        errorMessage.className = 'error-message';
-        errorMessage.style.color = 'red';
-        errorMessage.style.fontSize = '12px';
-        errorMessage.style.display = 'block';
-        errorMessage.style.marginTop = '5px';
-        errorMessage.textContent = message;
-
-        input.parentNode.appendChild(errorMessage);
+        return true;
     }
 
-    // 오류 메시지를 제거하는 함수
-    function clearErrorMessage(input) {
-        const existingError = input.parentNode.querySelector('.error-message');
-        if (existingError) {
-            existingError.remove();
+    // 해당 요소로 스크롤 이동 함수
+    function focusOnField(element) {
+        const elementOffset = $(element).offset().top;
+        $('html, body').animate({
+            scrollTop: elementOffset - 60
+        }, 500, function () {
+            $(element).focus();
+        });
+    }
+
+    // 유효성 검사를 수행하는 함수
+    function validateAndScroll() {
+        let allValid = true;
+
+        const fields = [
+            { id: 'g_relation_other', regex: /./, maxLength: 30, errorMessage: "ご関係を入力してください" },
+            { id: 'eng-fam', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
+            { id: 'eng-name', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
+            { id: 'email', regex: /[a-zA-Z0-9@.]/, maxLength: 50, errorMessage: "メールアドレス形式で入力してください。" },
+            { id: 'phoneNum', regex: /[0-9\-]/, maxLength: 20, errorMessage: "数字のみ入力可能です。" },
+            { id: 'zipcode', regex: /[0-9\-]/, maxLength: 10, errorMessage: "郵便番号形式で入力してください。" },
+            { id: 'address', regex: /./, maxLength: 100, errorMessage: "住所項目を入力してください" },
+            { id: 'otherAllergy', regex: /./, maxLength: 100, errorMessage: "" },
+            { id: 'allergyDetail', regex: /./, maxLength: 100, errorMessage: "" },
+            { id: 'messageContent', regex: /./, maxLength: 300, errorMessage: "" },
+            { id: 'kana-fam', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" },
+            { id: 'kana-name', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" },
+            { id: 'm_fam_kanji', regex: /./, maxLength: 50, errorMessage: "お名前項目を入力してください" },
+            { id: 'm_name_kanji', regex: /./, maxLength: 50, errorMessage: "お名前項目を入力してください" },
+            {
+                selector: "#wedding-selection .survey-selection-option.selected",
+                errorMessage: "挙式・披露宴項目を選択してください"
+            },
+            {
+                selector: "#afterparty-selection .survey-selection-option.selected",
+                errorMessage: "アフターパーティー 選択してください"
+            }
+        ];
+
+        // 필드별로 유효성 검사 수행
+        for (let i = 0; i < fields.length; i++) {
+            const field = fields[i];
+            const inputElement = field.id ? document.getElementById(field.id) : $(field.selector).get(0);
+
+            if (inputElement) {
+                // 입력 필드의 제한 사항을 검사
+                if (field.regex && !preventInvalidInput({ target: inputElement }, field.regex, field.maxLength, field.errorMessage)) {
+                    allValid = false;
+                    return false;
+                }
+
+                // 필수 입력 필드가 비어 있는지 검사
+                if (!inputElement.value.trim()) {
+                    alert(field.errorMessage);
+                    focusOnField(inputElement);
+                    allValid = false;
+                    return false;
+                }
+            }
         }
+
+        // g_relation_other가 필수인 경우 검사
+        const otherField = document.getElementById('g_relation_other');
+        if (otherField.style.display !== 'none' && !otherField.value.trim()) {
+            alert("ご関係を入力してください");
+            focusOnField(otherField);
+            allValid = false;
+            return false;
+        }
+
+        const guestTypeCheckboxes = $(".tk_survey-guestType input[name='g_guest_type']");
+        const genderTypeCheckboxes = $(".tk_survey-gender input[name='m_gender']");
+        let isGuestTypeChecked = guestTypeCheckboxes.is(":checked");
+        let isGenderTypeChecked = genderTypeCheckboxes.is(":checked");
+
+        if (!isGuestTypeChecked) {
+            alert("ゲスト様項目をチェックしてください");
+            focusOnField(guestTypeCheckboxes.first());
+            allValid = false;
+            return false;
+        } else if (!isGenderTypeChecked) {
+            alert("性別項目をチェックしてください");
+            focusOnField(genderTypeCheckboxes.first());
+            allValid = false;
+            return false;
+        }
+
+        return allValid;
     }
 
-    // 각 입력 필드에 이벤트 리스너 추가
-    const kanjiInputs = [
-        document.getElementById('kana-fam'),
-        document.getElementById('kana-name')
-    ];
+    // 폼 제출 시 유효성 검사
+    $(".survey-submit-button").on("click", function (event) {
+        event.preventDefault(); // 폼 제출을 기본적으로 막음
 
-    kanjiInputs.forEach(function (inputElement) {
-        if (inputElement) {
-            inputElement.addEventListener('beforeinput', function (event) {
-                preventInvalidInput(event, /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, 50);
-            });
+        if (validateAndScroll()) {
+            $("form").off("submit").submit();  // 유효성 검사를 통과하면 폼 제출
         }
     });
 
-    const fields = [
-        { id: 'g_relation_other', regex: /./, maxLength: 30},
-        { id: 'eng-fam', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
-        { id: 'eng-name', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
-        { id: 'email', regex: /[a-zA-Z0-9@.]/, maxLength: 50, errorMessage: "メールアドレス形式で入力してください。" },
-        { id: 'phoneNum', regex: /[0-9\-]/, maxLength: 20, errorMessage: "数字のみ入力可能です。" },
-        { id: 'zipcode', regex: /[0-9\-]/, maxLength: 10, errorMessage: "郵便番号形式で入力してください。" },
-        { id: 'address', regex: /./, maxLength: 100},
-        { id: 'otherAllergy', regex: /./, maxLength: 100},
-        { id: 'allergyDetail', regex: /./, maxLength: 100},
-        { id: 'messageContent', regex: /./, maxLength: 300},
-        { id: 'kana-fam', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" },
-        { id: 'kana-name', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" }
-    ];
-
-    fields.forEach(function (field) {
-        const inputElement = document.getElementById(field.id);
-        if (inputElement) {
-            inputElement.addEventListener('beforeinput', function (event) {
-                preventInvalidInput(event, field.regex, field.maxLength, field.errorMessage);
-            });
-        }
+    // 선택된 옵션을 시각화
+    $(".survey-selection-option").on("click", function () {
+        $(this).siblings().removeClass("selected");
+        $(this).addClass("selected");
+        const hiddenField = $(this).closest(".survey-selection").siblings("input[type='hidden']");
+        hiddenField.val($(this).data("value"));
     });
 
-    // // 폼 제출 이벤트 리스너 추가
-    // const form = document.querySelector('form');
-    // form.addEventListener('submit', validateForm);
 });
 
-// .survey-submit-button -> 위시리스트 페이지로
+
+// 편지 이미지 버튼 애니메이션 및 form 태그 버튼 기능 추가 //
 document.addEventListener("DOMContentLoaded", function () {
 
     const enMusubiEnvelope = document.querySelector(".survey-submit-button");
@@ -814,3 +956,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
