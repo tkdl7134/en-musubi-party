@@ -6,12 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let startX = 0;
     let isDragging = false;
 
-    let attendVal = document.getElementById("Hw_attend_btn").value;
+    const attendVal = document.getElementById("Hw_attend_btn")?.value;
 
-    if (attendVal === 'ご出席'){
-        document.getElementById("Hw_attend_div").style.cssText = 'display : block;'
+    if (attendVal === 'ご出席') {
+        document.getElementById("Hw_attend_div").style.display = 'block';
     }
-
 
     if (!cards.length || !container) {
         console.warn("Required elements are not found in the DOM.");
