@@ -353,9 +353,14 @@ select * from pay;
 select * from wishlist;
 select * from member;
 
-<<<<<<< HEAD
 select * from guest;
 
-select * from
-=======
->>>>>>> cfb761f151dbf32b8f99f3cf75b3e31635f82ea8
+select * from companion;
+
+insert into COMPANION
+values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', 'YES');
+
+insert into COMPANION
+values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', 'YES');
+
+SELECT COUNT(*) FROM COMPANION where P_ACCOMPANY_TYPE = 'BABY';
