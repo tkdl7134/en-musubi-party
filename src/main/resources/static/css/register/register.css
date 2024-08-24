@@ -12,9 +12,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('/resources/img/paperBG.png');
-    background-size: auto;
-    background-repeat: repeat;
+    /*background-image: url('/resources/img/paperBG.png');*/
+    /*background-size: auto;*/
+    /*background-repeat: repeat;*/
 }
 
 /* Register Header */
@@ -174,12 +174,19 @@ button:disabled {
     margin-right: 7%;
     margin-bottom: 2.5%;
     border: 3px solid #ff5155;
+    outline: 1px solid #ffc700;
     border-radius: 26px;
     background-color: white;
     font-size: 14px;
     font-weight: bold;
-    color: #555555;
+    color: #3f3f3f;
     transition: background-color 0.5s ease, color 0.5s ease; /* 배경색과 텍스트 색상의 변화를 부드럽게 설정 */
+}
+
+#register-submitButton:hover {
+    background-color: #ffeeee;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px #EC0000;
 }
 
 /* 검증 메시지 스타일 */

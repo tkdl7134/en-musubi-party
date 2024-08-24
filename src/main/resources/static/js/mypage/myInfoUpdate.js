@@ -33,14 +33,14 @@ document
         handleFileInputChange(event, "myInfoUpdate-profile");
     });
 
-// function toggleDeleteButton() {
-//     var deleteButtonContainer = document.getElementById('myInfo-account-delete');
-//     if (deleteButtonContainer.style.display === 'none' || deleteButtonContainer.style.display === '') {
-//         deleteButtonContainer.style.display = 'block';
-//     } else {
-//         deleteButtonContainer.style.display = 'none';
-//     }
-// }
+function toggleDeleteButton() {
+    var deleteButtonContainer = document.getElementById('myInfo-account-delete');
+    if (deleteButtonContainer.style.display === 'none' || deleteButtonContainer.style.display === '') {
+        deleteButtonContainer.style.display = 'block';
+    } else {
+        deleteButtonContainer.style.display = 'none';
+    }
+}
 
 function deleteCheck(ID) {
 

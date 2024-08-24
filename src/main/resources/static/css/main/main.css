@@ -98,7 +98,7 @@
     border-radius: 5px;
     border: 1px solid #FFC700;
     background-color: #FF5A55;
-    box-shadow: 0 0 3px #3f3f3f;
+    box-shadow: 0 0 3px #EC0000;
     padding: 5px 10px;
     font-size: 18px;
     color: #fff4f4;
@@ -106,6 +106,10 @@
     text-decoration: none;
     margin-bottom: 0.3rem;
     transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    cursor: pointer;
 }
 
 .button:active {
@@ -139,6 +143,10 @@
     position: relative;
     top: 35%;
     z-index: 1;
+}
+
+.main-enMusubi-envelope:hover {
+    cursor: pointer;
 }
 
 .main-enMusubi-envelope-bottom {
@@ -641,7 +649,10 @@
 }
 
 @media (min-width: 768px) {
-
+    .main-container {
+        width: 30vw;
+        margin: auto;
+    }
     /*아래 뾰롱 추가*/
     #actionSheet {
         width: 30vw;
