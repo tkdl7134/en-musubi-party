@@ -8,17 +8,17 @@
     <title>Title</title>
 </head>
 <body>
-<div class="je_menu-header">
-    <div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+<div class="tk_menu-header">
+    <div class="tk_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
     <div>縁結び</div>
-    <div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
+    <div class="tk_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
 <div class="tk_wishlist-body">
     <div class="tk_wishlist-container">
         <div class="tk_wishlist-text-container">
-            <div style="margin-bottom: 3rem; margin-left: 1rem">“どうやって祝ってあげたいですか”</div>
-            <div style="margin-left: 3rem;">ご返信いただきありがとうございます。</div>
-            <div style="margin-left: 3rem;">以下の方法で新郎新婦へのお祝いをお選びいただけます</div>
+            <div style="margin-bottom: 1rem; margin-left: 1rem">“どうやって祝ってあげたいですか”</div>
+            <div style="margin-left: 0.5rem;">ご返信いただきありがとうございます。</div>
+            <div style="margin-left: 0.5rem;">以下の方法で新郎新婦へのお祝いをお選びいただけます</div>
         </div>
         <div class="tk_wishlist-btn-container">
             <div class="tk_wishlist-btn-box">
@@ -56,9 +56,6 @@
             </div>
         </div>
     </div>
-</div>
-<div class="tk_bottom-bar">
-
 </div>
 </body>
 </html>
