@@ -9,6 +9,8 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/resources/js/wishlist/tk_swiper-slide-center.js"></script>
 <script src="/resources/js/wishlist/send.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <input id="e_no" type="hidden" value="${sessionScope.e_no}">
 <input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
 <div class="je_menu-bar">
