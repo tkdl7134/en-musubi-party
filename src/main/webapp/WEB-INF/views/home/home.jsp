@@ -3,7 +3,7 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title> ✿ ~ 縁結び ~ ✿ </title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/resources/css/home/home.css">
     <script src="/resources/js/home/home.js"></script>

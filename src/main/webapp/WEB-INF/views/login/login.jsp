@@ -5,20 +5,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <%--    <title> ✿ ~ 縁結び ~ ✿ </title>--%>
     <link rel="stylesheet" href="/resources/css/login/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-    <%-- FontAwesome CSS 파일 포함시키기 --%>
+    <%-- FontAwesome CSS --%>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="/resources/js/login/login.js"></script>
 </head>
 <body>
 <div class="login-container">
+
+        <div class="login-deco-img">
+            <img src="/resources/img/logo-img.png" alt="login-deco-img">
+        </div>
+
     <div class="login-box">
 
-        <p>縁結び</p>
+<%--        <p>縁結び</p>--%>
 
         <form action="/login" method="post">
-            
+
             <div class="form-group">
                 <label for="m_id" class="fixed-label">縁結び ID</label>
                 <input type="text" id="m_id" name="m_id" placeholder="ID入力" required>

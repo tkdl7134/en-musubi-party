@@ -17,6 +17,23 @@
     /*padding: 30px;*/
 }
 
+.login-deco-img {
+    position: absolute;
+    top: 5rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    /*margin-bottom: 10rem;*/
+}
+
+.login-deco-img img {
+    width: 35%;
+}
+
+.login-box {
+    margin-top: 3rem;
+}
+
 .login-container p {
     font-size: 1.5em;
     text-align: center;
