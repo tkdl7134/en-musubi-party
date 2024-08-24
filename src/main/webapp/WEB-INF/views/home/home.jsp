@@ -3,7 +3,7 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title> ✿ ~ 縁結び ~ ✿ </title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/resources/css/home/home.css">
     <script src="/resources/js/home/home.js"></script>
@@ -16,8 +16,14 @@
     <div class="home-left-cover"></div>
     <div class="home-right-cover"></div>
     <div class="home-vertical-text">
-        <p class="home-vertical-text1"> ✿ ようこそ </p>
-        <p class="home-vertical-text2"> 縁結びへ ✿ </p>
+        <p class="home-vertical-text1">
+            <span style="color: #db2227">✿</span>
+            <span style="color: #3f3f3f"> ようこそ </span>
+        </p>
+        <p class="home-vertical-text2">
+            <span style="color: #3f3f3f">縁結びへ </span>
+            <span style="color: #db2227">✿</span>
+        </p>
     </div>
     <div class="home-logo-img">
         <img src="/resources/img/logo-img.png" alt="home-logo-img">
