@@ -94,7 +94,7 @@ $(function () {
         if (this.checked) {
             $("#" + allergyDetailContainer).html(
                 `<input type="text" id="allergyDetail" data-refid="${this.id}" class="allergyDetail" name="allergy"
-                'placeholder="アレルギー詳細を入力してください " autocomplete="off" >`
+                placeholder="押してください" autocomplete="off" >`
             );
         } else {
             $("#" + allergyDetailContainer).html("");
@@ -294,45 +294,49 @@ $(document).ready(function () {
 
             `<div class= "party-member" id="party-member-${partyCount}">
               <input type="hidden" name="companions[${partyCount}].p_accompany_num" value="${partyCount}" />
-                <div class="tk_survey-relationship">
-                      <div class="tk_survey-titleName">ご関係</div>
-                      <div>
-                         <select name="companions[${partyCount}].p_relation">
-                            <option value="家族">家族</option>
-                            <option value="親友">親友</option>
-                            <option value="職場同僚">職場同僚</option>
-                             <option value="その他">その他</option>
-                         </select>
-                      </div>
-                </div>
-                <div class="tk_justName">
-                     <div class="tk_survey-titleName-container">
-                          <div class="tk_survey-accompany-titleName">お名前</div>
-                          <div class="tk_survey-accompany-essential">必須</div>
+                <div class="tk_companions-justName">
+                     <div class="tk_survey-companions-titleName-container">
+                          <div class="tk_survey-accompany-titleName">お連れ様のお名前</div>
                      </div>
-                     <input type="text" name="companions[${partyCount}].p_fam_kanji" />  <!-- 이름 필드들 -->
-                     <input type="text" name="companions[${partyCount}].p_name_kanji" />
+                     <div class="tk_survey-companions-input-container">
+                        <input type="text" name="companions[${partyCount}].p_fam_kanji" />  <!-- 이름 필드들 -->
+                        <input type="text" name="companions[${partyCount}].p_name_kanji" />
+                     </div>
                 </div>
-                <div class="tk_kataName">
-                    <div class="tk_survey-titleName-container">
+                <div class="tk_companions-kataName">
+                    <div class="tk_survey-companions-titleName-container">
                         <div class="tk_survey-accompany-titleName">カタカナ</div>
-                        <div class="tk_survey-accompany-essential">必須</div>
                     </div>
-                     <input type="text" name="companions[${partyCount}].p_fam_kana" />
-                     <input type="text" name="companions[${partyCount}].p_name_kana" />
+                    <div class="tk_survey-companions-input-container">
+                        <input type="text" name="companions[${partyCount}].p_fam_kana" />
+                        <input type="text" name="companions[${partyCount}].p_name_kana" />
+                    </div>
                 </div>
-                <div class="tk_romeName">
-                    <div class="tk_survey-titleName-container">
+                <div class="tk_companions-romeName">
+                    <div class="tk_survey-companions-titleName-container">
                         <div class="tk_survey-accompany-titleName">ローマ字</div>
-                        <div class="tk_survey-accompany-essential">必須</div>
                     </div>
-                     <input type="text" name="companions[${partyCount}].p_fam_eng" />
-                     <input type="text" name="companions[${partyCount}].p_name_eng" />
+                    <div class="tk_survey-companions-input-container">
+                        <input type="text" name="companions[${partyCount}].p_fam_eng" />
+                        <input type="text" name="companions[${partyCount}].p_name_eng" />
+                    </div>
                 </div> 
+                <div class="tk_survey-gender-accompany">
+                    <div class="tk_survey-companions-titleName-container">
+                        <div class="tk_survey-accompany-titleName-2">性別</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.7rem;font-size: 1.2rem;">
+                        <input type="checkbox" id="maleGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="男性"/>
+                        <label class="cb1" for="maleGender-accompany${partyCount}"></label>
+                        <label for="maleGender-accompany${partyCount}">男性</label>
+                        <input type="checkbox" id="femaleGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="女性"/>
+                        <label class="cb1" for="femaleGender-accompany${partyCount}"></label>
+                        <label for="femaleGender-accompany${partyCount}">女性</label>
+                    </div>
+                </div>
                 <div class="tk_survey-accompany">
-                    <div class="tk_survey-titleName-container">
-                        <div class="tk_survey-accompany-titleName">お連れ様について</div>
-                        <div class="tk_survey-accompany-essential">必須</div>
+                    <div class="tk_survey-companions-titleName-container">
+                        <div class="tk_survey-accompany-titleName-2">お連れ様について</div>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.7rem;font-size: 1.2rem;">
                         <input type="checkbox" id="adultAccompany${partyCount}" name="companions[${partyCount}].p_accompany_type" value="ご成年"/>
@@ -346,33 +350,16 @@ $(document).ready(function () {
                         <label for="babyAccompany${partyCount}">幼子</label>
                     </div>
                 </div>
-                <div class="tk_survey-gender-accompany">
-                    <div class="tk_survey-titleName-container">
-                        <div class="tk_survey-accompany-titleName">性別</div>
-                        <div class="tk_survey-accompany-essential">必須</div>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.7rem;font-size: 1.2rem;">
-                        <input type="checkbox" id="maleGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="男性"/>
-                        <label class="cb1" for="maleGender-accompany${partyCount}"></label>
-                        <label for="maleGender-accompany${partyCount}">男性</label>
-                        <input type="checkbox" id="femaleGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="女性"/>
-                        <label class="cb1" for="femaleGender-accompany${partyCount}"></label>
-                        <label for="femaleGender-accompany${partyCount}">女性</label>
-                        <input type="checkbox" id="othersGender-accompany${partyCount}" name="companions[${partyCount}].p_gender" value="その他"/>
-                        <label class="cb1" for="othersGender-accompany${partyCount}"></label>
-                        <label for="othersGender-accompany${partyCount}">その他</label>
-                    </div>
-                </div>
                 <div class="tk_allergy">
-                    <div class="tk_survey-accompany-titleName">アレルギー</div>
+                    <div class="tk_survey-accompany-titleName-2">アレルギー</div>
                     <div class="tk_survey-allergy-checkbox">
                         <input type="checkbox" id="allergyHave-${partyCount}" data-conid="allergyDetailContainer${partyCount}" data-type="type" data-index="${partyCount}" class="allergyHave" name="companions[${partyCount}].p_allergy_or" value="Yes"/>
                         <label class="cb2" for="allergyHave-${partyCount}"></label>
                         <span>アレルギー情報を入力する</span>
                     </div>
-                   <div class="tk_survey-allergy-detail"  id="allergyDetailContainer${partyCount}" >`;
+                   <div class="tk_survey-allergy-detail2"  id="allergyDetailContainer${partyCount}" >`;
         partyDiv += "</div>";
-        partyDiv += partyCount > 0 ? '<button class="remove-party-member" data-id="' + partyCount + '">削除する</button>' : '';
+        partyDiv += partyCount > 0 ? '<button class="remove-party-member" data-id="' + partyCount + '">削除</button>' : '';
         $("#partyContainer").append(partyDiv);
         partyCount++;
         // Apply the checkbox group handler to the newly added divs
@@ -396,6 +383,12 @@ $(function () {
     const imgDeleteButton = document.getElementById("imgDeleteButton");
     let selectedImgSrc = '';
 
+    // 초기 이미지가 설정되어 있는 경우 src 값을 selectedImgSrc 에 저장
+    const initialImgElement  = document.querySelector('.tk_messageImg img');
+    if (initialImgElement ) {
+        selectedImgSrc = initialImgElement .src;
+    }
+
     openImgModalButton.addEventListener("click", () => {
         defaultImgModal.showModal();
     });
@@ -418,7 +411,7 @@ $(function () {
 
     confirmImgButton.addEventListener("click", () => {
         if (selectedImgSrc) {
-            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%;">
+            document.querySelector('.tk_messageImg').innerHTML = `<img src="${selectedImgSrc}" alt="Selected Image" style="width: 100%; height: 100%; border-radius: 30px;"">
                                                                            <input type="hidden" name="me_img" id="meImgInput" value="${selectedImgSrc}">`;
             alert("アップロード完了!");
             defaultImgModal.close();
@@ -793,4 +786,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // // 폼 제출 이벤트 리스너 추가
     // const form = document.querySelector('form');
     // form.addEventListener('submit', validateForm);
+});
+
+// .survey-submit-button -> 위시리스트 페이지로
+document.addEventListener("DOMContentLoaded", function () {
+
+    const enMusubiEnvelope = document.querySelector(".survey-submit-button");
+    const enMusubiEnvelopeTop = document.querySelector(".main-enParty-envelope-top");
+    const enMusubiEnvelopePaper = document.querySelector(".main-enParty-envelope-paper");
+    const enMusubiEnvelopeText = document.querySelector(".main-enMusubi-envelope-text");
+    const surveyForm = document.getElementById("surveyForm");
+
+
+    enMusubiEnvelope.addEventListener("click", function () {
+        enMusubiEnvelopeTop.classList.add("change-color");
+        enMusubiEnvelopePaper.classList.add("move-up");
+        enMusubiEnvelopeText.classList.add("enlarge");
+        setTimeout(function () {
+            surveyForm.submit();
+        }, 1000);
+    });
+
+    enMusubiEnvelopePaper.addEventListener("transitionend", function () {
+        enMusubiEnvelopeTop.classList.remove("change-color");
+        enMusubiEnvelopePaper.classList.remove("move-up");
+        enMusubiEnvelopeText.classList.remove("enlarge");
+    });
+
 });

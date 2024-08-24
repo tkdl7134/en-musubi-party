@@ -353,3 +353,9 @@ select * from pay;
 select * from wishlist;
 select * from member;
 
+<<<<<<< HEAD
+select * from guest;
+
+select * from
+=======
+>>>>>>> cfb761f151dbf32b8f99f3cf75b3e31635f82ea8
