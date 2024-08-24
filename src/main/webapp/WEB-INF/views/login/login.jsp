@@ -4,8 +4,7 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <%--    <title> ✿ ~ 縁結び ~ ✿ </title>--%>
+    <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="/resources/css/login/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <%-- FontAwesome CSS --%>
@@ -15,13 +14,11 @@
 <body>
 <div class="login-container">
 
-        <div class="login-deco-img">
-            <img src="/resources/img/logo-img.png" alt="login-deco-img">
-        </div>
+    <div class="login-deco-img">
+        <img src="/resources/img/logo-img.png" alt="login-deco-img">
+    </div>
 
     <div class="login-box">
-
-<%--        <p>縁結び</p>--%>
 
         <form action="/login" method="post">
 
@@ -44,11 +41,13 @@
                 </c:if>
             </div>
 
-            <c:if test="${not empty error}">
-                <p class="error">${error}</p>
-            </c:if>
-
             <button type="submit" class="login-btn">ログイン</button>
+
+            <div class="login-error">
+                <c:if test="${not empty error}">
+                    <p class="error">${error}</p>
+                </c:if>
+            </div>
 
         </form>
     </div>
