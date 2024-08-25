@@ -91,6 +91,7 @@
     color: #3F3F3F;
     line-height: 1.5;
     text-align: center;
+    margin-top: -5px;
 }
 
 .button {
@@ -110,6 +111,7 @@
 
 .button:hover {
     cursor: pointer;
+    background-color: #ff3f3a;
 }
 
 .button:active {
@@ -364,6 +366,9 @@
     align-items: center;
     width: 10rem;
     font-size: 20px;
+    position: absolute;
+    margin-right: 90px;
+    margin-top: 20px;
 }
 
 .main-account-img {
@@ -388,26 +393,50 @@
     z-index: 10;
 }
 
+.main-account-logout {
+    display: flex;
+    margin-top: -60px;
+    margin-right: 250px;
+}
+
+.main-account-logout img {
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+}
+
 .main-logout {
-    width: 7rem;
+    width: 4rem;
     padding: 0.5rem;
-    border-radius: 10px;
-    box-shadow: 0 0 3px #3f3f3f;
-    font-size: 14px;
-    color: #3f3f3f;
+    font-size: 12px;
+    font-weight: bold;
+    color: #999999;
+}
+
+.main-logout:hover {
+    cursor: pointer;
+    color: #666666;
 }
 
 .main-account-mypage {
-    width: 7rem;
-    margin-right: 2rem;
-    padding: 0.5rem;
-    background-color: #ff5a55;
-    border-radius: 10px;
-    box-shadow: 0 0 3px #3f3f3f;
+    width: 6rem;
+    height: 1rem;
+    padding: 5px 10px 11px 10px;
+    background-color: #ff655f;
     color: #ffffff;
     font-size: 14px;
+    border-radius: 10px;
+    outline: 1px solid #ffc700;
+    box-shadow: 0 0 2px #ec0000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 
+.main-account-mypage:hover {
+    background-color: #ff5155;
+}
 
 /* Popup */
 #actionSheet {
@@ -421,14 +450,12 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     transition: 1s;
-    /* 서서히 나타나는 효과 */
     visibility: hidden;
     opacity: 0;
     z-index: 10;
 }
 
 #actionSheet.active {
-    /* 서서히 나타나는 효과 */
     visibility: visible;
     opacity: 1;
 }
@@ -440,14 +467,12 @@
     background-size: cover;
     overflow: hidden;
     height: 32rem;
-    /* 아래에서 위로 나타나는 효과, max-height과 동일하게 작성 */
     position: relative;
     bottom: -300px;
     transition: 1s;
 }
 
 #actionSheet.active .action-options {
-    /* 아래에서 위로 나타나는 효과, max-height과 동일하게 작성 */
     bottom: 0;
 }
 
@@ -537,6 +562,7 @@
 .main-popup-button:hover {
     cursor: pointer;
     background-color: #FFD1D0;
+    color: #333333;
 }
 
 /* Mypage */
