@@ -34,10 +34,18 @@ public class PartyController {
 //        return "/party/party_chat";
 //    }
 
-    @GetMapping("/info")
-    public String partyInfo(Model model) {
+    @GetMapping("")
+    public String partyList(Model model) {
+        List<PartyVO> getPartyList =  partyService.getPartyList();
+        model.addAttribute("partyList", getPartyList);
 
-        List<PartyVO> partyMembers = partyService.getPartyMembers();
+        return "/party/party_list";
+    }
+
+    @GetMapping("/info/{e_no}")
+    public String partyInfo(@PathVariable int e_no, Model model) {
+        System.out.println(e_no);
+        List<PartyVO> partyMembers = partyService.getPartyMembers(e_no);
 
         // groom guest & woman guest percent graph
         long groomGuestCount = partyMembers.stream().filter(member -> "新郎ゲスト".equals(member.getG_guest_type())).count();
@@ -98,11 +106,11 @@ public class PartyController {
         return "/party/party_info";
     }
 
-    @GetMapping("/main")
-    public String partyMain(Model model) {
-        System.out.println(partyService.getPartyMembers());
+    @GetMapping("/main/{e_no}")
+    public String partyMain(@PathVariable int e_no, Model model) {
+        System.out.println(partyService.getPartyMembers(e_no));
 
-        model.addAttribute("partyMembers", partyService.getPartyMembers());
+        model.addAttribute("partyMembers", partyService.getPartyMembers(e_no));
         model.addAttribute("partyMyInfo", partyService.getPartyMyInfo());
 
         return "/party/party_main";
@@ -115,9 +123,9 @@ public class PartyController {
     }
 
     @ResponseBody
-    @PostMapping("/main/type")
-    public Map<String, Object> partySelectedTypeGroup() {
-        Map<String, List<Map<String, String>>> groupedTypes = partyService.getSimilarSelectedTypeGroups();
+    @PostMapping("/main/type/{e_no}")
+    public Map<String, Object> partySelectedTypeGroup(@PathVariable int e_no) {
+        Map<String, List<Map<String, String>>> groupedTypes = partyService.getSimilarSelectedTypeGroups(e_no);
         String[] groupNames = {"A", "B", "C", "D", "E", "F", "G", "H"};
 
         Map<String, List<Map<String, String>>> namedGroupedTypes = new LinkedHashMap<>();
@@ -152,14 +160,14 @@ public class PartyController {
     }
 
 
-    @GetMapping("/main/choice")
-    public String partyFinalChoiceBoth(Model model) {
+    @GetMapping("/main/choice/{e_no}")
+    public String partyFinalChoiceBoth(@PathVariable int e_no, Model model) {
 
-        Map<String, String> finalChoiceData = partyService.getFinalSelectedChoice();
+        Map<String, String> finalChoiceData = partyService.getFinalSelectedChoice(e_no);
         System.out.println("Final Choice Data: " + finalChoiceData);
 
         List<Map<String, String>> matchedCouples = new ArrayList<>();
-        List<PartyVO> partyMembers = partyService.getPartyMembers();
+        List<PartyVO> partyMembers = partyService.getPartyMembers(e_no);
 
         for (String m_id : finalChoiceData.keySet()) {
             // 사용자 m_id이 선택한 사람 목록
@@ -185,7 +193,7 @@ public class PartyController {
 
                     if (!alreadyMatched) {
                         // 'test2'에 대한 매칭만 실어주기
-                        if (m_id.equals("test4")) {
+                        if (m_id.equals("test2")) {
                             Map<String, String> couple = new HashMap<>();
                             couple.put("user", m_id);
                             couple.put("partner", choice);
@@ -222,19 +230,13 @@ public class PartyController {
 
     }
 
-//    @GetMapping("/main/choice/line")
-//    public String getPartnerLineID(Model model) {
-//        model.addAttribute("partnerLineId", partyService.getPartnerLineID());
-//
-//        return "/party/party_choice_line";
-//    }
-
     @PutMapping("/main/choice/line")
     @ResponseBody
     public List<PartyVO> getPartnerLineID(@RequestBody Map<String, String> requestBody) {
         String partnerID = requestBody.get("partnerID");
         return partyService.getPartnerLineID(partnerID);
     }
+
 
 }
 

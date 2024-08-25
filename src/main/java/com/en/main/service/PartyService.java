@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class PartyService implements PartyMapper {
@@ -15,8 +14,8 @@ public class PartyService implements PartyMapper {
     private PartyMapper partyMapper;
 
     @Override
-    public List<PartyVO> getPartyMembers() {
-        return partyMapper.getPartyMembers();
+    public List<PartyVO> getPartyMembers(int e_no) {
+        return partyMapper.getPartyMembers(e_no);
     }
 
     @Override
@@ -25,18 +24,20 @@ public class PartyService implements PartyMapper {
     }
 
     @Override
-    public List<PartyVO> getSelectedType() {
-        return partyMapper.getSelectedType();
+    public List<PartyVO> getPartyList() {
+        return partyMapper.getPartyList();
     }
 
+
+
+    //  ------------------------------------------------  Type Grouping
+
+    //    type 선택하면 문자열로 저장하고 유사도 검사
     @Override
     public int updateSelectedType(PartyVO partyVO) {
         return partyMapper.updateSelectedType(partyVO);
     }
 
-    //  ------------------------------------------------Type Grouping
-
-    //    type 선택하면 문자열로 저장하고 유사도 검사
     private static final int SIMILARITY_THRESHOLD = 10;
 
     private boolean similar(String type1, String type2) {
@@ -48,10 +49,13 @@ public class PartyService implements PartyMapper {
         int distance = levenshteinDistance.apply(type1, type2);
         return distance <= SIMILARITY_THRESHOLD;
     }
+    @Override
+    public List<PartyVO> getSelectedType(int e_no) {
+        return partyMapper.getSelectedType(e_no);
+    }
 
-
-    public Map<String, List<Map<String, String>>> getSimilarSelectedTypeGroups() {
-        List<PartyVO> selectedTypes = getSelectedType();
+    public Map<String, List<Map<String, String>>> getSimilarSelectedTypeGroups(int e_no) {
+        List<PartyVO> selectedTypes = getSelectedType(e_no);
         Map<String, List<Map<String, String>>> groupedTypes = new HashMap<>();
 
         for (PartyVO party : selectedTypes) {
@@ -87,6 +91,7 @@ public class PartyService implements PartyMapper {
         return groupedTypes;
     }
 
+
     //  ------------------------------------------------  final choice
     // 최종선택 고르기
     @Override
@@ -95,12 +100,12 @@ public class PartyService implements PartyMapper {
     }
 
     @Override
-    public List<PartyVO> getFinalChoice() {
-        return partyMapper.getFinalChoice();
+    public List<PartyVO> getFinalChoice(int e_no) {
+        return partyMapper.getFinalChoice(e_no);
     }
 
-    public Map<String, String> getFinalSelectedChoice() {
-        List<PartyVO> selectedChoices = getFinalChoice();
+    public Map<String, String> getFinalSelectedChoice(int e_no) {
+        List<PartyVO> selectedChoices = getFinalChoice(e_no);
         Map<String, String> finalChoiceBoth = new HashMap<>();
 
         for (PartyVO choice : selectedChoices) {
