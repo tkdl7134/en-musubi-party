@@ -19,16 +19,16 @@ public interface TemplateMapper {
             "FROM wedding_Info wi " +
             "JOIN event e ON wi.e_no = e.e_no " +
             "JOIN template t ON wi.t_pk = t.t_pk " +
-            "WHERE e.e_no = 5")
-    List<WeddingVO> getWedding();
+            "WHERE e.e_no = #{e_no}")
+    List<WeddingVO> getWedding(int e_no);
 
     @Select("SELECT e.e_no, m.m_id, m.m_fam_kanji, m.m_name_kanji, m.m_email, m.m_phone, " +
             "g.g_attend_wedding, g.g_guest_type " +
             "FROM guest g " +
             "LEFT JOIN member m ON g.m_id = m.m_id " +
             "LEFT JOIN event e ON g.e_no = e.e_no " +
-            "WHERE g.e_no = 5")
-    List<AttendVO> getAttend();
+            "WHERE g.e_no = #{e_no}")
+    List<AttendVO> getAttend(int e_no);
 
 //    @Select("SELECT e.e_no, m.m_id, " +
 //            "m.m_fam_kanji, m.m_name_kanji, g.g_allergy_or, g.g_relation, a.allergy, " +

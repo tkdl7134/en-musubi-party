@@ -31,7 +31,9 @@ public class TemplateController {
 
     @GetMapping("/mytemplate/{m_id}")
     public String mytemplate(@PathVariable String m_id, Model model, WeddingVO weddingVO) {
-        List<WeddingVO> weddingList = templateService.getWedding();
+
+        int e_no = weddingVO.getE_no();
+        List<WeddingVO> weddingList = templateService.getWedding(e_no);
         List<WeddingVO> allWeddingList = templateService.getAllWedding(m_id);
         model.addAttribute("weddingList", weddingList);
         model.addAttribute("allWeddingList", allWeddingList);
