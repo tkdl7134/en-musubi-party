@@ -48,7 +48,7 @@ body {
 }
 .yr_title {
     font-size: 14px;
-    font-weight: 900;
+    font-weight: bold;
     height: 2.8rem;
     width: 100%;
     background-color: #FFDBDB;
@@ -123,10 +123,9 @@ body {
     font-size: 0.91rem;
     height: 4.2rem;
     width: 78%;
-    border-radius: 1.2rem;
+    border-radius: 0.8rem;
     text-align: center;
     transition: height 0.5s ease;
-
     box-shadow: 0 2px 5px #FF8B8B;
     background-color: white;
     margin: 0 auto 1.6rem auto;
@@ -317,14 +316,15 @@ body {
     color: white;
 }
 #yr_type_button {
-    background-color: #fff;
+    background-color: #FFFBF7;
     color: #ff7e81;
-    width: 5rem;
-    height: 2.5rem;
+    width: 4.5rem;
+    height: 2.3rem;
     border-radius: 0.5rem;
     font-size: 1.1rem;
     font-weight: 600;
-    border: 3px solid #FF8B8B;
+    border: 2px solid #FF8B8B;
+    margin-top: 0.5rem;
 }
 #yr_type_button:hover{
     background-color: #FF5050;
@@ -391,7 +391,7 @@ body {
 }
 
 #yr_choice_button {
-    background-color: #fff;
+    background-color: #FFFBF7;
     color: #ff7e81;
     width: 4.5rem;
     height: 2.3rem;
@@ -399,6 +399,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     border: 2px solid #FF8B8B;
+    margin-top: 0.5rem;
 }
 #yr_choice_button:hover{
     background-color: #FF5050;

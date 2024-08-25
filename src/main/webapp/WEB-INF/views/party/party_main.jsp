@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="../menubar.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <title>Title</title>
 
-    <title>En-Party Main</title>
+    <title>✿ ~ 縁結び ~ 縁パーティー ~ ✿</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
@@ -15,22 +16,14 @@
             rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/party/party_main.css"/>
-
+    <link rel="stylesheet" href="/css/menubar.css">
+    <script src="/js/menubar.js" defer></script>
 </head>
 <body>
 
-<header>
-    <div class="je_menu-header">
-        <div class="je_logo-icon"><img src="/img/en-musubi-logo.png" alt="" /></div>
-        <div>縁結び</div>
-        <div class="je_menu-icon"><img src="/img/menu-button.png" alt="" /></div>
-    </div>
-
-</header>
-
 <div class="yr_party_main_container">
 
-    <div class="yr_title">✿ ~ 縁結び ~ 縁パーティー ~ ✿</div>
+    <div class="yr_title">縁パーティー</div>
 
     <div id="welcomeMessage" class="welcome-message">
         <div class="message right"> <span>✿</span>
@@ -49,6 +42,11 @@
                 以下のステップに従って、順番に進めてください
             </p>
         </div>
+
+        <c:forEach items="${partyMyInfo}" var="my">
+            <input id="yr_my_name" value="${my.m_fam_kanji}  ${my.m_name_kanji}" type="hidden">
+            <input id="yr_my_id" value="${my.m_id}" type="hidden">
+        </c:forEach>
 
             <!-- list -->
             <div class="yr_party_list all">
@@ -80,6 +78,7 @@
                                 </c:choose>
                             </div>
                         </div>
+                        <input name="e_no" id="e_no" value="${p.e_no}" type="hidden">
                     </c:forEach>
                 </div>
             </div>
@@ -196,12 +195,6 @@
         <img class="yr_bottom_img" src="/img/Bird.png">
     </div>
 
-
-    <c:forEach items="${partyMyInfo}" var="my">
-        <input id="yr_my_name" value="${my.m_fam_kanji}  ${my.m_name_kanji}" type="hidden">
-        <input id="yr_my_id" value="${my.m_id}" type="hidden">
-    </c:forEach>
-    <input id="userId" name="userId" value="test1" type="hidden">
 
 
 </div>

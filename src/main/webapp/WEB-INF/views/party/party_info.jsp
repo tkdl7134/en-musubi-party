@@ -1,12 +1,14 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="../menubar.jsp" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <title>Title</title>
 
-    <title>En-Party Info</title>
+    <title>✿ ~ 縁結び ~ 縁パーティー ~ ✿</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
@@ -52,20 +54,18 @@
             }
         }
     </style>
+
+
+    <link rel="stylesheet" href="/css/menubar.css">
+    <script src="/js/menubar.js" defer></script>
 </head>
 <body>
-<header>
-    <div class="je_menu-header">
-        <div class="je_logo-icon"><img src="/img/en-musubi-logo.png" alt="" /></div>
-        <div>縁結び</div>
-        <div class="je_menu-icon"><img src="/img/menu-button.png" alt="" /></div>
-    </div>
 
-</header>
+
 
 <div class="yr_party-info-container">
 
-    <div class="yr_title"> ✿ ~ 縁パーティー ~ インフォ ~ ✿</div>
+    <div class="yr_title">インフォ </div>
 
     <%--     채팅방으로 가는 버튼--%>
     <div class="yr_go_to_chat_wrap">

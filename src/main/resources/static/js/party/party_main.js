@@ -233,6 +233,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // --------------------------------------------------------------------------------------type
+
+
+    const myName = document.querySelector("#yr_my_name").value;
+    const myId = document.querySelector("#yr_my_id").value;
+    const e_no = document.querySelector("#e_no").value;
+    console.log("id : " + myId);
+    console.log("name : " + myName);
+    console.log("e_no : " + e_no);
+
+
     // type 토글시 색변경
     // typeItems.forEach((item) => {
     //     item.addEventListener("click", () => {
@@ -280,6 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // type select 하고 나서 비동기로 넘겨서 update 하기
         const jsonObj = {};
 
+
         document.querySelectorAll('.yr_type_item.selected').forEach(item => {
             ep_selectedType.push(item.value.trim());
         });
@@ -299,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(data => {
                     console.log('Success:', data);
                     if (data === 1|| data === 2) {
-                        fetch('/party/main/type', {
+                        fetch('/party/main/type/'+e_no, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
@@ -309,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             .then(groupedData => {
                                 console.log('Group:', groupedData);
 
-                                const targetMId = 'test1';
+                                const targetMId = myId;
                                 let foundKey = null;
 
                                 for (const [key, value] of Object.entries(groupedData.groupedTypes)) {
@@ -356,12 +367,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    const myName = document.querySelector("#yr_my_name").value;
-    const myId = document.querySelector("#yr_my_id").value;
-    console.log("id : " + myId);
-    console.log("name : " + myName);
-
-
     // 최종선택 버튼 눌러서 db UPDATE
     document
         .getElementById("yr_choice_button")
@@ -370,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (choiceCount > 0) {
 
                 const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value).join(",");
-                
+
                 console.log(finalChoice);
                 jsonObj2.ep_finalChoice = finalChoice;
                 console.log(jsonObj2);
@@ -385,7 +390,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     .then(response => response.json())
                     .then(data => {
                         console.log('Success:', data);
-                        location.href = '/party/main/choice';
+                        location.href = '/party/main/choice/'+e_no;
 
                     })
                     .catch((error) => {
