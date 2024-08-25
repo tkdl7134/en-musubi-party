@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(m_id); // 세션 값이 출력됩니다.
         setTimeout(function () {
             window.location.href = `/myInfo?m_id=${m_id}`;
-        }, 2000);
+        }, 1000);
     });
 
     userInfoEnvelopePaper.addEventListener("transitionend", function () {
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(function () {
             window.location.href = `/mypage/mytemplate/${m_id}`;
-        }, 2000);
+        }, 1000);
     });
 
     invitationmanageEnvelopePaper.addEventListener("transitionend", function () {
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(m_id); // 세션 값이 출력됩니다.
         setTimeout(function () {
             window.location.href =`/mypage/grouplist/${m_id}`;
-        }, 2000);
+        }, 1000);
     });
 
     grouplistEnvelopePaper.addEventListener("transitionend", function () {

@@ -32,7 +32,7 @@
         <div class="register-header">
 
             <div class="register-header-logo">
-                <img src="/resources/img/logo-img.png" alt="register-header-logo">
+                    <img src="/resources/img/logo-img.png" alt="register-header-logo">
             </div>
 
             <div class="register-header-heart">
