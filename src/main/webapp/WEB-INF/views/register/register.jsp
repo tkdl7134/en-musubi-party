@@ -57,7 +57,7 @@
                     </p>
                 </div>
                 <div class="register-character">
-                    <img src="/resources/img/EnMusubi-character.png" alt="Enmusubi-character">
+                    <img src="/resources/img/EnMusubi-character3.png" alt="Enmusubi-character">
                 </div>
 
             </div>
