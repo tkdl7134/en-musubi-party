@@ -731,32 +731,28 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // 허용된 문자만 입력
-        const inputValue = event.data || '';  // event.data가 null일 경우 빈 문자열로 대체
-        if (inputValue && !allowedChars.test(inputValue)) {
+        // 입력된 모든 문자가 허용된 문자들로 이루어져 있는지 확인
+        const inputValue = input.value + event.data || '';  // event.data가 null일 경우 빈 문자열로 대체
+        if (!allowedChars.test(inputValue)) {
             event.preventDefault();
             showErrorMessage(input, errorMessage);
-        } else {
-            clearErrorMessage(input);
+        } else if (allowedChars.test(inputValue)) {
+            clearErrorMessage(input); // 조건에 맞는 경우에만 오류 메세지 제거
         }
     }
 
     // 오류 메시지를 표시하는 함수
     function showErrorMessage(input, message) {
-        const existingError = input.parentNode.querySelector('.error-message');
+        let existingError = input.parentNode.querySelector('.error-message');
         if (existingError) {
-            existingError.remove();
+            existingError.document.createElement('span');
+            existingError.className = 'error-message';
+            existingError.style.color = 'red';
+            existingError.style.fontSize = '12px';
+            existingError.style.display = 'block';
+            existingError.style.marginBottom = '0.5rem';
         }
-
-        const errorMessage = document.createElement('span');
-        errorMessage.className = 'error-message';
-        errorMessage.style.color = 'red';
-        errorMessage.style.fontSize = '12px';
-        errorMessage.style.display = 'block';
-        errorMessage.style.marginTop = '5px';
-        errorMessage.textContent = message;
-
-        input.parentNode.appendChild(errorMessage);
+        existingError.textContent = message;
     }
 
     // 오류 메시지를 제거하는 함수
@@ -769,6 +765,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 각 입력 필드에 이벤트 리스너 추가
     const kanjiInputs = [
+        document.getElementById('kanji-fam'),
+        document.getElementById('kanji-name'),
         document.getElementById('kana-fam'),
         document.getElementById('kana-name')
     ];
@@ -776,7 +774,7 @@ document.addEventListener('DOMContentLoaded', function () {
     kanjiInputs.forEach(function (inputElement) {
         if (inputElement) {
             inputElement.addEventListener('beforeinput', function (event) {
-                preventInvalidInput(event, /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, 50);
+                preventInvalidInput(event, /[^\u4E00-\u9FFF]/, 50, "漢字のみ入力可能です。");
             });
         }
     });
@@ -814,6 +812,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
+});
 
 
 // 편지 이미지 버튼 애니메이션 및 form 태그 버튼 기능 추가 //
@@ -842,5 +841,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     });
-});
 
