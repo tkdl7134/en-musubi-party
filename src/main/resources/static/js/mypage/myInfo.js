@@ -1,27 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const homeButton = document.getElementById('myInfo-home-button');
-    const updateButton = document.getElementById('myInfo-info-update');
+    const homeButton = document.querySelector('#myInfo-home-button');
 
-    function handleClick(button) {
-        button.style.backgroundColor = '#333333'; // 변경할 색상
-        button.style.color = 'white';
+    function homeClick(button, formSelector) {
+        console.log('Button clicked:', button.id);
+        button.style.backgroundColor = '#ffeeee';
+        button.style.border = '3px solid #ffc700';
+        button.style.color = '#3f3f3f';
 
-        setTimeout(function() {
-            button.style.backgroundColor = '#555555'; // 원래 색상
-            button.style.color = 'white';
+        setTimeout(function () {
+            console.log('Submitting form:', formSelector);
+            document.querySelector(formSelector).submit();
         }, 500);
     }
 
     if (homeButton) {
-        homeButton.addEventListener('click', function() {
-            console.log('Home button clicked')
-            handleClick(homeButton);
+        homeButton.addEventListener('click', function (event) {
+            event.preventDefault(); // 폼 제출 방지
+            homeClick(homeButton, '#myInfo-home-form');
         });
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const updateButton = document.querySelector('#myInfo-info-update');
+
+    function updateClick(button, formSelector) {
+        console.log('Button clicked:', button.id);
+        button.style.backgroundColor = '#ffeeee';
+        button.style.border = '3px solid #ff5155';
+        button.style.color = '#3f3f3f';
+
+        setTimeout(function () {
+            console.log('Submitting form:', formSelector);
+            document.querySelector(formSelector).submit(); // 폼 제출
+        }, 500);
     }
 
     if (updateButton) {
-        updateButton.addEventListener('click', function() {
-            handleClick(updateButton);
+        updateButton.addEventListener('click', function (event) {
+            event.preventDefault(); // 폼 제출 방지
+            updateClick(updateButton, '#myInfo-update-form');
         });
     }
 });

@@ -21,7 +21,8 @@
         <div class="card-inner">
             <div class="card-front">
                 <div class="image-container">
-                    <img src="${pageContext.request.contextPath}/resources/img/Template1.jpg" alt="Template 1">
+                    <img src="${pageContext.request.contextPath}/resources/img/Test1.jpg" alt="Template 1">
+<%--                    <img src="${pageContext.request.contextPath}/resources/img/${w.w_img1}" alt="Template 1">--%>
                 </div>
             </div>
             <div class="card-back">
@@ -29,7 +30,6 @@
                         style="color: red">✿</span></div>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
-                <button onclick="location.href='/party/info?${g.e_no}'">縁パーティー</button>
             </div>
         </div>
 

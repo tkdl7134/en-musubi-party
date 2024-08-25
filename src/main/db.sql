@@ -353,6 +353,7 @@ select * from pay;
 select * from wishlist;
 select * from member;
 
+<<<<<<< HEAD
 SELECT e.e_no, m.m_id, m.m_fam_kanji, m.m_name_kanji, m.m_email, m.m_phone, g.g_allergy_or, g.g_relation, a.allergy,w.w_img1, w.w_img2, w.w_img3, w.w_img_share, w.w_date, w.w_wedding_address, g.g_attend_wedding, g.g_guest_type, c.p_accompany_num, c.p_accompany_type, c.p_fam_kanji, c.p_name_kanji
             FROM guest g
             LEFT JOIN member m ON g.m_id = m.m_id
@@ -367,3 +368,16 @@ delete guest where m_id = 'test778';
 
 select * from event where e_no = 255;
 select * from wishlist where e_no =255;
+=======
+select * from guest;
+
+select * from companion;
+
+insert into COMPANION
+values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', 'YES');
+
+insert into COMPANION
+values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', 'YES');
+
+SELECT COUNT(*) FROM COMPANION where P_ACCOMPANY_TYPE = 'BABY';
+>>>>>>> e2bf04994d848ad25a5f9a849661b9a6a63f0420

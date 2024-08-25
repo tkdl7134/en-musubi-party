@@ -131,18 +131,28 @@
                 </div>
 
 
-                <%-- 情報修整ボタン (Submit Button) --%>
+                <%-- 修整完了 Button --%>
                 <div class="myInfoUpdate-info-update">
-                    <button type="submit" id="myInfoUpdate-info-update">情報修整</button>
+                    <button type="submit" id="myInfoUpdate-info-update">修整完了</button>
                 </div>
 
-                <%-- アカウント削除ボタン (Delete Account Button) --%>
+                <%-- アカウント削除 --%>
                 <div class="myInfoUpdate-info-update">
-                    <div class="myInfoUpdate-info-delete">삭제원하시는 분은 여기로</div>
-                    <div class="myInfoUpdate-info-delete-button">
-                        <button onclick="deleteCheck('${member.m_id}')">削除</button>
+                    <div class="myInfoUpdate-info-delete">
+                        アカウントの削除をご希望の方は
+                        <span onclick="toggleDeleteButton()">こちらへ</span>
                     </div>
                 </div>
+
+                <%-- アカウント削除 Button --%>
+                <div class="myInfoUpdate-info-update">
+                    <div class="myInfoUpdate-info-delete-button" id="myInfo-account-delete" style="display: none;">
+                        <button id="myInfo-account-delete-button" onclick="deleteCheck('${member.m_id}')">
+                            アカウント削除
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </form>
 
