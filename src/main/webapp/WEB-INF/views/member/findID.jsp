@@ -1,10 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>ID 검색</title>
+    <link rel="stylesheet" href="/resources/css/login/login.css">
 </head>
 <body>
 <h1>ID 검색</h1>

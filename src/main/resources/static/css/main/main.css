@@ -96,15 +96,16 @@
 
 .button {
     display: inline-block;
-    border-radius: 5px;
-    border: 1px solid #FFC700;
+    border-radius: 15px;
+    border: 2px solid #FFC700;
     background-color: #FF5A55;
     box-shadow: 0 0 3px #EC0000;
-    padding: 5px 10px;
+    padding: 5px 15px;
     font-size: 18px;
     color: #fff4f4;
     text-align: center;
     text-decoration: none;
+    margin-top: 12px;
     margin-bottom: 0.3rem;
     transition: background-color 0.3s ease;
 }
@@ -208,7 +209,7 @@
         transform: translate(-50%, -50%) scale(1);
     }
     100% {
-        transform: translate(-50%, -100%) scale(1.4);
+        transform: translate(-50%, -100%) scale(1.3);
     }
 }
 
@@ -317,7 +318,7 @@
         transform: translate(-50%, -50%) scale(1);
     }
     100% {
-        transform: translate(-50%, -100%) scale(1.4);
+        transform: translate(-50%, -100%) scale(1.3);
     }
 }
 
@@ -605,7 +606,7 @@
     position: absolute;
 }
 
-/* 로그인 이후 mypage */
+/* ログイン後 myPage */
 
 .main-envelope2 {
     margin-top: 5rem;
@@ -628,6 +629,16 @@
     top: 42%;
     z-index: 1;
 }
+
+.main-mypage-envelope-paper:hover {
+    cursor: pointer;
+}
+
+.main-mypage-envelope-top:hover {
+    background-color: #f8b9ba;
+    cursor: pointer;
+}
+
 
 .main-mypage-envelope-bottom {
     width: 95%;
@@ -683,7 +694,7 @@
         transform: translate(-50%, -50%) scale(1);
     }
     100% {
-        transform: translate(-50%, -100%) scale(1.4);
+        transform: translate(-50%, -100%) scale(1.3);
     }
 }
 
