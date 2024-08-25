@@ -573,3 +573,11 @@
         width: 100%;
     }
 }
+
+@media (min-width: 769px) {
+    #je_invitation-preview-container {
+        width: 30vw;
+        margin: 0 auto;
+    }
+
+}
