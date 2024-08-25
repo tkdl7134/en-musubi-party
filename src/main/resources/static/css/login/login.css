@@ -14,7 +14,6 @@
     background-image: url('/resources/img/paperBG.png');
     background-size: auto;
     background-repeat: repeat;
-
 }
 
 .login-deco-img {
@@ -25,7 +24,7 @@
 }
 
 .login-deco-img img {
-    width: 35%;
+    width: 136px;
     animation: pulse 2s infinite;
 }
 
@@ -102,7 +101,6 @@
     height: 17px;
     right: 10px;
     font-size: 15px;
-    /*line-height: 18px;*/
     padding-top: 1px;
 }
 
