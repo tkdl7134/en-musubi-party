@@ -41,7 +41,10 @@
                     </div>
                     <div>
                         <div class="main-account-box">
-                            <div class="main-logout" id="logout-button">ログアウト</div>
+                            <div class="main-account-logout">
+                                <img src="resources/img/main-logout.png" alt="main-logout">
+                                <div class="main-logout" id="logout-button">ログアウト</div>
+                            </div>
                             <div class="main-account-mypage" onclick="showMypageSheet()">マイページ</div>
                         </div>
                     </div>
