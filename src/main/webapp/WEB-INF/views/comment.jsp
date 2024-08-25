@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Comment</title>
+    <title> ✿ ~ 縁結び ~ ✿</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
@@ -17,7 +17,11 @@
 </head>
 <body>
 <div class="yr_comment_container">
-    <div class="yr_title"><p> ✿ ~ 縁結び ~ ゲストブック ~ ✿ </p></div>
+    <div class="yr_comment_header">
+<div class="yr_comment_header_logo"><img src="/img/logo-img.png"> </div>
+        <div class="yr_comment_title"><p> GUEST BOOK</p></div>
+    </div>
+
 
     <div class="yr_comment_making_modal">
         <div class="yr_comment_modal" id="openModalBtn">お祝いのメッセージを残す</div>
@@ -31,7 +35,7 @@
                 <input type="hidden" name="_method" value="delete">
 
                 <div class="comment_top">
-                    <div class="comment_writer"> <span>✿</span>${c.c_writer}<span>✿</span></div>
+                    <div class="comment_writer"> <span>✿ </span>${c.c_writer}<span> ✿</span></div>
                     <div class="yr_comment_delete">
                         <button type="button" class="delete-btn" data-id="${c.c_no}">&times;</button>
                     </div>
