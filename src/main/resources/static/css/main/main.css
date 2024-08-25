@@ -839,4 +839,23 @@
         width: 30vw;
         margin: 0 35%;
     }
+
+    .main_notice_pop {
+        width: 69%;
+    }
+
+    .main_notice-txtBtn {
+        top: 23%;
+        left: 42%;
+    }
+
+    .main_notice-button {
+        margin: 9rem 0;
+        button {
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+
+
 }

@@ -89,6 +89,7 @@ function updateFunding(e_no, wl_no){
 }
 
 function deleteFunding(e_no, wl_no){
+    
     fetch(`/${e_no}/wishlist-setting/funding/${wl_no}`, {
         method: 'DELETE',
         headers : {

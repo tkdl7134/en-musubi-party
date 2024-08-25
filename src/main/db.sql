@@ -380,4 +380,6 @@ insert into COMPANION
 values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', 'YES');
 
 SELECT COUNT(*) FROM COMPANION where P_ACCOMPANY_TYPE = 'BABY';
->>>>>>> e2bf04994d848ad25a5f9a849661b9a6a63f0420
+
+select * from template;
+update template set t_example = 'example.png' where t_template = 'template.jpg';
