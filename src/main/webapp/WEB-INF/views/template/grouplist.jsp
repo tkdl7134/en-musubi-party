@@ -28,14 +28,13 @@
                 </div>
             </div>
             <div class="card-back">
-                <c:forEach var="owner" items="${eventOwnerNames}" varStatus="loopStatus">
-                    <c:if test="${loopStatus.first}">
-                        <div><span style="color: red">✿</span> ${owner.m_fam_kanji} ${owner.m_name_kanji} <span style="color: red">✿</span></div>
-                    </c:if>
-                </c:forEach>
+                <div><span style="color: red">✿</span> ${eventOwnerName.m_fam_kanji} ${eventOwnerName.m_name_kanji} <span style="color: red">✿</span></div>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
             </div>
+
+
+
 
 
         </div>
