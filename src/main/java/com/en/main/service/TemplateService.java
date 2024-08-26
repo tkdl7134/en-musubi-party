@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TemplateService {
@@ -35,7 +36,12 @@ public class TemplateService {
 
         return templateMapper.getAttendAfterParty(m_id,eno);
     }
-
+    public List<MemberVO> getEventOwnerNames(int e_no) {
+        List<MemberVO> eventOwners = templateMapper.getEventOwnerNames(e_no);
+        return eventOwners.stream()
+                .distinct()
+                .collect(Collectors.toList());
+    }
 
 
 }

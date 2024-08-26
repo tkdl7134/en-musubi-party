@@ -28,10 +28,16 @@
                 </div>
             </div>
             <div class="card-back">
-                <div><span style="color: red">✿</span>${g.m_fam_kanji} ${g.m_name_kanji}<span style="color: red">✿</span></div>
+                <c:forEach var="owner" items="${eventOwnerNames}" varStatus="loopStatus">
+                    <c:if test="${loopStatus.first}">
+                        <div><span style="color: red">✿</span> ${owner.m_fam_kanji} ${owner.m_name_kanji} <span style="color: red">✿</span></div>
+                    </c:if>
+                </c:forEach>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
             </div>
+
+
         </div>
 
         <c:if test="${status.index % 3 == 2 || status.last}">
