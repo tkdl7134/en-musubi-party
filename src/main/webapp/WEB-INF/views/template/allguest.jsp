@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ include file="../menubar.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
 
@@ -46,14 +47,14 @@
                             <c:if test="${a.g_attend_wedding == 'ご出席'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
-                                        <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
+                                        <span class="guest-name">名前 : ${fn:trim(a.m_fam_kanji)} ${fn:trim(a.m_name_kanji)}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
                                         <span>招待者 : ${a.g_guest_type}</span>
                                         <span>関係 : ${a.g_relation} </span>
                                         <span>番号 : ${a.m_phone}</span>
-                                        <span>イーメール : ${a.m_email}</span>
+                                        <span>メール : ${a.m_email}</span>
                                     </div>
                                 </div>
                             </c:if>
@@ -65,13 +66,13 @@
                             <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新郎'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
-                                        <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
+                                        <span class="guest-name">名前 : ${fn:trim(a.m_fam_kanji)} ${fn:trim(a.m_name_kanji)}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
                                         <span>関係 : ${a.g_relation} </span>
                                         <span>番号 : ${a.m_phone}</span>
-                                        <span>イーメール : ${a.m_email}</span>
+                                        <span>メール : ${a.m_email}</span>
                                     </div>
                                 </div>
                             </c:if>
@@ -83,13 +84,13 @@
                             <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新婦'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
-                                        <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
+                                        <span class="guest-name">名前 : ${fn:trim(a.m_fam_kanji)} ${fn:trim(a.m_name_kanji)}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
                                         <span>関係 : ${a.g_relation} </span>
                                         <span>番号 : ${a.m_phone}</span>
-                                        <span>イーメール : ${a.m_email}</span>
+                                        <span>メール : ${a.m_email}</span>
                                     </div>
                                 </div>
                             </c:if>
@@ -121,7 +122,7 @@
                             <c:if test="${a.g_attend_wedding == 'ご出席' && (a.g_allergy_or == 'Yes' || a.p_accompany_num != null)}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
-                                        <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
+                                        <span class="guest-name">名前 : ${fn:trim(a.m_fam_kanji)} ${fn:trim(a.m_name_kanji)}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
@@ -148,19 +149,20 @@
 
                                         <!-- 동행자 정보와 알레르기 정보 출력 (한 줄에 같이 나오도록) -->
                                         <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
-                                            <span>同行者 :</span>
-                                            <c:if test="${adultCount > 0}">
-                                                <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
-                                            </c:if>
-                                            <c:if test="${childCount > 0}">
-                                                <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
-                                            </c:if>
-                                            <c:if test="${babyCount > 0}">
-                                                <span>幼子 ${babyCount}人</span>
-                                            </c:if>
-                                            <c:if test="${a.g_allergy_or == 'Yes'}">
-                                                <span>アレルギー : ${a.allergy}</span>
-                                            </c:if>
+                                <span>同行者 :
+                                    <c:if test="${adultCount > 0}">
+                                        <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
+                                    </c:if>
+                                    <c:if test="${childCount > 0}">
+                                        <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
+                                    </c:if>
+                                    <c:if test="${babyCount > 0}">
+                                        <span>幼子 ${babyCount}人</span>
+                                    </c:if>
+                                    <c:if test="${a.g_allergy_or == 'Yes'}">
+                                        <span>アレルギー : ${a.allergy}</span>
+                                    </c:if>
+                                </span>
                                         </c:if>
                                     </div>
                                 </div>
@@ -173,7 +175,7 @@
                             <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新郎' && (a.g_allergy_or == 'Yes' || a.p_accompany_num != null)}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
-                                        <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
+                                        <span class="guest-name">名前 : ${fn:trim(a.m_fam_kanji)} ${fn:trim(a.m_name_kanji)}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
@@ -200,19 +202,20 @@
 
                                         <!-- 동행자 정보와 알레르기 정보 출력 (한 줄에 같이 나오도록) -->
                                         <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
-                                            <span>同行者 :</span>
-                                            <c:if test="${adultCount > 0}">
-                                                <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
-                                            </c:if>
-                                            <c:if test="${childCount > 0}">
-                                                <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
-                                            </c:if>
-                                            <c:if test="${babyCount > 0}">
-                                                <span>幼子 ${babyCount}人</span>
-                                            </c:if>
-                                            <c:if test="${a.g_allergy_or == 'Yes'}">
-                                                <span>アレルギー : ${a.allergy}</span>
-                                            </c:if>
+                                <span>同行者 :
+                                    <c:if test="${adultCount > 0}">
+                                        <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
+                                    </c:if>
+                                    <c:if test="${childCount > 0}">
+                                        <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
+                                    </c:if>
+                                    <c:if test="${babyCount > 0}">
+                                        <span>幼子 ${babyCount}人</span>
+                                    </c:if>
+                                    <c:if test="${a.g_allergy_or == 'Yes'}">
+                                        <span>アレルギー : ${a.allergy}</span>
+                                    </c:if>
+                                </span>
                                         </c:if>
                                     </div>
                                 </div>
@@ -225,7 +228,7 @@
                             <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新婦' && (a.g_allergy_or == 'Yes' || a.p_accompany_num != null)}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
-                                        <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
+                                        <span class="guest-name">名前 : ${fn:trim(a.m_fam_kanji)} ${fn:trim(a.m_name_kanji)}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
@@ -252,26 +255,26 @@
 
                                         <!-- 동행자 정보와 알레르기 정보 출력 (한 줄에 같이 나오도록) -->
                                         <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
-                                            <span>同行者 :</span>
-                                            <c:if test="${adultCount > 0}">
-                                                <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
-                                            </c:if>
-                                            <c:if test="${childCount > 0}">
-                                                <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
-                                            </c:if>
-                                            <c:if test="${babyCount > 0}">
-                                                <span>幼子 ${babyCount}人</span>
-                                            </c:if>
-                                            <c:if test="${a.g_allergy_or == 'Yes'}">
-                                                <span>アレルギー : ${a.allergy}</span>
-                                            </c:if>
+                                <span>同行者 :
+                                    <c:if test="${adultCount > 0}">
+                                        <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
+                                    </c:if>
+                                    <c:if test="${childCount > 0}">
+                                        <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
+                                    </c:if>
+                                    <c:if test="${babyCount > 0}">
+                                        <span>幼子 ${babyCount}人</span>
+                                    </c:if>
+                                    <c:if test="${a.g_allergy_or == 'Yes'}">
+                                        <span>アレルギー : ${a.allergy}</span>
+                                    </c:if>
+                                </span>
                                         </c:if>
                                     </div>
                                 </div>
                             </c:if>
                         </c:forEach>
                     </div>
-
 
                 </div>
             </div>
@@ -299,14 +302,14 @@
                             <c:if test="${a.g_attend_wedding == 'ご欠席' || a.g_attend_wedding == '保留'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
-                                        <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
+                                        <span class="guest-name">名前 : ${fn:trim(a.m_fam_kanji)} ${fn:trim(a.m_name_kanji)}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
                                         <span>招待者 : ${a.g_guest_type}</span>
                                         <span>関係 : ${a.g_relation} </span>
                                         <span>番号 : ${a.m_phone}</span>
-                                        <span>イーメール : ${a.m_email}</span>
+                                        <span>メール : ${a.m_email}</span>
                                     </div>
                                 </div>
                             </c:if>
@@ -318,13 +321,13 @@
                             <c:if test="${(a.g_attend_wedding == 'ご欠席' || a.g_attend_wedding == '保留') && a.g_guest_type == '新郎'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
-                                        <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
+                                        <span class="guest-name">名前 : ${fn:trim(a.m_fam_kanji)} ${fn:trim(a.m_name_kanji)}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
                                         <span>関係 : ${a.g_relation} </span>
                                         <span>番号 : ${a.m_phone}</span>
-                                        <span>イーメール : ${a.m_email}</span>
+                                        <span>メール : ${a.m_email}</span>
                                     </div>
                                 </div>
                             </c:if>
@@ -336,13 +339,13 @@
                             <c:if test="${(a.g_attend_wedding == 'ご欠席' || a.g_attend_wedding == '保留') && a.g_guest_type == '新婦'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
-                                        <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
+                                        <span class="guest-name">名前 : ${fn:trim(a.m_fam_kanji)} ${fn:trim(a.m_name_kanji)}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
                                         <span>関係 : ${a.g_relation} </span>
                                         <span>番号 : ${a.m_phone}</span>
-                                        <span>イーメール : ${a.m_email}</span>
+                                        <span>メール : ${a.m_email}</span>
                                     </div>
                                 </div>
                             </c:if>
