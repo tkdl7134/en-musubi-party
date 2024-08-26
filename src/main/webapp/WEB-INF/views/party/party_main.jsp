@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="../menubar.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <title>Title</title>
 
-    <title>En-Party Main</title>
+    <title>✿ ~ 縁結び ~ 縁パーティー ~ ✿</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
@@ -15,29 +16,37 @@
             rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/party/party_main.css"/>
-
+    <link rel="stylesheet" href="/css/menubar.css">
+    <script src="/js/menubar.js" defer></script>
 </head>
 <body>
-
-<header>
-    <div class="je_menu-header">
-        <div class="je_logo-icon"><img src="/img/en-musubi-logo.png" alt="" /></div>
-        <div>縁結び</div>
-        <div class="je_menu-icon"><img src="/img/menu-button.png" alt="" /></div>
-    </div>
-
-</header>
 
 <div class="yr_party_main_container">
 
     <div class="yr_title">縁パーティー</div>
 
-    <div class="yr_party_wrapper">
+    <div id="welcomeMessage" class="welcome-message">
+        <div class="message right"> <span>✿</span>
+           &nbspよ う こ そ
+         </div>
+        <div class="message left">
+            縁 パ ❘ テ ィ ❘ へ&nbsp
+            <span>✿</span>
+    </div>
+
+    </div>
+
+    <div id="partyWrapper" class="yr_party_wrapper" style="display: none;">
         <div class="yr_party_welcome">
             <p>
                 以下のステップに従って、順番に進めてください
             </p>
         </div>
+
+        <c:forEach items="${partyMyInfo}" var="my">
+            <input id="yr_my_name" value="${my.m_fam_kanji}  ${my.m_name_kanji}" type="hidden">
+            <input id="yr_my_id" value="${my.m_id}" type="hidden">
+        </c:forEach>
 
             <!-- list -->
             <div class="yr_party_list all">
@@ -69,11 +78,12 @@
                                 </c:choose>
                             </div>
                         </div>
+                        <input name="e_no" id="e_no" value="${p.e_no}" type="hidden">
                     </c:forEach>
                 </div>
             </div>
 
-            <!-- random -->
+            <!------------------------------------- random ------------------------------------>
             <div class="yr_party_list random">
                 <div class="yr_list_title"><span>✿</span> Step 2 <span>✿</span></div>
                 <div class="yr_list_title2">最初のラウンドでランダムに割り当てます</div>
@@ -94,7 +104,7 @@
                 </div>
             </div>
 
-            <!-- type -->
+            <!------------------------------------- type -------------------------------------->
             <div class="yr_party_list type">
                 <div class="yr_list_title"><span>✿</span> Step 3 <span>✿</span></div>
                 <div class="yr_list_title2">自分のタイプを選択してください</div>
@@ -138,14 +148,14 @@
                 </div>
             </div>
 
-            <!-- final choice -->
+            <!------------------------------- final choice ------------------------------------>
             <div class="yr_party_list choice">
                 <div class="yr_list_title"><span>✿</span> Step 4 <span>✿</span></div>
                 <div class="yr_list_title2">最終選択の時間です</div>
 
                 <div class="yr_choice">
                     <div class="yr_choice_mention" style="color: #696969">
-                        最も気に入った方を3名お選びください<br/> <br/>
+                        最も気に入った方を3名お選びください<br/>
                         お互いに気持ちが通じ合った方々には、<br/>  連絡先が送られ、</div>
 
                     <div class="yr_choice_mention" style="color: #474747"> <span>✿</span> 縁がつながる機会が提供されます <span>✿</span></div>
@@ -185,12 +195,6 @@
         <img class="yr_bottom_img" src="/img/Bird.png">
     </div>
 
-
-    <c:forEach items="${partyMyInfo}" var="my">
-        <input id="yr_my_name" value="${my.m_fam_kanji}  ${my.m_name_kanji}" type="hidden">
-        <input id="yr_my_id" value="${my.m_id}" type="hidden">
-    </c:forEach>
-    <input id="userId" name="userId" value="test1" type="hidden">
 
 
 </div>
