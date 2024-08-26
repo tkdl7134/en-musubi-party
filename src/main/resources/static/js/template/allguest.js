@@ -87,22 +87,22 @@ $(document).ready(function () {
     $('.toggle-details').on('click', function () {
         const details = $(this).closest('.hw_tab-item').find('.guest-details');
         if (details.is(':visible')) {
-            details.hide();
+            details.slideUp();
             $(this).text('見る');
         } else {
-            details.show();
+            details.slideDown();
             $(this).text('閉じる');
         }
     });
 
     // 이전 페이지로 스크롤
     $('.prev-page').on('click', function () {
-        slider.animate({ scrollLeft: '-=' + slider.width() }, 500);
+        slider.animate({ scrollLeft: '-=' + slider.width() }, 500, 'swing');  // 'swing' 애니메이션 추가
     });
 
     // 다음 페이지로 스크롤
     $('.next-page').on('click', function () {
-        slider.animate({ scrollLeft: '+=' + slider.width() }, 500);
+        slider.animate({ scrollLeft: '+=' + slider.width() }, 500, 'swing');  // 'swing' 애니메이션 추가
     });
 
     // debounce 함수 정의 (성능 최적화)

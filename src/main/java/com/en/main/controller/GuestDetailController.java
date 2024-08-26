@@ -28,6 +28,7 @@ public class GuestDetailController {
         return "template/allguest";
     }
 
+
     @GetMapping("/grouplist/{m_id}")
     public String grouplist(Model model, AllGuestVO allGuestVO , @PathVariable String m_id) {
         List<AllGuestVO> allGuestList = templateService.getAllGuest(m_id);

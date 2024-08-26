@@ -28,7 +28,7 @@ public class MemberController {
         if (member != null) {
             model.addAttribute("memberID", member.getM_id());
         } else {
-            model.addAttribute("error", "일치하는 ID가 없습니다.");
+            model.addAttribute("error", "✖︎ 一致するIDがありません ✖︎");
         }
         return "member/findIDResult";
     }
@@ -42,9 +42,9 @@ public class MemberController {
     public String findPW(String m_id, String m_email, Model model) {
         boolean result = memberService.sendResetPWLink(m_id, m_email);
         if (result) {
-            model.addAttribute("message", "비밀번호 재설정 링크가 이메일로 전송되었습니다.");
+            model.addAttribute("message", "<span style='color: #db2227;'>✿✿✿</span><br><span>パスワード再設定用のリンクが</span><br><span>メールで送信されました</span><br><span style='color: #db2227;'>✿✿✿</span>");
         } else {
-            model.addAttribute("error", "일치하는 계정이 없습니다.");
+            model.addAttribute("error", "✖︎ 一致するアカウントがありません ✖︎");
         }
         return "member/findPWResult";
     }
@@ -54,7 +54,7 @@ public class MemberController {
         System.out.println("success");
         boolean validToken = memberService.validateResetPWToken(token);
         if (!validToken) {
-            model.addAttribute("error", "유효하지 않은 토큰입니다.");
+            model.addAttribute("error", "無効なトークンです");
             return "error"; // 유효하지 않거나 만료된 토큰을 처리할 오류 페이지
         }
         model.addAttribute("token", token);
@@ -64,18 +64,19 @@ public class MemberController {
     @PostMapping("/member/resetPW")
     public String resetPW(@RequestParam("token") String token, @RequestParam("newPW") String newPW, @RequestParam("confirmPW") String confirmPW, Model model) {
         if (!newPW.equals(confirmPW)) {
-            model.addAttribute("error", "새 비밀번호가 일치하지 않습니다.");
+            model.addAttribute("error", "新しいパスワードが一致しません");
             model.addAttribute("token", token);
-            return "member/resetPW"; // 비밀번호 재설정 페이지로 돌아가기
+            return "member/resetPW";
         }
 
         boolean result = memberService.resetPW(token, newPW);
         if (result) {
-            model.addAttribute("message", "비밀번호가 성공적으로 재설정되었습니다.");
+            model.addAttribute("message", "パスワードが正常に再設定されました");
         } else {
-            model.addAttribute("error", "비밀번호 재설정에 실패했습니다.");
+            model.addAttribute("error", "パスワードの再設定に失敗しました");
         }
-        return "member/resetPW"; // 비밀번호 재설정 결과 페이지 (같은 페이지에서 결과를 보여줌)
+        return "member/resetPW";
     }
+
 
 }
