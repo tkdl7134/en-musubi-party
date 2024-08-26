@@ -204,11 +204,21 @@ div {
 
 
 }
-.slick-list.draggable {
+#jh_slider111{
+    height:  1142px !important;
+
+}
+
+.slick-list.draggable:nth-child(3) {
     height:  1142px !important;
 
 }
 .slick-track {
+
+}
+#jh_product_chart{
+   /* width : 390px !important;
+    height : 390px !important;*/
 
 }
 .jh_prev_btn2 {

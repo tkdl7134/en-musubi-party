@@ -2,7 +2,6 @@ src="https://cdn.jsdelivr.net/npm/chart.js"
 let chart ;
 function goToTop() {
 
-
     document.querySelector("#jh_top").scrollIntoView({behavior: "smooth"});
 
 
@@ -10,6 +9,10 @@ function goToTop() {
 
 function goToSendPage() {
     /*나중에 여기에다가 필요한거 보낼거면 추가로 보낼것*/
+
+    setTimeout(function() {
+        $('.slick-slider').slick('setPosition'); // 약간의 지연 후 재초기화
+    }, 100);
 
     document.getElementById('jh_pageNavi1').style.cssText = 'width : 64% ; transform : translateX(-25%);transition : 0.2s';
     document.getElementById('jh_pageNavi2').style.cssText ='background-color : #EDEDED; width: 64vw ;transition : 0.2s'
@@ -29,6 +32,11 @@ function goToSendPage() {
 }
 function goToFundPage(){
 
+
+    setTimeout(function() {
+        $('.slick-slider').slick('setPosition'); // 약간의 지연 후 재초기화
+    }, 100);
+
  document.getElementById('jh_pageNavi1').style.cssText = 'width: 64%; transform: translateX(-25%); transition : 0.2s;'
     document.getElementById('jh_pageNavi2').style.cssText ='background-color: red;     width: 64vw; transition : 0.2s'
     document.getElementById('jh_pageNavi3').style.cssText ='color : white;transition : 0.2s'
@@ -39,8 +47,8 @@ function goToFundPage(){
     document.getElementById('jh_slider11').style.cssText = 'width : 100vw;'
     document.getElementById('jh_slider22').style.cssText = 'width : 100vw;'
     document.getElementById('jh_slider33').style.cssText = 'width : 100vw;'
-
-
+    document.querySelector('.slick-list').cssText = 'height : 1149px;'
+    document.querySelector('.jh_product_chart').cssText = 'width : 373px; height : 373px;'
 
 
     /*location.href = '/statistics/funding';*/
@@ -147,6 +155,7 @@ selectOptions.forEach(option => {
 
 
             });
+        document.body.style.overflow = 'visible';
 
         let Wlno = this.value;
         console.log(Wlno)
