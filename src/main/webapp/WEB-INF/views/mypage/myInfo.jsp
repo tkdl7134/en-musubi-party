@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/mypage/myInfo.css">
-    <script src="/resources/js/mypage/myInfo.js"></script>
+    <link rel="stylesheet" href="/css/mypage/myInfo.css">
+    <script src="/js/mypage/myInfo.js"></script>
 </head>
 <body>
 <div class="myInfo-container">
@@ -14,7 +14,7 @@
     <div class="myInfo-header">
 
         <div class="myInfo-header-logo">
-            <img src="/resources/img/logo-img.png" alt="myInfo-header-logo">
+            <img src="/img/logo-img.png" alt="myInfo-header-logo">
         </div>
 
         <p class="myInfo-header-title"> 会員情報 </p>
