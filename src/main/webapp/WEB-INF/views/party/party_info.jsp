@@ -65,11 +65,11 @@
 
 <div class="yr_party-info-container">
 
-    <div class="yr_title">インフォ </div>
+    <div class="yr_title">縁パーティー インフォ </div>
 
     <%--     채팅방으로 가는 버튼--%>
     <div class="yr_go_to_chat_wrap">
-        <button id="yr_go_to_chat" onclick="location.href='http://localhost:8090/r'">
+        <button id="yr_go_to_chat" onclick="location.href='/r'">
             <span>
             縁パーティー<br/>
             チャットに参加
@@ -128,7 +128,7 @@
 
     <%--    마지막에도 채팅방으로 가는 버튼--%>
     <div class="yr_go_to_chat_wrap">
-        <button id="yr_go_to_chat2" onclick="location.href='http://localhost:8090/r'">
+        <button id="yr_go_to_chat2" onclick="location.href='/r'">
             <span>
             縁パーティー<br/>
             チャットに参加

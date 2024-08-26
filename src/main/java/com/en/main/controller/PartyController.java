@@ -1,7 +1,9 @@
 package com.en.main.controller;
 
+import com.en.main.dto.MemberVO;
 import com.en.main.dto.PartyVO;
 import com.en.main.service.PartyService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,10 +37,14 @@ public class PartyController {
 //    }
 
     @GetMapping("")
-    public String partyList(Model model) {
+    public String partyList(Model model, HttpSession session) {
+        MemberVO memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+
+        if (memberVO == null){
+            return "redirect:/login";
+        }
         List<PartyVO> getPartyList =  partyService.getPartyList();
         model.addAttribute("partyList", getPartyList);
-
         return "/party/party_list";
     }
 

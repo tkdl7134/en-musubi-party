@@ -379,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(finalChoice);
                 jsonObj2.ep_finalChoice = finalChoice;
                 console.log(jsonObj2);
-
+                setTimeout(function () {
                 fetch('/party/main', {
                     method: 'PUT',
                     headers: {
@@ -396,6 +396,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     .catch((error) => {
                         console.error('Error:', error);
                     });
+                }, 5000);
             } else {
                 console.error('No types selected');
                 alert("選んでください。");

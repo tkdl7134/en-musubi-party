@@ -32,15 +32,18 @@
         <!-- 카드 콘텐츠 -->
         <div class="card-inner">
             <div class="card-front">
-                <div class="image-container">
+                <div class="image-container" style="position: relative;">
                     <c:choose>
                         <c:when test="${status.index % 3 == 0}">
+                            <div style="width: 100%; height: 100%; position: absolute; z-index: 999"></div>
                             <img src="/img/en1.jpg" alt="Party Image">
                         </c:when>
                         <c:when test="${status.index % 3 == 1}">
+                            <div style="width: 100%; height: 100%; position: absolute; z-index: 999"></div>
                             <img src="/img/en2.jpg" alt="Party Image">
                         </c:when>
                         <c:when test="${status.index % 3 == 2}">
+                            <div style="width: 100%; height: 100%; position: absolute; z-index: 999"></div>
                             <img src="/img/en3.jpg" alt="Party Image">
                         </c:when>
                     </c:choose>
