@@ -36,28 +36,22 @@ public class GuestDetailController {
         model.addAttribute("allGuestList", allGuestList);
         int eno = allGuestList.get(0).getE_no();
 
-        // 이벤트 주체자의 이름 가져오기
-        MemberVO eventOwner = templateService.getEventOwnerName(eno, m_id);
+        // 이벤트 주체자의 이름, 날짜, 장소 가져오기
+        GuestDetailVO eventDetail = templateService.getEventDetailByEventNo(eno);
 
         // 디버깅을 위해 로그 출력
-        if (eventOwner == null) {
-            System.out.println("Event owner is null for e_no: " + eno + ", m_id: " + m_id);
+        if (eventDetail == null) {
+            System.out.println("Event detail is null for e_no: " + eno);
         } else {
-            System.out.println("Event owner found: " + eventOwner.getM_fam_kanji() + " " + eventOwner.getM_name_kanji());
+            System.out.println("Event details found: " + eventDetail.getM_fam_kanji() + " " + eventDetail.getM_name_kanji() +
+                    ", Date: " + eventDetail.getW_date() +
+                    ", Address: " + eventDetail.getW_wedding_address());
         }
 
-        model.addAttribute("eventOwnerName", eventOwner);
-
+        model.addAttribute("eventOwnerName", eventDetail);
         model.addAttribute("Attend", templateService.getAttendAfterParty(m_id, eno));
 
         return "template/grouplist";
     }
-
-
-
-
-
-
-
 
 }

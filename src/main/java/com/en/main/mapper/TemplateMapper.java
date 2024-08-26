@@ -75,12 +75,13 @@ public interface TemplateMapper {
             "WHERE g.m_id = #{m_id} AND e.e_no = #{eno}")
     String getAttendAfterParty(String m_id, int eno);
 
-    @Select("SELECT m.m_fam_kanji, m.m_name_kanji " +
+    @Select("SELECT m.m_fam_kanji, m.m_name_kanji, wi.w_date, wi.w_wedding_address " +
             "FROM wedding_info wi " +
             "JOIN event e ON wi.e_no = e.e_no " +
             "JOIN member m ON e.m_id = m.m_id " +
-            "WHERE wi.e_no = #{e_no} AND m.m_id = #{m_id}")
-    List<MemberVO> getEventOwnerName(int e_no, String m_id);
+            "WHERE wi.e_no = #{e_no}")
+    GuestDetailVO getEventDetailByEventNo(@Param("e_no") int e_no);
+
 
 
 

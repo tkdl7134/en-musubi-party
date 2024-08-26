@@ -38,23 +38,17 @@ public class TemplateService {
         return templateMapper.getAttendAfterParty(m_id, eno);
     }
 
-    public MemberVO getEventOwnerName(int e_no, String m_id) {
+    public GuestDetailVO getEventDetailByEventNo(int e_no) {
         try {
-            List<MemberVO> eventOwners = templateMapper.getEventOwnerName(e_no, m_id);
-            if (eventOwners.isEmpty()) {
-                System.out.println("Event owner not found for e_no: " + e_no + " and m_id: " + m_id);
-                return null;
-            }
-            if (eventOwners.size() > 1) {
-                System.out.println("Multiple event owners found for e_no: " + e_no + " and m_id: " + m_id);
-                // 필요한 로직에 따라 적절한 처리를 추가
-            }
-            return eventOwners.get(0);
+            return templateMapper.getEventDetailByEventNo(e_no);
         } catch (MyBatisSystemException e) {
-            System.err.println("Error retrieving event owner: " + e.getMessage());
+            System.err.println("Error retrieving event details: " + e.getMessage());
             return null;
         }
     }
 
-
 }
+
+
+
+
