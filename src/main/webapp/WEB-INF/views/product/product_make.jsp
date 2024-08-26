@@ -11,10 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet"/>
     <!-- CSS -->
-    <link rel="stylesheet" href="/resources/css/product/product_make.css"/>
+    <link rel="stylesheet" href="/css/product/product_make.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"/>
-    <link rel="stylesheet" href="/resources/css/product/picker.css"/>
+    <link rel="stylesheet" href="/css/product/picker.css"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"/>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"
@@ -23,11 +23,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
     <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
-    <script src="/resources/js/product/slick-slide.js"></script>
-    <script src="/resources/js/product/datepicker.js" defer></script>
-    <script src="/resources/js/product/product_make.js" defer></script>
-    <script src="/resources/js/je_validChk/product_make_validChk.js" defer></script>
-    <script src="/resources/js/je_validChk/validChk.js" defer></script>
+    <script src="/js/product/slick-slide.js"></script>
+    <script src="/js/product/datepicker.js" defer></script>
+    <script src="/js/product/product_make.js" defer></script>
+    <script src="/js/je_validChk/product_make_validChk.js" defer></script>
+    <script src="/js/je_validChk/validChk.js" defer></script>
 </head>
 <body>
 
@@ -64,7 +64,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">新郎 側</div>
                             <div class="je_title-line">
-                                <img src="/resources/img/input-box-content-line.png" alt=""/>
+                                <img src="/img/input-box-content-line.png" alt=""/>
                             </div>
                         </div>
                         <div class="je_content-contents">
@@ -88,7 +88,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">新婦 側</div>
                             <div class="je_title-line">
-                                <img src="/resources/img/input-box-content-line.png" alt=""/>
+                                <img src="/img/input-box-content-line.png" alt=""/>
                             </div>
                         </div>
                         <div class="je_content-contents">
@@ -122,7 +122,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">挙式</div>
                             <div class="je_title-line">
-                                <img src="/resources/img/input-box-content-line.png" alt=""/>
+                                <img src="/img/input-box-content-line.png" alt=""/>
                             </div>
                         </div>
                         <div class="je_content-contents">
@@ -175,7 +175,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">披露宴</div>
                             <div class="je_title-line">
-                                <img src="/resources/img/input-box-content-line.png" alt=""/>
+                                <img src="/img/input-box-content-line.png" alt=""/>
                             </div>
                         </div>
                         <div class="je_content-contents">
@@ -251,7 +251,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">招待文句</div>
                             <div class="je_title-line">
-                                <img src="/resources/img/input-box-content-line.png" alt=""/>
+                                <img src="/img/input-box-content-line.png" alt=""/>
                             </div>
                         </div>
                         <div id="je_invitation-button" class="je_content-recommendation">
@@ -265,7 +265,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">仕上げの文句</div>
                             <div class="je_title-line">
-                                <img src="/resources/img/input-box-content-line.png" alt=""/>
+                                <img src="/img/input-box-content-line.png" alt=""/>
                             </div>
                         </div>
                         <div id="je_closing-button" class="je_content-recommendation">
@@ -302,13 +302,13 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">代表写真</div>
                             <div class="je_title-line">
-                                <img src="/resources/img/input-box-content-line.png" alt=""/>
+                                <img src="/img/input-box-content-line.png" alt=""/>
                             </div>
                         </div>
                         <div class="je_content-photo">
                             <div class="je_photoBox-container">
                                 <div class="je_photobox-icon">
-                                    <img src="/resources/img/couple-icon.png">
+                                    <img src="/img/couple-icon.png">
                                 </div>
                                 <div id="je_photobox1" class="je_photobox">
                                     <input
@@ -324,7 +324,7 @@
                             </div>
                             <div class="je_photoBox-container">
                                 <div class="je_photobox-icon">
-                                    <img src="/resources/img/groom-icon.png" style="transform: scaleX(-1);">
+                                    <img src="/img/groom-icon.png" style="transform: scaleX(-1);">
                                 </div>
                                 <div id="je_photobox2" class="je_photobox">
                                     <input
@@ -340,7 +340,7 @@
                             </div>
                             <div class="je_photoBox-container">
                                 <div class="je_photobox-icon">
-                                    <img src="/resources/img/bride-icon.png">
+                                    <img src="/img/bride-icon.png">
                                 </div>
                                 <div id="je_photobox3" class="je_photobox">
                                     <input
@@ -360,7 +360,7 @@
                         <div class="je_content-title">
                             <div class="je_title-txt">共有写真</div>
                             <div class="je_title-line">
-                                <img src="/resources/img/input-box-content-line.png" alt=""/>
+                                <img src="/img/input-box-content-line.png" alt=""/>
                             </div>
                         </div>
                         <div class="je_content-photos">

@@ -62,8 +62,8 @@ body {
 
 .action-options {
     width: 100%;
-    /* background-image: url("/resources/img/Paper_BG_w_red_line.png"); */
-    background-image: url("/resources/img/Paper_BG_w_red_line.png");
+    /* background-image: url("/img/Paper_BG_w_red_line.png"); */
+    background-image: url("/img/Paper_BG_w_red_line.png");
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;

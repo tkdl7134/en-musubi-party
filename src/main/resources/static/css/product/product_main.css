@@ -40,11 +40,23 @@ body{
     margin: 25% 0;
 }
 
+.je_template-box:hover{
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+}
+
+.je_template-box:not(:hover){
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
 .je_template-preview {
     height: 23rem;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
+
 
 .je_template-title {
     margin-top: 0.8rem;
