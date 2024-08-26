@@ -28,7 +28,9 @@ $.ajax({
 					<div class="kh-fund-card" value="${element.wl_no}">
 						<div class="kh-fund-card-box">
 							<div style="height: 18rem">
-								<img style="height: 100%" alt="noImg" src="/resources/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/resources/img/パソコン.png';"/>
+							<div style="width:100%; height: 18rem; background-color: transparent; position: absolute; z-index: 999"></div>
+
+								<img style="height: 80%" alt="noImg" src="/resources/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/resources/img/パソコン.png';"/>
 							</div>
 							<div>
 								<h1 style="margin:0">${element.wl_product}</h1>
