@@ -106,6 +106,16 @@ input {
     }
 }
 
+button:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+button:not(:hover){
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
 .je_funding-button {
     display: flex;
     justify-content: center;
@@ -121,6 +131,7 @@ input {
         font-weight: 600;
     }
 }
+
 .je_update-btn {
     background-color: #5c5c5c !important;
     color: #ffffff !important;

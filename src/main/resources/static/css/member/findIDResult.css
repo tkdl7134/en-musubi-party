@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.findIDResult-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('/resources/img/paperBG.png');
+    background-repeat: repeat;
+}
+
+.findIDResult-deco-img {
+    position: absolute;
+    top: 6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.findIDResult-deco-img img {
+    width: 136px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.findIDResult-title {
+    color: #474747;
+    font-size: 25px;
+    font-weight: bold;
+    /*position: relative;*/
+    /*margin-top: 67px;*/
+    /*margin-bottom: 29px;*/
+    position: absolute;
+    top: 249px;
+}
+
+.findIDResult-box {
+    position: absolute;
+    top: 330px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    background: white;
+    border: 2px solid #ff5155;
+    outline: 1px solid #ffc700;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.id-label {
+    color: #ff7171;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.id-value {
+    color: #474747;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.id-error {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login-btn {
+    position: absolute;
+    top: 589px;
+    color: #696969;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    color: #3f3f3f;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .findIDResult-container {
+        width: 30vw;
+        margin: auto;
+    }
+}

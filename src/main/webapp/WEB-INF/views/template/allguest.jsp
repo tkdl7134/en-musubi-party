@@ -62,7 +62,7 @@
 
                     <div class="hw_tab-content" id="attend_groom">
                         <c:forEach items="${guestDetailVOList}" var="a">
-                            <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新郎ゲスト'}">
+                            <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新郎'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
                                         <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
@@ -80,7 +80,7 @@
 
                     <div class="hw_tab-content" id="attend_bride">
                         <c:forEach items="${guestDetailVOList}" var="a">
-                            <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新婦ゲスト'}">
+                            <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新婦'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
                                         <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
@@ -104,7 +104,7 @@
                     <button type="button" class="nav-button prev-page">
                         <img src="/resources/img/Next.png" style="transform: rotate(180deg);">
                     </button>
-                    <div class="hw_content_mini_title">情報</div>
+                    <div class="hw_content_mini_title">注意事項</div>
                     <button type="button" class="nav-button next-page">
                         <img src="/resources/img/Next.png">
                     </button>
@@ -118,7 +118,7 @@
 
                     <div class="hw_tab-content active" id="info_all">
                         <c:forEach items="${guestDetailVOList}" var="a">
-                            <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_allergy_or == 'Yes'}">
+                            <c:if test="${a.g_attend_wedding == 'ご出席' && (a.g_allergy_or == 'Yes' || a.p_accompany_num != null)}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
                                         <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
@@ -126,8 +126,42 @@
                                     </div>
                                     <div class="guest-details" style="display: none;">
                                         <span>招待者 : ${a.g_guest_type}</span>
-                                        <span>동반자 : ${a.p_accompany_num} ${a.p_accompany_type} </span>
-                                        <span>알레르기 : ${a.allergy}</span>
+
+                                        <!-- 동행자의 유형별로 몇 명이 있는지 카운트 -->
+                                        <c:set var="adultCount" value="0"/>
+                                        <c:set var="childCount" value="0"/>
+                                        <c:set var="babyCount" value="0"/>
+
+                                        <c:forEach var="type" items="${a.p_accompany_type}">
+                                            <c:choose>
+                                                <c:when test="${type == 'ご成年'}">
+                                                    <c:set var="adultCount" value="${adultCount + 1}"/>
+                                                </c:when>
+                                                <c:when test="${type == 'お子様'}">
+                                                    <c:set var="childCount" value="${childCount + 1}"/>
+                                                </c:when>
+                                                <c:when test="${type == '幼子'}">
+                                                    <c:set var="babyCount" value="${babyCount + 1}"/>
+                                                </c:when>
+                                            </c:choose>
+                                        </c:forEach>
+
+                                        <!-- 동행자 정보와 알레르기 정보 출력 (한 줄에 같이 나오도록) -->
+                                        <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
+                                            <span>同行者 :</span>
+                                            <c:if test="${adultCount > 0}">
+                                                <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
+                                            </c:if>
+                                            <c:if test="${childCount > 0}">
+                                                <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
+                                            </c:if>
+                                            <c:if test="${babyCount > 0}">
+                                                <span>幼子 ${babyCount}人</span>
+                                            </c:if>
+                                            <c:if test="${a.g_allergy_or == 'Yes'}">
+                                                <span>アレルギー : ${a.allergy}</span>
+                                            </c:if>
+                                        </c:if>
                                     </div>
                                 </div>
                             </c:if>
@@ -136,15 +170,50 @@
 
                     <div class="hw_tab-content" id="info_groom">
                         <c:forEach items="${guestDetailVOList}" var="a">
-                            <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新郎ゲスト' && a.g_allergy_or == 'Yes'}">
+                            <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新郎' && (a.g_allergy_or == 'Yes' || a.p_accompany_num != null)}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
                                         <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
-                                        <span>동반자 : ${a.p_accompany_num} ${a.p_accompany_type} </span>
-                                        <span>알레르기 : ${a.allergy}</span>
+                                        <span>招待者 : ${a.g_guest_type}</span>
+
+                                        <!-- 동행자의 유형별로 몇 명이 있는지 카운트 -->
+                                        <c:set var="adultCount" value="0"/>
+                                        <c:set var="childCount" value="0"/>
+                                        <c:set var="babyCount" value="0"/>
+
+                                        <c:forEach var="type" items="${a.p_accompany_type}">
+                                            <c:choose>
+                                                <c:when test="${type == 'ご成年'}">
+                                                    <c:set var="adultCount" value="${adultCount + 1}"/>
+                                                </c:when>
+                                                <c:when test="${type == 'お子様'}">
+                                                    <c:set var="childCount" value="${childCount + 1}"/>
+                                                </c:when>
+                                                <c:when test="${type == '幼子'}">
+                                                    <c:set var="babyCount" value="${babyCount + 1}"/>
+                                                </c:when>
+                                            </c:choose>
+                                        </c:forEach>
+
+                                        <!-- 동행자 정보와 알레르기 정보 출력 (한 줄에 같이 나오도록) -->
+                                        <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
+                                            <span>同行者 :</span>
+                                            <c:if test="${adultCount > 0}">
+                                                <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
+                                            </c:if>
+                                            <c:if test="${childCount > 0}">
+                                                <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
+                                            </c:if>
+                                            <c:if test="${babyCount > 0}">
+                                                <span>幼子 ${babyCount}人</span>
+                                            </c:if>
+                                            <c:if test="${a.g_allergy_or == 'Yes'}">
+                                                <span>アレルギー : ${a.allergy}</span>
+                                            </c:if>
+                                        </c:if>
                                     </div>
                                 </div>
                             </c:if>
@@ -153,20 +222,57 @@
 
                     <div class="hw_tab-content" id="info_bride">
                         <c:forEach items="${guestDetailVOList}" var="a">
-                            <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新婦ゲスト' && a.g_allergy_or == 'Yes'}">
+                            <c:if test="${a.g_attend_wedding == 'ご出席' && a.g_guest_type == '新婦' && (a.g_allergy_or == 'Yes' || a.p_accompany_num != null)}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
                                         <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
                                         <button type="button" class="toggle-details">見る</button>
                                     </div>
                                     <div class="guest-details" style="display: none;">
-                                        <span>동반자 : ${a.p_accompany_num} ${a.p_accompany_type} </span>
-                                        <span>알레르기 : ${a.allergy}</span>
+                                        <span>招待者 : ${a.g_guest_type}</span>
+
+                                        <!-- 동행자의 유형별로 몇 명이 있는지 카운트 -->
+                                        <c:set var="adultCount" value="0"/>
+                                        <c:set var="childCount" value="0"/>
+                                        <c:set var="babyCount" value="0"/>
+
+                                        <c:forEach var="type" items="${a.p_accompany_type}">
+                                            <c:choose>
+                                                <c:when test="${type == 'ご成年'}">
+                                                    <c:set var="adultCount" value="${adultCount + 1}"/>
+                                                </c:when>
+                                                <c:when test="${type == 'お子様'}">
+                                                    <c:set var="childCount" value="${childCount + 1}"/>
+                                                </c:when>
+                                                <c:when test="${type == '幼子'}">
+                                                    <c:set var="babyCount" value="${babyCount + 1}"/>
+                                                </c:when>
+                                            </c:choose>
+                                        </c:forEach>
+
+                                        <!-- 동행자 정보와 알레르기 정보 출력 (한 줄에 같이 나오도록) -->
+                                        <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
+                                            <span>同行者 :</span>
+                                            <c:if test="${adultCount > 0}">
+                                                <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
+                                            </c:if>
+                                            <c:if test="${childCount > 0}">
+                                                <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
+                                            </c:if>
+                                            <c:if test="${babyCount > 0}">
+                                                <span>幼子 ${babyCount}人</span>
+                                            </c:if>
+                                            <c:if test="${a.g_allergy_or == 'Yes'}">
+                                                <span>アレルギー : ${a.allergy}</span>
+                                            </c:if>
+                                        </c:if>
                                     </div>
                                 </div>
                             </c:if>
                         </c:forEach>
                     </div>
+
+
                 </div>
             </div>
 
@@ -190,7 +296,7 @@
 
                     <div class="hw_tab-content active" id="absent_all">
                         <c:forEach items="${guestDetailVOList}" var="a">
-                            <c:if test="${a.g_attend_wedding == 'ご欠席'}">
+                            <c:if test="${a.g_attend_wedding == 'ご欠席' || a.g_attend_wedding == '保留'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
                                         <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
@@ -209,7 +315,7 @@
 
                     <div class="hw_tab-content" id="absent_groom">
                         <c:forEach items="${guestDetailVOList}" var="a">
-                            <c:if test="${a.g_attend_wedding == 'ご欠席' && a.g_guest_type == '新郎ゲスト'}">
+                            <c:if test="${(a.g_attend_wedding == 'ご欠席' || a.g_attend_wedding == '保留') && a.g_guest_type == '新郎'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
                                         <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>
@@ -227,7 +333,7 @@
 
                     <div class="hw_tab-content" id="absent_bride">
                         <c:forEach items="${guestDetailVOList}" var="a">
-                            <c:if test="${a.g_attend_wedding == 'ご欠席' && a.g_guest_type == '新婦ゲスト'}">
+                            <c:if test="${(a.g_attend_wedding == 'ご欠席' || a.g_attend_wedding == '保留') && a.g_guest_type == '新婦'}">
                                 <div class="hw_tab-item" data-type="${a.g_guest_type}">
                                     <div class="guest-info">
                                         <span class="guest-name">名前 : ${a.m_fam_kanji} ${a.m_name_kanji}</span>

@@ -26,8 +26,13 @@ public class MailService {
 
     public void sendResetPWMail(String to, String token) {
         String resetLink = domain + "/member/resetPW/" + token;
-        String text = "다음 링크를 클릭하여 비밀번호를 재설정하세요: " + resetLink;
-        sendMail(to, "비밀번호 재설정", text);
+                String text =         "パスワード再設定\n\n" +
+                        "この度は　✿ 縁結び ✿　をご利用いただき、誠にありがとうございます！\n" +
+                        "以下のリンクをご利用いただき、パスワードを再設定してください。\n\n\n" +
+                        resetLink + "\n\n\n" +
+                        "※ このリンクをお客様がリクエストされていない場合は、このメールを無視してください。\n\n" +
+                        "縁結びチーム";
+        sendMail(to, "「縁結び」　✿ パスワード再設定 ✿", text);
     }
 
 }

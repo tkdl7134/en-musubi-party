@@ -62,7 +62,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1rem;
     position: relative;
     transform-style: preserve-3d;
@@ -71,17 +71,30 @@ body {
 }
 
 .image-container {
+    /*width: 19.5rem;*/
+    /*!*height: 215%;*!*/
+    /*overflow: hidden;*/
+    /*position: relative;*/
+    /*border: solid 1px #ddd;*/
+    /*transition: filter 0.3s, box-shadow 0.3s;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*top: 0.5rem;*/
+    background-image: url("/resources/img/Paper_BG.png");
     width: 19.5rem;
-    height: 215%;
+    height: 78%;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    top: calc(50% - 2rem); /* card의 50% 위치에서 card-back 높이의 절반만큼 조정 */
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: solid 1px #ddd;
     transition: filter 0.3s, box-shadow 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 0.5rem;
-    background-image: url("/resources/img/Paper_BG.png");
+    /*background-image: url("/resources/img/Paper_BG.png");*/
 }
 
 .image-container img {
@@ -118,9 +131,12 @@ body {
 .card-back {
     display: flex;
     justify-content: space-between;
-    padding-top: 2rem;
     position: absolute;
-    top: 84%;
+    bottom: 0; /* card의 하단에 고정 */
+    left: 0;
+    width: 100%;
+    height: 5rem; /* 버튼 높이로 인해 필요한 공간만큼 설정 */
+    padding: 1rem;
 }
 
 .card-back button {

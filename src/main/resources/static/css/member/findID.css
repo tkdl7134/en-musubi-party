@@ -4,7 +4,7 @@
     font-family: 'Noto Serif JP', serif;
 }
 
-.resetPW-container {
+.findID-container {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,14 +15,14 @@
     background-repeat: repeat;
 }
 
-.resetPW-deco-img {
+.findID-deco-img {
     position: absolute;
     top: 6rem;
     display: flex;
     justify-content: center;
 }
 
-.resetPW-deco-img img {
+.findID-deco-img img {
     width: 136px;
     animation: pulse 2s infinite;
 }
@@ -39,16 +39,15 @@
     }
 }
 
-.resetPW-title {
+.findID-title {
     color: #474747;
     font-size: 25px;
     font-weight: bold;
     position: relative;
-    margin-top: 67px;
     margin-bottom: 25px;
 }
 
-.resetPW-box {
+.findID-box {
     width: 80%;
 }
 
@@ -82,16 +81,7 @@
     font-size: 14px;
 }
 
-.password-toggle {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #888888;
-}
-
-.resetPW-btn {
+.findID-btn {
     width: 100%;
     height: 48px;
     padding: 10px;
@@ -108,51 +98,12 @@
     transition: background-color 0.3s ease;
 }
 
-.resetPW-btn:hover {
+.findID-btn:hover {
     background-color: #F8C8C9;
 }
 
-.message {
-    width: 205px;
-    position: absolute;
-    top: 540px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #696969;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.error {
-    width: 205px;
-    position: absolute;
-    top: 540px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: red;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.login-btn {
-    display: flex;
-    justify-content: center;
-    color: #696969;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: 47px;
-}
-
-.login-btn:hover {
-    color: #3f3f3f;
-    cursor: pointer;
-}
-
 @media (min-width: 768px) {
-    .resetPW-container {
+    .findID-container {
         width: 30vw;
         margin: auto;
     }

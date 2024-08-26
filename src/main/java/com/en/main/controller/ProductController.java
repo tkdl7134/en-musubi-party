@@ -3,6 +3,7 @@ package com.en.main.controller;
 import com.en.main.dto.MemberVO;
 import com.en.main.dto.WeddingVO;
 import com.en.main.service.ProductService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,8 @@ public class ProductController {
     private String googleMapApiKey;
     @Autowired
     private ProductService productService;
+    @Autowired
+    private HttpSession httpSession;
 
     @GetMapping
     public String product(Model model) {
