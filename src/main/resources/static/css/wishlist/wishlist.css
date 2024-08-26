@@ -7,21 +7,33 @@
     font-style: normal;
 }
 
-body {
-    width: 100%;
-    height: 100%;
+/* 메뉴 - 헤더 */
+.tk_menu-header {
+    height: 4rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    gap: 5rem;
+    color: #2e2e2e;
+}
+
+.tk_logo-icon,
+.tk_menu-icon {
+    width: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 50%;
+    }
 }
 
 .tk_wishlist-body {
     background-color: #fffbf7;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 3rem;
-}
-
-.tk_wishlist-body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
@@ -29,19 +41,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: right;
-    margin-top: 12rem;
+    margin-top: 3rem;
 }
 
 .tk_wishlist-btn-container button {
-    width: 52rem;
+    width: 20rem;
 }
 
 .tk_wishlist-text-container div:nth-child(1) {
-    font-size: 3.6rem;
+    font-size: 1.2rem;
 }
 
 .tk_wishlist-text-container div:nth-child(2), div:nth-child(3) {
-    font-size: 2.2rem;
+    font-size: 0.8rem;
 }
 
 
@@ -49,9 +61,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    gap: 3rem;
-    margin-top: 7rem;
-    margin-left: 3rem;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
 }
 
 .tk_wishlist-btn-box button{
@@ -60,9 +72,10 @@ body {
     text-align: left;
     padding: 0 4rem 0 4rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 20rem;
+    height: 8rem;
+    gap: 3rem;
 }
 
 .tk_wishlist-btn-box:nth-child(1) > button {
@@ -85,11 +98,11 @@ body {
 }
 
 .jp-text {
-    font-size: 3.6rem;
+    font-size: 0.8rem;
 }
 
 .eg-text {
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 .tk_wishlist-img-box {
@@ -103,11 +116,11 @@ body {
 }
 
 .tk_wishlist-btn-box img {
-    width: 12rem;
-    padding: 3rem;
+    width: 3rem;
+    padding: 1.2rem;
 }
 
-.je_menu-bar {
+.tk_menu-bar {
     width: 100%;
     height: 5rem;
     background-color: #ffd1d0;
@@ -116,22 +129,12 @@ body {
     align-items: center;
 }
 
-.je_logo-icon,
-.je_menu-icon {
-    width: 1.8rem;
-    img {
-        width: 100%;
-    }
-}
-
 @media (min-width: 769px) {
-    .je_menu-header{
-        width: 30vw;
+    .tk_menu-header{
         margin: 0 auto;
-        gap: 13rem;
+        gap: 4rem;
     }
-    #je_product-container {
-        width: 30vw;
+    .tk_wishlist-body {
         margin: 0 auto;
     }
 

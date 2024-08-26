@@ -1,19 +1,35 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PW 찾기 결과</title>
+    <title> ✿ ~ 縁結び ~ ✿ </title>
+    <link rel="stylesheet" href="/resources/css/member/findPWResult.css">
 </head>
 <body>
-<h1>PW 찾기 결과</h1>
-<c:if test="${not empty message}">
-    <p>${message}</p>
-</c:if>
-<c:if test="${not empty error}">
-    <p>${error}</p>
-</c:if>
-<a href="/login">로그인 페이지로 돌아가기</a>
+<div class="findPWResult-container">
+    <div class="findPWResult-deco-img">
+        <img src="/resources/img/logo-img.png" alt="findPWResult-deco-img">
+    </div>
+
+    <div class="findPWResult-title">
+        <p>パスワード検索結果</p>
+    </div>
+
+    <div class="findPWResult-box">
+        <c:if test="${not empty message}">
+            <p class="message" style="white-space: pre-wrap;">
+                <c:out value="${message}" escapeXml="false"/>
+            </p>
+        </c:if>
+        <c:if test="${not empty error}">
+            <p class="error">${error}</p>
+        </c:if>
+    </div>
+
+    <a href="/login" class="login-btn">ログイン画面へ</a>
+
+</div>
 </body>
 </html>

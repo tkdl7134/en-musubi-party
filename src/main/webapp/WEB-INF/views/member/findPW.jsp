@@ -1,29 +1,48 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PW 찾기</title>
+    <title> ✿ ~ 縁結び ~ ✿ </title>
+    <link rel="stylesheet" href="/resources/css/member/findPW.css">
 </head>
 <body>
-<h1>PW 찾기</h1>
-<form action="/member/findPW" method="post">
-    <div>
-        <label for="m_id">ID</label>
-        <input type="text" id="m_id" name="m_id" required>
+<div class="findPW-container">
+    <div class="findPW-deco-img">
+        <img src="/resources/img/logo-img.png" alt="findPW-deco-img">
     </div>
-    <div>
-        <label for="m_email">이메일</label>
-        <input type="email" id="m_email" name="m_email" required>
+
+    <div class="findPW-title">
+        <p>パスワード検索</p>
     </div>
-    <button type="submit">찾기</button>
-</form>
-<c:if test="${not empty message}">
-    <p>${message}</p>
-</c:if>
-<c:if test="${not empty error}">
-    <p>${error}</p>
-</c:if>
+
+    <div class="findPW-box">
+
+        <form action="/member/findPW" method="post">
+
+            <div class="form-group">
+                <label for="m_id" class="fixed-label">縁結びID</label>
+                <input type="text" id="m_id" name="m_id" placeholder="ID" required>
+            </div>
+
+            <div class="form-group">
+                <label for="m_email" class="fixed-label">メールアドレス</label>
+                <input type="email" id="m_email" name="m_email" placeholder="example@domain.com" required>
+            </div>
+
+            <button type="submit" class="findPW-btn">検索</button>
+
+            <c:if test="${not empty message}">
+                <p>${message}</p>
+            </c:if>
+            <c:if test="${not empty error}">
+                <p>${error}</p>
+            </c:if>
+
+        </form>
+
+    </div>
+</div>
 </body>
 </html>

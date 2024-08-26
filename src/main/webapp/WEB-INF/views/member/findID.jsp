@@ -4,27 +4,38 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ID 검색</title>
-    <link rel="stylesheet" href="/resources/css/login/login.css">
+    <title> ✿ ~ 縁結び ~ ✿ </title>
+    <link rel="stylesheet" href="/resources/css/member/findID.css">
 </head>
 <body>
-<h1>ID 검색</h1>
-<form action="/member/findID" method="post">
-    <div>
-        <label for="m_fam_eng">영문 성</label>
-        <input type="text" id="m_fam_eng" name="m_fam_eng" required>
+<div class="findID-container">
+    <div class="findID-deco-img">
+        <img src="/resources/img/logo-img.png" alt="findID-deco-img">
     </div>
-    <div>
-        <label for="m_email">이메일</label>
-        <input type="email" id="m_email" name="m_email" required>
+
+    <div class="findID-title">
+        <p>ID 検索</p>
     </div>
-    <button type="submit">찾기</button>
-</form>
-<c:if test="${not empty memberID}">
-    <p>찾은 ID: ${memberID}</p>
-</c:if>
-<c:if test="${not empty error}">
-    <p>${error}</p>
-</c:if>
+
+    <div class="findID-box">
+
+        <form action="/member/findID" method="post">
+
+            <div class="form-group">
+                <label for="m_fam_eng" class="fixed-label">ローマ字姓</label>
+                <input type="text" id="m_fam_eng" name="m_fam_eng" placeholder="Last Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="m_email" class="fixed-label">メールアドレス</label>
+                <input type="email" id="m_email" name="m_email" placeholder="example@domain.com" required>
+            </div>
+
+            <button type="submit" class="findID-btn">検索</button>
+
+        </form>
+
+    </div>
+</div>
 </body>
 </html>
