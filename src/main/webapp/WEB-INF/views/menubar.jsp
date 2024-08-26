@@ -10,19 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"/>
     <%-- CSS  --%>
-    <link rel="stylesheet" href="/resources/css/menubar.css"/>
+    <link rel="stylesheet" href="/css/menubar.css"/>
     <%-- JS  --%>
-    <script src="/resources/js/menubar.js" defer></script>
+    <script src="/js/menubar.js" defer></script>
 </head>
 <body>
 <!-- header -->
 <div class="je_menu-header">
     <div class="je_logo-icon">
-        <img src="/resources/img/en-musubi-logo.png" alt=""/>
+        <img src="/img/en-musubi-logo.png" alt=""/>
     </div>
     <div>縁結び</div>
     <div class="je_menu-icon" onclick="showActionSheet()">
-        <img src="/resources/img/menu-button.png" alt=""/>
+        <img src="/img/menu-button.png" alt=""/>
     </div>
 </div>
 
@@ -53,11 +53,11 @@
                     </div>
                     <div class="menu-section menu-section2">
                         <div class="menu menu2" onclick="location.href='/product'">縁結び</div>
-                        <div class="menu menu2" onclick="handleOption('Option 3')">縁パーティー</div>
+                        <div class="menu menu2" onclick="location.href='/party'">縁パーティー</div>
                     </div>
                     <div class="logout-btn" id="logout-button">
                         <div>ログアウト</div>
-                        <div><img src="/resources/img/logout.png" alt=""/></div>
+                        <div><img src="/img/logout.png" alt=""/></div>
                     </div>
                 </div>
             </div>
@@ -70,13 +70,13 @@
             <div class="action-options">
                 <div class="menu-container">
                     <div class="menu-logo">
-                        <img src="/resources/img/en-musubi-logo.png" alt=""/>
+                        <img src="/img/en-musubi-logo.png" alt=""/>
                     </div>
                     <div class="menu-section">
                         <div class="menu menu1" onclick="location.href='/login'">ログイン</div>
                         <div class="menu menu1" onclick="location.href='/register'">会員登録</div>
                         <div class="menu menu2" onclick="location.href='/product'">縁結び</div>
-                        <div class="menu menu2" onclick="location.href='/r/join-user'">縁パーティー</div>
+                        <div class="menu menu2" onclick="location.href='/party'">縁パーティー</div>
                     </div>
                 </div>
             </div>
