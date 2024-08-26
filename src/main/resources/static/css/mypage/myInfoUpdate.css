@@ -7,7 +7,7 @@
     position: relative;
     width: 100vw;
     /*height: 100vh;*/
-    background-image: url('/resources/img/paperBG.png');
+    background-image: url('/img/paperBG.png');
     background-size: auto;
     background-repeat: repeat;
 }
@@ -20,7 +20,7 @@
     /*left: 0;*/
     width: 100%;
     height: 6.8rem;
-    background-image: url('/resources/img/paperBG.png');
+    background-image: url('/img/paperBG.png');
     background-size: auto;
 }
 

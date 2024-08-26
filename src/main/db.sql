@@ -381,4 +381,13 @@ values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤'
 SELECT COUNT(*) FROM COMPANION where P_ACCOMPANY_TYPE = 'BABY';
 
 select * from template;
-update template set t_example = 'example.png' where t_template = 'template.jpg';
+update template set t_title = '縁結び' where t_pk = 1;
+update template set t_title = '幸せの和' where t_pk = 2;
+update template set t_title = '桜の舞' where t_pk = 3;
+update template set t_title = '喜びの詩' where t_pk = 21;
+update template set t_title = '光の誓い' where t_pk = 22;
+update template set t_title = '永遠の愛' where t_pk = 23;
+update template set t_title = '夢見草' where t_pk = 24;
+update template set t_title = '心の絆' where t_pk = 25;
+update template set t_title = '朝陽の祝福' where t_pk = 26;
+update template set t_title = '恋の調べ' where t_pk = 27;
