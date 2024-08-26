@@ -1,3 +1,26 @@
+
+// welcome En-party Animation
+window.addEventListener('load', function () {
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    const partyWrapper = document.getElementById('partyWrapper');
+
+    setTimeout(function () {
+        welcomeMessage.classList.add('hidden');
+
+        setTimeout(function () {
+            // "ようこそ" 메시지를 숨기기
+            welcomeMessage.style.display = 'none';
+            partyWrapper.style.display = 'block';
+
+            setTimeout(function () {
+                partyWrapper.style.opacity = 1;
+            }, 500);
+        }, 700);
+    }, 800);
+});
+
+
+// En-party main program
 document.addEventListener("DOMContentLoaded", function () {
     const partyLists = document.querySelectorAll(".yr_party_list");
     const partyWelcome = document.querySelector(".yr_party_welcome");
@@ -210,6 +233,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // --------------------------------------------------------------------------------------type
+
+
+    const myName = document.querySelector("#yr_my_name").value;
+    const myId = document.querySelector("#yr_my_id").value;
+    const e_no = document.querySelector("#e_no").value;
+    console.log("id : " + myId);
+    console.log("name : " + myName);
+    console.log("e_no : " + e_no);
+
+
     // type 토글시 색변경
     // typeItems.forEach((item) => {
     //     item.addEventListener("click", () => {
@@ -257,11 +290,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // type select 하고 나서 비동기로 넘겨서 update 하기
         const jsonObj = {};
 
+
         document.querySelectorAll('.yr_type_item.selected').forEach(item => {
             ep_selectedType.push(item.value.trim());
         });
         console.log(ep_selectedType);
-        jsonObj.ep_selectedType = JSON.stringify(ep_selectedType);
+        jsonObj.ep_selectedType = ep_selectedType.join(',');
         console.log(jsonObj);
 
         if (ep_selectedType.length > 0) {
@@ -275,8 +309,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    if (data === 1 || data === 2) {
-                        fetch('/party/main/type', {
+                    if (data === 1|| data === 2) {
+                        fetch('/party/main/type/'+e_no, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
@@ -286,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             .then(groupedData => {
                                 console.log('Group:', groupedData);
 
-                                const targetMId = 'test1';
+                                const targetMId = myId;
                                 let foundKey = null;
 
                                 for (const [key, value] of Object.entries(groupedData.groupedTypes)) {
@@ -333,12 +367,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    const myName = document.querySelector("#yr_my_name").value;
-    const myId = document.querySelector("#yr_my_id").value;
-    console.log("id : " + myId);
-    console.log("name : " + myName);
-
-
     // 최종선택 버튼 눌러서 db UPDATE
     document
         .getElementById("yr_choice_button")
@@ -347,11 +375,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (choiceCount > 0) {
 
                 const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value).join(",");
-                ;
+
                 console.log(finalChoice);
                 jsonObj2.ep_finalChoice = finalChoice;
                 console.log(jsonObj2);
-
+                setTimeout(function () {
                 fetch('/party/main', {
                     method: 'PUT',
                     headers: {
@@ -362,60 +390,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     .then(response => response.json())
                     .then(data => {
                         console.log('Success:', data);
-                        location.href = '/party/main/choice';
+                        location.href = '/party/main/choice/'+e_no;
 
-
-                        // if(data === 1) {
-                        //     fetch('/party/main/choice', {
-                        //         method : 'put',
-                        //         headers:{
-                        //             'Content-Type' : 'application/json'
-                        //         }
-                        //     })
-                        //         .then(response => response.json())
-                        //         .then(finalChoiceData => {
-                        //
-                        //             console.log(finalChoiceData);
-                        //
-                        //             const myId = 'test1';
-                        //             const finalChoices = finalChoiceData.finalChoice;
-                        //
-                        //             // 특정 ID가 선택한 값을 가져오기
-                        //             const myFinalChoices = finalChoices[myId]; //["test2"]
-                        //
-                        //             console.log(myFinalChoices);
-                        //             console.log(finalChoices[myFinalChoices]);
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //             let matchFound = false;
-                        //
-                        //
-                        //             if (finalChoices[myId]) {
-                        //                 const selectedIds = JSON.parse(finalChoices[myId]);
-                        //                 if (selectedIds.includes(myId)) {
-                        //                     matchFound = true;
-                        //                 }
-                        //             }
-                        //
-                        //             if (matchFound) {
-                        //                 console.log("매칭 성공");
-                        //                 alert("매칭 성공!");
-                        //             } else {
-                        //                 console.log("매칭 실패");
-                        //
-                        //             }
-                        //
-                        //         })
-                        // }
                     })
                     .catch((error) => {
                         console.error('Error:', error);
                     });
+                }, 5000);
             } else {
                 console.error('No types selected');
                 alert("選んでください。");

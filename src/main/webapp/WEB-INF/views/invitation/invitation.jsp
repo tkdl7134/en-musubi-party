@@ -94,8 +94,8 @@
         <div class="je_information-title">
             <div>ご案内</div>
             <div>
-                헬로우 샬라샬라 모라모라<br />
-                블라블라 안내 중이에요
+                結婚式と披露宴の詳細を<br>
+                お知らせいたします。
             </div>
         </div>
         <div class="je_information-box">
@@ -163,7 +163,8 @@
         </ul>
     </div>
         <div class="yr_guest_book">
-            <button class="yr_guest_book_button" onclick="location.href ='/event-comment'"> <span>GUEST BOOK</span><br><span>ゲストブック</span> </button>
+            <button class="yr_guest_book_button" onclick="location.href ='/event-comment'"> <span>GUEST BOOK</span> </button>
+            <img class="yr_guest_book_img" src="/img/photobook.png">
         </div>
     <div class="je_message-txt2">
         ${weddingInfo.w_message_bye}
@@ -189,6 +190,7 @@
                 <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img" />
             </div>
         </div>
+        <div class="main-survey-envelope-bottom-line"><img src="/resources/img/Bird.png"></div>
     </div>
 </div>
 <script src="/resources/js/product/sakura.min.js"></script>
