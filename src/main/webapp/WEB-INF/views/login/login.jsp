@@ -24,7 +24,7 @@
 
             <div class="form-group">
                 <label for="m_id" class="fixed-label">縁結び ID</label>
-                <input type="text" id="m_id" name="m_id" placeholder="ID入力" required>
+                <input type="text" id="m_id" name="m_id" placeholder="ID 入力" required>
                 <i class="fas fa-times clear-button" onclick="clearInput('m_id')"></i>
                 <c:if test="${not empty errorID}">
                     <p class="error">${errorID}</p>
@@ -33,7 +33,7 @@
 
             <div class="form-group">
                 <label for="m_pw" class="fixed-label">パスワード</label>
-                <input type="password" id="m_pw" name="m_pw" placeholder="パスワード入力" required>
+                <input type="password" id="m_pw" name="m_pw" placeholder="パスワード 入力" required>
                 <i class="fas fa-eye-slash password-toggle" onclick="togglePWVisibility('m_pw')"></i>
                 <i class="fas fa-times clear-button" onclick="clearInput('m_pw')"></i>
                 <c:if test="${not empty errorPW}">
@@ -55,7 +55,7 @@
     <div class="login-options">
         <a href="/member/findID">ID検索</a>
         <a href="/member/findPW">パスワード検索</a>
-        <a href="/register/register">会員登録</a>
+        <a href="/register">会員登録</a>
     </div>
 
 </div>

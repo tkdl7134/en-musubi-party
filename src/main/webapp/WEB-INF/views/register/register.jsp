@@ -32,7 +32,7 @@
         <div class="register-header">
 
             <div class="register-header-logo">
-                <img src="/resources/img/logo-img.png" alt="register-header-logo">
+                    <img src="/resources/img/logo-img.png" alt="register-header-logo">
             </div>
 
             <div class="register-header-heart">
@@ -57,7 +57,7 @@
                     </p>
                 </div>
                 <div class="register-character">
-                    <img src="/resources/img/EnMusubi-character.png" alt="Enmusubi-character">
+                    <img src="/resources/img/EnMusubi-character3.png" alt="Enmusubi-character">
                 </div>
 
             </div>

@@ -200,7 +200,7 @@
     background-color: white;
     border: 3px solid #ff5155;
     outline: 1px solid #ffc700;
-    border-radius: 5px;
+    border-radius: 15px;
     margin-top: 5%;
     margin-bottom: 4rem;
     margin-left: 0;
@@ -247,8 +247,8 @@
     font-weight: bold;
     color: #EC0000;
     background-color: white;
-    border: 1px solid #EC0000;
-    border-radius: 5px;
+    border: 2px solid #EC0000;
+    border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
