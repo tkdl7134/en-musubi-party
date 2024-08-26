@@ -564,22 +564,31 @@ $(document).ready(function () {
             {selector: ".tk_survey-email input[name='m_email']", errorMessage: "メールアドレス項目を入力してください"},
             {selector: ".tk_survey-phone input[name='m_phone']", errorMessage: "電話番号項目を入力してください"},
             {
-                selector: "#wedding-selection .survey-selection-option.selected",
+                selector: "#wedding-selection",
                 errorMessage: "挙式・披露宴項目を選択してください"
             },
             {
-                selector: "#afterparty-selection .survey-selection-option.selected",
+                selector: "#afterparty-selection",
                 errorMessage: "アフターパーティー 選択してください"
             }
         ];
+        // const weddingSelection = {
+        //     selector: "#wedding-selection .survey-selection-option.selected",
+        //     errorMessage: "挙式・披露宴項目を選択してください"
+        // }
+        // const afterPartySelection = {
+        //     selector: "#afterparty-selection .survey-selection-option.selected",
+        //     errorMessage: "アフターパーティー 選択してください"
+        // }
         const guestTypeCheckboxes = $(".tk_survey-guestType input[name='g_guest_type']");
         const genderTypeCheckboxes = $(".tk_survey-gender input[name='m_gender']");
         let isGuestTypeChecked = guestTypeCheckboxes.is(":checked");
         let isGenderType = genderTypeCheckboxes.is(":checked");
 
         if (!isGuestTypeChecked) {
+            console.log(guestTypeCheckboxes);
             alert("ゲスト様項目をチェックしてください");
-            focusOnField(".tk_survey-guestType input[name='g_guest_type']:first");
+            focusOnField(".tk_survey-guestType div:first");
             allValid = false;
         }else if(!isGenderType){
             alert("性別項目をチェックしてください");
@@ -589,16 +598,26 @@ $(document).ready(function () {
             allValid = false;
         }  else {
 
-
             for (let i = 0; i < requiredFields.length; i++) {
                 const field = requiredFields[i];
-                const element = $(field.selector).get(0);
+                const elements = $(field.selector);
+                var breakFlag = false;
 
-                if (!element || (element.tagName === "INPUT" || element.tagName === "SELECT") && (!element.value || !element.value.trim())) {
-                    allValid = false;
-                    alert(field.errorMessage);
+                for (let j = 0; j < elements.length; j++) {
+                    const element = elements.get(j);
 
-                    focusOnField(field.selector);
+                    if (!element || (element.tagName === "INPUT" || element.tagName === "SELECT")
+                        && (!element.value || !element.value.trim()) || (element.tagName === "DIV"
+                        && Array.from(element.childNodes).filter((tag)=>tag.className?.includes("selected")).length === 0))  {
+                        console.log(element.className)
+                        allValid = false;
+                        alert(field.errorMessage);
+                        focusOnField(field.selector);
+                        breakFlag = true;
+                        break;
+                    }
+                }
+                if (breakFlag) {
                     break;
                 }
             }
@@ -659,6 +678,8 @@ $(document).ready(function () {
     });
 });
 
+
+// 관계 입력에 따라 detail 관계가 변경되는 function //
 document.addEventListener('DOMContentLoaded', function() {
     updateRelationOptions(); // 초기 로드 시 실행
     document.getElementById('g_relation').addEventListener('change', updateRelationOptions); // 변경 시 실행
@@ -710,31 +731,28 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // 허용된 문자만 입력
-        const inputValue = event.data || '';  // event.data가 null일 경우 빈 문자열로 대체
-        if (inputValue && !allowedChars.test(inputValue)) {
+        // 입력된 모든 문자가 허용된 문자들로 이루어져 있는지 확인
+        const inputValue = input.value + event.data || '';  // event.data가 null일 경우 빈 문자열로 대체
+        if (!allowedChars.test(inputValue)) {
             event.preventDefault();
             showErrorMessage(input, errorMessage);
-        } else {
-            clearErrorMessage(input);
+        } else if (allowedChars.test(inputValue)) {
+            clearErrorMessage(input); // 조건에 맞는 경우에만 오류 메세지 제거
         }
     }
+
     // 오류 메시지를 표시하는 함수
     function showErrorMessage(input, message) {
-        const existingError = input.parentNode.querySelector('.error-message');
+        let existingError = input.parentNode.querySelector('.error-message');
         if (existingError) {
-            existingError.remove();
+            existingError.document.createElement('span');
+            existingError.className = 'error-message';
+            existingError.style.color = 'red';
+            existingError.style.fontSize = '12px';
+            existingError.style.display = 'block';
+            existingError.style.marginBottom = '0.5rem';
         }
-
-        const errorMessage = document.createElement('span');
-        errorMessage.className = 'error-message';
-        errorMessage.style.color = 'red';
-        errorMessage.style.fontSize = '12px';
-        errorMessage.style.display = 'block';
-        errorMessage.style.marginTop = '5px';
-        errorMessage.textContent = message;
-
-        input.parentNode.appendChild(errorMessage);
+        existingError.textContent = message;
     }
 
     // 오류 메시지를 제거하는 함수
@@ -747,6 +765,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 각 입력 필드에 이벤트 리스너 추가
     const kanjiInputs = [
+        document.getElementById('kanji-fam'),
+        document.getElementById('kanji-name'),
         document.getElementById('kana-fam'),
         document.getElementById('kana-name')
     ];
@@ -754,24 +774,34 @@ document.addEventListener('DOMContentLoaded', function () {
     kanjiInputs.forEach(function (inputElement) {
         if (inputElement) {
             inputElement.addEventListener('beforeinput', function (event) {
-                preventInvalidInput(event, /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, 50);
+                preventInvalidInput(event, /[^\u4E00-\u9FFF]/, 50, "漢字のみ入力可能です。");
             });
         }
     });
 
     const fields = [
-        { id: 'g_relation_other', regex: /./, maxLength: 30},
-        { id: 'eng-fam', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
-        { id: 'eng-name', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。" },
-        { id: 'email', regex: /[a-zA-Z0-9@.]/, maxLength: 50, errorMessage: "メールアドレス形式で入力してください。" },
-        { id: 'phoneNum', regex: /[0-9\-]/, maxLength: 20, errorMessage: "数字のみ入力可能です。" },
-        { id: 'zipcode', regex: /[0-9\-]/, maxLength: 10, errorMessage: "郵便番号形式で入力してください。" },
-        { id: 'address', regex: /./, maxLength: 100},
-        { id: 'otherAllergy', regex: /./, maxLength: 100},
-        { id: 'allergyDetail', regex: /./, maxLength: 100},
-        { id: 'messageContent', regex: /./, maxLength: 300},
-        { id: 'kana-fam', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" },
-        { id: 'kana-name', regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/, maxLength: 50, errorMessage: "カタカナのみ入力可能です。" }
+        {id: 'g_relation_other', regex: /./, maxLength: 30},
+        {id: 'eng-fam', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。"},
+        {id: 'eng-name', regex: /[a-zA-Z\s]/, maxLength: 50, errorMessage: "英語のみ入力可能です。"},
+        {id: 'email', regex: /[a-zA-Z0-9@.]/, maxLength: 50, errorMessage: "メールアドレス形式で入力してください。"},
+        {id: 'phoneNum', regex: /[0-9\-]/, maxLength: 20, errorMessage: "数字のみ入力可能です。"},
+        {id: 'zipcode', regex: /[0-9\-]/, maxLength: 10, errorMessage: "郵便番号形式で入力してください。"},
+        {id: 'address', regex: /./, maxLength: 100},
+        {id: 'otherAllergy', regex: /./, maxLength: 100},
+        {id: 'allergyDetail', regex: /./, maxLength: 100},
+        {id: 'messageContent', regex: /./, maxLength: 300},
+        {
+            id: 'kana-fam',
+            regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/,
+            maxLength: 50,
+            errorMessage: "カタカナのみ入力可能です。"
+        },
+        {
+            id: 'kana-name',
+            regex: /[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF\u0020-\u007E]/,
+            maxLength: 50,
+            errorMessage: "カタカナのみ入力可能です。"
+        }
     ];
 
     fields.forEach(function (field) {
@@ -782,35 +812,33 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
-
-    // // 폼 제출 이벤트 리스너 추가
-    // const form = document.querySelector('form');
-    // form.addEventListener('submit', validateForm);
 });
 
-// .survey-submit-button -> 위시리스트 페이지로
-document.addEventListener("DOMContentLoaded", function () {
 
-    const enMusubiEnvelope = document.querySelector(".survey-submit-button");
-    const enMusubiEnvelopeTop = document.querySelector(".main-enParty-envelope-top");
-    const enMusubiEnvelopePaper = document.querySelector(".main-enParty-envelope-paper");
-    const enMusubiEnvelopeText = document.querySelector(".main-enMusubi-envelope-text");
-    const surveyForm = document.getElementById("surveyForm");
+// 편지 이미지 버튼 애니메이션 및 form 태그 버튼 기능 추가 //
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const enMusubiEnvelope = document.querySelector(".survey-submit-button");
+        const enMusubiEnvelopeTop = document.querySelector(".main-enParty-envelope-top");
+        const enMusubiEnvelopePaper = document.querySelector(".main-enParty-envelope-paper");
+        const enMusubiEnvelopeText = document.querySelector(".main-enMusubi-envelope-text");
+        const surveyForm = document.getElementById("surveyForm");
 
 
-    enMusubiEnvelope.addEventListener("click", function () {
-        enMusubiEnvelopeTop.classList.add("change-color");
-        enMusubiEnvelopePaper.classList.add("move-up");
-        enMusubiEnvelopeText.classList.add("enlarge");
-        setTimeout(function () {
-            surveyForm.submit();
-        }, 1000);
+        enMusubiEnvelope.addEventListener("click", function () {
+            enMusubiEnvelopeTop.classList.add("change-color");
+            enMusubiEnvelopePaper.classList.add("move-up");
+            enMusubiEnvelopeText.classList.add("enlarge");
+            setTimeout(function () {
+                surveyForm.submit();
+            }, 1000);
+        });
+
+        enMusubiEnvelopePaper.addEventListener("transitionend", function () {
+            enMusubiEnvelopeTop.classList.remove("change-color");
+            enMusubiEnvelopePaper.classList.remove("move-up");
+            enMusubiEnvelopeText.classList.remove("enlarge");
+        });
+
     });
 
-    enMusubiEnvelopePaper.addEventListener("transitionend", function () {
-        enMusubiEnvelopeTop.classList.remove("change-color");
-        enMusubiEnvelopePaper.classList.remove("move-up");
-        enMusubiEnvelopeText.classList.remove("enlarge");
-    });
-
-});

@@ -17,9 +17,9 @@ public interface SurveyMapper {
     void insertAllergy(AllergyVO allergyVO);
 
     @Insert ("insert into companion (p_pk, e_no, m_id, p_accompany_type, p_accompany_num, p_fam_kanji, p_name_kanji, " +
-            "p_fam_kana, p_name_kana, p_fam_eng, p_name_eng, p_gender, p_allergy_or, p_relation) " +
+            "p_fam_kana, p_name_kana, p_fam_eng, p_name_eng, p_gender, p_allergy_or) " +
             "values (companion_seq.nextval, #{e_no}, #{m_id}, #{p_accompany_type}, #{p_accompany_num}, #{p_fam_kanji}, #{p_name_kanji}, " +
-            "#{p_fam_kana}, #{p_name_kana}, #{p_fam_eng}, #{p_name_eng}, #{p_gender}, #{p_allergy_or}, #{p_relation})")
+            "#{p_fam_kana}, #{p_name_kana}, #{p_fam_eng}, #{p_name_eng}, #{p_gender}, #{p_allergy_or})")
     void insertCompanions(CompanionVO companion);
 
     @Insert("insert into message values (#{e_no}, #{m_id}, #{me_content}, #{me_img})")
