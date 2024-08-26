@@ -568,7 +568,7 @@
 
 
         });
-
+       /* $('.slick-slider').slick('setPosition');*/
 
         const ctx = document.getElementById('myChart').getContext('2d');
         const ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -662,7 +662,7 @@
                 datasets: [{
                     label: '繋がった想い',
                     data: array2,
-                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255, 165, 0)', 'rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(75, 0, 130)', 'rgb(238, 130, 238)'],
+                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255,161,148)', 'rgb(255,194,194)', 'rgb(255,226,75)', 'rgb(251,239,214)'],
                     hoverOffset: 4
                 }]
             }, options: {
@@ -804,7 +804,7 @@
                 datasets: [{
                     label: '繋がった想い',
                     data: array5,
-                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255, 165, 0)', 'rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(75, 0, 130)', 'rgb(238, 130, 238)'],
+                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255,161,148)', 'rgb(255,194,194)', 'rgb(255,226,75)', 'rgb(251,239,214)'],
                     hoverOffset: 4
                 }]
             }, options: {
@@ -949,7 +949,7 @@
 
 
                 <div style="display: flex; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
-                    <canvas style="width: 100vw ; height: 50vh; " id="myChart"></canvas>
+                    <canvas style="width: 100vw ; " id="myChart"></canvas>
                 </div>
                 <div style="background-color: white; margin-top: 5rem; border: 1px solid #555555; border-radius: 30px"
                      class="jh_week_data">
@@ -1037,7 +1037,7 @@
                     <img  class="jh_next_btn2" src="/img/Next.png" alt="">
                 </div>
             </div>
-            <div id="slider33" class="jh_slider">
+            <div id="jh_slider33" class="jh_slider">
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 20px; height: 8vh;">個別贈り物の現況 </div>
                 <div class="jh_title" style="width: 90%;  transform: translateX(6%);align-items: center; height: 19vh; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
