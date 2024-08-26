@@ -3,18 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".image-container img");
     let currentImageIndex = 0;
 
-    function showNextImage() {
-        images.forEach((img, index) => {
-            img.style.display = (index === currentImageIndex) ? 'block' : 'none';
-        });
-    }
-
-    // 초기 이미지 설정 및 슬라이드쇼 시작
-    showNextImage();
-    setInterval(() => {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        showNextImage();
-    }, 3000); // 3초마다 이미지 전환
 
     // 나머지 이벤트 리스너들 (공유 버튼 클릭, 팝업, 슬라이드 이동 등)
     const slides = document.querySelectorAll(".hw_card");
