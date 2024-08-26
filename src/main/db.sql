@@ -346,8 +346,21 @@ FROM wedding_info
          JOIN member ON event.m_id = member.m_id
 WHERE member.m_id = 'test778';
 
+
 select * from pay;
 
 select * from pay;
 select * from wishlist;
 select * from member;
+
+select * from guest;
+
+select * from companion;
+
+insert into COMPANION
+values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', 'YES');
+
+insert into COMPANION
+values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', 'YES');
+
+SELECT COUNT(*) FROM COMPANION where P_ACCOMPANY_TYPE = 'BABY';

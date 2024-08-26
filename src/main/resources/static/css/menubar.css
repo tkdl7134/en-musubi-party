@@ -79,13 +79,19 @@ body {
     bottom: 0;
 }
 
+.hide-sheet {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    /*z-index: 1;*/
+}
+
 .after-login > .action-options {
     height: 35rem;
 }
 
 /* MENU CSS */
 .menu-container {
-    /* background-color: blue; */
     width: 100%;
     position: relative;
 }
@@ -98,16 +104,20 @@ body {
 
     img {
         width: 3rem;
-        /* background-color: #ff7e81; */
     }
 }
 
 .menu-profile {
     margin-bottom: 1rem;
-    img {
-        width: 5rem;
-        border: 2px solid #db2227;
-        border-radius: 100%;
+}
+
+.menu-profile div {
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid #db2227;
+    border-radius: 100%;
+    img{
+        width: 100%;
     }
 }
 
@@ -132,7 +142,10 @@ body {
     font-weight: 900;
 }
 
-.user-mypage {
+.user-mypage{
+}
+
+.user-mypage-button {
     margin: 1.5rem auto;
     padding: 0.7rem;
     width: 9rem;
@@ -148,21 +161,56 @@ body {
     rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
 }
 
+@keyframes formopen {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+#user-mypage-menuBox{
+    display: none;
+    opacity: 0;
+    height: 0;
+    transition: height 0.5s ease, opacity 0.5s ease;
+}
+#user-mypage-menuBox.show{
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    animation: formopen;
+    animation-duration: 01s;
+    transition: height 0.5s ease, opacity 0.5s ease;
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+}
+
+.user-mypage-menu{
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    font-size: 14px;
+    font-weight: 900;
+    text-align: center;
+    border: 2px solid #ff7e81;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
+    rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
+}
+
 .menu-section {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     /* height: 15rem; */
-    gap: 2rem;
-    margin: 3rem auto;
+    gap: 1.5rem;
+    margin: 2rem auto;
 }
 
 .menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 1rem;
+    padding: 0.5rem 1rem;
     width: 7rem;
     background-color: #ffffff;
     color: #3f3f3f;
@@ -181,7 +229,7 @@ body {
     background-color: #ff7e81;
     color: #ffffff;
     position: relative;
-    /* font-weight: 600; */
+    border: 2px solid #ffffff;
     img {
         width: 2rem;
         position: absolute;

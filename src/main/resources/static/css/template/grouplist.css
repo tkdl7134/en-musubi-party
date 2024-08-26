@@ -1,3 +1,4 @@
+</html>
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +18,8 @@ body {
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
-    user-select:none
+    user-select:none;
+    background-image: url("/resources/img/Paper_BG.png");
 }
 
 /*.hw_header {*/
@@ -79,8 +81,7 @@ body {
 .hw_card {
     flex: 0 0 90%;
     height: 82%;
-    margin: 0 20%; /* 좌우에 20%의 공백을 설정하여 화면 중앙에 배치 */
-    margin-top: 6.5rem;
+    margin: 5% 20%; /* 좌우에 20%의 공백을 설정하여 화면 중앙에 배치 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,12 +134,15 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+.toggle-details{
+    color: red;
+}
 .card-front img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
     border: yellow solid 1px;
+    object-fit: cover;
 }
 
 .card-back {

@@ -102,3 +102,36 @@ for (var i = 0; i < thumbnail.length; i++)
             photo.style.opacity = 1;
         }, 500);
     });
+
+// -----------------------------------------------------------------------
+// .main-grouplist-envelope -> 참가한 이벤트 리스트
+document.addEventListener("DOMContentLoaded", function () {
+    const surveyEnvelope = document.querySelector(".main-survey-envelope");
+    const surveyEnvelopeTop = document.querySelector(
+        ".main-survey-envelope-top"
+    );
+    const surveyEnvelopePaper = document.querySelector(
+        ".main-survey-envelope-paper"
+    );
+    const surveyEnvelopeText = document.querySelector(
+        ".main-survey-envelope-text"
+    );
+
+    surveyEnvelope.addEventListener("click", function () {
+        surveyEnvelopeTop.classList.add("change-color");
+        surveyEnvelopePaper.classList.add("move-up");
+        surveyEnvelopeText.classList.add("enlarge");
+
+        var m_id = document.getElementById('memberID').value;
+        console.log(m_id); // 세션 값이 출력됩니다.
+        setTimeout(function () {
+            window.location.href =`/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}`;
+        }, 2000);
+    });
+
+    surveyEnvelopePaper.addEventListener("transitionend", function () {
+        surveyEnvelopeTop.classList.remove("change-color");
+        surveyEnvelopePaper.classList.remove("move-up");
+        surveyEnvelopeText.classList.remove("enlarge");
+    });
+});

@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.findPWResult-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url('/resources/img/paperBG.png');
+    background-repeat: repeat;
+}
+
+.findPWResult-deco-img {
+    position: absolute;
+    top: 6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.findPWResult-deco-img img {
+    width: 136px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.findPWResult-title {
+    color: #474747;
+    font-size: 25px;
+    font-weight: bold;
+    /*position: relative;*/
+    /*margin-top: 67px;*/
+    /*margin-bottom: 29px;*/
+    position: absolute;
+    top: 249px;
+}
+
+/*.findPWResult-box {*/
+/*    width: 80%;*/
+/*    position: absolute;*/
+/*    top: 0px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    text-align: center;*/
+/*}*/
+
+.findPWResult-box {
+    position: absolute;
+    top: 330px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    background: white;
+    border: 2px solid #ff5155;
+    outline: 1px solid #ffc700;
+    border-radius: 15px;
+}
+
+.message {
+    color: #474747;
+    font-size: 14px;
+    font-weight: bold;
+    /*text-align: center;*/
+}
+
+.message span {
+    display: block;
+}
+
+.error {
+    /*position: absolute;*/
+    /*top: 410px  !important;*/
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    top: 100px;
+}
+
+.login-btn {
+    position: absolute;
+    top: 589px;
+    color: #696969;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    color: #3f3f3f;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .findPWResult-container {
+        width: 30vw;
+        margin: auto;
+    }
+}
