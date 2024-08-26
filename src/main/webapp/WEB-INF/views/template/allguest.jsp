@@ -105,7 +105,7 @@
                     <button type="button" class="nav-button prev-page">
                         <img src="/resources/img/Next.png" style="transform: rotate(180deg);">
                     </button>
-                    <div class="hw_content_mini_title">注意事項</div>
+                    <div class="hw_content_mini_title">特別事項</div>
                     <button type="button" class="nav-button next-page">
                         <img src="/resources/img/Next.png">
                     </button>
