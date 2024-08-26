@@ -9,9 +9,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/template/allguest.css">
+    <link rel="stylesheet" href="/css/template/allguest.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/resources/js/template/allguest.js"></script>
+    <script src="/js/template/allguest.js"></script>
 </head>
 <body>
 <form>
@@ -28,11 +28,11 @@
             <div class="hw_section" id="attend_section">
                 <div class="hw_content_title">
                     <button type="button" class="nav-button prev-page" style="visibility:hidden;">
-                        <img src="/resources/img/Next.png" style="visibility:hidden;">
+                        <img src="/img/Next.png" style="visibility:hidden;">
                     </button>
                     <div class="hw_content_mini_title">出席</div>
                     <button type="button" class="nav-button next-page">
-                        <img src="/resources/img/Next.png">
+                        <img src="/img/Next.png">
                     </button>
                 </div>
                 <div class="hw_content">
@@ -103,11 +103,11 @@
             <div class="hw_section" id="info_section">
                 <div class="hw_content_title">
                     <button type="button" class="nav-button prev-page">
-                        <img src="/resources/img/Next.png" style="transform: rotate(180deg);">
+                        <img src="/img/Next.png" style="transform: rotate(180deg);">
                     </button>
                     <div class="hw_content_mini_title">特別事項</div>
                     <button type="button" class="nav-button next-page">
-                        <img src="/resources/img/Next.png">
+                        <img src="/img/Next.png">
                     </button>
                 </div>
                 <div class="hw_content">
@@ -283,11 +283,11 @@
             <div class="hw_section" id="absent_section">
                 <div class="hw_content_title">
                     <button type="button" class="nav-button prev-page">
-                        <img src="/resources/img/Next.png" style="transform: rotate(180deg);">
+                        <img src="/img/Next.png" style="transform: rotate(180deg);">
                     </button>
                     <div class="hw_content_mini_title">欠席</div>
                     <button type="button" class="nav-button next-page" style="visibility:hidden;">
-                        <img src="/resources/img/Next.png" style="visibility:hidden;">
+                        <img src="/img/Next.png" style="visibility:hidden;">
                     </button>
                 </div>
                 <div class="hw_content">
