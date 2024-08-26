@@ -51,19 +51,28 @@ const modal = document.getElementById('jh_modal');
 const modalBtn = document.getElementById('jh_select_tag');
 const closeBtn = document.getElementById('jh_close_btn');
 
-modalBtn.onclick = function() {
+modalBtn.onclick = function(event) {
     modal.style.display = 'block';
+    const clickX = event.clientX;
+    const clickY = event.clientY;
+    document.body.style.overflow = 'hidden';
+    // 모달의 위치를 클릭한 위치로 설정
+/*    modal.style.left = `${clickX}px`;  // 클릭한 좌표의 X값으로 설정
+    modal.style.top = `${clickY}px`;   // 클릭한 좌표의 Y값으로 설정*/
+
 }
 
 // 모달 닫기
 closeBtn.onclick = function() {
     modal.style.display = 'none';
+    document.body.style.overflow = 'visible';
 }
 
 // 모달 외부 클릭 시 닫기
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
+        document.body.style.overflow = 'visible';
     }
 }
 
