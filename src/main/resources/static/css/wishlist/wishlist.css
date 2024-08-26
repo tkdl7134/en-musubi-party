@@ -143,3 +143,38 @@
 .tk_bottom-bar{
     background-color: #ffd1d0;
 }
+
+.tk_wishlist-btn-box a.wishlist-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 8rem;
+    gap: 3rem;
+    background-color: #FF7E81;
+    border-radius: 20px;
+    border: 5px solid red;
+    color: inherit;
+    cursor: pointer;
+}
+
+.tk_wishlist-btn-box:nth-child(1) > a.wishlist-button {
+    background-color: #FFE1E1;
+}
+
+.tk_wishlist-btn-box:nth-child(2) > a.wishlist-button {
+    background-color: #FFD600;
+}
+
+.tk_wishlist-btn-box:nth-child(3) > a.wishlist-button {
+    background-color: #FF7E81;
+}
+
+.tk_wishlist-a-img-box {
+    border: transparent;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

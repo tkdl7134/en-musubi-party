@@ -819,8 +819,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener("DOMContentLoaded", function () {
 
         const enMusubiEnvelope = document.querySelector(".survey-submit-button");
-        const enMusubiEnvelopeTop = document.querySelector(".main-enParty-envelope-top");
-        const enMusubiEnvelopePaper = document.querySelector(".main-enParty-envelope-paper");
+        const enMusubiEnvelopeTop = document.querySelector(".main-enMusubi-envelope-top");
+        const enMusubiEnvelopePaper = document.querySelector(".main-enMusubi-envelope-paper");
         const enMusubiEnvelopeText = document.querySelector(".main-enMusubi-envelope-text");
         const surveyForm = document.getElementById("surveyForm");
 

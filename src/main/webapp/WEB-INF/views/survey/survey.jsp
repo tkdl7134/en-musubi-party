@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ include file="../menubar.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
@@ -22,12 +23,6 @@
     <script src="/resources/js/survey/survey.js"></script>
 </head>
 <body>
-<div class="tk_menu-header">
-    <div class="tk_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
-    <div>縁結び</div>
-    <div class="tk_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
-</div>
-
 <div id="tk_product-preview-container">
     <div class="tk_page-content">
         <div class="tk_preview-container">
