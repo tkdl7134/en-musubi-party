@@ -76,7 +76,7 @@
                         <div class="menu menu1" onclick="location.href='/login'">ログイン</div>
                         <div class="menu menu1" onclick="location.href='/register'">会員登録</div>
                         <div class="menu menu2" onclick="location.href='/product'">縁結び</div>
-                        <div class="menu menu2" onclick="handleOption('Option 3')">縁パーティー</div>
+                        <div class="menu menu2" onclick="location.href='/r/join-user'">縁パーティー</div>
                     </div>
                 </div>
             </div>
