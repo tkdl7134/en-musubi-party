@@ -784,18 +784,19 @@
 .main_notice-button {
     display: flex;
     justify-content: center;
-    margin: 3rem 0;
+    margin: 55px 0;
 
     button {
-        width: 4rem;
-        height: 4rem;
+        width: 55px;
+        height: 55px;
         border: 2px solid #db2227;
-        background-color: #ff908e;
+        background-color: #ffffff;
+        outline: 2px solid #ffc700;
         border-radius: 100%;
-        color: #ffffff;
-        font-size: 18px;
+        color: #555555;
+        font-size: 16px;
         font-weight: 900;
-        box-shadow: 0 0 5px rgba(219, 34, 39, 0.5);
+        box-shadow: 0 0 15px #ffffff;
     }
 }
 
