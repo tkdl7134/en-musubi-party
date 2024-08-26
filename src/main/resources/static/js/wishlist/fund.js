@@ -41,102 +41,8 @@ $.ajax({
 		$(".kh-f-card-container").append(`<div class="kh-f-card-fake"></div>`)
 
 
-		//색상 등
-		// let card = document.querySelectorAll(".kh-f-card-out");
-		// let fpop = document.querySelector(".kh-f-popup");
-		// const modal = document.getElementById("modal");
-		// card.forEach((element, index, array) => {
-		// 	let cardIn = element.querySelector(".kh-fund-card");
-		// 	if (index % 2 == 0) {
-		// 		element.style.transform = "scale(0.9)";
-		// 		element.classList.add("kh-f-card-min");
-		// 		cardIn.style.backgroundColor = "#FFF1E0";
-		// 	} else {
-		// 		cardIn.style.backgroundColor = "#FFE0E0";
-		// 	}
-		// 	element.style.transition = "0.8s ease-in-out";
-		// 	element.addEventListener("mouseenter", () => {
-		// 		isMouseOverCard = true;
-		// 	});
-		// 	element.addEventListener("mouseleave", () => {
-		// 		isMouseOverCard = false;
-		// 	});
-		// 	element.addEventListener("mouseover", function(event) {
-		// 		card.forEach((otherCard) => {
-		// 			if (otherCard !== element) {
-		// 				if (otherCard.classList.contains("kh-f-card-min")) {
-		// 					otherCard.style.transform = "scale(0.8)";
-		// 				} else {
-		// 					otherCard.style.transform = "scale(0.9)";
-		// 				}
-		// 				otherCard.style.filter = "grayscale(100%)";
-		// 			}
-		// 			document.querySelector(".kh-f-mousemove > img").src =
-		// 				"/resources/img/viewbtn.png";
-		// 			mouseicn.classList.remove("kh-f-none");
-		// 			mouseicn.classList.add("kh-f-block");
-		// 		});
-		// 		if (element.classList.contains("kh-f-card-min")) {
-		// 			this.style.transform = "scale(1)";
-		// 		} else {
-		// 			this.style.transform = "scale(1.1)";
-		// 		}
-		// 		event.stopPropagation();
-		// 	});
-		// 	element.addEventListener("mouseout", function(event) {
-		// 		card.forEach((otherCard) => {
-		// 			if (otherCard !== element) {
-		// 				if (otherCard.classList.contains("kh-f-card-min")) {
-		// 					otherCard.style.transform = "scale(0.9)";
-		// 				} else {
-		// 					otherCard.style.transform = "scale(1)";
-		// 				}
-		// 				otherCard.style.filter = "none";
-		// 			}
-		// 		});
-		// 		if (element.classList.contains("kh-f-card-min")) {
-		// 			this.style.transform = "scale(0.9)";
-		// 		} else {
-		// 			this.style.transform = "scale(1)";
-		// 		}
-		// 		event.stopPropagation();
-		// 	});
-		//
-		// 	element.addEventListener("click", function(event) {
-		// 		let cardParent = event.target.closest(".kh-fund-card");
-		// 		element.classList.add("kh-f-rotate");
-		// 		if (cardParent) {
-		// 			let wlno = event.target.closest(".kh-fund-card").getAttribute("value");
-		// 			let selectobj = jsoninfos.find(function(element) {
-		// 				return element.wl_no == wlno;
-		// 			});
-		// 			console.log(selectobj)
-		// 			if (selectobj.percent === undefined) {
-		// 				percent = 0;
-		// 			}
-		// 			else {
-		// 				percent = selectobj.percent;
-		// 			};
-		// 			document.querySelector("#kh-f-price").innerHTML = percent;
-		// 			document.querySelector("#kh-f-product").innerHTML = selectobj.wl_product;
-		// 			document.querySelector(".kh-f-btn").setAttribute("value", selectobj.wl_no);
-		// 			document.querySelector("#kh-f-img").src = "/resources/img/" + selectobj.wl_product + ".png";
-		// 			openModal()
-		// 			document.querySelector(".kh-f-mousemove > img").src =
-		// 				"/resources/img/backbtn.png";
-		// 			fpop.classList.add("kh-f-rotate");
-		// 		}
-		// 		scrollTimeout = setTimeout(() => {
-		// 			element.classList.remove("kh-f-rotate");
-		// 			fpop.classList.remove("kh-f-rotate");
-		// 		}, 1000);
-		// 		event.stopPropagation();
-		// 	});
-		// });
-
 		// 카드 스타일 초기화
 		let card = document.querySelectorAll(".kh-f-card-out");
-		const colors = ['#FDEEF4', '#FFF5F8', '#FDF7FF', '#FFF0F5', '#FEEEF5', '#FFE4E6'];
 
 		card.forEach((element, index) => {
 			let cardIn = element.querySelector(".kh-fund-card");
@@ -144,17 +50,25 @@ $.ajax({
 			// 모든 카드 크기를 동일하게 설정
 			element.style.transform = "scale(1)"; // 모든 카드를 원래 크기로 설정
 
-			// 각 카드에 다른 색상을 적용
-			cardIn.style.background = colors[index % colors.length];
-
 			// 애니메이션 설정
 			element.style.transition = "0.8s ease-in-out";
 		});
+
+		// 첫 번째 카드를 중앙에 배치
+		const container = document.querySelector(".kh-f-card-container");
+		const firstCard = container.querySelector(".kh-f-card-out:first-child");
+
+		if (firstCard) {
+			const containerWidth = container.clientWidth;
+			const cardWidth = firstCard.clientWidth;
+			const initialScrollPosition = firstCard.offsetLeft - (containerWidth / 2 - cardWidth / 2);
+
+			container.scrollLeft = initialScrollPosition;
+		}
 	}
 });
 
 		const cardCon = document.querySelector(".kh-f-card-container");
-
 		// 이벤트 위임으로 모든 카드에 이벤트 리스너 적용
 		cardCon.addEventListener("click", function (event) {
 			const card = event.target.closest(".kh-fund-card");
@@ -174,7 +88,7 @@ $.ajax({
 				document.querySelector("#kh-f-img").src = "/resources/img/" + selectobj.wl_product + ".png";
 
 				openModal();
-				document.querySelector(".kh-f-mousemove > img").src = "/resources/img/backbtn.png";
+				// document.querySelector(".kh-f-mousemove > img").src = "/resources/img/backbtn.png";
 
 				const fpop = document.querySelector(".kh-f-popup");
 				fpop.classList.add("kh-f-rotate");
@@ -241,7 +155,7 @@ $.ajax({
 
 		//변수 설정
 		const cardConAll = document.querySelectorAll(".kh-f-card-container");
-		const mouseicn = document.querySelector(".kh-f-mousemove");
+		// const mouseicn = document.querySelector(".kh-f-mousemove");
 
 		// 컨테이너 내용을 복제하여 무한 스크롤 구현
 		const cards = Array.from(cardCon.children);
@@ -251,31 +165,6 @@ $.ajax({
 		for (let i = 0; i < 3; i++) {
 			cards.forEach(card => cardCon.appendChild(card.cloneNode(true)))
 		}
-
-		//마우스 따라다니는 요소
-		cardCon.addEventListener("mouseover", function(event) {
-			if (event.target === cardCon) {
-				document.querySelector(".kh-f-mousemove > img").src =
-					"/resources/img/dragbtn.png";
-			}
-			cardCon.style.cursor = "none";
-			mouseicn.classList.remove("kh-f-none");
-			mouseicn.classList.add("kh-f-block");
-			event.stopPropagation();
-		});
-
-		document.addEventListener("mousemove", (event) => {
-			const mouseX = event.clientX;
-			const mouseY = event.clientY;
-			mouseicn.style.pointerEvents = "none";
-			mouseicn.style.left = mouseX + "px";
-			mouseicn.style.top = mouseY + "px";
-		});
-
-		cardCon.addEventListener("mouseout", function() {
-			mouseicn.classList.remove("kh-f-block");
-			mouseicn.classList.add("kh-f-none");
-		});
 
 		const card = cardCon.children[0];
 		const cardWidth = card.offsetWidth; // 카드 너비
@@ -296,42 +185,37 @@ $.ajax({
 		}
 		});
 
-		//마우스 휠할때 도는 애니메이션
-		// cardCon.addEventListener("wheel", function(event) {
-		// 	if (isMouseOverCard) return;
-		// 	card.forEach((element) => {
-		// 		// Prevent the default vertical scroll
-		// 		event.preventDefault();
-		// 		// Scroll horizontally
-		// 		const scrollSpeed = 0.5;
-		// 		this.scrollLeft += event.deltaY * scrollSpeed;
-		// 		if (scrollTimeout) {
-		// 			if (element.classList.contains("kh-f-card-min")) {
-		// 				element.style.transform = "scale(0.9) rotateY(30deg)";
-		// 			} else {
-		// 				element.style.transform = "rotateY(30deg)";
-		// 			}
-		// 			clearTimeout(scrollTimeout);
-		// 		}
-		// 		scrollTimeout = setTimeout(() => {
-		// 			card.forEach(function(element) {
-		// 				element.style.transform = "rotateY(0deg)";
-		// 				if (element.classList.contains("kh-f-card-min")) {
-		// 					element.style.transform = "scale(0.9)";
-		// 				} else {
-		// 					element.style.transform = "scale(1)";
-		// 				}
-		// 			});
-		// 			isRotated = false;
-		// 		}, 300); // 1초 동안 유지
-		// 	});
-		// });
 
-		cardCon.addEventListener("wheel", function (event) {
-			event.preventDefault();
-			const scrollSpeed = 0.5;
-			cardCon.scrollLeft += event.deltaY * scrollSpeed;
-		})
+// 부드러운 스크롤을 위한 설정
+	let scrollAmount = 0;
+	let scrollTarget = 0;
+	let isScrolling = false;
+
+	function smoothScroll() {
+		if (!isScrolling) return;
+
+		scrollAmount += (scrollTarget - scrollAmount) * 0.1; // 부드러운 감속 효과
+		cardCon.scrollLeft = scrollAmount;
+
+		if (Math.abs(scrollTarget - scrollAmount) < 0.5) {
+			isScrolling = false;
+		} else {
+			requestAnimationFrame(smoothScroll);
+		}
+	}
+
+	cardCon.addEventListener("wheel", function (event) {
+		event.preventDefault();
+
+		// 스크롤 속도 조정
+		scrollTarget += event.deltaY * 0.5; // 스크롤 속도를 줄임
+		scrollTarget = Math.max(0, Math.min(cardCon.scrollWidth - cardCon.clientWidth, scrollTarget)); // 범위 제한
+
+		if (!isScrolling) {
+			isScrolling = true;
+			requestAnimationFrame(smoothScroll);
+		}
+	});
 
 		let isDown = false;
 		let startX;
@@ -381,6 +265,8 @@ $.ajax({
 		});
 
 }
+
+
 //ajax 종료
 //크기,색상 호버시 확대 및 다른요소 비활성화
 
@@ -412,7 +298,10 @@ function goStatistic(wlno) {
 					let doms = `
 				<div class="kh-f-statistic-content">
 					<div class="kh-f-statistic-name">
-						<div class="kh-f-none"><span>私の選択</span><img alt="noImg" src="/resources/img/flash.png"> </div>
+						<div class="kh-f-none">
+							<span style="font-size: 0.7rem;color: red;">私の選択</span>
+							<img alt="noImg" src="/resources/img/flash.png" style="width: 1.5rem;"> 
+						</div>
 						<h1>${element.wl_product}</h1>
 					</div>
 					<div class="kh-f-statistic-bar">
@@ -514,3 +403,21 @@ function closeStatistic() {
 	const modal = document.getElementById("statisticModal");
 	modal.close();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+	const overlay = document.getElementById("je_overlay");
+	const container = document.querySelector(".kh-f-card-container");
+
+	function hideOverlay() {
+		overlay.classList.add("hidden");
+	}
+
+	function showOverlay() {
+		overlay.classList.remove("hidden");
+	}
+
+	container.addEventListener("mouseover", hideOverlay);
+	container.addEventListener("mouseout", showOverlay);
+	container.addEventListener("touchstart", hideOverlay);
+	container.addEventListener("touchend", showOverlay);
+});

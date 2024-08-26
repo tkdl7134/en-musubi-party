@@ -183,34 +183,32 @@ from allergy
 where e_no = 68;
 
 -- 동반자 유형
-create table party
+create table companion
 (
     p_pk             number(5) primary key,
     e_no             number(5)         not null,
     m_id             varchar2(50 char) not null,
     p_accompany_type varchar2(5 char)  not null,
     p_accompany_num  number(3)         not null,
-    p_fam_kangi      varchar2(50 char) not null,
-    p_name_kangi     varchar2(50 char) not null,
+    p_fam_kanji      varchar2(50 char) not null,
+    p_name_kanji     varchar2(50 char) not null,
     p_fam_kana       varchar2(50 char) not null,
     p_name_kana      varchar2(50 char) not null,
     p_fam_eng        varchar2(50 char) not null,
     p_name_eng       varchar2(50 char) not null,
     p_gender         varchar2(10 char) not null,
     p_allergy_or     varchar2(5 char)  not null,
-    p_relation       varchar2(20 char) not null,
 
     foreign key (e_no) references event (e_no),
     foreign key (m_id) references member (m_id)
 );
-create sequence party_seq;
-insert into party
-values (party_seq.nextval, '68', 'test9', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', '有',
-        '姉');
+create sequence companion_seq;
+drop sequence companion_seq;
+
 
 select *
-from party;
-drop table party;
+from companion;
+drop table companion;
 
 -- 동반자 알러지
 create table partyAllergy
@@ -352,8 +350,10 @@ select * from pay;
 select * from pay;
 select * from wishlist;
 select * from member;
+select * from COMPANION;
+select * from guest;
 
-<<<<<<< HEAD
+
 SELECT e.e_no, m.m_id, m.m_fam_kanji, m.m_name_kanji, m.m_email, m.m_phone, g.g_allergy_or, g.g_relation, a.allergy,w.w_img1, w.w_img2, w.w_img3, w.w_img_share, w.w_date, w.w_wedding_address, g.g_attend_wedding, g.g_guest_type, c.p_accompany_num, c.p_accompany_type, c.p_fam_kanji, c.p_name_kanji
             FROM guest g
             LEFT JOIN member m ON g.m_id = m.m_id
@@ -368,7 +368,6 @@ delete guest where m_id = 'test778';
 
 select * from event where e_no = 255;
 select * from wishlist where e_no =255;
-=======
 select * from guest;
 
 select * from companion;
