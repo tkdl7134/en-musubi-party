@@ -5,12 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/member/findIDResult.css">
+    <link rel="stylesheet" href="/css/member/findIDResult.css">
 </head>
 <body>
 <div class="findIDResult-container">
     <div class="findIDResult-deco-img">
-        <img src="/resources/img/logo-img.png" alt="findIDResult-deco-img">
+        <img src="/img/logo-img.png" alt="findIDResult-deco-img">
     </div>
 
     <div class="findIDResult-title">

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title> ✿ ~ 縁結び ~ ✿ </title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/resources/css/home/home.css">
-    <script src="/resources/js/home/home.js"></script>
+    <link rel="stylesheet" href="/css/home/home.css">
+    <script src="/js/home/home.js"></script>
 </head>
 <body>
 
@@ -26,7 +26,7 @@
         </p>
     </div>
     <div class="home-logo-img">
-        <img src="/resources/img/logo-img.png" alt="home-logo-img">
+        <img src="/img/logo-img.png" alt="home-logo-img">
     </div>
     <div class="home-button">
         <button onclick="changeColorNRedirect(this)"> 招待承諾 </button>

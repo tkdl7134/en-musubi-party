@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/member/resetPW.css">
+    <link rel="stylesheet" href="/css/member/resetPW.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="/resources/js/member/resetPW.js"></script>
+    <script src="/js/member/resetPW.js"></script>
 </head>
 <body>
 <div class="resetPW-container">
     <div class="resetPW-deco-img">
-        <img src="/resources/img/logo-img.png" alt="resetPW-deco-img">
+        <img src="/img/logo-img.png" alt="resetPW-deco-img">
     </div>
 
     <div class="resetPW-title">

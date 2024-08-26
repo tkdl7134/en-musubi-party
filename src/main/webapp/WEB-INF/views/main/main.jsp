@@ -7,9 +7,9 @@
 
     <title> ✿ ~ 縁結び ~ ✿ </title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/resources/css/main/main.css">
+    <link rel="stylesheet" href="/css/main/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/resources/js/main/main.js"></script>
+    <script src="/js/main/main.js"></script>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
             <input type="hidden" id="memberID" value="${sessionScope.authenticatedMember.m_id}">
             <div class="main-welcome-box">
                 <div class="main-logo-img">
-                    <img src="/resources/img/logo-img.png" alt="main-logo-img"/>
+                    <img src="/img/logo-img.png" alt="main-logo-img"/>
                 </div>
                 <div class="main-welcome-text">
                     <p>
@@ -43,7 +43,7 @@
                     <div>
                         <div class="main-account-box">
                             <div class="main-account-logout">
-                                <img src="resources/img/main-logout.png" alt="main-logout">
+                                <img src="/img/main-logout.png" alt="main-logout">
                                 <div class="main-logout" id="logout-button">ログアウト</div>
                             </div>
                             <div class="main-account-mypage" onclick="showMypageSheet()">マイページ</div>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="main-deco">
-                    <img src="/resources/img/main-deco-img.png" alt="main-deco-img">
+                    <img src="/img/main-deco-img.png" alt="main-deco-img">
                 </div>
             </div>
         </c:when>
@@ -59,7 +59,7 @@
         <c:otherwise>
             <div class="main-welcome-box">
                 <div class="main-logo-img">
-                    <img src="/resources/img/logo-img.png" alt="main-logo-img">
+                    <img src="/img/logo-img.png" alt="main-logo-img">
                 </div>
                 <div class="main-welcome-text">
                     <p>
@@ -78,7 +78,7 @@
                     お楽しみください！
                 </div>
                 <div class="main-deco">
-                    <img src="/resources/img/main-deco-img.png" alt="main-deco-img">
+                    <img src="/img/main-deco-img.png" alt="main-deco-img">
                 </div>
             </div>
         </c:otherwise>
@@ -98,7 +98,7 @@
             <div class="main-enMusubi-envelope-top"></div>
             <div class="main-enMusubi-envelope-top-border"></div>
             <div class="main-enMusubi-envelope-logo-img">
-                <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img">
+                <img src="/img/logo-img.png" alt="main-envelope-logo-img">
             </div>
         </div>
 
@@ -114,7 +114,7 @@
             </div>
             <div class="main-enParty-envelope-top"></div>
             <div class="main-enParty-envelope-logo-img">
-                <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img">
+                <img src="/img/logo-img.png" alt="main-envelope-logo-img">
             </div>
         </div>
     </div>
@@ -125,7 +125,7 @@
             <div class="main-popup-container">
                 <div class="main-popup-deco">
                     <div class="main-popup-deco-img">
-                        <img src="/resources/img/logo-img.png" alt="main-popup-img"/>
+                        <img src="/img/logo-img.png" alt="main-popup-img"/>
                     </div>
                     <div class="main-popup-deco-text">
                         <p>
@@ -163,7 +163,7 @@
                     </div>
                     <div class="main-userinfo-envelope-top main-mypage-envelope-top"></div>
                     <div class="main-userinfo-envelope-logo-img main-mypage-envelope-logo-img">
-                        <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img"/>
+                        <img src="/img/logo-img.png" alt="main-envelope-logo-img"/>
                     </div>
                 </div>
                 <!-- 招待状 管理 -->
@@ -179,7 +179,7 @@
                     </div>
                     <div class="main-invitationmanage-envelope-top main-mypage-envelope-top"></div>
                     <div class="main-invitationmanage-envelope-logo-img main-mypage-envelope-logo-img">
-                        <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img"/>
+                        <img src="/img/logo-img.png" alt="main-envelope-logo-img"/>
                     </div>
                 </div>
                 <!-- 参加リスト -->
@@ -195,7 +195,7 @@
                     </div>
                     <div class="main-grouplist-envelope-top main-mypage-envelope-top"></div>
                     <div class="main-grouplist-envelope-logo-img main-mypage-envelope-logo-img">
-                        <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img"/>
+                        <img src="/img/logo-img.png" alt="main-envelope-logo-img"/>
                     </div>
                 </div>
             </div>
@@ -208,7 +208,7 @@
     <div class="main_notice_pop">
         <div class="main_notice_content">
             <div class="main_notice-img">
-                <img src="/resources/img/popup-deco-img40.png" alt="" />
+                <img src="/img/popup-deco-img40.png" alt="" />
             </div>
             <div class="main_notice-txtBtn">
                 <div class="main_notice-txt">
