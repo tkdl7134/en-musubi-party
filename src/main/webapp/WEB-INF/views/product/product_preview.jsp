@@ -12,11 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet"/>
     <%--  CSS --%>
-    <link rel="stylesheet" href="/resources/css/product/product_preview.css" />
+    <link rel="stylesheet" href="/css/product/product_preview.css" />
     <%--  JS --%>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
-    <script src="/resources/js/product/product_preview.js"></script>
+    <script src="/js/product/product_preview.js"></script>
 </head>
 <body>
 <%--Content--%>
@@ -26,7 +26,7 @@
         <div class="je_preview-container">
             <div class="je_preview">
                 <div class="je_preview-phone">
-                    <img src="/resources/img/iphone-box.png" alt="" />
+                    <img src="/img/iphone-box.png" alt="" />
                     <div id="je_overlay">
                         <div class="je_overlay-txt">
                             1回タッチした後、 <br /> <br>
@@ -40,17 +40,17 @@
                         </div>
                     </div>
                     <div class="je_example_img">
-                        <img src="/resources/img/${oneTemplate.t_example}" alt="" />
+                        <img src="/img/${oneTemplate.t_example}" alt="" />
                     </div>
                 </div>
             </div>
             <div
                     class="je_example-closeUp-button"
                     data-target="#layer"
-                    data-example="/resources/img/${oneTemplate.t_example}"
+                    data-example="/img/${oneTemplate.t_example}"
                     type="button"
             >
-                <img src="/resources/img/zoom-icon.png" alt="" />
+                <img src="/img/zoom-icon.png" alt="" />
                 <span>サンプルを大きく表示</span>
             </div>
         </div>

@@ -4,12 +4,12 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
-<link rel="stylesheet" href="/resources/css/statistics/statistics.css">
+<link rel="stylesheet" href="/css/statistics/statistics.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<script src="/resources/js/statistics/statistics.js" defer></script>
+<script src="/js/statistics/statistics.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -568,7 +568,7 @@
 
 
         });
-
+       /* $('.slick-slider').slick('setPosition');*/
 
         const ctx = document.getElementById('myChart').getContext('2d');
         const ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -662,7 +662,7 @@
                 datasets: [{
                     label: '繋がった想い',
                     data: array2,
-                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255, 165, 0)', 'rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(75, 0, 130)', 'rgb(238, 130, 238)'],
+                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255,161,148)', 'rgb(255,194,194)', 'rgb(255,226,75)', 'rgb(251,239,214)'],
                     hoverOffset: 4
                 }]
             }, options: {
@@ -804,7 +804,7 @@
                 datasets: [{
                     label: '繋がった想い',
                     data: array5,
-                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255, 165, 0)', 'rgb(255, 255, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)', 'rgb(75, 0, 130)', 'rgb(238, 130, 238)'],
+                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255,161,148)', 'rgb(255,194,194)', 'rgb(255,226,75)', 'rgb(251,239,214)'],
                     hoverOffset: 4
                 }]
             }, options: {
@@ -906,7 +906,7 @@
     </div>
     <div id="jh_top" class="mobile">
         <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
-            <div><img src="/resources/img/JH_Logo.png" alt=""></div>
+            <div><img src="/img/JH_Logo.png" alt=""></div>
 
             <div id="jh_pageNavi1" class="jh_pageNavigation" style="width: 64%; transform: translateX(-25%);">
                 <div id="jh_pageNavi2" class="jh_pageNavigationA" style="background-color: red;     width: 64vw;" onclick="goToFundPage()">
@@ -928,7 +928,7 @@
                 <div class="jh_title" style="margin-top: 10%; width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
-    bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
+    bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
 
 
@@ -949,7 +949,7 @@
 
 
                 <div style="display: flex; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
-                    <canvas style="width: 100vw ; height: 50vh; " id="myChart"></canvas>
+                    <canvas style="width: 100vw ; " id="myChart"></canvas>
                 </div>
                 <div style="background-color: white; margin-top: 5rem; border: 1px solid #555555; border-radius: 30px"
                      class="jh_week_data">
@@ -960,9 +960,9 @@
 
                 </div>
                 <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
-                    <img class="jh_prev_btn2"  src="/resources/img/Prev.png">
-                    <img  src="/resources/img/Dots1.png">
-                    <img  class="jh_next_btn2" src="/resources/img/Next.png" alt="">
+                    <img class="jh_prev_btn2"  src="/img/Prev.png">
+                    <img  src="/img/Dots1.png">
+                    <img  class="jh_next_btn2" src="/img/Next.png" alt="">
                 </div>
 
 
@@ -975,7 +975,7 @@
                 <div class="jh_title" style="width: 90%; transform: translateX(6%); margin-top : 10%;align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
-    bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
+    bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
                 <div style="      margin-top: 10%;
     padding-top: 10%;  padding-bottom: 10%;background-color: #FFDBDB; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
@@ -1032,18 +1032,18 @@
                     </div>
                 </div>
                 <div   style="height : 6rem;text-align: center ; display: flex; align-items: center; justify-content: space-around;">
-                    <img class="jh_prev_btn2"  src="/resources/img/Prev.png">
-                    <img  src="/resources/img/Dots2.png">
-                    <img  class="jh_next_btn2" src="/resources/img/Next.png" alt="">
+                    <img class="jh_prev_btn2"  src="/img/Prev.png">
+                    <img  src="/img/Dots2.png">
+                    <img  class="jh_next_btn2" src="/img/Next.png" alt="">
                 </div>
             </div>
-            <div id="slider33" class="jh_slider">
+            <div id="jh_slider33" class="jh_slider">
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 20px; height: 8vh;">個別贈り物の現況 </div>
                 <div class="jh_title" style="width: 90%;  transform: translateX(6%);align-items: center; height: 19vh; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
-    bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
+    bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
                 <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
                      class="jh_other_infos">
@@ -1109,9 +1109,9 @@
 
 
                 <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
-                    <img class="jh_prev_btn2"  src="/resources/img/Prev.png">
-                    <img  src="/resources/img/Dots3.png">
-                    <img  class="jh_next_btn2" src="/resources/img/Next.png" alt="">
+                    <img class="jh_prev_btn2"  src="/img/Prev.png">
+                    <img  src="/img/Dots3.png">
+                    <img  class="jh_next_btn2" src="/img/Next.png" alt="">
                 </div>
 
 
@@ -1127,7 +1127,7 @@
                 <div class="jh_title" style="margin-top: 10%; width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
-    bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
+    bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
 
 
@@ -1154,9 +1154,9 @@
 
                 </div>
                 <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
-                    <img class="jh_prev_btn"  src="/resources/img/Prev.png">
-                    <img  src="/resources/img/Dots1.png">
-                    <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
+                    <img class="jh_prev_btn"  src="/img/Prev.png">
+                    <img  src="/img/Dots1.png">
+                    <img  class="jh_next_btn" src="/img/Next.png" alt="">
                 </div>
 
 
@@ -1167,7 +1167,7 @@
                 <div class="jh_title" style="width: 90%; transform: translateX(6%); margin-top : 10%;align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
-    bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
+    bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
                 <div style="      margin-top: 10%;
     padding-top: 10%;  padding-bottom: 10%;background-color: #FFDBDB; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
@@ -1224,9 +1224,9 @@
                     </div>
                 </div>
                 <div   style="height : 6rem; text-align: center ; display: flex; align-items: center; justify-content: space-around;">
-                    <img class="jh_prev_btn"  src="/resources/img/Prev.png">
-                    <img  src="/resources/img/Dots2.png">
-                    <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
+                    <img class="jh_prev_btn"  src="/img/Prev.png">
+                    <img  src="/img/Dots2.png">
+                    <img  class="jh_next_btn" src="/img/Next.png" alt="">
                 </div>
             </div>
             <div class="jh_slider" id="jh_slider333">
@@ -1235,7 +1235,7 @@
                 <div class="jh_title" style="width: 90%;  transform: translateX(6%);align-items: center; height: 19vh; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
-    bottom: -15%; "><img width="" src="/resources/img/diagram 1.png" alt=""></div>
+    bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
                <%-- <button id="jh_select_tag2"
                                                       style="margin-top : 10%; background-color: white; width: 47%; padding: 5%; transform: translateX(47vw); text-align: center; font-family: 'Noto Serif JP', serif; font-weight: bold">
@@ -1305,9 +1305,9 @@
 
 
                 <div   style="text-align: center ; display: flex; align-items: center; justify-content: space-around;">
-                    <img class="jh_prev_btn"  src="/resources/img/Prev.png">
-                    <img  src="/resources/img/Dots3.png">
-                    <img  class="jh_next_btn" src="/resources/img/Next.png" alt="">
+                    <img class="jh_prev_btn"  src="/img/Prev.png">
+                    <img  src="/img/Dots3.png">
+                    <img  class="jh_next_btn" src="/img/Next.png" alt="">
                 </div>
 
 

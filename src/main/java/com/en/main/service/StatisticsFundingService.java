@@ -31,8 +31,8 @@ public class StatisticsFundingService implements StatisticsFundingMapper {
     }
 
     @Override
-    public int getPrices(PayVo payVo, int no, int eno) {
-        return statisticsFundingMapper.getPrices(payVo,no , eno);
+    public int getPrices( int no, int eno) {
+        return statisticsFundingMapper.getPrices(no , eno);
     }
 
     @Override
