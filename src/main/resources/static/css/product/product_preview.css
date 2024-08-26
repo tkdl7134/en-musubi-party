@@ -1,8 +1,3 @@
-/* 기본세팅 */
-
-/* <uniquifier>: Use a unique and descriptive class name */
-/* <weight>: Use a value from 200 to 900 */
-
 * {
     margin: 0;
     padding: 0;
@@ -160,6 +155,7 @@ body {
     align-items: center;
     margin-top: 1rem;
     gap: 1rem;
+    cursor: pointer;
     img {
         width: 1.5rem;
     }
@@ -181,6 +177,20 @@ body {
     font-weight: 900;
     color: #474747;
 }
+
+.je_product-make-button:hover{
+    span{
+        transform: scale(1.1);
+        transition-duration: 0.5s;
+    }
+}
+.je_product-make-button:not(:hover){
+    span{
+        transform: scale(1);
+        transition-duration: 0.5s;
+    }
+}
+
 
 /* 팝업 */
 .je_pop-layer .je_pop-container {
@@ -277,8 +287,6 @@ a.je_btn-layerClose:not(hover) {
 }
 
 .je_pop-image {
-    /* 템플릿샘플 길이만큼 변경 */
-    height: 125rem;
     width: 100%;
     display: flex;
     justify-content: center;
