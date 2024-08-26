@@ -123,9 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
         surveyEnvelopeText.classList.add("enlarge");
 
         var m_id = document.getElementById('memberID').value;
-        console.log(m_id); // 세션 값이 출력됩니다.
+        var e_no = document.getElementById('eventNo').value;
         setTimeout(function () {
-            window.location.href =`/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}`;
+            window.location.href =`/survey/${m_id}-${e_no}`;
         }, 2000);
     });
 

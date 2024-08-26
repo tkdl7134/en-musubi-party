@@ -81,9 +81,9 @@ body {
     /*justify-content: center;*/
     /*align-items: center;*/
     /*top: 0.5rem;*/
-    /*background-image: url("/resources/img/Paper_BG.png");*/
+    background-image: url("/resources/img/Paper_BG.png");
     width: 19.5rem;
-    height: auto;
+    height: 78%;
     overflow: hidden;
     position: absolute;
     top: calc(50% - 2rem); /* card의 50% 위치에서 card-back 높이의 절반만큼 조정 */
@@ -135,7 +135,8 @@ body {
     bottom: 0; /* card의 하단에 고정 */
     left: 0;
     width: 100%;
-    height: 4rem; /* 버튼 높이로 인해 필요한 공간만큼 설정 */
+    height: 5rem; /* 버튼 높이로 인해 필요한 공간만큼 설정 */
+    padding: 1rem;
 }
 
 .card-back button {

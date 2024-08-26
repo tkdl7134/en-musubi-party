@@ -21,5 +21,4 @@ public class CompanionVO {
     private String p_name_eng;
     private String p_gender;
     private String p_allergy_or;
-    private String p_relation;
 }

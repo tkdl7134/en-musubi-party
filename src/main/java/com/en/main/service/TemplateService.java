@@ -17,12 +17,12 @@ public class TemplateService {
         return templateMapper.getAllWedding(m_id);
     }
 
-    public List<WeddingVO> getWedding() {
-        return templateMapper.getWedding();
+    public List<WeddingVO> getWedding(int eno) {
+        return templateMapper.getWedding(eno);
     }
 
-    public List<AttendVO> getAttend() {
-        return templateMapper.getAttend();
+    public List<AttendVO> getAttend(int eno) {
+        return templateMapper.getAttend(eno);
     }
 
     public List<GuestDetailVO> getGuestDetail(int eno) {

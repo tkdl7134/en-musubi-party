@@ -54,7 +54,7 @@
                 <span>サンプルを大きく表示</span>
             </div>
         </div>
-        <div class="je_product-make-button" onclick="location.href='/product/${oneTemplate.t_pk}/make'">制作</div>
+        <div class="je_product-make-button" onclick="location.href='/product/${oneTemplate.t_pk}/make'"><span>制作</span></div>
     </div>
 
     <!-- change -->

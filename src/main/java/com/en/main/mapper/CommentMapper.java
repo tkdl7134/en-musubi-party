@@ -13,7 +13,7 @@ public interface CommentMapper {
     @Select("select * from event_comment order by c_no desc")
     List<CommentVO> getAllComment();
 
-    @Insert("insert into event_comment values (22, #{c_writer}, #{c_content}, sysdate, #{c_type}, event_comment_seq.nextval)")
+    @Insert("insert into event_comment values (22, #{c_writer}, #{c_content}, sysdate, #{c_type}, event_comment_seq.nextval, #{c_delete_code})")
     void insertComment (CommentVO commentVO);
 
     @Delete("delete event_comment where c_no = #{no}")

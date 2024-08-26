@@ -222,6 +222,7 @@
 .je_information-title > div:nth-child(2) {
     margin-top: 2rem;
     font-size: 18px;
+    font-weight: 600;
 }
 
 .je_information-box {
@@ -436,31 +437,58 @@
 
 /* yu - comment */
 .yr_guest_book{
-    margin: 25px 0;
+    margin: 30px 0 0;
     text-align: center;
 }
 .yr_guest_book_button{
-    width: 85%;
-    padding: 5px 0;
+    width: 55%;
+    padding: 10px 0;
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: bold;
     border-radius: 1rem;
-    background: #ffc8c8;
-    color: #fff;
-    border: 3px solid #FF494C;
+    background-color: #fff;
+    color: #474747;
+    border: 2px solid #FF494C;
+    outline: 1px solid #ffc700;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 5px #ec0000;
 }
+.yr_guest_book_button:hover{
+    background-color: #ffd6d5;
+    box-shadow: 0px 0px 8px #ec0000;
+
+}
+.yr_guest_book_img{
+    position: absolute;
+    width: 35px;
+    right: 92px;
+    margin-top: 22px;
+}
+
+
 
 /* survey 연결 버튼 */
 .je_survey-button{
-    background-color: #4CAF50;
-    margin-top: 4rem;
-    width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
+    width: 100%;
+    margin: 4rem 0;
+    padding-bottom: 0.8rem;
+}
+
+.je_survey-button:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.je_survey-button:not(:hover){
+    transform: scale(1);
+    transition-duration: 0.5s;
 }
 
 .main-survey-envelope {
-    width: 50%;
+    width: 45%;
     height: 6.5rem;
     border-radius: 40px 40px 5px 5px;
     border: solid 1px rgba(255, 90, 85, 0.7);
@@ -558,4 +586,24 @@
 .main-survey-envelope-logo-img img {
     width: 1.5rem;
     height: auto;
+}
+
+.main-survey-envelope-bottom-line{
+    position: absolute;
+    width: 85%;
+    bottom: -1rem;
+    z-index: 1;
+    pointer-events: none;
+
+    img{
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    #je_invitation-preview-container {
+        width: 30vw;
+        margin: 0 auto;
+    }
+
 }

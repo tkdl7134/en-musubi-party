@@ -32,6 +32,17 @@ body {
     width: 100%;
 }
 
+button:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+button:not(:hover){
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+
 @media (min-width: 769px) {
     .je_menu-header{
         width: 30vw;

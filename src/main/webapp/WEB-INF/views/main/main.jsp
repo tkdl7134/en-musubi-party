@@ -8,6 +8,7 @@
     <title> ✿ ~ 縁結び ~ ✿ </title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/resources/css/main/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/resources/js/main/main.js"></script>
 </head>
 <body>
@@ -200,7 +201,31 @@
             </div>
         </div>
     </div>
+</div>
 
+<!-- 팝업 공지사항 -->
+<div class="main_pop" name="enparty-info-popup">
+    <div class="main_notice_pop">
+        <div class="main_notice_content">
+            <div class="main_notice-img">
+                <img src="/resources/img/popup-deco-img40.png" alt="" />
+            </div>
+            <div class="main_notice-txtBtn">
+                <div class="main_notice-txt">
+                    縁結びに続いて、<br />
+                    　ご縁が続きますように
+                </div>
+                <div class="main_notice-button"><button onclick="location.href='/r/join-user'">移動</button></div>
+            </div>
+        </div>
+        <div class="oneday_checkBox">
+            <div class="btn_close"><span>閉じる</span></div>
+            <input
+                    type="checkbox"
+                    name="today_close1"
+            />本日はこの画面を表示しない
+        </div>
+    </div>
 </div>
 
 <%--Logout - defer 써야해서 일단 여기에 적어둡니다.--%>

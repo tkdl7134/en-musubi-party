@@ -210,7 +210,7 @@
                                                 </div>
                                                 <div class="tk_survey-guestType">
                                                     <div class="tk_survey-guestType-checkbox">
-                                                        <div>
+                                                        <div class="jsjsjs">
                                                             <input
                                                                 type="checkbox"
                                                                 id="groomGuest"
@@ -360,7 +360,7 @@
                                             <div class="tk_survey-entryTitle">
                                                 <div class="tk_box-entry-title">
                                                     <span>✿</span>
-                                                    <span>挙式・披露宴</span>
+                                                    <span>縁パーティー</span>
                                                     <span>✿</span>
                                                 </div>
                                             </div>
