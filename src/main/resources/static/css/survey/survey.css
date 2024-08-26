@@ -25,6 +25,9 @@ body {
 .tk_logo-icon,
 .tk_menu-icon {
     width: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
         width: 50%;
     }
@@ -39,7 +42,7 @@ body {
     align-items: center;
     font-size: 1.5rem;
     font-weight: 600;
-    gap: 4rem;
+    gap: 5rem;
     color: #2e2e2e;
 }
 

@@ -12,4 +12,5 @@ public class CommentVO {
     private String c_content;
     private Date c_date;
     private String c_type;
+    private String c_delete_code;
 }

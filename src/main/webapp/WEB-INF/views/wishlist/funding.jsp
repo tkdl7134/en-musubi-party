@@ -8,27 +8,42 @@
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="/resources/js/wishlist/fund.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 ${fundingList}
 <input id="e_no" type="hidden" value="${sessionScope.e_no}">
 <input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
-<div class="je_menu-header">
-	<div class="je_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
-	<div>縁結び</div>
-	<div class="je_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
+<div class="tk_menu-header">
+	<div class="tk_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+		<div>縁結び</div>
+	<div class="tk_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
 </div>
-
 <div class="tk_funding-title">
-	<div>
-		<span>ファンディング</span>
-	</div>
-	<div>
-		<img src="/resources/img/head.png" alt="">
-	</div>
+	<div class="tk_funding-title-bigTitle">ファンディング</div>
 </div>
-
-<div class="kh-f-card-container">
-	<div class="kh-f-mousemove kh-f-none">
-		<img alt="" src="/resources/img/dragbtn.png">
+<%--<div class="tk_funding-title">--%>
+<%--	<div>--%>
+<%--		<span>ファンディング</span>--%>
+<%--	</div>--%>
+<%--	<div>--%>
+<%--		<img src="/resources/img/head.png" alt="">--%>
+<%--	</div>--%>
+<%--</div>--%>
+	<div class="kh-f-card-container" style="position: relative">
+	<div id="je_overlay">
+		<div class="je_overlay-txt">
+			1回タッチした後、 <br /> <br>
+			画像をドラッグすると、<br />
+			詳しく見ることができます
+		</div>
+		<div class="scroll-downs">
+<%--			<div class="mousey">--%>
+<%--				<div class="scroller"></div>--%>
+<%--			</div>--%>
+<%--				<div class="kh-f-mousemove kh-f-none">--%>
+					<img alt="" src="/resources/img/dragbtn.png">
+<%--				</div>--%>
+		</div>
 	</div>
 	<div class="kh-f-card-fake"></div>
 	<!-- <div class="kh-f-card-out">
@@ -42,7 +57,7 @@ ${fundingList}
 			</div>
 		</div>
 	</div> -->
-</div>
+	</div>
 
 <dialog id="modal" class="modal">
 <div class="kh-f-popup">
@@ -88,7 +103,10 @@ ${fundingList}
 			<div>
 				<img alt="" src="/resources/img/crown.png">
 			</div>
-			<h1>ファンディングランキング</h1>
+				<div class="kh-f-statistic-title-h1">
+					<div>ファンディン</div>
+					<div>グランキング</div>
+				</div>
 			<div>
 				<img alt="" src="/resources/img/crown.png">
 			</div>

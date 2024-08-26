@@ -20,11 +20,8 @@
                 <div class="card-inner">
                     <div class="image-container">
                         <img src="${pageContext.request.contextPath}/resources/img/Test1.jpg" alt="Template 1">
-                        <img src="${pageContext.request.contextPath}/resources/img/Test2.jpg" alt="Template 2">
-                        <img src="${pageContext.request.contextPath}/resources/img/Test3.jpg" alt="Template 3">
+<%--                        <img src="${pageContext.request.contextPath}/resources/img/Test2.jpg" alt="Template 2">--%>
 <%--                        <img src="${pageContext.request.contextPath}/resources/img/${w.w_img1}" alt="Template 1">--%>
-<%--                        <img src="${pageContext.request.contextPath}/resources/img/${w.w_img2}" alt="Template 2">--%>
-<%--                        <img src="${pageContext.request.contextPath}/resources/img/${w.w_img3}" alt="Template 3">--%>
 
                         <button class="share-button" type="button" data-url="http://localhost${pageContext.request.contextPath}/invitation/${w.e_no}">
                             <span>共有</span>

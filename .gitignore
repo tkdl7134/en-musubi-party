@@ -54,3 +54,4 @@ AccountKey.json
 
 ### sql ###
 .sql
+src/main/resources/AccountKey.json

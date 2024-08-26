@@ -218,11 +218,15 @@ body {
     font-size: 18px;
     font-weight: 600;
     border: 2px solid #ff7e81;
-    /* margin-bottom: 1rem; */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
+    /*box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,*/
+    /*rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;*/
+}
+
+.menu:hover{
     box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
-    rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
+                rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
 }
 
 .menu2 {
