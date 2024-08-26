@@ -12,7 +12,7 @@ public interface StatisticsFundingMapper {
 
     @Select("select * from wishlist where e_no = #{eno}")
     List<WishlistVO> getWishlistData(int eno);
-    @Select("select * from wishlist join pay on wishlist.wl_no = pay.wl_no where wishlist.e_no = #{eno}")
+    @Select("select * from wishlist join pay on wishlist.wl_no = pay.wl_no where wishlist.e_no = #{eno} order by wishlist.wl_no desc")
     List<WishlistVO> getFundWishlistData(int eno);
 
     @Select("SELECT \n" +
@@ -43,7 +43,7 @@ public interface StatisticsFundingMapper {
             "  AND w.wl_no = #{no}\n" +
             "GROUP BY\n" +
             "    w.wl_price ")
-            int getPrices(PayVo payVo ,int no , int eno);
+            int getPrices(int no , int eno);
 
         @Select("select count(M_ID)  from pay where p_type = 'fund' and E_NO =  #{no}")
     int getNumberOfPeople (int no);
@@ -193,8 +193,8 @@ public interface StatisticsFundingMapper {
 
 
     @Select("SELECT\n" +
-            "    COUNT(CASE WHEN guest.G_GUEST_TYPE = '新郎ゲスト' THEN 1 END) AS groom_guest_count,\n" +
-            "    COUNT(CASE WHEN guest.G_GUEST_TYPE = '新婦ゲスト' THEN 1 END) AS bride_guest_count\n" +
+            "    COUNT(CASE WHEN guest.G_GUEST_TYPE = '新郎' THEN 1 END) AS groom_guest_count,\n" +
+            "    COUNT(CASE WHEN guest.G_GUEST_TYPE = '新婦' THEN 1 END) AS bride_guest_count\n" +
             "FROM\n" +
             "    pay\n" +
             "        JOIN\n" +

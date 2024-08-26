@@ -5,12 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/member/findPWResult.css">
+    <link rel="stylesheet" href="/css/member/findPWResult.css">
 </head>
 <body>
 <div class="findPWResult-container">
     <div class="findPWResult-deco-img">
-        <img src="/resources/img/logo-img.png" alt="findPWResult-deco-img">
+        <img src="/img/logo-img.png" alt="findPWResult-deco-img">
     </div>
 
     <div class="findPWResult-title">

@@ -463,7 +463,7 @@
 
 .action-options {
     width: 100%;
-    background-image: url("/resources/img/Paper_BG_w_red_line.png");
+    background-image: url("/img/Paper_BG_w_red_line.png");
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -746,7 +746,7 @@
     margin: 20% auto;
     width: 75%;
     height: 80%;
-    background-image: url("/resources/img/Paper_BG.png");
+    background-image: url("/img/Paper_BG.png");
     border: 2px solid #ec0000;
     outline: 2px solid #ffc700;
     border-radius: 40px;
