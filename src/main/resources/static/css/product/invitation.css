@@ -437,19 +437,35 @@
 
 /* yu - comment */
 .yr_guest_book{
-    margin: 25px 0;
+    margin: 30px 0 0;
     text-align: center;
 }
 .yr_guest_book_button{
-    width: 85%;
-    padding: 5px 0;
+    width: 55%;
+    padding: 10px 0;
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: bold;
     border-radius: 1rem;
-    background: #ffc8c8;
-    color: #fff;
-    border: 3px solid #FF494C;
+    background-color: #fff;
+    color: #474747;
+    border: 2px solid #FF494C;
+    outline: 1px solid #ffc700;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 5px #ec0000;
 }
+.yr_guest_book_button:hover{
+    background-color: #ffd6d5;
+    box-shadow: 0px 0px 8px #ec0000;
+
+}
+.yr_guest_book_img{
+    position: absolute;
+    width: 35px;
+    right: 92px;
+    margin-top: 22px;
+}
+
+
 
 /* survey 연결 버튼 */
 .je_survey-button{
