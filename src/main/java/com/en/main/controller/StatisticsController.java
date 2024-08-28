@@ -31,11 +31,16 @@ public class StatisticsController {
         System.out.println(statisticsFundingService.getDate(eno));
     List<WishlistVO> wishlist = statisticsFundingService.getFundWishlistData(eno);
 
+        System.out.println(wishlist);
 
         WishlistVO firstItem = wishlist.get(0);
+        System.out.println(firstItem);
+
         int firstWlNo = firstItem.getWl_no();
-        int firstWlPrice = firstItem.getWl_price();
-       model.addAttribute("payPrice" ,statisticsFundingService.getPrices(payVo , firstWlNo , eno) ) ;
+        System.out.println(firstWlNo);
+
+
+       model.addAttribute("payPrice" ,statisticsFundingService.getPrices(firstWlNo , eno) ) ;
     model.addAttribute("NumberOfPeople" , statisticsFundingService.getNumberOfPeople(eno));
         System.out.println(statisticsFundingService.getNumberOfPeople(eno));
 
@@ -95,10 +100,10 @@ public class StatisticsController {
 
 
         @GetMapping("/getProductPrice/{no}/{eno}")
-    public @ResponseBody int getProductPrice(PayVo payVo, @PathVariable int no , @PathVariable int eno){
+    public @ResponseBody int getProductPrice( @PathVariable int no , @PathVariable int eno){
         System.out.println(no);
-        System.out.println(statisticsFundingService.getPrices(payVo , no , eno));
-        return statisticsFundingService.getPrices(payVo , no , eno);
+        System.out.println(statisticsFundingService.getPrices( no , eno));
+        return statisticsFundingService.getPrices( no , eno);
 
     }
 

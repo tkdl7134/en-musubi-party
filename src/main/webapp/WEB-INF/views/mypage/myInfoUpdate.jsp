@@ -3,9 +3,10 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/mypage/myInfoUpdate.css">
-    <script defer src="/resources/js/mypage/myInfoUpdate.js"></script>
+    <link rel="stylesheet" href="/css/mypage/myInfoUpdate.css">
+    <script defer src="/js/mypage/myInfoUpdate.js"></script>
 </head>
 <body>
 <div class="myInfoUpdate-container">
@@ -13,7 +14,7 @@
     <%-- My Info Update Header --%>
     <div class="myInfoUpdate-header">
         <div class="myInfoUpdate-header-logo">
-            <img src="/resources/img/logo-img.png" alt="myInfoUpdate-header-logo">
+            <img src="/img/logo-img.png" alt="myInfoUpdate-header-logo">
         </div>
         <p class="myInfoUpdate-header-title">会員情報</p>
     </div>
