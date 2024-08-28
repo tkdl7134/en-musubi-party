@@ -519,7 +519,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 $(document).ready(function () {
-    $(".survey-submit-button").on("click", function(event) {
+    $(".survey-last-submit-container").on("click", function(event) {
+        console.log("폼 버튼 눌러짐")
         event.preventDefault(); // 폼 제출을 기본적으로 막음
 
         let allValid = true;
@@ -536,7 +537,7 @@ $(document).ready(function () {
                 behavior: 'smooth'
             });
 
-            return false;
+            return;
         }
 
         // 필수 입력 필드 확인
@@ -613,15 +614,13 @@ $(document).ready(function () {
                         allValid = false;
                         alert(field.errorMessage);
                         focusOnField(field.selector);
-                        breakFlag = true;
                         break;
                     }
                 }
-                if (breakFlag) {
-                    break;
+                if (!allValid) break;
+
                 }
             }
-        }
         let isValid = true;
         let firstInvalidInput = null;
 
@@ -646,6 +645,7 @@ $(document).ready(function () {
             firstInvalidInput.scrollIntoView({ behavior: 'smooth' });
             return;
         }
+
         if (allValid) {
             console.log("모든 필드가 유효합니다. 폼을 제출합니다.");
             $("form").off("submit").submit();  // 여기서 off()로 이벤트 리스너를 제거하고 폼 제출

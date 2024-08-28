@@ -44,19 +44,20 @@
                     </div>
                 </button>
             </div>
+<%--            <div class="tk_wishlist-btn-box">--%>
+<%--                <button type="button" onclick="openAmazonAndRedirect()">--%>
+<%--                    <div class="tk_wishlist-text-box">--%>
+<%--                        <div class="jp-text">プレゼント</div>--%>
+<%--                        <div class="eg-text">PRESENT</div>--%>
+<%--                    </div>--%>
+<%--                    <div class="tk_wishlist-img-box">--%>
+<%--                        <img src="/resources/img/amazon.png" alt="amazon">--%>
+<%--                    </div>--%>
+<%--                </button>--%>
+<%--            </div>--%>
             <div class="tk_wishlist-btn-box">
-                <button type="button" onclick="openAmazonAndRedirect()">
-                    <div class="tk_wishlist-text-box">
-                        <div class="jp-text">プレゼント</div>
-                        <div class="eg-text">PRESENT</div>
-                    </div>
-                    <div class="tk_wishlist-img-box">
-                        <img src="/resources/img/amazon.png" alt="amazon">
-                    </div>
-                </button>
-            </div>
-            <div class="tk_wishlist-btn-box">
-                <a href="${amazonUrl}" target="_blank" class="wishlist-button" onclick="redirectToFinanceResult()">
+<%--                <a href="${amazonUrl}" target="_blank" class="wishlist-button" onclick="redirectToFinanceResult()">--%>
+                    <a href="#" class="wishlist-button" onclick="openInNewTab('${amazonUrl}'); redirectToFinanceResult();">
                     <div class="tk_wishlist-text-box">
                         <div class="jp-text">プレゼント</div>
                         <div class="eg-text">PRESENT</div>
