@@ -26,9 +26,10 @@ body {
 
 #je_funding-setting-container {
     width: 100vw;
-    height: 100vh;
+    /*height: 100vh;*/
     display: flex;
     justify-content: center;
+    overflow-y: auto;
 }
 
 /* content */
@@ -49,7 +50,8 @@ input {
     position: relative;
     margin: 1.5rem 1rem;
     padding: 1rem;
-    border: 1px solid #fb1010;
+    border: 3px solid #ffd600;
+    outline: 1px solid #fb1010;
     border-radius: 2rem;
     box-shadow: rgba(255, 166, 166, 1) 3px 2px 3px 0px;
     width: 20rem;
@@ -57,16 +59,20 @@ input {
     gap: 0.5rem;
 }
 
-.je_inner-yellow {
-    position: absolute;
-    top: 0.1rem;
-    width: 98%;
-    height: 94%;
-    border: 2px solid #ffd600;
-    border-radius: 2rem;
-    z-index: 0;
-    pointer-events: none;
+#existing-fundingList{
+    margin-bottom: 5rem;
 }
+
+/*.je_inner-yellow {*/
+/*    position: absolute;*/
+/*    top: 0.1rem;*/
+/*    width: 98%;*/
+/*    height: 94%;*/
+/*    border: 2px solid #ffd600;*/
+/*    border-radius: 2rem;*/
+/*    z-index: 0;*/
+/*    pointer-events: none;*/
+/*}*/
 
 .je_funding-img {
     display: flex;
@@ -145,19 +151,35 @@ button:not(:hover){
 }
 
 .je_top-btn {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0 4rem 0;
+    display: none;
     position: fixed;
-    bottom: 0;
-    right: 0;
+    right: 5%;
+    bottom: -4%;
+    margin: 2rem 0 4rem 0;
+    transition: opacity 0.3s ease;
+    background-color: #ffd1d0;
     span {
         padding: 0.5rem 1rem;
-        background-color: #ffd1d0;
         border-radius: 2rem;
         font-size: 0.8rem;
         font-weight: 900;
+        color: #ffffff;
     }
+}
+
+.je_top-btn.show {
+    display: block; /* 버튼을 표시 */
+    opacity: 1; /* 투명도를 1로 설정하여 나타남 */
+    transform: translateY(0); /* 원래 위치로 이동 */
+}
+
+.je_top-btn.hide {
+    opacity: 0; /* 투명도를 0으로 설정하여 숨김 */
+    transform: translateY(20px); /* 아래로 20px 이동하여 사라지는 느낌을 줌 */
+}
+
+.je_top-btn:hover {
+
 }
 
 .item.temp {
