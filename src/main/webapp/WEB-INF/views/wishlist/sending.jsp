@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+		 pageEncoding="utf-8"%>
+<%@ include file="../menubar.jsp" %>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
 <link rel="stylesheet" href="/resources/css/wishlist/send.css" />
@@ -16,16 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <input id="e_no" type="hidden" value="${sessionScope.e_no}">
 <input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
-<div class="je_menu-bar">
-	<div id="je_logo"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
+<div class="tk_sending-title">
+	<div class="tk_sending-title-bigTitle">ファンディング</div>
 </div>
-<div id="je_product-container">
-	<div class="je_page-title">
-		<div class="je_page-title-txt">テンプレート一覧</div>
-		<div class="je_page-title-line">
-			<img src="/resources/img/page-title-line.png" alt="" />
-		</div>
-	</div>
 	<div class="je_page-content">
 		<div class="slider">
 			<div class="inner">
