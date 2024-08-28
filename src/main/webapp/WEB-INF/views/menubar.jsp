@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title>✿ ~ 縁結び ~ ✿</title>
     <!-- Noto Serif Japanese 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>

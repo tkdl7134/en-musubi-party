@@ -391,3 +391,6 @@ update template set t_title = '夢見草' where t_pk = 24;
 update template set t_title = '心の絆' where t_pk = 25;
 update template set t_title = '朝陽の祝福' where t_pk = 26;
 update template set t_title = '恋の調べ' where t_pk = 27;
+
+
+select * from wishlist where e_no = 296;

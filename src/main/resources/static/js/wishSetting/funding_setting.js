@@ -5,6 +5,7 @@ window.onload = () => {
     insertFunding(e_no)
 }
 
+
 // CRUD
 function loadFundingList(e_no){
     fetch(`/${e_no}/wishlist-setting/funding/all`)
@@ -113,5 +114,3 @@ function goToTop() {
         });
     }
 }
-
-

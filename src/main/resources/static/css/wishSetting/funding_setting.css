@@ -148,6 +148,9 @@ button:not(:hover){
     display: flex;
     justify-content: center;
     margin: 2rem 0 4rem 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
     span {
         padding: 0.5rem 1rem;
         background-color: #ffd1d0;
