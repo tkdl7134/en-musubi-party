@@ -399,10 +399,10 @@ dialog {
 }
 
 .kh-f-statistic-bar {
-	width:50vw;
+	width: 50vw;
 	display: flex;
 	align-items: center;
-	margin-left: 0.3rem;
+	margin-left: 2rem;
 }
 
 .kh-f-statistic-bar>div {

@@ -30,7 +30,7 @@ $.ajax({
 							<div style="height: 18rem">
 							<div style="width:100%; height: 18rem; background-color: transparent; position: absolute; z-index: 999"></div>
 
-								<img style="height: 80%" alt="noImg" src="/resources/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/resources/img/パソコン.png';"/>
+								<img style="height: 80%" alt="noImg" src="/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/img/パソコン.png';"/>
 							</div>
 							<div>
 								<h1 style="margin:0">${element.wl_product}</h1>
@@ -87,10 +87,10 @@ $.ajax({
 				document.querySelector("#kh-f-price").innerHTML = percent;
 				document.querySelector("#kh-f-product").innerHTML = selectobj.wl_product;
 				document.querySelector(".kh-f-btn").setAttribute("value", selectobj.wl_no);
-				document.querySelector("#kh-f-img").src = "/resources/img/" + selectobj.wl_product + ".png";
+				document.querySelector("#kh-f-img").src = "/img/" + selectobj.wl_product + ".png";
 
 				openModal();
-				// document.querySelector(".kh-f-mousemove > img").src = "/resources/img/backbtn.png";
+				// document.querySelector(".kh-f-mousemove > img").src = "/img/backbtn.png";
 
 				const fpop = document.querySelector(".kh-f-popup");
 				fpop.classList.add("kh-f-rotate");
@@ -302,13 +302,13 @@ function goStatistic(wlno) {
 					<div class="kh-f-statistic-name">
 						<div class="kh-f-none">
 							<span style="font-size: 0.7rem;color: red;">私の選択</span>
-							<img alt="noImg" src="/resources/img/flash.png" style="width: 1.5rem;"> 
+							<img alt="noImg" src="/img/flash.png" style="width: 1.5rem;"> 
 						</div>
 						<h1>${element.wl_product}</h1>
 					</div>
 					<div class="kh-f-statistic-bar">
 						<div>
-							<div class="kh-f-statistic-abled-bar" data-value="${element.percent}"><div><img alt="noImg" src="/resources/img/menubtn.png"></div></div>
+							<div class="kh-f-statistic-abled-bar" data-value="${element.percent}"><div><img alt="noImg" src="/img/menubtn.png"></div></div>
 						</div>
 					</div>
 					<div class="kh-f-statistic-percent" >
