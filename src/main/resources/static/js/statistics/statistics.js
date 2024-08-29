@@ -14,7 +14,7 @@ function goToSendPage() {
         $('.slick-slider').slick('setPosition'); // 약간의 지연 후 재초기화
     }, 100);
 
-    document.getElementById('jh_pageNavi1').style.cssText = 'width : 64% ; transform : translateX(-25%);transition : 0.2s';
+    document.getElementById('jh_pageNavi1').style.cssText = 'width : 64% ; transform : translateX(29%);transition : 0.2s';
     document.getElementById('jh_pageNavi2').style.cssText ='background-color : #EDEDED; width: 64vw ;transition : 0.2s'
     document.getElementById('jh_pageNavi3').style.cssText ='color : black;transition : 0.2s'
     document.getElementById('jh_pageNavi4').style.cssText ='width : 64vw; background-color : red;transition : 0.2s'
@@ -37,7 +37,7 @@ function goToFundPage(){
         $('.slick-slider').slick('setPosition'); // 약간의 지연 후 재초기화
     }, 100);
 
- document.getElementById('jh_pageNavi1').style.cssText = 'width: 64%; transform: translateX(-25%); transition : 0.2s;'
+ document.getElementById('jh_pageNavi1').style.cssText = 'width: 64%; transform: translateX(29%); transition : 0.2s;'
     document.getElementById('jh_pageNavi2').style.cssText ='background-color: red;     width: 64vw; transition : 0.2s'
     document.getElementById('jh_pageNavi3').style.cssText ='color : white;transition : 0.2s'
     document.getElementById('jh_pageNavi4').style.cssText ='background-color :#EDEDED ;transition : 0.2s'

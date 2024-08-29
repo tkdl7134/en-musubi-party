@@ -930,9 +930,9 @@
     </div>
     <div id="jh_top" class="mobile">
         <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
-            <div><img src="/img/JH_Logo.png" alt=""></div>
 
-            <div id="jh_pageNavi1" class="jh_pageNavigation" style="width: 64%; transform: translateX(-25%);">
+
+            <div id="jh_pageNavi1" class="jh_pageNavigation" style="width: 64%; transform: translateX(29%);">
                 <div id="jh_pageNavi2" class="jh_pageNavigationA" style="background-color: red;     width: 64vw;" onclick="goToFundPage()">
                     <div id="jh_pageNavi3" class="jh_pageNavigationB" style="color: white">贈り物</div>
                 </div>
