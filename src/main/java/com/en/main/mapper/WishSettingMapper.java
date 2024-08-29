@@ -17,7 +17,7 @@ public interface WishSettingMapper {
     void updateAmazonLink(int e_no, EventVO eventVO);
 
 // FUNDING 내 WISH
-    @Select("select * from wishlist where e_no = #{e_no}")
+    @Select("select * from wishlist where e_no = #{e_no} order by wl_no desc" )
     List<WishlistVO> allFundingWish(int e_no);
 
     @Insert("insert into wishlist values (wishlist_seq.nextval, #{e_no}, #{wl_product}, #{wl_price})")

@@ -93,11 +93,6 @@ body{
 }
 
 @media (min-width: 769px) {
-    .je_menu-header{
-        width: 30vw;
-        margin: 0 auto;
-        gap: 13rem;
-    }
     #je_product-container {
         width: 30vw;
         margin: 0 auto;
