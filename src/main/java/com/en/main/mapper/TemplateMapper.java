@@ -57,6 +57,7 @@ public interface TemplateMapper {
 
     @Select("SELECT e.e_no, m.m_id, " +
             "m.m_fam_kanji, m.m_name_kanji, m.m_email, m.m_phone, g.g_allergy_or, g.g_relation, a.allergy, " +
+            "w.w_fam_jp_groom, w.w_name_jp_groom, w.w_fam_jp_bride, w.w_name_jp_bride, " +
             "w.w_img1, w.w_img2, w.w_img3, w.w_img_share, w.w_date, w.w_wedding_address, " +
             "g.g_attend_wedding, g.g_guest_type, c.p_accompany_num, c.p_accompany_type, c.p_fam_kanji, c.p_name_kanji " +
             "FROM guest g " +
