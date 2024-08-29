@@ -36,8 +36,8 @@ function loadFundingList(e_no){
 
                 // delete button 활성화
                 item.querySelector('#fundingItem-delete-button').addEventListener("click", () => {
-                    console.log(funding.wl_no);
-                    deleteFunding(e_no, funding.wl_no);
+                    delete_confirm('削除してもよろしいですか？', funding.wl_product, funding.wl_no);
+                    // deleteFunding(e_no, funding.wl_no);
                 });
 
             })
@@ -130,3 +130,80 @@ document.getElementById("scrollToTopBtn").onclick = function() {
         document.getElementById("scrollToTopBtn").classList.remove("show");
     }, 1000); // 스크롤이 끝난 후 버튼이 부드럽게 사라짐
 };
+
+
+// delete_confirm
+function customConfirm(message, productName, callback) {
+    // 대화 상자를 HTML 요소로 생성(동적)
+    var confirmBox = document.createElement("div");
+    confirmBox.setAttribute("class", "je_confirm-box");
+    confirmBox.innerHTML =
+        '<div class="je_confirm-message">' +
+        "<div> " +
+        productName +
+        "</div>" +
+        "<div>" +
+        message +
+        "</div>" +
+        "</div>" +
+        '<div class="je_confirm-buttons"><button class="confirm">削除</button><button class="cancel">キャンセル</button></div>';
+
+    // HTML 요소를 body 요소의 하위 요소로 추가합니다.
+    document.body.appendChild(confirmBox);
+
+    // 배경을 회색으로 덮어서 모달 창을 띄웠을 때 다른 요소들을 클릭할 수 없도록 제어
+    var overlay = document.createElement("div");
+    overlay.setAttribute("class", "je_confirmbox-overlay");
+    document.body.appendChild(overlay);
+
+    var removeAlert = function () {
+        document.body.removeChild(confirmBox);
+        document.body.removeChild(overlay);
+        window.removeEventListener("keydown", handleKeyDown);
+    };
+
+    var handleKeyDown = function (event) {
+        event.preventDefault();
+    };
+
+    return new Promise(function (resolve) {
+        // 확인 버튼을 클릭했을 때 이벤트
+        var confirmButton = document.querySelector(".confirm");
+        confirmButton.addEventListener("click", function () {
+            // 확인 버튼을 눌렀을 때 resolve 메서드를 호출
+            removeAlert();
+            setTimeout(function () {
+                resolve(true);
+            }, 100);
+        });
+
+        // 취소 버튼을 클릭했을 때 이벤트
+        var cancelButton = document.querySelector(".cancel");
+        cancelButton.addEventListener("click", function () {
+            // 취소 버튼을 눌렀을 때 resolve 메서드를 호출
+            removeAlert();
+            setTimeout(function () {
+                resolve(false);
+            }, 100);
+        });
+
+        // 회색 영역 클릭할 때 창을 닫도록 이벤트 추가
+        overlay.addEventListener("click", function () {
+            removeAlert();
+        });
+
+        // 키를 눌렀을 때 기본 동작을 막습니다.
+        window.addEventListener("keydown", handleKeyDown);
+    });
+}
+
+// 함수 호출
+function delete_confirm(message, productName, wl_no) {
+    customConfirm(message, productName).then(function (result) {
+        if (result) {
+            console.log(wl_no);
+            deleteFunding(e_no, wl_no);
+        } else {
+        }
+    });
+}

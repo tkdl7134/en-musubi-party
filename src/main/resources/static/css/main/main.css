@@ -832,9 +832,17 @@
         margin: auto;
     }
     /*아래 뾰롱 추가*/
-    #actionSheet {
+    #actionSheet,
+    #mypageSheet{
         width: 30vw;
         margin: 0 35%;
+    }
+    .mypageSheet-options {
+        height: 40rem;
+    }
+
+    .main-envelope2{
+        margin-top: 9rem;
     }
 
     .main_pop {
