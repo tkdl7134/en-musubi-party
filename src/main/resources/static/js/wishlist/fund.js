@@ -176,7 +176,7 @@ $.ajax({
 
 		// 무한 스크롤 구현
 		cardCon.addEventListener("scroll", function () {
-		const scrollWidthHalf = cardCon.scrollWidth / 2;
+		const scrollWidthHalf = cardCon.scrollWidth / 4;
 
 		if (cardCon.scrollLeft >= scrollWidthHalf) {
 		// 오른쪽 끝에 도달하면 첫 번째 카드를 복제하여 추가
@@ -199,25 +199,25 @@ $.ajax({
 		scrollAmount += (scrollTarget - scrollAmount) * 0.1; // 부드러운 감속 효과
 		cardCon.scrollLeft = scrollAmount;
 
-		if (Math.abs(scrollTarget - scrollAmount) < 0.5) {
+		if (Math.abs(scrollTarget - scrollAmount) < 0.05) {
 			isScrolling = false;
 		} else {
 			requestAnimationFrame(smoothScroll);
 		}
 	}
 
-	cardCon.addEventListener("wheel", function (event) {
-		event.preventDefault();
-
-		// 스크롤 속도 조정
-		scrollTarget += event.deltaY * 0.5; // 스크롤 속도를 줄임
-		scrollTarget = Math.max(0, Math.min(cardCon.scrollWidth - cardCon.clientWidth, scrollTarget)); // 범위 제한
-
-		if (!isScrolling) {
-			isScrolling = true;
-			requestAnimationFrame(smoothScroll);
-		}
-	});
+	// cardCon.addEventListener("wheel", function (event) {
+	// 	event.preventDefault();
+	//
+	// 	// 스크롤 속도 조정
+	// 	scrollTarget += event.deltaY * 0.5; // 스크롤 속도를 줄임
+	// 	scrollTarget = Math.max(0, Math.min(cardCon.scrollWidth - cardCon.clientWidth, scrollTarget)); // 범위 제한
+	//
+	// 	if (!isScrolling) {
+	// 		isScrolling = true;
+	// 		requestAnimationFrame(smoothScroll);
+	// 	}
+	// });
 
 		let isDown = false;
 		let startX;

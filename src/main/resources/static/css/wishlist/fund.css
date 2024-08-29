@@ -272,6 +272,13 @@ dialog {
 	box-shadow: none;
 }
 
+.static {
+	position: relative !important;
+	left: 50% !important;
+	transform: translate(-50%, 0) !important;
+	top: 17% !important;
+}
+
 .modal::-webkit-scrollbar {
 	display: none !important;
 }

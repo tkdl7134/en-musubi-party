@@ -55,7 +55,7 @@ ${fundingList}
 	</div> -->
 	</div>
 
-<dialog id="modal" class="modal">
+<dialog id="modal" class="modal static">
 <div class="kh-f-popup">
 	<div class="kh-f-popup-in">
 		<div class="kh-f-img-box">
