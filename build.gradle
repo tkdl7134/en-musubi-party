@@ -32,11 +32,8 @@ dependencies {
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-<<<<<<< HEAD
 //    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
     implementation 'com.oracle.database.jdbc:ojdbc11:21.5.0.0'
-=======
->>>>>>> 10996bae557eb9b6fd6ebdd5dc8d2aa052d162bd
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11
     implementation 'com.oracle.database.jdbc:ojdbc11:21.5.0.0'
