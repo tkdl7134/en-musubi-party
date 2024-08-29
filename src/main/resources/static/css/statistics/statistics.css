@@ -223,12 +223,12 @@ div {
 .jh_product_chart{
    /* width : 390px !important;
     height : 390px !important;*/
-
-border : 1px solid #FFDBDB;
+margin-top: 5%;
+border : 1px solid #FF8B8B;
     border-radius: 10px;
     width: 96%;
     margin-left: 2%;
-
+    background-color: white;
 
 
 
@@ -264,4 +264,9 @@ border : 1px solid #FFDBDB;
     width: 96%;
     margin-left: 2%;
     border-radius: 30px;
+}
+.jh_other_infos{
+
+    width: 96%;
+    margin-left: 2%;
 }

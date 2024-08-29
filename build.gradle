@@ -37,7 +37,6 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11
     implementation 'com.oracle.database.jdbc:ojdbc11:21.5.0.0'
-
     //oracle cloud
     implementation 'com.oracle.database.security:oraclepki:21.5.0.0'
     implementation 'com.oracle.database.security:osdt_cert:21.5.0.0'
@@ -53,6 +52,9 @@ dependencies {
     implementation 'org.apache.commons:commons-text:1.9'
 // firebase file upload
     implementation 'com.google.firebase:firebase-admin:9.2.0'
+
+    implementation 'com.oracle.database.jdbc:ojdbc11:21.5.0.0'
+
 }
 
 tasks.named('test') {
