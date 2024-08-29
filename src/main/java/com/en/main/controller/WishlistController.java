@@ -39,6 +39,6 @@ public class WishlistController {
         model.addAttribute("amazonUrl", amazonUrl);
 
         // 이 부분에서 올바른 JSP 파일 이름을 반환해야 합니다.
-        return "wishlist/wishlist";  // 여기서는 "wishlist/wishlist.jsp"를 의미합니다.    }
+        return "wishlist/financeresult";
     }
 }

@@ -15,7 +15,7 @@ ${fundingList}
 <input id="e_no" type="hidden" value="${sessionScope.e_no}">
 <input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
 <div class="tk_funding-title">
-	<div class="tk_funding-title-bigTitle">ご祝儀</div>
+	<div class="tk_funding-title-bigTitle">ファンディング</div>
 </div>
 <%--<div class="tk_funding-title">--%>
 <%--	<div>--%>

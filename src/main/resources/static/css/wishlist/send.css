@@ -283,13 +283,17 @@ dialog {
 }
 
 .close-button {
-	margin-top: 10px;
-	padding: 10px 20px;
-	background-color: #dc3545;
-	color: white;
-	border: none;
+	position: absolute;
+	top: 29px;
+	left: 40px;
+	background-color: transparent;
+	border: 3px solid #FFD600;
+	border-radius: 100%;
+	font-size: 1rem;
 	cursor: pointer;
-	border-radius: 5px;
+	color: #FF0000;
+	padding: 0rem 0.3rem;
+	outline: 3px solid #FF0000
 }
 
 dialog:-internal-dialog-in-top-layer::backdrop {

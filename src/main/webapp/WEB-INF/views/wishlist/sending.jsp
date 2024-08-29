@@ -18,7 +18,7 @@
 <input id="e_no" type="hidden" value="${sessionScope.e_no}">
 <input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
 <div class="tk_sending-title">
-	<div class="tk_sending-title-bigTitle">ファンディング</div>
+	<div class="tk_sending-title-bigTitle">ご祝儀</div>
 </div>
 	<div class="je_page-content">
 		<div class="slider">
@@ -128,7 +128,13 @@
 				<div class="je_slider-btn btn_prev">
 					<img src="/resources/img/left-arrow-icon.png" alt="이전" />
 				</div>
-				<div class="je_template-slide-paging fraction"></div>
+				<div style="display: flex;
+    						justify-content: center;
+    						align-items: center;
+    						font-size: 1.2rem;
+    						gap: 0.3rem;"
+					 class="je_template-slide-paging fraction">
+				</div>
 				<div class="je_slider-btn btn_next">
 					<img src="/resources/img/right-arrow-icon.png" alt="다음" />
 				</div>
@@ -236,6 +242,7 @@
 
 <dialog id="modal">
 	<div class="kh-s-popup-in">
+		<button class="close-button" onclick="closeModal()">&times;</button>
 		<div class="kh-s-envelope">
 			<img alt="noImg" src="/resources/img/envelope01.png" style="width: 100%">
 		</div>
