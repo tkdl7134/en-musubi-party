@@ -51,6 +51,9 @@ dependencies {
     implementation 'org.apache.commons:commons-text:1.9'
 // firebase file upload
     implementation 'com.google.firebase:firebase-admin:9.2.0'
+
+    implementation 'com.oracle.database.jdbc:ojdbc11:21.5.0.0'
+
 }
 
 tasks.named('test') {

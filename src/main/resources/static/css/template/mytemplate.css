@@ -17,7 +17,7 @@ body {
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none;
-    background-image: url("/resources/img/Paper_BG.png");
+    background-image: url("/img/Paper_BG.png");
 }
 
 .je_page-title {
@@ -81,7 +81,7 @@ body {
     /*justify-content: center;*/
     /*align-items: center;*/
     /*top: 0.5rem;*/
-    background-image: url("/resources/img/Paper_BG.png");
+    background-image: url("/img/Paper_BG.png");
     width: 19.5rem;
     height: 78%;
     overflow: hidden;
@@ -187,7 +187,7 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 15rem;
+    width: 17rem;
 }
 
 .share-popup-content {
@@ -212,7 +212,7 @@ body {
 }
 
 #copy-button {
-    padding: 10px 20px;
+    padding: 8px 8px;
     background-color: #ff787b;
     color: white;
     border: none;

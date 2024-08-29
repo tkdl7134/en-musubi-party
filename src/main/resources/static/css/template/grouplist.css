@@ -1,4 +1,3 @@
-</html>
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +18,7 @@ body {
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none;
-    background-image: url("/resources/img/Paper_BG.png");
+    background-image: url("/img/Paper_BG.png");
 }
 
 /*.hw_header {*/
@@ -79,6 +78,7 @@ body {
 }
 
 .hw_card {
+    perspective: 1500px;
     flex: 0 0 90%;
     height: 82%;
     margin: 5% 20%; /* 좌우에 20%의 공백을 설정하여 화면 중앙에 배치 */
@@ -90,7 +90,6 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    transform-style: preserve-3d;
     transition: transform 0.6s ease;
     cursor: pointer;
     scroll-snap-align: center; /* 스크롤 시 카드가 화면의 중앙에 위치하도록 설정 */
@@ -102,21 +101,24 @@ body {
     border-radius: 15px;
     overflow: hidden;
 }
+/*.card-inner {*/
+/*    width: 100%; !* 카드 크기를 컨테이너에 맞게 조정 *!*/
+/*    height: 100%; !* 카드 높이를 컨테이너에 맞게 조정 *!*/
+/*    transform-style: preserve-3d; !* 3D 변환을 위한 설정 *!*/
+/*    transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);*/
+/*}*/
 
 .card-inner {
     width: 80%;
-    height: 200px; /* 고정된 높이로 설정 */
+    height: 200px;
     position: relative;
-    transform-style: preserve-3d; /* 3D 변환을 위한 설정 */
+    transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
     border: red solid 1.5px;
     border-radius: 15px;
-}
-
-.card-inner.flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
 }
 
 .card-front, .card-back {
@@ -125,42 +127,46 @@ body {
     height: 100%;
     backface-visibility: hidden; /* 플립 시 뒷면이 보이지 않도록 설정 */
     border-radius: 15px;
-    overflow: hidden;
 }
 
+
+
 .card-front {
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.toggle-details{
-    color: red;
-}
-.card-front img {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    border: yellow solid 1px;
-    object-fit: cover;
+    /*z-index: 2;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
 }
 
 .card-back {
     background-color: #FFD1D0;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* 추가: 뒷면은 180도 회전 */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1rem;
     box-sizing: border-box;
+    border: yellow solid 1px;
+    border-radius: 15px;
+}
+
+.flipped {
+    transform: rotateY(180deg); /* 카드 플립 시 전체를 180도 회전 */
+}
+
+
+.toggle-details{
+    color: red;
+}
+
+.card-front img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    position: absolute;
-    top: 0; /* card-front와 위치를 맞춤 */
-    left: 0; /* card-front와 위치를 맞춤 */
-    border: 1px solid yellow;
+    border: yellow solid 1px;
+    object-fit: cover;
+    transition: transform 0.6s ease; /* 플립 시 부드럽게 이미지가 전환되도록 함 */
 }
 
 .slider-indicators {
