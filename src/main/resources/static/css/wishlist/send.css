@@ -9,12 +9,17 @@
 /*	gap: 5rem;*/
 /*}*/
 
+body {
+	background-image:url('/img/tk_backgorund-color.png'); !important;
+}
+
 .tk_sending-title {
 	background-color: #FFDBDC;
 }
 
 .tk_sending-title-bigTitle {
 	font-size: 1.2rem;
+	font-weight: bold;
 	color: #FE4A4C;
 	height: 3rem;
 	display: flex;
