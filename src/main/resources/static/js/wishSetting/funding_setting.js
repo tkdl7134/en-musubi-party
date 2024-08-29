@@ -112,11 +112,10 @@ function checkScroll() {
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollToTopBtn.classList.remove("hide");
+        // scrollToTopBtn.classList.remove("hide");
         scrollToTopBtn.classList.add("show"); // 스크롤이 일정 수준을 넘으면 버튼이 부드럽게 나타남
     } else {
         scrollToTopBtn.classList.remove("show");
-        scrollToTopBtn.classList.add("hide"); // 페이지 맨 위에 있을 때 버튼이 부드럽게 사라짐
     }
 }
 
@@ -129,6 +128,5 @@ document.getElementById("scrollToTopBtn").onclick = function() {
 
     setTimeout(() => {
         document.getElementById("scrollToTopBtn").classList.remove("show");
-        document.getElementById("scrollToTopBtn").classList.add("hide");
     }, 1000); // 스크롤이 끝난 후 버튼이 부드럽게 사라짐
 };

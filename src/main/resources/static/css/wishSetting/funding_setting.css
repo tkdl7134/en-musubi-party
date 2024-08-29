@@ -151,35 +151,22 @@ button:not(:hover){
 }
 
 .je_top-btn {
-    display: none;
+    opacity: 0;
     position: fixed;
     right: 5%;
-    bottom: -4%;
-    margin: 2rem 0 4rem 0;
-    transition: opacity 0.3s ease;
+    bottom: 3%;
     background-color: #ffd1d0;
-    span {
-        padding: 0.5rem 1rem;
-        border-radius: 2rem;
-        font-size: 0.8rem;
-        font-weight: 900;
-        color: #ffffff;
-    }
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 14px;
+    font-weight: 900;
+    color: #ff494c;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
 }
 
 .je_top-btn.show {
-    display: block; /* 버튼을 표시 */
     opacity: 1; /* 투명도를 1로 설정하여 나타남 */
-    transform: translateY(0); /* 원래 위치로 이동 */
-}
-
-.je_top-btn.hide {
-    opacity: 0; /* 투명도를 0으로 설정하여 숨김 */
-    transform: translateY(20px); /* 아래로 20px 이동하여 사라지는 느낌을 줌 */
-}
-
-.je_top-btn:hover {
-
 }
 
 .item.temp {
@@ -189,8 +176,6 @@ button:not(:hover){
 .je_line {
     border: 1px solid #ff494c;
     width: 100%;
-    /* margin: 0 auto; */
-    /* margin-top: 1rem; */
 }
 
 @media (min-width: 769px) {
@@ -206,5 +191,9 @@ button:not(:hover){
     #je_funding-setting-container {
         width: 30vw;
         margin: 0 auto;
+    }
+
+    .je_top-btn {
+        right: 35%;
     }
 }

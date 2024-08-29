@@ -60,9 +60,7 @@
                 </div>
             </div>
 
-            <div id="scrollToTopBtn" class="je_top-btn">
-                <span>トップ</span>
-            </div>
+            <div id="scrollToTopBtn" class="je_top-btn">トップ</div>
     </div>
 </div>
 </body>
