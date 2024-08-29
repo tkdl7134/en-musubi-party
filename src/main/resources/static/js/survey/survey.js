@@ -519,7 +519,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 $(document).ready(function () {
-    $(".survey-last-submit-container").on("click", function(event) {
+    $(".survey-submit-button").on("click", function(event) {
         console.log("폼 버튼 눌러짐")
         event.preventDefault(); // 폼 제출을 기본적으로 막음
 
@@ -651,6 +651,11 @@ $(document).ready(function () {
             $("form").off("submit").submit();  // 여기서 off()로 이벤트 리스너를 제거하고 폼 제출
         } else {
             console.log("유효하지 않은 필드가 있어 폼 제출이 막혔습니다.");
+            $("form").on("submit", function(event) {
+                event.preventDefault(); // 폼의 기본 제출 동작을 막음
+                console.log("폼 제출이 막혔습니다.");
+                // 여기에 추가적인 코드 작성 가능
+            });
         }
     });
 
@@ -829,9 +834,7 @@ document.addEventListener('DOMContentLoaded', function () {
             enMusubiEnvelopeTop.classList.add("change-color");
             enMusubiEnvelopePaper.classList.add("move-up");
             enMusubiEnvelopeText.classList.add("enlarge");
-            setTimeout(function () {
-                surveyForm.submit();
-            }, 1000);
+
         });
 
         enMusubiEnvelopePaper.addEventListener("transitionend", function () {
