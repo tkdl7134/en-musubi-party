@@ -184,3 +184,13 @@ body {
 .indicator.active {
     background-color: #ff5155;
 }
+
+.empty-card {
+    width: 80%;
+    height: 200px;
+    border: dashed 1.5px white;
+    border-radius: 15px;
+    background-color: white;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}

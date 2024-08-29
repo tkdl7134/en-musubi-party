@@ -48,8 +48,8 @@ body {
 }
 .yr_title {
     font-size: 14px;
-    font-weight: 900;
-    height: 2.5rem;
+    font-weight: bold;
+    height: 2.8rem;
     width: 100%;
     background-color: #FFDBDB;
     color: #FF494C;
@@ -57,11 +57,57 @@ body {
     align-content: center;
 }
 
+.welcome-message {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1.5;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    z-index: 1000;
+    margin-top: 30px;
+}
+
+.message{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    position: relative;
+
+}
+.message.right{
+    right: -30px;
+}
+
+.message.left{
+    right: 30px;
+}
+
+.welcome-message span{
+    color:#FF494C;
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.yr_party_wrapper {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}
+
+
 .yr_party_welcome {
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
     color: #696969;
-    height: 4.5rem;
+    height: 5rem;
     align-content: center;
     transition: opacity 0.5s ease, height 0.5s ease;
     opacity: 1;
@@ -75,15 +121,14 @@ body {
 /* ----------------------- party list */
 .yr_party_list {
     font-size: 0.91rem;
-    height: 4rem;
+    height: 4.2rem;
     width: 78%;
-    border-radius: 1rem;
+    border-radius: 0.8rem;
     text-align: center;
     transition: height 0.5s ease;
-    border: 2px solid #FF8B8B;
-    box-shadow: 0 3px 5px #FF8B8B;
+    box-shadow: 0 2px 5px #FF8B8B;
     background-color: white;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 1.6rem auto;
     align-content: center;
     padding: 0.8rem;
 }
@@ -100,11 +145,11 @@ body {
     padding: 0 0 1rem;
 }
 
-/* 媛� 硫붾돱�� �믪씠 議곗젅 */
+
 .yr_party_list.expanded {
     height: max-content;
     border: 2px solid #F03434;
-    box-shadow: 0 0 0 5px white, 0 0 0 6px #FFC700;
+    box-shadow: 0 0 0 3px white, 0 0 0 4px #FFC700;
 }
 .yr_party_list.collapsed {
     height: 3rem;
@@ -115,7 +160,7 @@ body {
     margin-top: 1rem;
 }
 .yr_party_list.random.expanded {
-    height: 15rem;
+    height: 18rem;
 }
 .yr_party_list.choice.expanded {
     height: max-content;
@@ -126,16 +171,16 @@ body {
 .yr_type,
 .yr_choice {
     display: none;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
-/* 李멸���*/
 .yr_list {
     background-color: #FFFBF7;
-    border: 3px solid #FF8B8B;
-    height: 3rem;
-    margin: 0.5rem auto;
-    border-radius: 1rem;
+    border: 1.2px solid #FF8B8B;
+    height: 2.5rem;
+    width: 16rem;
+    margin: 0.6rem auto;
+    border-radius: 0.6rem;
     display: flex;
     align-items: center;
     opacity: 0;
@@ -150,15 +195,16 @@ body {
     width: 2rem;
 }
 .yr_list_left img{
-    width: 1.8rem;
-    margin-left: 10px;
+    width: 1.5rem;
+    margin: 0 10px;
 }
 .yr_list_name {
     color: #696969;
     margin: auto;
+    font-size: 1rem;
 }
 .yr_list_right img{
-    width: 1.4rem;
+    width: 1rem;
     margin-right: 10px;
 }
 
@@ -174,13 +220,13 @@ body {
     background-color: #FF5050;
     color: white;
     align-content: center;
-    margin: 3rem auto;
+    margin: 5.3rem auto;
 }
 .yr_random_loading {
     height: 15rem;
 }
 
-/* �섑듃紐⑥뼇 濡쒕뵫 �좊땲硫붿씠�� */
+/* heart animation */
 .lds-heart,
 .lds-heart div,
 .lds-heart div:after,
@@ -193,7 +239,7 @@ body {
     position: relative;
     width: 80px;
     transform: rotate(45deg);
-    transform-origin: 80px 20px;
+    transform-origin: 60px 30px;
 }
 .lds-heart div {
     top: 50px;
@@ -223,7 +269,7 @@ body {
 }
 .yr_random_group {
     font-size: 1rem;
-    height: 10rem;
+    height: 12rem;
     opacity: 0;
     animation: fadeIn 1s forwards;
     color: black;
@@ -254,13 +300,13 @@ body {
     font-size: 1rem;
 }
 .yr_type_item {
-    font-size: 1.1rem;
+    font-size: 1rem;
     width: 6rem;
-    height: 2.3rem;
+    height: 2rem;
     background-color: #fff;
-    border-radius: 0.6rem;
-    margin: 0.3rem 0.7rem;
-    border: 2px solid #FF5050;
+    border-radius: 0.4rem;
+    margin: 0.6rem 1rem;
+    border: 3px solid #FF5050;
     align-content: center;
     letter-spacing: -0.1rem;
     font-weight: 300;
@@ -270,21 +316,22 @@ body {
     color: white;
 }
 #yr_type_button {
-    background-color: #fff;
+    background-color: #FFFBF7;
     color: #ff7e81;
-    width: 6rem;
-    height: 2.5rem;
-    border-radius: 0.6rem;
-    font-size: 1.2rem;
+    width: 4.5rem;
+    height: 2.3rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin: 1rem auto 0;
-    border: 3px solid #FF8B8B;
+    border: 2px solid #FF8B8B;
+    margin-top: 0.5rem;
 }
 #yr_type_button:hover{
     background-color: #FF5050;
+    color: #fff
 }
 .yr_type_group_select {
-    height: 15rem;
+    height: 11rem;
     background-color: #fff;
     margin: 1rem auto;
     font-size: 1rem;
@@ -294,7 +341,7 @@ body {
     color: #474747;
 }
 .yr_type_group_select p {
-    font-size: 3rem;
+    font-size: 5rem;
     color: #FF5050;
 }
 @keyframes fadeIn {
@@ -309,14 +356,15 @@ body {
 /* ---------------------------choice */
 .yr_choice_mention {
     font-size: 1rem;
-    margin: 1rem auto 2rem;
+    margin: 0 auto 1.5rem;
 }
 .yr_list_choice {
     background-color: #FFFBF7;
-    border: 3px solid #FF8B8B;
-    height: 3rem;
-    margin: 0.5rem auto;
-    border-radius: 1rem;
+    border: 1.2px solid #FF8B8B;
+    height: 2.5rem;
+    width: 16rem;
+    margin: 0.6rem auto;
+    border-radius: 0.6rem;
     display: flex;
     align-items: center;
     opacity: 0;
@@ -336,20 +384,22 @@ body {
 .yr_list_name_choice {
     margin: auto;
     color: #696969;
+    font-size: 1rem;
 }
 .yr_list_choice.selected {
     box-shadow: inset 0 0 18px;
 }
+
 #yr_choice_button {
-    background-color: #fff;
+    background-color: #FFFBF7;
     color: #ff7e81;
-    width: 6rem;
-    height: 2.5rem;
-    border-radius: 0.6rem;
-    font-size: 1.3rem;
+    width: 4.5rem;
+    height: 2.3rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin: 1rem auto 0;
-    border: 3px solid #FF8B8B;
+    border: 2px solid #FF8B8B;
+    margin-top: 0.5rem;
 }
 #yr_choice_button:hover{
     background-color: #FF5050;

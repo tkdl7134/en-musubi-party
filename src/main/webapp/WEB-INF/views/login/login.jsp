@@ -4,18 +4,19 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/login/login.css">
+    <link rel="stylesheet" href="/css/login/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <%-- FontAwesome CSS --%>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="/resources/js/login/login.js"></script>
+    <script src="/js/login/login.js"></script>
 </head>
 <body>
 <div class="login-container">
 
     <div class="login-deco-img">
-        <img src="/resources/img/logo-img.png" alt="login-deco-img">
+        <img src="/img/logo-img.png" alt="login-deco-img">
     </div>
 
     <div class="login-box">

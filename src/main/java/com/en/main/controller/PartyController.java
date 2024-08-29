@@ -1,7 +1,9 @@
 package com.en.main.controller;
 
+import com.en.main.dto.MemberVO;
 import com.en.main.dto.PartyVO;
 import com.en.main.service.PartyService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,32 +21,39 @@ public class PartyController {
     @Autowired
     private PartyService partyService;
 
-    @GetMapping("/apply")
-    public String partyApply() {
-        return "/party/party_apply";
+//    @GetMapping("/apply")
+//    public String partyApply() {
+//        return "/party/party_apply";
+//    }
+//
+//    @GetMapping("/apply-done")
+//    public String partyApplyDone() {
+//        return "/party/party_apply_done";
+//    }
+////
+//    @GetMapping("/chat")
+//    public String partyChat() {
+//        return "/party/party_chat";
+//    }
+
+    @GetMapping("")
+    public String partyList(Model model, HttpSession session) {
+        MemberVO memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+
+        if (memberVO == null){
+            return "redirect:/login";
+        }
+        List<PartyVO> getPartyList =  partyService.getPartyList();
+        model.addAttribute("partyList", getPartyList);
+        return "/party/party_list";
     }
 
-    @GetMapping("/apply-done")
-    public String partyApplyDone() {
-        return "/party/party_apply_done";
-    }
+    @GetMapping("/info/{e_no}")
+    public String partyInfo(@PathVariable int e_no, Model model) {
+        System.out.println(e_no);
+        List<PartyVO> partyMembers = partyService.getPartyMembers(e_no);
 
-    @GetMapping("/chat")
-    public String partyChat() {
-        return "/party/party_chat";
-    }
-
-    @GetMapping("/info")
-    public String partyInfo(Model model) {
-
-        List<PartyVO> partyMembers = partyService.getPartyMembers();
-        long maleCount = partyMembers.stream().filter(member -> "男".equals(member.getM_gender())).count();
-        long femaleCount = partyMembers.stream().filter(member -> "女".equals(member.getM_gender())).count();
-        long totalCount = maleCount + femaleCount;
-
-        double malePercentage = totalCount == 0 ? 0 : ((double) maleCount / totalCount) * 100;
-        double femalePercentage = totalCount == 0 ? 0 : ((double) femaleCount / totalCount) * 100;
-
+        // groom guest & woman guest percent graph
         long groomGuestCount = partyMembers.stream().filter(member -> "新郎ゲスト".equals(member.getG_guest_type())).count();
         long brideGuestCount = partyMembers.stream().filter(member -> "新婦ゲスト".equals(member.getG_guest_type())).count();
         long totalGuestCount = groomGuestCount + brideGuestCount;
@@ -52,6 +61,15 @@ public class PartyController {
         double groomGuestPercentage = totalGuestCount == 0 ? 0 : ((double) groomGuestCount / totalGuestCount) * 100;
         double brideGuestPercentage = totalGuestCount == 0 ? 0 : ((double) brideGuestCount / totalGuestCount) * 100;
 
+        // man & woman percent graph
+        long maleCount = partyMembers.stream().filter(member -> "男".equals(member.getM_gender())).count();
+        long femaleCount = partyMembers.stream().filter(member -> "女".equals(member.getM_gender())).count();
+        long totalCount = maleCount + femaleCount;
+
+        double malePercentage = totalCount == 0 ? 0 : ((double) maleCount / totalCount) * 100;
+        double femalePercentage = totalCount == 0 ? 0 : ((double) femaleCount / totalCount) * 100;
+
+        // age graph calculate by birth
         Map<String, Integer> ageDistribution = new HashMap<>();
         ageDistribution.put("20代初め", 0);
         ageDistribution.put("20代半ば", 0);
@@ -82,19 +100,23 @@ public class PartyController {
         }
 
         model.addAttribute("partyMembers", partyMembers);
-        model.addAttribute("malePercentage", malePercentage);
-        model.addAttribute("femalePercentage", femalePercentage);
+
         model.addAttribute("groomGuestPercentage", groomGuestPercentage);
         model.addAttribute("brideGuestPercentage", brideGuestPercentage);
+
+        model.addAttribute("malePercentage", malePercentage);
+        model.addAttribute("femalePercentage", femalePercentage);
+
         model.addAttribute("ageDistribution", ageDistribution);
 
         return "/party/party_info";
     }
 
-    @GetMapping("/main")
-    public String partyMain(Model model) {
+    @GetMapping("/main/{e_no}")
+    public String partyMain(@PathVariable int e_no, Model model) {
+        System.out.println(partyService.getPartyMembers(e_no));
 
-        model.addAttribute("partyMembers", partyService.getPartyMembers());
+        model.addAttribute("partyMembers", partyService.getPartyMembers(e_no));
         model.addAttribute("partyMyInfo", partyService.getPartyMyInfo());
 
         return "/party/party_main";
@@ -107,9 +129,9 @@ public class PartyController {
     }
 
     @ResponseBody
-    @PostMapping("/main/type")
-    public Map<String, Object> partySelectedTypeGroup() {
-        Map<String, List<Map<String, String>>> groupedTypes = partyService.getSimilarSelectedTypeGroups();
+    @PostMapping("/main/type/{e_no}")
+    public Map<String, Object> partySelectedTypeGroup(@PathVariable int e_no) {
+        Map<String, List<Map<String, String>>> groupedTypes = partyService.getSimilarSelectedTypeGroups(e_no);
         String[] groupNames = {"A", "B", "C", "D", "E", "F", "G", "H"};
 
         Map<String, List<Map<String, String>>> namedGroupedTypes = new LinkedHashMap<>();
@@ -143,53 +165,59 @@ public class PartyController {
         return partyService.updateFinalChoice(partyVO);
     }
 
-//    @ResponseBody
-//    @PutMapping("/main/choice")
-//    public Map<String, Object> partyFinalChoiceBoth() {
-//        Map<String, Object> finalChoice = partyService.getFinalSelectedChoice();
-//        Map<String, Object> response = new HashMap<>();
-//        response.put("status", "success");
-//        response.put("finalChoice", finalChoice);
-//
-//        return response;
-//
-//    }
 
+    @GetMapping("/main/choice/{e_no}")
+    public String partyFinalChoiceBoth(@PathVariable int e_no, Model model) {
 
-    @GetMapping("/main/choice")
-    public String partyFinalChoiceBoth(Model model) {
-
-        Map<String, String> finalChoiceData = partyService.getFinalSelectedChoice();
+        Map<String, String> finalChoiceData = partyService.getFinalSelectedChoice(e_no);
         System.out.println("Final Choice Data: " + finalChoiceData);
 
         List<Map<String, String>> matchedCouples = new ArrayList<>();
+        List<PartyVO> partyMembers = partyService.getPartyMembers(e_no);
 
-        for (String id1 : finalChoiceData.keySet()) {
-            // 사용자 id1이 선택한 사람 목록을 가져옵니다.
-            String choicesStr = finalChoiceData.get(id1);
-            // 선택한 사람 목록을 리스트로 변환합니다.
+        for (String m_id : finalChoiceData.keySet()) {
+            // 사용자 m_id이 선택한 사람 목록
+            String choicesStr = finalChoiceData.get(m_id);
+            if (choicesStr == null) continue; // choicesStr이 null일 경우 건너뛰기
+
+            // 선택한 사람 목록을 리스트로 변환
             List<String> choices = Arrays.asList(choicesStr.split(","));
 
-            // 각 선택된 사람에 대해 매칭을 확인합니다.
+            // 각 선택된 사람에 대해 매칭 확인
             for (String choice : choices) {
-                // 선택된 사람의 선택 값을 가져옵니다.
+                // 선택된 사람의 선택 값
                 String choiceStr = finalChoiceData.get(choice);
-                if (choiceStr != null) {
-                    List<String> selectedByChoice = Arrays.asList(choiceStr.split(","));
+                if (choiceStr == null) continue; // choiceStr이 null일 경우 건너뛰기
 
-                    // id1의 선택 값에 choice가 포함되고, choice의 선택 값에 id1이 포함되어 있으면 매칭된 것입니다.
-                    if (selectedByChoice.contains(id1)) {
-                        // 매칭된 커플이 이미 리스트에 있는지 확인합니다 (중복 방지).
-                        boolean alreadyMatched = matchedCouples.stream()
-                                .anyMatch(couple -> (couple.get("person1").equals(id1) && couple.get("person2").equals(choice)) ||
-                                        (couple.get("person1").equals(choice) && couple.get("person2").equals(id1)));
+                List<String> selectedByChoice = Arrays.asList(choiceStr.split(","));
 
-                        if (!alreadyMatched) {
+                if (selectedByChoice.contains(m_id)) {
+                    // 중복 방지
+                    boolean alreadyMatched = matchedCouples.stream()
+                            .anyMatch(couple -> (couple.get("user").equals(m_id) && couple.get("partner").equals(choice)) ||
+                                    (couple.get("user").equals(choice) && couple.get("partner").equals(m_id)));
+
+                    if (!alreadyMatched) {
+                        // 'test2'에 대한 매칭만 실어주기
+                        if (m_id.equals("test2")) {
                             Map<String, String> couple = new HashMap<>();
-                            couple.put("person1", id1);
-                            couple.put("person2", choice);
+                            couple.put("user", m_id);
+                            couple.put("partner", choice);
+
+                            // m_id와 choice에 해당하는 m_fam_kanji와 m_name_kanji를 찾아서 추가
+                            for (PartyVO member : partyMembers) {
+                                if (member.getM_id().equals(m_id)) {
+                                    couple.put("userFamKanji", member.getM_fam_kanji());
+                                    couple.put("userNameKanji", member.getM_name_kanji());
+                                }
+                                if (member.getM_id().equals(choice)) {
+                                    couple.put("partnerFamKanji", member.getM_fam_kanji());
+                                    couple.put("partnerNameKanji", member.getM_name_kanji());
+                                }
+                            }
+
                             matchedCouples.add(couple);
-                            System.out.println("Match found for: " + id1 + " with " + choice);
+                            System.out.println("*****Match found for: " + m_id + " with " + choice);
                         }
                     }
                 }
@@ -208,11 +236,11 @@ public class PartyController {
 
     }
 
-    @GetMapping("/main/choice/line")
-    public String getPartnerLineID(Model model) {
-        model.addAttribute("partnerLineId", partyService.getPartnerLineID());
-
-        return "/party/party_choice_line";
+    @PutMapping("/main/choice/line")
+    @ResponseBody
+    public List<PartyVO> getPartnerLineID(@RequestBody Map<String, String> requestBody) {
+        String partnerID = requestBody.get("partnerID");
+        return partyService.getPartnerLineID(partnerID);
     }
 
 

@@ -30,7 +30,7 @@ div {
 
 .jh_titleName {
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .jh_pageNavigation {
@@ -84,12 +84,16 @@ div {
 
 .jh_week_data_message {
     text-align: center;
+    font-size: 20px;
+    margin-top: 10%;
+    margin-bottom: 5%;
 
 }
 
 .jh_week_data {
     margin-top: 5rem;
-
+    width: 96%;
+    margin-left: 2%;
 }
 
 .jh_funding_detail {
@@ -113,7 +117,7 @@ div {
 
 .jh_arrange_button_button {
 
-    border: 1px solid black;
+    border: 1px solid #FF8B8B;
     border-radius: 10px;
     background-color: white;
     font-family: "Noto Serif JP", serif;
@@ -160,7 +164,7 @@ div {
     border: 1px solid #888;
     width: 25%;
     max-width: 500px;
-    transform: translate(6px, 15rem);
+    transform: translate(6px, 20rem);
 }
 
 /* 닫기 버튼 */
@@ -175,17 +179,66 @@ div {
     text-decoration: none;
     cursor: pointer;
 }
+.jh_wishlists {
+    background-color: #FF69B4; /* 버튼 배경색: 핑크색 */
+    color: white; /* 글자색 */
+    border: none; /* 테두리 제거 */
+    padding: 10px 20px; /* 패딩 */
+    text-align: center; /* 텍스트 정렬 */
+    text-decoration: none; /* 텍스트 밑줄 제거 */
+    display: inline-block; /* 인라인 블록으로 설정 */
+    font-size: 16px; /* 폰트 크기 */
+    margin: 4px 2px; /* 마진 */
+    cursor: pointer; /* 커서 모양 변경 */
+    border-radius: 12px; /* 둥근 모서리 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 배경색 및 트랜지션 효과 */
+}
 
+.jh_wishlists:hover {
+    background-color: #FF1493; /* 마우스 오버 시 진한 핑크색 */
+    transform: scale(1.05); /* 마우스 오버 시 버튼 크기 확대 */
+}
+
+.jh_wishlists:active {
+    background-color: #C71585; /* 클릭 시 다크 핑크 */
+    transform: scale(0.95); /* 클릭 시 버튼 살짝 축소 */
+}
 .jh_slider.slick-slide.slick-current.slick-active {
     width : auto;
 
 
 }
-.slick-list.draggable {
+#jh_slider111{
+    height:  1142px !important;
+
+}
+
+.slick-list.draggable:nth-child(3) {
     height:  1142px !important;
 
 }
 .slick-track {
+
+}
+.jh_product_chart{
+   /* width : 390px !important;
+    height : 390px !important;*/
+
+border : 1px solid #FFDBDB;
+    border-radius: 10px;
+    width: 96%;
+    margin-left: 2%;
+
+
+
+
+
+}
+#jh_product_chart{
+
+    margin-top : 4%;
+    margin-bottom: 4%;
+
 
 }
 .jh_prev_btn2 {
@@ -204,4 +257,11 @@ div {
     font-weight: bold;
     margin-bottom: 15%;
     margin-top: 15%;
+}
+.jh_allList_container{
+
+    border: 1px solid #FF8B8B;
+    width: 96%;
+    margin-left: 2%;
+    border-radius: 30px;
 }

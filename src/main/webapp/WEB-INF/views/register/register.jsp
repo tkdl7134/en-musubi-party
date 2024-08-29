@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿</title>
-    <link rel="stylesheet" href="/resources/css/register/register.css">
+    <link rel="stylesheet" href="/css/register/register.css">
     <!-- Noto Serif Japanese-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap">
     <!-- Slick Slider CSS -->
@@ -15,14 +16,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick Slider JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="/resources/js/register/register.js"></script>
+    <script src="/js/register/register.js"></script>
     <!-- Flatpickr CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- Flatpickr 日本語 -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
-    <link rel="stylesheet" href="/resources/css/product/sakura.min.css"/>
+    <link rel="stylesheet" href="/css/product/sakura.min.css"/>
 </head>
 <body>
 <div id="sakura-container">
@@ -32,11 +33,11 @@
         <div class="register-header">
 
             <div class="register-header-logo">
-                    <img src="/resources/img/logo-img.png" alt="register-header-logo">
+                    <img src="/img/logo-img.png" alt="register-header-logo">
             </div>
 
             <div class="register-header-heart">
-                <img src="/resources/img/register-header-heart.png" alt="register-header-heart">
+                <img src="/img/register-header-heart.png" alt="register-header-heart">
             </div>
 
         </div>
@@ -57,7 +58,7 @@
                     </p>
                 </div>
                 <div class="register-character">
-                    <img src="/resources/img/EnMusubi-character3.png" alt="Enmusubi-character">
+                    <img src="/img/EnMusubi-character3.png" alt="Enmusubi-character">
                 </div>
 
             </div>
@@ -111,11 +112,11 @@
                     <div class="register-gender-container">
                         <label for="male" class="gender-label">
                             <input type="radio" id="male" name="gender" value="男性">
-                            <img src="/resources/img/register-male.png" alt="男性">
+                            <img src="/img/register-male.png" alt="男性">
                         </label>
                         <label for="female" class="gender-label">
                             <input type="radio" id="female" name="gender" value="女性">
-                            <img src="/resources/img/register-female.png" alt="女性">
+                            <img src="/img/register-female.png" alt="女性">
                         </label>
                     </div>
                 </div>
@@ -234,10 +235,10 @@
         <%-- Register Slider Controller--%>
         <div class="register-slider-controller">
             <button class="register-slider-prevButton" style="display: none;">
-                <img src="/resources/img/slide-prev.png" alt="Prev">
+                <img src="/img/slide-prev.png" alt="Prev">
             </button>
             <button class="register-slider-nextButton">
-                <img src="/resources/img/slide-next.png" alt="Next">
+                <img src="/img/slide-next.png" alt="Next">
             </button>
             <button id="register-submitButton"> 登録</button>
         </div>
@@ -249,7 +250,7 @@
     </div>
 </div>
 
-<script src="/resources/js/product/sakura.min.js"></script>
+<script src="/js/product/sakura.min.js"></script>
 <script>
     var sakura = new Sakura("#sakura-container");
 </script>

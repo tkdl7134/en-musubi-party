@@ -4,13 +4,14 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/member/findPWResult.css">
+    <link rel="stylesheet" href="/css/member/findPWResult.css">
 </head>
 <body>
 <div class="findPWResult-container">
     <div class="findPWResult-deco-img">
-        <img src="/resources/img/logo-img.png" alt="findPWResult-deco-img">
+        <img src="/img/logo-img.png" alt="findPWResult-deco-img">
     </div>
 
     <div class="findPWResult-title">

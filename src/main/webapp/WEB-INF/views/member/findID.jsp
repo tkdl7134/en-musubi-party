@@ -4,13 +4,14 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/member/findID.css">
+    <link rel="stylesheet" href="/css/member/findID.css">
 </head>
 <body>
 <div class="findID-container">
     <div class="findID-deco-img">
-        <img src="/resources/img/logo-img.png" alt="findID-deco-img">
+        <img src="/img/logo-img.png" alt="findID-deco-img">
     </div>
 
     <div class="findID-title">

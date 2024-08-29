@@ -4,13 +4,14 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿ </title>
-    <link rel="stylesheet" href="/resources/css/member/findPW.css">
+    <link rel="stylesheet" href="/css/member/findPW.css">
 </head>
 <body>
 <div class="findPW-container">
     <div class="findPW-deco-img">
-        <img src="/resources/img/logo-img.png" alt="findPW-deco-img">
+        <img src="/img/logo-img.png" alt="findPW-deco-img">
     </div>
 
     <div class="findPW-title">

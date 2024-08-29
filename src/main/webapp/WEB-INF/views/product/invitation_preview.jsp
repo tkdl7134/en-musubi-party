@@ -12,13 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"/>
     <!-- CSS -->
-    <link rel="stylesheet" href="/resources/css/product/invitation_preview.css" />
-    <link rel="stylesheet" href="/resources/css/product/invitation.css" />
-    <link rel="stylesheet" href="/resources/css/product/sakura.min.css" />
+    <link rel="stylesheet" href="/css/product/invitation_preview.css" />
+    <link rel="stylesheet" href="/css/product/invitation.css" />
+    <link rel="stylesheet" href="/css/product/sakura.min.css" />
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&callback=initMap"></script>
-    <script src="/resources/js/product/invitation.js" defer></script>
+    <script src="/js/product/invitation.js" defer></script>
 </head>
 <body>
 <!-- content -->
@@ -53,7 +53,7 @@
                     <div class="je_intro-msg">ご挨拶申し上げます</div>
                 </div>
                 <div class="je_musubi-line">
-                    <img src="/resources/img/red-line-musubi.png" alt="" srcset="" />
+                    <img src="/img/red-line-musubi.png" alt="" srcset="" />
                 </div>
                 <div class="je_message-txt">
                     ${weddingInfo.w_message_invite}
@@ -62,7 +62,7 @@
 
             <div class="je_invitation-couple-info">
                 <div class="je_red-line-BG">
-                    <img src="/resources/img/red-line-background.png" alt="" />
+                    <img src="/img/red-line-background.png" alt="" />
                 </div>
                 <div>
                     <div class="je_groom">
@@ -110,7 +110,7 @@
                 <div class="je_information-box">
                     <div class="je_information-wedding">
                         拳式
-                        <img src="/resources/img/Bird.png" alt="" />
+                        <img src="/img/Bird.png" alt="" />
                     </div>
                     <div class="je_wedding-datetime">
                         <p>${weddingInfo.w_date}</p>
@@ -130,7 +130,7 @@
                 <div class="je_information-box">
                     <div class="je_information-reception">
                         披露宴
-                        <img src="/resources/img//Bird.png" alt="" />
+                        <img src="/img//Bird.png" alt="" />
                     </div>
                     <div class="je_reception-datetime">
                         <p>${weddingInfo.w_date}</p>
@@ -174,7 +174,7 @@
             <div class="je_message-txt2">
                 ${weddingInfo.w_message_bye}
                 <div>✿✿✿</div>
-                <div><img src="/resources/img/red-line-musubi.png" alt="" srcset="" /></div>
+                <div><img src="/img/red-line-musubi.png" alt="" srcset="" /></div>
             </div>
         </div>
 
@@ -184,7 +184,7 @@
         </div>
     </div>
 </div>
-<script src="/resources/js/product/sakura.min.js"></script>
+<script src="/js/product/sakura.min.js"></script>
 <script>
     var sakura = new Sakura(".je_invitation-main");
 </script>

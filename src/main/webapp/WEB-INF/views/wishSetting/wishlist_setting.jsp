@@ -11,9 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" />
     <!-- CSS -->
-    <link rel="stylesheet" href="/resources/css/wishSetting/wishlist_setting.css" />
+    <link rel="stylesheet" href="/css/wishSetting/wishlist_setting.css" />
     <!-- JAVASCRIPT -->
-    <script src="/resources/js/wishSetting/wishlist_setting.js" defer></script>
+    <script src="/js/wishSetting/wishlist_setting.js" defer></script>
 </head>
 <body>
 <!-- content -->
@@ -25,7 +25,7 @@
                 <div class="je_wishlist-title">ご祝儀</div>
                 <div class="je_wishlist-content">
                     <div class="je_wishlist-img">
-                        <img src="/resources/img/red-envelope-icon.png" alt="" />
+                        <img src="/img/red-envelope-icon.png" alt="" />
                     </div>
                     <div class="je_wishlist-onoff">
                         <input type="checkbox" name="" id="je_money-switch" />
@@ -40,7 +40,7 @@
                 <div class="je_wishlist-title">プレゼント</div>
                 <div class="je_wishlist-content">
                     <div class="je_wishlist-img">
-                        <img src="/resources/img/present-icon.png" alt="" />
+                        <img src="/img/present-icon.png" alt="" />
                     </div>
                     <div class="je_wishlist-onoff">
                         <input type="checkbox" name="" id="je_present-switch" />
@@ -52,7 +52,7 @@
                 <div id="je_amazon-link">
                     <input type="text" id="amazonLink" value="${eventVO.e_amazon}"/>
                     <div id="checkIcon">
-                        <img src="/resources/img/check-icon.gif" />
+                        <img src="/img/check-icon.gif" />
                     </div>
                     <button id="amazonLink_btn" class="je_amazon-btn"
                             onclick="updateAmazonLink(${eventVO.e_no})">登録</button>
@@ -63,7 +63,7 @@
                 <div class="je_wishlist-title">ファンディング</div>
                 <div class="je_wishlist-content">
                     <div class="je_wishlist-img">
-                        <img src="/resources/img/piggy-bank-icon.png" alt="" />
+                        <img src="/img/piggy-bank-icon.png" alt="" />
                     </div>
                     <div class="je_wishlist-onoff">
                         <input type="checkbox" name="" id="je_funding-switch" />
