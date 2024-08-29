@@ -11,16 +11,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/resources/css/product/product_preview.css"/>
-    <link rel="stylesheet" href="/resources/css/survey/survey.css">
-    <link rel="stylesheet" href="/resources/css/survey/surveyCheckbox.css">
-    <link rel="stylesheet" href="/resources/css/survey/allergyModal.css" />
+    <link rel="stylesheet" href="/css/product/product_preview.css"/>
+    <link rel="stylesheet" href="/css/survey/survey.css">
+    <link rel="stylesheet" href="/css/survey/surveyCheckbox.css">
+    <link rel="stylesheet" href="/css/survey/allergyModal.css" />
     <script
             src="https://code.jquery.com/jquery-3.7.1.js"
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
             crossorigin="anonymous"
     ></script>
-    <script src="/resources/js/survey/survey.js"></script>
+    <script src="/js/survey/survey.js"></script>
 </head>
 <body>
 <div id="tk_product-preview-container">
@@ -28,7 +28,7 @@
         <div class="tk_preview-container">
             <div class="tk_iphone-container">
 <%--                <div class="tk_iphone">--%>
-<%--                    <img src="/resources/img/iphone-box.png" alt=""/>--%>
+<%--                    <img src="/img/iphone-box.png" alt=""/>--%>
                     <div class="tk_survey-container">
                         <div class="tk_page-content">
                             <div class="tk_form-container">
@@ -180,15 +180,15 @@
                                                 </div>
                                             <div class="survey-selection" id="wedding-selection">
                                                 <div class="survey-selection-option" data-value="ご出席">
-                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご出席">
+                                                    <img src="/img/select-Img.png" class="hidden" alt="ご出席">
                                                     ご出席
                                                 </div>
                                                 <div class="survey-selection-option" data-value="ご欠席">
-                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご欠席">
+                                                    <img src="/img/select-Img.png" class="hidden" alt="ご欠席">
                                                     ご欠席
                                                 </div>
                                                 <div class="survey-selection-option" data-value="保留">
-                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="保留">
+                                                    <img src="/img/select-Img.png" class="hidden" alt="保留">
                                                     保留
                                                 </div>
                                             </div>
@@ -326,7 +326,7 @@
                                                         <div class="tk_survey-message">
                                                             <div class="tk_survey-messageImg">
                                                                 <div class="tk_messageImg" id="messageImg">
-                                                                    <img src="/resources/img/omedeto.png" alt="Default Image" style="width: 100%; height: 100%; border-radius: 30px;">
+                                                                    <img src="/img/omedeto.png" alt="Default Image" style="width: 100%; height: 100%; border-radius: 30px;">
                                                                     <input type="hidden" name="me_img" id="meImgInput" value="your-default-image.jpg">
                                                                 </div>
                                                         </div>
@@ -361,15 +361,15 @@
                                             </div>
                                             <div class="survey-selection" id="afterparty-selection">
                                                 <div class="survey-selection-option" data-value="ご出席">
-                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご出席">
+                                                    <img src="/img/select-Img.png" class="hidden" alt="ご出席">
                                                     ご出席
                                                 </div>
                                                 <div class="survey-selection-option" data-value="ご欠席">
-                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="ご欠席">
+                                                    <img src="/img/select-Img.png" class="hidden" alt="ご欠席">
                                                     ご欠席
                                                 </div>
                                                 <div class="survey-selection-option" data-value="保留">
-                                                    <img src="/resources/img/select-Img.png" class="hidden" alt="保留">
+                                                    <img src="/img/select-Img.png" class="hidden" alt="保留">
                                                     保留
                                                 </div>
                                             </div>
@@ -403,7 +403,7 @@
                                                 <div class="main-enMusubi-envelope-top"></div>
                                                 <div class="main-enMusubi-envelope-top-border"></div>
                                                 <div class="main-enMusubi-envelope-logo-img">
-                                                    <img src="/resources/img/logo-img.png" alt="main-envelope-logo-img">
+                                                    <img src="/img/logo-img.png" alt="main-envelope-logo-img">
                                                 </div>
                                             </div>
 <%--                                            <div>--%>
@@ -639,22 +639,22 @@
     <div class="ImgModalList">サンプル画像</div>
     <ul class="sample-imgList">
         <li class="sample-imgList-item">
-            <img src="/resources/img/omedeto.png" alt="">
+            <img src="/img/omedeto.png" alt="">
         </li>
         <li class="sample-imgList-item">
-            <img src="/resources/img/celebratePic1.png" alt="">
+            <img src="/img/celebratePic1.png" alt="">
         </li>
         <li class="sample-imgList-item">
-            <img src="/resources/img/celebratePic2.png" alt="">
+            <img src="/img/celebratePic2.png" alt="">
         </li>
         <li class="sample-imgList-item">
-            <img src="/resources/img/celebratePic3.png" alt="">
+            <img src="/img/celebratePic3.png" alt="">
         </li>
         <li class="sample-imgList-item">
-            <img src="/resources/img/celebratePic4.png" alt="">
+            <img src="/img/celebratePic4.png" alt="">
         </li>
         <li class="sample-imgList-item">
-            <img src="/resources/img/celebratePic5.png" alt="">
+            <img src="/img/celebratePic5.png" alt="">
         </li>
     </ul>
     <div class="ImgModalCelebrate">ご希望のイメージを選んでお二人をお祝いします！</div>

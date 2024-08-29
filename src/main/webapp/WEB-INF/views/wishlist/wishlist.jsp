@@ -3,13 +3,13 @@
 <%@ include file="../menubar.jsp" %>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
-<link rel="stylesheet" href="/resources/css/wishlist/wishlist.css" />
+<link rel="stylesheet" href="/css/wishlist/wishlist.css" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Title</title>
-    <script src="/resources/js/wishlist/wishlist.js"></script>
+    <script src="/js/wishlist/wishlist.js"></script>
 </head>
 <body>
 <div class="tk_wishlist-body">
@@ -29,7 +29,7 @@
                         <div class="eg-text">FUNDING</div>
                     </div>
                     <div class="tk_wishlist-img-box">
-                        <img src="/resources/img/funding.png" alt="funding">
+                        <img src="/img/funding.png" alt="funding">
                     </div>
                 </button>
             </div>
@@ -40,7 +40,7 @@
                         <div class="eg-text">REMITTANCE</div>
                     </div>
                     <div class="tk_wishlist-img-box">
-                        <img src="/resources/img/sendMoney.png" alt="sendMoney">
+                        <img src="/img/sendMoney.png" alt="sendMoney">
                     </div>
                 </button>
             </div>
@@ -51,7 +51,7 @@
 <%--                        <div class="eg-text">PRESENT</div>--%>
 <%--                    </div>--%>
 <%--                    <div class="tk_wishlist-img-box">--%>
-<%--                        <img src="/resources/img/amazon.png" alt="amazon">--%>
+<%--                        <img src="/img/amazon.png" alt="amazon">--%>
 <%--                    </div>--%>
 <%--                </button>--%>
 <%--            </div>--%>
@@ -63,7 +63,7 @@
                         <div class="eg-text">PRESENT</div>
                     </div>
                     <div class="tk_wishlist-a-img-box">
-                        <img src="/resources/img/amazon.png" alt="amazon">
+                        <img src="/img/amazon.png" alt="amazon">
                     </div>
                 </a>
             </div>
