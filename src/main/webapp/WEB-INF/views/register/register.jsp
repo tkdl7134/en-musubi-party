@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿</title>
     <link rel="stylesheet" href="/css/register/register.css">
     <!-- Noto Serif Japanese-->
