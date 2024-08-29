@@ -284,7 +284,7 @@ body {
     .je_menu-header {
         width: 30vw;
         margin: 0 auto;
-        gap: 12rem;
+        gap: 13rem;
     }
 
     #actionSheet {
@@ -306,13 +306,8 @@ body {
         font-size: 22px;
         font-weight: 900;
     }
-}
 
-@media (min-width: 769px) {
-    .je_menu-header{
-        width: 30vw;
-        margin: 0 auto;
-        gap: 13rem;
+    .logout-btn{
+        right: 36%;
     }
-
 }
