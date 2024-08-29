@@ -1,8 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page contentType="text/html; charset=utf-8" %>
 <%@ include file="../menubar.jsp" %>
+<%@ page contentType="text/html; charset=utf-8" %>
+
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
 <link rel="icon" type="image/png" href="/img/favicon.png">
@@ -880,7 +881,16 @@
             font-style: normal;
             overflow: hidden visible;
         }
+            .je_logo-icon , .je_menu-icon{
+              /*  width : 16.5rem;*/
+            }
+            .je_menu-header{
+                gap : 0;
+                text-align: center;
+                width: 94%;
+                margin-left: 3%;
 
+            }
         .container {
             width: 100%;
             max-width: 1200px;
@@ -929,7 +939,8 @@
         <p>This is a layout for tablet screens.</p>
     </div>
     <div id="jh_top" class="mobile">
-        <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
+        <div class="jh_head_container" style="background-color: white; display: flex; height: 3rem;
+    align-items: center;">
 
 
             <div id="jh_pageNavi1" class="jh_pageNavigation" style="width: 64%; transform: translateX(29%);">
