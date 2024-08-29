@@ -176,7 +176,7 @@ $.ajax({
 
 		// 무한 스크롤 구현
 		cardCon.addEventListener("scroll", function () {
-		const scrollWidthHalf = cardCon.scrollWidth / 4;
+		const scrollWidthHalf = cardCon.scrollWidth / 2;
 
 		if (cardCon.scrollLeft >= scrollWidthHalf) {
 		// 오른쪽 끝에 도달하면 첫 번째 카드를 복제하여 추가
@@ -196,10 +196,10 @@ $.ajax({
 	function smoothScroll() {
 		if (!isScrolling) return;
 
-		scrollAmount += (scrollTarget - scrollAmount) * 0.1; // 부드러운 감속 효과
+		scrollAmount += (scrollTarget - scrollAmount) * 2; // 부드러운 감속 효과
 		cardCon.scrollLeft = scrollAmount;
 
-		if (Math.abs(scrollTarget - scrollAmount) < 0.05) {
+		if (Math.abs(scrollTarget - scrollAmount) < 4) {
 			isScrolling = false;
 		} else {
 			requestAnimationFrame(smoothScroll);
@@ -410,7 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const overlay = document.getElementById("je_overlay");
 	const container = document.querySelector(".kh-f-card-container");
 
-	function hideOverlay() {
+	function hideOverlay(){
 		overlay.classList.add("hidden");
 	}
 
