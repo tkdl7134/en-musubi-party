@@ -27,7 +27,8 @@
                 </div>
             </div>
             <div class="card-back">
-                <div><span style="color: red">✿</span> ${g.m_fam_kanji} ${g.m_name_kanji} <span style="color: red">✿</span></div>
+<%--                <div><span style="color: red">✿</span> ${g.m_fam_kanji} ${g.m_name_kanji} <span style="color: red">✿</span></div>--%>
+                <div><span style="color: red">✿</span> ${g.w_fam_jp_groom} ${g.w_name_jp_groom} &nbsp; ˑ &nbsp; ${g.w_fam_jp_bride} ${g.w_name_jp_bride} <span style="color: red">✿</span></div>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
             </div>
