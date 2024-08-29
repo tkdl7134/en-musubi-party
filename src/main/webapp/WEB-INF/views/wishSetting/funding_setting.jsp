@@ -12,10 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" />
     <!-- CSS -->
-    <link rel="stylesheet" href="/resources/css/wishSetting/funding_setting.css" />
+    <link rel="stylesheet" href="/css/wishSetting/funding_setting.css" />
     <!-- JAVASCRIPT -->
-<%--    <script src="/resources/js/je_validChk/funding_setting_validChk.js" defer></script>--%>
-    <script src="/resources/js/wishSetting/funding_setting.js" defer></script>
+<%--    <script src="/js/je_validChk/funding_setting_validChk.js" defer></script>--%>
+    <script src="/js/wishSetting/funding_setting.js" defer></script>
 </head>
 <body>
 <!-- content -->
@@ -27,7 +27,7 @@
             <div class="je_funding-box">
                 <div class="je_inner-yellow"></div>
                 <div class="je_funding-img">
-                    <img src="/resources/img/funding-more.png" alt="" />
+                    <img src="/img/funding-more.png" alt="" />
                 </div>
                 <div class="je_funding-info">
                     <div class="je_funding-name">
@@ -46,7 +46,7 @@
             <div class="je_funding-box item temp">
                 <div class="je_inner-yellow"></div>
                 <div class="je_funding-img">
-                    <img class="je_fundingSetImg" src="/resources/img/funding-more.png" alt="" />
+                    <img class="je_fundingSetImg" src="/img/funding-more.png" alt="" />
                 </div>
                 <div class="je_funding-info">
                     <div class="je_funding-name"></div>

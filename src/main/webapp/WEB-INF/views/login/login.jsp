@@ -4,6 +4,7 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="/css/login/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">

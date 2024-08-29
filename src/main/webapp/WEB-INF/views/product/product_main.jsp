@@ -14,12 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet"/>
     <%--  CSS --%>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="/resources/css/product/swiper-slide-center.css" />
-    <link rel="stylesheet" href="/resources/css/product/product_main.css" />
+    <link rel="stylesheet" href="/css/product/swiper-slide-center.css" />
+    <link rel="stylesheet" href="/css/product/product_main.css" />
     <%--  JS --%>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/resources/js/product/swiper-slide-center.js"></script>
+    <script src="/js/product/swiper-slide-center.js"></script>
 </head>
 <body>
 
@@ -34,7 +34,7 @@
                         <li class="swiper-slide">
                             <div class="je_template-box">
                                 <div class="je_template-preview" onclick="location.href='/product/${t.t_pk}'">
-                                    <img src="/resources/img/${t.t_preview}" alt="" />
+                                    <img src="/img/${t.t_preview}" alt="" />
                                 </div>
                                 <div class="je_template-title">${t.t_title}</div>
                             </div>
@@ -45,11 +45,11 @@
             <!-- 양 옆 버튼 -->
             <div class="je_slider-buttons">
                 <div class="je_slider-btn btn_prev">
-                    <img src="/resources/img/left-arrow-icon.png" alt="이젼" />
+                    <img src="/img/left-arrow-icon.png" alt="이젼" />
                 </div>
                 <div class="je_template-slide-paging fraction"></div>
                 <div class="je_slider-btn btn_next">
-                    <img src="/resources/img/right-arrow-icon.png" alt="다음" />
+                    <img src="/img/right-arrow-icon.png" alt="다음" />
                 </div>
             </div>
         </div>
