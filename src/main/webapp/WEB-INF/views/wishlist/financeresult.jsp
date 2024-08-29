@@ -3,10 +3,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="/resources/css/wishlist/result.css" />
+<link rel="stylesheet" href="/css/wishlist/result.css" />
 <div class="kh-f-res-container">
 	<div class="kh-f-res-img-box">
-		<img alt="noImg" src="/resources/img/Resultmsg.png">
+		<img alt="noImg" src="/img/Resultmsg.png">
 	</div>
 	<div class="kh-f-res-btn-box">
 		<c:if test="${loginType=='line' }">

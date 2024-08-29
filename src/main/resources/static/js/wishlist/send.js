@@ -23,7 +23,7 @@ let spop = document.querySelector(".kh-s-popup");
 // cardCon.addEventListener("mouseover", function(event) {
 // 	if (event.target === cardCon) {
 // 		document.querySelector(".kh-s-mousemove > img").src =
-// 			"/resources/img/dragbtn.png";
+// 			"/img/dragbtn.png";
 // 	}
 // 	cardCon.style.cursor = "none";
 // 	mouseicn.classList.remove("kh-s-none");
@@ -114,11 +114,11 @@ function envelopChanger() {
     const input = document.querySelector(".kh-s-input").value;
     let inputVal = input.replace(',', '');
     if (inputVal < 50000) {
-        envelope.src = "/resources/img/envelope01.png";
+        envelope.src = "/img/envelope01.png";
     } else if (inputVal < 70000) {
-        envelope.src = "/resources/img/envelope02.png";
+        envelope.src = "/img/envelope02.png";
     } else {
-        envelope.src = "/resources/img/envelope03.png";
+        envelope.src = "/img/envelope03.png";
     }
 }
 
