@@ -4,6 +4,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
+<link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="stylesheet" href="/css/statistics/statistics.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -926,7 +927,7 @@
 
                 <div style="background-color: #FFDBDB ; color : red; height: 8vh; align-content: center; text-align: center ; font-size: 20px;">全体ファンディング現況 </div>
                 <div class="jh_title" style="margin-top: 10%; width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 42%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -948,10 +949,11 @@
                 </div>
 
 
-                <div style="display: flex; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
-                    <canvas style="width: 100vw ; " id="myChart"></canvas>
+                <div style="display: flex;    width: 90%;
+    margin-left: 5%; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
+                    <canvas style="width: 100vw ;     margin-bottom: 10%; " id="myChart"></canvas>
                 </div>
-                <div style="background-color: white; margin-top: 5rem; border: 1px solid #555555; border-radius: 30px"
+                <div style="background-color: white; margin-top: 5rem; border: 1px solid #FF8B8B; border-radius: 30px"
                      class="jh_week_data">
                     <div class="jh_week_data_message">最近の一週間集まった想い</div>
                     <div style="display: flex; justify-content: center;">
@@ -973,7 +975,7 @@
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center; height:  8vh ;align-content: center; font-size: 20px">詳しいファンディング現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%); margin-top : 10%;align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 42%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -1013,7 +1015,7 @@
                     <div id="jh_foreach_test">
                         <c:forEach items="${listupDatas}" var="l">
                             <div style="    width: 97%;
-    margin-left: 1.5%; background-color: white; border : 1px solid black; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
+    margin-left: 1.5%; background-color: white; border : 1px solid #FF8B8B; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
                                 <div style="display: flex; justify-content: space-around;">
 
 
@@ -1041,11 +1043,11 @@
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 20px; height: 8vh;">個別贈り物の現況 </div>
                 <div class="jh_title" style="width: 90%;  transform: translateX(6%);align-items: center; height: 19vh; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 42%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
-                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
+                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: white"
                      class="jh_other_infos">
                     <div style="margin-top: 2vh;" id="jh_detailHead" class="jh_funding_detail">全体的な情報</div>
                     <div style="margin-top: 5vh;" id="jh_numberOfPeople" class="jh_funding_detail">繋がれた因縁
@@ -1125,7 +1127,7 @@
 
                 <div style="background-color: #FFDBDB ; color : red; height: 8vh; align-content: center; text-align: center ; font-size: 20px;">全体ファンディング現況 </div>
                 <div class="jh_title" style="margin-top: 10%; width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 42%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -1139,10 +1141,11 @@
                     <div><input class="jh_priceByRelation" type="hidden" value="${s.p_price}"></div>
                     <div><input class="jh_send_relation" type="hidden" value="${s.g_relation}"></div>
                 </c:forEach>
-                <div style="display: flex; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
+                <div style="display: flex;     width: 90%;
+    margin-left: 5%;justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
                     <canvas style="width: 100vw ; height: 50vh; " id="myChart2"></canvas>
                 </div>
-                <div style="background-color: white; margin-top: 5rem; border: 1px solid #555555; border-radius: 30px"
+                <div style="background-color: white; margin-top: 5rem; border: 1px solid #FF8B8B; border-radius: 30px"
                      class="jh_week_data">
                     <div class="jh_week_data_message">最近の一週間集まった想い</div>
                     <div style="display: flex; justify-content: center;">
@@ -1165,12 +1168,12 @@
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center; height:  8vh ;align-content: center; font-size: 20px">詳しいファンディング現況 </div>
                 <div class="jh_title" style="width: 90%; transform: translateX(6%); margin-top : 10%;align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 45%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
                 <div style="      margin-top: 10%;
-    padding-top: 10%;  padding-bottom: 10%;background-color: #FFDBDB; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
+    padding-top: 10%;  padding-bottom: 10%;background-color: white; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
     scrollbar-width: none;  " class="jh_allList_container">
                     <div>
                         <div style="display: flex; justify-content: space-around;">
@@ -1233,7 +1236,7 @@
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 20px; height: 8vh;">個別贈り物の現況 </div>
                 <div class="jh_title" style="width: 90%;  transform: translateX(6%);align-items: center; height: 19vh; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 42%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -1241,7 +1244,7 @@
                                                       style="margin-top : 10%; background-color: white; width: 47%; padding: 5%; transform: translateX(47vw); text-align: center; font-family: 'Noto Serif JP', serif; font-weight: bold">
                     物品をお選びください
                 </button>--%>
-                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
+                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: white"
                      class="jh_other_infos">
                     <div style="margin-top: 2vh;" id="jh_detailHead2" class="jh_funding_detail">全体的な情報</div>
                     <div style="margin-top: 5vh;" id="jh_numberOfPeople2" class="jh_funding_detail">ご祝儀を送った人
