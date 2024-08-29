@@ -3,6 +3,7 @@
 <html style="zoom:100% !important;" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="/css/mypage/myInfo.css">
     <script src="/js/mypage/myInfo.js"></script>
