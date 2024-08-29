@@ -55,7 +55,8 @@ div {
     text-align: center;
     font-size: 18px;
     border-radius: 50px;
-
+    height: 2.3rem;
+    align-content: center;
 }
 
 .jh_pageNavigationA:hover {
@@ -92,8 +93,8 @@ div {
 
 .jh_week_data {
     margin-top: 5rem;
-    width: 96%;
-    margin-left: 2%;
+    width: 85%;
+    margin-left: 7.5%;
 }
 
 .jh_funding_detail {
@@ -122,7 +123,7 @@ div {
     background-color: white;
     font-family: "Noto Serif JP", serif;
     font-weight: bold;
-    font-size: 27px;
+    font-size: 24px;
 }
 
 .jh_prev_btn {
@@ -223,12 +224,12 @@ div {
 .jh_product_chart{
    /* width : 390px !important;
     height : 390px !important;*/
-
-border : 1px solid #FFDBDB;
+margin-top: 5%;
+border : 1px solid #FF8B8B;
     border-radius: 10px;
-    width: 96%;
-    margin-left: 2%;
-
+    width: 85%;
+    margin-left: 7.5%;
+    background-color: white;
 
 
 
@@ -261,7 +262,12 @@ border : 1px solid #FFDBDB;
 .jh_allList_container{
 
     border: 1px solid #FF8B8B;
-    width: 96%;
-    margin-left: 2%;
-    border-radius: 30px;
+    width: 85%;
+    margin-left: 7.5%;
+    border-radius: 20px;
+}
+.jh_other_infos{
+
+    width: 85%;
+    margin-left: 7.5%;
 }
