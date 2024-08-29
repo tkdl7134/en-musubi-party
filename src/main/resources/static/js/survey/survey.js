@@ -520,6 +520,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 $(document).ready(function () {
     $(".survey-submit-button").on("click", function(event) {
+        console.log("폼 버튼 눌러짐")
         event.preventDefault(); // 폼 제출을 기본적으로 막음
 
         let allValid = true;
@@ -536,7 +537,7 @@ $(document).ready(function () {
                 behavior: 'smooth'
             });
 
-            return false;
+            return;
         }
 
         // 필수 입력 필드 확인
@@ -613,15 +614,13 @@ $(document).ready(function () {
                         allValid = false;
                         alert(field.errorMessage);
                         focusOnField(field.selector);
-                        breakFlag = true;
                         break;
                     }
                 }
-                if (breakFlag) {
-                    break;
+                if (!allValid) break;
+
                 }
             }
-        }
         let isValid = true;
         let firstInvalidInput = null;
 
@@ -646,11 +645,17 @@ $(document).ready(function () {
             firstInvalidInput.scrollIntoView({ behavior: 'smooth' });
             return;
         }
+
         if (allValid) {
             console.log("모든 필드가 유효합니다. 폼을 제출합니다.");
             $("form").off("submit").submit();  // 여기서 off()로 이벤트 리스너를 제거하고 폼 제출
         } else {
             console.log("유효하지 않은 필드가 있어 폼 제출이 막혔습니다.");
+            $("form").on("submit", function(event) {
+                event.preventDefault(); // 폼의 기본 제출 동작을 막음
+                console.log("폼 제출이 막혔습니다.");
+                // 여기에 추가적인 코드 작성 가능
+            });
         }
     });
 
@@ -819,8 +824,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener("DOMContentLoaded", function () {
 
         const enMusubiEnvelope = document.querySelector(".survey-submit-button");
-        const enMusubiEnvelopeTop = document.querySelector(".main-enParty-envelope-top");
-        const enMusubiEnvelopePaper = document.querySelector(".main-enParty-envelope-paper");
+        const enMusubiEnvelopeTop = document.querySelector(".main-enMusubi-envelope-top");
+        const enMusubiEnvelopePaper = document.querySelector(".main-enMusubi-envelope-paper");
         const enMusubiEnvelopeText = document.querySelector(".main-enMusubi-envelope-text");
         const surveyForm = document.getElementById("surveyForm");
 
@@ -829,9 +834,7 @@ document.addEventListener('DOMContentLoaded', function () {
             enMusubiEnvelopeTop.classList.add("change-color");
             enMusubiEnvelopePaper.classList.add("move-up");
             enMusubiEnvelopeText.classList.add("enlarge");
-            setTimeout(function () {
-                surveyForm.submit();
-            }, 1000);
+
         });
 
         enMusubiEnvelopePaper.addEventListener("transitionend", function () {

@@ -63,7 +63,8 @@ select *
 from event;
 insert into event
 values (event_seq.nextval, 'test3', 'https://www.amazon.co.jp/');
-
+update event set e_amazon = 'https://www.amazon.co.jp/' where e_no = 296;
+SELECT e_amazon FROM event where m_id = 'test2' AND e_no = 235;
 -- 템플릿(상품)
 create table template
 (
