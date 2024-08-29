@@ -15,6 +15,10 @@ public class AllGuestVO {
     private String m_phone;
 
     private String w_date;
+    private String w_fam_jp_groom;
+    private String w_name_jp_groom;
+    private String w_fam_jp_bride;
+    private String w_name_jp_bride;
     private String w_wedding_time;
     private String w_wedding_address;
     private String w_wedding_building;

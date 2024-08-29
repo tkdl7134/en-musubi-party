@@ -80,32 +80,32 @@ textarea{
 
 /* 맨 위 진행도 */
 .je_progress-img {
-    margin-top: 4rem;
+    margin-top: 3rem;
     position: relative;
 }
 
 .je_progress-line {
     margin-top: 2rem;
-    border: 2px solid #ff7e81;
+    border: 1px solid #ff7e81;
 }
 
 .je_progress-circles {
     display: flex;
     justify-content: space-evenly;
-    top: -2.5rem;
+    top: -1.5rem;
     position: relative;
 }
 
 .je_progress {
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
     width: 100px;
 }
 
 .je_progress-circle-pink,
 .je_progress-circle {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 100%;
     margin: auto;
 }
@@ -410,9 +410,6 @@ input:-ms-input-placeholder {
 /* photo - 대표 */
 .je_content-photo {
     margin: 1rem 2.5rem;
-    /*display: flex;*/
-    /*flex-wrap: wrap;*/
-    /*gap: 1rem;*/
 }
 
 .je_photoBox-container{
@@ -459,7 +456,6 @@ input:-ms-input-placeholder {
 #je_photoOut2,
 #je_photoOut3{
     position: absolute;
-    /* top: 1rem; */
     left: 0;
     z-index: 10;
     width: 10rem;
@@ -508,7 +504,6 @@ input:-ms-input-placeholder {
 }
 
 .je_filebox {
-    /* background-color: #ff7e81; */
     padding: 0.3rem 1rem;
     display: flex;
     justify-content: space-between;
@@ -516,7 +511,6 @@ input:-ms-input-placeholder {
 }
 
 .je_file-name {
-    /* background-color: yellowgreen; */
     font-size: 14px;
     font-weight: 600;
 }
@@ -526,24 +520,6 @@ input:-ms-input-placeholder {
     font-weight: 900;
 }
 
-@media (min-width: 769px) {
-    .je_page-content {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-
-    .je_title-txt {
-        font-size: 20px;
-        /* margin-bottom: 1rem; */
-    }
-    .je_title-line img {
-        width: 0;
-    }
-    .je_content-contents {
-        /* margin: 2rem; */
-        border-radius: 0%;
-    }
-}
 
 /*ALERT*/
 #emptyWarning-msg{
@@ -620,33 +596,12 @@ button:not(:hover){
 }
 
 /* ------------------------------------------------------ */
-@media (max-width: 768px) {
-    .je_progress-img {
-        margin-top: 3rem;
-        position: relative;
+@media (min-width: 769px) {
+
+    #je_product-make-container{
+        width: 30vw;
+        margin: 0 auto;
     }
 
-    .je_progress-line {
-        margin-top: 2rem;
-        border: 1px solid #ff7e81;
-    }
-
-    .je_progress-circles {
-        display: flex;
-        justify-content: space-evenly;
-        top: -1.5rem;
-        position: relative;
-    }
-
-    .je_progress {
-        text-align: center;
-        font-size: 12px;
-        width: 100px;
-    }
-
-    .je_progress-circle-pink,
-    .je_progress-circle {
-        width: 1rem;
-        height: 1rem;
-    }
 }
+

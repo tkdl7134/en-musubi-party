@@ -40,7 +40,13 @@ public class ProductController {
     }
 
     @GetMapping("/{t_pk}/make")
-    public String productMake(@PathVariable int t_pk ,Model model) {
+    public String productMake(@PathVariable int t_pk ,Model model, HttpSession session) {
+
+        MemberVO memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+        if (memberVO == null){
+            return "redirect:/login";
+        }
+
         model.addAttribute("t_pk", t_pk);
         return "product/product_make";
     }
@@ -50,7 +56,13 @@ public class ProductController {
                                    @RequestParam MultipartFile w_img1_file,
                                    @RequestParam MultipartFile w_img2_file, @RequestParam MultipartFile w_img3_file,
                                    @RequestParam MultipartFile[] w_img_share_files,
-                                   Model model) {
+                                   Model model,  HttpSession session) {
+
+        memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+        if (memberVO == null){
+            return "redirect:/login";
+        }
+
         productService.insertWeddingInfo(weddingVO, memberVO, w_img1_file, w_img2_file, w_img3_file, w_img_share_files);
         System.out.println(weddingVO.getE_no());
 
@@ -58,7 +70,13 @@ public class ProductController {
     }
 
     @GetMapping("/invitation-preview/{e_no}")
-    public String getWeddingInfo(Model model, @PathVariable int e_no, WeddingVO weddingVO) {
+    public String getWeddingInfo(Model model, @PathVariable int e_no, WeddingVO weddingVO, HttpSession session) {
+
+        MemberVO memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+        if (memberVO == null){
+            return "redirect:/login";
+        }
+
         model.addAttribute("weddingInfo", productService.getWeddingInfo(e_no));
         String str = productService.getWeddingInfo(e_no).getW_img_share();
         String[] list = str.split(",");

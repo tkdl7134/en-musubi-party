@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title>✿ ~ 縁結び ~ ✿</title>
     <!-- Noto Serif Japanese 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,8 +15,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/wishSetting/funding_setting.css" />
     <!-- JAVASCRIPT -->
-<%--    <script src="/js/je_validChk/funding_setting_validChk.js" defer></script>--%>
     <script src="/js/wishSetting/funding_setting.js" defer></script>
+    <script src="/js/je_validChk/funding_setting_validChk.js" defer></script>
 </head>
 <body>
 <!-- content -->
@@ -34,7 +35,7 @@
                         <input type="text" placeholder="アイテム" id="fundingItem-name" />
                     </div>
                     <div class="je_funding-price">
-                        <input type="number" placeholder="円" id="fundingItem-price" maxlength="8" />
+                        <input type="number" placeholder="円" id="fundingItem-price" oninput="checkMaxPrice(this)" />
                     </div>
                     <div class="je_funding-button"><button id="fundingItem-insert-button">堂録</button></div>
                 </div>
@@ -51,7 +52,7 @@
                 <div class="je_funding-info">
                     <div class="je_funding-name"></div>
                     <div class="je_funding-price">
-                        <input type="number" placeholder=" 円" id="new-price" maxlength="8"/>
+                        <input type="number" placeholder=" 円" id="new-price" oninput="checkMaxPrice(this)"/>
                     </div>
                     <div class="je_funding-button">
                         <button class="je_update-btn" id="fundingItem-update-button">修正</button>
@@ -60,9 +61,7 @@
                 </div>
             </div>
 
-            <div class="je_top-btn" onclick="goToTop()">
-                <span>トップ</span>
-            </div>
+            <div id="scrollToTopBtn" class="je_top-btn">トップ</div>
     </div>
 </div>
 </body>

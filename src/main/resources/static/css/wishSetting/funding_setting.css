@@ -26,9 +26,10 @@ body {
 
 #je_funding-setting-container {
     width: 100vw;
-    height: 100vh;
+    /*height: 100vh;*/
     display: flex;
     justify-content: center;
+    overflow-y: auto;
 }
 
 /* content */
@@ -49,7 +50,8 @@ input {
     position: relative;
     margin: 1.5rem 1rem;
     padding: 1rem;
-    border: 1px solid #fb1010;
+    border: 3px solid #ffd600;
+    outline: 1px solid #fb1010;
     border-radius: 2rem;
     box-shadow: rgba(255, 166, 166, 1) 3px 2px 3px 0px;
     width: 20rem;
@@ -57,16 +59,20 @@ input {
     gap: 0.5rem;
 }
 
-.je_inner-yellow {
-    position: absolute;
-    top: 0.1rem;
-    width: 98%;
-    height: 94%;
-    border: 2px solid #ffd600;
-    border-radius: 2rem;
-    z-index: 0;
-    pointer-events: none;
+#existing-fundingList{
+    margin-bottom: 5rem;
 }
+
+/*.je_inner-yellow {*/
+/*    position: absolute;*/
+/*    top: 0.1rem;*/
+/*    width: 98%;*/
+/*    height: 94%;*/
+/*    border: 2px solid #ffd600;*/
+/*    border-radius: 2rem;*/
+/*    z-index: 0;*/
+/*    pointer-events: none;*/
+/*}*/
 
 .je_funding-img {
     display: flex;
@@ -145,16 +151,22 @@ button:not(:hover){
 }
 
 .je_top-btn {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0 4rem 0;
-    span {
-        padding: 0.5rem 1rem;
-        background-color: #ffd1d0;
-        border-radius: 2rem;
-        font-size: 0.8rem;
-        font-weight: 900;
-    }
+    opacity: 0;
+    position: fixed;
+    right: 5%;
+    bottom: 3%;
+    background-color: #ffd1d0;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 14px;
+    font-weight: 900;
+    color: #ff494c;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.je_top-btn.show {
+    opacity: 1; /* 투명도를 1로 설정하여 나타남 */
 }
 
 .item.temp {
@@ -164,9 +176,103 @@ button:not(:hover){
 .je_line {
     border: 1px solid #ff494c;
     width: 100%;
-    /* margin: 0 auto; */
-    /* margin-top: 1rem; */
 }
+
+/*confirm 창 CSS*/
+.je_confirm-box,
+.je_confirmbox-overlay {
+    opacity: 0; /* 처음에는 투명하게 시작 */
+    transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+.je_confirm-box.show,
+.je_confirmbox-overlay.show {
+    opacity: 1; /* 나타날 때 불투명하게 */
+}
+
+
+.je_confirmbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.je_confirm-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15rem;
+    border: 2px solid #fb1010;
+    outline: 2px solid #ffc107;
+    background-color: #fffbf7;
+    z-index: 5;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.je_confirm-message {
+    margin-bottom: 2rem;
+}
+
+.je_confirm-message div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.je_confirm-message div:nth-child(1) {
+    font-size: 18px;
+    font-weight: 900;
+    color: #ff494c;
+}
+
+.je_confirm-message div:nth-child(2) {
+    font-size: 16px;
+    font-weight: 600;
+    color: #474747;
+    margin-top: 1rem;
+}
+
+.je_confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    button {
+        width: 6rem;
+        padding: 0.4rem 0.5rem;
+        border-radius: 20px;
+        font-weight: 900;
+        font-size: 14px;
+        transition: 0.5s ease;
+    }
+    button:hover {
+        transform: scale(1.1);
+        transition-duration: 0.5s;
+    }
+    button:not(:hover) {
+        transform: scale(1);
+        transition-duration: 0.5s;
+    }
+}
+
+.je_confirm-buttons > .confirm {
+    background-color: #ff3b3f;
+    color: #ffffff;
+    border: 1.5px solid #c82626;
+}
+
+.je_confirm-buttons > .cancel {
+    background-color: #5c5c5c;
+    color: #ffffff;
+    border: 1.5px solid #474747;
+}
+
+
 
 @media (min-width: 769px) {
     .je_menu-header {
@@ -181,5 +287,9 @@ button:not(:hover){
     #je_funding-setting-container {
         width: 30vw;
         margin: 0 auto;
+    }
+
+    .je_top-btn {
+        right: 35%;
     }
 }

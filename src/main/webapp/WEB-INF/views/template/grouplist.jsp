@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ include file="../menubar.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%--<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>--%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -24,23 +24,16 @@
             <div class="card-front">
                 <div class="image-container">
                     <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">
-                        <%-- <img src="${pageContext.request.contextPath}/img/${g.w_img1}" alt="Template 1"> --%>
                 </div>
             </div>
             <div class="card-back">
-                <div><span style="color: red">✿</span> ${eventOwnerName.m_fam_kanji} ${eventOwnerName.m_name_kanji} <span style="color: red">✿</span></div>
+                <div><span style="color: red">✿</span> ${g.m_fam_kanji} ${g.m_name_kanji} <span style="color: red">✿</span></div>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
             </div>
-
-
-
-
-
         </div>
 
         <c:if test="${status.index % 3 == 2 || status.last}">
-            <!-- 데이터가 1~2개일 경우 빈 카드 추가 -->
             <c:if test="${status.index % 3 == 0}">
                 <div class="card-inner empty-card"></div>
                 <div class="card-inner empty-card"></div>
@@ -51,6 +44,7 @@
             </div>
         </c:if>
     </c:forEach>
+
 
     <div class="slider-indicators">
         <span class="indicator active"></span>
