@@ -179,6 +179,18 @@ button:not(:hover){
 }
 
 /*confirm 창 CSS*/
+.je_confirm-box,
+.je_confirmbox-overlay {
+    opacity: 0; /* 처음에는 투명하게 시작 */
+    transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+.je_confirm-box.show,
+.je_confirmbox-overlay.show {
+    opacity: 1; /* 나타날 때 불투명하게 */
+}
+
+
 .je_confirmbox-overlay {
     position: fixed;
     top: 0;

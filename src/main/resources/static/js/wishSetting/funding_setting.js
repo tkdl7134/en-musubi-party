@@ -134,31 +134,38 @@ document.getElementById("scrollToTopBtn").onclick = function() {
 
 // delete_confirm
 function customConfirm(message, productName, callback) {
-    // 대화 상자를 HTML 요소로 생성(동적)
     var confirmBox = document.createElement("div");
     confirmBox.setAttribute("class", "je_confirm-box");
     confirmBox.innerHTML =
         '<div class="je_confirm-message">' +
-        "<div> " +
+        '<div>' +
         productName +
-        "</div>" +
-        "<div>" +
+        '</div>' +
+        '<div>' +
         message +
-        "</div>" +
-        "</div>" +
+        '</div>' +
+        '</div>' +
         '<div class="je_confirm-buttons"><button class="confirm">削除</button><button class="cancel">キャンセル</button></div>';
 
-    // HTML 요소를 body 요소의 하위 요소로 추가합니다.
     document.body.appendChild(confirmBox);
 
-    // 배경을 회색으로 덮어서 모달 창을 띄웠을 때 다른 요소들을 클릭할 수 없도록 제어
     var overlay = document.createElement("div");
     overlay.setAttribute("class", "je_confirmbox-overlay");
     document.body.appendChild(overlay);
 
+    // 화면에 부드럽게 나타나도록 클래스를 추가
+    setTimeout(() => {
+        confirmBox.classList.add("show");
+        overlay.classList.add("show");
+    }, 10); // 약간의 지연 후 클래스 추가
+
     var removeAlert = function () {
-        document.body.removeChild(confirmBox);
-        document.body.removeChild(overlay);
+        confirmBox.classList.remove("show");
+        overlay.classList.remove("show");
+        setTimeout(() => {
+            document.body.removeChild(confirmBox);
+            document.body.removeChild(overlay);
+        }, 300); // CSS의 전환 시간과 맞추기 위해 지연 후 제거
         window.removeEventListener("keydown", handleKeyDown);
     };
 
@@ -167,35 +174,30 @@ function customConfirm(message, productName, callback) {
     };
 
     return new Promise(function (resolve) {
-        // 확인 버튼을 클릭했을 때 이벤트
         var confirmButton = document.querySelector(".confirm");
         confirmButton.addEventListener("click", function () {
-            // 확인 버튼을 눌렀을 때 resolve 메서드를 호출
             removeAlert();
             setTimeout(function () {
                 resolve(true);
             }, 100);
         });
 
-        // 취소 버튼을 클릭했을 때 이벤트
         var cancelButton = document.querySelector(".cancel");
         cancelButton.addEventListener("click", function () {
-            // 취소 버튼을 눌렀을 때 resolve 메서드를 호출
             removeAlert();
             setTimeout(function () {
                 resolve(false);
             }, 100);
         });
 
-        // 회색 영역 클릭할 때 창을 닫도록 이벤트 추가
         overlay.addEventListener("click", function () {
             removeAlert();
         });
 
-        // 키를 눌렀을 때 기본 동작을 막습니다.
         window.addEventListener("keydown", handleKeyDown);
     });
 }
+
 
 // 함수 호출
 function delete_confirm(message, productName, wl_no) {

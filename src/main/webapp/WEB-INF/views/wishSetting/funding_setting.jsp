@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/wishSetting/funding_setting.css" />
     <!-- JAVASCRIPT -->
     <script src="/js/wishSetting/funding_setting.js" defer></script>
+    <script src="/js/je_validChk/funding_setting_validChk.js" defer></script>
 </head>
 <body>
 <!-- content -->
@@ -34,7 +35,7 @@
                         <input type="text" placeholder="アイテム" id="fundingItem-name" />
                     </div>
                     <div class="je_funding-price">
-                        <input type="number" placeholder="円" id="fundingItem-price" maxlength="8" />
+                        <input type="number" placeholder="円" id="fundingItem-price" oninput="checkMaxPrice(this)" />
                     </div>
                     <div class="je_funding-button"><button id="fundingItem-insert-button">堂録</button></div>
                 </div>
@@ -51,7 +52,7 @@
                 <div class="je_funding-info">
                     <div class="je_funding-name"></div>
                     <div class="je_funding-price">
-                        <input type="number" placeholder=" 円" id="new-price" maxlength="8"/>
+                        <input type="number" placeholder=" 円" id="new-price" oninput="checkMaxPrice(this)"/>
                     </div>
                     <div class="je_funding-button">
                         <button class="je_update-btn" id="fundingItem-update-button">修正</button>
