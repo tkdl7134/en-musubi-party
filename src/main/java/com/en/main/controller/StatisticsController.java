@@ -94,7 +94,7 @@ public class StatisticsController {
 
         model.addAttribute("GuestTypeCount" , statisticsFundingService.getGuestTypeCount(eno));
         model.addAttribute("AttendCount" , statisticsFundingService.getAttendCount(eno));
-
+        System.out.println(statisticsFundingService.getAttendCount(eno));
         return "statistics/statisticsFunding";
     }
 
