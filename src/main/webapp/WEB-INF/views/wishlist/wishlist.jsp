@@ -57,7 +57,7 @@
 <%--            </div>--%>
             <div class="tk_wishlist-btn-box">
 <%--                <a href="${amazonUrl}" target="_blank" class="wishlist-button" onclick="redirectToFinanceResult()">--%>
-                    <a href="/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/amazon" class="wishlist-button" onclick="openInNewTab('${amazonUrl}'); redirectToFinanceResult();">
+                    <a href="/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/amazon" class="wishlist-button" onclick="openInNewTab('${amazonUrl}'); //redirectToFinanceResult();">
                     <div class="tk_wishlist-text-box">
                         <div class="jp-text">プレゼント</div>
                         <div class="eg-text">PRESENT</div>
