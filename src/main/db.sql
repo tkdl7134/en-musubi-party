@@ -218,16 +218,23 @@ create table event_comment
     foreign key (e_no) references event (e_no) ON DELETE CASCADE
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 select * from event_comment;
 drop table event_comment;
 =======
+=======
+
+>>>>>>> 901d39f11f9ca1ef38550b14d73910a3ba436e25
 drop table event_comment cascade constraints purge;
 select *from event_comment;
 create sequence event_comment_seq;
 
 insert into event_comment
 values (22, '아는형', '축하해', sysdate, '신랑', event_comment_seq.nextval);
+<<<<<<< HEAD
 >>>>>>> da7a076567c4843dd4c66b371890c5530285f767
+=======
+>>>>>>> 901d39f11f9ca1ef38550b14d73910a3ba436e25
 
 
 --엔파티
@@ -244,6 +251,7 @@ create table en_party
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -255,10 +263,13 @@ create table en_chatting
     ec_content varchar2(500 char) not null,
     ec_date    date               not null,
 
+=======
+>>>>>>> 901d39f11f9ca1ef38550b14d73910a3ba436e25
     foreign key (e_no) references event (e_no) ON DELETE CASCADE,
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
 
+<<<<<<< HEAD
 drop table en_chatting;
 
 select * from en_chatting;
@@ -267,6 +278,14 @@ select *
 from en_party;
 
 >>>>>>> da7a076567c4843dd4c66b371890c5530285f767
+=======
+select *
+from en_party;
+
+drop table en_chatting;
+
+select * from en_chatting;
+>>>>>>> 901d39f11f9ca1ef38550b14d73910a3ba436e25
 
 
 
