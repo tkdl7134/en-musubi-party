@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/resources/css/survey/allergyModal.css">
+    <link rel="stylesheet" href="/css/survey/allergyModal.css">
 </head>
 <body>
 <div id="allergyModal" class="modal">

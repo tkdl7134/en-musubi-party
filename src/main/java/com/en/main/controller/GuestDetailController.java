@@ -34,30 +34,27 @@ public class GuestDetailController {
     public String grouplist(Model model, AllGuestVO allGuestVO, @PathVariable String m_id) {
         List<AllGuestVO> allGuestList = templateService.getAllGuest(m_id);
         model.addAttribute("allGuestList", allGuestList);
-        int eno = allGuestList.get(0).getE_no();
-
-        // 이벤트 주체자의 이름 가져오기
-        MemberVO eventOwner = templateService.getEventOwnerName(eno, m_id);
-
-        // 디버깅을 위해 로그 출력
-        if (eventOwner == null) {
-            System.out.println("Event owner is null for e_no: " + eno + ", m_id: " + m_id);
-        } else {
-            System.out.println("Event owner found: " + eventOwner.getM_fam_kanji() + " " + eventOwner.getM_name_kanji());
+        if (allGuestList.isEmpty()) {
+            System.out.println("No guests found for m_id: " + m_id);
+            return "template/grouplist";
         }
 
-        model.addAttribute("eventOwnerName", eventOwner);
+        int eno = allGuestList.get(0).getE_no();
 
+        GuestDetailVO eventDetail = templateService.getEventDetailByEventNo(eno);
+        if (eventDetail == null) {
+            System.out.println("Event detail is null for e_no: " + eno);
+        } else {
+            System.out.println("Event details found: " + eventDetail.getM_fam_kanji() + " " + eventDetail.getM_name_kanji() +
+                    ", Date: " + eventDetail.getW_date() +
+                    ", Address: " + eventDetail.getW_wedding_address());
+        }
+
+        model.addAttribute("eventOwnerName", eventDetail);
         model.addAttribute("Attend", templateService.getAttendAfterParty(m_id, eno));
 
         return "template/grouplist";
     }
-
-
-
-
-
-
 
 
 }

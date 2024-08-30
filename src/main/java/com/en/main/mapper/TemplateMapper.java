@@ -57,6 +57,7 @@ public interface TemplateMapper {
 
     @Select("SELECT e.e_no, m.m_id, " +
             "m.m_fam_kanji, m.m_name_kanji, m.m_email, m.m_phone, g.g_allergy_or, g.g_relation, a.allergy, " +
+            "w.w_fam_jp_groom, w.w_name_jp_groom, w.w_fam_jp_bride, w.w_name_jp_bride, " +
             "w.w_img1, w.w_img2, w.w_img3, w.w_img_share, w.w_date, w.w_wedding_address, " +
             "g.g_attend_wedding, g.g_guest_type, c.p_accompany_num, c.p_accompany_type, c.p_fam_kanji, c.p_name_kanji " +
             "FROM guest g " +
@@ -68,30 +69,17 @@ public interface TemplateMapper {
             "WHERE g.m_id = #{m_id}")
     List<AllGuestVO> getAllGuest(String m_id);
 
-    @Select("SELECT g.g_attend_afterparty\n" +
-            "FROM guest g\n" +
-            "         JOIN member m ON g.m_id = m.m_id\n" +
-            "         JOIN event e ON g.e_no = e.e_no\n" +
-            "WHERE g.m_id = #{m_id} AND e.e_no = #{eno}")
-    String getAttendAfterParty(String m_id, int eno);
 
-    @Select("SELECT m.m_fam_kanji, m.m_name_kanji " +
+    @Select("SELECT g.g_attend_afterparty FROM guest g JOIN member m ON g.m_id = m.m_id JOIN event e ON g.e_no = e.e_no WHERE g.m_id = #{m_id} AND e.e_no = #{eno}")
+    List<String> getAttendAfterParty(@Param("m_id") String m_id, @Param("eno") int eno);
+
+
+    @Select("SELECT m.m_fam_kanji, m.m_name_kanji, wi.w_date, wi.w_wedding_address " +
             "FROM wedding_info wi " +
             "JOIN event e ON wi.e_no = e.e_no " +
             "JOIN member m ON e.m_id = m.m_id " +
-            "WHERE wi.e_no = #{e_no} AND m.m_id = #{m_id}")
-    List<MemberVO> getEventOwnerName(int e_no, String m_id);
-
-
-
-
-
-
-
-
-
-
-
+            "WHERE wi.e_no = #{e_no}")
+    GuestDetailVO getEventDetailByEventNo(@Param("e_no") int e_no);
 
 
 }

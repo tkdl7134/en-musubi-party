@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #fffbf7;
+    background-image:url('/img/tk_backgorund-color.png');
 }
 
 /* 메뉴 - 헤더 */
@@ -82,6 +82,7 @@ body {
 
 .tk_survey-title-bigTitle {
     font-size: 1.2rem;
+    font-weight: bold;
     color: #FE4A4C;
     height: 3rem;
     display: flex;
