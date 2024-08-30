@@ -3,40 +3,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const indicators = document.querySelectorAll(".indicator");
     const container = document.querySelector('.hw_container');
     let currentIndex = 0;
-    let startX = 0;
     let isDragging = false;
-
-    const attendVal = document.getElementById("Hw_attend_btn")?.value;
-
-    if (attendVal === 'ご出席') {
-        document.getElementById("Hw_attend_div").style.display = 'block';
-    }
+    let startX = 0;
+    const cardsPerPage = 3;
 
     if (!cards.length || !container) {
         console.warn("Required elements are not found in the DOM.");
         return;
     }
 
+    const totalPages = Math.ceil(cards.length / cardsPerPage);
+
     const updateIndicators = (index) => {
+        const pageIndex = Math.floor(index / cardsPerPage);
         indicators.forEach((indicator, i) => {
-            indicator.classList.toggle("active", i === index);
+            if (i === 0 && pageIndex === 0) {
+                indicator.classList.add("active");
+            } else if (i === 2 && pageIndex === totalPages - 1) {
+                indicator.classList.add("active");
+            } else if (i === 1 && pageIndex > 0 && pageIndex < totalPages - 1) {
+                indicator.classList.add("active");
+            } else {
+                indicator.classList.remove("active");
+            }
         });
     };
 
     const scrollToSlide = (index) => {
-        const cardWidth = cards[index].offsetWidth;
-        const scrollPosition = index * cardWidth;
+        const cardWidth = container.offsetWidth;
+        const pageIndex = Math.floor(index / cardsPerPage);
+        const scrollPosition = pageIndex * cardWidth;
+
         container.scrollTo({ left: scrollPosition, behavior: "smooth" });
-        currentIndex = index;
         updateIndicators(index);
     };
 
     const changePage = (direction) => {
-        if (direction === 'next') {
-            currentIndex = Math.min(currentIndex + 1, cards.length - 1);
-        } else {
-            currentIndex = Math.max(currentIndex - 1, 0);
-        }
+        currentIndex = direction === 'next' ? Math.min(currentIndex + cardsPerPage, cards.length - 1) : Math.max(currentIndex - cardsPerPage, 0);
         scrollToSlide(currentIndex);
     };
 
@@ -51,31 +54,19 @@ document.addEventListener("DOMContentLoaded", () => {
         changePage(event.deltaY > 0 ? 'next' : 'prev');
     });
 
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight') {
-            changePage('next');
-        } else if (event.key === 'ArrowLeft') {
-            changePage('prev');
-        }
-    });
-
     container.addEventListener("touchstart", (event) => {
         startX = event.touches[0].clientX;
-        isDragging = false;
+        isDragging = true;
     });
 
     container.addEventListener("touchmove", (event) => {
-        const endX = event.touches[0].clientX;
-        const deltaX = startX - endX;
-
-        if (Math.abs(deltaX) > 50) {
-            changePage(deltaX > 0 ? 'next' : 'prev');
-            isDragging = true;
+        if (isDragging) {
+            const deltaX = startX - event.touches[0].clientX;
+            if (Math.abs(deltaX) > 50) {
+                changePage(deltaX > 0 ? 'next' : 'prev');
+                isDragging = false;
+            }
         }
-    });
-
-    container.addEventListener("touchend", () => {
-        isDragging = false;
     });
 
     container.addEventListener("mousedown", (event) => {
@@ -85,9 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.addEventListener("mousemove", (event) => {
         if (isDragging) {
-            const endX = event.clientX;
-            const deltaX = startX - endX;
-
+            const deltaX = startX - event.clientX;
             if (Math.abs(deltaX) > 50) {
                 changePage(deltaX > 0 ? 'next' : 'prev');
                 isDragging = false;

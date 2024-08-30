@@ -1,13 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // 슬라이드쇼 관련 코드
-    const images = document.querySelectorAll(".image-container img");
-    let currentImageIndex = 0;
-
-
-    // 나머지 이벤트 리스너들 (공유 버튼 클릭, 팝업, 슬라이드 이동 등)
     const slides = document.querySelectorAll(".hw_card");
     const indicators = document.querySelectorAll(".indicator");
     const container = document.querySelector(".hw_container");
+    const shareButtons = document.querySelectorAll(".share-button");
     const sharePopup = document.getElementById("share-popup");
     const shareUrlInput = document.getElementById("share-url");
     const copyButton = document.getElementById("copy-button");
@@ -25,76 +20,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function scrollToSlide(index) {
         if (index >= 0 && index < slides.length) {
-            slides[index].scrollIntoView({ behavior: "smooth" });
+            container.scrollTo({
+                left: index * container.clientWidth,
+                behavior: "smooth"
+            });
             currentIndex = index;
             updateIndicators(index);
         }
     }
 
-    // 공유 버튼 클릭 이벤트
-    document.querySelectorAll(".share-button").forEach(button => {
-        button.addEventListener("click", function () {
-            const invitationUrl = button.getAttribute("data-url");
-            shareUrlInput.value = invitationUrl;
-
-            const imageContainer = button.closest(".image-container");
-            imageContainer.classList.add("darken");
-
-            setTimeout(() => {
-                imageContainer.classList.remove("darken");
-            }, 3000);
-
-            button.classList.toggle("active");
-            sharePopup.style.display = "block";
-        });
-    });
-
-    closePopup.addEventListener("click", function () {
-        sharePopup.style.display = "none";
-    });
-
-    copyButton.addEventListener("click", function () {
-        shareUrlInput.select();
-        document.execCommand("copy");
-        alert("URLがコピーされました!");
-    });
-
-    window.addEventListener("click", function (event) {
-        if (event.target === sharePopup) {
-            sharePopup.style.display = "none";
-        }
-    });
-
-    // 슬라이드 관련 터치 및 마우스 이벤트 리스너
-    container.addEventListener("touchstart", (event) => startX = event.touches[0].clientX);
-
-    container.addEventListener("touchmove", (event) => {
-        const endX = event.touches[0].clientX;
-        if (startX > endX + 50) scrollToSlide(currentIndex + 1);
-        if (startX < endX - 50) scrollToSlide(currentIndex - 1);
-    });
-
-    container.addEventListener("mousedown", (event) => {
-        startX = event.clientX;
+    function startDrag(event) {
+        startX = event.type.includes("mouse") ? event.clientX : event.touches[0].clientX;
         isDragging = true;
-    });
+    }
 
-    container.addEventListener("mousemove", (event) => {
-        if (isDragging) {
-            const endX = event.clientX;
-            if (startX > endX + 50) scrollToSlide(currentIndex + 1);
-            if (startX < endX - 50) scrollToSlide(currentIndex - 1);
+    function onDrag(event) {
+        if (!isDragging) return;
+
+        const moveX = event.type.includes("mouse") ? event.clientX : event.touches[0].clientX;
+        const diff = startX - moveX;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) scrollToSlide(currentIndex + 1); // Swipe or drag left
+            else scrollToSlide(currentIndex - 1); // Swipe or drag right
+
             isDragging = false;
         }
-    });
+    }
 
-    container.addEventListener("mouseup", () => isDragging = false);
-    container.addEventListener("mouseleave", () => isDragging = false);
+    function endDrag() {
+        isDragging = false;
+    }
+
+    container.addEventListener("touchstart", startDrag);
+    container.addEventListener("mousedown", startDrag);
+
+    container.addEventListener("touchmove", onDrag);
+    container.addEventListener("mousemove", onDrag);
+
+    container.addEventListener("touchend", endDrag);
+    container.addEventListener("mouseup", endDrag);
+    container.addEventListener("mouseleave", endDrag);
 
     container.addEventListener("wheel", (event) => {
         event.preventDefault();
-        if (event.deltaY > 0) scrollToSlide(currentIndex + 1);
-        else scrollToSlide(currentIndex - 1);
+        if (event.deltaY > 0) scrollToSlide(currentIndex + 1); // Scroll down
+        else scrollToSlide(currentIndex - 1); // Scroll up
     });
 
     document.addEventListener("keydown", (event) => {
@@ -102,6 +73,23 @@ document.addEventListener("DOMContentLoaded", function () {
         else if (event.key === "ArrowLeft") scrollToSlide(currentIndex - 1);
     });
 
-    // 초기 인디케이터 설정
+    shareButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const url = this.getAttribute("data-url");
+            shareUrlInput.value = url;
+            sharePopup.style.display = "block";
+        });
+    });
+
+    closePopup.addEventListener("click", () => {
+        sharePopup.style.display = "none";
+    });
+
+    copyButton.addEventListener("click", () => {
+        shareUrlInput.select();
+        document.execCommand("copy");
+        alert("URL이 복사되었습니다!");
+    });
+
     updateIndicators(currentIndex);
 });

@@ -12,6 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 ${fundingList}
+<body>
 <input id="e_no" type="hidden" value="${sessionScope.e_no}">
 <input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
 <div class="tk_funding-title">
@@ -55,7 +56,7 @@ ${fundingList}
 	</div> -->
 	</div>
 
-<dialog id="modal" class="modal">
+<dialog id="modal" class="modal static">
 <div class="kh-f-popup">
 	<div class="kh-f-popup-in">
 		<div class="kh-f-img-box">
@@ -132,4 +133,5 @@ ${fundingList}
 	</div>
 </div>
 </dialog>
+</body>
 </html>

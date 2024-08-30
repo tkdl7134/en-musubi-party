@@ -196,28 +196,28 @@ $.ajax({
 	function smoothScroll() {
 		if (!isScrolling) return;
 
-		scrollAmount += (scrollTarget - scrollAmount) * 0.1; // 부드러운 감속 효과
+		scrollAmount += (scrollTarget - scrollAmount) * 2; // 부드러운 감속 효과
 		cardCon.scrollLeft = scrollAmount;
 
-		if (Math.abs(scrollTarget - scrollAmount) < 0.5) {
+		if (Math.abs(scrollTarget - scrollAmount) < 4) {
 			isScrolling = false;
 		} else {
 			requestAnimationFrame(smoothScroll);
 		}
 	}
 
-	cardCon.addEventListener("wheel", function (event) {
-		event.preventDefault();
-
-		// 스크롤 속도 조정
-		scrollTarget += event.deltaY * 0.5; // 스크롤 속도를 줄임
-		scrollTarget = Math.max(0, Math.min(cardCon.scrollWidth - cardCon.clientWidth, scrollTarget)); // 범위 제한
-
-		if (!isScrolling) {
-			isScrolling = true;
-			requestAnimationFrame(smoothScroll);
-		}
-	});
+	// cardCon.addEventListener("wheel", function (event) {
+	// 	event.preventDefault();
+	//
+	// 	// 스크롤 속도 조정
+	// 	scrollTarget += event.deltaY * 0.5; // 스크롤 속도를 줄임
+	// 	scrollTarget = Math.max(0, Math.min(cardCon.scrollWidth - cardCon.clientWidth, scrollTarget)); // 범위 제한
+	//
+	// 	if (!isScrolling) {
+	// 		isScrolling = true;
+	// 		requestAnimationFrame(smoothScroll);
+	// 	}
+	// });
 
 		let isDown = false;
 		let startX;
@@ -410,7 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const overlay = document.getElementById("je_overlay");
 	const container = document.querySelector(".kh-f-card-container");
 
-	function hideOverlay() {
+	function hideOverlay(){
 		overlay.classList.add("hidden");
 	}
 
