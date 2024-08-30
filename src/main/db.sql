@@ -280,14 +280,15 @@ create table event_comment
     c_content varchar2(300 char) not null,
     c_date    date               not null,
     c_type    varchar2(10 char)  not null,
+    c_no      number(5)          primary key,
+    c_delete_code number(5)      not null,
 
     foreign key (e_no) references event (e_no)
 );
-select *
-from event_comment;
-alter table event_comment
-    add c_no number(5) not null;
+drop table event_comment cascade constraints purge;
+select *from event_comment;
 create sequence event_comment_seq;
+
 insert into event_comment
 values (22, '아는형', '축하해', sysdate, '신랑', event_comment_seq.nextval);
 
@@ -298,30 +299,18 @@ create table en_party
     e_no    number(5)         not null,
     m_id    varchar2(50 char) not null,
     ep_type varchar2(10 char) not null,
+    ep_selectedType varchar2(300 char),
+    ep_finalChoice varchar2(100 char),
+    ep_lineID varchar2(50 char),
 
     foreign key (e_no) references event (e_no),
     foreign key (m_id) references member (m_id)
 );
+
+
 select *
 from en_party;
-alter table en_party
-    add ep_selectedType varchar2(300 char);
-alter table en_party
-    add ep_finalChoice varchar2(100 char);
 
--- 엔파티 채팅
-create table en_chatting
-(
-    e_no       number(5)          not null,
-    m_id       varchar2(50 char)  not null,
-    ec_content varchar2(500 char) not null,
-    ec_date    date               not null,
-
-    foreign key (e_no) references event (e_no),
-    foreign key (m_id) references member (m_id)
-);
-select *
-from en_chatting;
 
 
 WITH wish_fund AS (SELECT wl_no,
@@ -336,7 +325,6 @@ WITH wish_fund AS (SELECT wl_no,
 SELECT wl_no, wl_price, wl_product, e_no, payed, COALESCE(percent, 0) AS percent
 FROM wish_fund
 ORDER BY percent DESC;
-select * from en_chatting;
 
 
 SELECT *
