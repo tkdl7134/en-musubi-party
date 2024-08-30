@@ -1,6 +1,7 @@
 package com.en.main.controller;
 import com.en.main.dto.*;
 import com.en.main.service.SurveyService;
+import com.en.main.service.WishlistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,8 @@ public class SurveyController {
 
     @Autowired
     private SurveyService surveyService;
+   @Autowired
+    private WishlistService wishlistService;
 
     @GetMapping()
     public String survey(Model model, @PathVariable String m_id, @PathVariable int e_no) {
@@ -36,7 +39,7 @@ public class SurveyController {
     @PostMapping("/create")
     public String addGuest(MessageVO messageVO, GuestVO guestVO,
                            @RequestParam(value = "me_img2", required = false) MultipartFile file,
-                           MemberVO memberVO, @ModelAttribute CompanionsVO companions , AllergyVO allergyVO) {
+                           MemberVO memberVO, @ModelAttribute CompanionsVO companions , AllergyVO allergyVO, Model model) {
         // 초대장의 pk
         int e_no = messageVO.getE_no();
         System.out.println(e_no);
@@ -80,6 +83,9 @@ public class SurveyController {
             surveyService.addCompanion(companions.getCompanions());
             System.out.println("동반자 있음!");
         }
+
+        String amazonUrl = wishlistService.getAmazonUrl(m_id, e_no);
+        model.addAttribute("amazonUrl", amazonUrl);
 
 //        surveyService.addGuest(messageVO, guestVO, allergyVO, file, companions.getCompanions());
         return "wishlist/wishlist";
