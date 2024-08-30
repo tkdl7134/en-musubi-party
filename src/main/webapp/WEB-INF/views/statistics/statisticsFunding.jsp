@@ -673,7 +673,7 @@
                 datasets: [{
                     label: '繋がった想い',
                     data: array2,
-                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255,161,148)', 'rgb(255,194,194)', 'rgb(255,226,75)', 'rgb(251,239,214)'],
+                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(246,190,35)', 'rgb(255,194,194)', 'rgb(255,226,75)', 'rgb(251,239,214)'],
                     hoverOffset: 4
                 }]
             }, options: {
