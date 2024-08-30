@@ -117,14 +117,13 @@ body {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    height: 100%;
     bottom: -50%;
-    opacity: 0; /* 초기 상태에서 투명하게 설정 */
-    transition: bottom 2s ease-in-out, opacity 2s ease-in-out; /* 애니메이션과 투명도 동시 적용 */
+    opacity: 0;
+    transition: bottom 2s ease-in-out, opacity 2s ease-in-out;
 }
 .move-up {
-    bottom: 0; /* 화면 중앙으로 이동 */
-    opacity: 1; /* 보이게 설정 */
+    bottom: 20%;
+    opacity: 1;
 }
 
 .main-enParty-envelope {

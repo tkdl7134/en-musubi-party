@@ -43,7 +43,9 @@ public class PartyController {
         if (memberVO == null){
             return "redirect:/login";
         }
-        List<PartyVO> getPartyList =  partyService.getPartyList();
+        String m_id = memberVO.getM_id();
+
+        List<PartyVO> getPartyList =  partyService.getPartyList(m_id);
         model.addAttribute("partyList", getPartyList);
         return "/party/party_list";
     }
@@ -113,18 +115,31 @@ public class PartyController {
     }
 
     @GetMapping("/main/{e_no}")
-    public String partyMain(@PathVariable int e_no, Model model) {
-        System.out.println(partyService.getPartyMembers(e_no));
+    public String partyMain(@PathVariable int e_no, Model model, HttpSession session) {
+        MemberVO memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+
+        if (memberVO == null) {
+            return "redirect:/login";
+        }
+
+        String m_id = memberVO.getM_id();
+        System.out.println(m_id);
 
         model.addAttribute("partyMembers", partyService.getPartyMembers(e_no));
-        model.addAttribute("partyMyInfo", partyService.getPartyMyInfo());
+        model.addAttribute("partyMyInfo", partyService.getPartyMyInfo(m_id));
+
 
         return "/party/party_main";
     }
 
     @ResponseBody
     @PostMapping("/main")
-    public int partySelectedType(@RequestBody PartyVO partyVO) {
+    public int partySelectedType(@RequestBody PartyVO partyVO, HttpSession session) {
+        MemberVO memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+        String m_id = memberVO.getM_id();
+        System.out.println(m_id);
+        partyVO.setM_id(m_id);
+
     return partyService.updateSelectedType(partyVO);
     }
 
@@ -161,13 +176,19 @@ public class PartyController {
 
     @ResponseBody
     @PutMapping("/main")
-    public int partyFinalChoice(@RequestBody PartyVO partyVO) {
+    public int partyFinalChoice(@RequestBody PartyVO partyVO, HttpSession session) {
+        MemberVO memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+        String m_id = memberVO.getM_id();
+        System.out.println(m_id);
+        partyVO.setM_id(m_id);
         return partyService.updateFinalChoice(partyVO);
     }
 
 
     @GetMapping("/main/choice/{e_no}")
-    public String partyFinalChoiceBoth(@PathVariable int e_no, Model model) {
+    public String partyFinalChoiceBoth(@PathVariable int e_no, Model model, HttpSession session) {
+        MemberVO memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+        String my_id = memberVO.getM_id();
 
         Map<String, String> finalChoiceData = partyService.getFinalSelectedChoice(e_no);
         System.out.println("Final Choice Data: " + finalChoiceData);
@@ -198,8 +219,8 @@ public class PartyController {
                                     (couple.get("user").equals(choice) && couple.get("partner").equals(m_id)));
 
                     if (!alreadyMatched) {
-                        // 'test2'에 대한 매칭만 실어주기
-                        if (m_id.equals("test2")) {
+
+                        if (m_id.equals(my_id)) {
                             Map<String, String> couple = new HashMap<>();
                             couple.put("user", m_id);
                             couple.put("partner", choice);
@@ -231,7 +252,11 @@ public class PartyController {
 
     @ResponseBody
     @PostMapping("/main/choice")
-    public int partyExchangeLineID(@RequestBody PartyVO partyVO) {
+    public int partyExchangeLineID(@RequestBody PartyVO partyVO, HttpSession session) {
+        MemberVO memberVO = (MemberVO) session.getAttribute("authenticatedMember");
+        String m_id = memberVO.getM_id();
+        System.out.println(m_id);
+        partyVO.setM_id(m_id);
         return partyService.updateLineID(partyVO);
 
     }
@@ -240,6 +265,7 @@ public class PartyController {
     @ResponseBody
     public List<PartyVO> getPartnerLineID(@RequestBody Map<String, String> requestBody) {
         String partnerID = requestBody.get("partnerID");
+        System.out.println(partnerID);
         return partyService.getPartnerLineID(partnerID);
     }
 

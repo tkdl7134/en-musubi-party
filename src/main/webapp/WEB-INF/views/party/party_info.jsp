@@ -1,12 +1,14 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../menubar.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
 
     <title>✿ ~ 縁結び ~ 縁パーティー ~ ✿</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -91,8 +93,8 @@
                 <span class="yr_side_graph_label">新婦側<br/>ゲスト</span>
             </div>
             <div class="yr_graph_percent_wrap">
-                <div class="circle1"></div>新郎側 &nbsp ${groomGuestPercentage}% &nbsp &nbsp
-                <div class="circle2"></div>新婦側 &nbsp ${brideGuestPercentage}%
+                <div class="circle1"></div>新郎側 &nbsp <fmt:formatNumber value="${groomGuestPercentage}" type="number" maxFractionDigits="1"/>% &nbsp &nbsp
+                <div class="circle2"></div>新婦側 &nbsp  <fmt:formatNumber value="${brideGuestPercentage}" type="number" maxFractionDigits="1"/>%
             </div>
 
         </div>
@@ -111,8 +113,8 @@
                 <span class="yr_graph_label">女子</span>
             </div>
             <div class="yr_graph_percent_wrap">
-                <div class="circle1"></div>男子 &nbsp ${malePercentage}% &nbsp &nbsp
-                <div class="circle2"></div>女子 &nbsp ${femalePercentage}%
+                <div class="circle1"></div>男子 &nbsp <fmt:formatNumber value="${malePercentage}" type="number" maxFractionDigits="1"/>% &nbsp &nbsp
+                <div class="circle2"></div>女子 &nbsp <fmt:formatNumber value="${femalePercentage}" type="number" maxFractionDigits="1"/>%
             </div>
         </div>
     </div>

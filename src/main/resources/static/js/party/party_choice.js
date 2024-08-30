@@ -19,7 +19,7 @@ document.getElementById('lineIdForm').addEventListener('submit', function (event
 
     const formData = {
         ep_lineID: lineId,
-        m_id: partnerID
+        partnerID: partnerID
     };
 
     fetch('/party/main/choice', {
