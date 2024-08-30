@@ -40,15 +40,6 @@ body{
     margin: 25% 0;
 }
 
-.je_template-box:hover{
-    transform: scale(1.05);
-    transition-duration: 0.5s;
-}
-
-.je_template-box:not(:hover){
-    transform: scale(1);
-    transition-duration: 0.5s;
-}
 
 .je_template-preview {
     height: 23rem;
@@ -63,6 +54,7 @@ body{
     text-align: center;
     font-size: 14px;
     font-weight: 600;
+    cursor: default;
 }
 
 /* 화살표 버튼 */
@@ -83,7 +75,6 @@ body{
 }
 
 .je_slider-btn {
-    /* background-color: aquamarine; */
     width: 2rem;
     display: none;
 }
