@@ -14,20 +14,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const totalPages = Math.ceil(cards.length / cardsPerPage);
 
+    // const updateIndicators = (index) => {
+    //     const pageIndex = Math.floor(index / cardsPerPage);
+    //     indicators.forEach((indicator, i) => {
+    //         if (i === 0 && pageIndex === 0) {
+    //             indicator.classList.add("active");
+    //         } else if (i === 2 && pageIndex === totalPages - 1) {
+    //             indicator.classList.add("active");
+    //         } else if (i === 1 && pageIndex > 0 && pageIndex < totalPages - 1) {
+    //             indicator.classList.add("active");
+    //         } else {
+    //             indicator.classList.remove("active");
+    //         }
+    //     });
+    // };
     const updateIndicators = (index) => {
-        const pageIndex = Math.floor(index / cardsPerPage);
         indicators.forEach((indicator, i) => {
-            if (i === 0 && pageIndex === 0) {
-                indicator.classList.add("active");
-            } else if (i === 2 && pageIndex === totalPages - 1) {
-                indicator.classList.add("active");
-            } else if (i === 1 && pageIndex > 0 && pageIndex < totalPages - 1) {
-                indicator.classList.add("active");
-            } else {
-                indicator.classList.remove("active");
-            }
+            indicator.classList.toggle("active", i === index);
         });
     };
+
 
     const scrollToSlide = (index) => {
         const cardWidth = container.offsetWidth;
