@@ -177,8 +177,8 @@ label.cb3:has(input[type="checkbox"]:checked) {
 }
 
 .allergy-tag {
-    background-color: salmon;
-    border-radius: 5px;
+    background-color: #FF5050;
+    border-radius: 7px;
     color: white;
     margin-right: 0.2rem;
     padding: 5px;
@@ -186,9 +186,9 @@ label.cb3:has(input[type="checkbox"]:checked) {
 
 .allergy-del {
     background-color: #c82626;
-    border-radius: 5px;
+    border-radius: 30px;
     color: white;
-    padding: 2px;
+    padding: 1px 3px 3px 3px;
 }
 
 .tk_insert-others {
@@ -276,9 +276,9 @@ label.cb3:has(input[type="checkbox"]:checked) {
     background-color: transparent;
     border: 2px solid #FFC700;
     font-size: 1.3rem;
-    padding: 0.1rem 0.5rem;
+    padding: 0.1rem 0.4rem;
     cursor: pointer;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 100%;
     color: red;
 }

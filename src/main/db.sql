@@ -212,11 +212,18 @@ create table event_comment
     c_content varchar2(300 char) not null,
     c_date    date               not null,
     c_type    varchar2(10 char)  not null,
+    c_no      number(5)          primary key,
+    c_delete_code number(5)      not null,
 
     foreign key (e_no) references event (e_no) ON DELETE CASCADE
 );
-select * from event_comment;
-drop table event_comment;
+
+drop table event_comment cascade constraints purge;
+select *from event_comment;
+create sequence event_comment_seq;
+
+insert into event_comment
+values (22, '아는형', '축하해', sysdate, '신랑', event_comment_seq.nextval);
 
 
 --엔파티
@@ -225,24 +232,20 @@ create table en_party
     e_no    number(5)         not null,
     m_id    varchar2(50 char) not null,
     ep_type varchar2(10 char) not null,
+    ep_selectedType varchar2(300 char),
+    ep_finalChoice varchar2(100 char),
+    ep_lineID varchar2(50 char),
 
     foreign key (e_no) references event (e_no) ON DELETE CASCADE,
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
 
-
-
--- 엔파티 채팅
-create table en_chatting
-(
-    e_no       number(5)          not null,
-    m_id       varchar2(50 char)  not null,
-    ec_content varchar2(500 char) not null,
-    ec_date    date               not null,
-
     foreign key (e_no) references event (e_no) ON DELETE CASCADE,
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
+
+select *
+from en_party;
 
 drop table en_chatting;
 
@@ -264,7 +267,6 @@ WITH wish_fund AS (SELECT wl_no,
 SELECT wl_no, wl_price, wl_product, e_no, payed, COALESCE(percent, 0) AS percent
 FROM wish_fund
 ORDER BY percent DESC;
-select * from en_chatting;
 
 SELECT e.e_no, m.m_id, m.m_fam_kanji, m.m_name_kanji, m.m_email, m.m_phone, g.g_allergy_or, g.g_relation, a.allergy,w.w_img1, w.w_img2, w.w_img3, w.w_img_share, w.w_date, w.w_wedding_address, g.g_attend_wedding, g.g_guest_type, c.p_accompany_num, c.p_accompany_type, c.p_fam_kanji, c.p_name_kanji
             FROM guest g
