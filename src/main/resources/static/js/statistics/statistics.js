@@ -181,7 +181,7 @@ selectOptions.forEach(option => {
             document.getElementById('jh_numberOfPeople').innerText ='繋がれた因縁 :' + numberOfPeople + '名';
             document.getElementById('jh_highestPrice').innerText ='最も大きい思い :' +highestPrice.toLocaleString() + '円';
             document.getElementById('jh_rankingOfWishlist').innerText ='人気ランキング :'+ rankingOfWishlist + '位';
-            document.getElementById('jh_popularDate').innerText ='一番数多くの因縁が訪れた日 : ' +  formattedDate;
+            document.getElementById('jh_popularDate').innerText ='一番数多かった日 : ' +  formattedDate;
 
 
 

@@ -57,4 +57,27 @@
 </div>
 
 </body>
+<script>
+    shareButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const url = this.getAttribute("data-url");
+            shareUrlInput.value = url;
+
+            // 버튼 색상 변경
+            this.classList.toggle("active");
+
+            // image-container 명암 효과 적용
+            const imageContainer = this.closest(".card").querySelector(".image-container");
+            imageContainer.classList.add("darken");
+
+            // 3초 후에 명암 효과 제거
+            setTimeout(() => {
+                imageContainer.classList.remove("darken");
+            }, 3000);
+
+            sharePopup.style.display = "block";
+        });
+    });
+
+</script>
 </html>
