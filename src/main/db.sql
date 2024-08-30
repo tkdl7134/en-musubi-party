@@ -394,4 +394,14 @@ update template set t_title = '朝陽の祝福' where t_pk = 26;
 update template set t_title = '恋の調べ' where t_pk = 27;
 
 
-select * from wishlist where e_no = 296;
+select * from en_party where e_no = 68;
+select * from member where m_id = 'test2';
+update member set m_img = 'profile.png' where m_id = 'test2\'
+
+delete from event where e_no = 68;
+delete from pay where e_no = 68;
+
+select * from wedding_info where e_no = 68;
+
+
+delete from guest where m_id = 'test9';

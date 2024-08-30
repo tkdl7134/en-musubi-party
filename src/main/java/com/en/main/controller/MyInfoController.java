@@ -4,6 +4,7 @@ import com.en.main.dto.MemberVO;
 import com.en.main.service.MemberService;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -112,8 +113,9 @@ public class MyInfoController {
     }
 
     @GetMapping("myInfo-delete/{ID}")
-    public String goTomyInfoDelete(@PathVariable("ID") String m_id, Model model) {
+    public String goTomyInfoDelete(@PathVariable("ID") String m_id, Model model, HttpSession session) {
         memberService.deleteMemberInfo(m_id);
+        session.invalidate();
         return "/main/main";
     }
 }
