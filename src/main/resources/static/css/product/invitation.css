@@ -322,10 +322,10 @@
 
 #je_share-photos-list {
     display: flex;
-    justify-content: center;
+
     position: relative;
     padding: 2rem 0;
-    /*padding: 2rem 2.38rem;*/
+    padding-left: 2.4rem;
     flex-wrap: wrap;
     width: 100%;
     gap: 0.8rem;
