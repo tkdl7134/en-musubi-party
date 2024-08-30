@@ -33,10 +33,9 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
-    implementation 'com.oracle.database.jdbc:ojdbc11:21.5.0.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11
-    implementation 'com.oracle.database.jdbc:ojdbc11:21.5.0.0'
+    implementation 'com.oracle.database.jdbc:ojdbc11:23.5.0.24.07'
     //oracle cloud
     implementation 'com.oracle.database.security:oraclepki:21.5.0.0'
     implementation 'com.oracle.database.security:osdt_cert:21.5.0.0'

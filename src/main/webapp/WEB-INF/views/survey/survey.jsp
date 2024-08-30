@@ -63,8 +63,8 @@
                                                         <div class="tk_survey-titleName">漢字</div>
                                                     </div>
                                                     <div>
-                                                        <input type="text" id="kanji-fam" name="m_fam_kanji" value="${member.m_fam_kanji}"/>
-                                                        <input type="text" id="kanji-name" name="m_name_kanji" value="${member.m_name_kanji}"/>
+                                                        <input type="text" id="kanji-fam" name="m_fam_kanji" value="${member.m_fam_kanji}" placeholder="姓"/>
+                                                        <input type="text" id="kanji-name" name="m_name_kanji" value="${member.m_name_kanji}" placeholder="名"/>
                                                     </div>
                                                 </div>
                                                 <div class="tk_kataName">
@@ -72,8 +72,8 @@
                                                         <div class="tk_survey-titleName">カタカナ</div>
                                                     </div>
                                                     <div>
-                                                        <input type="text" id="kana-fam" name="m_fam_kana" value="${member.m_fam_kana}"/>
-                                                        <input type="text" id="kana-name" name="m_name_kana" value="${member.m_name_kana}"/>
+                                                        <input type="text" id="kana-fam" name="m_fam_kana" value="${member.m_fam_kana}" placeholder="姓"/>
+                                                        <input type="text" id="kana-name" name="m_name_kana" value="${member.m_name_kana}" placeholder="名"/>
                                                     </div>
                                                 </div>
                                                 <div class="tk_romeName">
@@ -81,8 +81,8 @@
                                                         <div class="tk_survey-titleName">ローマ字</div>
                                                     </div>
                                                     <div>
-                                                        <input type="text" id="eng-fam" name="m_fam_eng" value="${member.m_fam_eng}"/>
-                                                        <input type="text" id="eng-name" name="m_name_eng" value="${member.m_name_eng}"/>
+                                                        <input type="text" id="eng-fam" name="m_fam_eng" value="${member.m_fam_eng}" placeholder="First Name"/>
+                                                        <input type="text" id="eng-name" name="m_name_eng" value="${member.m_name_eng}" placeholder="Last Name"/>
                                                     </div>
                                                 </div>
                                                 <div class="tk_box-title">
@@ -131,7 +131,7 @@
                                                         <div class="tk_survey-titleName">メールアドレス</div>
                                                     </div>
                                                     <div>
-                                                        <input type="text" id="email" name="m_email" value="${member.m_email}" />
+                                                        <input type="text" id="email" name="m_email" value="${member.m_email}" placeholder="abc1234@gmail.com"/>
                                                     </div>
                                                 </div>
                                                 <div class="tk_survey-phone">
@@ -139,7 +139,7 @@
                                                         <div class="tk_survey-titleName">電話番号</div>
                                                     </div>
                                                     <div>
-                                                        <input type="text" id="phoneNum" name="m_phone" value="${member.m_phone}" />
+                                                        <input type="text" id="phoneNum" name="m_phone" value="${member.m_phone}" placeholder="000-0000-0000" />
                                                     </div>
                                                 </div>
 
@@ -157,6 +157,7 @@
                                                                     name="m_zipcode"
                                                                     value="${member.m_zipcode}"
                                                                     id="zipcode"
+                                                                    placeholder="000-0000"
                                                             />
                                                         </div>
                                                     </div>
@@ -164,8 +165,8 @@
                                                         <div class="tk_survey-titleName">ご住所</div>
                                                     </div>
                                                     <div class="tk_survey-address">
-                                                        <input type="text" name="m_address" value="${member.m_address}" id="address"/>
-                                                        <input type="text" name="m_other_address" id="address-others"/>
+                                                        <input type="text" name="m_address" value="${member.m_address}" id="address" placeholder="都道府県を入力してください"/>
+                                                        <input type="text" name="m_other_address" id="address-others" placeholder="その他"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -383,9 +384,10 @@
                                                 <span>✿</span>
                                             </div>
                                             <div class="what-is-en-party">
-                                                <p> 🎉　内容内容内容内容内容内容内容内容　🥂 </p>
-                                                <p> 内容内容内容内容内容内容内容内容内容 </p>
-                                                <p> 🥰　内容内容内容内容内容内容内容内容　✨ </p>
+                                                <p> 🎉　縁パーティーは、結婚式が終わった後、🥂 </p>
+                                                <p> ゲストを対象に始まるマッチングサービスです </p>
+                                                <p> 🥰　ご縁が結ばれる特別な日に、🥰 </p>
+                                                <p>✨ あなたのご縁を見つけてみませんか？ ✨ </p>
                                             </div>
                                         </div>
 
