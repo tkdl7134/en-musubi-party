@@ -1,5 +1,6 @@
 package com.en.main.mapper;
 
+import com.en.main.dto.EventVO;
 import com.en.main.dto.PayVo;
 import com.en.main.dto.WishlistVO;
 import org.apache.ibatis.annotations.Insert;
@@ -27,6 +28,9 @@ public interface WishlistMapper {
 
     @Select("select * from s_pay where m_id = #{m_id} AND e_no = #{e_no}")
     boolean financeCheck(String m_id, int e_no);
+
+    @Select("SELECT e_amazon FROM event where m_id = #{m_id} AND e_no = #{e_no}")
+    String selectAmazon(String m_id, int e_no);
 
     @Select("SELECT CASE WHEN SUBSTR(m_id, 1, 5) = 'Line_'" +
             "THEN 'line'" +

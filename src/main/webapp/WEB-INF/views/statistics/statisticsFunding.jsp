@@ -1,9 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ include file="../menubar.jsp" %>
 <%@ page contentType="text/html; charset=utf-8" %>
+
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
+<link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="stylesheet" href="/css/statistics/statistics.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +46,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -63,7 +66,7 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 1.5rem;';
 
                     let productDiv = document.createElement('div');
                     productDiv.style.cssText = 'font-size: 24px; text-align: center;';
@@ -130,7 +133,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left:5%; background-color: white; border: 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -150,7 +153,7 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 1.5rem;';
 
                     let productDiv = document.createElement('div');
                     productDiv.style.cssText = 'font-size: 24px; text-align: center;';
@@ -218,7 +221,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -238,7 +241,7 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 1.5rem;';
 
                     let productDiv = document.createElement('div');
                     productDiv.style.cssText = 'font-size: 24px; text-align: center;';
@@ -305,7 +308,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid #FF8B8B ; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -325,7 +328,7 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 1.5rem;';
 
                     let productDiv = document.createElement('div');
                     productDiv.style.cssText = 'font-size: 24px; text-align: center;';
@@ -391,7 +394,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border:1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -411,7 +414,7 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around;margin-top: 1.5rem;';
 
                     let productDiv = document.createElement('div');
                     productDiv.style.cssText = 'font-size: 24px; text-align: center;';
@@ -475,7 +478,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 97%; margin-left: 1.5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -495,7 +498,7 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 2.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 1.5rem;';
 
                     let productDiv = document.createElement('div');
                     productDiv.style.cssText = 'font-size: 24px; text-align: center;';
@@ -569,6 +572,12 @@
 
         });
        /* $('.slick-slider').slick('setPosition');*/
+
+        let AttendCount = document.getElementById("AttendCount").value;
+        let NotAttendCount = document.getElementById("NotAttendCount").value;
+
+
+        const AttendChart = document.getElementById('jh_attend_chart').getContext('2d')
 
         const ctx = document.getElementById('myChart').getContext('2d');
         const ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -823,7 +832,7 @@
                 datasets: [{
                     label: '繋がった想い',
                     data: [groomCount , brideCount],
-                    backgroundColor: [ 'rgb(0, 0, 255)', 'rgb(255, 0, 0)'],
+                    backgroundColor: ['rgb(0, 0, 255)', 'rgb(255, 0, 0)'],
                     hoverOffset: 4
                 }]
             }, options: {
@@ -834,7 +843,23 @@
         });
 
 
+        new Chart(AttendChart, {
+            type: 'doughnut',
+            data: {
+                labels: ['ご出席の方' , 'ご欠席の方'],
+                datasets: [{
+                    label: '繋がった想い',
+                    data: [AttendCount , NotAttendCount],
+                    backgroundColor: [  'rgb(255, 99, 132)',
+                        'rgb(255, 194, 194)' ],
+                    hoverOffset: 4
+                }]
+            }, options: {
 
+                responsive: false
+
+            }
+        });
 
 
 
@@ -856,13 +881,22 @@
             font-style: normal;
             overflow: hidden visible;
         }
+            .je_logo-icon , .je_menu-icon{
+              /*  width : 16.5rem;*/
+            }
+            .je_menu-header{
+                gap : 0;
+                text-align: center;
+                width: 94%;
+                margin-left: 3%;
 
+            }
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
         }
-
+/*
         .desktop, .tablet, .mobile {
             display: none;
         }
@@ -885,7 +919,7 @@
                 display: block;
 
             }
-        }
+        }*/
     .slick-list {
 
 
@@ -896,19 +930,19 @@
 </head>
 <body>
 <div class="container">
-    <div class="desktop">
+ <%--   <div class="desktop">
         <h1>Desktop Layout</h1>
         <p>This is a layout for desktop screens.</p>
     </div>
     <div class="tablet">
         <h1>Tablet Layout</h1>
         <p>This is a layout for tablet screens.</p>
-    </div>
+    </div>--%>
     <div id="jh_top" class="mobile">
-        <div class="jh_head_container" style="background-color: white; display: flex; margin-top : 1vh;">
-            <div><img src="/img/JH_Logo.png" alt=""></div>
+        <div class="jh_head_container" style="background-color: white; display: flex; height: 2.5rem;align-items: center;">
 
-            <div id="jh_pageNavi1" class="jh_pageNavigation" style="width: 64%; transform: translateX(-25%);">
+
+            <div id="jh_pageNavi1" class="jh_pageNavigation" style="width: 64%; transform: translateX(29%);">
                 <div id="jh_pageNavi2" class="jh_pageNavigationA" style="background-color: red;     width: 64vw;" onclick="goToFundPage()">
                     <div id="jh_pageNavi3" class="jh_pageNavigationB" style="color: white">贈り物</div>
                 </div>
@@ -924,9 +958,9 @@
 
 
 
-                <div style="background-color: #FFDBDB ; color : red; height: 8vh; align-content: center; text-align: center ; font-size: 20px;">全体ファンディング現況 </div>
-                <div class="jh_title" style="margin-top: 10%; width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                <div style="background-color: #FFDBDB ; color : red; height: 2.5rem; align-content: center; text-align: center ; font-size: 14px;">全体ファンディング現況 </div>
+                <div class="jh_title" style="margin-top: 10%; width: 85%; transform: translateX(7.5%);align-items: center; height: 7rem; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                    <div class="jh_titleName" style="width: 44%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -948,14 +982,15 @@
                 </div>
 
 
-                <div style="display: flex; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
-                    <canvas style="width: 100vw ; " id="myChart"></canvas>
+                <div style="display: flex;    width: 85%;
+    margin-left: 7.5%; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
+                    <canvas style="width: 90% ;     margin-bottom: 10%; " id="myChart"></canvas>
                 </div>
-                <div style="background-color: white; margin-top: 5rem; border: 1px solid #555555; border-radius: 30px"
+                <div style="background-color: white; margin-top: 5rem; border: 1px solid #FF8B8B; border-radius: 30px"
                      class="jh_week_data">
                     <div class="jh_week_data_message">最近の一週間集まった想い</div>
                     <div style="display: flex; justify-content: center;">
-                        <canvas style="" id="week-data-chart"></canvas>
+                        <canvas style="margin-bottom : 2rem;" id="week-data-chart"></canvas>
                     </div>
 
                 </div>
@@ -971,14 +1006,19 @@
 
             <div id="jh_slider22" class="jh_slider">
 
-                <div style="background-color: #FFDBDB ; color : red; text-align: center; height:  8vh ;align-content: center; font-size: 20px">詳しいファンディング現況 </div>
-                <div class="jh_title" style="width: 90%; transform: translateX(6%); margin-top : 10%;align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                <div style="background-color: #FFDBDB;
+    color: red;
+    height: 2.5rem;
+    align-content: center;
+    text-align: center;
+    font-size: 14px;">詳しいファンディング現況 </div>
+                <div class="jh_title" style="width: 85%; transform: translateX(7.5%); margin-top : 10%;align-items: center; height: 6rem; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
                 <div style="      margin-top: 10%;
-    padding-top: 10%;  padding-bottom: 10%;background-color: #FFDBDB; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
+    padding-top: 10%;  padding-bottom: 10%;background-color: white; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
     scrollbar-width: none;  " class="jh_allList_container">
                     <div>
                         <div style="display: flex; justify-content: space-around;">
@@ -999,28 +1039,28 @@
                             </div>
                         </div>
                     </div>
-                    <div style="    width: 97%;
-    margin-left: 1.5%; background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
+                    <div style="    width: 90%;
+    margin-left: 5%; background-color: white; border : 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px; ">
                         <div style="display: flex; justify-content: space-around;">
                             <div class="jh_detail_head">恩人</div>
                             <div class="jh_detail_head">金額</div>
                         </div>
-                        <div style="display: flex; justify-content: space-around;     margin-top: 2.5rem;">
+                        <div style="display: flex; justify-content: space-around;     margin-top: 1.5rem;">
                             <div class="jh_detail_head">リスト</div>
                             <div class="jh_detail_head">日付</div>
                         </div>
                     </div>
                     <div id="jh_foreach_test">
                         <c:forEach items="${listupDatas}" var="l">
-                            <div style="    width: 97%;
-    margin-left: 1.5%; background-color: white; border : 1px solid black; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
+                            <div style="    width: 90%;
+    margin-left: 5%; background-color: white; border : 1px solid #FF8B8B; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
                                 <div style="display: flex; justify-content: space-around;">
 
 
                                     <div style="  font-size: 24px;text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
                                     <div style="  font-size: 24px;text-align: center">${l.p_price}円</div>
                                 </div>
-                                <div style="display: flex; justify-content: space-around;margin-top: 2.5rem">
+                                <div style="display: flex; justify-content: space-around;margin-top: 1.5rem">
                                     <div style="  font-size: 24px;text-align: center">${l.wl_product}</div>
                                     <div style="  font-size: 24px;text-align: center"><fmt:formatDate
                                             value="${l.p_date}" pattern="yyyy-MM-dd"></fmt:formatDate></div>
@@ -1039,19 +1079,19 @@
             </div>
             <div id="jh_slider33" class="jh_slider">
 
-                <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 20px; height: 8vh;">個別贈り物の現況 </div>
-                <div class="jh_title" style="width: 90%;  transform: translateX(6%);align-items: center; height: 19vh; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 14px; height: 2.5rem;">個別贈り物の現況 </div>
+                <div class="jh_title" style="width: 85%;  transform: translateX(7.5%);align-items: center; height: 6rem; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
-                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
+                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid #FF8B8B; border-radius: 20px ; background-color: white"
                      class="jh_other_infos">
                     <div style="margin-top: 2vh;" id="jh_detailHead" class="jh_funding_detail">全体的な情報</div>
                     <div style="margin-top: 5vh;" id="jh_numberOfPeople" class="jh_funding_detail">繋がれた因縁
                         : ${NumberOfPeople}名
                     </div>
-                    <div id="jh_popularDate" class="jh_funding_detail">一番数多くの因縁が訪れた日 : ${PopularDate}</div>
+                    <div id="jh_popularDate" class="jh_funding_detail">一番数多かった日 : ${PopularDate}</div>
                     <div id="jh_highestPrice" class="jh_funding_detail">最も大きい思い :　${highestPrice}円</div>
                     <div id="jh_rankingOfWishlist" class="jh_funding_detail">一番人気のプレゼント
                         : ${PopularWishlist}</div>
@@ -1123,9 +1163,9 @@
 
 
 
-                <div style="background-color: #FFDBDB ; color : red; height: 8vh; align-content: center; text-align: center ; font-size: 20px;">全体ファンディング現況 </div>
-                <div class="jh_title" style="margin-top: 10%; width: 90%; transform: translateX(6%);align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                <div style="background-color: #FFDBDB ; color : red; height: 2.5rem; align-content: center; text-align: center ; font-size: 14px;">全体ファンディング現況 </div>
+                <div class="jh_title" style="margin-top: 10%; width: 85%; transform: translateX(7.5%);align-items: center; height: 6rem; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -1139,14 +1179,15 @@
                     <div><input class="jh_priceByRelation" type="hidden" value="${s.p_price}"></div>
                     <div><input class="jh_send_relation" type="hidden" value="${s.g_relation}"></div>
                 </c:forEach>
-                <div style="display: flex; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
-                    <canvas style="width: 100vw ; height: 50vh; " id="myChart2"></canvas>
+                <div style="display: flex;     width: 85%;
+    margin-left: 7.5%;justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
+                    <canvas style="width: 86% ; margin : 5%; " id="myChart2"></canvas>
                 </div>
-                <div style="background-color: white; margin-top: 5rem; border: 1px solid #555555; border-radius: 30px"
+                <div style="background-color: white; margin-top: 5rem; border: 1px solid #FF8B8B; border-radius: 30px"
                      class="jh_week_data">
                     <div class="jh_week_data_message">最近の一週間集まった想い</div>
                     <div style="display: flex; justify-content: center;">
-                        <canvas style="" id="week-data-chart2"></canvas>
+                        <canvas style="margin-bottom : 5%;" id="week-data-chart2"></canvas>
                     </div>
                     <c:forEach var="s" items="${SumPricesOfSend}">
                         <div><input class="jh_send_price" type="hidden" value="${s.p_price}"></div>
@@ -1163,14 +1204,14 @@
             </div>
             <div class="jh_slider" id="jh_slider222">
 
-                <div style="background-color: #FFDBDB ; color : red; text-align: center; height:  8vh ;align-content: center; font-size: 20px">詳しいファンディング現況 </div>
-                <div class="jh_title" style="width: 90%; transform: translateX(6%); margin-top : 10%;align-items: center; height: 19vh; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                <div style="background-color: #FFDBDB ; color : red; text-align: center; height:  2.5rem ;align-content: center; font-size: 14px">詳しいファンディング現況 </div>
+                <div class="jh_title" style="width: 85%; transform: translateX(7.5%); margin-top : 10%;align-items: center; height: 6rem; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
                 <div style="      margin-top: 10%;
-    padding-top: 10%;  padding-bottom: 10%;background-color: #FFDBDB; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
+    padding-top: 10%;  padding-bottom: 10%;background-color: white; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
     scrollbar-width: none;  " class="jh_allList_container">
                     <div>
                         <div style="display: flex; justify-content: space-around;">
@@ -1191,28 +1232,28 @@
                             </div>
                         </div>
                     </div>
-                    <div style="    width: 97%;
-    margin-left: 1.5%; background-color: white; border : 1px solid black; margin-top: 2vh; border-radius: 20px; ">
+                    <div style="    width: 94%;
+    margin-left: 3%; background-color: white; border :1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px; ">
                         <div style="display: flex; justify-content: space-around;">
                             <div class="jh_detail_head">恩人</div>
                             <div class="jh_detail_head">金額</div>
                         </div>
-                        <div style="display: flex; justify-content: space-around;     margin-top: 2.5rem;">
+                        <div style="display: flex; justify-content: space-around;     margin-top: 1.5rem;">
                             <div class="jh_detail_head">関係</div>
                             <div class="jh_detail_head">日付</div>
                         </div>
                     </div>
                     <div id="jh_foreach_test2">
                         <c:forEach items="${sendDatas}" var="l">
-                            <div style="    width: 97%;
-    margin-left: 1.5%; background-color: white; border : 1px solid black; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
+                            <div style="    width: 94%;
+    margin-left: 3%; background-color: white; border :1px solid #FF8B8B; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
                                 <div style="display: flex; justify-content: space-around;">
 
 
                                     <div style="  font-size: 24px;text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
                                     <div   style="  font-size: 24px;text-align: center">${l.p_price}円</div>
                                 </div>
-                                <div style="display: flex; justify-content: space-around;margin-top: 2.5rem">
+                                <div style="display: flex; justify-content: space-around;margin-top: 1.5rem">
                                     <div style="  font-size: 24px;text-align: center">${l.g_relation}</div>
                                     <div style="  font-size: 24px;text-align: center"><fmt:formatDate
                                             value="${l.p_date}" pattern="yyyy-MM-dd"></fmt:formatDate></div>
@@ -1231,9 +1272,9 @@
             </div>
             <div class="jh_slider" id="jh_slider333">
 
-                <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 20px; height: 8vh;">個別贈り物の現況 </div>
-                <div class="jh_title" style="width: 90%;  transform: translateX(6%);align-items: center; height: 19vh; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 64%; ">大切な因縁から繋がった心の証</div>
+                <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 14px; height: 2.5rem;">個別贈り物の現況 </div>
+                <div class="jh_title" style="width: 85%;  transform: translateX(7.5%);align-items: center; height: 7rem; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -1241,13 +1282,13 @@
                                                       style="margin-top : 10%; background-color: white; width: 47%; padding: 5%; transform: translateX(47vw); text-align: center; font-family: 'Noto Serif JP', serif; font-weight: bold">
                     物品をお選びください
                 </button>--%>
-                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid black ; border-radius: 20px ; background-color: pink"
+                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid #FF8B8B ; border-radius: 20px ; background-color: white"
                      class="jh_other_infos">
                     <div style="margin-top: 2vh;" id="jh_detailHead2" class="jh_funding_detail">全体的な情報</div>
                     <div style="margin-top: 5vh;" id="jh_numberOfPeople2" class="jh_funding_detail">ご祝儀を送った人
                         : ${SendNumberOfPeople}名
                     </div>
-                    <div id="jh_popularDate2" class="jh_funding_detail">一番数多くの因縁が訪れた日 : ${SendPopularDate}</div>
+                    <div id="jh_popularDate2" class="jh_funding_detail">一番数多かった日 : ${SendPopularDate}</div>
                     <div id="jh_highestPrice2" class="jh_funding_detail">最も大きい祝儀 :　${SendHighestPrice}円</div>
                     <div id="jh_rankingOfWishlist2" class="jh_funding_detail">一番多い関係
                         : ${SendPopularRelation}</div>
@@ -1291,13 +1332,20 @@
                            </label>
                            <input id="jh_price_input" type="hidden" value="${payPrice}">
                        </div>--%>
-                    <div style="text-align: center">送った人々の情報</div>
+
+                    <div style="background-color :white; width : 85%; margin-left: 7.5%; border: 1px solid #FF8B8B ; border-radius: 20px; ">
+                    <div style="text-align: center; margin-top: 5%; margin-bottom: 10%;">送った人々の情報</div>
                     <div class="jh_product_chart" style="    display: flex; justify-content: center;">
-                        <canvas id="jh_send_chart"></canvas>
+                        <canvas style="margin : 5%" id="jh_send_chart"></canvas>
                     </div>
-                    <div class="jh_product_chart" style="    display: flex; justify-content: center;">
-                        <canvas id="jh_attend_chart"></canvas>
+                    <div class="jh_product_chart" style=" margin-bottom: 5%;   display: flex; justify-content: center;">
+                        <canvas style="margin : 5%" id="jh_attend_chart"></canvas>
                     </div>
+                    <input id="AttendCount" type="hidden" value="${AttendCount.attend_count}">
+                    <input id="NotAttendCount" type="hidden" value="${AttendCount.not_attend_count}">
+                    </div>
+
+
 
 
                 </div>

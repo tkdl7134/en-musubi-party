@@ -4,6 +4,10 @@ window.onload = () => {
     loadFundingList(e_no);
     insertFunding(e_no)
 }
+window.onscroll = function () {
+    checkScroll();
+};
+
 
 // CRUD
 function loadFundingList(e_no){
@@ -32,8 +36,8 @@ function loadFundingList(e_no){
 
                 // delete button 활성화
                 item.querySelector('#fundingItem-delete-button').addEventListener("click", () => {
-                    console.log(funding.wl_no);
-                    deleteFunding(e_no, funding.wl_no);
+                    delete_confirm('削除してもよろしいですか？', funding.wl_product, funding.wl_no);
+                    // deleteFunding(e_no, funding.wl_no);
                 });
 
             })
@@ -103,15 +107,105 @@ function deleteFunding(e_no, wl_no){
 
 
 // TOP button
-function goToTop() {
-    const position =
-        document.documentElement.scrollTop || document.body.scrollTop;
-    if (position) {
-        window.requestAnimationFrame(() => {
-            window.scrollTo(0, position - position / 10);
-            goToTop();
-        });
+
+function checkScroll() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        // scrollToTopBtn.classList.remove("hide");
+        scrollToTopBtn.classList.add("show"); // 스크롤이 일정 수준을 넘으면 버튼이 부드럽게 나타남
+    } else {
+        scrollToTopBtn.classList.remove("show");
     }
 }
 
+// 버튼 클릭 시 페이지 맨 위로 부드럽게 스크롤
+document.getElementById("scrollToTopBtn").onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // 부드럽게 스크롤 이동
+    });
 
+    setTimeout(() => {
+        document.getElementById("scrollToTopBtn").classList.remove("show");
+    }, 1000); // 스크롤이 끝난 후 버튼이 부드럽게 사라짐
+};
+
+
+// delete_confirm
+function customConfirm(message, productName, callback) {
+    var confirmBox = document.createElement("div");
+    confirmBox.setAttribute("class", "je_confirm-box");
+    confirmBox.innerHTML =
+        '<div class="je_confirm-message">' +
+        '<div>' +
+        productName +
+        '</div>' +
+        '<div>' +
+        message +
+        '</div>' +
+        '</div>' +
+        '<div class="je_confirm-buttons"><button class="confirm">削除</button><button class="cancel">キャンセル</button></div>';
+
+    document.body.appendChild(confirmBox);
+
+    var overlay = document.createElement("div");
+    overlay.setAttribute("class", "je_confirmbox-overlay");
+    document.body.appendChild(overlay);
+
+    // 화면에 부드럽게 나타나도록 클래스를 추가
+    setTimeout(() => {
+        confirmBox.classList.add("show");
+        overlay.classList.add("show");
+    }, 10); // 약간의 지연 후 클래스 추가
+
+    var removeAlert = function () {
+        confirmBox.classList.remove("show");
+        overlay.classList.remove("show");
+        setTimeout(() => {
+            document.body.removeChild(confirmBox);
+            document.body.removeChild(overlay);
+        }, 300); // CSS의 전환 시간과 맞추기 위해 지연 후 제거
+        window.removeEventListener("keydown", handleKeyDown);
+    };
+
+    var handleKeyDown = function (event) {
+        event.preventDefault();
+    };
+
+    return new Promise(function (resolve) {
+        var confirmButton = document.querySelector(".confirm");
+        confirmButton.addEventListener("click", function () {
+            removeAlert();
+            setTimeout(function () {
+                resolve(true);
+            }, 100);
+        });
+
+        var cancelButton = document.querySelector(".cancel");
+        cancelButton.addEventListener("click", function () {
+            removeAlert();
+            setTimeout(function () {
+                resolve(false);
+            }, 100);
+        });
+
+        overlay.addEventListener("click", function () {
+            removeAlert();
+        });
+
+        window.addEventListener("keydown", handleKeyDown);
+    });
+}
+
+
+// 함수 호출
+function delete_confirm(message, productName, wl_no) {
+    customConfirm(message, productName).then(function (result) {
+        if (result) {
+            console.log(wl_no);
+            deleteFunding(e_no, wl_no);
+        } else {
+        }
+    });
+}

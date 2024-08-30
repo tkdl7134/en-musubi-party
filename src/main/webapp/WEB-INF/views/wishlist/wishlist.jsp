@@ -1,21 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
+<%@ include file="../menubar.jsp" %>
 <!DOCTYPE html>
 <html style="zoom : 100% !important;" lang="en">
-<link rel="stylesheet" href="/resources/css/wishlist/wishlist.css" />
+<link rel="stylesheet" href="/css/wishlist/wishlist.css" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Title</title>
+    <script src="/js/wishlist/wishlist.js"></script>
 </head>
 <body>
-<div class="tk_menu-header">
-    <div class="tk_logo-icon"><img src="/resources/img/en-musubi-logo.png" alt="" /></div>
-    <div>縁結び</div>
-    <div class="tk_menu-icon"><img src="/resources/img/menu-button.png" alt="" /></div>
-</div>
 <div class="tk_wishlist-body">
+    <input type="hidden" name="m_id" value="${sessionScope.authenticatedMember.m_id}">
+    <input type="hidden" name="e_no" value="${sessionScope.e_no}">
     <div class="tk_wishlist-container">
         <div class="tk_wishlist-text-container">
             <div style="margin-bottom: 1rem; margin-left: 1rem">“どうやって祝ってあげたいですか”</div>
@@ -30,7 +29,7 @@
                         <div class="eg-text">FUNDING</div>
                     </div>
                     <div class="tk_wishlist-img-box">
-                        <img src="/resources/img/funding.png" alt="funding">
+                        <img src="/img/funding.png" alt="funding">
                     </div>
                 </button>
             </div>
@@ -41,20 +40,32 @@
                         <div class="eg-text">REMITTANCE</div>
                     </div>
                     <div class="tk_wishlist-img-box">
-                        <img src="/resources/img/sendMoney.png" alt="sendMoney">
+                        <img src="/img/sendMoney.png" alt="sendMoney">
                     </div>
                 </button>
             </div>
+<%--            <div class="tk_wishlist-btn-box">--%>
+<%--                <button type="button" onclick="openAmazonAndRedirect()">--%>
+<%--                    <div class="tk_wishlist-text-box">--%>
+<%--                        <div class="jp-text">プレゼント</div>--%>
+<%--                        <div class="eg-text">PRESENT</div>--%>
+<%--                    </div>--%>
+<%--                    <div class="tk_wishlist-img-box">--%>
+<%--                        <img src="/img/amazon.png" alt="amazon">--%>
+<%--                    </div>--%>
+<%--                </button>--%>
+<%--            </div>--%>
             <div class="tk_wishlist-btn-box">
-                <button type="submit" onclick="location.href='wishlist/funding'">
+<%--                <a href="${amazonUrl}" target="_blank" class="wishlist-button" onclick="redirectToFinanceResult()">--%>
+                    <a href="/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/amazon" class="wishlist-button" onclick="openInNewTab('${amazonUrl}'); //redirectToFinanceResult();">
                     <div class="tk_wishlist-text-box">
                         <div class="jp-text">プレゼント</div>
                         <div class="eg-text">PRESENT</div>
                     </div>
-                    <div class="tk_wishlist-img-box">
-                        <img src="/resources/img/amazon.png" alt="amazon">
+                    <div class="tk_wishlist-a-img-box">
+                        <img src="/img/amazon.png" alt="amazon">
                     </div>
-                </button>
+                </a>
             </div>
         </div>
     </div>

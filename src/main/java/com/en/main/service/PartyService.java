@@ -19,13 +19,13 @@ public class PartyService implements PartyMapper {
     }
 
     @Override
-    public List<PartyVO> getPartyMyInfo() {
-        return partyMapper.getPartyMyInfo();
+    public List<PartyVO> getPartyMyInfo(String m_id) {
+        return partyMapper.getPartyMyInfo(m_id);
     }
 
     @Override
-    public List<PartyVO> getPartyList() {
-        return partyMapper.getPartyList();
+    public List<PartyVO> getPartyList(String m_id) {
+        return partyMapper.getPartyList(m_id);
     }
 
 

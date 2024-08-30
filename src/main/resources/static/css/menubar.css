@@ -62,20 +62,16 @@ body {
 
 .action-options {
     width: 100%;
-    /* background-image: url("/img/Paper_BG_w_red_line.png"); */
     background-image: url("/img/Paper_BG_w_red_line.png");
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    /* max-height: 300px; */
     height: 25rem;
-    /* 아래에서 위로 나타나는 효과, max-height과 동일하게 작성 */
     position: relative;
     bottom: -300px;
     transition: 1s;
 }
 #actionSheet.active .action-options {
-    /* 아래에서 위로 나타나는 효과, max-height과 동일하게 작성 */
     bottom: 0;
 }
 
@@ -83,7 +79,6 @@ body {
     width: 100%;
     height: 100vh;
     position: absolute;
-    /*z-index: 1;*/
 }
 
 .after-login > .action-options {
@@ -157,8 +152,8 @@ body {
     /* margin-bottom: 1rem; */
     cursor: pointer;
     transition: background-color 0.3s ease;
-    box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
-    rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
+    /*box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,*/
+    /*rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;*/
 }
 
 @keyframes formopen {
@@ -192,8 +187,6 @@ body {
     text-align: center;
     border: 2px solid #ff7e81;
     background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
-    rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
 }
 
 .menu-section {
@@ -219,14 +212,6 @@ body {
     font-weight: 600;
     border: 2px solid #ff7e81;
     cursor: pointer;
-    transition: 0.3s ease;
-    /*box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,*/
-    /*rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;*/
-}
-
-.menu:hover{
-    box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
-                rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
 }
 
 .menu2 {
@@ -251,10 +236,8 @@ body {
 }
 
 .logout-btn {
-    /* width: 100%; */
-    position: absolute;
-    bottom: -3rem;
-    /* left: 39%; */
+    position: fixed;
+    bottom: 3rem;
     right: 2%;
     display: flex;
     justify-content: right;
@@ -282,15 +265,49 @@ body {
     }
 }
 
+.user-mypage-button:hover,
+.user-mypage-menu:hover,
+.menu:hover,
+.menu2:hover{
+    box-shadow: rgba(255, 126, 129, 0.12) 0px 2px 4px 0px,
+    rgba(255, 126, 129, 0.32) 0px 2px 16px 0px;
+}
+
+.user-mypage-button,
+.user-mypage-menu,
+.menu, .menu2{
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
 @media (min-width: 769px) {
     .je_menu-header {
         width: 30vw;
         margin: 0 auto;
-        gap: 12rem;
+        gap: 13rem;
     }
 
     #actionSheet {
-        width: 30vw;
-        margin: 0 35%;
+        width: 30.1vw;
+        margin: 0 34.9%;
+    }
+
+    .menu-logo{
+        margin-top: 6rem;
+    }
+
+    .menu-section{
+        gap: 2.5rem;
+    }
+
+    .menu{
+        padding: 1rem;
+        width: 9rem;
+        font-size: 22px;
+        font-weight: 900;
+    }
+
+    .logout-btn{
+        right: 36%;
     }
 }
