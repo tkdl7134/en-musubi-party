@@ -284,6 +284,13 @@ dialog {
 	top: 17% !important;
 }
 
+.static-result {
+	position: relative !important;
+	left: 50% !important;
+	transform: translate(-50%, 0) !important;
+	top: 17% !important;
+}
+
 .modal::-webkit-scrollbar {
 	display: none !important;
 }
@@ -407,7 +414,7 @@ dialog {
 
 .kh-f-statistic-name>h1 {
 	margin: 0;
-	font-size: 1.4rem;
+	font-size: 1rem;
 }
 
 .kh-f-statistic-bar {

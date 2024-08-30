@@ -121,7 +121,9 @@ body {
     transition: background-color 0.3s;
     border: solid 1px #ff787b;
 }
-
+.share-button:hover{
+    background-color: #ffeeee;
+}
 .share-button.active {
     background-color: #ff787b;
     color: #ffffff;
@@ -131,10 +133,10 @@ body {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    bottom: 0;
     left: 0;
     width: 100%;
-    height: 5rem; /* 버튼 높이로 인해 필요한 공간만큼 설정 */
+    height: 5rem;
+    bottom: -13px;
     /*padding: 1rem;*/
 }
 

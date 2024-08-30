@@ -142,7 +142,7 @@ body {
 }
 .yr_list_title2{
     color:#474747;
-    padding: 0 0 1rem;
+
 }
 
 
@@ -160,7 +160,7 @@ body {
     margin-top: 1rem;
 }
 .yr_party_list.random.expanded {
-    height: 18rem;
+    height: 16rem;
 }
 .yr_party_list.choice.expanded {
     height: max-content;
@@ -220,7 +220,7 @@ body {
     background-color: #FF5050;
     color: white;
     align-content: center;
-    margin: 5.3rem auto;
+    margin: 5rem auto 4rem;
 }
 .yr_random_loading {
     height: 15rem;
@@ -274,6 +274,7 @@ body {
     animation: fadeIn 1s forwards;
     color: black;
     font-weight: 400;
+    margin-top: 1rem;
 }
 .yr_random_group p {
     font-size: 5rem;

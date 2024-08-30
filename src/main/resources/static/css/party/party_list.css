@@ -152,7 +152,6 @@ body {
     font-weight: 700;
 }
 .card-back button:hover{
-    border: 2px solid white;
     color: #FF8B8B;
     background-color: #FFFBF7;
     border: 2px solid #FF5050;
@@ -161,7 +160,7 @@ body {
 /*--------- indicator ----------*/
 .slider-indicators {
     position: fixed;
-    bottom: 5%;
+    bottom: 3.5%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

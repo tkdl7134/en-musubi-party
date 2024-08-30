@@ -896,7 +896,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
+/*
         .desktop, .tablet, .mobile {
             display: none;
         }
@@ -919,7 +919,7 @@
                 display: block;
 
             }
-        }
+        }*/
     .slick-list {
 
 
@@ -930,14 +930,14 @@
 </head>
 <body>
 <div class="container">
-    <div class="desktop">
+ <%--   <div class="desktop">
         <h1>Desktop Layout</h1>
         <p>This is a layout for desktop screens.</p>
     </div>
     <div class="tablet">
         <h1>Tablet Layout</h1>
         <p>This is a layout for tablet screens.</p>
-    </div>
+    </div>--%>
     <div id="jh_top" class="mobile">
         <div class="jh_head_container" style="background-color: white; display: flex; height: 2.5rem;align-items: center;">
 
@@ -984,7 +984,7 @@
 
                 <div style="display: flex;    width: 85%;
     margin-left: 7.5%; justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
-                    <canvas style="width: 100vw ;     margin-bottom: 10%; " id="myChart"></canvas>
+                    <canvas style="width: 90% ;     margin-bottom: 10%; " id="myChart"></canvas>
                 </div>
                 <div style="background-color: white; margin-top: 5rem; border: 1px solid #FF8B8B; border-radius: 30px"
                      class="jh_week_data">
@@ -1013,7 +1013,7 @@
     text-align: center;
     font-size: 14px;">詳しいファンディング現況 </div>
                 <div class="jh_title" style="width: 85%; transform: translateX(7.5%); margin-top : 10%;align-items: center; height: 6rem; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 44%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -1081,7 +1081,7 @@
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 14px; height: 2.5rem;">個別贈り物の現況 </div>
                 <div class="jh_title" style="width: 85%;  transform: translateX(7.5%);align-items: center; height: 6rem; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 44%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -1165,7 +1165,7 @@
 
                 <div style="background-color: #FFDBDB ; color : red; height: 2.5rem; align-content: center; text-align: center ; font-size: 14px;">全体ファンディング現況 </div>
                 <div class="jh_title" style="margin-top: 10%; width: 85%; transform: translateX(7.5%);align-items: center; height: 6rem; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 44%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -1187,7 +1187,7 @@
                      class="jh_week_data">
                     <div class="jh_week_data_message">最近の一週間集まった想い</div>
                     <div style="display: flex; justify-content: center;">
-                        <canvas style="" id="week-data-chart2"></canvas>
+                        <canvas style="margin-bottom : 5%;" id="week-data-chart2"></canvas>
                     </div>
                     <c:forEach var="s" items="${SumPricesOfSend}">
                         <div><input class="jh_send_price" type="hidden" value="${s.p_price}"></div>
@@ -1206,7 +1206,7 @@
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center; height:  2.5rem ;align-content: center; font-size: 14px">詳しいファンディング現況 </div>
                 <div class="jh_title" style="width: 85%; transform: translateX(7.5%); margin-top : 10%;align-items: center; height: 6rem; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 45%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
@@ -1274,7 +1274,7 @@
 
                 <div style="background-color: #FFDBDB ; color : red; text-align: center ;align-content: center; font-size: 14px; height: 2.5rem;">個別贈り物の現況 </div>
                 <div class="jh_title" style="width: 85%;  transform: translateX(7.5%);align-items: center; height: 7rem; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
-                    <div class="jh_titleName" style="width: 44%; ">大切な因縁から繋がった心の証</div>
+                    <div class="jh_titleName" style="width: 48%; ">大切な因縁から繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>

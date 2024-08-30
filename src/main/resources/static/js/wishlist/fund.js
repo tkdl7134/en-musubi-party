@@ -30,7 +30,7 @@ $.ajax({
 							<div style="height: 18rem">
 							<div style="width:100%; height: 18rem; background-color: transparent; position: absolute; z-index: 999"></div>
 
-								<img style="height: 80%" alt="noImg" src="/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/img/パソコン.png';"/>
+								<img style="height: 80%" alt="noImg" src="/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/img/プレゼント.png';"/>
 							</div>
 							<div>
 								<h1 style="margin:0">${element.wl_product}</h1>
