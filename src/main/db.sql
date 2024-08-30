@@ -281,10 +281,11 @@ create table event_comment
     c_date    date               not null,
     c_type    varchar2(10 char)  not null,
     c_no      number(5)          primary key,
+    c_delete_code number(5)      not null,
 
     foreign key (e_no) references event (e_no)
 );
-
+drop table event_comment cascade constraints purge;
 select *from event_comment;
 create sequence event_comment_seq;
 
