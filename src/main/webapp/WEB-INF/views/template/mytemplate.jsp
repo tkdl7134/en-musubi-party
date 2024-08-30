@@ -5,10 +5,10 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
     <title>✿ ~ 縁結び ~ ✿</title>
-    <link rel="stylesheet" href="/css/template/mytemplate.css">
-    <script src="/js/template/mytemplate.js" defer></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/template/mytemplate.css">
+    <script src="${pageContext.request.contextPath}/js/template/mytemplate.js" defer></script>
 </head>
 <body data-context-path="${pageContext.request.contextPath}">
 
@@ -20,9 +20,6 @@
                 <div class="card-inner">
                     <div class="image-container">
                         <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">
-<%--                        <img src="${pageContext.request.contextPath}/img/Test2.jpg" alt="Template 2">--%>
-<%--                        <img src="${pageContext.request.contextPath}/img/${w.w_img1}" alt="Template 1">--%>
-
                         <button class="share-button" type="button" data-url="http://localhost${pageContext.request.contextPath}/invitation/${w.e_no}">
                             <span>共有</span>
                         </button>
