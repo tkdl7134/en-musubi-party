@@ -21,10 +21,10 @@ public class PartyController {
     @Autowired
     private PartyService partyService;
 
-//    @GetMapping("/apply")
-//    public String partyApply() {
-//        return "/party/party_apply";
-//    }
+    @GetMapping("/apply")
+    public String partyApply() {
+        return "/party/party_apply";
+    }
 //
 //    @GetMapping("/apply-done")
 //    public String partyApplyDone() {
@@ -183,7 +183,6 @@ public class PartyController {
         partyVO.setM_id(m_id);
         return partyService.updateFinalChoice(partyVO);
     }
-
 
     @GetMapping("/main/choice/{e_no}")
     public String partyFinalChoiceBoth(@PathVariable int e_no, Model model, HttpSession session) {
