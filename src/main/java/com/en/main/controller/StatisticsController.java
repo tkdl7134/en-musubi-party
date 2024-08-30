@@ -38,7 +38,9 @@ public class StatisticsController {
 
         int firstWlNo = firstItem.getWl_no();
         System.out.println(firstWlNo);
+        String firstWl= firstItem.getWl_product();
 
+        model.addAttribute("FirstWishlist" , firstWl);
 
        model.addAttribute("payPrice" ,statisticsFundingService.getPrices(firstWlNo , eno) ) ;
     model.addAttribute("NumberOfPeople" , statisticsFundingService.getNumberOfPeople(eno));
