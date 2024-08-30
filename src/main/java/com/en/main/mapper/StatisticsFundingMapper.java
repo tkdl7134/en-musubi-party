@@ -12,7 +12,7 @@ public interface StatisticsFundingMapper {
 
     @Select("select * from wishlist where e_no = #{eno}")
     List<WishlistVO> getWishlistData(int eno);
-    @Select("select * from wishlist join pay on wishlist.wl_no = pay.wl_no where wishlist.e_no = #{eno} order by wishlist.wl_no desc")
+    @Select("select * from wishlist join pay on wishlist.wl_no = pay.wl_no where wishlist.e_no = #{eno} order by wishlist.wl_no")
     List<WishlistVO> getFundWishlistData(int eno);
 
     @Select("SELECT \n" +
