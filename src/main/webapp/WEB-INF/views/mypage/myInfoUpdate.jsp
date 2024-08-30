@@ -148,7 +148,7 @@
                 <%-- アカウント削除 Button --%>
                 <div class="myInfoUpdate-info-update">
                     <div class="myInfoUpdate-info-delete-button" id="myInfo-account-delete" style="display: none;">
-                        <button id="myInfo-account-delete-button" onclick="deleteCheck('${member.m_id}')">
+                        <button id="myInfo-account-delete-button" type="button" onclick="delete_confirm('本当に削除しますか？','${member.m_id}')">
                             アカウント削除
                         </button>
                     </div>

@@ -20,6 +20,10 @@
 </head>
 <body>
 
+<div id="loadingScreen">
+    <div class="lds-circle"><img src="/img/en-musubi-logo.png"></div>
+</div>
+
 
 <div class="yr_party_choice_container">
 
@@ -38,7 +42,7 @@
                                        <span style="color: #3F3F3F"> ${couple.partnerFamKanji}&nbsp ${couple.partnerNameKanji}</span>様と  <br />マッチングされました💗
                                 </div>
                                 <input id="partnerID" name="partnerID" value="${couple.partner}" type="hidden">
-                                <button class="open-modal" > Line ID 交換</button>
+                                <button class="open-modal">Line ID 交換</button>
                             </div>
 <%--                        </c:when>--%>
 <%--                    </c:choose>--%>

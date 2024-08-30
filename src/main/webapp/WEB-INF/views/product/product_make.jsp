@@ -408,13 +408,27 @@
             </div>
             <div class="je_theme-message">
                 <!-- 계절별 -->
+                <div class="je_theme-message-box invitationM">
+                    <div class="je_theme-message-detail">
+                        <div class="je_message-num">BEST</div>
+                        <div class="je_message-txt">
+                            皆様にはご清祥のこととお慶び申し上げます<br/>
+                            佐藤家の新しい第一歩にお励ましないただきたく<br/>
+                            ぜひご出席くださいますようご案内申し上げます<br/>
+                        </div>
+                    </div>
+                    <div class="je_theme-message-button">
+                        <button class="je_invitation-sendBtn">選択</button>
+                    </div>
+                </div>
+                <!-- 계절별 -->
                 <div class="je_theme-message-box invitationM seasonsIM">
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">春</div>
                         <div class="je_message-txt">
-                            春風が心地よいこの季節、桜が咲き誇る中、皆様と共に私たちの結婚式を迎えられることを心より楽しみにしております。<br/>
-                            新たな門出を皆様に見守っていただきたく、ぜひご参列賜りますようお願い申し上げます。<br/>
-                            心から感謝の気持ちを込めて、ご案内申し上げます。
+                            皆様には桜花爛漫の候、ご清祥のこととお慶び申し上げます。<br/>
+                            桜舞う中、私どもの新しい門出を迎えるにあたり、<br/>
+                            ぜひご出席くださいますようご案内申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -425,9 +439,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">夏</div>
                         <div class="je_message-txt">
-                            夏の陽気に包まれたこの季節、蝉の声が響き渡る中、私たちの結婚式にご出席いただけることを心よりお待ちしております。<br/>
-                            暑さにも負けず、皆様と共に新たな人生のスタートを祝いたく存じます。<br/>
-                            ぜひご来臨賜りますようお願い申し上げます。
+                            皆様には蝉の声響く夏、ご健勝のこととお喜び申し上げます。<br/>
+                            私どもの結婚式に、夏の日差しのような温かいご支援を賜りたく、<br/>
+                            ぜひご出席くださいますようご案内申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -438,9 +452,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">秋</div>
                         <div class="je_message-txt">
-                            紅葉が美しく色づくこの季節、実り豊かな秋の風景に囲まれながら、私たちの結婚式を皆様と共に祝うことができることを楽しみにしております。<br/>
-                            新たな人生の門出を、皆様に見守っていただければ幸いです。<br/>
-                            ぜひご出席賜りますようお願い申し上げます。
+                            皆様には紅葉が色づく季節、ご清祥のこととお慶び申し上げます。<br/>
+                            澄んだ秋空のもと、私たちの結婚式にお越しいただければ幸いです。<br/>
+                            ぜひご出席くださいますようご案内申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -451,9 +465,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">冬</div>
                         <div class="je_message-txt">
-                            冬の澄んだ空気が心地よいこの季節、雪のように清らかな気持ちで、私たちの結婚式にご参加いただけることを心よりお待ちしております。<br/>
-                            寒さを忘れるほどの温かいひとときを、皆様と共に過ごしたく存じます。<br/>
-                            ぜひご参列賜りますようお願い申し上げます。
+                            皆様には雪景色が美しい季節、ご健勝のこととお喜び申し上げます。<br/>
+                            白い雪に包まれた中、私どもの新たな門出を温かく見守っていただきたく、<br/>
+                            ぜひご出席くださいますようご案内申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -465,10 +479,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">丁重な1</div>
                         <div class="je_message-txt">
-                            拝啓 皆様にはますますご清祥のこととお慶び申し上げます。<br/>
-                            さて、このたび私たちは結婚する運びとなりました。<br/>
-                            つきましては、日頃の感謝の意を込め、ささやかながら結婚式を執り行いたいと存じます。<br/>
-                            ご多忙中とは存じますが、何卒ご臨席賜りますようお願い申し上げます。敬具
+                            皆様にはご清祥のこととお慶び申し上げます。<br/>
+                            私どもの結婚式に際し、ご多忙中誠に恐縮ではございますが、<br/>
+                            何卒ご臨席賜りますようお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -479,10 +492,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">丁重な2</div>
                         <div class="je_message-txt">
-                            拝啓 時下ますますご清祥のこととお喜び申し上げます。<br/>
-                            このたび、私たちは結婚の運びとなりました。<br/>
-                            つきましては、皆様に日頃のご愛顧を賜り、誠に感謝の気持ちを込めて、ささやかながら結婚式を挙げたいと存じます。<br/>
-                            ご多忙中とは存じますが、ぜひご臨席を賜りますようお願い申し上げます。敬具
+                            皆様にはご健勝のこととお喜び申し上げます。<br/>
+                            このたび私どもの門出に際し、ご厚情を賜りたく、<br/>
+                            何卒ご列席くださいますようお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -493,11 +505,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">丁重な3</div>
                         <div class="je_message-txt">
-                            謹啓 皆様には益々ご清栄のこととお慶び申し上げます。<br/>
-                            さて、このたび私たちは結婚する運びとなり、ささやかながら結婚式を執り行いたいと存じます。<br/>
-                            日頃の感謝の気持ちを込め、皆様にご参列いただければ幸いです。
-                            <br/>
-                            ご多忙とは存じますが、何卒ご臨席賜りますようお願い申し上げます。謹白
+                            皆様にはご清祥のこととお慶び申し上げます。<br/>
+                            私どもの佳き日に、ご多用のところ恐縮ではございますが、<br/>
+                            ぜひご光臨を賜りますようお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -508,10 +518,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">丁重な4</div>
                         <div class="je_message-txt">
-                            謹啓 時下ますますご清祥のこととお喜び申し上げます。<br/>
-                            このたび、私たちは結婚することとなりました。<br/>
-                            つきましては、日頃の感謝の気持ちを込め、ささやかながら結婚式を挙げたく存じます。<br/>
-                            ご多忙中とは存じますが、何卒ご臨席賜りますようお願い申し上げます。謹白
+                            皆様にはご健勝のこととお喜び申し上げます。<br/>
+                            このたび私どもの結婚式に、ご臨席を賜りたく、<br/>
+                            何卒よろしくお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -523,10 +532,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">ユーモラスな1</div>
                         <div class="je_message-txt">
-                            このたび、ついに私たちは結婚することとなりました。<br/>
-                            長い道のりでしたが、ようやくゴールインです！<br/>
-                            ぜひ、その瞬間を皆様と共に祝いたく、結婚式にご出席いただければと思います。<br/>
-                            楽しいひとときを一緒に過ごしましょう！
+                            皆様には日々のストレスが溶けるような幸せな時間をお過ごしのことと存じます。<br/>
+                            このたび私たちが結婚する運命を選びました！<br/>
+                            「最後のチャンスを逃さないように」と、ぜひご参加ください！<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -537,10 +545,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">ユーモラスな2</div>
                         <div class="je_message-txt">
-                            「遂に結婚します！お互いによく頑張りました。<br/>
-                            そんな私たちの晴れの日を、<br/>
-                            ぜひ皆様に見届けていただきたく、結婚式にご出席いただければと思います。<br/>
-                            楽しいイベントも用意していますので、お楽しみに！
+                            皆様にはいつも笑顔満開でお過ごしのことと存じます。<br/>
+                            私たちが「一生の愛」を証明するため、いよいよ結婚することになりました！<br/>
+                            笑いの絶えない一日を一緒に楽しみましょう！<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -551,10 +558,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">ユーモラスな3</div>
                         <div class="je_message-txt">
-                            なんと、私たち結婚します！<br/>
-                            人生の新たなステージに進むため、皆様のご協力を得て、盛大にお祝いしたいと思います。<br/>
-                            結婚式には、笑いあり涙ありの楽しい時間をお約束します。<br/>
-                            ぜひご参加ください！
+                            皆様には毎日素晴らしい出来事があることを願っております。<br/>
+                            このたび私たちが「婚姻届」という重大なミッションを達成するため、<br/>
+                            ぜひその瞬間を見守ってください！失敗するかも…ですが（笑）<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -565,10 +571,9 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">ユーモラスな4</div>
                         <div class="je_message-txt">
-                            ついにこの日がやってきました！結婚します！<br/>
-                            いつもお世話になっている皆様に感謝の気持ちを込めて、結婚式にご招待いたします。<br/>
-                            楽しいひとときを一緒に過ごしましょう！<br/>
-                            お待ちしております。
+                            皆様には楽しい日々をお過ごしのことと存じます。<br/>
+                            私たちの結婚式は、婚活成功記念パーティーです！<br/>
+                            ぜひ「これが最後のチャンス」と思ってご参加ください（笑）<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -593,15 +598,34 @@
                 <div>ユーモラスな</div>
             </div>
             <div class="je_theme-message">
+                <!-- BEST -->
+                <div class="je_theme-message-box closingM">
+                    <div class="je_theme-message-detail">
+                        <div class="je_message-num">BEST</div>
+                        <div class="je_message-txt">
+                            皆様の祝福に包まれて<br/>
+                            挙式の日を迎えられることに<br/>
+                            心から感謝いたします<br/>
+                            いたらぬところが多いふたりですが<br/>
+                            今後とも変わらずお付き合いくださいますよう<br/>
+                            よろしくお願いいたします<br/>
+                        </div>
+                    </div>
+                    <div class="je_theme-message-button">
+                        <button class="je_closing-sendBtn">選択</button>
+                    </div>
+                </div>
                 <!-- 계절별 -->
                 <div class="je_theme-message-box closingM seasonsCM">
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">春</div>
                         <div class="je_message-txt">
-                            桜の花が満開になるこの美しい季節に、私たちは新たな門出を迎えます。<br/>
-                            皆様の温かいご支援により、この特別な日がさらに素晴らしいものとなることを願っております。<br/>
-                            お忙しい中とは存じますが、ぜひご家族お揃いでご臨席賜りたく、心よりお願い申し上げます。<br/>
-                            皆様と共にこの喜びのひとときを共有できることを楽しみにしております。
+                            皆様の温かいご祝福に包まれて、<br/>
+                            桜の花が咲き誇る春の日に挙式を迎えられることに、<br/>
+                            心より感謝申し上げます。<br/>
+                            まだまだ未熟な二人ですが、<br/>
+                            今後とも変わらぬご指導とご支援を賜りますよう、<br/>
+                            よろしくお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -612,10 +636,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">夏</div>
                         <div class="je_message-txt">
-                            夏の青空の下、私たちの新しい生活がスタートします。<br/>
-                            暑い季節ではございますが、皆様と共にこの特別な一日を祝うことができれば幸いです。<br/>
-                            ご多用のところ恐縮ではございますが、どうぞご家族お揃いでお越しいただきたく、心よりお願い申し上げます。<br/>
-                            皆様のご臨席を心待ちにしております。
+                            皆様のご厚情に包まれて、<br/>
+                            青空と輝く太陽の下、夏の日に挙式を迎えられることに、<br/>
+                            心より感謝申し上げます。<br/>
+                            未熟な二人ですが、<br/>
+                            これからも変わらぬご支援と温かいご指導を賜りますよう、<br/>
+                            よろしくお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -626,10 +652,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">秋</div>
                         <div class="je_message-txt">
-                            紅葉が美しく彩るこの季節に、私たちは結婚式を挙げる運びとなりました。<br/>
-                            実り豊かな秋にふさわしい、心温まるひとときを皆様と共に過ごしたく存じます。<br/>
-                            ご多忙中とは存じますが、ぜひご臨席賜りますようお願い申し上げます。<br/>
-                            皆様と共に過ごすこの特別な一日を楽しみにしております。
+                            皆様の温かなご祝福に包まれて、<br/>
+                            紅葉が美しく色づく秋の日に挙式を迎えられることに、<br/>
+                            心より感謝申し上げます。<br/>
+                            至らぬ点が多い私たちですが、<br/>
+                            今後とも変わらぬご支援とご指導を賜りますよう、<br/>
+                            よろしくお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -640,10 +668,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">冬</div>
                         <div class="je_message-txt">
-                            冬の澄んだ空気に包まれたこの季節に、私たちは新たな人生のスタートを切ります。<br/>
-                            寒さ厳しい折ではございますが、皆様の温かいご支援により、この特別な日が一層輝くことを願っております。<br/>
-                            お忙しい中恐縮ではございますが、ぜひご家族お揃いでご臨席賜りますようお願い申し上げます。<br/>
-                            皆様と共にこの喜びのひとときを共有できることを心より楽しみにしております。
+                            皆様のご厚情に包まれて、<br/>
+                            雪の舞う静かな冬の日に挙式を迎えられることに、<br/>
+                            心より感謝申し上げます。<br/>
+                            至らぬ点が多い私たちですが、<br/>
+                            これからも変わらぬご支援と温かいご指導を賜りますよう、<br/>
+                            よろしくお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -655,12 +685,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">丁重な1</div>
                         <div class="je_message-txt">
-                            拝啓 皆様にはますますご清祥のこととお慶び申し上げます。<br/>
-                            このたび、私たちは結婚する運びとなりました。<br/>
-                            これもひとえに、皆様の日頃のご支援とご愛顧の賜物と心より感謝申し上げます。<br/>
-                            つきましては、ささやかながら結婚式を執り行いたく存じます。<br/>
-                            ご多忙中とは存じますが、何卒ご臨席賜りますようお願い申し上げます。<br/>
-                            皆様と共にこの喜びを分かち合えることを心待ちにしております。敬具
+                            皆様の温かいご祝福に包まれて<br/>
+                            挙式の日を迎えることができること、<br/>
+                            心より感謝申し上げます。<br/>
+                            至らぬ点も多い私たちですが、<br/>
+                            今後とも変わらぬご指導とご支援を賜りますよう、<br/>
+                            何卒よろしくお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -671,12 +701,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">丁重な2</div>
                         <div class="je_message-txt">
-                            謹啓 時下ますますご清祥のこととお喜び申し上げます。<br/>
-                            このたび、私たちは結婚の運びとなりました。<br/>
-                            これもひとえに、皆様のご厚情のおかげと心より感謝申し上げます。<br/>
-                            つきましては、ささやかながら結婚式を挙げたく存じます。<br/>
-                            ご多用中とは存じますが、何卒ご臨席賜りますようお願い申し上げます。<br/>
-                            皆様と共に新たな門出を祝えることを楽しみにしております。謹白
+                            皆様のご厚情に包まれて<br/>
+                            挙式の日を迎えられることに、<br/>
+                            心より感謝申し上げます。<br/>
+                            未熟な二人ですが、<br/>
+                            今後とも変わらずお付き合いくださいますよう、<br/>
+                            どうぞよろしくお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -687,11 +717,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">丁重な3</div>
                         <div class="je_message-txt">
-                            謹啓 皆様には益々ご清栄のこととお慶び申し上げます。<br/>
-                            このたび、私たちは結婚することとなりました。 <br/>
-                            これも皆様の日頃のご支援のおかげと深く感謝しております。<br/>
-                            つきましては、ささやかながら結婚式を執り行いたいと存じます。ご多忙のところ誠に恐縮ではございますが、何卒ご臨席賜りますようお願い申し上げます。<br/>
-                            皆様と共にこの喜びを分かち合えることを心待ちにしております。謹白
+                            皆様の温かな祝福に囲まれて<br/>
+                            挙式の日を迎えられることを、<br/>
+                            心より感謝申し上げます。<br/>
+                            至らぬ点が多い私たちですが、<br/>
+                            今後とも変わらぬご支援を賜りますよう、<br/>
+                            どうぞよろしくお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -702,11 +733,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">丁重な4</div>
                         <div class="je_message-txt">
-                            拝啓 時下ますますご清祥のこととお慶び申し上げます。<br/>
-                            このたび、私たちは結婚する運びとなり、ささやかながら結婚式を挙げさせていただくこととなりました。<br/>
-                            これもひとえに、皆様のご厚情のおかげと深く感謝しております。<br/>
-                            ご多忙中とは存じますが、ぜひご家族お揃いでご臨席賜りますようお願い申し上げます。<br/>
-                            皆様と共に新たな門出を祝えることを楽しみにしております。敬具
+                            皆様のご厚意に包まれ、<br/>
+                            挙式の日を迎えられることに、<br/>
+                            心より感謝申し上げます。<br/>
+                            未熟な二人ですが、<br/>
+                            今後とも変わらぬご指導とお付き合いを、<br/>
+                            何卒よろしくお願い申し上げます。<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -718,11 +750,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">ユーモラスな1</div>
                         <div class="je_message-txt">
-                            ついにこの日がやってきました！私たち、結婚します！<br/>
-                            長い道のりでしたが、ようやくゴールインです。<br/>
-                            この特別な日を、皆様と共に盛大にお祝いしたいと思います。<br/>
-                            ご多忙のところ恐縮ですが、ぜひご家族お揃いでご参加ください。楽しいひとときを一緒に過ごしましょう！<br/>
-                            皆様のご臨席を心よりお待ちしております。
+                            皆様のおかげで、<br/>
+                            挙式の日が無事に迎えられることに、<br/>
+                            心より感謝申し上げます。<br/>
+                            まだまだ手探りな二人ですが、<br/>
+                            「これからが本当の冒険だ！」と<br/>
+                            思っていますので、笑って応援してくださいね！<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -733,10 +766,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">ユーモラスな2</div>
                         <div class="je_message-txt">
-                            なんと、私たち結婚します！お互いによく頑張りました。<br/>
-                            そんな私たちの晴れの日を、ぜひ皆様に見届けていただきたく結婚式にご招待いたします。<br/>
-                            ご多忙中とは存じますが、笑いあり涙ありの楽しい時間をお約束しますので、ぜひご参加ください。<br/>
-                            お待ちしております！
+                            皆様のおかげで、<br/>
+                            挙式の日を迎えられる幸運に、<br/>
+                            心から感謝申し上げます。<br/>
+                            二人とも「この先どうなるの？」と<br/>
+                            ドキドキしていますが、<br/>
+                            引き続きハラハラしながら見守ってください！<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -747,11 +782,11 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">ユーモラスな3</div>
                         <div class="je_message-txt">
-                            遂に結婚します！<br/>
-                            この特別な日を皆様と共に過ごし、笑顔と感動で満たされた一日にしたいと思います。<br/>
-                            ご多用のところ恐縮ですが、ぜひご家族お揃いでご臨席賜りますようお願い申し上げます。<br/>
-                            楽しいイベントも用意しておりますので、お楽しみに！<br/>
-                            皆様のご臨席を心よりお待ちしております
+                            皆様の温かい祝福で、<br/>
+                            挙式の日が無事にやってきました！<br/>
+                            私たちは「これからが試練だ！」と<br/>
+                            心の中で叫んでいますが、<br/>
+                            どうぞ温かい目で見守ってくださいね！<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">
@@ -762,11 +797,12 @@
                     <div class="je_theme-message-detail">
                         <div class="je_message-num">ユーモラスな4</div>
                         <div class="je_message-txt">
-                            お待たせしました！私たち、結婚します！<br/>
-                            この素晴らしい日を皆様と共に祝いたく、結婚式にご招待いたします。<br/>
-                            ご多忙中恐縮ですが、笑いと感動に満ちた時間を一緒に過ごしましょう。<br/>
-                            ぜひご家族お揃いでお越しください。<br/>
-                            皆様のご臨席を楽しみにしております。
+                            皆様のおかげで、<br/>
+                            挙式の日を迎えられることができ、<br/>
+                            心より感謝申し上げます。<br/>
+                            「これからの生活、どうなるんだろう？」と<br/>
+                            毎日ドキドキしていますが、<br/>
+                            笑いながら応援していただけると幸いです！<br/>
                         </div>
                     </div>
                     <div class="je_theme-message-button">

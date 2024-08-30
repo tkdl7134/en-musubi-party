@@ -145,7 +145,6 @@ body {
 
 }
 
-
 .yr_party_list.expanded {
     height: max-content;
     border: 2px solid #F03434;
@@ -307,7 +306,7 @@ body {
     background-color: #fff;
     border-radius: 0.4rem;
     margin: 0.6rem 1rem;
-    border: 3px solid #FF5050;
+    border: 2px solid #FF5050;
     align-content: center;
     letter-spacing: -0.1rem;
     font-weight: 300;
@@ -319,13 +318,14 @@ body {
 #yr_type_button {
     background-color: #FFFBF7;
     color: #ff7e81;
-    width: 4.5rem;
-    height: 2.3rem;
+    width: 4.3rem;
+    height: 2.2rem;
     border-radius: 0.5rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     border: 2px solid #FF8B8B;
     margin-top: 0.5rem;
+    transition: background-color 0.5s, color 0.5s;
 }
 #yr_type_button:hover{
     background-color: #FF5050;
@@ -394,13 +394,14 @@ body {
 #yr_choice_button {
     background-color: #FFFBF7;
     color: #ff7e81;
-    width: 4.5rem;
-    height: 2.3rem;
+    width: 4.3rem;
+    height: 2.2rem;
     border-radius: 0.5rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     border: 2px solid #FF8B8B;
     margin-top: 0.5rem;
+    transition: background-color 0.5s, color 0.5s;
 }
 #yr_choice_button:hover{
     background-color: #FF5050;
