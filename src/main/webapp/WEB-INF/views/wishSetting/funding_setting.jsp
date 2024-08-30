@@ -37,7 +37,7 @@
                     <div class="je_funding-price">
                         <input type="number" placeholder="円" id="fundingItem-price" oninput="checkMaxPrice(this)" />
                     </div>
-                    <div class="je_funding-button"><button id="fundingItem-insert-button">堂録</button></div>
+                    <div class="je_funding-button"><button id="fundingItem-insert-button">登録</button></div>
                 </div>
             </div>
         <div class="je_line"></div>
