@@ -93,7 +93,7 @@ ${fundingList}
 </div>
 </dialog>
 
-<dialog id="statisticModal" class="modal">
+<dialog id="statisticModal" class="modal static-result">
 <div class="kh-f-statistic-pop">
 	<div class="kh-f-statistic-pop-in">
 		<div class="kh-f-statistic-title">
