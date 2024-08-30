@@ -33,6 +33,11 @@ body {
 }
 
 /* content */
+
+button{
+    cursor: pointer;
+}
+
 input {
     width: 10rem;
 }
@@ -110,16 +115,6 @@ input {
         padding: 0.2rem 0.5rem;
         border: 1px solid #c8c8c8;
     }
-}
-
-button:hover{
-    transform: scale(1.1);
-    transition-duration: 0.5s;
-}
-
-button:not(:hover){
-    transform: scale(1);
-    transition-duration: 0.5s;
 }
 
 .je_funding-button {
@@ -246,30 +241,30 @@ button:not(:hover){
         width: 6rem;
         padding: 0.4rem 0.5rem;
         border-radius: 20px;
-        font-weight: 900;
+        font-weight: bold;
         font-size: 14px;
-        transition: 0.5s ease;
     }
     button:hover {
-        transform: scale(1.1);
-        transition-duration: 0.5s;
+        background-color: #ffeeee;
+        transition: background-color 0.3s ease;
     }
+
     button:not(:hover) {
-        transform: scale(1);
-        transition-duration: 0.5s;
+        transition: background-color 0.3s ease;
     }
+
 }
 
 .je_confirm-buttons > .confirm {
-    background-color: #ff3b3f;
-    color: #ffffff;
-    border: 1.5px solid #c82626;
+    background-color: #ffffff;
+    color: #ec0000;
+    border: 2px solid #ec0000;
 }
 
 .je_confirm-buttons > .cancel {
-    background-color: #5c5c5c;
-    color: #ffffff;
-    border: 1.5px solid #474747;
+    background-color: #ffffff;
+    color: #7d7d7d;
+    border: 2px solid #c8c8c8;
 }
 
 
