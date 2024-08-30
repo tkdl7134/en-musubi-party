@@ -3689,7 +3689,7 @@ Content-Type: `+u.contentType+`\r
   grid-template-rows: 11fr 1fr;
   overflow: hidden;
   background-image: url("../Paper_BG.png");
-`;function qj(){return k.jsxs(Wj,{children:[k.jsx(Hj,{}),k.jsx(Gz,{})]})}const Gj=mb([{path:"/r/",element:k.jsx(Dz,{children:k.jsx(B2,{})}),children:[{path:"/r/",element:k.jsx(qj,{})},{path:"profile",element:k.jsx(q2,{})}]},{path:"/r/login",element:k.jsx(W2,{})},{path:"/r/create-account",element:k.jsx(H2,{})},{path:"/r/join-user",element:k.jsx(bz,{})}]),Kj=rS`
+`;function qj(){return k.jsxs(Wj,{children:[k.jsx(Hj,{}),k.jsx(Gz,{})]})}const Gj=mb([{path:"/",element:k.jsx(Dz,{children:k.jsx(B2,{})}),children:[{path:"/r/",element:k.jsx(qj,{})},{path:"profile",element:k.jsx(q2,{})}]},{path:"/r/login",element:k.jsx(W2,{})},{path:"/r/create-account",element:k.jsx(H2,{})},{path:"/r/join-user",element:k.jsx(bz,{})}]),Kj=rS`
   ${sS};
   * {
     box-sizing: border-box;
