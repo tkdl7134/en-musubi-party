@@ -220,7 +220,7 @@ public interface StatisticsFundingMapper {
             "            AND\n" +
             "        pay.E_NO = guest.E_NO\n" +
             "WHERE\n" +
-            "    PAY.E_NO = 5 and pay.p_type = 'send'")
+            "    PAY.E_NO = #{eno} and pay.p_type = 'send'")
     JhAttendVo getAttendCount(int eno);
 
 
