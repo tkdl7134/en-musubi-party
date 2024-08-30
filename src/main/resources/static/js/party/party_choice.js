@@ -1,3 +1,10 @@
+window.addEventListener('load', function () {
+    setTimeout(function() {
+        document.getElementById('loadingScreen').style.display = 'none';
+    }, 3000);
+});
+
+
 document.querySelectorAll('.open-modal').forEach(button => {
     button.addEventListener('click', function () {
         document.getElementById('lineIdModal').style.display = 'block';
@@ -35,7 +42,6 @@ document.getElementById('lineIdForm').addEventListener('submit', function (event
 
             // post 보내고 모달창 안보이게
             document.getElementById('lineIdModal').style.display = 'none';
-
 
             // POST가 성공하면 PUT 요청을 수행하여 Line ID를 가져옴
             return fetch('/party/main/choice/line', {
