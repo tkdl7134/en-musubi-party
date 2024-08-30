@@ -17,38 +17,36 @@ create table member
     m_zipcode    varchar2(10 char)  not null,
     m_img        varchar2(20 char)  not null
 );
-insert into member
-values ('test3', '1111', '佐藤', '由紀', 'サト', 'ユキ', 'sato', 'yuki', '1993-09-12', '女', 'sato@enparty.com',
-        '000-0000-0000', '東京都渋谷区神宮前1-1-1明治神宮', '150-0001', 'profile.jpg');
-insert into member
-values ('test9', '1111', '金', '宥', 'キム', 'ユウ', 'kimu', 'yuu', '1997-03-31', '女', 'yujeongstellakim@gmail.com',
-        '000-0000-0000', '東京都渋谷区神宮前1-1-1明治神宮', '150-0001', 'profile.jpg');
-insert into member
-values ('test10', '1111', '朴', 'JE', 'パク', 'ユウ', 'park', 'je', '1997-03-31', '女', 'pje961011@gmail.com',
-        '000-0000-0000', '東京都渋谷区神宮前1-1-1明治神宮', '150-0001', 'profile.jpg');
-delete
-from member
-where m_id = 'test10';
-select *
-from member
-order by m_id;
-select *
-from member;
-SELECT m_id
-FROM member
-WHERE m_fam_eng = 'kimu'
-  AND m_email = 'yujeongstellakim@gmail.com';
+select * from member;
+delete member where m_id = 'yamada';
+insert into member values ('yamada01', 'EnMusubi1!', '山田', '太郎', 'ヤマダ', 'タロウ', 'Yamada', 'Taro', '1995-03-12', '男性', 'yamada@gmail.com', '080-1234-5678','東京都渋谷区道玄坂1-2-3', '150-0001', 'profile.png');
+insert into member values ('takahashi01', 'EnMusubi1!', '高橋', '翔', 'タカハシ', 'ショウ', 'Takahashi', 'Sho', '1994-11-05', '男性', 'takahashi@gmail.com', '080-3456-7890','愛知県名古屋市中区栄3-6-7', '460-0008', 'profile.png');
+insert into member values ('suzuki01', 'EnMusubi1!', '鈴木', '亮', 'スズキ', 'リョウ', 'Suzuki', 'Ryo', '1991-05-16', '男性', 'suzuki@gmail.com', '080-4567-8901','北海道札幌市中央区大通西4-1', '060-0001', 'profile.png');
+insert into member values ('matsumoto01', 'EnMusubi1!', '松本', '大輔', 'マツモト', 'ダイスケ', 'Matsumoto', 'Daisuke', '1993-09-25', '男性', 'matsumoto@gmail.com', '080-5678-9012','福岡県福岡市博多区博多駅前2-8-1', '812-0011', 'profile.png');
+insert into member values ('kobayashi01', 'EnMusubi1!', '小林', '涼', 'コバヤシ', 'リョウ', 'Kobayashi', 'Ryo', '1990-12-08', '男性', 'kobayashi@gmail.com', '080-6789-0123','京都府京都市下京区四条通高倉西入ル', '600-8009', 'profile.png');
+insert into member values ('nakamura01', 'EnMusubi1!', '中村', '拓也', 'ナカムラ', 'タクヤ', 'Nakamura', 'Takuya', '1996-02-18', '男性', 'nakamura@gmail.com', '080-7890-1234','神奈川県横浜市西区みなとみらい1-1-1', '220-0012', 'profile.png');
+insert into member values ('inoue01', 'EnMusubi1!', '井上', '直樹', 'イノウエ', 'ナオキ', 'Inoue', 'Naoki', '1994-04-30', '男性', 'inoue@gmail.com', '080-8901-2345','兵庫県神戸市中央区三宮町1-1-1', '650-0021', 'profile.png');
+insert into member values ('tanaka01', 'EnMusubi1!', '田中', '勇', 'タナカ', 'イサム', 'Tanaka', 'Isamu', '1995-10-10', '男性', 'tanaka@gmail.com', '080-9012-3456','埼玉県さいたま市大宮区桜木町1-10-1', '330-0854', 'profile.png');
+insert into member values ('watanabe01', 'EnMusubi1!', '渡辺', '亮太', 'ワタナベ', 'リョウタ', 'Watanabe', 'Ryota', '1992-06-14', '男性', 'watanabe@gmail.com', '080-9012-3456','千葉県千葉市中央区中央1-1-1', '260-0013', 'profile.png');
+insert into member values ('ishii01', 'EnMusubi1!', '石井', '拓', 'イシイ', 'タク', 'Ishii', 'Taku', '1993-08-20', '男性', 'ishii@gmail.com', '080-1234-5679','岡山県岡山市北区駅前町2-3-4', '700-0024', 'profile.png');
+insert into member values ('matsui01', 'EnMusubi1!', '松井', '亮介', 'マツイ', 'リョウスケ', 'Matsui', 'Ryosuke', '1991-01-04', '男性', 'matsui@gmail.com', '080-2345-6780','新潟県新潟市中央区弁天1-1-1', '950-0901', 'profile.png');
+insert into member values ('kono01', 'EnMusubi1!', '河野', '直樹', 'コウノ', 'ナオキ', 'Kono', 'Naoki', '1994-07-08', '男性', 'kono@gmail.com', '080-3456-7891','和歌山県和歌山市本町1-1-1', '640-8132', 'profile.png');
+insert into member values ('tamura01', 'EnMusubi1!', '田村', '修司', 'タムラ', 'シュウジ', 'Tamura', 'Shuji', '1992-03-29', '男性', 'tamura@gmail.com', '080-4567-8902','広島県広島市中区基町1-2-3', '730-0011', 'profile.png');
 
--- 주소
--- create table address(
---     m_id varchar2(50 char) not null,
---     a_address varchar2(100 char) not null,
---     a_postcode varchar2(20 char) not null,
---     foreign key(m_id) references member(m_id)
--- );
--- select * from address order by m_id;
--- insert into address values ('test3', '東京都渋谷区神宮前1-1-1明治神宮', '150-0001');
--- drop table address;
+insert into member values ('takahashi02', 'EnMusubi1!', '高橋', '絵里', 'タカハシ', 'エリ', 'Takahashi', 'Eri', '1992-08-09', '女性', 'takahashi@gmail.com', '080-3456-7890','大阪府大阪市淀川区西中島4-12-15', '532-0011', 'profile.png');
+insert into member values ('suzuki02', 'EnMusubi1!', '鈴木', 'さくら', 'スズキ', 'サクラ', 'Suzuki', 'Sakura', '1994-05-25', '女性', 'suzuki@gmail.com', '080-4567-8901','愛知県名古屋市名東区上社1-15-10', '465-0027', 'profile.png');
+insert into member values ('matsumoto02', 'EnMusubi1!', '松本', '由美', 'マツモト', 'ユミ', 'Matsumoto', 'Yumi', '1991-11-28', '女性', 'matsumoto@gmail.com', '080-5678-9012','福岡県福岡市中央区天神1-2-3', '810-0001', 'profile.png');
+insert into member values ('kobayashi02', 'EnMusubi1!', '小林', '美奈', 'コバヤシ', 'ミナ', 'Kobayashi', 'Mina', '1993-03-06', '女性', 'kobayashi@gmail.com', '090-6789-0123','北海道札幌市東区北8条東1-2-3', '065-0028', 'profile.png');
+insert into member values ('nakamura02', 'EnMusubi1!', '中村', '愛', 'ナカムラ', 'アイ', 'Nakamura', 'Ai', '1996-06-12', '女性', 'nakamura@gmail.com', '080-7890-1234','神奈川県横浜市磯子区岡村町4-5-6', '235-0024', 'profile.png');
+insert into member values ('inoue02', 'EnMusubi1!', '井上', '美穂', 'イノウエ', 'ミホ', 'Inoue', 'Miho', '1994-09-02', '女性', 'inoue@gmail.com', '090-8901-2345','兵庫県神戸市須磨区須磨浦公園1-2-3', '654-0038', 'profile.png');
+insert into member values ('tanaka02', 'EnMusubi1!', '田中', '彩', 'タナカ', 'アヤ', 'Tanaka', 'Aya', '1995-12-01', '女性', 'tanaka@gmail.com', '080-9012-3456','埼玉県さいたま市浦和区高砂1-2-3', '330-0063', 'profile.png');
+insert into member values ('watanabe02', 'EnMusubi1!', '渡辺', '由香', 'ワタナベ', 'ユカ', 'Watanabe', 'Yuka', '1992-10-19', '女性', 'watanabe@gmail.com', '080-9012-3456','千葉県千葉市美浜区ひび野1-3-4', '261-0021', 'profile.png');
+insert into member values ('ishii02', 'EnMusubi1!', '石井', '恵', 'イシイ', 'ケイ', 'Ishii', 'Kei', '1991-07-30', '女性', 'ishii@gmail.com', '090-1234-5679','岡山県岡山市南区福富西1-2-3', '702-8058', 'profile.png');
+insert into member values ('matsui02', 'EnMusubi1!', '松井', '由紀', 'マツイ', 'ユキ', 'Matsui', 'Yuki', '1998-04-20', '女性', 'matsui@gmail.com', '090-2345-6780','新潟県新潟市西区寺尾東1-2-3', '950-2025', 'profile.png');
+insert into member values ('kono02', 'EnMusubi1!', '河野', '美沙', 'コウノ', 'ミサ', 'Kono', 'Misa', '1993-08-24', '女性', 'kono@gmail.com', '080-3456-7891','和歌山県和歌山市本町2-3-4', '640-8032', 'profile.png');
+insert into member values ('sugimoto02', 'EnMusubi1!', '杉本', '由美', 'スギモト', 'ユミ', 'Sugimoto', 'Yumi', '1995-04-13', '女性', 'sugimoto@gmail.com', '080-4567-8902','京都府京都市右京区西院高山寺町4-5-6', '615-0041', 'profile.png');
+
+
 
 -- 이벤트
 create table event
@@ -56,15 +54,12 @@ create table event
     e_no     number(5) primary key,
     m_id     varchar2(50 char)  not null,
     e_amazon varchar2(200 char) not null,
-    foreign key (m_id) references member (m_id)
+    foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
+select * from event;
+
 create sequence event_seq;
-select *
-from event;
-insert into event
-values (event_seq.nextval, 'test3', 'https://www.amazon.co.jp/');
-update event set e_amazon = 'https://www.amazon.co.jp/' where e_no = 296;
-SELECT e_amazon FROM event where m_id = 'test2' AND e_no = 235;
+
 -- 템플릿(상품)
 create table template
 (
@@ -74,15 +69,6 @@ create table template
     t_example  varchar2(200 char) not null,
     t_template varchar2(200 char) not null
 );
-create sequence template_seq;
-select *
-from template
-order by t_pk;
-insert into template
-values (template_seq.nextval, 'test10', 'product-t10.png', 'example.jpg', 'template.jpg');
-update template
-set t_example = 'product-t3.png'
-where t_pk = 3;
 
 -- 템플릿에 넣는 결혼정보
 create table wedding_info
@@ -97,17 +83,12 @@ create table wedding_info
     w_name_jp_bride      varchar2(10 char)  not null,
     w_fam_eng_bride      varchar2(50 char)  not null,
     w_name_eng_bride     varchar2(50 char)  not null,
---     w_date date not null,
---     w_wedding_time timestamp not null,
---     w_wedding_assemble timestamp not null,
     w_date               varchar2(30 char)  not null,
     w_wedding_time       varchar2(10 char)  not null,
     w_wedding_assemble   varchar2(10 char)  not null,
     w_wedding_postcode   varchar2(10 char)  not null,
     w_wedding_address    varchar2(200 char) not null,
     w_wedding_building   varchar2(50 char)  not null,
---     w_reception_time timestamp not null,
---     w_reception_assemble timestamp not null,--
     w_reception_time     varchar2(10 char)  not null,
     w_reception_assemble varchar2(10 char)  not null,
     w_reception_postcode varchar2(10 char)  not null,
@@ -120,13 +101,10 @@ create table wedding_info
     w_img3               varchar2(50 char)  not null,
     w_img_share          varchar2(500 char) not null,
 
-    foreign key (e_no) references event (e_no),
-    foreign key (t_pk) references template (t_pk)
+    foreign key (e_no) references event (e_no) ON DELETE CASCADE,
+    foreign key (t_pk) references template (t_pk) ON DELETE CASCADE
 );
-select *
-from WEDDING_INFO;
-drop table wedding_info;
-
+select * from wedding_info;
 
 -- 위시리스트
 create table wishlist
@@ -137,11 +115,10 @@ create table wishlist
     wl_price   number(8)          not null,
     foreign key (e_no) references event (e_no)
 );
-create sequence wishlist_seq;
-select *
-from wishlist;
+select * from wishlist;
 
-update wishlist set wl_product = 'パソコン' where wl_no='5';
+create sequence wishlist_seq;
+
 
 -- 참가자
 create table guest
@@ -155,15 +132,11 @@ create table guest
     g_relation          varchar2(20 char) not null,
     g_relation_detail   varchar2(30 char) not null,
 
-    foreign key (e_no) references event (e_no),
-    foreign key (m_id) references member (m_id)
+    foreign key (e_no) references event (e_no) ON DELETE CASCADE,
+    foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
-select *
-from guest;
-drop table guest;
-delete
-from guest
-where e_no = 68;
+select * from guest;
+delete guest where m_id = 'yamada01';
 
 -- 알러지
 create table allergy
@@ -172,16 +145,11 @@ create table allergy
     m_id    varchar2(50 char) not null,
     allergy varchar2(100 char),
 
-    foreign key (e_no) references event (e_no),
-    foreign key (m_id) references member (m_id)
+    foreign key (e_no) references event (e_no) ON DELETE CASCADE,
+    foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
-select *
-from allergy;
-drop table allergy;
+select * from allergy;
 
-delete
-from allergy
-where e_no = 68;
 
 -- 동반자 유형
 create table companion
@@ -200,35 +168,11 @@ create table companion
     p_gender         varchar2(10 char) not null,
     p_allergy_or     varchar2(5 char)  not null,
 
-    foreign key (e_no) references event (e_no),
-    foreign key (m_id) references member (m_id)
+    foreign key (e_no) references event (e_no) ON DELETE CASCADE,
+    foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
+select * from companion;
 create sequence companion_seq;
-drop sequence companion_seq;
-
-
-select *
-from companion;
-drop table companion;
-
--- 동반자 알러지
-create table partyAllergy
-(
-    p_pk    number(5)          not null,
-    e_no    number(5)          not null,
-    m_id    varchar2(50 char)  not null,
-    allergy varchar2(100 char) not null,
-
-    foreign key (p_pk) references party (p_pk),
-    foreign key (e_no) references event (e_no),
-    foreign key (m_id) references member (m_id)
-);
-
-
-create sequence partyAllergy_seq;
-select *
-from partyAllergy;
-drop table partyAllergy;
 
 
 -- 축하메세지
@@ -239,15 +183,10 @@ create table message
     me_content varchar2(300 char),
     me_img     varchar2(200 char),
 
-    foreign key (e_no) references event (e_no),
-    foreign key (m_id) references member (m_id)
+    foreign key (e_no) references event (e_no) ON DELETE CASCADE,
+    foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
-select *
-from message;
-drop table message;
-delete
-from message
-where e_no = 68;
+select * from message;
 
 -- 지불
 create table pay
@@ -259,18 +198,11 @@ create table pay
     p_price number(8)         not null,
     p_date  date              not null,
 
-    foreign key (e_no) references event (e_no),
-    foreign key (m_id) references member (m_id)
+    foreign key (e_no) references event (e_no) ON DELETE CASCADE,
+    foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
-select *
-from pay;
+select * from pay;
 
-delete from pay;
-delete from member;
-delete from event;
-delete from wishlist;
-
-drop table pay cascade constraints purge ;
 
 -- 이벤트 댓글
 create table event_comment
@@ -283,8 +215,9 @@ create table event_comment
     c_no      number(5)          primary key,
     c_delete_code number(5)      not null,
 
-    foreign key (e_no) references event (e_no)
+    foreign key (e_no) references event (e_no) ON DELETE CASCADE
 );
+
 drop table event_comment cascade constraints purge;
 select *from event_comment;
 create sequence event_comment_seq;
@@ -303,16 +236,25 @@ create table en_party
     ep_finalChoice varchar2(100 char),
     ep_lineID varchar2(50 char),
 
-    foreign key (e_no) references event (e_no),
-    foreign key (m_id) references member (m_id)
+    foreign key (e_no) references event (e_no) ON DELETE CASCADE,
+    foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
 
+    foreign key (e_no) references event (e_no) ON DELETE CASCADE,
+    foreign key (m_id) references member (m_id) ON DELETE CASCADE
+);
 
 select *
 from en_party;
 
+drop table en_chatting;
+
+select * from en_chatting;
 
 
+
+
+-- ----------------------------------------------
 WITH wish_fund AS (SELECT wl_no,
                           wl_price,
                           wl_product,
@@ -325,23 +267,6 @@ WITH wish_fund AS (SELECT wl_no,
 SELECT wl_no, wl_price, wl_product, e_no, payed, COALESCE(percent, 0) AS percent
 FROM wish_fund
 ORDER BY percent DESC;
-
-
-SELECT *
-FROM wedding_info
-         JOIN event ON event.e_no = wedding_info.e_no
-         JOIN member ON event.m_id = member.m_id
-WHERE member.m_id = 'test778';
-
-
-select * from pay;
-
-select * from pay;
-select * from wishlist;
-select * from member;
-select * from COMPANION;
-select * from guest;
-
 
 SELECT e.e_no, m.m_id, m.m_fam_kanji, m.m_name_kanji, m.m_email, m.m_phone, g.g_allergy_or, g.g_relation, a.allergy,w.w_img1, w.w_img2, w.w_img3, w.w_img_share, w.w_date, w.w_wedding_address, g.g_attend_wedding, g.g_guest_type, c.p_accompany_num, c.p_accompany_type, c.p_fam_kanji, c.p_name_kanji
             FROM guest g
@@ -367,8 +292,6 @@ values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤'
 insert into COMPANION
 values (COMPANION_SEQ.nextval, '68', 'test10', 'ご成年', '2', '李', '泰坤', 'イ', 'テゴン', 'LEE', 'TAE KON', '男', 'YES');
 
-SELECT COUNT(*) FROM COMPANION where P_ACCOMPANY_TYPE = 'BABY';
-
 select * from template;
 update template set t_title = '縁結び' where t_pk = 1;
 update template set t_title = '幸せの和' where t_pk = 2;
@@ -380,16 +303,3 @@ update template set t_title = '夢見草' where t_pk = 24;
 update template set t_title = '心の絆' where t_pk = 25;
 update template set t_title = '朝陽の祝福' where t_pk = 26;
 update template set t_title = '恋の調べ' where t_pk = 27;
-
-
-select * from en_party where e_no = 68;
-select * from member where m_id = 'test2';
-update member set m_img = 'profile.png' where m_id = 'test2\'
-
-delete from event where e_no = 68;
-delete from pay where e_no = 68;
-
-select * from wedding_info where e_no = 68;
-
-
-delete from guest where m_id = 'test9';
