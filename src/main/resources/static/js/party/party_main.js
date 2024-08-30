@@ -309,8 +309,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    if (data === 1|| data === 2) {
-                        fetch('/party/main/type/'+e_no, {
+                    if (data === 1 || data === 2) {
+                        fetch('/party/main/type/' + e_no, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
@@ -373,13 +373,13 @@ document.addEventListener("DOMContentLoaded", function () {
         .addEventListener("click", function () {
             const jsonObj2 = {};
             if (choiceCount > 0) {
-
                 const finalChoice = Array.from(document.querySelectorAll(".yr_list_choice.selected input")).map((el) => el.value).join(",");
 
                 console.log(finalChoice);
                 jsonObj2.ep_finalChoice = finalChoice;
                 console.log(jsonObj2);
                 setTimeout(function () {
+                    // 최종선택 저장 & 업데이트
                 fetch('/party/main', {
                     method: 'PUT',
                     headers: {
@@ -390,15 +390,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     .then(response => response.json())
                     .then(data => {
                         console.log('Success:', data);
-                        location.href = '/party/main/choice/'+e_no;
+                        // 최종선택 결과를 보여줌
+                        location.href = '/party/main/choice/'+ e_no;
 
                     })
                     .catch((error) => {
                         console.error('Error:', error);
                     });
-                }, 5000);
+                }, 3000);
             } else {
-                console.error('No types selected');
+                console.error('No choices selected');
                 alert("選んでください。");
             }
 
