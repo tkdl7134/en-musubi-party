@@ -18,7 +18,7 @@
 <%--    <script src="${pageContext.request.contextPath}/js/template/grouplist.js" defer></script>--%>
 </head>
 <body>
-<div class="je_page-title">会リスト</div>
+<div class="je_page-title">参加リスト</div>
 <div class="hw_container">
     <c:forEach items="${allGuestList}" var="g" varStatus="status">
 
@@ -29,7 +29,9 @@
         <div class="card-inner">
             <div class="card-front">
                 <div class="image-container">
-                    <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">
+                    <img src="${pageContext.request.contextPath}/img/${g.w_img1}" alt="Template 1">
+<%--                    <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">--%>
+<%--                    <img src="img/${g.w_img1}" alt="Template 1">--%>
                 </div>
             </div>
             <div class="card-back">
