@@ -17,7 +17,8 @@ create table member
     m_zipcode    varchar2(10 char)  not null,
     m_img        varchar2(20 char)  not null
 );
-select * from member;
+select * from member where m_id = 'satou01';
+insert into member values ('satou10', 'EnMusubi1!', '佐藤', '亮', 'サトウ', 'リョウ', 'Satou', 'Ryou', '1994-04-16', '男性', 'yujeongstellakim@gmail.com', '080-1234-5678','東京都 千代田区 千代田 1-1', '〒100-0001', '61f2fcff.jpg');
 delete member where m_id = 'yamada';
 insert into member values ('yamada01', 'EnMusubi1!', '山田', '太郎', 'ヤマダ', 'タロウ', 'Yamada', 'Taro', '1995-03-12', '男性', 'yamada@gmail.com', '080-1234-5678','東京都渋谷区道玄坂1-2-3', '150-0001', 'profile.png');
 insert into member values ('takahashi01', 'EnMusubi1!', '高橋', '翔', 'タカハシ', 'ショウ', 'Takahashi', 'Sho', '1994-11-05', '男性', 'takahashi@gmail.com', '080-3456-7890','愛知県名古屋市中区栄3-6-7', '460-0008', 'profile.png');
@@ -115,7 +116,7 @@ create table wishlist
     wl_price   number(8)          not null,
     foreign key (e_no) references event (e_no)
 );
-select * from wishlist;
+select * from wishlist where e_no = 318;
 
 create sequence wishlist_seq;
 
@@ -135,7 +136,7 @@ create table guest
     foreign key (e_no) references event (e_no) ON DELETE CASCADE,
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
-select * from guest;
+select * from guest where e_no = 319;
 delete guest where m_id = 'yamada01';
 
 -- 알러지
@@ -217,24 +218,18 @@ create table event_comment
 
     foreign key (e_no) references event (e_no) ON DELETE CASCADE
 );
-<<<<<<< HEAD
-<<<<<<< HEAD
-select * from event_comment;
-drop table event_comment;
-=======
-=======
 
->>>>>>> 901d39f11f9ca1ef38550b14d73910a3ba436e25
+select * from event_comment;
+update event_comment set c_date = '2024-08-29 14:15:01' where c_no = 23;
+drop table event_comment;
+
 drop table event_comment cascade constraints purge;
 select *from event_comment;
 create sequence event_comment_seq;
 
 insert into event_comment
 values (22, '아는형', '축하해', sysdate, '신랑', event_comment_seq.nextval);
-<<<<<<< HEAD
->>>>>>> da7a076567c4843dd4c66b371890c5530285f767
-=======
->>>>>>> 901d39f11f9ca1ef38550b14d73910a3ba436e25
+
 
 
 --엔파티
@@ -251,9 +246,6 @@ create table en_party
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
 
-<<<<<<< HEAD
-
-<<<<<<< HEAD
 
 -- 엔파티 채팅
 create table en_chatting
@@ -263,29 +255,23 @@ create table en_chatting
     ec_content varchar2(500 char) not null,
     ec_date    date               not null,
 
-=======
->>>>>>> 901d39f11f9ca1ef38550b14d73910a3ba436e25
     foreign key (e_no) references event (e_no) ON DELETE CASCADE,
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
 
-<<<<<<< HEAD
+
 drop table en_chatting;
 
 select * from en_chatting;
-=======
-select *
-from en_party;
 
->>>>>>> da7a076567c4843dd4c66b371890c5530285f767
-=======
+
 select *
 from en_party;
 
 drop table en_chatting;
 
 select * from en_chatting;
->>>>>>> 901d39f11f9ca1ef38550b14d73910a3ba436e25
+
 
 
 
@@ -339,3 +325,8 @@ update template set t_title = '夢見草' where t_pk = 24;
 update template set t_title = '心の絆' where t_pk = 25;
 update template set t_title = '朝陽の祝福' where t_pk = 26;
 update template set t_title = '恋の調べ' where t_pk = 27;
+
+select * from guest;
+
+
+select * from event;
