@@ -40,7 +40,7 @@
                             <div class="yr_list_choice">
                                 <img class="yr_list_choice_img" src="/img/red-line-musubi.png">
                                 <div class="yr_list_name_choice">
-                                    <span style="color: #FF5A55; font-size: 16px;">✿</span>${couple.partnerFamKanji}&nbsp ${couple.partnerNameKanji} <span style="color: #FF5A55; font-size: 16px;">✿</span>様と  <br />マッチング成功❣️
+                                    <span style="color: #FF5A55; font-size: 16px;">✿ </span>${couple.partnerFamKanji}&nbsp ${couple.partnerNameKanji} <span style="color: #FF5A55; font-size: 16px;">✿</span>様と  <br />マッチング成功❣️
                                 </div>
                                 <input id="partnerID" name="partnerID" value="${couple.partner}" type="hidden">
                                 <button class="yr_line_id_exchange">Line ID 送信</button>

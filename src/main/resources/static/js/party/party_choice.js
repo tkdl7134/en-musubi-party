@@ -53,8 +53,6 @@ document.getElementById('lineIdForm').addEventListener('submit', function (event
         .then(data => {
             console.log('Success:', data);
 
-            // post 보내고 모달창 안보이게
-            document.getElementById('lineIdModal').style.display = 'none';
 
             // POST가 성공하면 PUT 요청을 수행하여 Line ID를 가져옴
             return fetch('/party/main/choice/line', {
