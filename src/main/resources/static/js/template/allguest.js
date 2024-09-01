@@ -1,8 +1,6 @@
 $(document).ready(function () {
-    // 로그 추가
     console.log($('.hw_tab-content.active .hw_tab-item'));
 
-    // 탭 전환 기능
     $('.hw_sub-tabs .hw_tab-button').on('click', function () {
         var tab = $(this).data('tab');
         $(this).siblings().removeClass('active');
@@ -11,7 +9,6 @@ $(document).ready(function () {
         $('#' + tab).addClass('active');
     });
 
-    // 필터링 기능
     $('#filter-input').on('input', function () {
         var filterText = $(this).val().toLowerCase();
         $('.hw_tab-content.active .hw_tab-item').each(function () {
@@ -24,7 +21,6 @@ $(document).ready(function () {
         });
     });
 
-    // 드래그를 통한 스크롤 기능
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -52,11 +48,10 @@ $(document).ready(function () {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - slider.offset().left;
-        const walk = (x - startX) * 3; // 드래그 감도 조절
+        const walk = (x - startX) * 3;
         slider.scrollLeft(scrollLeft - walk);
     });
 
-    // 페이지 인디케이터 및 스크롤 동기화
     slider.on('scroll', debounce(function () {
         const sections = $('.hw_section');
         const indicators = $('.indicator');
@@ -83,7 +78,6 @@ $(document).ready(function () {
 
     slider.trigger('scroll');
 
-    // 상세 정보 토글 기능
     $('.toggle-details').on('click', function () {
         const details = $(this).closest('.hw_tab-item').find('.guest-details');
         if (details.is(':visible')) {
@@ -95,20 +89,17 @@ $(document).ready(function () {
         }
     });
 
-    // 이전 페이지로 스크롤
     $('.prev-page').on('click', function () {
-        slider.animate({ scrollLeft: '-=' + slider.width() }, 500, 'swing');  // 'swing' 애니메이션 추가
+        slider.animate({scrollLeft: '-=' + slider.width()}, 500, 'swing');  // 'swing' 애니메이션 추가
     });
 
-    // 다음 페이지로 스크롤
     $('.next-page').on('click', function () {
-        slider.animate({ scrollLeft: '+=' + slider.width() }, 500, 'swing');  // 'swing' 애니메이션 추가
+        slider.animate({scrollLeft: '+=' + slider.width()}, 500, 'swing');  // 'swing' 애니메이션 추가
     });
 
-    // debounce 함수 정의 (성능 최적화)
     function debounce(func, wait) {
         let timeout;
-        return function(...args) {
+        return function (...args) {
             clearTimeout(timeout);
             timeout = setTimeout(() => func.apply(this, args), wait);
         };
