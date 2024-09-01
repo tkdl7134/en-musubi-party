@@ -3,14 +3,10 @@ package com.en.main.controller;
 import com.en.main.dto.CommentVO;
 import com.en.main.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.stream.events.Comment;
-import java.util.List;
-import java.util.Map;
 
 @RequestMapping("/event-comment")
 @Controller
@@ -19,16 +15,20 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-    @GetMapping
-    public String getComment(Model model) {
-     model.addAttribute("comment", commentService.getAllComment());
+    @GetMapping("/{e_no}")
+    public String getComment(Model model, @PathVariable int e_no) {
+        System.out.println("--------------------");
+        System.out.println(e_no);
+     model.addAttribute("comment", commentService.getAllComment(e_no));
+     model.addAttribute("e_no", e_no);
      return "comment";
     }
 
-    @PostMapping
-    public String insertComment(CommentVO commentVO) {
+    @PostMapping("/{e_no}")
+    public String insertComment(CommentVO commentVO, @PathVariable int e_no) {
+        commentVO.setE_no(e_no);
         commentService.insertComment(commentVO);
-        return "redirect:event-comment";
+        return "redirect:/event-comment/" + e_no;
     }
 
     @DeleteMapping("/{no}")

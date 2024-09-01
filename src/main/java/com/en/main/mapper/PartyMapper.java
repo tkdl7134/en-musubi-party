@@ -11,7 +11,7 @@ public interface PartyMapper {
 
 //    @Select("SELECT e.e_no, m.m_id, m.m_fam_kanji, m.m_name_kanji, m.m_gender, m.m_birth, g.g_guest_type FROM en_party e JOIN member m ON m.m_id = e.M_ID JOIN guest g ON m.m_id = g.m_id where e.e_no=#{e_no} order by m.m_id")
     @Select("SELECT g.e_no, m.m_id, m.m_fam_kanji, m.m_name_kanji, m.m_gender, m.m_birth, g.g_guest_type\n" +
-            "FROM guest g JOIN member m ON g.m_id = m.M_ID where g.g_attend_afterparty = 'ご出席' and g.e_no=#{e_no}  order by g.m_id")
+            "FROM guest g JOIN member m ON g.m_id = m.M_ID where g.g_attend_afterparty = 'ご出席' and g.e_no=#{e_no}  order by m.m_gender")
     List<PartyVO> getPartyMembers(int e_no);
 
     @Select("select e.e_no, m.m_id, m.m_fam_kanji, m.m_name_kanji FROM member m JOIN en_party e ON m.m_id = e.M_ID where m.m_id=#{m_id}")

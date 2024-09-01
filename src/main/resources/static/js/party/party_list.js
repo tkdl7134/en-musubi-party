@@ -6,6 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     let startX = 0;
     let isDragging = false;
+    const buttons = document.querySelectorAll(".card-back button");
+
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            button.style.backgroundColor = "#FF494C";
+            button.style.color = "#FFFFFF";
+        });
+    });
 
     const updateIndicators = (index) => {
         indicators.forEach((indicator, i) => {

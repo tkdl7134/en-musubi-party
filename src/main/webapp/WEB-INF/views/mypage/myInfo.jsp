@@ -14,7 +14,7 @@
     <%-- My Info Header --%>
     <div class="myInfo-header">
 
-        <div class="myInfo-header-logo">
+        <div class="myInfo-header-logo" onclick="location.href='/main'">
             <img src="/img/logo-img.png" alt="myInfo-header-logo">
         </div>
 

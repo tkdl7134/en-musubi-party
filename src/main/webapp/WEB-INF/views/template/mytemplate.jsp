@@ -19,9 +19,11 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="image-container">
-                        <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">
-<%--                        <img src="${pageContext.request.contextPath}/img/${w.w_img1}" alt="Template 1">--%>
-                        <button class="share-button" type="button" data-url="http://localhost${pageContext.request.contextPath}/invitation/${w.e_no}">
+<%--                        <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">--%>
+    <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${w.w_img1}?alt=media" alt="" />
+
+    <button class="share-button" type="button" data-url="http://localhost${pageContext.request.contextPath}/invitation/${w.e_no}">
+
                             <span>共有</span>
                         </button>
                     </div>
@@ -53,7 +55,7 @@
         <span id="close-popup" class="close-popup">&times;</span>
         <p>招待状を共有</p>
         <input type="text" id="share-url" readonly>
-        <button id="copy-button">URLをコピー</button>
+        <button id="copy-button">URLコピー</button>
     </div>
 </div>
 
