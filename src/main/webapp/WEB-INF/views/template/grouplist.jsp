@@ -29,8 +29,8 @@
         <div class="card-inner">
             <div class="card-front">
                 <div class="image-container">
-                    <img src="${pageContext.request.contextPath}/img/${g.w_img1}" alt="Template 1">
-<%--                    <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">--%>
+<%--                    <img src="${pageContext.request.contextPath}/img/${g.w_img1}" alt="Template 1">--%>
+                    <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">
 <%--                    <img src="img/${g.w_img1}" alt="Template 1">--%>
                 </div>
             </div>
