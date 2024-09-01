@@ -222,8 +222,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .kh-f-product-des>h3 {
-	margin-top: 1rem;
-	margin-bottom: 0;
+	margin: 0;
 }
 
 .kh-f-rotate {
