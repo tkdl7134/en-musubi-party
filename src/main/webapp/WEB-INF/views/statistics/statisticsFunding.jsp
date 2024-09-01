@@ -1083,7 +1083,7 @@
 
                 <div style="display: flex;    width: 85%;
     margin-left: 7.5%; justify-content: center;     border: 2px solid #ff6060; background-color: white; border-radius: 20px; margin-top: 6vh; ">
-                    <canvas style="width: 90% ;     margin-bottom: 5%; " id="myChart"></canvas>
+                    <canvas style="width: 90% ;     margin-bottom: 12%; " id="myChart"></canvas>
                 </div>
                 <div style="background-color: white; margin-top: 3rem;     border: 2px solid #ff6060; border-radius: 30px"
                      class="jh_week_data">
@@ -1361,8 +1361,8 @@
                     </div>
                     <div id="jh_foreach_test2">
                         <c:forEach items="${sendDatas}" var="l">
-                            <div style="    width: 94%;
-    margin-left: 3%; background-color: white; border: 2px solid #ff4646;padding: 10px 0; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
+                            <div style="    width: 90%;
+    margin-left: 5%; background-color: white; border: 2px solid #ff4646;padding: 10px 0; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
                                 <div style="display: flex; justify-content: space-around;">
 
 
