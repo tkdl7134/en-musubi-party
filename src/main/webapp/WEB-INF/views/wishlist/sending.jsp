@@ -38,7 +38,7 @@
 												<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">家族には</h3>
 												<h2 style="text-align: center; font-weight: bold; color: #ff0000">5万円</h2>
 												<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">
-													<span style="color: #ff3135;">✿</span>お勧めします<span style="color: #FF3135FF;">✿</span>
+													<span style="color: #ff3135;">✿ </span>お勧めします<span style="color: #FF3135FF;"> ✿</span>
 												</h3>
 											</div>
 											<div>
@@ -56,9 +56,11 @@
 										 src="/img/relative.png" />
 								</div>
 								<div>
-									<h3 style="text-align: center; font-weight: 500">親戚には</h3>
-									<h2 style="text-align: center; color: #ff464a">3万円</h2>
-									<h3 style="text-align: center; font-weight: 500">✿お勧めします✿</h3>
+									<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">親戚には</h3>
+									<h2 style="text-align: center; font-weight: bold; color: #ff0000">3万円</h2>
+									<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">
+										<span style="color: #ff3135;">✿ </span>お勧めします<span style="color: #FF3135FF;"> ✿</span>
+									</h3>
 								</div>
 								<div>
 									<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>
@@ -71,13 +73,15 @@
 							<input type="hidden" />
 							<div class="kh-send-card">
 								<div style="height: 10rem">
-									<img style="height: 90%; width: 11rem; padding: 0 15px;" alt="noImg"
+									<img style="height: 100%; width: 11rem; padding: 0 15px;" alt="noImg"
 										 src="/img/boss.png" />
 								</div>
 								<div>
-									<h3 style="text-align: center; font-weight: 500">職場の上司には</h3>
-									<h2 style="text-align: center; color: #ff464a">5万円</h2>
-									<h3 style="text-align: center; font-weight: 500">✿お勧めします✿</h3>
+									<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">職場の上司には</h3>
+									<h2 style="text-align: center; font-weight: bold; color: #ff0000">5万円</h2>
+									<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">
+										<span style="color: #ff3135;">✿ </span>お勧めします<span style="color: #FF3135FF;"> ✿</span>
+									</h3>
 								</div>
 								<div>
 									<button class="kh-s-btn" onclick="sendModal('50000')">選択</button>
@@ -90,13 +94,15 @@
 							<input type="hidden" />
 							<div class="kh-send-card">
 								<div style="height: 10rem">
-									<img style="height: 90%; width: 11rem; padding: 0 15px;" alt="noImg"
+									<img style="height: 100%; width: 11rem; padding: 0 15px;" alt="noImg"
 										 src="/img/teammate.png" />
 								</div>
 								<div>
-									<h3 style="text-align: center; font-weight: 500">職場の同期には</h3>
-									<h2 style="text-align: center; color: #ff464a">3万円</h2>
-									<h3 style="text-align: center; font-weight: 500">✿お勧めします✿</h3>
+									<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">職場の同期には</h3>
+									<h2 style="text-align: center; font-weight: bold; color: #ff0000">3万円</h2>
+									<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">
+										<span style="color: #ff3135;">✿ </span>お勧めします<span style="color: #FF3135FF;"> ✿</span>
+									</h3>
 								</div>
 								<div>
 									<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>
@@ -109,13 +115,15 @@
 							<input type="hidden" />
 							<div class="kh-send-card">
 								<div style="height: 10rem">
-									<img style="height: 90%; width: 11rem; padding: 0 15px;" alt="noImg"
+									<img style="height: 100%; width: 11rem; padding: 0 15px;" alt="noImg"
 										 src="/img/bestfriend.png" />
 								</div>
 								<div>
-									<h3 style="text-align: center; font-weight: 500">親友には</h3>
-									<h2 style="text-align: center; color: #ff464a">5万円</h2>
-									<h3 style="text-align: center; font-weight: 500">✿お勧めします✿</h3>
+									<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">親友には</h3>
+									<h2 style="text-align: center; font-weight: bold; color: #ff0000">5万円</h2>
+									<h3 style="text-align: center; font-weight: 600; color: #2e2e2e;">
+										<span style="color: #ff3135;">✿ </span>お勧めします<span style="color: #FF3135FF;"> ✿</span>
+									</h3>
 								</div>
 								<div>
 									<button class="kh-s-btn" onclick="sendModal('50000')">選択</button>
@@ -127,7 +135,7 @@
 <%--				</div>--%>
 			</div>
 			<!-- 양 옆 버튼 -->
-			<div class="je_slider-buttons">
+			<div class="je_slider-buttons" style="margin-top: 60px;">
 				<div class="je_slider-btn btn_prev">
 					<img src="/img/left-arrow-icon.png" alt="이전" />
 				</div>
@@ -245,12 +253,12 @@
 
 <dialog id="modal">
 	<div class="kh-s-popup-in">
-		<button class="close-button" onclick="closeModal()">&times;</button>
 		<div class="kh-s-envelope">
-			<img alt="noImg" src="/img/envelope01.png" style="width: 100%">
+			<img alt="noImg" src="/img/envelope01.png" style="width: 85%; margin-top: -30px; margin-left: -137px;">
 		</div>
-		<div>
-			<img alt="noImg" src="/img/mark_syuku.png">
+		<button class="close-button" onclick="closeModal()">&times;</button>
+		<div style="margin-top:-20px;">
+			<img alt="noImg" src="/img/mark_syuku.png" style="height: 70%; margin-top: 5px; margin-left: -160px;">
 		</div>
 		<div class="kh-s-modal-box">
 			<div>
@@ -260,8 +268,8 @@
 				<div>
 					<button class="kh-s-btn" onclick="setMoney('10000')">1万円</button>
 				</div>
-				<div style="font-size: 0.8rem;">
-					ささやかながら心を込めて、<br> お二人の幸せをお祈りできます✿
+				<div style="font-size: 12px; font-weight: bold; color: #3f3f3f; margin-top: -5px;">
+					ささやかながら心を込めて、<br>✿お二人の幸せをお祈りできます✿
 				</div>
 			</div>
 		</div>
