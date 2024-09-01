@@ -144,6 +144,10 @@
 			</div>
 		</div>
 	</div>
+
+<div class="tk_back-btn" onclick="history.back()">
+	<div><img src="/img/back.png" alt=""/></div>
+	<div>戻る</div>
 </div>
 
 <%--<div class="kh-s-card-container">--%>

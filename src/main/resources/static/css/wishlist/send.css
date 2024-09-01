@@ -358,6 +358,42 @@ dialog:-internal-dialog-in-top-layer::backdrop {
 	transform: rotateY(180deg);
 }
 
+.tk_back-btn {
+	position: fixed;
+	bottom: 3rem;
+	right: 70%;
+	display: flex;
+	justify-content: right;
+	align-content: center;
+	margin-right: 0.5rem;
+	gap: 0.5rem;
+	cursor: pointer;
+	color: #2e2e2e;
+}
+
+.tk_back-btn:hover{
+	color: #EC0000;
+	font-weight: bold;
+	transition: 0.5s ease;
+}
+
+.tk_back-btn div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tk_back-btn div:nth-child(1){
+	width: 1.5rem;
+	img {
+		width: 100%;
+	}
+}
+
+.tk_back-btn div:nth-child(2){
+	font-size: 23px;
+}
+
 @media (max-width: 768px) {
 	.slider {
 		max-width: 400px;
