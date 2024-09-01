@@ -46,7 +46,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 85%; margin-left: 5%; background-color: white; border: 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -75,7 +75,11 @@
 
                     let dateDiv = document.createElement('div');
                     dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
-                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    dateDiv.textContent =new Date(l.p_date).toLocaleDateString('ko-KR', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit'
+}).replace(/\.\s*/g, '-').replace(/-$/, '');;
                     secondRowDiv.appendChild(dateDiv);
 
                     div.appendChild(secondRowDiv);
@@ -133,7 +137,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left:5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left:5%; background-color: white; border: 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -162,7 +166,11 @@
 
                     let dateDiv = document.createElement('div');
                     dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
-                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    dateDiv.textContent =new Date(l.p_date).toLocaleDateString('ko-KR', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit'
+}).replace(/\.\s*/g, '-').replace(/-$/, '');
                     secondRowDiv.appendChild(dateDiv);
 
                     div.appendChild(secondRowDiv);
@@ -221,7 +229,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -250,7 +258,11 @@
 
                     let dateDiv = document.createElement('div');
                     dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
-                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    dateDiv.textContent =new Date(l.p_date).toLocaleDateString('ko-KR', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit'
+}).replace(/\.\s*/g, '-').replace(/-$/, '');;
                     secondRowDiv.appendChild(dateDiv);
 
                     div.appendChild(secondRowDiv);
@@ -293,8 +305,8 @@
 
         // fetch 요청 URL 결정
         let fetchUrl = dateEl.innerText.includes("↓")
-            ? '/statistics/reorderSendByMoney/' + no
-            : '/statistics/reorderSendByMoneyDesc/' + no;
+            ? '/statistics/reorderSendByDate/' + no
+            : '/statistics/reorderSendByDateDesc/' + no;
 
         fetch(fetchUrl)
             .then(response => response.json())
@@ -308,7 +320,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid black ; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid #FF8B8B ; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -337,7 +349,11 @@
 
                     let dateDiv = document.createElement('div');
                     dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
-                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    dateDiv.textContent =new Date(l.p_date).toLocaleDateString('ko-KR', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit'
+}).replace(/\.\s*/g, '-').replace(/-$/, '');;
                     secondRowDiv.appendChild(dateDiv);
 
                     div.appendChild(secondRowDiv);
@@ -394,7 +410,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border:1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border:1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -423,7 +439,11 @@
 
                     let dateDiv = document.createElement('div');
                     dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
-                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    dateDiv.textContent =new Date(l.p_date).toLocaleDateString('ko-KR', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit'
+}).replace(/\.\s*/g, '-').replace(/-$/, '');;
                     secondRowDiv.appendChild(dateDiv);
 
                     div.appendChild(secondRowDiv);
@@ -507,7 +527,11 @@
 
                     let dateDiv = document.createElement('div');
                     dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
-                    dateDiv.textContent = new Date(l.p_date).toISOString().split('T')[0];
+                    dateDiv.textContent =new Date(l.p_date).toLocaleDateString('ko-KR', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit'
+}).replace(/\.\s*/g, '-').replace(/-$/, '');;
                     secondRowDiv.appendChild(dateDiv);
 
                     div.appendChild(secondRowDiv);
@@ -624,12 +648,55 @@
         })
         console.log(array3);
         let array4 = []
-        let sendlists = document.getElementsByClassName('jh_send_price')
+        let sendlists = document.getElementsByClassName('jh_SendPrices')
+        let sendWeeklists = document.getElementsByClassName('jh_SendWeek')
+let fundWeekLists = document.getElementsByClassName('jh_pay_date_week')
+        let fundWeekArray = []
+        Array.from(fundWeekLists).forEach(function (wishlist) {
+            let fundWeekPrices = wishlist.value;
+
+            // 날짜 변환 시도
+            const date = new Date(fundWeekPrices);
+
+            // 유효하지 않은 날짜일 경우 빈 문자열 반환
+            let formattedDate2 = isNaN(date.getTime()) ? '' : date.toLocaleDateString('ko-KR', {
+                month: '2-digit',
+                day: '2-digit'
+            }).replace(/\.\s*/g, '-');
+
+            // 마지막에 붙은 불필요한 '-' 제거
+            formattedDate2 = formattedDate2.replace(/-$/, '');
+
+            console.log(formattedDate2); // 08-30 형식으로 출력
+            fundWeekArray.push(formattedDate2); // Array에 추가
+        });
+
+
         Array.from(sendlists).forEach(function (wishlist) {
             let sendPrices = wishlist.value;
             let sendPriceNumber = parseFloat(sendPrices); // Convert the string to a number
             array4.push(sendPriceNumber / 10000); // Divide by 10000 and push to array4
         });
+        let SendWeekArray = [];
+        Array.from(sendWeeklists).forEach(function (wishlist) {
+            let sendWeekPrices = wishlist.value;
+
+            // 날짜 변환 시도
+            const date = new Date(sendWeekPrices);
+
+            // 유효하지 않은 날짜일 경우 빈 문자열 반환
+            let formattedDate = isNaN(date.getTime()) ? '' : date.toLocaleDateString('ko-KR', {
+                month: '2-digit',
+                day: '2-digit'
+            }).replace(/\.\s*/g, '-');
+
+            // 마지막에 붙은 불필요한 '-' 제거
+            formattedDate = formattedDate.replace(/-$/, '');
+
+            console.log(formattedDate); // 08-30 형식으로 출력
+            SendWeekArray.push(formattedDate); // Array에 추가
+        });
+
 
         console.log(array4 );
         console.log('array4');
@@ -673,7 +740,7 @@
                 datasets: [{
                     label: '繋がった想い',
                     data: array2,
-                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(255,161,148)', 'rgb(255,194,194)', 'rgb(255,226,75)', 'rgb(251,239,214)'],
+                    backgroundColor: ['rgb(255, 0, 0)', 'rgb(246,190,35)', 'rgb(255,194,194)', 'rgb(255,226,75)', 'rgb(251,239,214)'],
                     hoverOffset: 4
                 }]
             }, options: {
@@ -686,7 +753,7 @@
         const labels = dates;
         console.log(labels)
         const data = {
-            labels: labels,
+            labels: fundWeekArray,
             datasets: [{
                 label: '頂いた想い',
                 data: array3,
@@ -733,7 +800,7 @@
         });
 
         const data3 = {
-            labels: labels,
+            labels: /*labels*/SendWeekArray,
             datasets: [{
                 label: '頂いた想い',
                 data: array4,
@@ -834,7 +901,8 @@
                 datasets: [{
                     label: '繋がった想い',
                     data: [groomCount , brideCount],
-                    backgroundColor: ['rgb(0, 0, 255)', 'rgb(255, 0, 0)'],
+                    backgroundColor: ['rgb(255, 99, 132)',
+                        'rgb(255, 194, 194)'],
                     hoverOffset: 4
                 }]
             }, options: {
@@ -976,6 +1044,7 @@
                     </c:forEach>
                     <c:forEach items="${dates}" var="d">
                         <input class="jh_pay_date" type="hidden" value="${d.total_price}">
+                        <input class="jh_pay_date_week" type="hidden" value="${d.p_date}">
                     </c:forEach>
                         <c:forEach items="${wishlists}" var="wishlists">
                             <input id="jh_eno_input" type="hidden" value = "${wishlists.e_no}">
@@ -1025,17 +1094,17 @@
                     <div>
                         <div style="display: flex; justify-content: space-around;">
                             <div class="jh_arrange_button">
-                                <button onclick="reorderByProduct(5)" class="jh_arrange_button_button"
+                                <button onclick="reorderByProduct(${param.e_no})" class="jh_arrange_button_button"
                                         id="jh_button_product" type="submit">物品順
                                 </button>
                             </div>
                             <div class="jh_arrange_button">
-                                <button onclick="reorderByMoney(5)" class="jh_arrange_button_button"
+                                <button onclick="reorderByMoney(${param.e_no})" class="jh_arrange_button_button"
                                         id="jh_button_money" type="submit">金額順
                                 </button>
                             </div>
                             <div class="jh_arrange_button">
-                                <button onclick="reorderByDate(5)" class="jh_arrange_button_button" id="jh_button_date"
+                                <button onclick="reorderByDate(${param.e_no})" class="jh_arrange_button_button" id="jh_button_date"
                                         type="submit">日付順
                                 </button>
                             </div>
@@ -1175,7 +1244,10 @@
 
 
 
-
+                <c:forEach var="ws" items="${SendWeekPrice}">
+                    <div><input class="jh_SendWeek" type="hidden" value="${ws.p_date}"></div>
+                    <div><input class="jh_SendPrices" type="hidden" value="${ws.total_price}"></div>
+                </c:forEach>
 
 
                 <c:forEach var="s" items="${  SendPriceOrderByRelation}">
@@ -1219,17 +1291,17 @@
                     <div>
                         <div style="display: flex; justify-content: space-around;">
                             <div class="jh_arrange_button">
-                                <button onclick="reorderSendByRelation(5)" class="jh_arrange_button_button"
+                                <button onclick="reorderSendByRelation(${param.e_no})" class="jh_arrange_button_button"
                                         id="jh_button_product2" type="submit">関係別
                                 </button>
                             </div>
                             <div class="jh_arrange_button">
-                                <button onclick="reorderSendByMoney(5)" class="jh_arrange_button_button"
+                                <button onclick="reorderSendByMoney(${param.e_no})" class="jh_arrange_button_button"
                                         id="jh_button_money2" type="submit">金額順
                                 </button>
                             </div>
                             <div class="jh_arrange_button">
-                                <button onclick="reorderSendByDate(5)" class="jh_arrange_button_button" id="jh_button_date2"
+                                <button onclick="reorderSendByDate(${param.e_no})" class="jh_arrange_button_button" id="jh_button_date2"
                                         type="submit">日付順
                                 </button>
                             </div>

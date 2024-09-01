@@ -126,7 +126,7 @@ selectOptions.forEach(option => {
                 // 차트 데이터 설정
                 const data2 = {
                     labels: [
-                        'ウィッシュリスト',
+                      buttonText,
                         '到達まで'
                     ],
                     datasets: [{
