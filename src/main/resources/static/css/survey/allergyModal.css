@@ -40,8 +40,9 @@ header div:nth-child(1) {
 }
 
 header div:nth-child(2) {
-    font-size: 1rem;
+    font-size: 14px;
     color: #797979;
+    margin: 0 10px;
 }
 
 .tk_division-line-modal {
@@ -145,6 +146,7 @@ label.cb3:has(input[type="checkbox"]:checked) {
 
 .cb3:hover {
     background-color: #ffdada;
+    color: #333333;
 }
 
 .tk_allergy-mains {

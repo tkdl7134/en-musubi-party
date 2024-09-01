@@ -308,8 +308,8 @@ $(document).ready(function () {
                         <div class="tk_survey-accompany-titleName">カタカナ</div>
                     </div>
                     <div class="tk_survey-companions-input-container">
-                        <input type="text" name="companions[${partyCount}].p_fam_kana" placeholder="姓"/>
-                        <input type="text" name="companions[${partyCount}].p_name_kana" placeholder="名"/>
+                        <input type="text" name="companions[${partyCount}].p_fam_kana" placeholder="セイ"/>
+                        <input type="text" name="companions[${partyCount}].p_name_kana" placeholder="メイ"/>
                     </div>
                 </div>
                 <div class="tk_companions-romeName">
