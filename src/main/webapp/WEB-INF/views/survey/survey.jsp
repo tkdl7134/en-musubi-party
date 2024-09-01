@@ -109,7 +109,7 @@
                                                                 id="femaleGender"
                                                                 name="m_gender"
                                                                 value="女性"
-                                                                <c:if test="${member.m_gender == '女'}"> checked </c:if>
+                                                                <c:if test="${member.m_gender == '女性'}"> checked </c:if>
                                                             />
                                                             <label class="cb1" for="femaleGender"></label>
                                                             <label for="femaleGender">女性</label>
