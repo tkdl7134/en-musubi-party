@@ -144,7 +144,7 @@ label.cb3:has(input[type="checkbox"]:checked) {
 }
 
 .cb3:hover {
-    background-color: #eeeeee;
+    background-color: #ffdada;
 }
 
 .tk_allergy-mains {
