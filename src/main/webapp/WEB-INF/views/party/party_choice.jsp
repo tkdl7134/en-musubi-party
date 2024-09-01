@@ -27,7 +27,7 @@
 
 <div class="yr_party_choice_container">
 
-    <div class="yr_title">最終選択</div>
+    <div class="yr_title">マッチング</div>
 
     <div class="yr_party_wrapper">
         <div class="yr_choice">
@@ -38,11 +38,16 @@
 <%--                    <c:choose>--%>
 <%--                        <c:when test="${couple.user == 'test1'}">--%>
                             <div class="yr_list_choice">
+                                <img class="yr_list_choice_img" src="/img/red-line-musubi.png">
                                 <div class="yr_list_name_choice">
-                                       <span style="color: #3F3F3F"> ${couple.partnerFamKanji}&nbsp ${couple.partnerNameKanji}</span>様と  <br />マッチングされました💗
+                                    <span style="color: #FF5A55; font-size: 16px;">✿</span>${couple.partnerFamKanji}&nbsp ${couple.partnerNameKanji} <span style="color: #FF5A55; font-size: 16px;">✿</span>様と  <br />マッチング成功❣️
                                 </div>
                                 <input id="partnerID" name="partnerID" value="${couple.partner}" type="hidden">
-                                <button class="open-modal">Line ID 交換</button>
+                                <button class="yr_line_id_exchange">Line ID 送信</button>
+                                <form id="lineIdForm">
+                                    <input type="text" id="lineId" name="ep_lineID" placeholder="Line ID" required>
+                                    <button type="submit"><img src="/img/send-package.png"></button>
+                                </form>
                             </div>
 <%--                        </c:when>--%>
 <%--                    </c:choose>--%>
@@ -59,16 +64,16 @@
 
 
         <!-- 모달 창 HTML -->
-        <div id="lineIdModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Line ID 交換</h2>
-                <form id="lineIdForm">
-                    <input type="text" id="lineId" name="ep_lineID" placeholder="Line ID" required>
-                    <button type="submit">提出</button>
-                </form>
-            </div>
-        </div>
+<%--        <div id="lineIdModal" class="modal">--%>
+<%--            <div class="modal-content">--%>
+<%--                <span class="close">&times;</span>--%>
+<%--                <h2>Line ID 交換</h2>--%>
+<%--                <form id="lineIdForm">--%>
+<%--                    <input type="text" id="lineId" name="ep_lineID" placeholder="Line ID" required>--%>
+<%--                    <button type="submit">提出</button>--%>
+<%--                </form>--%>
+<%--            </div>--%>
+<%--        </div>--%>
 
 
         <!-- 편지지 봉투 -->

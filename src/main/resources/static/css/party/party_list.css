@@ -84,7 +84,7 @@ body {
 
 .card-inner {
     width: 82%;
-    height: 33%;
+    height: 30%;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);

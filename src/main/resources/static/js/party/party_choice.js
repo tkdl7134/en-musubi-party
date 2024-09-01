@@ -4,18 +4,31 @@ window.addEventListener('load', function () {
     }, 3000);
 });
 
+//
+// document.querySelectorAll('.open-modal').forEach(button => {
+//     button.addEventListener('click', function () {
+//         document.getElementById('lineIdModal').style.display = 'block';
+//
+//     });
+// });
+//
+// document.querySelector('.close').addEventListener('click', function () {
+//     document.getElementById('lineIdModal').style.display = 'none';
+// });
 
-document.querySelectorAll('.open-modal').forEach(button => {
-    button.addEventListener('click', function () {
-        document.getElementById('lineIdModal').style.display = 'block';
+document.addEventListener("DOMContentLoaded", function () {
+    const showFormButton = document.querySelector(".yr_line_id_exchange");
+    const lineIdForm = document.getElementById("lineIdForm");
 
+    // 처음엔 폼을 숨깁니다.
+    lineIdForm.style.display = "none";
+
+    // 버튼 클릭 시 폼을 보이게 합니다.
+    showFormButton.addEventListener("click", function () {
+        lineIdForm.style.display = "block";
+        showFormButton.style.display = "none"; // 버튼을 숨깁니다.
     });
 });
-
-document.querySelector('.close').addEventListener('click', function () {
-    document.getElementById('lineIdModal').style.display = 'none';
-});
-
 
 document.getElementById('lineIdForm').addEventListener('submit', function (event) {
     event.preventDefault();
