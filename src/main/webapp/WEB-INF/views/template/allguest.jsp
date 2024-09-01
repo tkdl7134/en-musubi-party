@@ -147,22 +147,27 @@
                                             </c:choose>
                                         </c:forEach>
 
-                                        <!-- 동행자 정보와 알레르기 정보 출력 (한 줄에 같이 나오도록) -->
+                                        <!-- 동행자 정보와 알레르기 정보 출력 -->
                                         <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
-                                <span>同行者 :
-                                    <c:if test="${adultCount > 0}">
-                                        <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
-                                    </c:if>
-                                    <c:if test="${childCount > 0}">
-                                        <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
-                                    </c:if>
-                                    <c:if test="${babyCount > 0}">
-                                        <span>幼子 ${babyCount}人</span>
-                                    </c:if>
-                                    <c:if test="${a.g_allergy_or == 'Yes'}">
-                                        <span>アレルギー : ${a.allergy}</span>
-                                    </c:if>
-                                </span>
+                                            <div>
+                                                <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0}">
+                                                    <span>同行者 :</span>
+                                                    <c:if test="${adultCount > 0}">
+                                                        <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
+                                                    </c:if>
+                                                    <c:if test="${childCount > 0}">
+                                                        <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
+                                                    </c:if>
+                                                    <c:if test="${babyCount > 0}">
+                                                        <span>幼子 ${babyCount}人</span>
+                                                    </c:if>
+                                                </c:if>
+
+                                                <c:if test="${a.g_allergy_or == 'Yes'}">
+                                                    <br> <!-- アレルギー 항목을 별도 줄에 표시 -->
+                                                    <span>アレルギー : ${a.allergy}</span>
+                                                </c:if>
+                                            </div>
                                         </c:if>
                                     </div>
                                 </div>
@@ -200,22 +205,27 @@
                                             </c:choose>
                                         </c:forEach>
 
-                                        <!-- 동행자 정보와 알레르기 정보 출력 (한 줄에 같이 나오도록) -->
+                                        <!-- 동행자 정보와 알레르기 정보 출력 -->
                                         <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
-                                <span>同行者 :
-                                    <c:if test="${adultCount > 0}">
-                                        <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
-                                    </c:if>
-                                    <c:if test="${childCount > 0}">
-                                        <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
-                                    </c:if>
-                                    <c:if test="${babyCount > 0}">
-                                        <span>幼子 ${babyCount}人</span>
-                                    </c:if>
-                                    <c:if test="${a.g_allergy_or == 'Yes'}">
-                                        <span>アレルギー : ${a.allergy}</span>
-                                    </c:if>
-                                </span>
+                                            <div>
+                                                <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0}">
+                                                    <span>同行者 :</span>
+                                                    <c:if test="${adultCount > 0}">
+                                                        <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
+                                                    </c:if>
+                                                    <c:if test="${childCount > 0}">
+                                                        <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
+                                                    </c:if>
+                                                    <c:if test="${babyCount > 0}">
+                                                        <span>幼子 ${babyCount}人</span>
+                                                    </c:if>
+                                                </c:if>
+
+                                                <c:if test="${a.g_allergy_or == 'Yes'}">
+                                                    <br> <!-- アレルギー 항목을 별도 줄에 표시 -->
+                                                    <span>アレルギー : ${a.allergy}</span>
+                                                </c:if>
+                                            </div>
                                         </c:if>
                                     </div>
                                 </div>
@@ -253,22 +263,27 @@
                                             </c:choose>
                                         </c:forEach>
 
-                                        <!-- 동행자 정보와 알레르기 정보 출력 (한 줄에 같이 나오도록) -->
+                                        <!-- 동행자 정보와 알레르기 정보 출력 -->
                                         <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
-                                <span>同行者 :
-                                    <c:if test="${adultCount > 0}">
-                                        <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
-                                    </c:if>
-                                    <c:if test="${childCount > 0}">
-                                        <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
-                                    </c:if>
-                                    <c:if test="${babyCount > 0}">
-                                        <span>幼子 ${babyCount}人</span>
-                                    </c:if>
-                                    <c:if test="${a.g_allergy_or == 'Yes'}">
-                                        <span>アレルギー : ${a.allergy}</span>
-                                    </c:if>
-                                </span>
+                                            <div>
+                                                <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0}">
+                                                    <span>同行者 :</span>
+                                                    <c:if test="${adultCount > 0}">
+                                                        <span>ご成年 ${adultCount}人</span><c:if test="${childCount > 0 || babyCount > 0}">, </c:if>
+                                                    </c:if>
+                                                    <c:if test="${childCount > 0}">
+                                                        <span>お子様 ${childCount}人</span><c:if test="${babyCount > 0}">, </c:if>
+                                                    </c:if>
+                                                    <c:if test="${babyCount > 0}">
+                                                        <span>幼子 ${babyCount}人</span>
+                                                    </c:if>
+                                                </c:if>
+
+                                                <c:if test="${a.g_allergy_or == 'Yes'}">
+                                                    <br> <!-- アレルギー 항목을 별도 줄에 표시 -->
+                                                    <span>アレルギー : ${a.allergy}</span>
+                                                </c:if>
+                                            </div>
                                         </c:if>
                                     </div>
                                 </div>
