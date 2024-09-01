@@ -14,8 +14,8 @@ public class CommentService implements CommentMapper {
     private CommentMapper commentMapper;
 
     @Override
-    public List<CommentVO> getAllComment() {
-        return commentMapper.getAllComment();
+    public List<CommentVO> getAllComment(int e_no) {
+        return commentMapper.getAllComment(e_no);
     }
 
     @Override
