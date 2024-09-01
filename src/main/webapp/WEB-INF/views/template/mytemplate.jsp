@@ -20,6 +20,7 @@
                 <div class="card-inner">
                     <div class="image-container">
                         <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">
+<%--                        <img src="${pageContext.request.contextPath}/img/${w.w_img1}" alt="Template 1">--%>
                         <button class="share-button" type="button" data-url="http://localhost${pageContext.request.contextPath}/invitation/${w.e_no}">
                             <span>共有</span>
                         </button>
