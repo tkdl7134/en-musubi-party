@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title>✿ ~ 縁結び ~ ✿</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/template/mytemplate.css">
     <script src="${pageContext.request.contextPath}/js/template/mytemplate.js" defer></script>
