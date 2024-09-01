@@ -1,217 +1,255 @@
 * {
-	margin: 0;
-	padding: 0;
-	font-family: "Noto Serif JP", serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif JP", serif;
 }
 
 body {
-	background-image:url('/img/tk_backgorund-color.png');;
+    background-image: url('/img/paperBG.png');
+    background-size: auto;
+    background-repeat: repeat;
 }
 
-.kh-f-res-container{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	/*height:100vh;*/
-	flex-direction: column;
-	gap:2rem;
-	user-select: none;
+.kh-f-res-container {
+    position: relative;
+    width: 100vw;
 }
-.kh-f-res-img-box{
-	width:716px;
-	height:455px;
+
+.main-logo-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
-.kh-f-res-img-box > img{
-	width:100%
+
+.main-logo-img img {
+    width: 4rem;
+    height: auto;
 }
-.kh-f-res-btn-box{
-	display:flex;
-	flex-direction: column;
-	gap:1rem;
-	justify-content: center;
-	align-items: center;
+
+.main-logo-img img:hover {
+    cursor: pointer;
 }
+
+.kh-f-res-img-box {
+    width: 716px;
+    height: 455px;
+}
+
+.kh-f-res-img-box > img {
+    width: 100%
+}
+
+.kh-f-res-btn-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .kh-f-btn {
-	width: 10rem;
-	height: 3rem;
-	padding: 0 10px;
-	border-radius: 20%/70%;
-	background-color: #fff4f4;
-	box-shadow: 2px 2px 2px 0px #bbbbbb;
-	border: 2px solid #c82626;
-	color: #ff7e81;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-weight: bold;
-	font-size: 1.2rem;
-	margin-top: 1rem;
+    width: 10rem;
+    height: 3rem;
+    padding: 0 10px;
+    border-radius: 20%/70%;
+    background-color: #fff4f4;
+    box-shadow: 2px 2px 2px 0px #bbbbbb;
+    border: 2px solid #c82626;
+    color: #ff7e81;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
 }
 
 .kh-f-btn:hover {
-	cursor: pointer;
-	background-color: #FF3B3F;
-	color: white;
+    cursor: pointer;
+    background-color: #FF3B3F;
+    color: white;
 }
 
 .kh-f-btn:active {
-	box-shadow: none;
-}
-	
-.kh-f-tex>a{
-	color:black;
-	text-decoration: none;
-	font-size:1.2rem;
-	cursor: pointer;
-	font-weight: bold;
+    box-shadow: none;
 }
 
-.kh-f-tex>a:hover{
-  color: red;
-  text-decoration: none;
-  text-shadow: 0 0 3px #ffd0e9;
+.kh-f-tex > a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-/*.tk_result-outline {*/
-/*	border: 2px solid red;*/
-/*	border-radius: 30px;*/
-/*	background-color: #FFFBF7;*/
-/*	outline:3px solid #FFC700;*/
-/*}*/
+.kh-f-tex > a:hover {
+    color: red;
+    text-decoration: none;
+    text-shadow: 0 0 3px #ffd0e9;
+}
 
 .tk_result-outline {
-	position: relative;
-	border-radius: revert;
-	background-color: #FFFBF7;
-	padding: 2rem;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	margin: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 0;
+    position: relative;
+    border-radius: revert;
+    background-color: #FFFBF7;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
 }
 
-/*.tk_result-character-circle-line {*/
-/*	border: 3px solid #FF8B8B;*/
-/*	border-radius: 100%;*/
-/*	display: flex;*/
-/*	justify-content: center;*/
-/*	align-items: center;*/
-/*	width: 20rem;*/
-/*	height: 20rem;*/
-/*}*/
-
-/*.tk_result-character-circle-line img {*/
-/*	width: 50%;*/
-/*}*/
-
 .tk_result-character-circle-line {
-	border: 3px solid #FE4A4C;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 10rem;
-	height: 10rem;
-	background-color: red;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #FE4A4C;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    background-color: red;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .tk_result-character-circle-line img {
-	width: 80%;
-	border-radius: 50%;
+    width: 80%;
 }
 
-/*.tk_result-text {*/
-/*	display: flex;*/
-/*	flex-direction: column;*/
-/*	justify-content: center;*/
-/*	align-items: center;*/
-/*	font-size: 1.5rem;*/
-/*	margin-top: 2rem;*/
-/*	gap: 0.5rem;*/
-/*}*/
-
-/*.tk_result-box {*/
-/*	display: flex;*/
-/*	flex-direction: column;*/
-/*	justify-content: center;*/
-/*	align-items: center;*/
-/*	padding: 2rem 1rem 2rem 1rem;*/
-/*}*/
-
 .tk_result-text {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	font-size: 1rem;
-	margin-top: 3rem;
-	gap: 0.5rem;
-	text-align: center;
-	color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 3rem;
+    gap: 0.5rem;
+    text-align: center;
+    color: #555555;
+    width: 310px;
 }
 
 .tk_result-box {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem;
 }
 
 .tk_invitation {
-	display: flex;
-	flex-direction: column;
-	border: 2px solid #EC0000;
-	border-radius: 20px;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-	overflow: hidden;
-	background-color: #FFFBF7;
-	width: 21rem;
-	height: 40rem;
-	outline: 3px solid #FFC700;
-	position: relative;
-	margin-top: 13%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #EC0000;
+    border-radius: 35px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #FFFBF7;
+    width: 21rem;
+    height: 38rem;
+    outline: 3px solid #FFC700;
+    position: relative;
+    margin-top: 5%;
 }
 
 .tk_invitation-title {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin-top: 3rem;
-	font-size: 20px;
-	font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .left-panel {
-	background-color: #FFDBDB;
-	background-image: url(path_to_your_texture_image.jpg);
-	background-size: cover;
-	/* border: 3px solid #FE4A4C; */
-	/* padding: 1rem; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-	position: relative;
-	z-index: 1;
+    background-color: #FFDBDB;
+    background-image: url(path_to_your_texture_image.jpg);
+    background-size: cover;
+    /* border: 3px solid #FE4A4C; */
+    /* padding: 1rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
 }
 
-.left-panel img{
-	top: 0rem;
-	width: 70%;
-	right: 11rem;
-	position: absolute;
+.left-panel img {
+    top: -1rem;
+    width: 70%;
+    right: 11rem;
+    position: absolute;
 }
 
-@media (min-width: 769px) {
-	.tk_menu-header {
-		width: 100%;
-		margin: 0 auto;
-		gap: 4rem;
-	}
+.home-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2rem;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: #2e2e2e;
+}
+
+.home-btn:hover {
+    color: #EC0000;
+    font-weight: bold;
+    transition: 0.5s ease;
+}
+
+.home-btn div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-btn div:nth-child(1) {
+    width: 1.2rem;
+
+    img {
+        width: 100%;
+    }
+}
+
+.home-btn div:nth-child(2) {
+    font-size: 12px;
+}
+
+@media (min-width: 768px) {
+    body {
+        width: 30vw;
+        margin: auto;
+    }
+
+    .kh-f-res-container {
+        width: 30vw;
+        margin: auto;
+    }
+
+    .tk_invitation {
+        width: 30vw;
+        margin: auto;
+    }
+
+    .tk_menu-header {
+        width: 100%;
+        margin: 0 auto;
+        gap: 4rem;
+    }
+
+    .main-logo-img {
+        width: 30vw;
+        margin: auto;
+    }
+
+    .home-btn {
+        width: 30vw;
+        margin: auto;
+    }
 }
