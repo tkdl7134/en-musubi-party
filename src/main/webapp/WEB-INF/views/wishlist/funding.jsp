@@ -101,8 +101,8 @@ ${fundingList}
 				<img alt="" src="/img/crown.png">
 			</div>
 				<div class="kh-f-statistic-title-h1">
-					<div>ファンディン</div>
-					<div>グランキング</div>
+					<div>ファンディング</div>
+					<div>ランキング</div>
 				</div>
 			<div>
 				<img alt="" src="/img/crown.png">

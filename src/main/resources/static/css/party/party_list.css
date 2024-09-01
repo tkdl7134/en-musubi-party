@@ -89,8 +89,8 @@ body {
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin: 0.5rem;
-    border: 1.3px solid #FFC700;
-    outline: 1.3px solid #DB2227;
+    border: 2px solid #DB2227;
+    outline: 1px solid #FFC700;
     border-radius: 8px;
 }
 
@@ -128,7 +128,7 @@ body {
 }
 
 .card-back {
-    background-color: #FFC6C6;
+    background-color: #ffcfcf;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
@@ -143,18 +143,17 @@ body {
 }
 
 .card-back button{
-    margin-top: 0.7rem;
+    margin-top: 1rem;
     padding: 4px 8px;
     border-radius: 7px;
-    background: #FF5050;
+    background: #FFf;
     border: 2px solid #FF8B8B;
-    color: white;
-    font-weight: 700;
+    color: #FF5050;
+    font-weight: bold;
+
 }
 .card-back button:hover{
-    color: #FF8B8B;
-    background-color: #FFFBF7;
-    border: 2px solid #FF5050;
+    box-shadow: 0px 0px 3px #d01015;
 }
 
 /*--------- indicator ----------*/

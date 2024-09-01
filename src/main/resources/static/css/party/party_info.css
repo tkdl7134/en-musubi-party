@@ -10,26 +10,6 @@ body {
     background-image: url("../../img/Paper_BG.png");
 }
 
-.je_menu-header {
-    width: 100%;
-    height: 3.125rem;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7.5rem;
-    font-size: 20px;
-    font-weight: 600;
-    color: #2e2e2e;
-}
-
-.je_logo-icon,
-.je_menu-icon {
-    width: 1.8rem;
-    img {
-        width: 100%;
-    }
-}
 
 .yr_party-info-container {
     width: 100vw;
@@ -51,7 +31,7 @@ body {
     align-content: center;
 }
 
-/* -------梨꾪똿 媛��� 踰꾪듉 -------- */
+/* ------- 채팅 버튼 -------- */
 #yr_go_to_chat,
 #yr_go_to_chat2 {
     width: 22rem;
@@ -59,16 +39,14 @@ body {
     font-size: 1.3rem;
     border-radius: 1rem;
     background-color: #FFFBF7;
-    /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
     border: 2px solid #FF8B8B;
 }
 #yr_go_to_chat:hover {
-    box-shadow: 0 0 15px 10px rgba(244, 80, 82, 0.5);
+    box-shadow: 0 0 10px 8px rgba(244, 80, 82, 0.5);
     background-color: #fff;
 }
 #yr_go_to_chat span {
@@ -127,7 +105,7 @@ body {
     width: 2.8rem;
 }
 
-/* ------- �좊옉�좊�痢� 鍮꾩쑉 留됰� 洹몃옒��-------- */
+/* ------- 신랑측 신부측 비율 -------- */
 .yr_graph_wrap .yr_graph #yr_side_graph_bar1 {
     left: 3rem;
     background: #FF5153;
@@ -166,7 +144,7 @@ body {
 }
 
 
-/* ------- �⑤� 遺꾪룷 鍮꾩쑉 留됰� 洹몃옒�� -------- */
+/* ------- 신랑측 신부측 비율-------- */
 .yr_ratio.type{
     height: 22rem;
 }
@@ -200,7 +178,7 @@ body {
     margin-top: 0.2rem;
 }
 
-/* ------- �꾨꽋 洹몃옒�� -------- */
+/* ------- 도넛그래프 -------- */
 .yr_ratio.age{
     height: 25.5rem;
 }
@@ -215,7 +193,7 @@ body {
     align-items: center;
 }
 
-/* ------- 梨꾪똿 踰꾪듉 �좊땲硫붿씠�� -------- */
+/* ------- 채팅 버튼 애니메이션 -------- */
 @keyframes buttonPulse {
     0% {
         transform: scale(0.95);
@@ -232,5 +210,5 @@ body {
 }
 
 #yr_go_to_chat2 {
-    animation: buttonPulse 1.5s infinite;
+    animation: buttonPulse 2s infinite;
 }

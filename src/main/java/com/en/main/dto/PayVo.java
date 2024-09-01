@@ -10,7 +10,7 @@ public class PayVo {
     private String m_id;
     private String p_type;
     private int p_price;
-    private Date p_date;
+    private String p_date;
     private int wl_no;
     private int total_price;
 }

@@ -16,7 +16,7 @@ public interface StatisticsFundingMapper {
     List<WishlistVO> getFundWishlistData(int eno);
 
     @Select("SELECT \n" +
-            "    TRUNC(p_date) AS transaction_date, \n" +
+            "    TRUNC(p_date) AS p_date, \n" +
             "    SUM(p_price) AS total_price\n" +
             "FROM \n" +
             "    pay\n" +
@@ -174,7 +174,7 @@ public interface StatisticsFundingMapper {
     List<StatisticsSendVo> getSendInfosByDateDesc (int eno);
 
     @Select("SELECT \n" +
-            "    TRUNC(p_date) AS transaction_date, \n" +
+            "    TRUNC(p_date) AS p_date, \n" +
             "    SUM(p_price) AS total_price\n" +
             "FROM \n" +
             "    pay\n" +
@@ -220,7 +220,7 @@ public interface StatisticsFundingMapper {
             "            AND\n" +
             "        pay.E_NO = guest.E_NO\n" +
             "WHERE\n" +
-            "    PAY.E_NO = 5 and pay.p_type = 'send'")
+            "    PAY.E_NO = #{eno} and pay.p_type = 'send'")
     JhAttendVo getAttendCount(int eno);
 
 
