@@ -56,16 +56,16 @@ public class PartyController {
         List<PartyVO> partyMembers = partyService.getPartyMembers(e_no);
 
         // groom guest & woman guest percent graph
-        long groomGuestCount = partyMembers.stream().filter(member -> "新郎ゲスト".equals(member.getG_guest_type())).count();
-        long brideGuestCount = partyMembers.stream().filter(member -> "新婦ゲスト".equals(member.getG_guest_type())).count();
+        long groomGuestCount = partyMembers.stream().filter(member -> "新郎".equals(member.getG_guest_type())).count();
+        long brideGuestCount = partyMembers.stream().filter(member -> "新婦".equals(member.getG_guest_type())).count();
         long totalGuestCount = groomGuestCount + brideGuestCount;
 
         double groomGuestPercentage = totalGuestCount == 0 ? 0 : ((double) groomGuestCount / totalGuestCount) * 100;
         double brideGuestPercentage = totalGuestCount == 0 ? 0 : ((double) brideGuestCount / totalGuestCount) * 100;
 
         // man & woman percent graph
-        long maleCount = partyMembers.stream().filter(member -> "男".equals(member.getM_gender())).count();
-        long femaleCount = partyMembers.stream().filter(member -> "女".equals(member.getM_gender())).count();
+        long maleCount = partyMembers.stream().filter(member -> "男性".equals(member.getM_gender())).count();
+        long femaleCount = partyMembers.stream().filter(member -> "女性".equals(member.getM_gender())).count();
         long totalCount = maleCount + femaleCount;
 
         double malePercentage = totalCount == 0 ? 0 : ((double) maleCount / totalCount) * 100;

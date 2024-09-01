@@ -329,4 +329,7 @@ update template set t_title = '恋の調べ' where t_pk = 27;
 select * from guest;
 
 
-select * from event;
+select * from event where m_id = 'satou01';
+delete event where e_no = 340
+select * from wedding_info;
+update wedding_info set w_img1 = 'test2.jpg' where e_no = 341;
