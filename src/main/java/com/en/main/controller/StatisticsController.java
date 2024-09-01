@@ -89,7 +89,9 @@ public class StatisticsController {
         LocalDateTime SenddateTime = LocalDateTime.parse(SendPopulestDate, inputFormatter);
         model.addAttribute("SendPopularDate" , SenddateTime.format(outputFormatter));
 
-
+        List<PayVo> Weeks = statisticsFundingService.getSendDate(eno);
+        System.out.println("Weeks" + Weeks);
+        model.addAttribute("SendWeekPrice" , statisticsFundingService.getSendDate(eno));
         model.addAttribute("SendPopularRelation" , statisticsFundingService.getSendPopularRelation(eno));
         System.out.println(statisticsFundingService.getSendPopularRelation(eno));
 
@@ -147,14 +149,14 @@ public class StatisticsController {
     @GetMapping("/reorderSendByDate/{no}")
     public @ResponseBody List<StatisticsSendVo> reorderSendByDate(@PathVariable int no , Model model){
         System.out.println(no);
-        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByRelation(no));
+        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByDate(no));
 
         return statisticsFundingService.getSendInfosByDate(no);
     }
     @GetMapping("/reorderSendByDateDesc/{no}")
     public @ResponseBody List<StatisticsSendVo> reorderSendByDateDesc(@PathVariable int no , Model model){
         System.out.println(no);
-        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByRelationDesc(no));
+        model.addAttribute("sendDatas" ,statisticsFundingService.getSendInfosByDateDesc(no));
 
         return statisticsFundingService.getSendInfosByDateDesc(no);
     }
