@@ -13,7 +13,7 @@
 
     <%-- My Info Update Header --%>
     <div class="myInfoUpdate-header">
-        <div class="myInfoUpdate-header-logo">
+        <div class="myInfoUpdate-header-logo" onclick="location.href='/main'">
             <img src="/img/logo-img.png" alt="myInfoUpdate-header-logo">
         </div>
         <p class="myInfoUpdate-header-title">会員情報</p>
