@@ -486,7 +486,7 @@ dialog:-internal-dialog-in-top-layer::backdrop {
 .tk_back-btn {
 	position: fixed;
 	bottom: 3rem;
-	right: 70%;
+	right: 75%;
 	display: flex;
 	justify-content: right;
 	align-content: center;
@@ -509,14 +509,14 @@ dialog:-internal-dialog-in-top-layer::backdrop {
 }
 
 .tk_back-btn div:nth-child(1){
-	width: 1.5rem;
+	width: 1.2rem;
 	img {
 		width: 100%;
 	}
-}
+}s
 
 .tk_back-btn div:nth-child(2){
-	font-size: 23px;
+	font-size: 12px;
 }
 
 .tk_menu-bar {
