@@ -19,7 +19,6 @@
     <script src="/js/menubar.js" defer></script>
 </head>
 <body>
-${m_id}
 <div class="yr_party_main_container">
 
     <div class="yr_title">縁パーティー</div>

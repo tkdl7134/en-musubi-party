@@ -325,7 +325,7 @@
     justify-content: center;
     position: relative;
     padding: 2rem 0;
-    /*padding: 2rem 2.38rem;*/
+    /* margin: 0 auto; */
     flex-wrap: wrap;
     width: 100%;
     gap: 0.8rem;

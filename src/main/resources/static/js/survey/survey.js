@@ -299,8 +299,8 @@ $(document).ready(function () {
                           <div class="tk_survey-accompany-titleName">お連れ様のお名前</div>
                      </div>
                      <div class="tk_survey-companions-input-container">
-                        <input type="text" name="companions[${partyCount}].p_fam_kanji" />  <!-- 이름 필드들 -->
-                        <input type="text" name="companions[${partyCount}].p_name_kanji" />
+                        <input type="text" name="companions[${partyCount}].p_fam_kanji" placeholder="姓" />  <!-- 이름 필드들 -->
+                        <input type="text" name="companions[${partyCount}].p_name_kanji" placeholder="名" />
                      </div>
                 </div>
                 <div class="tk_companions-kataName">
@@ -308,8 +308,8 @@ $(document).ready(function () {
                         <div class="tk_survey-accompany-titleName">カタカナ</div>
                     </div>
                     <div class="tk_survey-companions-input-container">
-                        <input type="text" name="companions[${partyCount}].p_fam_kana" />
-                        <input type="text" name="companions[${partyCount}].p_name_kana" />
+                        <input type="text" name="companions[${partyCount}].p_fam_kana" placeholder="姓"/>
+                        <input type="text" name="companions[${partyCount}].p_name_kana" placeholder="名"/>
                     </div>
                 </div>
                 <div class="tk_companions-romeName">
@@ -317,8 +317,8 @@ $(document).ready(function () {
                         <div class="tk_survey-accompany-titleName">ローマ字</div>
                     </div>
                     <div class="tk_survey-companions-input-container">
-                        <input type="text" name="companions[${partyCount}].p_fam_eng" />
-                        <input type="text" name="companions[${partyCount}].p_name_eng" />
+                        <input type="text" name="companions[${partyCount}].p_fam_eng" placeholder="First Name"/>
+                        <input type="text" name="companions[${partyCount}].p_name_eng" placeholder="Last Name"/>
                     </div>
                 </div> 
                 <div class="tk_survey-gender-accompany">
