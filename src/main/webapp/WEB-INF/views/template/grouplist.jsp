@@ -30,8 +30,22 @@
             <div class="card-front">
                 <div class="image-container">
 <%--                    <img src="${pageContext.request.contextPath}/img/${g.w_img1}" alt="Template 1">--%>
-                    <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">
+<%--                    <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">--%>
 <%--                    <img src="img/${g.w_img1}" alt="Template 1">--%>
+    <c:choose>
+        <c:when test="${status.index % 3 == 0}">
+            <div style="width: 100%; height: 100%; position: absolute; z-index: 999"></div>
+            <img src="/img/template1.jpg" alt="Party Image">
+        </c:when>
+        <c:when test="${status.index % 3 == 1}">
+            <div style="width: 100%; height: 100%; position: absolute; z-index: 999"></div>
+            <img src="/img/template2.jpg" alt="Party Image">
+        </c:when>
+        <c:when test="${status.index % 3 == 2}">
+            <div style="width: 100%; height: 100%; position: absolute; z-index: 999"></div>
+            <img src="/img/template3.jpg" alt="Party Image">
+        </c:when>
+    </c:choose>
                 </div>
             </div>
             <div class="card-back">
