@@ -125,7 +125,7 @@ $(document).ready(function () {
 
         if (month < 1 || month > 12) {
             this.value = ''; // 1~12가 아니면 값을 지움
-            showMessageWithTimeout('monthError', '월은 1월부터 12월 사이여야 합니다.', 3000);
+            showMessageWithTimeout('monthError', '1月から12月の間のみ入力してください', 3000);
         } else {
             $('#monthError').text(''); // 오류 메시지 지우기
         }
@@ -143,13 +143,13 @@ $(document).ready(function () {
 
             if (isNaN(day) || day < 1 || day > daysInMonth) {
                 this.value = ''; // 유효한 일이 아니면 값을 지움
-                showMessageWithTimeout('dayError', '일은 1일부터 ' + daysInMonth + '일 사이여야 합니다.', 3000);
+                showMessageWithTimeout('dayError', '日付は1日から' + daysInMonth + '日までの間のみ入力してください', 3000);
             } else {
                 $('#dayError').text(''); // 오류 메시지 지우기
             }
         } else {
             this.value = ''; // 유효하지 않은 월 또는 연도일 경우 일 값도 초기화
-            showMessageWithTimeout('dayError', '유효한 월과 연도를 먼저 입력하세요.', 3000);
+            showMessageWithTimeout('dayError', '有効な月と年を先に入力してください', 3000);
         }
     });
 
@@ -452,10 +452,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const img = this.querySelector('img');
 
         // 클릭 시 이미지 변경
-        img.src = '/resources/img/slide-prev-click.png'; // 변경할 이미지 경로
+        img.src = '/img/slide-prev-click.png'; // 변경할 이미지 경로
 
         setTimeout(function() {
-            img.src = '/resources/img/slide-prev.png'; // 원래 이미지 경로로 복구
+            img.src = '/img/slide-prev.png'; // 원래 이미지 경로로 복구
         }, 500);
     });
 
@@ -464,10 +464,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const img = this.querySelector('img');
 
         // 클릭 시 이미지 변경
-        img.src = '/resources/img/slide-next-click.png'; // 변경할 이미지 경로
+        img.src = '/img/slide-next-click.png'; // 변경할 이미지 경로
 
         setTimeout(function() {
-            img.src = '/resources/img/slide-next.png'; // 원래 이미지 경로로 복구
+            img.src = '/img/slide-next.png'; // 원래 이미지 경로로 복구
         }, 500);
     });
 });

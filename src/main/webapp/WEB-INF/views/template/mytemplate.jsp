@@ -23,6 +23,7 @@
     <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${w.w_img1}?alt=media" alt="" />
 
     <button class="share-button" type="button" data-url="http://localhost${pageContext.request.contextPath}/invitation/${w.e_no}">
+
                             <span>共有</span>
                         </button>
                     </div>
