@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    /*box-sizing: border-box;*/
     font-family: "Noto Serif JP", serif;
     font-optical-sizing: auto;
     font-weight: bold;
@@ -39,8 +38,9 @@ body {
     flex-direction: row;
     width: 100vw;
     height: calc(100vh - 3rem);
-    overflow-x: scroll;
+    overflow-x: hidden; /* 스크롤바를 숨김 */
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth; /* 부드러운 스크롤 효과 추가 */
 }
 
 .hw_card {
@@ -51,6 +51,7 @@ body {
     align-items: center;
     scroll-snap-align: start;
 }
+
 
 .card {
     width: 82%;
@@ -71,21 +72,11 @@ body {
 }
 
 .image-container {
-    /*width: 19.5rem;*/
-    /*!*height: 215%;*!*/
-    /*overflow: hidden;*/
-    /*position: relative;*/
-    /*border: solid 1px #ddd;*/
-    /*transition: filter 0.3s, box-shadow 0.3s;*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*top: 0.5rem;*/
     width: 19.5rem;
     height: 78%;
     overflow: hidden;
     position: absolute;
-    top: calc(50% - 2rem); /* card의 50% 위치에서 card-back 높이의 절반만큼 조정 */
+    top: calc(50% - 2rem);
     left: 50%;
     transform: translate(-50%, -50%);
     border: solid 1px #ffc5c5;
@@ -137,7 +128,6 @@ body {
     width: 100%;
     height: 5rem;
     bottom: -13px;
-    /*padding: 1rem;*/
 }
 
 .card-back button {

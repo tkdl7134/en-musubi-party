@@ -12,12 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let startX = 0;
     let isDragging = false;
 
-    const slidesPerPage = 3; // 한 페이지에 표시할 슬라이드 수
-    const totalPages = Math.ceil(slides.length / slidesPerPage); // 총 페이지 수 계산
+    const slidesPerPage = 1;  // 슬라이드당 한 카드만 표시되도록 수정
+    const totalPages = slides.length;
 
-    // 인디케이터 동적 생성
     function createIndicators() {
-        indicatorContainer.innerHTML = ''; // 기존 인디케이터 초기화
+        indicatorContainer.innerHTML = '';
         for (let i = 0; i < totalPages; i++) {
             const indicator = document.createElement("span");
             indicator.classList.add("indicator");
@@ -29,10 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateIndicators(index) {
-        const pageIndex = Math.floor(index / slidesPerPage);
         const indicators = document.querySelectorAll(".indicator");
         indicators.forEach((indicator, i) => {
-            if (i === pageIndex) {
+            if (i === index) {
                 indicator.classList.add("active");
             } else {
                 indicator.classList.remove("active");
@@ -42,9 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function scrollToSlide(index) {
         if (index >= 0 && index < slides.length) {
-            const pageIndex = Math.floor(index / slidesPerPage);
             container.scrollTo({
-                left: pageIndex * container.clientWidth,
+                left: index * container.clientWidth,
                 behavior: "smooth"
             });
             currentIndex = index;
@@ -64,8 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const diff = startX - moveX;
 
         if (Math.abs(diff) > 50) {
-            if (diff > 0) scrollToSlide(currentIndex + slidesPerPage); // Swipe or drag left
-            else scrollToSlide(currentIndex - slidesPerPage); // Swipe or drag right
+            if (diff > 0) scrollToSlide(currentIndex + 1);
+            else scrollToSlide(currentIndex - 1);
 
             isDragging = false;
         }
@@ -87,13 +84,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     container.addEventListener("wheel", (event) => {
         event.preventDefault();
-        if (event.deltaY > 0) scrollToSlide(currentIndex + slidesPerPage); // Scroll down
-        else scrollToSlide(currentIndex - slidesPerPage); // Scroll up
+        if (event.deltaY > 0) scrollToSlide(currentIndex + 1);
+        else scrollToSlide(currentIndex - 1);
     });
 
     document.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowRight") scrollToSlide(currentIndex + slidesPerPage);
-        else if (event.key === "ArrowLeft") scrollToSlide(currentIndex - slidesPerPage);
+        if (event.key === "ArrowRight") scrollToSlide(currentIndex + 1);
+        else if (event.key === "ArrowLeft") scrollToSlide(currentIndex - 1);
     });
 
     shareButtons.forEach(button => {
@@ -101,27 +98,21 @@ document.addEventListener("DOMContentLoaded", function () {
             // 모든 버튼에서 'active' 클래스 제거 (다른 버튼의 active 상태를 해제)
             shareButtons.forEach(btn => btn.classList.remove('active'));
 
-            // 현재 클릭된 버튼에 'active' 클래스 추가
             this.classList.add('active');
 
-            // 해당 버튼의 부모 요소에서 이미지 컨테이너를 찾아 'darken' 클래스 추가
             const imageContainer = this.closest('.card-inner').querySelector('.image-container');
             imageContainer.classList.add('darken');
 
-            // 공유할 URL을 입력 필드에 설정하고, 팝업을 표시
             const url = this.getAttribute("data-url");
             shareUrlInput.value = url;
             sharePopup.style.display = "block";
 
-           
             setTimeout(() => {
                 imageContainer.classList.remove('darken');
                 this.classList.remove('active');
             }, 2000);
         });
     });
-
-
 
     closePopup.addEventListener("click", () => {
         sharePopup.style.display = "none";

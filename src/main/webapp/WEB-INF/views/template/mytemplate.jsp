@@ -53,7 +53,7 @@
         <span id="close-popup" class="close-popup">&times;</span>
         <p>招待状を共有</p>
         <input type="text" id="share-url" readonly>
-        <button id="copy-button">URLをコピー</button>
+        <button id="copy-button">URLコピー</button>
     </div>
 </div>
 
