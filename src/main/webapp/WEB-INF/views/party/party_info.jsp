@@ -67,7 +67,7 @@
 
 <div class="yr_party-info-container">
 
-    <div class="yr_title">縁パーティー インフォ </div>
+    <div class="yr_title">参加者情報</div>
 
     <%--     채팅방으로 가는 버튼--%>
     <div class="yr_go_to_chat_wrap">

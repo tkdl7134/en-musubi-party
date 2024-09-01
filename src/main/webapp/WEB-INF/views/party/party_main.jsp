@@ -55,7 +55,7 @@
                         <div class="yr_list">
                             <div class="yr_list_left">
                                 <c:choose>
-                                    <c:when test="${p.g_guest_type == '新郎ゲスト'}">
+                                    <c:when test="${p.g_guest_type == '新郎'}">
                                         <img src="/img/groom.png">
                                     </c:when>
                                     <c:otherwise>
@@ -67,7 +67,7 @@
                             <div class="yr_list_name" id="yr_list_name">${p.m_fam_kanji} &nbsp; ${p.m_name_kanji}</div>
                             <div class="yr_list_right">
                                 <c:choose>
-                                    <c:when test="${p.m_gender == '男'}">
+                                    <c:when test="${p.m_gender == '男性'}">
                                         <img src="/img/blue_heart.png">
                                     </c:when>
                                     <c:otherwise>
@@ -162,7 +162,7 @@
                             <input value="${p.m_id}" type="hidden">
                             <div class="yr_list_left">
                                 <c:choose>
-                                    <c:when test="${p.g_guest_type == '新郎ゲスト'}">
+                                    <c:when test="${p.g_guest_type == '新郎'}">
                                         <img src="/img/groom.png">
                                     </c:when>
                                     <c:otherwise>
@@ -173,7 +173,7 @@
                             <div class="yr_list_name_choice">${p.m_fam_kanji} &nbsp; ${p.m_name_kanji}</div>
                             <div class="yr_list_right">
                                 <c:choose>
-                                <c:when test="${p.m_gender == '男'}">
+                                <c:when test="${p.m_gender == '男性'}">
                                     <img src="/img/blue_heart.png">
                                 </c:when>
                                 <c:otherwise>

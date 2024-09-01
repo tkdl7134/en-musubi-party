@@ -6,9 +6,9 @@ btn.onclick = function() {
     modal.style.display = "block";
 }
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
+// span.onclick = function() {
+//     modal.style.display = "none";
+// }
 
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -27,12 +27,12 @@ window.onclick = function(event) {
         deleteModal.style.display = 'none';
     }
 }
-document.getElementById('mainCloseBtn').onclick = function() {
-    document.getElementById('myModal').style.display = 'none';
-}
-document.getElementById('deleteCloseBtn').onclick = function() {
-    document.getElementById('deleteModal').style.display = 'none';
-}
+// document.getElementById('mainCloseBtn').onclick = function() {
+//     document.getElementById('myModal').style.display = 'none';
+// }
+// document.getElementById('deleteCloseBtn').onclick = function() {
+//     document.getElementById('deleteModal').style.display = 'none';
+// }
 
 // 삭제 버튼 클릭 시 모달을 표시하고, 댓글 ID를 저장
 document.querySelectorAll('.delete-btn').forEach(button => {
