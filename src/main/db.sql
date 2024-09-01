@@ -59,6 +59,8 @@ create table event
 );
 select * from event;
 
+select e_amazon from event where m_id = 'suzuki01' AND  e_no = '318';
+
 create sequence event_seq;
 
 -- 템플릿(상품)
@@ -203,6 +205,8 @@ create table pay
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
 select * from pay;
+
+select * from pay where e_no = 318;
 
 
 -- 이벤트 댓글
