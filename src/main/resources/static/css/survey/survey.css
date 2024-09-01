@@ -3,7 +3,7 @@
     padding: 0;
     font-family: "Noto Serif JP", serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -84,7 +84,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     color: #FE4A4C;
-    height: 3rem;
+    height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,7 +150,9 @@ form {
     align-items: center;
     font-size: 1rem;
     gap: 0.5rem;
-    color: #A0A0A0;
+    color: #666666;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 .tk_survey-titleName-container {
@@ -247,7 +249,7 @@ select {
 }
 
 .tk_box-title span:nth-child(2){
-    color: black;
+    color: #3f3f3f;
 }
 
 .tk_justName, .tk_kataName, .tk_romeName {
@@ -339,7 +341,8 @@ select {
 }
 
 .tk_survey-postcode > div:nth-child(1) span {
-    color: #A0A0A0;
+    color: #666666;
+    font-size: 15px;
 }
 
 .tk_survey-postcode > div:nth-child(2) {
@@ -565,6 +568,13 @@ select {
     color: #FF5050;
     background-color: #FFF4F4;
     font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.tk_imgButton-container button:hover{
+    cursor: pointer;
+    background-color: #ff5050;
+    color: white;
 }
 
 .tk_survey-messageText {
@@ -869,43 +879,42 @@ dialog::backdrop {
 /* 縁結び封筒 */
 .survey-submit-button {
     width: 63%;
-    height: 9rem;
-    border-radius: 50px 50px 10px 10px;
+    height: 8rem;
+    border-radius: 30px 30px 10px 10px;
     border: solid 1px rgba(255, 90, 85, 0.7);
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
     position: relative;
     top: 35%;
+    bottom: 5px;
     z-index: 1;
 }
 
 .main-enMusubi-envelope-bottom {
-    width: 97%;
-    height: 10.6rem;
-    border-radius: 45px 45px 0 0;
+    width: 95%;
+    height: 7.7rem;
+    border-radius: 25px 25px 0 0;
     border: 1px solid #FFC700;
     border-bottom: none;
     background-color: transparent;
     position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
     margin: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
     z-index: 2;
 }
 
 .main-enMusubi-envelope-paper {
-    width: 88%;
-    height: 10rem;
+    width: 85%;
+    height: 5rem;
     border-radius: 10px 10px 0 0;
     background-color: rgba(255, 251, 247, 0.9);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
     position: absolute;
     margin: auto;
-    top: 5%;
     left: 50%;
-    right: 0;
-    bottom: 0.5rem;
+    bottom: 35px;
     transform: translateX(-50%);
     transition: bottom 1s ease-in-out;
     z-index: 3;
@@ -940,16 +949,23 @@ dialog::backdrop {
 
 .main-enMusubi-envelope-top {
     width: 100%;
-    height: 7rem;
-    clip-path: polygon(0 0, 5% 0, 50% 40%, 95% 0, 100% 0, 100% 100%, 0 100%);
+    height: 5.5rem;
+    clip-path: polygon(0 0, 5% 0, 50% 35%, 95% 0, 100% 0, 100% 100%, 0 100%);
     border-radius: 0 0 10px 10px;
     background-color: #ffd6d5;
     transition: background-color 0.5s ease-in-out;
-    border: 2px solid #FFC700;
+    border: 2px solid #ffc700;
     border-top: none;
     position: relative;
-    top: 25%;
+    top: 30%;
+    left: -0.5%;
     z-index: 5;
+}
+
+.main-enMusubi-envelope-top:hover {
+    cursor: pointer;
+    background-color: #f8b9ba;
+    transition: background-color 0.3s ease;
 }
 
 .change-color {
@@ -959,11 +975,33 @@ dialog::backdrop {
 .main-enMusubi-envelope-logo-img {
     position: absolute;
     top: 45%;
-    left: 41%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 6;
 }
 
 .main-enMusubi-envelope-logo-img img {
-    width: 2.2rem;
+    width: 1.5rem;
     height: auto;
 }
+
+.main-survey-envelope-bottom-line{
+    position: absolute;
+    width: 180%;
+    z-index: 999;
+    pointer-events: none;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    img{
+        width: 100%;
+    }
+}
+
+/*@media (min-width: 769px) {*/
+/*    .tk_menu-header{*/
+/*        width: 100%;*/
+/*        margin: 0 auto;*/
+/*        gap: 4rem;*/
+/*    }*/
+/*}*/

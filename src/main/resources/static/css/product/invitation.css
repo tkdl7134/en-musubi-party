@@ -479,6 +479,8 @@
 }
 
 
+
+
 .main-survey-envelope {
     width: 45%;
     height: 6.5rem;
@@ -490,6 +492,7 @@
     top: 42%;
     z-index: 1;
 }
+
 
 .main-survey-envelope-bottom {
     width: 95%;
@@ -562,6 +565,12 @@
     top: 25%;
     left: -0.5%;
     z-index: 5;
+}
+
+.main-survey-envelope-top:hover{
+    cursor: pointer;
+    background-color: #f8b9ba;
+    transition: background-color 0.3s ease;
 }
 
 .change-color {
