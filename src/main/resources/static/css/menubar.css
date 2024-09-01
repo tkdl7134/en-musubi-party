@@ -33,6 +33,14 @@ body {
     }
 }
 
+.je_logo-icon:hover {
+    cursor: pointer;
+}
+
+.je_menu-icon:hover {
+    cursor: pointer;
+}
+
 .je_sitename {
     width: 5rem;
     text-align: center;

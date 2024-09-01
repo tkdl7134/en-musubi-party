@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title>✿ ~ 縁結び ~ ✿</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/template/mytemplate.css">
     <script src="${pageContext.request.contextPath}/js/template/mytemplate.js" defer></script>
@@ -19,7 +20,6 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="image-container">
-<%--                        <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">--%>
     <img src="https://firebasestorage.googleapis.com/v0/b/enmusubi-8f0dc.appspot.com/o/upload%2F${w.w_img1}?alt=media" alt="" />
 
     <button class="share-button" type="button" data-url="http://localhost${pageContext.request.contextPath}/invitation/${w.e_no}">
@@ -65,15 +65,9 @@
         button.addEventListener("click", function () {
             const url = this.getAttribute("data-url");
             shareUrlInput.value = url;
-
-            // 버튼 색상 변경
             this.classList.toggle("active");
-
-            // image-container 명암 효과 적용
             const imageContainer = this.closest(".card").querySelector(".image-container");
             imageContainer.classList.add("darken");
-
-            // 3초 후에 명암 효과 제거
             setTimeout(() => {
                 imageContainer.classList.remove("darken");
             }, 3000);

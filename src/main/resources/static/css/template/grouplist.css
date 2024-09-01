@@ -13,10 +13,10 @@ body {
     overflow: hidden;
     background-color: #f8f8f8;
 
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     background-image: url("/img/Paper_BG.png");
 }
 
@@ -105,7 +105,7 @@ body {
 }
 
 
-.toggle-details{
+.toggle-details {
     color: red;
 }
 
