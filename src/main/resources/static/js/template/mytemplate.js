@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let startX = 0;
     let isDragging = false;
 
-    const slidesPerPage = 1;  // 슬라이드당 한 카드만 표시되도록 수정
+    const slidesPerPage = 1;
     const totalPages = slides.length;
 
     function createIndicators() {
@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     shareButtons.forEach(button => {
         button.addEventListener("click", function () {
-            // 모든 버튼에서 'active' 클래스 제거 (다른 버튼의 active 상태를 해제)
             shareButtons.forEach(btn => btn.classList.remove('active'));
 
             this.classList.add('active');

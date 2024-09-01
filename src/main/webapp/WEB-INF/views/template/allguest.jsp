@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="/css/template/allguest.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -19,12 +20,9 @@
     <div class="je_page-title">アンケート</div>
     <div class="hw_container">
 
-        <!-- 필터 입력 필드 -->
         <input type="text" id="filter-input" placeholder="Search">
 
-        <!-- 가로 스크롤 컨테이너 -->
         <div class="hw_scroll-container">
-            <!-- 출席 섹션 -->
             <div class="hw_section" id="attend_section">
                 <div class="hw_content_title">
                     <button type="button" class="nav-button prev-page" style="visibility:hidden;">
@@ -99,7 +97,6 @@
                 </div>
             </div>
 
-            <!-- 情報 섹션 -->
             <div class="hw_section" id="info_section">
                 <div class="hw_content_title">
                     <button type="button" class="nav-button prev-page">
@@ -128,7 +125,6 @@
                                     <div class="guest-details" style="display: none;">
                                         <span>招待者 : ${a.g_guest_type}</span>
 
-                                        <!-- 동행자의 유형별로 몇 명이 있는지 카운트 -->
                                         <c:set var="adultCount" value="0"/>
                                         <c:set var="childCount" value="0"/>
                                         <c:set var="babyCount" value="0"/>
@@ -147,7 +143,6 @@
                                             </c:choose>
                                         </c:forEach>
 
-                                        <!-- 동행자 정보와 알레르기 정보 출력 -->
                                         <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
                                             <div>
                                                 <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0}">
@@ -164,7 +159,6 @@
                                                 </c:if>
 
                                                 <c:if test="${a.g_allergy_or == 'Yes'}">
-                                                    <br> <!-- アレルギー 항목을 별도 줄에 표시 -->
                                                     <span>アレルギー : ${a.allergy}</span>
                                                 </c:if>
                                             </div>
@@ -186,7 +180,6 @@
                                     <div class="guest-details" style="display: none;">
                                         <span>招待者 : ${a.g_guest_type}</span>
 
-                                        <!-- 동행자의 유형별로 몇 명이 있는지 카운트 -->
                                         <c:set var="adultCount" value="0"/>
                                         <c:set var="childCount" value="0"/>
                                         <c:set var="babyCount" value="0"/>
@@ -205,7 +198,6 @@
                                             </c:choose>
                                         </c:forEach>
 
-                                        <!-- 동행자 정보와 알레르기 정보 출력 -->
                                         <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
                                             <div>
                                                 <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0}">
@@ -222,7 +214,6 @@
                                                 </c:if>
 
                                                 <c:if test="${a.g_allergy_or == 'Yes'}">
-                                                    <br> <!-- アレルギー 항목을 별도 줄에 표시 -->
                                                     <span>アレルギー : ${a.allergy}</span>
                                                 </c:if>
                                             </div>
@@ -244,7 +235,6 @@
                                     <div class="guest-details" style="display: none;">
                                         <span>招待者 : ${a.g_guest_type}</span>
 
-                                        <!-- 동행자의 유형별로 몇 명이 있는지 카운트 -->
                                         <c:set var="adultCount" value="0"/>
                                         <c:set var="childCount" value="0"/>
                                         <c:set var="babyCount" value="0"/>
@@ -263,7 +253,6 @@
                                             </c:choose>
                                         </c:forEach>
 
-                                        <!-- 동행자 정보와 알레르기 정보 출력 -->
                                         <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0 || a.g_allergy_or == 'Yes'}">
                                             <div>
                                                 <c:if test="${adultCount > 0 || childCount > 0 || babyCount > 0}">
@@ -280,7 +269,6 @@
                                                 </c:if>
 
                                                 <c:if test="${a.g_allergy_or == 'Yes'}">
-                                                    <br> <!-- アレルギー 항목을 별도 줄에 표시 -->
                                                     <span>アレルギー : ${a.allergy}</span>
                                                 </c:if>
                                             </div>
@@ -294,7 +282,6 @@
                 </div>
             </div>
 
-            <!-- 欠席 섹션 -->
             <div class="hw_section" id="absent_section">
                 <div class="hw_content_title">
                     <button type="button" class="nav-button prev-page">

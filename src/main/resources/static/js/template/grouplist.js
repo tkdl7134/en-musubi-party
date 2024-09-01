@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentTranslate = 0;
     let prevTranslate = 0;
     let animationID;
-    let threshold = 0.3; // 슬라이드를 넘기기 위한 최소 드래그 비율
-    let slideWidth = container.offsetWidth; // 슬라이드의 너비
+    let threshold = 0.3;
+    let slideWidth = container.offsetWidth;
 
     if (!cards.length || !container) {
         console.warn("Required elements are not found in the DOM.");
@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
         handleGesture();
     });
 
-    // 휠 스크롤로 페이지 전환
     container.addEventListener('wheel', (event) => {
         event.preventDefault();
         if (event.deltaY > 0 && currentIndex < totalPages - 1) {
