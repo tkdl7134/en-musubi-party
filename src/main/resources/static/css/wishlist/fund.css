@@ -126,27 +126,29 @@ body {
 	display: none;
 }
 /* modal */
-.kh-f-popup {
-	width: 22.2rem;
-	height: 30rem;
-	border-radius: 30%;
-	background-color: white;
-	border: 3px solid #FF0000;
-	box-shadow: 2px 2px 4px 0px #cccccc;
-}
+/*.kh-f-popup {*/
+/*	width: 22.2rem;*/
+/*	height: 30rem;*/
+/*	border-radius: 30%;*/
+/*	background-color: white;*/
+/*	border: 3px solid #FF0000;*/
+/*	box-shadow: 2px 2px 4px 0px #cccccc;*/
+/*}*/
 
 .kh-f-popup-in {
 	width: 22rem;
 	height: 30rem;
 	scale: 94%;
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	background-color: #fffbf7;
-	border: 2px solid #FF0000;
-	border-radius: 30%;
-	gap: 1rem;
+	border: 5px solid #FF5050;
+	border-radius: 40px;
+	gap: 0.5rem;
 	box-shadow: inset 0 0 8px #FFD600;
+	outline: 3px solid #FFC700;
 }
 
 .kh-f-popup-in>div {
@@ -173,14 +175,15 @@ body {
 }
 
 .kh-f-input {
-	width: 10rem;
-	height: 3rem;
+	width: 8rem;
+	height: 2.5rem;
 	border: none;
 	background: none;
 	font-size: 2rem;
 	text-align: right;
 	color: #474747;
 	padding-right: 4rem;
+	margin-right: 1rem;
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
@@ -203,8 +206,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	align-items: center;
 	font-weight: bold;
 	font-size: 1rem;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	margin-top: 2rem;
 }
 
 .kh-f-product-box {
@@ -215,13 +217,12 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .kh-f-product-des {
 	display: flex;
 	flex-direction: column;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	text-wrap: nowrap;
 }
 
 .kh-f-product-des>h3 {
-	margin-top: 0;
-	margin-bottom: 1rem;
+	margin: 0;
 }
 
 .kh-f-rotate {

@@ -116,7 +116,7 @@
 									<h3 style="text-align: center; font-weight: 500">お勧めします✿</h3>
 								</div>
 								<div>
-									<button class="kh-s-btn" onclick="sendModal('30000')">選択</button>
+									<button class="kh-s-btn" onclick="sendModal('50000')">選択</button>
 								</div>
 							</div>
 						</div>

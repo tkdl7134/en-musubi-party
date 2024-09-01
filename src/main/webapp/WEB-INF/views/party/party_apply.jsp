@@ -34,11 +34,11 @@
     <div class="yr_party_wrapper">
         <div class="yr_choice">
 
-
                     <div class="yr_list_choice">
                         <img class="yr_list_choice_img" src="/img/red-line-musubi.png">
+<%--                        <img class="yr_list_choice_profile"  src="/img/profile.png">--%>
                         <div class="yr_list_name_choice">
-                            <span style="color: #3F3F3F"> 鈴木 &nbsp 裕 </span>様と  <br />マッチングされました💗
+                            <span style="color: #3F3F3F"> 鈴木 &nbsp 裕 </span>様と<br />マッチング成功💗
                         </div>
                         <input id="partnerID" name="partnerID" value="" type="hidden">
                         <button class="yr_line_id_exchange">Line ID 送信</button>
@@ -47,8 +47,6 @@
                             <button type="submit"><img src="/img/send.png"></button>
                         </form>
                     </div>
-
-
 
 
         </div>

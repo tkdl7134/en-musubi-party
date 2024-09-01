@@ -163,7 +163,7 @@
         </ul>
     </div>
         <div class="yr_guest_book">
-            <button class="yr_guest_book_button" onclick="location.href ='/event-comment'"> <span>GUEST BOOK</span> </button>
+            <button class="yr_guest_book_button" onclick="location.href ='/event-comment/${sessionScope.e_no}'"> <span>GUEST BOOK</span> </button>
             <img class="yr_guest_book_img" src="/img/photobook.png">
         </div>
     <div class="je_message-txt2">

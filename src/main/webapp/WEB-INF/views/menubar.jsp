@@ -18,7 +18,7 @@
 <body>
 <!-- header -->
 <div class="je_menu-header">
-    <div class="je_logo-icon">
+    <div class="je_logo-icon" onclick="location.href='/main'">
         <img src="/img/en-musubi-logo.png" alt=""/>
     </div>
     <div>縁結び</div>
@@ -55,6 +55,10 @@
                     <div class="menu-section menu-section2">
                         <div class="menu menu2" onclick="location.href='/product'">縁結び</div>
                         <div class="menu menu2" onclick="location.href='/party'">縁パーティー</div>
+                    </div>
+                    <div class="home-btn" onclick="location.href='/main'">
+                        <div><img src="/img/home.png" alt=""/></div>
+                        <div>ホーム</div>
                     </div>
                     <div class="logout-btn" id="logout-button">
                         <div>ログアウト</div>

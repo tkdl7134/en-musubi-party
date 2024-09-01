@@ -59,20 +59,21 @@
 
     <div id="deleteModal" class="modal">
         <div class="modal-content">
-            <span class="close" id="deleteCloseBtn">&times;</span>
-            <h3>コメントを削除する</h3>
+<%--            <span class="close" id="deleteCloseBtn">&times;</span>--%>
+<%--            <div class="yr_comment_title">コメントを削除する</div>--%>
             <p>パスワードを入力してください。</p>
             <input type="password" id="deletePassword" placeholder="パスワード">
-            <button id="confirmDeleteBtn">削除</button>
+            <button class="yr_comment_delete_button" id="confirmDeleteBtn">削除</button>
         </div>
     </div>
 
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close" id="mainCloseBtn">&times;</span>
-            <form action="event-comment" method="post">
+<%--            <span class="close" id="mainCloseBtn">&times;</span>--%>
+
+            <form action="/event-comment/${e_no}" method="post">
                 <div class="yr_comment_insert_wrapper">
-                    <h3>GUEST BOOK</h3>
+                    <div class="yr_comment_title">メッセージ作成</div>
                     <div class="yr_comment_insert">
                         <div class="yr_comment_insert_type">
                             <label>
@@ -91,6 +92,7 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
 
