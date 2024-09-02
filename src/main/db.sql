@@ -333,7 +333,7 @@ update template set t_title = '恋の調べ' where t_pk = 27;
 select * from guest;
 
 
-select * from event where m_id = 'satou10';
+select * from event where m_id = 'satou01';
 delete event where e_no = 340;
 select * from wedding_info where e_no = 318;
 update wedding_info set w_fam_jp_groom = '大野', w_name_jp_groom = '智', w_fam_eng_groom ='ono', w_name_eng_groom = 'satoshi',  w_fam_jp_bride = '大野', w_name_jp_bride = '彩', w_fam_eng_bride ='ono', w_name_eng_bride = 'aya', w_date = '2024年07月10日 水', w_wedding_postcode = '602-8567', w_reception_postcode = '602-8567', w_wedding_address = '京都府星空市希望町1丁目3-8', w_reception_address = '京都府星空市希望町1丁目3-8' where e_no = 319;
