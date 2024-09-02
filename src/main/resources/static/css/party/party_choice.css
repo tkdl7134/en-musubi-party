@@ -20,8 +20,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+.matching-text {
+    margin-top: 5px;
+    font-size: 20px;
+    color: #F03434;
+    font-weight: bold;
+    text-align: center;
 
+}
 .lds-circle,
 .lds-circle img {
     box-sizing: border-box;
@@ -127,12 +135,16 @@ body {
     border: none;
 }
 #lineIdForm button img{
-    width: 24px;
+    width: 20px;
     position: relative;
     top: 5px;
     left: 3px;
 }
-
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;
+}
 /* 라인 id 봉투*/
 .main-envelope {
     width: 100%;
@@ -145,7 +157,7 @@ body {
     transition: bottom 2s ease-in-out, opacity 2s ease-in-out;
 }
 .move-up {
-    bottom: 20%;
+    bottom: 40%;
     opacity: 1;
 }
 
@@ -159,6 +171,13 @@ body {
     position: relative;
     top: 52%;
     z-index: 1;
+}
+.yr_partnerID{
+    border-radius: 20px;
+    background: #fff;
+    padding: 5px 15px;
+    color: #474747;
+    margin: 0 35% 10px 0;
 }
 .main-enParty-envelope-bottom {
     width: 97%;
@@ -185,20 +204,17 @@ body {
     margin: auto;
     left: 50%;
     right: 0;
-
     transform: translateX(-50%);
-
     z-index: 3;
 }
-
-
 
 .main-enParty-envelope-text {
     font-weight: bold;
     text-align: center;
     position: absolute;
-    top: 29%;
+    top: 20%;
     left: 50%;
+    width: 100%;
     transform: translate(-50%, -50%);
     z-index: 4;
 }
