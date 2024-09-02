@@ -59,6 +59,8 @@ create table event
 );
 select * from event;
 
+select e_amazon from event where m_id = 'suzuki01' AND  e_no = '318';
+
 create sequence event_seq;
 
 -- 템플릿(상품)
@@ -136,8 +138,8 @@ create table guest
     foreign key (e_no) references event (e_no) ON DELETE CASCADE,
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
-select * from guest where e_no = 319;
-delete guest where m_id = 'yamada01';
+select * from guest where m_id = 'satou01';
+delete guest where m_id = 'satou01' and g_relation_detail = 'onlineFriend';
 
 -- 알러지
 create table allergy
@@ -203,6 +205,8 @@ create table pay
     foreign key (m_id) references member (m_id) ON DELETE CASCADE
 );
 select * from pay;
+
+select * from pay where e_no = 318;
 
 
 -- 이벤트 댓글
@@ -329,7 +333,9 @@ update template set t_title = '恋の調べ' where t_pk = 27;
 select * from guest;
 
 
-select * from event where m_id = 'satou01';
-delete event where e_no = 340
-select * from wedding_info;
-update wedding_info set w_img1 = 'test2.jpg' where e_no = 341;
+select * from event where m_id = 'satou10';
+delete event where e_no = 340;
+select * from wedding_info where e_no = 319;
+update wedding_info set w_fam_jp_groom = '大野', w_name_jp_groom = '智', w_fam_eng_groom ='ono', w_name_eng_groom = 'satoshi',  w_fam_jp_bride = '大野', w_name_jp_bride = '彩', w_fam_eng_bride ='ono', w_name_eng_bride = 'aya', w_date = '2024年07月10日 水', w_wedding_postcode = '602-8567', w_reception_postcode = '602-8567', w_wedding_address = '京都府星空市希望町1丁目3-8', w_reception_address = '京都府星空市希望町1丁目3-8' where e_no = 319;
+
+select * from event where m_id = 'satou10';

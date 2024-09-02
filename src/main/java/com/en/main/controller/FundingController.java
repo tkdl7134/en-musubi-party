@@ -20,9 +20,12 @@ public class FundingController {
     private FundingService fundingService;
 
     @GetMapping
-    public String getFundingList(PayVo payVo, Model model, HttpServletRequest request) {
+    public String getFundingList(PayVo payVo, Model model, @PathVariable int e_no,
+                                 HttpServletRequest request) {
         // 로그인 여부 체크는 Interceptor에서 처리
         // funding.jsp 페이지로 이동
+
+        System.out.println(e_no);
         System.out.println("여기로 오지롱");
         return "wishlist/funding";
     }
@@ -36,8 +39,6 @@ public class FundingController {
 
     @GetMapping("/check-finance")
     public String checkFinance(PayVo payVo,Model model, HttpServletRequest request) {
-        boolean hasFinanced = fundingService.financeCheck(payVo.getM_id(), payVo.getE_no());
-        model.addAttribute("hasFinanced", hasFinanced);
         return "wishlist/finance-check-result";
     }
 

@@ -55,7 +55,7 @@ public interface TemplateMapper {
             "WHERE g.e_no = #{e_no}")
     List<GuestDetailVO> getGuestDetail(int e_no);
 
-    @Select("SELECT e.e_no, m.m_id, " +
+    @Select("SELECT DISTINCT e.e_no, m.m_id, " +
             "m.m_fam_kanji, m.m_name_kanji, m.m_email, m.m_phone, g.g_allergy_or, g.g_relation, a.allergy, " +
             "w.w_fam_jp_groom, w.w_name_jp_groom, w.w_fam_jp_bride, w.w_name_jp_bride, " +
             "w.w_img1, w.w_img2, w.w_img3, w.w_img_share, w.w_date, w.w_wedding_address, " +
@@ -66,12 +66,15 @@ public interface TemplateMapper {
             "LEFT JOIN event e ON g.e_no = e.e_no " +
             "LEFT JOIN companion c ON g.m_id = c.m_id " +
             "LEFT JOIN allergy a ON g.m_id = a.m_id " +
-            "WHERE g.m_id = #{m_id}")
+            "WHERE g.m_id = #{m_id} AND g.g_attend_wedding = 'ご出席'")
     List<AllGuestVO> getAllGuest(String m_id);
 
 
-    @Select("SELECT g.g_attend_afterparty FROM guest g JOIN member m ON g.m_id = m.m_id JOIN event e ON g.e_no = e.e_no WHERE g.m_id = #{m_id} AND e.e_no = #{eno}")
-    List<String> getAttendAfterParty(@Param("m_id") String m_id, @Param("eno") int eno);
+
+
+
+//    @Select("SELECT g.g_attend_afterparty FROM guest g JOIN member m ON g.m_id = m.m_id JOIN event e ON g.e_no = e.e_no WHERE g.m_id = #{m_id} AND e.e_no = #{eno}")
+//    List<String> getAttendAfterParty(@Param("m_id") String m_id, @Param("eno") int eno);
 
 
     @Select("SELECT m.m_fam_kanji, m.m_name_kanji, wi.w_date, wi.w_wedding_address " +

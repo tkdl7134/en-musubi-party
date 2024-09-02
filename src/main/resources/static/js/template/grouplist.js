@@ -1,102 +1,121 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".card-inner");
+    const cards = document.querySelectorAll(".hw_card");
     const indicators = document.querySelectorAll(".indicator");
     const container = document.querySelector('.hw_container');
     let currentIndex = 0;
     let isDragging = false;
     let startX = 0;
-    const cardsPerPage = 3;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
+    let threshold = 0.3;
+    let slideWidth = container.offsetWidth;
 
     if (!cards.length || !container) {
         console.warn("Required elements are not found in the DOM.");
         return;
     }
 
-    const totalPages = Math.ceil(cards.length / cardsPerPage);
+    const totalPages = Math.ceil(cards.length / 3);
 
-    // const updateIndicators = (index) => {
-    //     const pageIndex = Math.floor(index / cardsPerPage);
-    //     indicators.forEach((indicator, i) => {
-    //         if (i === 0 && pageIndex === 0) {
-    //             indicator.classList.add("active");
-    //         } else if (i === 2 && pageIndex === totalPages - 1) {
-    //             indicator.classList.add("active");
-    //         } else if (i === 1 && pageIndex > 0 && pageIndex < totalPages - 1) {
-    //             indicator.classList.add("active");
-    //         } else {
-    //             indicator.classList.remove("active");
-    //         }
-    //     });
-    // };
     const updateIndicators = (index) => {
         indicators.forEach((indicator, i) => {
             indicator.classList.toggle("active", i === index);
         });
     };
 
-
-    const scrollToSlide = (index) => {
-        const cardWidth = container.offsetWidth;
-        const pageIndex = Math.floor(index / cardsPerPage);
-        const scrollPosition = pageIndex * cardWidth;
-
-        container.scrollTo({ left: scrollPosition, behavior: "smooth" });
-        updateIndicators(index);
+    const setPositionByIndex = () => {
+        currentTranslate = currentIndex * -slideWidth;
+        prevTranslate = currentTranslate;
+        setSliderPosition();
+        updateIndicators(currentIndex);
     };
 
-    const changePage = (direction) => {
-        currentIndex = direction === 'next' ? Math.min(currentIndex + cardsPerPage, cards.length - 1) : Math.max(currentIndex - cardsPerPage, 0);
-        scrollToSlide(currentIndex);
+    const setSliderPosition = () => {
+        container.style.transform = `translateX(${currentTranslate}px)`;
     };
 
-    cards.forEach(card => {
-        card.addEventListener("click", () => {
-            card.classList.toggle("flipped");
-        });
-    });
+    const animate = () => {
+        setSliderPosition();
+        if (isDragging) requestAnimationFrame(animate);
+    };
 
-    container.addEventListener('wheel', (event) => {
-        event.preventDefault();
-        changePage(event.deltaY > 0 ? 'next' : 'prev');
-    });
+    const handleGesture = () => {
+        const movedBy = currentTranslate - prevTranslate;
 
-    container.addEventListener("touchstart", (event) => {
-        startX = event.touches[0].clientX;
-        isDragging = true;
-    });
-
-    container.addEventListener("touchmove", (event) => {
-        if (isDragging) {
-            const deltaX = startX - event.touches[0].clientX;
-            if (Math.abs(deltaX) > 50) {
-                changePage(deltaX > 0 ? 'next' : 'prev');
-                isDragging = false;
-            }
+        if (movedBy < -slideWidth * threshold && currentIndex < totalPages - 1) {
+            currentIndex += 1;
         }
-    });
+
+        if (movedBy > slideWidth * threshold && currentIndex > 0) {
+            currentIndex -= 1;
+        }
+
+        setPositionByIndex();
+    };
 
     container.addEventListener("mousedown", (event) => {
         startX = event.clientX;
         isDragging = true;
+        animationID = requestAnimationFrame(animate);
+        container.style.cursor = 'grabbing';
     });
 
     container.addEventListener("mousemove", (event) => {
         if (isDragging) {
-            const deltaX = startX - event.clientX;
-            if (Math.abs(deltaX) > 50) {
-                changePage(deltaX > 0 ? 'next' : 'prev');
-                isDragging = false;
-            }
+            const currentX = event.clientX;
+            currentTranslate = prevTranslate + currentX - startX;
         }
     });
 
     container.addEventListener("mouseup", () => {
         isDragging = false;
+        cancelAnimationFrame(animationID);
+        container.style.cursor = 'grab';
+        handleGesture();
     });
 
     container.addEventListener("mouseleave", () => {
-        isDragging = false;
+        if (isDragging) {
+            isDragging = false;
+            cancelAnimationFrame(animationID);
+            handleGesture();
+        }
     });
 
-    scrollToSlide(currentIndex);
+    container.addEventListener("touchstart", (event) => {
+        startX = event.touches[0].clientX;
+        isDragging = true;
+        animationID = requestAnimationFrame(animate);
+    });
+
+    container.addEventListener("touchmove", (event) => {
+        if (isDragging) {
+            const currentX = event.touches[0].clientX;
+            currentTranslate = prevTranslate + currentX - startX;
+        }
+    });
+
+    container.addEventListener("touchend", () => {
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        handleGesture();
+    });
+
+    container.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        if (event.deltaY > 0 && currentIndex < totalPages - 1) {
+            currentIndex++;
+        } else if (event.deltaY < 0 && currentIndex > 0) {
+            currentIndex--;
+        }
+        setPositionByIndex();
+    });
+
+    window.addEventListener('resize', () => {
+        slideWidth = container.offsetWidth;
+        setPositionByIndex();
+    });
+
+    setPositionByIndex();
 });

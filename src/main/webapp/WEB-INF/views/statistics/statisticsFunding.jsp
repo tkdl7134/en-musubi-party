@@ -46,7 +46,7 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 2px solid #ff5757; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 2px solid #ff5757; margin-top: 2vh;    padding: 10px 0; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
@@ -89,13 +89,17 @@
                 });
                 moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
                 dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
-                dateEl.style.backgroundColor = 'white';
-                dateEl.style.color = 'black';
+                dateEl.style.backgroundColor = '#ffdada';
+                dateEl.style.color = '#333333';
                 productEl.style.backgroundColor = 'red';
                 productEl.style.border = '2px solid #ffc700';
+                moneyEl.style.border = '2px solid #ff5757';
+                dateEl.style.border = '2px solid #ff5757';
                 productEl.style.color = 'white';
-                moneyEl.style.backgroundColor = 'white';
-                moneyEl.style.color = 'black';
+                moneyEl.style.backgroundColor = '#ffdada';
+                moneyEl.style.color = '#333333';
+
+
                 // jh_button_money 버튼의 텍스트에 화살표 토글
                 if (productEl.innerText.includes("↓")) {
                     productEl.innerText = productEl.innerText.replace("↓", "↑");
@@ -140,19 +144,19 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left:5%; background-color: white; border: 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left:5%; background-color: white; border: 2px solid #ff5757; ;     padding: 10px 0;margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
                     firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let kanjiDiv = document.createElement('div');
-                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    kanjiDiv.style.cssText = 'font-size: 17px;  color: #3C3C3C; text-align: center;  padding: 10px 0;';
                     kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
                     firstRowDiv.appendChild(kanjiDiv);
 
                     let priceDiv = document.createElement('div');
-                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center;  padding: 10px 0;';
                     priceDiv.textContent = l.p_price + '円';
                     firstRowDiv.appendChild(priceDiv);
 
@@ -160,15 +164,15 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 1.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; ';
 
                     let productDiv = document.createElement('div');
-                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    productDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     productDiv.textContent = l.g_relation;
                     secondRowDiv.appendChild(productDiv);
 
                     let dateDiv = document.createElement('div');
-                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    dateDiv.style.cssText = 'font-size: 15px;  color: #3C3C3C;text-align: center; padding: 10px 0;';
                     dateDiv.textContent = new Date(l.p_date).toLocaleDateString('ko-KR', {
                         year: 'numeric',
                         month: '2-digit',
@@ -182,12 +186,15 @@
                 });
                 moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
                 dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
-                dateEl.style.backgroundColor = 'white';
-                dateEl.style.color = 'black';
+                dateEl.style.backgroundColor = '#ffdada';
+                dateEl.style.color = '#333333';
+                productEl.style.border = '2px solid #ffc700';
+                dateEl.style.border = '2px solid #ff5757';
+                moneyEl.style.border = '2px solid #ff5757';
                 productEl.style.backgroundColor = 'red';
                 productEl.style.color = 'white';
-                moneyEl.style.backgroundColor = 'white';
-                moneyEl.style.color = 'black';
+                moneyEl.style.backgroundColor = '#ffdada';
+                moneyEl.style.color = '#333333';
                 // jh_button_money 버튼의 텍스트에 화살표 토글
                 if (productEl.innerText.includes("↓")) {
                     productEl.innerText = productEl.innerText.replace("↓", "↑");
@@ -232,19 +239,19 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 2px solid #ff5757;     padding: 10px 0; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
                     firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let kanjiDiv = document.createElement('div');
-                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    kanjiDiv.style.cssText = 'font-size: 17px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
                     firstRowDiv.appendChild(kanjiDiv);
 
                     let priceDiv = document.createElement('div');
-                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     priceDiv.textContent = l.p_price + '円';
                     firstRowDiv.appendChild(priceDiv);
 
@@ -252,15 +259,15 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 1.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let productDiv = document.createElement('div');
-                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    productDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     productDiv.textContent = l.g_relation;
                     secondRowDiv.appendChild(productDiv);
 
                     let dateDiv = document.createElement('div');
-                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    dateDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     dateDiv.textContent = new Date(l.p_date).toLocaleDateString('ko-KR', {
                         year: 'numeric',
                         month: '2-digit',
@@ -275,12 +282,15 @@
                 });
                 productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
                 dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
-                dateEl.style.backgroundColor = 'white';
-                dateEl.style.color = 'black';
+                dateEl.style.backgroundColor = '#ffdada';
+                dateEl.style.color = '#333333';
                 moneyEl.style.backgroundColor = 'red';
                 moneyEl.style.color = 'white';
-                productEl.style.backgroundColor = 'white';
-                productEl.style.color = 'black';
+                productEl.style.backgroundColor = '#ffdada';
+                productEl.style.color = '#333333';
+                moneyEl.style.border = '2px solid #ffc700';
+                productEl.style.border = '2px solid #ff5757';
+                dateEl.style.border = '2px solid #ff5757';
                 // jh_button_money 버튼의 텍스트에 화살표 토글
                 if (moneyEl.innerText.includes("↓")) {
                     moneyEl.innerText = moneyEl.innerText.replace("↓", "↑");
@@ -325,19 +335,19 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid #FF8B8B ; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 2px solid #ff5757;     padding: 10px 0; margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
                     firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let kanjiDiv = document.createElement('div');
-                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    kanjiDiv.style.cssText = 'font-size: 17px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
                     firstRowDiv.appendChild(kanjiDiv);
 
                     let priceDiv = document.createElement('div');
-                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     priceDiv.textContent = l.p_price + '円';
                     firstRowDiv.appendChild(priceDiv);
 
@@ -345,15 +355,15 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 1.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; ';
 
                     let productDiv = document.createElement('div');
-                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    productDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     productDiv.textContent = l.g_relation;
                     secondRowDiv.appendChild(productDiv);
 
                     let dateDiv = document.createElement('div');
-                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    dateDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     dateDiv.textContent = new Date(l.p_date).toLocaleDateString('ko-KR', {
                         year: 'numeric',
                         month: '2-digit',
@@ -368,12 +378,15 @@
                 });
                 moneyEl.innerText = moneyEl.innerText.replace(/↑|↓/g, '');
                 productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
-                moneyEl.style.backgroundColor = 'white';
-                moneyEl.style.color = 'black';
+                moneyEl.style.backgroundColor = '#ffdada';
+                moneyEl.style.color = '#333333';
                 dateEl.style.backgroundColor = 'red';
                 dateEl.style.color = 'white';
-                productEl.style.backgroundColor = 'white';
-                productEl.style.color = 'black';
+                productEl.style.backgroundColor = '#ffdada';
+                productEl.style.color = '#333333';
+                dateEl.style.border = '2px solid #ffc700';
+                moneyEl.style.border = '2px solid #ff5757';
+                productEl.style.border = '2px solid #ff5757';
                 // jh_button_money 버튼의 텍스트에 화살표 토글
                 if (dateEl.innerText.includes("↓")) {
                     dateEl.innerText = dateEl.innerText.replace("↓", "↑");
@@ -416,19 +429,19 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border:1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 2px solid #ff5757;     padding: 10px 0;margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
                     firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let kanjiDiv = document.createElement('div');
-                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    kanjiDiv.style.cssText = 'font-size: 17px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
                     firstRowDiv.appendChild(kanjiDiv);
 
                     let priceDiv = document.createElement('div');
-                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     priceDiv.textContent = l.p_price + '円';
                     firstRowDiv.appendChild(priceDiv);
 
@@ -436,15 +449,15 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around;margin-top: 1.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let productDiv = document.createElement('div');
-                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    productDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     productDiv.textContent = l.wl_product;
                     secondRowDiv.appendChild(productDiv);
 
                     let dateDiv = document.createElement('div');
-                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    dateDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     dateDiv.textContent = new Date(l.p_date).toLocaleDateString('ko-KR', {
                         year: 'numeric',
                         month: '2-digit',
@@ -459,12 +472,15 @@
                 });
                 productEl.innerText = productEl.innerText.replace(/↑|↓/g, '');
                 dateEl.innerText = dateEl.innerText.replace(/↑|↓/g, '');
-                dateEl.style.backgroundColor = 'white';
-                dateEl.style.color = 'black';
-                productEl.style.backgroundColor = 'white';
-                productEl.style.color = 'black';
+                dateEl.style.backgroundColor = '#ffdada';
+                dateEl.style.color = '#333333';
+                productEl.style.backgroundColor = '#ffdada';
+                productEl.style.color = '#333333';
                 moneyEl.style.backgroundColor = 'red';
                 moneyEl.style.color = 'white';
+                moneyEl.style.border = '2px solid #ffc700';
+                dateEl.style.border = '2px solid #ff5757';
+                productEl.style.border = '2px solid #ff5757';
                 // jh_button_money 버튼의 텍스트에 화살표 토글
                 if (moneyEl.innerText.includes("↓")) {
                     moneyEl.innerText = moneyEl.innerText.replace("↓", "↑");
@@ -505,19 +521,19 @@
                 // 데이터를 반복하여 HTML 요소를 생성합니다.
                 data.forEach(l => {
                     let div = document.createElement('div');
-                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 1px solid black; margin-top: 2vh; border-radius: 20px;';
+                    div.style.cssText = 'width: 90%; margin-left: 5%; background-color: white; border: 2px solid #ff5757;      padding: 10px 0;margin-top: 2vh; border-radius: 20px;';
 
                     // 첫 번째 줄: Kanji 이름과 가격을 포함하는 컨테이너
                     let firstRowDiv = document.createElement('div');
                     firstRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let kanjiDiv = document.createElement('div');
-                    kanjiDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    kanjiDiv.style.cssText = 'font-size: 17px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     kanjiDiv.textContent = l.m_fam_kanji + l.m_name_kanji;
                     firstRowDiv.appendChild(kanjiDiv);
 
                     let priceDiv = document.createElement('div');
-                    priceDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    priceDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     priceDiv.textContent = l.p_price + '円';
                     firstRowDiv.appendChild(priceDiv);
 
@@ -525,15 +541,15 @@
 
                     // 두 번째 줄: 제품명과 날짜를 포함하는 컨테이너
                     let secondRowDiv = document.createElement('div');
-                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around; margin-top: 1.5rem;';
+                    secondRowDiv.style.cssText = 'display: flex; justify-content: space-around;';
 
                     let productDiv = document.createElement('div');
-                    productDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    productDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     productDiv.textContent = l.wl_product;
                     secondRowDiv.appendChild(productDiv);
 
                     let dateDiv = document.createElement('div');
-                    dateDiv.style.cssText = 'font-size: 24px; text-align: center;';
+                    dateDiv.style.cssText = 'font-size: 15px; color: #3C3C3C; text-align: center; padding: 10px 0;';
                     dateDiv.textContent = new Date(l.p_date).toLocaleDateString('ko-KR', {
                         year: 'numeric',
                         month: '2-digit',
@@ -551,10 +567,13 @@
 
                 dateEl.style.backgroundColor = 'red';
                 dateEl.style.color = 'white';
-                productEl.style.backgroundColor = 'white';
-                productEl.style.color = 'black';
-                moneyEl.style.backgroundColor = 'white';
-                moneyEl.style.color = 'black';
+                productEl.style.backgroundColor = '#ffdada';
+                productEl.style.color = '#333333';
+                moneyEl.style.backgroundColor = '#ffdada';
+                moneyEl.style.color = '#333333';
+                dateEl.style.border = '2px solid #ffc700';
+                productEl.style.border = '2px solid #ff5757';
+                moneyEl.style.border = '2px solid #ff5757';
                 // jh_button_money 버튼의 텍스트에 화살표 토글
                 if (dateEl.innerText.includes("↓")) {
                     dateEl.innerText = dateEl.innerText.replace("↓", "↑");
@@ -636,7 +655,6 @@
         console.log(WishlistPrice);
 
 
-        const eno = 5; /*여기 나중에 바뀌어야함, session이던 뭐던가로 eno 가져오기*/
         let array = []
 
         wishlists.forEach(function (wishlist) {
@@ -1041,7 +1059,7 @@
                     全体ファンディング現況
                 </div>
                 <div class="jh_title"
-                     style="margin-top: 10%; width: 85%; transform: translateX(7.5%);align-items: center; height: 7rem; background-color: white; border : 2px solid #ec0000; outline: 1px solid #ffc700; border-radius: 20px; display: flex; justify-content: center;   ">
+                     style="margin-top: 10%; width: 85%; transform: translateX(8.5%);align-items: center; height: 7rem; background-color: white; border : 2px solid #ec0000; outline: 1px solid #ffc700; border-radius: 20px; display: flex; justify-content: center;   ">
                     <div class="jh_titleName" style="width: 48%; ">大切な因縁から</br>繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
@@ -1065,7 +1083,7 @@
 
                 <div style="display: flex;    width: 85%;
     margin-left: 7.5%; justify-content: center;     border: 2px solid #ff6060; background-color: white; border-radius: 20px; margin-top: 6vh; ">
-                    <canvas style="width: 90% ;     margin-bottom: 5%; " id="myChart"></canvas>
+                    <canvas style="width: 90% ;     margin-bottom: 12%; " id="myChart"></canvas>
                 </div>
                 <div style="background-color: white; margin-top: 3rem;     border: 2px solid #ff6060; border-radius: 30px"
                      class="jh_week_data">
@@ -1136,16 +1154,16 @@
                     <div id="jh_foreach_test">
                         <c:forEach items="${listupDatas}" var="l">
                             <div style="    width: 90%;
-    margin-left: 5%; background-color: white; border : 1px solid #FF8B8B; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
+    margin-left: 5%; background-color: white; border : 2px solid #ff4646; /*outline: 1px solid #ffc700;*/ margin-top: 2vh; margin-bottom : 2vh;padding: 10px 0; border-radius: 20px; ">
                                 <div style="display: flex; justify-content: space-around;">
 
 
-                                    <div style="  font-size: 24px;text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
-                                    <div style="  font-size: 24px;text-align: center">${l.p_price}円</div>
+                                    <div style=" color: #3f3f3f; font-size: 17px;text-align: center; padding: 10px 0;">${l.m_fam_kanji}${l.m_name_kanji}</div>
+                                    <div style="  font-size: 15px;text-align: center">${l.p_price}円</div>
                                 </div>
-                                <div style="display: flex; justify-content: space-around;margin-top: 1.5rem">
-                                    <div style="  font-size: 24px;text-align: center">${l.wl_product}</div>
-                                    <div style="  font-size: 24px;text-align: center"><fmt:formatDate
+                                <div style="display: flex; justify-content: space-around;">
+                                    <div style="color: #3f3f3f;  font-size: 15px;text-align: center; padding: 10px 0;">${l.wl_product}</div>
+                                    <div style="color: #3f3f3f;  font-size: 15px;text-align: center; padding: 10px 0;"><fmt:formatDate
                                             value="${l.p_date}" pattern="yyyy-MM-dd"></fmt:formatDate></div>
                                 </div>
 
@@ -1255,7 +1273,7 @@
                     全般的ご祝儀の現況
                 </div>
                 <div class="jh_title"
-                     style="margin-top: 10%; width: 85%; transform: translateX(7.5%);align-items: center; height: 6rem; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                     style="margin-top: 10%; width: 85%; transform: translateX(7.5%);align-items: center; height: 6rem; background-color: white; border: 2px solid #EC0000;outline: 1px solid #ffc700; border-radius: 20px; display: flex; justify-content: center;   ">
 
                     <div class="jh_titleName" style="width: 48%; ">大切な因縁から</br>繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
@@ -1274,10 +1292,10 @@
                     <div><input class="jh_send_relation" type="hidden" value="${s.g_relation}"></div>
                 </c:forEach>
                 <div style="display: flex;     width: 85%;
-    margin-left: 7.5%;justify-content: center; border: 1px solid #FF8B8B ; background-color: white; border-radius: 20px; margin-top: 10vh; ">
+    margin-left: 7.5%;justify-content: center; border: 2px solid #EC0000; background-color: white; border-radius: 20px; margin-top: 10vh; ">
                     <canvas style="width: 86% ; margin : 5%; " id="myChart2"></canvas>
                 </div>
-                <div style="background-color: white; margin-top: 5rem; border: 1px solid #FF8B8B; border-radius: 30px"
+                <div style="background-color: white; margin-top: 5rem; border: 2px solid #EC0000; border-radius: 30px"
                      class="jh_week_data">
                     <div class="jh_week_data_message">最近の一週間集まった想い</div>
                     <div style="display: flex; justify-content: center;">
@@ -1302,13 +1320,13 @@
                     詳しいご祝儀の現況
                 </div>
                 <div class="jh_title"
-                     style="width: 85%; transform: translateX(7.5%); margin-top : 10%;align-items: center; height: 6rem; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                     style="width: 85%; transform: translateX(7.5%); margin-top : 10%;align-items: center; height: 6rem;outline: 1px solid #ffc700; background-color: white; border: 2px solid #EC0000; border-radius: 20px; display: flex; justify-content: center;   ">
 
                     <div class="jh_titleName" style="width: 48%; ">大切な因縁から</br>繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
     bottom: -15%; "><img width="" src="/img/diagram 1.png" alt=""></div>
                 </div>
-                <div style="padding-top: 10px; padding-bottom: 10%; background-color: white; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
+                <div style="padding-top: 10px; padding-bottom: 10%; background-color: #ffeeee; margin-top: 5vh; max-height: 700px;     overflow-y: scroll;
     scrollbar-width: none;  " class="jh_allList_container">
                     <div>
                         <div style="display: flex; justify-content: space-around;">
@@ -1330,8 +1348,8 @@
                             </div>
                         </div>
                     </div>
-                    <div style="    width: 94%;
-    margin-left: 3%; background-color: white; border :1px solid #FF8B8B; margin-top: 2vh; border-radius: 20px; padding: 10px 0;">
+                    <div style="    width: 90%;
+    margin-left: 5%; background-color: white; border :2px solid #ff4646;outline: 1px solid #ffc700; margin-top: 2vh; border-radius: 20px; padding: 10px 0;">
                         <div style="display: flex; justify-content: space-around;">
                             <div class="jh_detail_head">恩人</div>
                             <div class="jh_detail_head">金額</div>
@@ -1343,17 +1361,17 @@
                     </div>
                     <div id="jh_foreach_test2">
                         <c:forEach items="${sendDatas}" var="l">
-                            <div style="    width: 94%;
-    margin-left: 3%; background-color: white; border :1px solid #FF8B8B; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
+                            <div style="    width: 90%;
+    margin-left: 5%; background-color: white; border: 2px solid #ff4646;padding: 10px 0; margin-top: 2vh; margin-bottom : 2vh; border-radius: 20px; ">
                                 <div style="display: flex; justify-content: space-around;">
 
 
-                                    <div style="  font-size: 24px;text-align: center">${l.m_fam_kanji}${l.m_name_kanji}</div>
-                                    <div style="  font-size: 24px;text-align: center">${l.p_price}円</div>
+                                    <div style=" color: #3f3f3f; font-size: 17px;text-align: center; padding: 10px 0;">${l.m_fam_kanji}${l.m_name_kanji}</div>
+                                    <div style=" color: #3f3f3f; font-size: 15px;text-align: center; padding: 10px 0;">${l.p_price}円</div>
                                 </div>
-                                <div style="display: flex; justify-content: space-around;margin-top: 1.5rem">
-                                    <div style="  font-size: 24px;text-align: center">${l.g_relation}</div>
-                                    <div style="  font-size: 24px;text-align: center"><fmt:formatDate
+                                <div style="display: flex; justify-content: space-around; ">
+                                    <div style=" color: #3f3f3f; font-size: 15px;text-align: center; padding: 10px 0;">${l.g_relation}</div>
+                                    <div style=" color: #3f3f3f; font-size: 15px;text-align: center; padding: 10px 0;"><fmt:formatDate
                                             value="${l.p_date}" pattern="yyyy-MM-dd"></fmt:formatDate></div>
                                 </div>
 
@@ -1374,7 +1392,7 @@
                     他のご祝儀の現況
                 </div>
                 <div class="jh_title"
-                     style="width: 85%;  transform: translateX(7.5%);align-items: center; height: 7rem; margin-top: 10%;; background-color: white; border : 1px solid #FF8B8B; border-radius: 20px; display: flex; justify-content: center;   ">
+                     style="width: 85%;  transform: translateX(8.5%);align-items: center; height: 7rem; margin-top: 10%;; background-color: white; border: 2px solid #EC0000;outline: 1px solid #ffc700; border-radius: 20px; display: flex; justify-content: center;   ">
 
                     <div class="jh_titleName" style="width: 48%; ">大切な因縁から</br>繋がった心の証</div>
                     <div style="width : auto; position : absolute;     right: 3%;
@@ -1384,7 +1402,7 @@
                                                        style="margin-top : 10%; background-color: white; width: 47%; padding: 5%; transform: translateX(47vw); text-align: center; font-family: 'Noto Serif JP', serif; font-weight: bold">
                      物品をお選びください
                  </button>--%>
-                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border :1px solid #FF8B8B ; border-radius: 20px ; background-color: white"
+                <div style="display: flex;flex-direction: column;justify-content: center; margin-top: 5vh;  border: 2px solid #EC0000; border-radius: 20px ; background-color: white;"
                      class="jh_other_infos">
                     <div style="margin-top: 2vh;" id="jh_detailHead2" class="jh_funding_detail">特別な情報</div>
                     <div style="margin-top: 5vh;" id="jh_numberOfPeople2" class="jh_funding_detail">ご祝儀を送った人
@@ -1435,8 +1453,8 @@
                            <input id="jh_price_input" type="hidden" value="${payPrice}">
                        </div>--%>
 
-                    <div style="background-color :white; width : 85%; margin-left: 7.5%; border: 1px solid #FF8B8B ; border-radius: 20px; ">
-                        <div style="text-align: center; margin-top: 5%; margin-bottom: 10%;">送った人々の情報</div>
+                    <div style="background-color: #ffeeee; width : 85%; margin-left: 7.5%; border: 2px solid #EC0000; border-radius: 20px; ">
+                        <div style="text-align: center; margin-top: 5%; margin-bottom: 10%; ">送った人々の情報</div>
                         <div class="jh_product_chart"
                              style=" margin-bottom: 5%;   display: flex; justify-content: center;">
                             <canvas style="margin : 5%" id="jh_attend_chart"></canvas>
