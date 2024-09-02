@@ -331,7 +331,15 @@ select * from guest;
 
 select * from event where m_id = 'satou10';
 delete event where e_no = 340;
-select * from wedding_info where e_no = 319;
+select * from wedding_info where e_no = 318;
 update wedding_info set w_fam_jp_groom = '大野', w_name_jp_groom = '智', w_fam_eng_groom ='ono', w_name_eng_groom = 'satoshi',  w_fam_jp_bride = '大野', w_name_jp_bride = '彩', w_fam_eng_bride ='ono', w_name_eng_bride = 'aya', w_date = '2024年07月10日 水', w_wedding_postcode = '602-8567', w_reception_postcode = '602-8567', w_wedding_address = '京都府星空市希望町1丁目3-8', w_reception_address = '京都府星空市希望町1丁目3-8' where e_no = 319;
 
+
+
+select * from wishlist where e_no = 318;
+
+select * from member where m_id = 'satou10';
 select * from event where m_id = 'satou10';
+
+update member set m_id = 'kinosita01', m_fam_kanji = '木下', m_fam_kana = 'キノシタ', m_fam_eng = 'Kinosita' where m_id = 'satou10';
+update event set m_id = 'kinosita01' where m_id = 'satou10';
