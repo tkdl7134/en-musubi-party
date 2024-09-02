@@ -13,8 +13,6 @@
 </head>
 <body>
 <div class="tk_wishlist-body">
-    <input type="hidden" name="m_id" value="${sessionScope.authenticatedMember.m_id}">
-    <input type="hidden" name="e_no" value="${sessionScope.e_no}">
     <div class="tk_wishlist-container">
         <div class="tk_wishlist-text-container" style="text-align: center">
             <div style="font-size: 15px; font-weight: bold; color: #3f3f3f; margin-top: 2.5rem; margin-bottom: 1.5rem;">
