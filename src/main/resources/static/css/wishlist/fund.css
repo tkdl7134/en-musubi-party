@@ -90,6 +90,7 @@ body {
 	color: #FF5050;
 }
 
+
 .kh-f-card-out {
 	/* width: 20rem; */
 	/* height: 100%; */
@@ -98,8 +99,13 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: transform 0.3s ease, background-color 0.3s ease;
+	transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 	margin: 2rem;
+}
+
+.kh-f-card-out:hover {
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+	color: #FF5050;
 }
 
 

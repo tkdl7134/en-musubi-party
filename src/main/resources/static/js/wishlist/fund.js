@@ -31,10 +31,10 @@ $.ajax({
 							<div style="display: flex; height: 18rem; justify-content: center; align-items: center;">
 							<div style="width:100%; height: 18rem; background-color: transparent; position: absolute; z-index: 999"></div>
 								<div style="background-color: transparent; display: flex; justify-content: center; align-items: center;"></div>
-									<img style="width: 100%; height: 100%" alt="noImg" src="/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/img/プレゼント.png';"/>
+									<img style="width: 80%; height:80%" alt="noImg" src="/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/img/プレゼント.png';"/>
 								</div>
 							<div>
-								<h1 style="margin: 0; display: flex; justify-content: center; align-content: center; text-align: center;">${element.wl_product}</h1>
+								<h1 style="margin: 0; display: flex; justify-content: center; font-size: 20px ; margin-top: 0.5rem; text-align: center;">${element.wl_product}</h1>
 							</div>
 						</div>
 					</div>
