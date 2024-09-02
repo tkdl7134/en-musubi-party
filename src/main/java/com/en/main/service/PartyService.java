@@ -32,7 +32,7 @@ public class PartyService implements PartyMapper {
 
     //  ------------------------------------------------  Type Grouping
 
-    //    type 선택하면 문자열로 저장하고 유사도 검사
+    //   type selected, save it as String & check similarity
     @Override
     public int updateSelectedType(PartyVO partyVO) {
         return partyMapper.updateSelectedType(partyVO);
@@ -42,7 +42,7 @@ public class PartyService implements PartyMapper {
 
     private boolean similar(String type1, String type2) {
         if (type1 == null || type2 == null) {
-            return false;  // 하나라도 null이면 유사하지 않다고 처리
+            return false;  //  if null, not similar
         }
 
         LevenshteinDistance levenshteinDistance = new LevenshteinDistance();
