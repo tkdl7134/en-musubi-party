@@ -1,4 +1,18 @@
 window.addEventListener('load', function () {
+    const matchingText = "matching...";
+    let currentText = "";
+    let index = 0;
+
+    const interval = setInterval(function () {
+        currentText += matchingText[index];
+        document.getElementById('matchingText').textContent = currentText;
+        index++;
+
+        if (index === matchingText.length) {
+            clearInterval(interval);
+        }
+    }, 200);  // 300ms for each character, total of 3000ms for all characters
+
     setTimeout(function() {
         document.getElementById('loadingScreen').style.display = 'none';
     }, 3000);
@@ -20,10 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const showFormButton = document.querySelector(".yr_line_id_exchange");
     const lineIdForm = document.getElementById("lineIdForm");
 
-    // 처음엔 폼을 숨깁니다.
     lineIdForm.style.display = "none";
 
-    // 버튼 클릭 시 폼을 보이게 합니다.
     showFormButton.addEventListener("click", function () {
         lineIdForm.style.display = "block";
         showFormButton.style.display = "none"; // 버튼을 숨깁니다.
@@ -70,6 +82,7 @@ document.getElementById('lineIdForm').addEventListener('submit', function (event
             const epLineID = data[0].ep_lineID;
             console.log('ep_lineID:', epLineID);
 
+
             if (epLineID) {
                 const lineIdContainer = document.querySelector('.main-enParty-envelope-text p');
                 lineIdContainer.innerHTML = `
@@ -79,6 +92,14 @@ document.getElementById('lineIdForm').addEventListener('submit', function (event
 
                 const mainEnvelope = document.querySelector('.main-envelope');
                 mainEnvelope.classList.add('move-up');
+                document.getElementById('lineId').value = "";
+                const yrChoiceElement = document.querySelector('.yr_choice');
+                yrChoiceElement.classList.add('fade-out');
+
+                setTimeout(() => {
+                    yrChoiceElement.style.display = 'none';
+                }, 500); // Match the timeout duration with the transition duration in CSS
+
             } else {
                 console.error('ep_lineID not found');
             }

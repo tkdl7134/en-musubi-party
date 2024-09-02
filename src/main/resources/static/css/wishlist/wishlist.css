@@ -4,10 +4,6 @@
     font-family: "Noto Serif JP", serif;
 }
 
-body{
-    background-image:url('/img/tk_backgorund-color.png');
-}
-
 /* 메뉴 - 헤더 */
 .tk_menu-header {
     height: 4rem;
@@ -19,6 +15,16 @@ body{
     font-weight: 600;
     gap: 5rem;
     color: #2e2e2e;
+}
+
+.tk_wishlist-container {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(/img/paperBG.png);
+    background-size: auto;
+    background-repeat: repeat;
 }
 
 .tk_logo-icon,
@@ -33,31 +39,32 @@ body{
 }
 
 .tk_wishlist-body {
-    display: flex;
+    /*display: flex;*/
 }
 
 .tk_wishlist-text-container {
     display: flex;
     flex-direction: column;
     justify-content: right;
-    margin-top: 3rem;
+    /*margin-top: 3rem;*/
 }
 
 .tk_wishlist-btn-container button {
     width: 22rem;
 }
 
-.tk_wishlist-text-container div:nth-child(1) {
-    font-size: 1.4rem;
+.tk_wishlist-text-container div:nth-child(2) {
+    font-size: 20px;
     font-weight: bold;
 }
 
-.tk_wishlist-text-container div:nth-child(2), div:nth-child(3) {
+.tk_wishlist-text-container div:nth-child(1), div:nth-child(3) {
     font-size: 0.9rem;
 }
 
 
 .tk_wishlist-btn-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -66,29 +73,53 @@ body{
     margin-left: 0.5rem;
 }
 
+.tk_wishlist-btn-box {
+    width: 90%;
+    margin: 8px 10px;
+}
+
 .tk_wishlist-btn-box button{
+    color: #333333;
+    width: 100%;
     border-radius: 20px;
-    border: 5px solid red;
+    border: 3px solid #EC0000;
+    outline: 2px solid #ffc700;
     text-align: left;
     padding: 0 4rem 0 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 9rem;
+    height: 7rem;
     gap: 3rem;
 }
 
 .tk_wishlist-btn-box:nth-child(1) > button {
-    background-color: #FFE1E1;
+    background-color: #FF7E81;
+}
+
+.tk_wishlist-btn-box:nth-child(1) > button:hover {
+    cursor: pointer;
+    background-color: #ff474b;
+    color: white;
+    box-shadow: 0 0 10px #EC0000;
+    transition: background-color 0.3s ease;
 }
 
 .tk_wishlist-btn-box:nth-child(2) > button {
-    background-color: #FFD600;
+    background-color: #ffe055;
 }
 
-.tk_wishlist-btn-box:nth-child(3) > button {
-    background-color: #FF7E81;
+.tk_wishlist-btn-box:nth-child(2) > button:hover {
+    cursor: pointer;
+    background-color: #ffc700;
+    color: #2e2e2e;
+    box-shadow: 0 0 10px #EC0000;
+    transition: background-color 0.3s ease;
 }
+
+/*.tk_wishlist-btn-box:nth-child(3) > button {*/
+/*    background-color: #FFE1E1;*/
+/*}*/
 
 .tk_wishlist-text-box {
     display: flex;
@@ -98,7 +129,9 @@ body{
 }
 
 .jp-text {
-    font-size: 1rem;
+    margin-left: 20px;
+    width: 150px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -118,8 +151,8 @@ body{
 }
 
 .tk_wishlist-btn-box img {
-    width: 4rem;
-    padding: 1.2rem;
+    width: 2.5rem;
+    padding: 1rem;
 }
 
 .tk_menu-bar {
@@ -131,32 +164,22 @@ body{
     align-items: center;
 }
 
-@media (min-width: 769px) {
-    .tk_menu-header{
-        margin: 0 auto;
-        gap: 4rem;
-    }
-    .tk_wishlist-body {
-        margin: 0 auto;
-    }
-
-}
-
 .tk_bottom-bar{
     background-color: #ffd1d0;
 }
 
-.tk_wishlist-btn-box a.wishlist-button {
+a.wishlist-button {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    height: 8rem;
+    height: 6.8rem;
     width: 21.5rem;
     gap: 3rem;
-    background-color: #FF7E81;
+    background-color: #FFE1E1;
     border-radius: 20px;
-    border: 5px solid red;
+    border: 3px solid #EC0000;
+    outline: 2px solid #ffc700;
     color: inherit;
     cursor: pointer;
 }
@@ -166,11 +189,18 @@ body{
 }
 
 .tk_wishlist-btn-box:nth-child(2) > a.wishlist-button {
-    background-color: #FFD600;
+    background-color: #ffc700;
 }
 
 .tk_wishlist-btn-box:nth-child(3) > a.wishlist-button {
-    background-color: #FF7E81;
+    background-color: #FFE1E1;
+}
+
+.tk_wishlist-btn-box:nth-child(3) > a.wishlist-button:hover {
+    background-color: #ff6c6f;
+    color: white;
+    box-shadow: 0 0 10px #EC0000;
+    transition: background-color 0.3s ease;
 }
 
 .tk_wishlist-a-img-box {
@@ -180,4 +210,27 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (min-width: 769px) {
+    .tk_menu-header{
+        width: 30vw;
+        margin: auto;
+        gap: 4rem;
+    }
+
+    .tk_wishlist-container {
+        width: 30vw;
+        margin: auto;
+    }
+
+    .tk_wishlist-body {
+        width: 30vw;
+        margin: auto;
+    }
+
+    .tk_wishlist-btn-container {
+        width: 30vw;
+        margin: auto;
+    }
 }

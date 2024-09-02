@@ -35,6 +35,10 @@
     height: auto;
 }
 
+.myInfo-header-logo img {
+    cursor: pointer;
+}
+
 .myInfo-header-title {
     position: absolute;
     top: 50%;

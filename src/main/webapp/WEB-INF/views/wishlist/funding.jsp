@@ -14,7 +14,6 @@
 ${fundingList}
 <body>
 <input id="e_no" type="hidden" value="${sessionScope.e_no}">
-<input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
 <div class="tk_funding-title">
 	<div class="tk_funding-title-bigTitle">ファンディング</div>
 </div>
@@ -54,6 +53,10 @@ ${fundingList}
 			</div>
 		</div>
 	</div> -->
+	</div>
+	<div class="tk_back-btn" onclick="location.href='/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/create'">
+		<div><img src="/img/back.png" alt=""/></div>
+		<div>戻る</div>
 	</div>
 
 <dialog id="modal" class="modal static">
