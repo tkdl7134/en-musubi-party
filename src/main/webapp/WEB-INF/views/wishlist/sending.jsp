@@ -153,7 +153,7 @@
 		</div>
 	</div>
 
-<div class="tk_back-btn" onclick="history.back()">
+<div class="tk_back-btn" onclick="location.href='/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/create'">
 	<div><img src="/img/back.png" alt=""/></div>
 	<div>戻る</div>
 </div>
