@@ -85,7 +85,7 @@ body {
     flex-direction: column;
 }
 .yr_choice{
-    margin: 30px auto;
+    margin: 40px auto;
 }
 .yr_list_choice{
     border: 2px solid #F03434;
@@ -102,7 +102,7 @@ body {
 .yr_list_choice_img{
     position: absolute;
     width: 10rem;
-    top: 8.4rem;
+    top: 9.1rem;
     left: 7.2rem;
 }
 .yr_list_name_choice{
