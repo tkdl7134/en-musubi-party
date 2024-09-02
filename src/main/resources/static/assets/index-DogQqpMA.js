@@ -3555,13 +3555,16 @@ Content-Type: `+u.contentType+`\r
   justify-content: center;
   align-items: baseline;
 `,Oz=ce.div`
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 18px;
+  border-radius: 20px;
   max-width: 20rem;
   width: 100%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 45%;
+  margin-top: 48%;
+  border: 2px solid #f03434;
+  outline: 1.5px solid #ffc700;
+  box-shadow: 0 0 0 3px white, 0 0 0 4px #f03434;
+  background-color: #fffbf7;
 `,Mz=ce.div`
   display: flex;
   justify-content: space-between;
@@ -3578,7 +3581,7 @@ Content-Type: `+u.contentType+`\r
   font-size: 1.25rem;
   cursor: pointer;
 `,Fz=ce.div`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 `,$z=({isOpen:t,onClose:e,title:n,children:r})=>t?k.jsx(Nz,{onClick:e,children:k.jsxs(Oz,{onClick:i=>i.stopPropagation(),children:[k.jsxs(Mz,{children:[k.jsx(Lz,{children:n}),k.jsx(Vz,{onClick:e,children:"×"})]}),k.jsx(Fz,{children:r})]})}):null,Uz=ce.form`
   display: flex;
   height: 4rem;
