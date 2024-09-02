@@ -53,7 +53,7 @@
 
             <c:if test="${empty matchedCouples}">
                 <div class="yr_list_choice" style="color: #696969">
-                    マッチングした <br /> 縁がありません 😢
+                    マッチングした <br /> 縁がありません。。。 😢
                 </div>
             </c:if>
 
