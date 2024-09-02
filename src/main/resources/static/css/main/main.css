@@ -801,6 +801,10 @@
     }
 }
 
+.main_notice-button button:hover{
+    cursor: pointer;
+}
+
 .oneday_checkBox {
     position: absolute;
     bottom: 2%;
@@ -824,6 +828,9 @@
         padding: 0.3rem 0.5rem;
         border-radius: 10px;
     }
+}
+.btn_close:hover{
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
