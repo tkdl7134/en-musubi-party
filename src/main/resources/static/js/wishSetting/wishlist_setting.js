@@ -74,8 +74,7 @@ function updateAmazonLink(e_no){
               'Content-Type': 'application/json'
           },
           body: JSON.stringify(obj)
-      }).then(response => response.json())
-          .then(result => {
+      }).then(result => {
               console.log(result);
               // 성공 이미지 표시
               const successImg = document.getElementById('checkIcon');
