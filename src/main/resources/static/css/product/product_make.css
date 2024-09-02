@@ -7,6 +7,11 @@
 
 body {
     background-color: #fffbf7;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 input{
@@ -321,7 +326,6 @@ input:-ms-input-placeholder {
     font-weight: bold;
     padding: 0.5rem;
     font-size: 24px;
-    font-weight: 900;
 }
 
 .je_modal-content {

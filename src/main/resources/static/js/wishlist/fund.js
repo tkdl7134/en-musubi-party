@@ -28,13 +28,14 @@ $.ajax({
 					<div class="kh-fund-card" value="${element.wl_no}">
 						<div class="kh-fund-card-box">
 							<div style="height: 18rem">
-							<div style="display: flex; height: 18rem; justify-content: center; align-items: center;">
-							<div style="width:100%; height: 18rem; background-color: transparent; position: absolute; z-index: 999"></div>
+							<div style="display: flex; height: 18rem; justify-content: center; align-items: center; margin-top: -4rem">
+							<div style="width: 100%; height: 18rem; background-color: transparent; position: absolute; z-index: 999"></div>
 								<div style="background-color: transparent; display: flex; justify-content: center; align-items: center;"></div>
-									<img style="width: 100%; height: 100%" alt="noImg" src="/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/img/プレゼント.png';"/>
+									<img style="width: 10rem; alt="noImg" src="/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/img/プレゼント.png';"/>
 								</div>
+								<img src="/img/red-line-musubi.png" style="width: 100%; margin-top: -4rem;">
 							<div>
-								<h1 style="margin: 0; display: flex; justify-content: center; align-content: center; text-align: center;">${element.wl_product}</h1>
+								<div style="margin: 0; display: flex; justify-content: center; align-content: center; text-align: center; font-size: 19px; margin-top: 24px">${element.wl_product}</div>
 							</div>
 						</div>
 					</div>
