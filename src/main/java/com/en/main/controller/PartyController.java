@@ -53,6 +53,7 @@ public class PartyController {
     @GetMapping("/info/{e_no}")
     public String partyInfo(@PathVariable int e_no, Model model) {
         System.out.println(e_no);
+        model.addAttribute("e_no", e_no);
         List<PartyVO> partyMembers = partyService.getPartyMembers(e_no);
 
         // groom guest & woman guest percent graph
