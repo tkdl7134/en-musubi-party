@@ -19,7 +19,7 @@ public interface PartyMapper {
 
     @Select("SELECT wi.w_fam_jp_groom, wi.w_name_jp_groom, wi.w_fam_jp_bride, wi.w_name_jp_bride, wi.w_wedding_time, \n" +
             "wi.w_wedding_address, wi.w_wedding_building, wi.w_date, g.e_no FROM guest g JOIN wedding_info wi ON g.e_no = wi.e_no\n" +
-            "WHERE  g.m_id = #{m_id}")
+            "WHERE  g.m_id = #{m_id} order by g.e_no")
     List<PartyVO> getPartyList(@Param("m_id") String m_id);
 
     @Select("select m_id, ep_selectedType from en_party where e_no=#{e_no}")
