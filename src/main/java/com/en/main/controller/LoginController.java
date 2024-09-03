@@ -4,6 +4,7 @@ import com.en.main.dto.MemberVO;
 import com.en.main.service.LoginService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,11 @@ public class LoginController {
             MemberVO authenticatedMember = loginService.login(memberVO);
             if (authenticatedMember != null) {
                 session.setAttribute("authenticatedMember", authenticatedMember);
+                BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+                String hashData = encoder.encode(authenticatedMember.getM_pw());
+                System.out.println(hashData);
+                session.setAttribute("hashData", hashData);
+
                 return "redirect:/main";
             } else {
                 model.addAttribute("error", "IDまたはパスワードが正しくありません");
