@@ -220,6 +220,7 @@ body {
     color: white;
     align-content: center;
     margin: 5rem auto 4rem;
+    cursor: pointer;
 }
 .yr_random_loading {
     height: 15rem;
@@ -326,6 +327,7 @@ body {
     border: 2px solid #FF8B8B;
     margin-top: 0.5rem;
     transition: background-color 0.5s, color 0.5s;
+    cursor: pointer;
 }
 #yr_type_button:hover{
     background-color: #FF5050;
@@ -402,6 +404,7 @@ body {
     border: 2px solid #FF8B8B;
     margin-top: 0.5rem;
     transition: background-color 0.5s, color 0.5s;
+    cursor: pointer;
 }
 #yr_choice_button:hover{
     background-color: #FF5050;
