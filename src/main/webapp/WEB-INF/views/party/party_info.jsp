@@ -68,11 +68,24 @@
 <div class="yr_party-info-container">
 
     <div class="yr_title">参加者情報</div>
-
     <%--     채팅방으로 가는 버튼--%>
     <div class="yr_go_to_chat_wrap">
-        <button id="yr_go_to_chat" onclick="location.href='/r'">
-            <span>
+<%--        <button id="yr_go_to_chat" onclick="location.href='/r'">--%>
+        <button id="yr_go_to_chat" onclick="openChat('${e_no}')">
+            <span >
+                <script>
+                    function openChat(eventNumber) {
+                        console.log('${hashData}')
+                        console.log(eventNumber)
+                        sessionStorage.setItem("e_no", eventNumber);
+                        sessionStorage.setItem("i", '${authenticatedMember.m_id}');
+                        sessionStorage.setItem("p", '${authenticatedMember.m_pw}');
+                        sessionStorage.setItem("f-name", '${authenticatedMember.m_fam_kanji}');
+                        sessionStorage.setItem("name", '${authenticatedMember.m_name_kanji}');
+                        sessionStorage.setItem("hashData", '${hashData}');
+                        location.href = `/r?e_no=`+eventNumber;
+                    }
+                </script>
             縁パーティー<br/>
             チャットに参加
           </span>
