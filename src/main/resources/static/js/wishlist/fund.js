@@ -31,19 +31,11 @@ $.ajax({
 							<div style="display: flex; height: 18rem; justify-content: center; align-items: center; margin-top: -4rem">
 							<div style="width: 100%; height: 18rem; background-color: transparent; position: absolute; z-index: 999"></div>
 								<div style="background-color: transparent; display: flex; justify-content: center; align-items: center;"></div>
-<<<<<<< HEAD
-									<img style="width: 80%; height:80%" alt="noImg" src="/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/img/プレゼント.png';"/>
-=======
 									<img style="width: 10rem; alt="noImg" src="/img/${element.wl_product}.png" onerror="this.onerror=null; this.src='/img/プレゼント.png';"/>
->>>>>>> 7512946e71d3958e719612e64efe9c43bb91ba57
 								</div>
 								<img src="/img/red-line-musubi.png" style="width: 100%; margin-top: -4rem;">
 							<div>
-<<<<<<< HEAD
-								<h1 style="margin: 0; display: flex; justify-content: center; font-size: 20px ; margin-top: 0.5rem; text-align: center;">${element.wl_product}</h1>
-=======
 								<div style="margin: 0; display: flex; justify-content: center; align-content: center; text-align: center; font-size: 19px; margin-top: 24px">${element.wl_product}</div>
->>>>>>> 7512946e71d3958e719612e64efe9c43bb91ba57
 							</div>
 						</div>
 					</div>
