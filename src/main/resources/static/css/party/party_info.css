@@ -44,6 +44,7 @@ body {
     align-items: center;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border: 2px solid #FF8B8B;
+    cursor: pointer;
 }
 #yr_go_to_chat:hover {
     box-shadow: 0 0 10px 8px rgba(244, 80, 82, 0.5);

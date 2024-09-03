@@ -1292,7 +1292,7 @@
                     <div><input class="jh_send_relation" type="hidden" value="${s.g_relation}"></div>
                 </c:forEach>
                 <div style="display: flex;     width: 85%;
-    margin-left: 7.5%;justify-content: center; border: 2px solid #EC0000; background-color: white; border-radius: 20px; margin-top: 10vh; ">
+    margin-left: 7.5%;justify-content: center; border: 2px solid #EC0000; background-color: white; border-radius: 20px; margin-top: 5vh; ">
                     <canvas style="width: 86% ; margin : 5%; " id="myChart2"></canvas>
                 </div>
                 <div style="background-color: white; margin-top: 5rem; border: 2px solid #EC0000; border-radius: 30px"

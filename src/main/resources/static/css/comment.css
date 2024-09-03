@@ -190,6 +190,7 @@
     letter-spacing: -1px;
     color: #fff;
     background-color: #FF8B8B;
+    cursor: pointer;
 }
 
 .modal {
