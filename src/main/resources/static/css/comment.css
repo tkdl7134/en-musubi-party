@@ -258,3 +258,16 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.yr_back{
+    height: 5rem;
+    width: 85%;
+    margin: auto;
+    align-content: flex-end;
+    img{
+        background-color:#F03434;
+        border-radius: 50%;
+        width: 3rem;
+        float: right;
+    }
+}
