@@ -13,20 +13,20 @@
 </head>
 <body>
 <div class="tk_wishlist-body">
-    <input type="hidden" name="m_id" value="${sessionScope.authenticatedMember.m_id}">
-    <input type="hidden" name="e_no" value="${sessionScope.e_no}">
     <div class="tk_wishlist-container">
-        <div class="tk_wishlist-text-container">
-            <div style="margin-bottom: 1rem; margin-left: 1rem">“どうやって祝ってあげたいですか”</div>
-            <div style="margin-left: 0.5rem;">ご返信いただきありがとうございます。</div>
-            <div style="margin-left: 0.5rem;">以下の方法で新郎新婦へのお祝いをお選びいただけます</div>
+        <div class="tk_wishlist-text-container" style="text-align: center">
+            <div style="font-size: 15px; font-weight: bold; color: #3f3f3f; margin-top: 2.5rem; margin-bottom: 1.5rem;">
+                <span style="color: #EC0000;">✿</span> ご返信いただきありがとうございます <span style="color: #EC0000;">✿</span>
+            </div>
+            <div style="margin-bottom: 1.5rem; color: #ff4345; padding: 0 15px;">どのような形で</br>お気持ちをお伝えになりたいですか?</div>
+            <div style="color: #666666 ;font-weight: bold">以下の方法で新郎新婦への</br>🙇🏻 お祝いをしていただけます 🙇🏻‍♀️</div>
         </div>
         <div class="tk_wishlist-btn-container">
             <div class="tk_wishlist-btn-box">
                 <button type="submit" onclick="location.href='/wishlist/funding/${sessionScope.e_no}'">
                     <div class="tk_wishlist-text-box">
                         <div class="jp-text">ファンディング</div>
-                        <div class="eg-text">FUNDING</div>
+<%--                        <div class="eg-text">FUNDING</div>--%>
                     </div>
                     <div class="tk_wishlist-img-box">
                         <img src="/img/funding.png" alt="funding">
@@ -37,7 +37,7 @@
                 <button type="submit" onclick="location.href='/wishlist/sending'">
                     <div class="tk_wishlist-text-box">
                         <div class="jp-text">ご祝儀</div>
-                        <div class="eg-text">REMITTANCE</div>
+<%--                        <div class="eg-text">REMITTANCE</div>--%>
                     </div>
                     <div class="tk_wishlist-img-box">
                         <img src="/img/sendMoney.png" alt="sendMoney">
@@ -60,7 +60,7 @@
                     <a href="/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/amazon" class="wishlist-button" onclick="openInNewTab('${amazonUrl}'); //redirectToFinanceResult();">
                     <div class="tk_wishlist-text-box">
                         <div class="jp-text">プレゼント</div>
-                        <div class="eg-text">PRESENT</div>
+<%--                        <div class="eg-text">PRESENT</div>--%>
                     </div>
                     <div class="tk_wishlist-a-img-box">
                         <img src="/img/amazon.png" alt="amazon">

@@ -72,8 +72,8 @@
                                                         <div class="tk_survey-titleName">カタカナ</div>
                                                     </div>
                                                     <div>
-                                                        <input type="text" id="kana-fam" name="m_fam_kana" value="${member.m_fam_kana}" placeholder="姓"/>
-                                                        <input type="text" id="kana-name" name="m_name_kana" value="${member.m_name_kana}" placeholder="名"/>
+                                                        <input type="text" id="kana-fam" name="m_fam_kana" value="${member.m_fam_kana}" placeholder="セイ"/>
+                                                        <input type="text" id="kana-name" name="m_name_kana" value="${member.m_name_kana}" placeholder="メイ"/>
                                                     </div>
                                                 </div>
                                                 <div class="tk_romeName">
@@ -384,10 +384,11 @@
                                                 <span>✿</span>
                                             </div>
                                             <div class="what-is-en-party">
-                                                <p> 🎉　縁パーティーは、結婚式が終わった後、🥂 </p>
-                                                <p> ゲストを対象に始まるマッチングサービスです </p>
-                                                <p> 🥰　ご縁が結ばれる特別な日に、🥰 </p>
-                                                <p>✨ あなたのご縁を見つけてみませんか？ ✨ </p>
+                                                <p> 🎉　縁パーティーは　🥰 </p>
+                                                <p> 結婚式が終わった後、ゲストを対象に 🥂 </p>
+                                                <p> 始まるマッチングサービスです 💞 </p>
+                                                <p> 🎉　ご縁が結ばれる特別な日に、 </p>
+                                                <p> あなたのご縁を見つけてみませんか？🥰 </p>
                                             </div>
                                         </div>
 
@@ -407,6 +408,7 @@
                                                 <div class="main-enMusubi-envelope-logo-img">
                                                     <img src="/img/logo-img.png" alt="main-envelope-logo-img">
                                                 </div>
+                                                <div class="main-survey-envelope-bottom-line"><img src="/img/Bird.png"></div>
                                             </div>
 <%--                                            <div>--%>
 <%--                                                <button class="survey-submit-button" type="submit">送信</button>--%>
@@ -434,7 +436,7 @@
         </div>
     <div class="modal_body">
         <header>
-            <div>✿ アレルギー情報入力 ✿</div>
+            <div>アレルギー情報入力</div>
             <div>該当するアレルギー情報を選択してください</div>
         </header>
         <div class="tk_division-line-modal"></div>

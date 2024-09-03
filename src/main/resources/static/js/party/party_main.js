@@ -169,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 participants.push(participant.textContent.trim());
             });
 
+            // Fisher-Yates Random logic
             function shuffle(array) {
                 for (let i = array.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
@@ -176,22 +177,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-            // 랜덤 그룹 배정 인원수 로직
+            // Random Group Number of Person
             function createGroups(participants) {
                 let groupSize;
                 const numberOfParticipants = participants.length;
 
                 if (numberOfParticipants > 20) {
-                    groupSize = 5 + Math.floor(Math.random() * 2); // 5 or 6명 그룹
+                    groupSize = 5 + Math.floor(Math.random() * 2); // 5 or 6 person in a group
                 } else {
                     if (numberOfParticipants % 4 == 0) {
                         groupSize = 4;
                     } else if (numberOfParticipants % 5 == 0) {
                         groupSize = 5;
                     } else {
-                        groupSize = 3 + Math.floor(Math.random() * 2); // 3 or 4명 그룹
+                        groupSize = 3 + Math.floor(Math.random() * 2); // 3 or 4 person in a group
                     }
-
                 }
 
                 shuffle(participants);

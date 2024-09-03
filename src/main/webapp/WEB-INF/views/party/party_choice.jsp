@@ -22,6 +22,7 @@
 
 <div id="loadingScreen">
     <div class="lds-circle"><img src="/img/en-musubi-logo.png"></div>
+    <div id="matchingText" class="matching-text"></div>
 </div>
 
 
@@ -35,12 +36,10 @@
             <c:if test="${not empty matchedCouples}">
                 <c:forEach items="${matchedCouples}" var="couple">
 
-<%--                    <c:choose>--%>
-<%--                        <c:when test="${couple.user == 'test1'}">--%>
                             <div class="yr_list_choice">
                                 <img class="yr_list_choice_img" src="/img/red-line-musubi.png">
                                 <div class="yr_list_name_choice">
-                                    <span style="color: #FF5A55; font-size: 16px;">✿ </span>${couple.partnerFamKanji}&nbsp ${couple.partnerNameKanji} <span style="color: #FF5A55; font-size: 16px;">✿</span>様と  <br />マッチング成功❣️
+                                    <span style="color: #FF5A55; font-size: 15px;">✿ </span>${couple.partnerFamKanji}&nbsp ${couple.partnerNameKanji}様と  <br />マッチング成功<span style="color: #FF5A55; font-size: 15px;"> ✿</span>
                                 </div>
                                 <input id="partnerID" name="partnerID" value="${couple.partner}" type="hidden">
                                 <button class="yr_line_id_exchange">Line ID 送信</button>
@@ -49,45 +48,28 @@
                                     <button type="submit"><img src="/img/send-package.png"></button>
                                 </form>
                             </div>
-<%--                        </c:when>--%>
-<%--                    </c:choose>--%>
                 </c:forEach>
             </c:if>
 
             <c:if test="${empty matchedCouples}">
                 <div class="yr_list_choice" style="color: #696969">
-                    マッチングした <br /> 縁がありません 😢
+                    マッチングした <br /> 縁がありません。。。 😢
                 </div>
             </c:if>
 
         </div>
 
-
-        <!-- 모달 창 HTML -->
-<%--        <div id="lineIdModal" class="modal">--%>
-<%--            <div class="modal-content">--%>
-<%--                <span class="close">&times;</span>--%>
-<%--                <h2>Line ID 交換</h2>--%>
-<%--                <form id="lineIdForm">--%>
-<%--                    <input type="text" id="lineId" name="ep_lineID" placeholder="Line ID" required>--%>
-<%--                    <button type="submit">提出</button>--%>
-<%--                </form>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-
-
         <!-- 편지지 봉투 -->
+
         <div class="main-envelope">
+            <c:forEach items="${matchedCouples}" var="couple">
+                <div class="yr_partnerID">${couple.partnerFamKanji}&nbsp ${couple.partnerNameKanji}様の line id</div>
+            </c:forEach>
             <div class="main-enParty-envelope">
                 <div class="main-enParty-envelope-bottom"></div>
                 <div class="main-enParty-envelope-paper"></div>
                 <div class="main-enParty-envelope-text">
                     <p>
-<%--                        <span style="color: #FF5A55; font-size: 16px;">✿</span>--%>
-
-<%--                    <div>   <span style="color: #3F3F3F; font-size: 18px;">  </span></div>--%>
-
-<%--                    <span style="color: #FF5A55; font-size: 16px;">✿</span>--%>
                     </p>
                 </div>
                 <div class="main-enParty-envelope-top"></div>

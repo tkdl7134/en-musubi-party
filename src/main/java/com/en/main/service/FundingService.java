@@ -21,6 +21,10 @@ public class FundingService {
 
     }
 
+    public String getPayInfo(int e_no) {
+       return wishlistMapper.getPayInfo(e_no);
+    }
+
     public void insertWishPick(PayVo payVo) {
         wishlistMapper.insertWishPick(payVo);
     }

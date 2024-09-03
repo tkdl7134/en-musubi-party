@@ -3,19 +3,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<%--<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>--%>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
     <title> ✿ ~ 縁結び ~ ✿ </title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/template/grouplist.css">
 
-    <script src="/js/party/party_list.js" defer></script>
+    <script src="/js/template/grouplist.js" defer></script>
 
-<%--    <script src="${pageContext.request.contextPath}/js/template/grouplist.js" defer></script>--%>
 </head>
 <body>
 <div class="je_page-title">参加リスト</div>
@@ -29,14 +28,25 @@
         <div class="card-inner">
             <div class="card-front">
                 <div class="image-container">
-<%--                    <img src="${pageContext.request.contextPath}/img/${g.w_img1}" alt="Template 1">--%>
-                    <img src="${pageContext.request.contextPath}/img/Test1.jpg" alt="Template 1">
-<%--                    <img src="img/${g.w_img1}" alt="Template 1">--%>
+                    <c:choose>
+                        <c:when test="${status.index % 3 == 0}">
+                            <div style="width: 100%; height: 100%; position: absolute; z-index: 999"></div>
+                            <img src="/img/template1.jpg" alt="Party Image">
+                        </c:when>
+                        <c:when test="${status.index % 3 == 1}">
+                            <div style="width: 100%; height: 100%; position: absolute; z-index: 999"></div>
+                            <img src="/img/template2.jpg" alt="Party Image">
+                        </c:when>
+                        <c:when test="${status.index % 3 == 2}">
+                            <div style="width: 100%; height: 100%; position: absolute; z-index: 999"></div>
+                            <img src="/img/template3.jpg" alt="Party Image">
+                        </c:when>
+                    </c:choose>
                 </div>
             </div>
             <div class="card-back">
-<%--                <div><span style="color: red">✿</span> ${g.m_fam_kanji} ${g.m_name_kanji} <span style="color: red">✿</span></div>--%>
-                <div><span style="color: red">✿</span> ${g.w_fam_jp_groom} ${g.w_name_jp_groom} &nbsp; ˑ &nbsp; ${g.w_fam_jp_bride} ${g.w_name_jp_bride} <span style="color: red">✿</span></div>
+                <div><span style="color: red">✿</span> ${g.w_fam_jp_groom} ${g.w_name_jp_groom} &nbsp; ˑ
+                    &nbsp; ${g.w_fam_jp_bride} ${g.w_name_jp_bride} <span style="color: red">✿</span></div>
                 <div>${g.w_date}</div>
                 <div>${g.w_wedding_address}</div>
             </div>

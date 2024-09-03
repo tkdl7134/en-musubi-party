@@ -29,7 +29,7 @@ public class SurveyController {
 //        model.addAttribute("Member" ,  m_id )  ;
 //        model.addAttribute("Message" ,  e_no )  ;
         model.addAttribute("Party" ,  p_pk )  ;
-
+        model.addAttribute("e_no", e_no);
         MemberVO memberInfo = surveyService.getMember(m_id);
         model.addAttribute("member", memberInfo);
 

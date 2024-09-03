@@ -18,7 +18,7 @@
 <body>
 <div class="yr_comment_container">
     <div class="yr_comment_header">
-<div class="yr_comment_header_logo"><img src="/img/logo-img.png"> </div>
+<div class="yr_comment_header_logo" onclick="location.href='/main'" style="cursor: pointer"><img src="/img/logo-img.png"> </div>
         <div class="yr_comment_title"><p> GUEST BOOK</p></div>
     </div>
 
@@ -55,6 +55,9 @@
                 <input type="hidden" name="correct-code" value="${c.c_delete_code}">
             </div>
         </c:forEach>
+
+<%--        <div class="yr_back" onclick="window.history.back()"><img src="/img/backbtn.png"></div>--%>
+        <div class="yr_back" onclick="location.href='/invitation/${e_no}'"><img src="/img/backbtn.png"></div>
     </div>
 
     <div id="deleteModal" class="modal">

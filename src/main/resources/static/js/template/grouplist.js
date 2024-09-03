@@ -1,122 +1,125 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".hw_card");
-    const indicators = document.querySelectorAll(".indicator");
-    const container = document.querySelector('.hw_container');
-    let currentIndex = 0;
-    let isDragging = false;
-    let startX = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let animationID;
-    let threshold = 0.3; // 슬라이드를 넘기기 위한 최소 드래그 비율
-    let slideWidth = container.offsetWidth; // 슬라이드의 너비
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card-inner");
+    const slides = document.querySelectorAll(".hw_card");
+    const container = document.querySelector(".hw_container");
+    const indicatorContainer = document.querySelector(".slider-indicators");
 
-    if (!cards.length || !container) {
-        console.warn("Required elements are not found in the DOM.");
-        return;
+    let currentIndex = 0;
+    let startX = 0;
+    let isDragging = false;
+    let isScrolling = false;
+    const totalPages = slides.length;
+
+    function createIndicators() {
+        indicatorContainer.innerHTML = '';
+        for (let i = 0; i < totalPages; i++) {
+            const indicator = document.createElement("span");
+            indicator.classList.add("indicator");
+            if (i === 0) {
+                indicator.classList.add("active");
+            }
+            indicatorContainer.appendChild(indicator);
+        }
     }
 
-    const totalPages = Math.ceil(cards.length / 3);
-
-    const updateIndicators = (index) => {
+    function updateIndicators(index) {
+        const indicators = document.querySelectorAll(".indicator");
         indicators.forEach((indicator, i) => {
-            indicator.classList.toggle("active", i === index);
+            if (i === index) {
+                indicator.classList.add("active");
+            } else {
+                indicator.classList.remove("active");
+            }
         });
-    };
+    }
 
-    const setPositionByIndex = () => {
-        currentTranslate = currentIndex * -slideWidth;
-        prevTranslate = currentTranslate;
-        setSliderPosition();
-        updateIndicators(currentIndex);
-    };
-
-    const setSliderPosition = () => {
-        container.style.transform = `translateX(${currentTranslate}px)`;
-    };
-
-    const animate = () => {
-        setSliderPosition();
-        if (isDragging) requestAnimationFrame(animate);
-    };
-
-    const handleGesture = () => {
-        const movedBy = currentTranslate - prevTranslate;
-
-        if (movedBy < -slideWidth * threshold && currentIndex < totalPages - 1) {
-            currentIndex += 1;
+    function adjustScrollPosition() {
+        if (currentIndex === totalPages - 1) {
+            container.scrollLeft = container.scrollWidth - container.clientWidth;
         }
+    }
 
-        if (movedBy > slideWidth * threshold && currentIndex > 0) {
-            currentIndex -= 1;
+    function scrollToSlide(index) {
+        if (index >= 0 && index < totalPages && !isScrolling) {
+            isScrolling = true;
+            container.scrollTo({
+                left: index * container.clientWidth,
+                behavior: "smooth"
+            });
+
+            currentIndex = index;
+            updateIndicators(index);
+
+            setTimeout(() => {
+                isScrolling = false;
+                adjustScrollPosition();
+            }, 800);
         }
+    }
 
-        setPositionByIndex();
-    };
-
-    container.addEventListener("mousedown", (event) => {
-        startX = event.clientX;
+    function startDrag(event) {
+        if (isScrolling) return;
+        startX = event.type.includes("mouse") ? event.clientX : event.touches[0].clientX;
         isDragging = true;
-        animationID = requestAnimationFrame(animate);
-        container.style.cursor = 'grabbing';
-    });
+    }
 
-    container.addEventListener("mousemove", (event) => {
-        if (isDragging) {
-            const currentX = event.clientX;
-            currentTranslate = prevTranslate + currentX - startX;
-        }
-    });
+    function onDrag(event) {
+        if (!isDragging || isScrolling) return;
 
-    container.addEventListener("mouseup", () => {
-        isDragging = false;
-        cancelAnimationFrame(animationID);
-        container.style.cursor = 'grab';
-        handleGesture();
-    });
+        const moveX = event.type.includes("mouse") ? event.clientX : event.touches[0].clientX;
+        const diff = startX - moveX;
 
-    container.addEventListener("mouseleave", () => {
-        if (isDragging) {
+        if (Math.abs(diff) > 50) {
+            if (diff > 0 && currentIndex < totalPages - 1) {
+                scrollToSlide(currentIndex + 1);
+            } else if (diff < 0 && currentIndex > 0) {
+                scrollToSlide(currentIndex - 1);
+            }
+
             isDragging = false;
-            cancelAnimationFrame(animationID);
-            handleGesture();
         }
-    });
+    }
 
-    container.addEventListener("touchstart", (event) => {
-        startX = event.touches[0].clientX;
-        isDragging = true;
-        animationID = requestAnimationFrame(animate);
-    });
-
-    container.addEventListener("touchmove", (event) => {
-        if (isDragging) {
-            const currentX = event.touches[0].clientX;
-            currentTranslate = prevTranslate + currentX - startX;
-        }
-    });
-
-    container.addEventListener("touchend", () => {
+    function endDrag() {
         isDragging = false;
-        cancelAnimationFrame(animationID);
-        handleGesture();
+    }
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+        });
     });
 
-    // 휠 스크롤로 페이지 전환
-    container.addEventListener('wheel', (event) => {
+    container.addEventListener("touchstart", startDrag);
+    container.addEventListener("mousedown", startDrag);
+
+    container.addEventListener("touchmove", onDrag);
+    container.addEventListener("mousemove", onDrag);
+
+    container.addEventListener("touchend", endDrag);
+    container.addEventListener("mouseup", endDrag);
+    container.addEventListener("mouseleave", endDrag);
+
+    container.addEventListener("wheel", (event) => {
+        if (isScrolling) return;
         event.preventDefault();
         if (event.deltaY > 0 && currentIndex < totalPages - 1) {
-            currentIndex++;
+            scrollToSlide(currentIndex + 1);
         } else if (event.deltaY < 0 && currentIndex > 0) {
-            currentIndex--;
+            scrollToSlide(currentIndex - 1);
         }
-        setPositionByIndex();
     });
 
-    window.addEventListener('resize', () => {
-        slideWidth = container.offsetWidth;
-        setPositionByIndex();
+
+    document.addEventListener("keydown", (event) => {
+        if (isScrolling) return;
+        if (event.key === "ArrowRight" && currentIndex < totalPages - 1) {
+            scrollToSlide(currentIndex + 1);
+        } else if (event.key === "ArrowLeft" && currentIndex > 0) {
+            scrollToSlide(currentIndex - 1);
+        }
     });
 
-    setPositionByIndex();
+    createIndicators();
+    updateIndicators(currentIndex);
 });

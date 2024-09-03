@@ -12,10 +12,10 @@ body {
     width: 100vw;
     overflow: hidden;
     background-color: #f8f8f8;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     background-image: url("/img/Paper_BG.png");
 }
 
@@ -38,9 +38,9 @@ body {
     flex-direction: row;
     width: 100vw;
     height: calc(100vh - 3rem);
-    overflow-x: hidden; /* 스크롤바를 숨김 */
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth; /* 부드러운 스크롤 효과 추가 */
+    scroll-behavior: smooth;
 }
 
 .hw_card {
@@ -90,10 +90,21 @@ body {
 
 .image-container img {
     max-width: 100%;
-    /*max-height: 100%;*/
     object-fit: cover;
     display: block;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
+
 
 .image-container.darken {
     filter: brightness(0.5);
@@ -114,9 +125,11 @@ body {
     border: solid 2px #ff787b;
     box-shadow: 0 0 3px #EC0000;
 }
-.share-button:hover{
+
+.share-button:hover {
     background-color: #ffeeee;
 }
+
 .share-button.active {
     background-color: #ff787b;
     color: #ffffff;

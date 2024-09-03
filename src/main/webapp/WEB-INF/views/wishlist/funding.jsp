@@ -14,7 +14,6 @@
 ${fundingList}
 <body>
 <input id="e_no" type="hidden" value="${sessionScope.e_no}">
-<input id="m_id" type="hidden" value="${sessionScope.authenticatedMember.m_id}">
 <div class="tk_funding-title">
 	<div class="tk_funding-title-bigTitle">ファンディング</div>
 </div>
@@ -29,7 +28,7 @@ ${fundingList}
 	<div class="kh-f-card-container" style="position: relative">
 	<div id="je_overlay">
 		<div class="je_overlay-txt">
-			1回タッチした後、 <br /> <br>
+<%--			1回タッチした後、 <br /> <br>--%>
 			画像をドラッグすると、<br />
 			詳しく見ることができます
 		</div>
@@ -55,6 +54,10 @@ ${fundingList}
 		</div>
 	</div> -->
 	</div>
+	<div class="tk_back-btn" onclick="location.href='/survey/${sessionScope.authenticatedMember.m_id}-${sessionScope.e_no}/create'">
+		<div><img src="/img/back.png" alt=""/></div>
+		<div>戻る</div>
+	</div>
 
 <dialog id="modal" class="modal static">
 <div class="kh-f-popup">
@@ -73,10 +76,10 @@ ${fundingList}
 		</div>
 		<div class="kh-f-des">✿ ファンディング金額を入力してください ✿</div>
 		<div style="position: relative;">
-			<div style="font-size: 2rem" id="kh-input-box">
+			<div style="font-size: 28px" id="kh-input-box"> <!--font-size: 2rem-->
 				<input class="kh-f-input" type="text" maxlength="8"
-					oninput="numberMaxLength(this)" onclick="removeWarn()" />円 <img
-					alt="" src="/img/money.png">
+					oninput="numberMaxLength(this)" onclick="removeWarn()" style="outline: none"/>円 <img
+					alt="" src="/img/money.png" style="width: 50px">
 			</div>
 			<span id="kh-warn-text"
 				style="color: red; position: absolute; bottom: -20px"
