@@ -344,6 +344,7 @@ body{
     background-color: #ffc8c8;
     border-radius: 5px;
     z-index: 1;
+    outline: 2px solid #ffc8c8;
 }
 .je_list-back{
     position: absolute;
@@ -353,7 +354,7 @@ body{
     li{
         display: inline-block;
         width: 6rem;
-        height: 6rem;
+        height: 5.9rem;
         background-color: #ffc8c8;
         border-radius: 5px;
         margin: .3rem;
