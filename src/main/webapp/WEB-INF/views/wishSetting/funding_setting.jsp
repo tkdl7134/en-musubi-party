@@ -61,7 +61,9 @@
                 </div>
             </div>
 
-            <div id="scrollToTopBtn" class="je_top-btn">トップ</div>
+            <div id="scrollToTopBtn" class="je_top-btn">
+                <img src="/img/top-arrow.png">
+            </div>
     </div>
 </div>
 </body>
