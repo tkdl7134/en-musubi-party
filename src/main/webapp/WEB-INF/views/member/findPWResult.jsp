@@ -11,7 +11,7 @@
 <body>
 <div class="findPWResult-container">
     <div class="findPWResult-deco-img">
-        <img src="/img/logo-img.png" alt="findPWResult-deco-img">
+        <img src="/img/logo-img.png" alt="findPWResult-deco-img" onclick="location.href='/main'">
     </div>
 
     <div class="findPWResult-title">
