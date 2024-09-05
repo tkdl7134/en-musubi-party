@@ -11,7 +11,7 @@
 <body>
 <div class="findPW-container">
     <div class="findPW-deco-img">
-        <img src="/img/logo-img.png" alt="findPW-deco-img">
+        <img src="/img/logo-img.png" alt="findPW-deco-img" onclick="location.href='/login'">
     </div>
 
     <div class="findPW-title">

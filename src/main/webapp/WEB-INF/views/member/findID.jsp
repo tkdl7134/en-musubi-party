@@ -11,7 +11,7 @@
 <body>
 <div class="findID-container">
     <div class="findID-deco-img">
-        <img src="/img/logo-img.png" alt="findID-deco-img">
+        <img src="/img/logo-img.png" alt="findID-deco-img" onclick="location.href='/login'">
     </div>
 
     <div class="findID-title">

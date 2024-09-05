@@ -152,17 +152,25 @@ input {
 
 .je_top-btn {
     opacity: 0;
+    width: 2rem;
+    height: 2rem;
     position: fixed;
-    right: 5%;
+    right: 7%;
     bottom: 3%;
-    background-color: #ffd1d0;
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    font-size: 14px;
-    font-weight: 900;
-    color: #ff494c;
-    transition: opacity 0.3s ease;
+    background-color: #ffffff;
+    border-radius: 100%;
+    transition: box-shadow 0.3s ease;
+
+    img{
+        width: 100%;
+    }
+}
+
+.je_top-btn:hover{
     cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-shadow: rgba(255, 73, 76,  0.4) 0px 2px 4px, rgba(255, 73, 76,  0.3) 0px 7px 13px -3px,
+                rgba(255, 73, 76,  0.2) 0px -3px 0px inset;
 }
 
 .je_top-btn.show {

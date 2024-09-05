@@ -16,7 +16,7 @@
 <div class="login-container">
 
     <div class="login-deco-img">
-        <img src="/img/logo-img.png" alt="login-deco-img">
+        <img src="/img/logo-img.png" alt="login-deco-img" onclick="location.href='/main'">
     </div>
 
     <div class="login-box">
